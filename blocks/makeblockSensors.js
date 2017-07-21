@@ -111,7 +111,7 @@ Blockly.Blocks['makeblockSensors_flameSensor_getSample'] = {
          // this.setInputsInline(true);
          var sensorPort = new Blockly.FieldDropdown([ [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ]);
          var sensorSide = new Blockly.FieldDropdown([ [ 'Left', 'Left' ], [ 'Right', 'Right' ] ]);
-         this.appendDummyInput().appendField(Blockly.Msg.SENSOR_GET_SAMPLE).appendField(Blockly.Msg.SENSOR_LIGHT).appendField(sensorSide).appendField(sensorPort, 'SENSORPORT');
+         this.appendDummyInput().appendField(Blockly.Msg.SENSOR_GET_SAMPLE).appendField(Blockly.Msg.SENSOR_LIGHT).appendField(sensorSide, 'MODE').appendField(sensorPort, 'SENSORPORT');
          this.setOutput(true, 'Boolean');
      }
  };
