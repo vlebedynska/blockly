@@ -24,7 +24,7 @@ Blockly.Blocks['bob3Actions_set_led'] = {
      * @memberof Block
      */
     init : function() {
-        var ledSide = new Blockly.FieldDropdown([ [ 'Left', 'LED4' ], [ 'Right', 'LED3' ] ]);
+        var ledSide = new Blockly.FieldDropdown([ [ 'Left', 'LED_4' ], [ 'Right', 'LED_3' ] ]);
         var ledState = new Blockly.FieldDropdown([ [ 'On', 'ON' ], [ 'Off', 'OFF' ] ]);
         this.setColour(Blockly.CAT_ACTION_RGB);
         this.appendDummyInput().appendField(Blockly.Msg.LED_ON).appendField(Blockly.Msg.NAO_PART_BODY).appendField(ledSide, 'LEDSIDE').appendField(ledState, 'LEDSTATE');
