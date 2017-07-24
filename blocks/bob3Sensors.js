@@ -45,6 +45,25 @@
      }
  };
 
+ Blockly.Blocks['bob3Sensors_getCode'] = {
+     /**
+      * Get the current reading from the code pad.
+      *
+      * @constructs bob3Sensors_getCode
+      * @this.Blockly.Block
+      * @returns immediately
+      * @returns {Number}
+      * @memberof Block
+      */
+
+     init : function() {
+         this.setColour(Blockly.CAT_SENSOR_RGB);
+         this.appendDummyInput().appendField(Blockly.Msg.SENSOR_GET_SAMPLE).appendField(Blockly.Msg.SENSOR_CODE);
+         this.setOutput(true, 'Number');
+         this.setTooltip(Blockly.Msg.GET_CODE_TOOLTIP);
+     }
+ };
+
  Blockly.Blocks['bob3Sensors_touch_getSample'] = {
      /**
       * Get the current touch state of the bob3 arm.

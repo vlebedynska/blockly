@@ -813,7 +813,7 @@
   "SENSOR_JOYSTICK":"joystick",
   "JOYSTICK_GETSAMPLE_TOOLTIP":"Gets the current reading of one of the axises of the joystick",
   "BOB3_ARM":"arm",
-  "BOB3_ARM_PAIR":"sensor pair",
+  "BOB3_ARM_PAIR":"Pad-Paar",
   "INTERNAL_PORT":"innere",
   "PULSE_LOW":"Pulszeit LOW",
   "PULSE_HIGH":"Pulszeit HIGH",
@@ -826,5 +826,8 @@
   "CONNECTION_MBED_SEND_TOOLTIP":"Sendet eine Nachricht zu einem anderen Microboard über Kanal 0 bis 255 mit einer Signalstärke von 0 bis 7. Wobei 0 ist ein schwaches Signal und 7 das stärkste Signal ist.",
   "CONNECTION_SET_CHANNEL": "setze Kanal auf %1",
   "CONNECTION_SET_CHANNEL_TOOLTIP": "Bestimmt den Kanal für die Nachrichtenübertragung für ein- und ausgehende Nachrichten. Mögliche Kanäle sind 0 bis 255.",
-  "NAO_WALK_ASYNC_TOOLTIP": "Makes the robot walk infinitely"
+  "NAO_WALK_ASYNC_TOOLTIP": "Der Roboter geht unendlich.",
+  "SENSOR_CODE": "Code-Pad",
+  "GET_CODE_TOOLTIP": "Gibt den Wert des lötbaren Code-Pad im Kopfstück zurück. Der Wert ist zwischen 0 und 31.",
+  "SENSOR_AMBIENTLIGHT": "Umgebungslichtsensor"
 }
