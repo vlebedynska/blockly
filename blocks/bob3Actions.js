@@ -14,7 +14,7 @@ Blockly.Blocks['bob3Actions_set_led'] = {
     /**
      * Turn bricklight on.
      *
-     * @constructs makeblockActions_leds_on
+     * @constructs bob3Actions_leds_on
      * @this.Blockly.Block
      * @param {String/dropdown}
      *            LEDSIDE - left / right
@@ -27,7 +27,7 @@ Blockly.Blocks['bob3Actions_set_led'] = {
         var ledSide = new Blockly.FieldDropdown([ [ 'Left', 'Left' ], [ 'Right', 'Right' ] ]);
         var ledState = new Blockly.FieldDropdown([ [ 'On', 'On' ], [ 'Off', 'Off' ] ]);
         this.setColour(Blockly.CAT_ACTION_RGB);
-        this.appendDummyInput().appendField(Blockly.Msg.LED_ON).appendField(ledSide, 'LEDSIDE').appendField(ledState, 'LEDSTATE');
+        this.appendDummyInput().appendField(Blockly.Msg.LED_ON).appendField(Blockly.Msg.NAO_PART_BODY).appendField(ledSide, 'LEDSIDE').appendField(ledState, 'LEDSTATE');
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setTooltip(Blockly.Msg.LED_ON_TOOLTIP);

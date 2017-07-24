@@ -17,9 +17,7 @@ Blockly.Blocks['makeblockActions_leds_on'] = {
      * @constructs makeblockActions_leds_on
      * @this.Blockly.Block
      * @param {String/dropdown}
-     *            SWITCH_COLOR - Green, Orange or Red
-     * @param {Boolean/dropdown}
-     *            SWITCH_BLINK - True or False
+     *            Left, Right
      * @returns immediately
      * @memberof Block
      */
