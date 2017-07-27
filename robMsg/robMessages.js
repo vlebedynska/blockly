@@ -926,3 +926,4 @@ Blockly.Msg.GET_CODE_TOOLTIP = 'Returns the value of the solderable code pad in 
 
 Blockly.Msg.MOTOR_SPEED_0 = 'Motor Speed is 0!';
 Blockly.Msg.VARIABLE_USED_BEFORE_DECLARATION = 'The variable is used before declaration.';
+Blockly.Msg.ORA_PROGRAM_INVALID_STATEMETNS = 'There are errors in your program. Please check the messages';
