@@ -905,8 +905,8 @@ Blockly.Msg.ORA_USER_ACTIVATION_SUCCESS = 'Activation of the user account is suc
 Blockly.Msg.ORA_ACCOUNT_NOT_ACTIVATED_TO_SHARE = 'Your are not allowed to share. Please activate your account!';
 Blockly.Msg.SENSOR_JOYSTICK = 'joystick';
 Blockly.Msg.JOYSTICK_GETSAMPLE_TOOLTIP = 'Gets the current reading of one of the axises of the joystick';
-Blockly.Msg.MESSAGE_ROBOT_DISCONNECTED = 'An active robot was disconnected'; 
-Blockly.Msg.INTERNAL_PORT = 'internal'; 
+Blockly.Msg.MESSAGE_ROBOT_DISCONNECTED = 'An active robot was disconnected';
+Blockly.Msg.INTERNAL_PORT = 'internal';
 Blockly.Msg.PULSE_LOW = 'pulse time LOW';
 Blockly.Msg.PULSE_HIGH = 'pulse time HIGH';
 Blockly.Msg.PIN_GETSAMPLE_ANALOG_TOOLTIP = 'Returns the value from the specified analog pin. The value is between 0 and 1023.';
@@ -923,3 +923,6 @@ Blockly.Msg.CONNECTION_SET_CHANNEL_TOOLTIP = 'Sets the channel for sending and r
 Blockly.Msg.NAO_WALK_ASYNC_TOOLTIP = 'Makes the robot walk infinitely';
 Blockly.Msg.SENSOR_CODE = 'code pad';
 Blockly.Msg.GET_CODE_TOOLTIP = 'Returns the value of the solderable code pad in the head piece. Values are in range 0-31.';
+
+Blockly.Msg.MOTOR_SPEED_0 = 'Motor Speed is 0!';
+Blockly.Msg.VARIABLE_USED_BEFORE_DECLARATION = 'The variable is used before declaration.';
