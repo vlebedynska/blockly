@@ -829,5 +829,6 @@
   "NAO_WALK_ASYNC_TOOLTIP": "Der Roboter geht unendlich.",
   "SENSOR_CODE": "Code-Pad",
   "GET_CODE_TOOLTIP": "Gibt den Wert des lötbaren Code-Pad im Kopfstück zurück. Der Wert ist zwischen 0 und 31.",
-  "SENSOR_AMBIENTLIGHT": "Umgebungslichtsensor"
+  "SENSOR_AMBIENTLIGHT": "Umgebungslichtsensor",
+  "TIMEOUT": "Auszeit"
 }

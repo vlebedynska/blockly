@@ -18,29 +18,21 @@ Blockly.Blocks['bob3Communication_sendBlock'] = {
      * Send a message to another device, maybe via the roberta lab server.
      *
      * @this.Blockly.Block
-     * @param {data
-     *            type/dropdown} TYPE String, Boolean, Number
      * @param {data}
-     *            DATA - message content
+     *            DATA - message content (numbers only)
      * @returns immediately
      * @memberof Block
      */
 
     init : function() {
         this.setColour(Blockly.CAT_COMMUNICATION_RGB);
-//        var dataType = new Blockly.FieldDropdown([ [ Blockly.Msg.VARIABLES_TYPE_NUMBER, 'Number' ], [ Blockly.Msg.VARIABLES_TYPE_BOOLEAN, 'Boolean' ],
-//                [ Blockly.Msg.VARIABLES_TYPE_STRING, 'String' ] ], function(option) {
-//            if (option && this.sourceBlock_.getFieldValue('TYPE') !== option) {
-//                this.sourceBlock_.updateType_(option);
-//            }
-//        });
-        var dataType = new Blockly.FieldDropdown([ [ Blockly.Msg.VARIABLES_TYPE_STRING, 'String' ],  [ Blockly.Msg.VARIABLES_TYPE_NUMBER, 'Number' ],  [ Blockly.Msg.VARIABLES_TYPE_BOOLEAN, 'Boolean' ]], function(option) {
+        var dataType = new Blockly.FieldDropdown([[ Blockly.Msg.VARIABLES_TYPE_NUMBER, 'Number' ]], function(option) {
             if (option && this.sourceBlock_.getFieldValue('TYPE') !== option) {
                 this.sourceBlock_.updateType_(option);
             }
         });
-        this.dataType_ = 'String';
-        this.appendValueInput('sendData').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.CONNECTION_SEND_DATA).appendField(dataType, 'TYPE').setCheck(this.dataType_);
+        this.dataType_ = 'Number';
+        this.appendValueInput('sendData').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.CONNECTION_SEND_DATA).setCheck(this.dataType_);
         this.setTooltip(Blockly.Msg.CONNECTION_MBED_SEND_TOOLTIP);
         this.setPreviousStatement(true);
         this.setNextStatement(true);
@@ -72,26 +64,26 @@ Blockly.Blocks['bob3Communication_receiveBlock'] = {
      *
      * @constructs bob3Communication_receiveBlock
      * @this.Blockly.Block
-     * @param {data
-     *            type/dropdown} TYPE String, Boolean, Number
      * @param {data}
-     *            DATA - message content
+     *            DATA - message content (numbers only)
      * @returns immediately
      * @memberof Block
      */
 
     init : function() {
         this.setColour(Blockly.CAT_COMMUNICATION_RGB);
-        var dataType = new Blockly.FieldDropdown([ [ Blockly.Msg.VARIABLES_TYPE_STRING, 'String' ],  [ Blockly.Msg.VARIABLES_TYPE_NUMBER, 'Number' ],  [ Blockly.Msg.VARIABLES_TYPE_BOOLEAN, 'Boolean' ] ], function(option) {
+        var dataType = new Blockly.FieldDropdown([ [ Blockly.Msg.VARIABLES_TYPE_NUMBER, 'Number' ] ], function(option) {
             if (option && this.sourceBlock_.getFieldValue('TYPE') !== option) {
                 this.sourceBlock_.updateType_(option);
             }
         });
-        this.dataType_ = 'String';
-        this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.CONNECTION_RECEIVED_DATA).appendField(dataType, 'TYPE');
+        this.dataType_ = 'Number';
+        this.appendValueInput('receiveData').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.CONNECTION_RECEIVED_DATA).appendField(Blockly.Msg.TIMEOUT).setCheck(this.dataType_);
         this.setOutput(true, this.dataType_);
         this.setTooltip(Blockly.Msg.CONNECTION_MBED_RECEIVE_TOOLTIP);
         this.setInputsInline(false);
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
     },
     mutationToDom : function() {
         if (this.dataType_ === undefined) {
