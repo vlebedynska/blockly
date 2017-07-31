@@ -52,7 +52,7 @@ Blockly.Blocks['mbedActions_single_motor_on'] = {
 
     init : function() {
         this.setColour(Blockly.CAT_ACTION_RGB);
-        this.appendValueInput('MOTOR_ON').appendField(Blockly.Msg.MOTOR).appendField(Blockly.Msg.MOTOR_ON).appendField(Blockly.Msg.ON).appendField(Blockly.Msg.MOTOR_SPEED).setCheck('Number');
+        this.appendValueInput('POWER').appendField(Blockly.Msg.MOTOR).appendField(Blockly.Msg.MOTOR_ON).appendField(Blockly.Msg.ON).appendField(Blockly.Msg.MOTOR_SPEED).setCheck('Number');
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setTooltip(Blockly.Msg.MOTOR_ON_TOOLTIP);
