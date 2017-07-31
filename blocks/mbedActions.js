@@ -38,6 +38,49 @@ Blockly.Blocks['mbedActions_motor_on'] = {
     }
 };
 
+Blockly.Blocks['mbedActions_single_motor_on'] = {
+    /**
+     * Turn single motor on with specific power.
+     *
+     * @constructs mbedActions_single_motor_on
+     * @this.Blockly.Block
+     * @param {Number}
+     *            POWER relative - -100-100
+     * @returns immediately
+     * @memberof Block
+     */
+
+    init : function() {
+        this.setColour(Blockly.CAT_ACTION_RGB);
+        this.appendValueInput('MOTOR_ON').appendField(Blockly.Msg.MOTOR).appendField(Blockly.Msg.MOTOR_ON).appendField(Blockly.Msg.ON).appendField(Blockly.Msg.MOTOR_SPEED).setCheck('Number');
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setTooltip(Blockly.Msg.MOTOR_ON_TOOLTIP);
+    }
+};
+
+Blockly.Blocks['mbedActions_single_motor_stop'] = {
+    /**
+     * Stop this motor.
+     *
+     * @constructs mbedActions_single_motor_stop
+     * @this.Blockly.Block
+     * @param {String/dropdown}
+     *            MODE - Float or Non Float
+     * @returns immediately
+     * @memberof Block
+     */
+    init : function() {
+        this.setColour(Blockly.CAT_ACTION_RGB);
+        var mode = new Blockly.FieldDropdown([ [ Blockly.Msg.MOTOR_FLOAT, 'FLOAT' ], [ Blockly.Msg.MOTOR_BRAKE, 'NONFLOAT' ], [ Blockly.Msg.SLEEP, 'SLEEP' ] ]);
+        this.appendDummyInput().appendField(Blockly.Msg.MOTOR).appendField(Blockly.Msg.MOTOR_STOP).appendField(mode, 'MODE');
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setTooltip(Blockly.Msg.MOTOR_STOP_TOOLTIP);
+    }
+};
+
+
 Blockly.Blocks['mbedActions_motor_stop'] = {
     /**
      * Stop this motor.
