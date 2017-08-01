@@ -40,7 +40,7 @@ Blockly.Blocks['robControls_start'] = {
      * it should not be available in any toolbox. This is also the block where
      * variable declaration can be instantiated via the plus mutator. For new
      * task see {@link Block.robControls_activity}.
-     * 
+     *
      * @constructs robControls_start
      * @this.Blockly.Block
      * @returns immediately
@@ -62,12 +62,12 @@ Blockly.Blocks['robControls_start'] = {
         this.setNextStatement(true);
         this.setDeletable(false);
         this.setMutatorPlus(new Blockly.MutatorPlus([ 'robControls_start' ]));
-        this.setTooltip(Blockly.Msg.START_TOOLTIP);      
+        this.setTooltip(Blockly.Msg.START_TOOLTIP);
     },
     /**
      * Create XML to represent whether a statement list of variable declarations
      * should be present.
-     * 
+     *
      * @return {Element} XML storage element.
      * @this Blockly.Block
      */
@@ -82,7 +82,7 @@ Blockly.Blocks['robControls_start'] = {
 
     /**
      * Parse XML to restore the statement list.
-     * 
+     *
      * @param {!Element}
      *            xmlElement XML storage element.
      * @this Blockly.Block
@@ -96,7 +96,7 @@ Blockly.Blocks['robControls_start'] = {
     },
     /**
      * Update the shape according, if declarations exists.
-     * 
+     *
      * @param {Number}
      *            number 1 add a variable declaration, -1 remove a variable
      *            declaration.
@@ -147,7 +147,7 @@ Blockly.Blocks['robControls_start_ardu'] = {
      * it should not be available in any toolbox. This is also the block where
      * variable declaration can be instantiated via the plus mutator. For new
      * task see {@link Block.robControls_activity}.
-     * 
+     *
      * @constructs robControls_start
      * @this.Blockly.Block
      * @returns immediately
@@ -168,7 +168,7 @@ Blockly.Blocks['robControls_start_ardu'] = {
     /**
      * Create XML to represent whether a statement list of variable declarations
      * should be present.
-     * 
+     *
      * @return {Element} XML storage element.
      * @this Blockly.Block
      */
@@ -183,7 +183,7 @@ Blockly.Blocks['robControls_start_ardu'] = {
 
     /**
      * Parse XML to restore the statement list.
-     * 
+     *
      * @param {!Element}
      *            xmlElement XML storage element.
      * @this Blockly.Block
@@ -197,7 +197,7 @@ Blockly.Blocks['robControls_start_ardu'] = {
     },
     /**
      * Update the shape according, if declarations exists.
-     * 
+     *
      * @param {Number}
      *            number 1 add a variable declaration, -1 remove a variable
      *            declaration.
@@ -246,7 +246,7 @@ Blockly.Blocks['robControls_activity'] = {
     /**
      * Marker for a new task. The main program will start this task when it
      * executes {@link robControls_start_activity}.
-     * 
+     *
      * @constructs robControls_activity
      * @this.Blockly.Block
      * @param {String} -
@@ -268,7 +268,7 @@ Blockly.Blocks['robControls_activity'] = {
 Blockly.Blocks['robControls_start_activity'] = {
     /**
      * Block starting additional activity.
-     * 
+     *
      * @constructs robControls_start_activity
      * @param {String} -
      *            ACTIVITY's name.
@@ -288,7 +288,7 @@ Blockly.Blocks['robControls_start_activity'] = {
 
 /**
  * Block waiting for a condition becoming true.
- * 
+ *
  * @constructs robControls_wait
  * @param {Boolean} -
  *            any condition.
@@ -310,7 +310,7 @@ Blockly.Blocks['robControls_wait'] = {
     },
     /**
      * Create XML to represent the number of wait counts.
-     * 
+     *
      * @return {Element} XML storage element.
      * @this Blockly.Block
      */
@@ -327,7 +327,7 @@ Blockly.Blocks['robControls_wait'] = {
 
     /**
      * Parse XML to restore the wait inputs.
-     * 
+     *
      * @param {!Element}
      *            xmlElement XML storage element.
      * @this Blockly.Block
@@ -347,7 +347,7 @@ Blockly.Blocks['robControls_wait'] = {
     },
     /**
      * Update the shape according to the number of wait inputs.
-     * 
+     *
      * @param {Number}
      *            number of waits inputs.
      * @this Blockly.Block
@@ -395,7 +395,7 @@ Blockly.Blocks['robControls_wait'] = {
 
 /**
  * Block waiting for some time.
- * 
+ *
  * @constructs robControls_wait_time
  * @param {Boolean} -
  *            any condition.
@@ -416,7 +416,7 @@ Blockly.Blocks['robControls_wait_time'] = {
 
 /**
  * Block waiting for sensor values.
- * 
+ *
  * @constructs robControls_wait_for
  * @param {Boolean} -
  *            sensor condition.
@@ -438,7 +438,7 @@ Blockly.Blocks['robControls_wait_for'] = {
     },
     /**
      * Create XML to represent the number of wait counts.
-     * 
+     *
      * @return {Element} XML storage element.
      * @this Blockly.Block
      */
@@ -454,7 +454,7 @@ Blockly.Blocks['robControls_wait_for'] = {
     },
     /**
      * Parse XML to restore the wait inputs.
-     * 
+     *
      * @param {!Element}
      *            xmlElement XML storage element.
      * @this Blockly.Block
@@ -474,7 +474,7 @@ Blockly.Blocks['robControls_wait_for'] = {
     },
     /**
      * Update the shape according to the number of wait inputs.
-     * 
+     *
      * @param {Number}
      *            number of waits inputs.
      * @this Blockly.Block
@@ -494,10 +494,23 @@ Blockly.Blocks['robControls_wait_for'] = {
             var connection = this.getInput('WAIT' + this.waitCount_).connection;
             connection.connect(lc.outputConnection);
 
+            //TODO: move ardu and nibo to arduControls and niboControls
             var s;
+            console.log("device");
+              console.log(this.workspace.device);
             if (this.workspace.device === 'ardu') {
+              console.log("device");
+                console.log(this.workspace.device);
                 s = this.workspace.newBlock('robSensors_getSample_ardu');
-            } else {
+            }
+            else if (this.workspace.device === 'nibo') {
+                s = this.workspace.newBlock('bob3Sensors_getSample_bob3');
+            }
+            //TODO: implement when all sensors for makeblock are done
+            /*else if (this.workspace.device === 'makeblock') {
+                s = this.workspace.newBlock('makeblockSensors_getSample_makeblock');
+            }*/
+             else {
                 s = this.workspace.newBlock('robSensors_getSample');
             }
             s.initSvg();
