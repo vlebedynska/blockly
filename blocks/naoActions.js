@@ -81,6 +81,28 @@ Blockly.Blocks['naoActions_stiffness'] = {
     }
 };
 
+Blockly.Blocks['naoActions_autonomous'] = {
+    /**
+     * Activate/Deactivate the autonomous life.
+     *
+     * @constructs naoActions_autonomous
+     * @this.Blockly.Block
+     * @param {String}
+     *            MODE turn autonomous life on or off
+     * @returns immediately
+     * @memberof Block
+     */
+    init : function() {
+        this.setColour(Blockly.CAT_ACTION_RGB);
+        var mode = new Blockly.FieldDropdown([ [ Blockly.Msg.ON, 'ON' ], [ Blockly.Msg.OFF, 'OFF' ] ])
+        this.setInputsInline(true);
+        this.appendDummyInput().appendField(Blockly.Msg.NAO_AUTONOMOUS).appendField(mode, 'MODE');
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setTooltip(Blockly.Msg.NAO_AUTONOMOUS_TOOLTIP);
+    }
+};
+
 Blockly.Blocks['naoActions_moveJoint'] = {
     /**
      * NAO moves a single joint.
