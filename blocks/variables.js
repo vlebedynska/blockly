@@ -80,7 +80,7 @@ Blockly.Blocks['variables_get'] = {
    * @this Blockly.Block
    */
   domToMutation: function(xmlElement) {
-    var dataType = xmlElement.getAttribute('datatype') || 
+    var dataType = xmlElement.getAttribute('datatype') ||
                    Blockly.Variables.getType(this.getFieldValue('VAR'));
     if (dataType && this.workspace.variableDeclaration) {
       this.dataType_ = dataType;
@@ -220,7 +220,7 @@ Blockly.Blocks['variables_set'] = {
    * @this Blockly.Block
    */
   domToMutation: function(xmlElement) {
-    var dataType = xmlElement.getAttribute('datatype') || 
+    var dataType = xmlElement.getAttribute('datatype') ||
                    Blockly.Variables.getType(this.getFieldValue('VAR'));
     if (dataType && this.workspace.variableDeclaration) {
       this.dataType_ = dataType;
@@ -268,7 +268,7 @@ Blockly.Blocks['robGlobalVariables_declare'] = {
         if (option && this.sourceBlock_.getFieldValue('TYPE') !== option) {
           this.sourceBlock_.updateType(option);
           this.sourceBlock_.updateShape_(0, option);
-        } 
+        }
       });
     } else if (this.workspace.device === 'microbit') {
       declType = new Blockly.FieldDropdown([
@@ -286,7 +286,7 @@ Blockly.Blocks['robGlobalVariables_declare'] = {
             this.sourceBlock_.updateShape_(0, option);
           }
         });
-    } else if (this.workspace.device === 'ardu') {
+    } else if (this.workspace.device === 'ardu' || this.workspace.device === 'nibo' || this.workspace.device === 'makeblock') {
       declType = new Blockly.FieldDropdown([
         [Blockly.Msg.VARIABLES_TYPE_NUMBER, 'Number'],
         [Blockly.Msg.VARIABLES_TYPE_BOOLEAN, 'Boolean'],
@@ -494,6 +494,7 @@ Blockly.Blocks['robLocalVariables_declare'] = {
    * @this Blockly.Block
    */
   init: function() {
+    console.log(this.workspace.device);
     this.setHelpUrl(Blockly.Msg.VARIABLES_SET_HELPURL);
     this.setColour(Blockly.CAT_PROCEDURE_RGB);
     var declType;
@@ -528,7 +529,7 @@ Blockly.Blocks['robLocalVariables_declare'] = {
             this.sourceBlock_.updateType(option);
           }
         });
-    } else if (this.workspace.device === 'ardu') {
+    } else if (this.workspace.device === 'ardu' || this.workspace.device === 'nibo' || this.workspace.device === 'makeblock') {
         declType = new Blockly.FieldDropdown([
           [Blockly.Msg.VARIABLES_TYPE_NUMBER, 'Number'],
           [Blockly.Msg.VARIABLES_TYPE_BOOLEAN, 'Boolean'],
