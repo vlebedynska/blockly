@@ -63,10 +63,10 @@ Blockly.Blocks['makeblockActions_external_leds_on'] = {
      * @memberof Block
      */
     init : function() {
-        var ledSide = new Blockly.FieldDropdown([ [ 'Left', 'Left' ], [ 'Right', 'Right' ] ]);
+        var ledNumber = new Blockly.FieldDropdown([ [ 'LED 1', '1' ], [ 'LED 2', '2' ], [ 'LED 3', '3' ], [ 'LED 4', '4' ] ]);
         var actorPort = new Blockly.FieldDropdown([['Port 1', '1'], ['Port 2', '2'], ['Port 3', '3'], ['Port 4', '4']]);
         this.setColour(Blockly.CAT_ACTION_RGB);
-        this.appendValueInput('COLOR').appendField(Blockly.Msg.LED_ON).appendField(Blockly.Msg.BRICKLIGHT_COLOR).setCheck('Colour').appendField(ledSide, 'LEDSIDE').appendField(actorPort, 'SENSORPORT');
+        this.appendValueInput('COLOR').appendField(ledNumber, 'LEDNUMBER').appendField(Blockly.Msg.ON).appendField(actorPort, 'SENSORPORT').appendField(Blockly.Msg.BRICKLIGHT_COLOR).setCheck('Colour');
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setTooltip(Blockly.Msg.LED_ON_TOOLTIP);
@@ -83,10 +83,10 @@ Blockly.Blocks['makeblockActions_external_leds_off'] = {
      * @memberof Block
      */
     init : function() {
-        var ledSide = new Blockly.FieldDropdown([ [ 'Left', 'Left' ], [ 'Right', 'Right' ] ]);
+        var ledNumber = new Blockly.FieldDropdown([ [ 'LED 1', '1' ], [ 'LED 2', '2' ], [ 'LED 3', '3' ], [ 'LED 4', '4' ] ]);
         var actorPort = new Blockly.FieldDropdown([['Port 1', '1'], ['Port 2', '2'], ['Port 3', '3'], ['Port 4', '4']]);
         this.setColour(Blockly.CAT_ACTION_RGB);
-        this.appendDummyInput().appendField(Blockly.Msg.BRICKLIGHT).appendField(Blockly.Msg.OFF).appendField(ledSide, 'LEDSIDE').appendField(actorPort, 'SENSORPORT');
+        this.appendDummyInput().appendField(ledNumber, 'LEDNUMBER').appendField(Blockly.Msg.OFF).appendField(actorPort, 'SENSORPORT');
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setTooltip(Blockly.Msg.BRICKLIGHT_OFF_TOOLTIP);
