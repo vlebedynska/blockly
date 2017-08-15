@@ -898,3 +898,7 @@ Blockly.Msg.VARIABLE_USED_BEFORE_DECLARATION = 'The variable is used before decl
 Blockly.Msg.ORA_PROGRAM_INVALID_STATEMETNS = 'There are errors in your program. Please check the messages';
 Blockly.Msg.TIMEOUT = 'timeout';
 Blockly.Msg.SLEEP = 'sleep';
+Blockly.Msg.MAKEBLOCKBRICK_TOOLTIP = 'Represents the MakeBlock brick with connected actors and sensors. There are also inbuilt actors and sensors available, e.g. buttons, display ...';
+Blockly.Msg.TEMPERATURE_TOOLTIP = 'Represents a temperature sensor.';
+Blockly.Msg.GEARED_MOTOR = 'Geared motor';
+Blockly.Msg.MOTOR_GEARED_TOOLTIP = 'Represents a geared motor.';

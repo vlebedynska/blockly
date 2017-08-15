@@ -830,5 +830,9 @@
   "SENSOR_CODE": "Code-Pad",
   "GET_CODE_TOOLTIP": "Gibt den Wert des lötbaren Code-Pad im Kopfstück zurück. Der Wert ist zwischen 0 und 31.",
   "SENSOR_AMBIENTLIGHT": "Umgebungslichtsensor",
-  "TIMEOUT": "Auszeit"
+  "TIMEOUT": "Auszeit",
+  "MAKEBLOCKBRICK_TOOLTIP": "Block für den EV3 Stein mit den angeschlossenen Aktoren und Sensoren. Es gibt auch weitere eingebaute Aktoren und Sensoren, wie z. B. das Display, die Tasten ...",
+  "ULTRASONIC_TOOLTIP":"Block für den Temperatursensor.",
+  "GEARED_MOTOR":"Getriebemotor",
+  "MOTOR_BIG_TOOLTIP":"Block für den Getriebemotor."
 }
