@@ -63,10 +63,10 @@ Blockly.Blocks['robBrick_makeBlock-Brick'] = {
         this.appendDummyInput().appendField(new Blockly.FieldLabel(this.workspace.device.toUpperCase(), 'brick_label'));
         this.appendDummyInput().appendField(Blockly.Msg.BRICK_WHEEL_DIAMETER).appendField(wheelDiameter, 'WHEEL_DIAMETER').appendField('cm');
         this.appendDummyInput().appendField(Blockly.Msg.BRICK_TRACK_WIDTH).appendField(trackWidth, 'TRACK_WIDTH').appendField('cm');
-        this.appendValueInput('S1').appendField('Sensor 1').setAlign(Blockly.ALIGN_RIGHT).setCheck('Sensor');
-        this.appendValueInput('S2').appendField('Sensor 2').setAlign(Blockly.ALIGN_RIGHT).setCheck('Sensor');
-        this.appendValueInput('S3').appendField('Sensor 3').setAlign(Blockly.ALIGN_RIGHT).setCheck('Sensor');
-        this.appendValueInput('S4').appendField('Sensor 4').setAlign(Blockly.ALIGN_RIGHT).setCheck('Sensor');
+        this.appendValueInput('P1').appendField('Port 1').setAlign(Blockly.ALIGN_RIGHT);
+        this.appendValueInput('P2').appendField('Port 2').setAlign(Blockly.ALIGN_RIGHT);
+        this.appendValueInput('P3').appendField('Port 3').setAlign(Blockly.ALIGN_RIGHT);
+        this.appendValueInput('P4').appendField('Port 4').setAlign(Blockly.ALIGN_RIGHT);
         this.appendValueInput('M1').appendField('Motor M1').setAlign(Blockly.ALIGN_RIGHT).setCheck('Actor');
         this.appendValueInput('M2').appendField('Motor M2').setAlign(Blockly.ALIGN_RIGHT).setCheck('Actor');
         this.setTooltip(Blockly.Msg.MAKEBLOCKBRICK_TOOLTIP);
@@ -294,6 +294,118 @@ Blockly.Blocks['robBrick_sound'] = {
         this.setOutput(true, 'Sensor');
         this.setTooltip(Blockly.Msg.SOUND_TOOLTIP);
         this.data = 'nxt';
+    }
+};
+
+Blockly.Blocks['robBrick_joystick'] = {
+    /**
+     * Represent a joystick sensor.
+     *
+     * @constructs robBrick_joystick
+     * @memberof Block
+     */
+
+    init : function() {
+        this.setColour(Blockly.CAT_SENSOR_RGB);
+        this.appendDummyInput().appendField(Blockly.Msg.SENSOR_JOYSTICK);
+        this.setOutput(true, 'Sensor');
+        this.setTooltip(Blockly.Msg.JOYSTICK_TOOLTIP);
+    }
+};
+
+Blockly.Blocks['robBrick_accelerometer'] = {
+    /**
+     * Represent an accelerometer sensor.
+     *
+     * @constructs robBrick_accelerometer
+     * @memberof Block
+     */
+
+    init : function() {
+        this.setColour(Blockly.CAT_SENSOR_RGB);
+        this.appendDummyInput().appendField(Blockly.Msg.NAO_ACCELEROMETER);
+        this.setOutput(true, 'Sensor');
+        this.setTooltip(Blockly.Msg.ACCELEROMETER_TOOLTIP);
+    }
+};
+
+Blockly.Blocks['robBrick_flame'] = {
+    /**
+     * Represent a flame sensor.
+     *
+     * @constructs robBrick_flame
+     * @memberof Block
+     */
+
+    init : function() {
+        this.setColour(Blockly.CAT_SENSOR_RGB);
+        this.appendDummyInput().appendField(Blockly.Msg.SENSOR_FLAME);
+        this.setOutput(true, 'Sensor');
+        this.setTooltip(Blockly.Msg.FLAME_TOOLTIP);
+    }
+};
+
+Blockly.Blocks['robBrick_ambientlight'] = {
+    /**
+     * Represent an ambientlight sensor.
+     *
+     * @constructs robBrick_ambientlight
+     * @memberof Block
+     */
+
+    init : function() {
+        this.setColour(Blockly.CAT_SENSOR_RGB);
+        this.appendDummyInput().appendField(Blockly.Msg.SENSOR_AMBIENTLIGHT);
+        this.setOutput(true, 'Sensor');
+        this.setTooltip(Blockly.Msg.FLAME_TOOLTIP);
+    }
+};
+
+Blockly.Blocks['robBrick_motion'] = {
+    /**
+     * Represent an motion sensor.
+     *
+     * @constructs robBrick_motion
+     * @memberof Block
+     */
+
+    init : function() {
+        this.setColour(Blockly.CAT_SENSOR_RGB);
+        this.appendDummyInput().appendField(Blockly.Msg.SENSOR_PIRMOTION);
+        this.setOutput(true, 'Sensor');
+        this.setTooltip(Blockly.Msg.FLAME_TOOLTIP);
+    }
+};
+
+Blockly.Blocks['robBrick_led'] = {
+    /**
+     * Represent an external LED.
+     *
+     * @constructs robBrick_led
+     * @memberof Block
+     */
+
+    init : function() {
+        this.setColour(Blockly.CAT_ACTION_RGB);
+        this.appendDummyInput().appendField(Blockly.Msg.LED);
+        this.setOutput(true, 'Actor');
+        this.setTooltip(Blockly.Msg.LED_TOOLTIP);
+    }
+};
+
+Blockly.Blocks['robBrick_led_matrix'] = {
+    /**
+     * Represent an external LED matrix.
+     *
+     * @constructs robBrick_led_matrix
+     * @memberof Block
+     */
+
+    init : function() {
+        this.setColour(Blockly.CAT_ACTION_RGB);
+        this.appendDummyInput().appendField(Blockly.Msg.LED_MATRIX);
+        this.setOutput(true, 'Actor');
+        this.setTooltip(Blockly.Msg.LED_MATRIX_TOOLTIP);
     }
 };
 

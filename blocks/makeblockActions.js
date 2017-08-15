@@ -96,16 +96,16 @@ Blockly.Blocks['makeblockActions_external_leds_off'] = {
 
 Blockly.Blocks['makeblockActions_display_image'] = {
     /**
-     * Display an image on the screen.
+     * Display an image on the matrix.
      *
      * @constructs mbedActions_display_image
      * @this.Blockly.Block
      * @param {String/dropdown}
      *            PICTURE - Smiley1-4
      * @param {Number}
-     *            X Position on screen
+     *            X Position on a matrix
      * @param {Number}
-     *            Y Position on screen
+     *            Y Position on a matrix
      * @returns immediately
      * @memberof Block
      */

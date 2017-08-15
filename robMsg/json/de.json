@@ -810,7 +810,7 @@
   "ORA_USER_GROUP_SAVE_AS_ERROR_USER_GROUP_EXISTS": "Es gibt bereits einen Benutzer mit diesem Namen in dieser Gruppe, versuche es mit einem anderen Benutzernamen.",
   "IMAGE_INVERT": "invertiere",
   "IMAGE_SHIFT": "verschiebe",
-  "SENSOR_JOYSTICK":"joystick",
+  "SENSOR_JOYSTICK":"Joystick",
   "JOYSTICK_GETSAMPLE_TOOLTIP":"Gets the current reading of one of the axises of the joystick",
   "BOB3_ARM":"arm",
   "BOB3_ARM_PAIR":"Pad-Paar",
@@ -834,5 +834,14 @@
   "MAKEBLOCKBRICK_TOOLTIP": "Block für den EV3 Stein mit den angeschlossenen Aktoren und Sensoren. Es gibt auch weitere eingebaute Aktoren und Sensoren, wie z. B. das Display, die Tasten ...",
   "ULTRASONIC_TOOLTIP":"Block für den Temperatursensor.",
   "GEARED_MOTOR":"Getriebemotor",
-  "MOTOR_BIG_TOOLTIP":"Block für den Getriebemotor."
+  "MOTOR_BIG_TOOLTIP":"Block für den Getriebemotor.",
+  "LED_TOOLTIP" : "Block für den LED.",
+  "LED_MATRIX" : "LED Matrix",
+  "LED_MATRIX_TOOLTIP" : "Block für den LED Matrix.",
+  "LED" : "LED",
+  "JOYSTICK_TOOLTIP" : "Block für den Joystick",
+  "ACCELEROMETER_TOOLTIP" : "Block für den Beschleunigungsmesser",
+  "AMBIENTLIGHT_TOOLTIP" : "Block für den Umgebungslichtsensor",
+  "PIRMOTION_TOOLTIP" : "Block für den PIR Bewegungssensor",
+  "SENSOR_PIRMOTION" : " PIR Bewegungssensor"
 }
