@@ -50,6 +50,7 @@ Blockly.Xml.workspaceToDom = function(workspace) {
   xml.setAttribute('robottype', workspace.device);
   xml.setAttribute('xmlversion', workspace.version);
   xml.setAttribute('description', workspace.description);
+  xml.setAttribute('tags', workspace.tags);
   return xml;
 };
 
@@ -360,6 +361,11 @@ Blockly.Xml.domToWorkspace = function(xml, workspace) {
       workspace.description = xml.getAttribute('description');
   } else {
       workspace.description = "";
+  }
+  if (xml.getAttribute('tags')) {
+      workspace.tags = xml.getAttribute('tags');
+  } else {
+      workspace.tags = "";
   }
   for (var i = 0; i < childCount; i++) {
     var xmlChild = xml.childNodes[i];
