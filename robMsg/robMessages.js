@@ -910,3 +910,5 @@ Blockly.Msg.JOYSTICK_TOOLTIP = 'Represents a joystick.';
 Blockly.Msg.ACCELEROMETER_TOOLTIP = 'Represents an accelerometer.';
 Blockly.Msg.AMBIENTLIGHT_TOOLTIP = 'Represents an ambientlight sensor.';
 Blockly.Msg.PIRMOTION_TOOLTIP = 'Represents an PIR motion sensor.';
+Blockly.Msg.NAO_RECOGNIZEWORD = 'recognize word from';
+Blockly.Msg.NAO_RECOGNIZEWORD_TOOLTIP = 'Make NAO recognize a word or a phrase from the provided list';

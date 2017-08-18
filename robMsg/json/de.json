@@ -843,5 +843,7 @@
   "ACCELEROMETER_TOOLTIP" : "Block für den Beschleunigungsmesser",
   "AMBIENTLIGHT_TOOLTIP" : "Block für den Umgebungslichtsensor",
   "PIRMOTION_TOOLTIP" : "Block für den PIR Bewegungssensor",
-  "SENSOR_PIRMOTION" : " PIR Bewegungssensor"
+  "SENSOR_PIRMOTION" : " PIR Bewegungssensor",
+  "NAO_RECOGNIZEWORD": "Erkenne Wort aus dem List",
+  "NAO_RECOGNIZEWORD_TOOLTIP": "Nao erkennt das Wort oder den Satz aus dem gegebenen List"
 }

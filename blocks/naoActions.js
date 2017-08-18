@@ -21,7 +21,7 @@ Blockly.Blocks['naoActions_mode'] = {
      * @constructs naoActions_mode
      * @this.Blockly.Block
      * @param {String}
-     *            DIRECTION mode for NAO 
+     *            DIRECTION mode for NAO
      * @returns immediately
      * @memberof Block
      */
@@ -340,20 +340,21 @@ Blockly.Blocks['naoActions_recognizeWord'] = {
     /**
      * Recognize a word.
      *
-     * @constructs naoActions_playFile
+     * @constructs naoActions_recognizeWord
      * @this.Blockly.Block
      * @param {String}
      *            WORD Word to recognize
      * @returns immediately
      * @memberof Block
      */
-    init : function() {
-        this.setColour(Blockly.CAT_ACTION_RGB);
-        this.appendValueInput('WORD').appendField(Blockly.Msg.NAO_RECOGNIZEWORD);
-        this.setPreviousStatement(true);
-        this.setNextStatement(true);
-        this.setTooltip(Blockly.Msg.NAO_RECOGNIZEWORD_TOOLTIP);
-    }
+     init : function() {
+         this.setColour(Blockly.CAT_ACTION_RGB);
+         this.appendValueInput('WORD').appendField(Blockly.Msg.NAO_RECOGNIZEWORD).setCheck(['Array_String', 'String']);
+         this.setPreviousStatement(false);
+         this.setNextStatement(false);
+         this.setOutput(true, 'String');
+         this.setTooltip(Blockly.Msg.NAO_RECOGNIZEWORD_TOOLTIP);
+     }
 };
 
 Blockly.Blocks['naoActions_setVolume'] = {
@@ -421,7 +422,7 @@ Blockly.Blocks['naoActions_setLanguage'] = {
      * @constructs naoActions_setLanguage
      * @this.Blockly.Block
      * @param {String}
-     *            LANGUAGE 
+     *            LANGUAGE
      * @returns immediately
      * @memberof Block
      */
