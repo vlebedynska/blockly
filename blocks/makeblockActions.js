@@ -114,17 +114,15 @@ Blockly.Blocks['makeblockActions_display_image'] = {
       this.setColour(Blockly.CAT_ACTION_RGB);
       var actorPort = new Blockly.FieldDropdown([['Port 1', '1'], ['Port 2', '2'], ['Port 3', '3'], ['Port 4', '4']]);
       this.appendValueInput('VALUE').appendField(Blockly.Msg.DISPLAY_SHOW).appendField(Blockly.Msg.DISPLAY_IMAGE).setCheck('Image').appendField(actorPort, 'SENSORPORT');
-      this.appendValueInput('X').setCheck('Number').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.X);
-      this.appendValueInput('Y').setCheck('Number').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.Y);
       this.setPreviousStatement(true);
       this.setNextStatement(true);
       this.setTooltip(Blockly.Msg.DISPLAY_PICTURE_TOOLTIP);
     }
 };
 
-Blockly.Blocks['makeblockActions_display_number'] = {
+Blockly.Blocks['makeblockActions_display_text'] = {
     /**
-     * Display an image on the screen.
+     * Display a text on the screen.
      *
      * @constructs makeblockActions_display_number
      * @this.Blockly.Block
@@ -135,7 +133,8 @@ Blockly.Blocks['makeblockActions_display_number'] = {
     init : function() {
         var actorPort = new Blockly.FieldDropdown([['Port 1', '1'], ['Port 2', '2'], ['Port 3', '3'], ['Port 4', '4']]);
         this.setColour(Blockly.CAT_ACTION_RGB);
-        this.appendValueInput('VALUE').appendField(Blockly.Msg.DISPLAY_SHOW ).appendField(Blockly.Msg.VARIABLES_TYPE_NUMBER ).setCheck('Number').appendField(actorPort, 'SENSORPORT');
+        this.appendValueInput('VALUE').appendField(Blockly.Msg.DISPLAY_SHOW + ' ' + Blockly.Msg.DISPLAY_TEXT).setCheck([ 'Number', 'Boolean', 'String',
+                'Colour', 'Connection' ]).appendField(actorPort, 'SENSORPORT');
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setTooltip(Blockly.Msg.DISPLAY_PICTURE_TOOLTIP);
