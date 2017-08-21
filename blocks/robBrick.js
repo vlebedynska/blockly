@@ -122,7 +122,7 @@ Blockly.Blocks['robBrick_voltage'] = {
 
     init : function() {
         this.setColour(Blockly.CAT_SENSOR_RGB);
-        this.appendDummyInput().appendField(Blockly.Msg.SENSOR_VOLTAGE);
+        this.appendDummyInput().appendField(Blockly.Msg.SENSOR_BATTERY);
         this.setOutput(true, 'Sensor');
         this.setTooltip(Blockly.Msg.BATTERY_GETSAMPLE_TOOLTIP);
     }
