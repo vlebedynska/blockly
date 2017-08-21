@@ -112,7 +112,21 @@ Blockly.Blocks['robBrick_ardu-Brick'] = {
     }
 };
 
+Blockly.Blocks['robBrick_voltage'] = {
+    /**
+     * Represent a voltage sensor.
+     *
+     * @constructs robBrick_voltage
+     * @memberof Block
+     */
 
+    init : function() {
+        this.setColour(Blockly.CAT_SENSOR_RGB);
+        this.appendDummyInput().appendField(Blockly.Msg.SENSOR_VOLTAGE);
+        this.setOutput(true, 'Sensor');
+        this.setTooltip(Blockly.Msg.BATTERY_GETSAMPLE_TOOLTIP);
+    }
+};
 
 Blockly.Blocks['robBrick_ultrasonic'] = {
     /**
