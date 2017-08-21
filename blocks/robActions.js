@@ -186,9 +186,7 @@ Blockly.Blocks['robActions_motor_stop'] = {
         var ports = [ [ Blockly.Msg.MOTOR_PORT + ' A', 'A' ], [ Blockly.Msg.MOTOR_PORT + ' B', 'B' ], [ Blockly.Msg.MOTOR_PORT + ' C', 'C' ] ];
         if (this.workspace.device === 'ev3') {
             ports.push([ Blockly.Msg.MOTOR_PORT + ' D', 'D' ]);
-        } else if (this.workspace.device === 'makeblock') {
-          ports = [ [ Blockly.Msg.MOTOR_PORT + ' M1', 'M1' ], [ Blockly.Msg.MOTOR_PORT + ' M2', 'M2' ] ];
-        }
+        } 
         var motorPort = new Blockly.FieldDropdown(ports);
         var mode = new Blockly.FieldDropdown([ [ Blockly.Msg.MOTOR_FLOAT, 'FLOAT' ], [ Blockly.Msg.MOTOR_BRAKE, 'NONFLOAT' ] ]);
         this.appendDummyInput().appendField(Blockly.Msg.MOTOR_STOP).appendField(motorPort, 'MOTORPORT').appendField(mode, 'MODE');

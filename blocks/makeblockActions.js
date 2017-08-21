@@ -141,11 +141,11 @@ Blockly.Blocks['makeblockActions_display_text'] = {
     }
 };
 
-Blockly.Blocks['makeblokcActions_display_clear'] = {
+Blockly.Blocks['makeblockActions_display_clear'] = {
     /**
      * Clear the display.
      *
-     * @constructs mbedActions_display_clear
+     * @constructs makeblockActions_display_clear
      * @this.Blockly.Block
      * @returns immediately
      * @memberof Block
@@ -157,5 +157,27 @@ Blockly.Blocks['makeblokcActions_display_clear'] = {
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setTooltip(Blockly.Msg.DISPLAY_CLEAR_TOOLTIP);
+    }
+};
+
+Blockly.Blocks['makeblockActions_motor_stop'] = {
+    /**
+     * Stop this motor.
+     *
+     * @constructs makeblockActions_motor_stop
+     * @this.Blockly.Block
+     * @param {String/dropdown}
+     *            MOTORPORT: M1, M2
+     * @returns immediately
+     * @memberof Block
+     */
+    init : function() {
+        this.setColour(Blockly.CAT_ACTION_RGB);
+        var ports = [ [ Blockly.Msg.MOTOR_PORT + ' M1', 'M1' ], [ Blockly.Msg.MOTOR_PORT + ' M2', 'M2' ] ];
+        var motorPort = new Blockly.FieldDropdown(ports);
+        this.appendDummyInput().appendField(Blockly.Msg.MOTOR_STOP).appendField(motorPort, 'MOTORPORT');
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setTooltip(Blockly.Msg.MOTOR_STOP_TOOLTIP);
     }
 };

@@ -442,7 +442,6 @@ Blockly.Blocks['robBrick_motor_geared'] = {
 
     init : function() {
         this.setColour(Blockly.CAT_ACTION_RGB);
-        var motorReverse = new Blockly.FieldDropdown([ [ Blockly.Msg.MOTOR_FOREWARD, 'OFF' ], [ Blockly.Msg.MOTOR_BACKWARD, 'ON' ] ]);
         var motorSide = new Blockly.FieldDropdown([ [ Blockly.Msg.MOTOR_RIGHT, 'RIGHT' ], [ Blockly.Msg.MOTOR_LEFT, 'LEFT' ] ]);
         this.appendDummyInput().appendField(Blockly.Msg.GEARED_MOTOR);
         this.appendDummyInput().appendField(Blockly.Msg.MOTOR_SIDE).appendField(motorSide, 'MOTOR_DRIVE').setAlign(Blockly.ALIGN_RIGHT);
