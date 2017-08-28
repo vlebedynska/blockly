@@ -105,7 +105,7 @@
          var arm = new Blockly.FieldDropdown([ [ 'Left', '1' ], [ 'Right', '2' ] ]);
          var pair = new Blockly.FieldDropdown([ [ 'Bottom', '1' ], [ 'Lower middle', '2' ], [ 'Upper middle', '3' ], [ 'Upper', '4' ] ]);
          sensorType = new Blockly.FieldDropdown([ [ Blockly.Msg.BOB3_ARM_PAIR + ' ' + Blockly.Msg.SENSOR_PRESSED, 'TOUCH' ],
-                 [ Blockly.Msg.MODE_AMBIENTLIGHT, 'LIGHT_LEVEL' ], [ Blockly.Msg.SENSOR_TIME, 'TIME' ],
+                 [ Blockly.Msg.MODE_AMBIENTLIGHT, 'LIGHT_LEVEL' ],
                  [ Blockly.Msg.SENSOR_TEMPERATURE, 'TEMPERATURE' ], [ Blockly.Msg.SENSOR_CODE, 'CODE' ] ], function(option) {
              if (option && this.sourceBlock_.getFieldValue('SENSORTYPE') !== option) {
                  this.sourceBlock_.updateShape_(option);
