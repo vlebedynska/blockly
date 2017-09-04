@@ -37,7 +37,7 @@ Blockly.Blocks['robColour_picker'] = {
             Blockly.FieldColour.COLUMNS = 13;
             Blockly.FieldColour.COLOURS = new Array("#585858", "#000000", "#0057a6", "#00642e", "#f7d117", "#b30006", "#FFFFFF", "#EE82EE", "#800080", "#00FF00", "#FFA500", "#DC143C", '#FF00FF' );
         }
-        else if (this.workspace.device === 'nibo') {
+        else if (this.workspace.device === 'bob3') {
             colorField = new Blockly.FieldColour('#0000FF');
             Blockly.FieldColour.COLUMNS = 19;
             Blockly.FieldColour.COLOURS = new Array("#DD4422", "#0000FF", "#00FF00", "#FFFF00", "#FF0000", "#FFFFFF", "#6633AA", "#FF0088", "#00FFFF", "#FF8800", "#FF00FF", "#77FFDD", '#FF7755', '#6699EE', '#4488AA', '#4466EE', '#228822', '#55FF99', '#000000');
