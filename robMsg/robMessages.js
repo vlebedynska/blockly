@@ -866,8 +866,8 @@ Blockly.Msg.IMAGE_INVERT = 'invert';
 Blockly.Msg.IMAGE_SHIFT = 'shift';
 
 Blockly.Msg.POPUP_AGE = 'Age';
-Blockly.Msg.YOUNGER_THEN_14 = 'I am younger then 14!';
-Blockly.Msg.OLDER_THEN_14 = 'I am older then 14!';
+Blockly.Msg.YOUNGER_THEN_14 = 'I am younger than 14!';
+Blockly.Msg.OLDER_THEN_14 = 'I am 14 or older than 14!';
 Blockly.Msg.ORA_USER_ACTIVATION_SENT_MAIL_SUCCESS = 'We send a mail to you, please check your mailbox!';
 Blockly.Msg.ORA_USER_ACTIVATION_SENT_MAIL_FAIL = 'Sorry, we cannot send a mail to you, please contact »roberta-zentrale@iais.fraunhofer.de«';
 Blockly.Msg.ORA_USER_ACTIVATION_SUCCESS = 'Activation of the user account is successful!';
@@ -910,5 +910,15 @@ Blockly.Msg.JOYSTICK_TOOLTIP = 'Represents a joystick.';
 Blockly.Msg.ACCELEROMETER_TOOLTIP = 'Represents an accelerometer.';
 Blockly.Msg.AMBIENTLIGHT_TOOLTIP = 'Represents an ambientlight sensor.';
 Blockly.Msg.PIRMOTION_TOOLTIP = 'Represents an PIR motion sensor.';
+<<<<<<< Updated upstream
 Blockly.Msg.NAO_RECOGNIZEWORD = 'recognize word from';
 Blockly.Msg.NAO_RECOGNIZEWORD_TOOLTIP = 'Make NAO recognize a word or a phrase from the provided list';
+=======
+
+Blockly.Msg.HINT_USER_ACCOUNT = 'todo';
+Blockly.Msg.HINT_USER_PASSWORT = 'todo';
+Blockly.Msg.HINT_USER_PASSWORT_CONFIRM = 'todo';
+Blockly.Msg.HINT_USER_NAME = 'todo';
+Blockly.Msg.HINT_USER_EMAIL = 'todo';
+Blockly.Msg.HINT_USER_AGE = 'todo';
+>>>>>>> Stashed changes

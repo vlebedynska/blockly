@@ -832,9 +832,7 @@
   "SENSOR_AMBIENTLIGHT": "Umgebungslichtsensor",
   "TIMEOUT": "Auszeit",
   "MAKEBLOCKBRICK_TOOLTIP": "Block für den EV3 Stein mit den angeschlossenen Aktoren und Sensoren. Es gibt auch weitere eingebaute Aktoren und Sensoren, wie z. B. das Display, die Tasten ...",
-  "ULTRASONIC_TOOLTIP":"Block für den Temperatursensor.",
   "GEARED_MOTOR":"Getriebemotor",
-  "MOTOR_BIG_TOOLTIP":"Block für den Getriebemotor.",
   "LED_TOOLTIP" : "Block für den LED.",
   "LED_MATRIX" : "LED Matrix",
   "LED_MATRIX_TOOLTIP" : "Block für den LED Matrix.",
@@ -844,6 +842,15 @@
   "AMBIENTLIGHT_TOOLTIP" : "Block für den Umgebungslichtsensor",
   "PIRMOTION_TOOLTIP" : "Block für den PIR Bewegungssensor",
   "SENSOR_PIRMOTION" : " PIR Bewegungssensor",
-  "NAO_RECOGNIZEWORD": "Erkenne Wort aus dem List",
-  "NAO_RECOGNIZEWORD_TOOLTIP": "Nao erkennt das Wort oder den Satz aus dem gegebenen List"
+  "NAO_RECOGNIZEWORD_TOOLTIP": "Nao erkennt das Wort oder den Satz aus dem gegebenen List",
+  
+  "POPUP_AGE" : "Alter",
+  "YOUNGER_THEN_14" : "Ich bin jünger als 14!",
+  "OLDER_THEN_14" : "Ich bin 14 oder älter!",
+  "HINT_USER_ACCOUNT" : "»IchBinBotman« oder »RobellaStracciatella«? Deinen richtigen Namen muss nicht jeder kennen. Denk dir lieber einen Spitznamen aus, an den du dich gut erinnern kannst!",
+  "HINT_USER_PASSWORT" : "12345 ist kein gutes Passwort ;-)! Such dir lieber eine sichere Kombination aus Zahlen und Buchstaben aus, die du gut behalten kannst! Es muss mindestens sechs Zeichen lang sein!",
+  "HINT_USER_PASSWORT_CONFIRM" : "Alles richtig geschrieben? Gib dein Passwort vorsichtshalber nochmal ein.",
+  "HINT_USER_NAME" : "In diesem Feld kannst du deinen richtigen Namen eintragen, aber nur wenn du möchtest. Dieser Name wird nur dir angezeigt, z. B. wenn das Lab dich begrüßt.",
+  "HINT_USER_EMAIL" : "Diese Angabe ist freiwillig! Einige Funktionen sind aber nur mit E-Mail möglich. Du bist unter 14 Jahre alt? Dann bitte deine Eltern, dir bei der Anmeldung zu helfen, und gib ihre Mail-Adresse ein. <br><a href='http://typo3.p404214.webspaceconfig.de/index.php?id=138' target='_blank'>Mehr Infos ...</a>",
+  "HINT_USER_AGE" : "Bist du jünger als 14 Jahre? Dann bitte deine Eltern, dir zu helfen. Sie können oben ihre E-Mail-Adresse zur Bestätigung deines Kontos angeben."
 }
