@@ -43,7 +43,7 @@ Blockly.Blocks['makeblockActions_leds_off'] = {
     init : function() {
         var ledSide = new Blockly.FieldDropdown([ [ 'Left', 'Left' ], [ 'Right', 'Right' ] ]);
         this.setColour(Blockly.CAT_ACTION_RGB);
-        this.appendDummyInput().appendField(Blockly.Msg.BRICKLIGHT).appendField(Blockly.Msg.OFF).appendField(ledSide, 'LEDSIDE');
+        this.appendDummyInput().appendField(Blockly.Msg.LED_OFF).appendField(Blockly.Msg.BRICKLIGHT_COLOR).appendField(ledSide, 'LEDSIDE');
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setTooltip(Blockly.Msg.BRICKLIGHT_OFF_TOOLTIP);
