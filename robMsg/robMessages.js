@@ -519,7 +519,6 @@ Blockly.Msg.MOTOR_STEER = 'steer';
 Blockly.Msg.MODE_OBSTACLE = 'obstacle';
 Blockly.Msg.SENSOR_LIGHT = 'light sensor';
 Blockly.Msg.SENSOR_AMBIENTLIGHT = 'ambientlight sensor';
-Blockly.Msg.SENSOR_PIRMOTION= 'PIR Motion sensor';
 Blockly.Msg.LIGHT_GETSAMPLE_TOOLTIP = 'Gets the current reading from the light sensor.';
 Blockly.Msg.SENSOR_SOUND = 'sound sensor';
 Blockly.Msg.SOUND_GETSAMPLE_TOOLTIP = 'Gets the current reading from the sound sensor.';
@@ -778,44 +777,51 @@ Blockly.Msg.NAO_FILENAME = 'filename';
 
 // Tooltips for the nao blocks
 /// NAO tooltips
-Blockly.Msg.NAO_MODE_TOOLTIP = 'Turns the stiffness of the robot"s motors on and goes to a standing posture, or goes to a resting posture and turns the stiffness off.';
-Blockly.Msg.NAO_APPLYPOSTURE_TOOLTIP = 'Robot goes into the selected posture.';
-Blockly.Msg.NAO_POINTLOOKAT_TOOLTIP = 'Rbbot points or looks at a given position';
-Blockly.Msg.NAO_STIFFNESS_TOOLTIP = 'The stiffness of the selected body part is turned on or off';
-Blockly.Msg.NAO_WALK_TOOLTIP = 'Makes the robot walk a distance.';
-Blockly.Msg.NAO_TURN_TOOLTIP = 'Turns the robot for number of degrees';
-Blockly.Msg.NAO_WALKTO_TOOLTIP = 'The robot walks to the give position.';
-Blockly.Msg.NAO_STOP_TOOLTIP = 'The robot stops all movement.';
-Blockly.Msg.NAO_SETVOLUME_TOOLTIP = 'Set the volume.';
+Blockly.Msg.NAO_MODE_TOOLTIP = 'This block allows to move the robot in to three different modes. Active makes the robot activate all motors and go to a standing position. Rest makes the robotgo to a prone stance and deactivate all motors. In Sit also all motors will be deactivated and the robot will sit down.';
+Blockly.Msg.NAO_APPLYPOSTURE_TOOLTIP = 'Robot goes into the selected posture. Use the dropdown menu to choose between different stand, sit and lying positions.';
+Blockly.Msg.NAO_STIFFNESS_TOOLTIP = 'The stiffness of the selected body part of the robot is turned on or off. Be aware that releasing the leg motors while the robot is standing may result in downfall.';
+Blockly.Msg.NAO_AUTONOMOUS_TOOLTIP = 'Turn the robots autonomous life on or off. When it is turned on the robot will react to sounds and try to detect faces. Turn it off if this behaviour interrupts your programm.'
+Blockly.Msg.NAO_HAND_TOOLTIP = 'Open or close a single hand of the robot.';
+Blockly.Msg.NAO_MOVEJOINT_TOOLTIP = 'Move a single joint of the robot. A relative movement means that the current position of the selected joint is used to calculate the new position. Be aware that every joint has different limits. Therefore the input range for the degerees varies.';
+
+Blockly.Msg.NAO_WALK_TOOLTIP = 'Makes the robot walk a distance entered in cm. Distances below 10cm might lead to no movement at all. Depending on your robot and the surface the robots is walking on the distance might not be exact.';
+Blockly.Msg.NAO_TURN_TOOLTIP = 'Turns the robot for number of degrees. Only enter positive values and use the dropdown to select the direction. It is possible to enter values up to 360 degrees.';
+Blockly.Msg.NAO_WALKTO_TOOLTIP = 'The robot walks to the given position. The values are entered in cm and radians and are based on the coordinate system in NAOs body. Please refer to the wiki for more information on the coordinate system and how to calculate the coordinates.';
+Blockly.Msg.NAO_STOP_TOOLTIP = 'The robot immediately stops all movement. Be aware that this can lead to situations where downfall is possible.';
+
+Blockly.Msg.NAO_ANIMATION_TOOLTIP = 'Perform the selected animation. TaiChi is a complex and artistic set of moves. Blink will only make the robot blink by using its LEDs. The wink and wipe forehead animation can be performed while siting and standing.';
+Blockly.Msg.NAO_POINTLOOKAT_TOOLTIP = 'Robot points or looks at a given position. The robot will move one of its hands or the head. Select the frame that is the point of reference. The values are entered in centimeter. Refer to the wiki for more information about the coordinate systems.';
+
+Blockly.Msg.NAO_SETVOLUME_TOOLTIP = 'Set the volume in a range from 0 to 100.';
 Blockly.Msg.NAO_GETVOLUME_TOOLTIP = 'Get the volume.';
-Blockly.Msg.NAO_GETLANGUAGE_TOOLTIP = 'Get the active language.';
-Blockly.Msg.NAO_SETLANGUAGE_TOOLTIP = 'Set the language.'
-Blockly.Msg.NAO_LEDOFF_TOOLTIP = 'Turn the LEDs off.';
-Blockly.Msg.NAO_LEDRESET_TOOLTIP = 'Reset the LEDs.';
-Blockly.Msg.NAO_RANDOMEYES_TOOLTIP = 'The color of the eyes is changed randomly for a specified amount of time.';
-Blockly.Msg.NAO_RASTA_TOOLTIP = 'The color of the eyes is changed between green, yellow and red for a specified amount of time.';
+Blockly.Msg.NAO_GETLANGUAGE_TOOLTIP = 'Get the active language. This is the language the robot is currently using for Text to Speech and Voice recognition.';
+Blockly.Msg.NAO_SETLANGUAGE_TOOLTIP = 'Set the language. Be aware that it is necessary to download the language pack before you can use it. For more information refer to the manual of your robot.'
+Blockly.Msg.NAO_SAY_TOOLTIP = 'The robot says the given text. It is also possible to enter special charaters. The robot will use the selected language to try and speak the entered text.';
+Blockly.Msg.NAO_PLAYFILE_TOOLTIP = 'Plays a sound file from the robot. Enter the name of the file. The file needs to be transferred to the robot beforehand.';
+
+Blockly.Msg.NAO_TAKEPICTURE_TOOLTIP = 'Takes a picture and saves it on the robot. Access the robots file system to view the picture.';
+Blockly.Msg.NAO_RECORDVIDEO_TOOLTIP = 'Records a video and saves it on the robot. Access the robots file system to view the video.';
+
+Blockly.Msg.NAO_LED_TOOLTIP = 'Set the color of a group of LEDs.';
+Blockly.Msg.NAO_SETINTENSITY_TOOLTIP = 'Set the intensity of a group of LEDs in a range from 0 to 100.';
+Blockly.Msg.NAO_LEDOFF_TOOLTIP = 'Turn the selected LEDs off.';
+Blockly.Msg.NAO_LEDRESET_TOOLTIP = 'Reset the selected LEDs to their original state regarding colour and intensity.';
+Blockly.Msg.NAO_RANDOMEYES_TOOLTIP = 'The color of the eyes is changed randomly for a specified amount of time entered in milliseconds.';
+Blockly.Msg.NAO_RASTA_TOOLTIP = 'The color of the eyes is changed between green, yellow and red for a specified amount of time entered in milliseconds.';
+
+Blockly.Msg.NAO_TOUCHSENSOR_TOOLTIP = 'Is true if the selected touchsensor on the robot was touched.';
 Blockly.Msg.NAO_GYROMETER_TOOLTIP = 'Get the current reading from the gyrometer in the given direction.';
 Blockly.Msg.NAO_ACCELEROMETER_TOOLTIP = 'Get the current reading from the accelerometer in the given direction';
-Blockly.Msg.NAO_TOUCHSENSOR_TOOLTIP = 'Is true if touch sensor on the robot is touched.';
-Blockly.Msg.NAO_NAOMARK_TOOLTIP = 'Get the number of a detected Nao Mark.';
-Blockly.Msg.NAO_TAKEPICTURE_TOOLTIP = 'Takess a picture and save it on the robot.';
-Blockly.Msg.NAO_RECORDVIDEO_TOOLTIP = 'Records a video and saves it on the robot.';
+
+Blockly.Msg.NAO_NAOMARK_TOOLTIP = 'Tries to deetect and identify a NAO Mark in the current camera picture. If a NAO Mark is detected it will be identified and the block returns the corresponding. For a list of the NAO Mark and the corresponding numbers refer to the wiki.';
 Blockly.Msg.NAO_FSR_TOOLTIP = 'Get the current reading from the force sensitive resistor under the feet of the robot.';
-Blockly.Msg.NAO_PLAYFILE_TOOLTIP = 'Plays a sound file from the robot.';
 Blockly.Msg.NAO_DIALOG_TOOLTIP = 'The robot tries to recognize the phrase and answers on success.';
 Blockly.Msg.NAO_RECOGNIZEDWORD_TOOLTIP = 'Returns the last word the robot recognized.';
-Blockly.Msg.NAO_LED_TOOLTIP = 'Set the color of a group of LEDs.';
-Blockly.Msg.NAO_LEARNFACE_TOOLTIP = 'Learn and save a face under a given name';
-Blockly.Msg.NAO_FORGETFACE_TOOLTIP = 'Forget a face previously saved under a given name';
-Blockly.Msg.NAO_DETECTFACE_TOOLTIP = 'Detect a face previously saved under a given name';
-Blockly.Msg.NAO_ANIMATION_TOOLTIP = 'Perform the selected animation.';
-Blockly.Msg.NAO_MOVEJOINT_TOOLTIP = 'Move a single joint.';
-Blockly.Msg.NAO_HAND_TOOLTIP = 'Open/close a hand.';
-Blockly.Msg.NAO_SAY_TOOLTIP = 'The robot says the given text.';
-Blockly.Msg.NAO_GETCURRENT_TOOLTIP = 'Get the electric current from the selected joint.';
-Blockly.Msg.NAO_SETINTENSITY_TOOLTIP = 'Set the intensity of a group of LEDs.';
-Blockly.Msg.NAO_CHAT_TOOLTIP = 'Add a reaction if a word is recognized.';
-Blockly.Msg.NAO_AUTONOMOUS_TOOLTIP = 'Toggle the state of Autonomous life. Turn Autonomous life off to gain more control over NAOs behaviour.';
+
+Blockly.Msg.NAO_LEARNFACE_TOOLTIP = 'Learn and save a face under a given name in the vision recognition database on the robot.';
+Blockly.Msg.NAO_FORGETFACE_TOOLTIP = 'Delete a face previously saved under a given name from the vision recognition database on the robot. ';
+Blockly.Msg.NAO_DETECTFACE_TOOLTIP = 'Detect a face previously learned and saved.';
+Blockly.Msg.NAO_GETCURRENT_TOOLTIP = 'Get the electric current from the motorboard in the selected joint.';
 //
 Blockly.Msg.MENU_CODE_DOWNLOAD_TOOLTIP = 'Download the source code of your program on the computer';
 Blockly.Msg.MENU_CODE_REFRESH_TOOLTIP = 'Refresh the source code, if you have changed the NEPO Block"s.';
@@ -866,8 +872,8 @@ Blockly.Msg.IMAGE_INVERT = 'invert';
 Blockly.Msg.IMAGE_SHIFT = 'shift';
 
 Blockly.Msg.POPUP_AGE = 'Age';
-Blockly.Msg.YOUNGER_THEN_14 = 'I am younger than 14!';
-Blockly.Msg.OLDER_THEN_14 = 'I am 14 or older than 14!';
+Blockly.Msg.YOUNGER_THEN_14 = 'I am younger then 14!';
+Blockly.Msg.OLDER_THEN_14 = 'I am older then 14!';
 Blockly.Msg.ORA_USER_ACTIVATION_SENT_MAIL_SUCCESS = 'We send a mail to you, please check your mailbox!';
 Blockly.Msg.ORA_USER_ACTIVATION_SENT_MAIL_FAIL = 'Sorry, we cannot send a mail to you, please contact »roberta-zentrale@iais.fraunhofer.de«';
 Blockly.Msg.ORA_USER_ACTIVATION_SUCCESS = 'Activation of the user account is successful!';
@@ -898,27 +904,3 @@ Blockly.Msg.VARIABLE_USED_BEFORE_DECLARATION = 'The variable is used before decl
 Blockly.Msg.ORA_PROGRAM_INVALID_STATEMETNS = 'There are errors in your program. Please check the messages';
 Blockly.Msg.TIMEOUT = 'timeout';
 Blockly.Msg.SLEEP = 'sleep';
-Blockly.Msg.MAKEBLOCKBRICK_TOOLTIP = 'Represents the MakeBlock brick with connected actors and sensors. There are also inbuilt actors and sensors available, e.g. buttons, display ...';
-Blockly.Msg.TEMPERATURE_TOOLTIP = 'Represents a temperature sensor.';
-Blockly.Msg.GEARED_MOTOR = 'Geared motor';
-Blockly.Msg.MOTOR_GEARED_TOOLTIP = 'Represents a geared motor.';
-Blockly.Msg.LED_TOOLTIP = 'Represents an external LED.';
-Blockly.Msg.LED_MATRIX = 'LED matrix';
-Blockly.Msg.LED = 'LED';
-Blockly.Msg.LED_MATRIX_TOOLTIP = 'Represents an LED matrix';
-Blockly.Msg.JOYSTICK_TOOLTIP = 'Represents a joystick.';
-Blockly.Msg.ACCELEROMETER_TOOLTIP = 'Represents an accelerometer.';
-Blockly.Msg.AMBIENTLIGHT_TOOLTIP = 'Represents an ambientlight sensor.';
-Blockly.Msg.PIRMOTION_TOOLTIP = 'Represents an PIR motion sensor.';
-<<<<<<< Updated upstream
-Blockly.Msg.NAO_RECOGNIZEWORD = 'recognize word from';
-Blockly.Msg.NAO_RECOGNIZEWORD_TOOLTIP = 'Make NAO recognize a word or a phrase from the provided list';
-=======
-
-Blockly.Msg.HINT_USER_ACCOUNT = 'todo';
-Blockly.Msg.HINT_USER_PASSWORT = 'todo';
-Blockly.Msg.HINT_USER_PASSWORT_CONFIRM = 'todo';
-Blockly.Msg.HINT_USER_NAME = 'todo';
-Blockly.Msg.HINT_USER_EMAIL = 'todo';
-Blockly.Msg.HINT_USER_AGE = 'todo';
->>>>>>> Stashed changes
