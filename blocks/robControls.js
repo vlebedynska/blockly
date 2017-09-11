@@ -502,7 +502,7 @@ Blockly.Blocks['robControls_wait_for'] = {
             if (this.workspace.device === 'ardu') {
                 s = this.workspace.newBlock('robSensors_getSample_ardu');
             }
-            else if (this.workspace.device === 'nibo') {
+            else if (this.workspace.device === 'bob3') {
                 s = this.workspace.newBlock('bob3Sensors_getSample_bob3');
             }
             else if (this.workspace.device === 'mbot') {

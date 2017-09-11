@@ -78,7 +78,7 @@ Blockly.Blocks['bob3Communication_receiveBlock'] = {
 //            }
 //        });
 //        this.dataType_ = 'Number';
-        this.appendDummyInput('receiveData').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.CONNECTION_RECEIVED_DATA);
+        this.appendDummyInput('receiveData').appendField(Blockly.Msg.CONNECTION_RECEIVED_DATA);
         this.setOutput(true, 'Number');
         this.setTooltip(Blockly.Msg.CONNECTION_BOB3_RECEIVE_TOOLTIP);
         this.setInputsInline(false);

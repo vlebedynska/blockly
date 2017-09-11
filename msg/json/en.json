@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2017-09-10 22:07:53.533817",
+		"lastupdated": "2017-09-11 07:44:58.315022",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -1189,11 +1189,10 @@
 	"HINT_USER_NAME": "Enter your real name here if you like. This is just for you, no one else will see it.",
 	"HINT_USER_EMAIL": "This is voluntary! However, some functions of the lab are only available if you have verified your account by e-mail. You are younger than 14? Please ask your parents to help you out with one of their e-mail addresses. <br><a href='http://typo3.p404214.webspaceconfig.de/index.php?id=138' target='_blank'>Further information ...</a>",
 	"HINT_USER_AGE": "Are you under 14? Then please ask your parents to help you. They can specify their e-mail address to confirm your account.",
-	"SENSOR_IS_ARM": "top",
-	"SENSOR_TOP": "bottom",
-	"SENSOR_BOTTOM": "is arm",
+	"SENSOR_TOP": "top",
+	"SENSOR_BOTTOM": "bottom",
 	"SENSOR_ARM_TOOLTIP": "Returns true, if the selected part of the arm is touched, otherwise false.",
-	"SET_LED": "Turn LED",
+	"SET_LED": "turn LED",
 	"CONNECTION_BOB3_RECEIVE_TOOLTIP": "Reads a message via the IR receiver. Only numbers can be received.",
 	"CONNECTION_BOB3_SEND_TOOLTIP": "Sends a message of type number to another Bob3. Hold the Bob3's face to face!"
 }

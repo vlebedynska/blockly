@@ -916,10 +916,9 @@ Blockly.Msg.HINT_USER_EMAIL = 'This is voluntary! However, some functions of the
 Blockly.Msg.HINT_USER_AGE = 'Are you under 14? Then please ask your parents to help you. They can specify their e-mail address to confirm your account.';
 
 // bob3
-Blockly.Msg.SENSOR_IS_ARM = 'top';
-Blockly.Msg.SENSOR_TOP = 'bottom';
-Blockly.Msg.SENSOR_BOTTOM = 'is arm';
+Blockly.Msg.SENSOR_TOP = 'top';
+Blockly.Msg.SENSOR_BOTTOM = 'bottom';
 Blockly.Msg.SENSOR_ARM_TOOLTIP = 'Returns true, if the selected part of the arm is touched, otherwise false.';
-Blockly.Msg.SET_LED = 'Turn LED';
+Blockly.Msg.SET_LED = 'turn LED';
 Blockly.Msg.CONNECTION_BOB3_RECEIVE_TOOLTIP = 'Reads a message via the IR receiver. Only numbers can be received.';
 Blockly.Msg.CONNECTION_BOB3_SEND_TOOLTIP = 'Sends a message of type number to another Bob3. Hold the Bob3"s face to face!';
