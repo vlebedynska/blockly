@@ -817,7 +817,7 @@ Blockly.Msg.NAO_TOUCHSENSOR_TOOLTIP = 'Is true if the selected touchsensor on th
 Blockly.Msg.NAO_GYROMETER_TOOLTIP = 'Get the current reading from the gyrometer in the given direction.';
 Blockly.Msg.NAO_ACCELEROMETER_TOOLTIP = 'Get the current reading from the accelerometer in the given direction';
 
-Blockly.Msg.NAO_NAOMARK_TOOLTIP = 'Tries to deetect and identify a NAO Mark in the current camera picture. If a NAO Mark is detected it will be identified and the block returns the corresponding. For a list of the NAO Mark and the corresponding numbers refer to the wiki.';
+Blockly.Msg.NAO_NAOMARK_TOOLTIP = 'Tries to detect and identify a NAO Mark in the current camera picture. If a NAO Mark is detected it will be identified and the block returns the corresponding. For a list of the NAO Mark and the corresponding numbers refer to the wiki.';
 Blockly.Msg.NAO_FSR_TOOLTIP = 'Get the current reading from the force sensitive resistor under the feet of the robot.';
 Blockly.Msg.NAO_DIALOG_TOOLTIP = 'The robot tries to recognize the phrase and answers on success.';
 Blockly.Msg.NAO_RECOGNIZEDWORD_TOOLTIP = 'Returns the last word the robot recognized.';
