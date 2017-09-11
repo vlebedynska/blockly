@@ -311,7 +311,8 @@ Blockly.Msg.MENU_GENERAL = 'general help'
 Blockly.Msg.MENU_SHOW_AGAIN = 'show welcome note again'
 Blockly.Msg.MENU_ROBOT_STATE_INFO = 'info';
 Blockly.Msg.MENU_STATE_INFO = 'state information';
-Blockly.Msg.MENU_ABOUT = 'about';
+Blockly.Msg.MENU_ABOUT = 'about the Open Roberta Lab';
+Blockly.Msg.MENU_ABOUT_PROJECT = 'about the Open Roberta Project';
 Blockly.Msg.MENU_LOG_IN = 'login ...';
 Blockly.Msg.MENU_LOG_OUT = 'logout';
 Blockly.Msg.MENU_CHANGE = 'change ...';
@@ -338,9 +339,9 @@ Blockly.Msg.MENU_SIM_SCENE_TOOLTIP = 'change the scene';
 Blockly.Msg.MENU_SIM_ROBOT_TOOLTIP = 'open/close the robot"s view';
 Blockly.Msg.TAB_PROGRAM = 'Program';
 Blockly.Msg.TAB_CONFIGURATION = 'Robot configuration';
-Blockly.Msg.POPUP_ABOUT_TEXT = 'The Open Roberta Lab is a cloud-based integrated programming environment that enables children and adolescents to program easily different robot systems. This platform is completely open source so taking part is desirable! Both the software and the open source developer tools are available via Fraunhofer servers.';
-Blockly.Msg.POPUP_ABOUT_TEXT_DEV = 'The Open Roberta Lab is an open-source programming platform developed by Fraunhofer IAIS within the initiative <a href="http://www.roberta-home.de/">»Roberta – Learning with Robots«</a>';
-Blockly.Msg.POPUP_ABOUT_TEXT_GOOG = 'Open Roberta was initiated in collaboration with Google Germany to reduce the hurdles for students, teachers and schools programming educational robots. Open Roberta is financed by Google.org (2014 - 2015) with 1Mio Euro.</a>';
+Blockly.Msg.POPUP_ABOUT_TEXT = 'The Open Roberta Lab is a cloud-based integrated programming environment that enables children and adolescents to program easily different robot/microcontroller systems. This platform is completely open source so taking part is desirable! Both the software and the open source developer tools are available via Fraunhofer servers.';
+Blockly.Msg.POPUP_ABOUT_TEXT_DEV = 'The Open Roberta Lab is an open-source programming platform developed by Fraunhofer IAIS within the initiative <a href="http://www.roberta-home.de/" target="_blank">»Roberta – Learning with Robots«</a>';
+Blockly.Msg.POPUP_ABOUT_TEXT_GOOG = 'Open Roberta was initiated in collaboration with Google Germany to reduce the hurdles for students, teachers and schools programming educational robots.</a>';
 Blockly.Msg.POPUP_STARTUP_START = 'Choose your system!';
 Blockly.Msg.POPUP_ABOUT_JOIN = 'I want to help';
 Blockly.Msg.POPUP_USERNAME = 'Username';
