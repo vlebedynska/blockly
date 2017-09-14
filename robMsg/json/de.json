@@ -528,6 +528,8 @@
   "ORA_USER_PASSWORD_RECOVERY_SENT_MAIL_FAIL" : "Leider konnten wir an die angegebene E-Mail-Adresse keine Mail verschicken. Bitte melde dich hier »roberta-zentrale@iais.fraunhofer.de«",
   "ORA_USER_PASSWORD_RECOVERY_SENT_MAIL_SUCCESS" : "Die Mail wurde versendet. Bitte schaue in dein Mailpostfach!",
   "ORA_USER_UPDATE_SUCCESS" : "Dein Passwort wurde erfolgreich geändert!",
+  "ORA_ROBOT_SET_SUCCESS" : "Das System »$« ist ausgewählt!",
+  "ORA_ROBOT_DOES_NOT_EXIST" : "Das ausgewählte Robotersystem wird nicht vom Open Roberta Lab unterstützt!<br>Bitte wähle ein anderes.",
   "LIGHT_TOOLTIP" : "Block für den Lichtsensor.",
   "LIGHT_ARDU_TOOLTIP" : "Block, der für insgesamt 8 Lichtsensoren steht.",
   "CENTER" : "mitte",
@@ -802,7 +804,9 @@
   "CONFLIST_DELETE_TOOLTIP": "Klicke hier um deine Roboterkonfiguration zu löschen.",
   "CONFLIST_LOAD_TOOLTIP": "Klicke hier um deine Roboterkonfiguration in die Konfigurationsumgebung zu laden.",
   "PROGLIST_DELETE_SHARE_WITH_GALLERY": "Du hast dieses Programm bereits mit der Gallerie geteilt. Wenn du es änderst, werden die Änderungen in die Gallerie übernommen. Möchtest du dein Programm nicht mehr mit der Gallerie teilen?",
-  "PROGLIST_SHARE_WITH_GALLERY": "Möchtest du dein Programm wirklich mit allen anderen Benutzern teilen?",
+  "PROGLIST_SHARE_WITH_GALLERY": "Möchtest du dein Programm wirklich in die Gallerie hochladen und mit allen anderen Benutzern teilen? Wenn du dir nicht sicher bist, schaue <a href='https://www.open-roberta.org/index.php?id=138' target='_blank'>hier</a> nochmal genau nach!",
+  "GALLERY_SHARED_ALREADY" : "Dieses Programm hast du bereits in die Gallerie hochgeladen. Wenn du es ändern willst, ändere die Kopie der Gallerie. Du kannst das Programm auch wieder aus der Gallerie herausnehmen indem du die Kopie von der Gallerie löscht.", 
+  "PROGLIST_SHARE_WITH_GALLERY_TOOLTIP" : "Klicke hier um dein Programm in der Galerie hochzuladen und es mit allen anderen Benutzern zu teilen.",
   "MENU_CREATE_LINK": "erstelle Programmlink  ...",
   "POPUP_GET_LINK" : "Hier ist der Link zu deinem aktuellen Programm. Bitte ändere ihn nicht. Er ist bereits in deine Zwischenablage kopiert!</br>$",
   "MESSAGE_GROUP_DELETED" : "Die Groupe »$« wurde gelöscht",
@@ -863,6 +867,6 @@
   "HINT_USER_PASSWORT" : "12345 ist kein gutes Passwort ;-)! Such dir lieber eine sichere Kombination aus Zahlen und Buchstaben aus, die du gut behalten kannst! Es muss mindestens sechs Zeichen lang sein!",
   "HINT_USER_PASSWORT_CONFIRM" : "Alles richtig geschrieben? Gib dein Passwort vorsichtshalber nochmal ein.",
   "HINT_USER_NAME" : "In diesem Feld kannst du deinen richtigen Namen eintragen, aber nur wenn du möchtest. Dieser Name wird nur dir angezeigt, z. B. wenn das Lab dich begrüßt.",
-  "HINT_USER_EMAIL" : "Diese Angabe ist freiwillig! Einige Funktionen sind aber nur mit E-Mail möglich. Du bist unter 14 Jahre alt? Dann bitte deine Eltern, dir bei der Anmeldung zu helfen, und gib ihre Mail-Adresse ein. <br><a href='http://typo3.p404214.webspaceconfig.de/index.php?id=138' target='_blank'>Mehr Infos ...</a>",
+  "HINT_USER_EMAIL" : "Diese Angabe ist freiwillig! Einige Funktionen sind aber nur mit E-Mail möglich. Du bist unter 14 Jahre alt? Dann bitte deine Eltern, dir bei der Anmeldung zu helfen, und gib ihre Mail-Adresse ein. <br><a href='https://www.open-roberta.org/index.php?id=138' target='_blank'>Mehr Infos ...</a>",
   "HINT_USER_AGE" : "Bist du jünger als 14 Jahre? Dann bitte deine Eltern, dir zu helfen. Sie können oben ihre E-Mail-Adresse zur Bestätigung deines Kontos angeben."
 }

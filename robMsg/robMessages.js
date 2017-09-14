@@ -461,6 +461,8 @@ Blockly.Msg.ORA_USER_CREATE_ERROR_CONTAINS_SPECIAL_CHARACTERS = 'You are using s
 Blockly.Msg.ORA_USER_CREATE_ERROR_ACCOUNT_LENGTH = 'Your account name or your user name is to long. Please make sure that they are not longer then 25 digits. Your account couldn"t be created.';
 Blockly.Msg.ORA_USER_EMAIL_ONE_ERROR_USER_NOT_EXISTS_WITH_THIS_EMAIL = 'This email address is unknown, maybe you have spelled it wrong!';
 Blockly.Msg.ORA_SERVER_ERROR = 'Server-Error';
+Blockly.Msg.ORA_ROBOT_SET_SUCCESS = 'Switched to robot system »$«!';
+Blockly.Msg.ORA_ROBOT_DOES_NOT_EXIST = 'It seems that we do not support the desired robot system!<br>Please choose another one.';
 
 Blockly.Msg.CONFIGURATION_ERROR_SENSOR_MISSING = 'This sensor is not set to the port!';
 Blockly.Msg.CONFIGURATION_ERROR_SENSOR_WRONG = 'Connected wrong sensor to the given port!';
@@ -861,6 +863,7 @@ Blockly.Msg.PROGLIST_DELETE_ALL_TOOLTIP = 'Click here to delete all selected pro
 Blockly.Msg.PROGLIST_DELETE_TOOLTIP = 'Click here to delete your program.';
 Blockly.Msg.PROGLIST_SHARE_TOOLTIP = 'Click here to share your program with a friend.';
 Blockly.Msg.PROGLIST_LOAD_TOOLTIP = 'Click here to load your robot configuration in the configuration environment.';
+Blockly.Msg.PROGLIST_SHARE_WITH_GALLERY_TOOLTIP = 'Click here to upload your program to the gallery hence share it with all other users.';
 Blockly.Msg.CONFLIST_DELETE_ALL_TOOLTIP = 'Click here to delete all selected programs.';
 Blockly.Msg.CONFLIST_DELETE_TOOLTIP = 'Click here to delete your robot configuration.';
 Blockly.Msg.CONFLIST_LOAD_TOOLTIP = 'Click here to load your robot configuration in the configuration environment.';
@@ -869,8 +872,8 @@ Blockly.Msg.DATATABLE_NUMBER_OF_BLOCKS = 'blocks';
 Blockly.Msg.DATATABLE_DATE = 'modified';
 Blockly.Msg.MENU_GALLERY = 'gallery';
 Blockly.Msg.MENU_GALLERY_TOOLTIP = 'gallery';
-Blockly.Msg.PROGLIST_DELETE_SHARE_WITH_GALLERY = 'Your program is allready shared with the gallery. If you change it, it will be automatically updated. Do you want to remove your program from the gallery?';
-Blockly.Msg.PROGLIST_SHARE_WITH_GALLERY = 'Do you really want to share your program with everybody?';
+Blockly.Msg.PROGLIST_SHARE_WITH_GALLERY = 'Do you really want to share your program with everybody? If you are not sure please check the question and answers <a href="https://www.open-roberta.org/index.php?id=138&L=1" target="_blank">here</a>.';
+Blockly.Msg.GALLERY_SHARED_ALREADY = 'You have already uploaded this program to the gallery. If you want to change it, look for the copy from the gallery and modify it. You can also remove it from the gallery while deleting the copy from the gallery.';
 Blockly.Msg.MENU_CREATE_LINK = 'create program link ...';
 Blockly.Msg.POPUP_GET_LINK = 'Here is the link to your actual program. Please don"t change it, it probably won"t work anymore. It"s already copied to your clipboard!</br>$';
 Blockly.Msg.IMAGE_INVERT = 'invert';
@@ -914,7 +917,7 @@ Blockly.Msg.HINT_USER_ACCOUNT = '»IAmBotman« or »RobellaStracciatella«? Not 
 Blockly.Msg.HINT_USER_PASSWORT = '12345 is no secure password. Rather think of a safe combination of numbers and letters that you will not forget.';
 Blockly.Msg.HINT_USER_PASSWORT_CONFIRM = 'Got it? Better make sure!';
 Blockly.Msg.HINT_USER_NAME = 'Enter your real name here if you like. This is just for you, no one else will see it.';
-Blockly.Msg.HINT_USER_EMAIL = 'This is voluntary! However, some functions of the lab are only available if you have verified your account by e-mail. You are younger than 14? Please ask your parents to help you out with one of their e-mail addresses. <br><a href="http://typo3.p404214.webspaceconfig.de/index.php?id=138" target="_blank">Further information ...</a>';
+Blockly.Msg.HINT_USER_EMAIL = 'This is voluntary! However, some functions of the lab are only available if you have verified your account by e-mail. You are younger than 14? Please ask your parents to help you out with one of their e-mail addresses. <br><a href="https://www.open-roberta.org/index.php?id=138&L=1" target="_blank">Further information ...</a>';
 Blockly.Msg.HINT_USER_AGE = 'Are you under 14? Then please ask your parents to help you. They can specify their e-mail address to confirm your account.';
 
 // bob3

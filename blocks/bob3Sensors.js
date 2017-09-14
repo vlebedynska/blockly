@@ -21,8 +21,9 @@ Blockly.Blocks['bob3Sensors_ambientlight'] = {
 
     init : function() {
         this.setColour(Blockly.CAT_SENSOR_RGB);
-        this.appendDummyInput().appendField(Blockly.Msg.SENSOR_GET_SAMPLE).appendField(Blockly.Msg.SENSOR_AMBIENTLIGHT);
+        this.appendDummyInput().appendField(Blockly.Msg.SENSOR_GET_SAMPLE).appendField(Blockly.Msg.MODE_AMBIENTLIGHT).appendField(Blockly.Msg.SENSOR_INFRARED);
         this.setOutput(true, 'Number');
+        this.setTooltip(Blockly.Msg.INFRARED_GETSAMPLE_TOOLTIP);
     }
 };
 
