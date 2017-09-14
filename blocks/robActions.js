@@ -155,8 +155,7 @@ Blockly.Blocks['robActions_motor_setPower'] = {
      */
     init : function() {
         this.setColour(Blockly.CAT_ACTION_RGB);
-        var ports = [ [ Blockly.Msg.MOTOR_PORT + ' A', 'A' ], [ Blockly.Msg.MOTOR_PORT + ' B', 'B' ],
-                [ Blockly.Msg.MOTOR_PORT + ' C', 'C' ] ];
+        var ports = [ [ Blockly.Msg.MOTOR_PORT + ' A', 'A' ], [ Blockly.Msg.MOTOR_PORT + ' B', 'B' ], [ Blockly.Msg.MOTOR_PORT + ' C', 'C' ] ];
         if (this.workspace.device === 'ev3') {
             ports.push([ Blockly.Msg.MOTOR_PORT + ' D', 'D' ]);
         }
@@ -186,7 +185,7 @@ Blockly.Blocks['robActions_motor_stop'] = {
         var ports = [ [ Blockly.Msg.MOTOR_PORT + ' A', 'A' ], [ Blockly.Msg.MOTOR_PORT + ' B', 'B' ], [ Blockly.Msg.MOTOR_PORT + ' C', 'C' ] ];
         if (this.workspace.device === 'ev3') {
             ports.push([ Blockly.Msg.MOTOR_PORT + ' D', 'D' ]);
-        } 
+        }
         var motorPort = new Blockly.FieldDropdown(ports);
         var mode = new Blockly.FieldDropdown([ [ Blockly.Msg.MOTOR_FLOAT, 'FLOAT' ], [ Blockly.Msg.MOTOR_BRAKE, 'NONFLOAT' ] ]);
         this.appendDummyInput().appendField(Blockly.Msg.MOTOR_STOP).appendField(motorPort, 'MOTORPORT').appendField(mode, 'MODE');
@@ -319,6 +318,30 @@ Blockly.Blocks['robActions_display_picture'] = {
         this.setNextStatement(true);
         this.setTooltip(Blockly.Msg.DISPLAY_PICTURE_TOOLTIP);
         // this.setHelp(new Blockly.Help(Blockly.Msg.DISPLAY_PICTURE_HELP));
+    }
+};
+
+Blockly.Blocks['robActions_display_picture_new'] = {
+    /**
+     * Display a picture on the screen.
+     *
+     * @constructs robActions_display_picture_new
+     * @this.Blockly.Block
+     * @param {String/dropdown}
+     *            PICTURE - Smiley1-4
+     * @returns immediately
+     * @memberof Block
+     */
+
+    init : function() {
+        this.setColour(Blockly.CAT_ACTION_RGB);
+        var picture = new Blockly.FieldDropdown([ [ Blockly.Msg.DISPLAY_PICTURE_GLASSES, 'OLDGLASSES' ], [ Blockly.Msg.DISPLAY_PICTURE_EYES_OPEN, 'EYESOPEN' ],
+                [ Blockly.Msg.DISPLAY_PICTURE_EYES_CLOSED, 'EYESCLOSED' ], [ Blockly.Msg.DISPLAY_PICTURE_FLOWERS, 'FLOWERS' ],
+                [ Blockly.Msg.DISPLAY_PICTURE_TACHO, 'TACHO' ] ]);
+        this.appendDummyInput().appendField(Blockly.Msg.DISPLAY_SHOW + ' ' + Blockly.Msg.DISPLAY_PICTURE).appendField(picture, 'PICTURE');
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setTooltip(Blockly.Msg.DISPLAY_PICTURE_TOOLTIP);
     }
 };
 
