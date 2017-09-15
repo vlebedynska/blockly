@@ -107,7 +107,7 @@ Blockly.Blocks['bob3Sensors_getSample_bob3'] = {
         var pair = new Blockly.FieldDropdown([ [ Blockly.Msg.SENSOR_TOP, '4' ], [ Blockly.Msg.CENTER, '2' ], [ Blockly.Msg.SENSOR_BOTTOM, '1' ],
                 [ Blockly.Msg.SENSOR_ANY, '3' ] ]);
         var sensorType = new Blockly.FieldDropdown([ [ Blockly.Msg.NAO_PART_ARM + ' ' + Blockly.Msg.SENSOR_PRESSED, 'TOUCH' ],
-                [ Blockly.Msg.MODE_AMBIENTLIGHT, 'LIGHT_LEVEL' ], [ Blockly.Msg.SENSOR_TEMPERATURE, 'TEMPERATURE' ] ],
+                [ Blockly.Msg.MODE_AMBIENTLIGHT + ' ' + Blockly.Msg.SENSOR_INFRARED, 'LIGHT_LEVEL' ], [ Blockly.Msg.SENSOR_TEMPERATURE, 'TEMPERATURE' ], [ Blockly.Msg.SENSOR_TIME, 'TIME' ] ],
                 function(option) {
                     if (option && this.sourceBlock_.getFieldValue('SENSORTYPE') !== option) {
                         this.sourceBlock_.updateShape_(option);
@@ -160,6 +160,7 @@ Blockly.Blocks['bob3Sensors_getSample_bob3'] = {
      */
     updateShape_ : function(option) {
         this.sensorType_ = option;
+        var sensorNum = new Blockly.FieldDropdown([ [ Blockly.Msg.SENSOR_TIMER + ' 1', '1' ] ]);
         var arm = new Blockly.FieldDropdown([ [ Blockly.Msg.MOTOR_LEFT, '1' ], [ Blockly.Msg.MOTOR_RIGHT, '2' ] ]);
         var pair = new Blockly.FieldDropdown([ [ Blockly.Msg.SENSOR_TOP, '4' ], [ Blockly.Msg.CENTER, '2' ], [ Blockly.Msg.SENSOR_BOTTOM, '1' ],
                 [ Blockly.Msg.SENSOR_ANY, '3' ] ]);
@@ -179,6 +180,13 @@ Blockly.Blocks['bob3Sensors_getSample_bob3'] = {
             input.appendField(arm, 'ARM').appendField(Blockly.Msg.BOB3_ARM).appendField(pair, 'ARMPAIR').appendField(Blockly.Msg.BOB3_ARM_PAIR);
             this.appendValue_('BOOL');
             this.setOutput(true, 'Boolean');
+        } else if (this.sensorType_ == 'TIME') {
+            input.appendField(Blockly.Msg.SENSOR_MS_TIMER).appendField(sensorNum, 'SENSORNUM');
+            this.appendValue_('NUM_REV', 500);
+            this.setOutput(true, 'Number');
+        } else if (this.sensorType_ == 'TEMPERATURE') {
+            this.appendValue_('NUM_REV', 20);
+            this.setOutput(true, 'Number');
         } else {
             this.appendValue_('NUM_REV', 10);
             this.setOutput(true, 'Number');
