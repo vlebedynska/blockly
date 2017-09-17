@@ -263,14 +263,12 @@ Blockly.Procedures.flyoutCategory = function(workspace) {
           for (var t = 0; t < declarations.length; t++) {
             if (declarations[t].getProcedureDef)
               continue;
-            if (declarations[t].getVarDecl) {
+            if (declarations[t].getVarDecl && declarations[t].type === "robLocalVariables_declare") {
               var arg = goog.dom.createDom('arg');
               arg.setAttribute('name', declarations[t].getVarDecl()[0]);
               arg.setAttribute('type', declarations[t].getType());
               mutation.appendChild(arg);
-            } else {
-              break;
-            }
+            } 
           }
         }
         if (templateName === 'robProcedures_callreturn') {

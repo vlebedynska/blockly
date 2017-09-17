@@ -494,7 +494,6 @@ Blockly.Blocks['robLocalVariables_declare'] = {
    * @this Blockly.Block
    */
   init: function() {
-    console.log(this.workspace.device);
     this.setHelpUrl(Blockly.Msg.VARIABLES_SET_HELPURL);
     this.setColour(Blockly.CAT_PROCEDURE_RGB);
     var declType;
