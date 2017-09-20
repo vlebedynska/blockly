@@ -927,3 +927,5 @@ Blockly.Msg.SENSOR_ARM_TOOLTIP = 'Returns true, if the selected part of the arm 
 Blockly.Msg.SET_LED = 'turn LED';
 Blockly.Msg.CONNECTION_BOB3_RECEIVE_TOOLTIP = 'Reads a message via the IR receiver. Only numbers can be received.';
 Blockly.Msg.CONNECTION_BOB3_SEND_TOOLTIP = 'Sends a message of type number to another Bob3. Hold the Bob3"s face to face!';
+
+Blockly.Msg.BLOCK_NOT_EXECUTED = 'The exection of this block will have no effect!';
