@@ -868,5 +868,7 @@
   "HINT_USER_PASSWORT_CONFIRM" : "Alles richtig geschrieben? Gib dein Passwort vorsichtshalber nochmal ein.",
   "HINT_USER_NAME" : "In diesem Feld kannst du deinen richtigen Namen eintragen, aber nur wenn du möchtest. Dieser Name wird nur dir angezeigt, z. B. wenn das Lab dich begrüßt.",
   "HINT_USER_EMAIL" : "Diese Angabe ist freiwillig! Einige Funktionen sind aber nur mit E-Mail möglich. Du bist unter 14 Jahre alt? Dann bitte deine Eltern, dir bei der Anmeldung zu helfen, und gib ihre Mail-Adresse ein. <br><a href='https://www.open-roberta.org/index.php?id=138' target='_blank'>Mehr Infos ...</a>",
-  "HINT_USER_AGE" : "Bist du jünger als 14 Jahre? Dann bitte deine Eltern, dir zu helfen. Sie können oben ihre E-Mail-Adresse zur Bestätigung deines Kontos angeben."
+  "HINT_USER_AGE" : "Bist du jünger als 14 Jahre? Dann bitte deine Eltern, dir zu helfen. Sie können oben ihre E-Mail-Adresse zur Bestätigung deines Kontos angeben.",
+
+  "BLOCK_NOT_EXECUTED" : "Überprüfe die Einstellungen bei diesem Block. Er wird so nichts ausführen können."
 }
