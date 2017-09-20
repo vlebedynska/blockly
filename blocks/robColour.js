@@ -32,19 +32,15 @@ Blockly.Blocks['robColour_picker'] = {
     init : function() {
         this.setHelpUrl(Blockly.Msg.COLOUR_PICKER_HELPURL);
         this.setColour(Blockly.CAT_COLOUR_RGB);
-        var colorField = new Blockly.FieldColour('#585858');
+        var colorField = new Blockly.FieldColour('#FFFFFF');
         if (this.workspace.device === 'nxt') {
-            Blockly.FieldColour.COLUMNS = 13;
-            Blockly.FieldColour.COLOURS = new Array("#585858", "#000000", "#0057a6", "#00642e", "#f7d117", "#b30006", "#FFFFFF", "#EE82EE", "#800080", "#00FF00", "#FFA500", "#DC143C", '#FF00FF' );
+            colorField.setColours(["#585858", "#000000", "#0057a6", "#00642e", "#f7d117", "#b30006", "#FFFFFF", "#EE82EE", "#800080", "#00FF00", "#FFA500", "#DC143C", "#FF00FF"]).setColumns(13);
         }
         else if (this.workspace.device === 'bob3') {
-            colorField = new Blockly.FieldColour('#0000FF');
-            Blockly.FieldColour.COLUMNS = 19;
-            Blockly.FieldColour.COLOURS = new Array("#DD4422", "#0000FF", "#00FF00", "#FFFF00", "#FF0000", "#FFFFFF", "#6633AA", "#FF0088", "#00FFFF", "#FF8800", "#FF00FF", "#77FFDD", '#FF7755', '#6699EE', '#4488AA', '#4466EE', '#228822', '#55FF99', '#000000');
+            colorField.setColours(["#DD4422", "#0000FF", "#00FF00", "#FFFF00", "#FF0000", "#FFFFFF", "#6633AA", "#FF0088", "#00FFFF", "#FF8800", "#FF00FF", "#77FFDD", "#FF7755", "#6699EE", "#4488AA", "#4466EE", "#228822", "#55FF99", "#000000"]).setColumns(19);
         }
         else {
-            Blockly.FieldColour.COLUMNS = 8;
-            Blockly.FieldColour.COLOURS = new Array("#585858", "#000000", "#0057a6", "#00642e", "#f7d117", "#b30006", "#FFFFFF", "#532115");
+            colorField.setColours(["#585858", "#000000", "#0057a6", "#00642e", "#f7d117", "#b30006", "#FFFFFF", "#532115"]).setColumns(8);
         }
         this.appendDummyInput().appendField(colorField, 'COLOUR');
         this.setOutput(true, 'Colour');

@@ -33,7 +33,7 @@ goog.require('Blockly.Blocks');
  */
 Blockly.Blocks.mbedColour.HUE = 20;
 
-// TODO check here if we want to reduce 
+// TODO check here if we want to reduce
 Blockly.Blocks['mbedColour_picker'] = {
     /**
      * Block for colour picker.
