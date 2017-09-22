@@ -929,3 +929,7 @@ Blockly.Msg.CONNECTION_BOB3_RECEIVE_TOOLTIP = 'Reads a message via the IR receiv
 Blockly.Msg.CONNECTION_BOB3_SEND_TOOLTIP = 'Sends a message of type number to another Bob3. Hold the Bob3"s face to face!';
 
 Blockly.Msg.BLOCK_NOT_EXECUTED = 'The exection of this block will have no effect!';
+
+Blockly.Msg.BOB3_RECALL_NUMBER = 'recall number';
+Blockly.Msg.BOB3_REMEMBER_NUMBER = 'remember number';
+Blockly.Msg.BOB3_SAVENUMBER_TOOLTIP = 'Numbers must be integral values in the range of 0 to 255';
