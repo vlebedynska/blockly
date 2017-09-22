@@ -933,3 +933,6 @@ Blockly.Msg.BLOCK_NOT_EXECUTED = 'The exection of this block will have no effect
 Blockly.Msg.BOB3_RECALL_NUMBER = 'recall number';
 Blockly.Msg.BOB3_REMEMBER_NUMBER = 'remember number';
 Blockly.Msg.BOB3_SAVENUMBER_TOOLTIP = 'Numbers must be integral values in the range of 0 to 255';
+
+Blockly.Msg.NAO_RECOGNIZEWORD = 'recognize word from list';
+Blockly.Msg.NAO_RECOGNIZEWORD_TOOLTIP = 'Return a word from the given list when recognized by NAO';
