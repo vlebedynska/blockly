@@ -82,9 +82,9 @@ Blockly.Blocks['bob3Sensors_touch_getSample'] = {
 
     init : function() {
         this.setColour(Blockly.CAT_SENSOR_RGB);
-        var arm = new Blockly.FieldDropdown([ [ Blockly.Msg.MOTOR_LEFT, '1' ], [ Blockly.Msg.MOTOR_RIGHT, '2' ] ]);
-        var pair = new Blockly.FieldDropdown([ [ Blockly.Msg.SENSOR_TOP, '4' ], [ Blockly.Msg.CENTER, '2' ], [ Blockly.Msg.SENSOR_BOTTOM, '1' ],
-                [ Blockly.Msg.SENSOR_ANY, '3' ] ]);
+        var arm = new Blockly.FieldDropdown([ [ Blockly.Msg.MOTOR_LEFT, '2' ], [ Blockly.Msg.MOTOR_RIGHT, '1' ] ]);
+        var pair = new Blockly.FieldDropdown([ [ Blockly.Msg.SENSOR_TOP, '1' ], [ Blockly.Msg.CENTER, '2' ], [ Blockly.Msg.SENSOR_BOTTOM, '3' ],
+                [ Blockly.Msg.SENSOR_ANY, '0' ] ]);
         this.appendDummyInput().appendField(Blockly.Msg.SENSOR_IS_ARM).appendField(arm, 'ARM').appendField(pair, 'ARMPAIR').appendField(Blockly.Msg.SENSOR_IS_TOUCHED);
         this.setOutput(true, 'Boolean');
         this.setTooltip(Blockly.Msg.SENSOR_ARM_TOOLTIP);
@@ -103,9 +103,9 @@ Blockly.Blocks['bob3Sensors_getSample_bob3'] = {
      */
     init : function() {
         this.setColour(Blockly.CAT_SENSOR_RGB);
-        var arm = new Blockly.FieldDropdown([ [ Blockly.Msg.MOTOR_LEFT, '1' ], [ Blockly.Msg.MOTOR_RIGHT, '2' ] ]);
-        var pair = new Blockly.FieldDropdown([ [ Blockly.Msg.SENSOR_TOP, '4' ], [ Blockly.Msg.CENTER, '2' ], [ Blockly.Msg.SENSOR_BOTTOM, '1' ],
-                [ Blockly.Msg.SENSOR_ANY, '3' ] ]);
+        var arm = new Blockly.FieldDropdown([ [ Blockly.Msg.MOTOR_LEFT, '2' ], [ Blockly.Msg.MOTOR_RIGHT, '1' ] ]);
+        var pair = new Blockly.FieldDropdown([ [ Blockly.Msg.SENSOR_TOP, '1' ], [ Blockly.Msg.CENTER, '2' ], [ Blockly.Msg.SENSOR_BOTTOM, '3' ],
+                [ Blockly.Msg.SENSOR_ANY, '0' ] ]);
         var sensorType = new Blockly.FieldDropdown([ [ Blockly.Msg.NAO_PART_ARM + ' ' + Blockly.Msg.SENSOR_PRESSED, 'TOUCH' ],
                 [ Blockly.Msg.MODE_AMBIENTLIGHT + ' ' + Blockly.Msg.SENSOR_INFRARED, 'LIGHT_LEVEL' ], [ Blockly.Msg.SENSOR_TEMPERATURE, 'TEMPERATURE' ], [ Blockly.Msg.SENSOR_TIME, 'TIME' ] ],
                 function(option) {
@@ -161,9 +161,9 @@ Blockly.Blocks['bob3Sensors_getSample_bob3'] = {
     updateShape_ : function(option) {
         this.sensorType_ = option;
         var sensorNum = new Blockly.FieldDropdown([ [ Blockly.Msg.SENSOR_TIMER + ' 1', '1' ] ]);
-        var arm = new Blockly.FieldDropdown([ [ Blockly.Msg.MOTOR_LEFT, '1' ], [ Blockly.Msg.MOTOR_RIGHT, '2' ] ]);
-        var pair = new Blockly.FieldDropdown([ [ Blockly.Msg.SENSOR_TOP, '4' ], [ Blockly.Msg.CENTER, '2' ], [ Blockly.Msg.SENSOR_BOTTOM, '1' ],
-                [ Blockly.Msg.SENSOR_ANY, '3' ] ]);
+        var arm = new Blockly.FieldDropdown([ [ Blockly.Msg.MOTOR_LEFT, '2' ], [ Blockly.Msg.MOTOR_RIGHT, '1' ] ]);
+        var pair = new Blockly.FieldDropdown([ [ Blockly.Msg.SENSOR_TOP, '1' ], [ Blockly.Msg.CENTER, '2' ], [ Blockly.Msg.SENSOR_BOTTOM, '3' ],
+                [ Blockly.Msg.SENSOR_ANY, '0' ] ]);
 
         var input = this.getInput('DROPDOWN');
         var toRemove = [];
