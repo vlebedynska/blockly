@@ -27,13 +27,13 @@ Blockly.Blocks['naoSensors_getSample'] = {
 	     */
 	    init : function() {
 	        this.setColour(Blockly.CAT_SENSOR_RGB);
-	        var position = new Blockly.FieldDropdown([ 
-	        	[ Blockly.Msg.NAO_TOUCH_HAND, 'HAND' ], 
+	        var position = new Blockly.FieldDropdown([
+	        	[ Blockly.Msg.NAO_TOUCH_HAND, 'HAND' ],
 	        	[ Blockly.Msg.NAO_TOUCH_BUMPER, 'BUMPER' ],
 	        	[Blockly.Msg.NAO_HEADSENSOR, 'HEAD']
 	        ]);
-	        var touchside = new Blockly.FieldDropdown([ 
-	        	[Blockly.Msg.MOTOR_LEFT, 'LEFT'], 
+	        var touchside = new Blockly.FieldDropdown([
+	        	[Blockly.Msg.MOTOR_LEFT, 'LEFT'],
 	        	[Blockly.Msg.MOTOR_RIGHT, 'RIGHT'],
 	        	[Blockly.Msg.NAO_TOUCH_FRONT, 'FRONT'],
 	        	[Blockly.Msg.MOTOR_MIDDLE, 'MIDDLE'],
@@ -95,13 +95,13 @@ Blockly.Blocks['naoSensors_getSample'] = {
 	     */
 	    updateShape_ : function(option) {
 	        this.sensorType_ = option;
-	        var position = new Blockly.FieldDropdown([ 
-	        	[ Blockly.Msg.NAO_TOUCH_HAND, 'HAND' ], 
+	        var position = new Blockly.FieldDropdown([
+	        	[ Blockly.Msg.NAO_TOUCH_HAND, 'HAND' ],
 	        	[ Blockly.Msg.NAO_TOUCH_BUMPER, 'BUMPER' ],
 	        	[Blockly.Msg.NAO_HEADSENSOR, 'HEAD']
 	        ]);
-	        var touchside = new Blockly.FieldDropdown([ 
-	        	[Blockly.Msg.MOTOR_LEFT, 'LEFT'], 
+	        var touchside = new Blockly.FieldDropdown([
+	        	[Blockly.Msg.MOTOR_LEFT, 'LEFT'],
 	        	[Blockly.Msg.MOTOR_RIGHT, 'RIGHT'],
 	        	[Blockly.Msg.NAO_TOUCH_FRONT, 'FRONT'],
 	        	[Blockly.Msg.MOTOR_MIDDLE, 'MIDDLE'],
@@ -128,7 +128,7 @@ Blockly.Blocks['naoSensors_getSample'] = {
 	        } else if (this.sensorType_ == 'NAO_NAOMARK') {
 	            this.appendValue_('BOOL');
 	            this.setOutput(true, 'Boolean');
-	        } else if (this.sensorType_ == 'SENSOR_SONAR') {
+	        } else if (this.sensorType_ == 'NAO_SONAR') {
 	            this.appendValue_('NUM_REV', 30);
 	            this.setOutput(true, 'Number');
 	        } else if (this.sensorType_ == 'NAO_GYROMETER') {
@@ -239,13 +239,13 @@ Blockly.Blocks['naoSensors_touchsensors'] = {
 
 	    init : function() {
 	        this.setColour(Blockly.CAT_SENSOR_RGB);
-	        var position = new Blockly.FieldDropdown([ 
-	        	[ Blockly.Msg.NAO_TOUCH_HAND, 'HAND' ], 
+	        var position = new Blockly.FieldDropdown([
+	        	[ Blockly.Msg.NAO_TOUCH_HAND, 'HAND' ],
 	        	[ Blockly.Msg.NAO_TOUCH_BUMPER, 'BUMPER' ],
 	        	[Blockly.Msg.NAO_HEADSENSOR, 'HEAD']
 	        ]);
-	        var side = new Blockly.FieldDropdown([ 
-	        	[Blockly.Msg.MOTOR_LEFT, 'LEFT'], 
+	        var side = new Blockly.FieldDropdown([
+	        	[Blockly.Msg.MOTOR_LEFT, 'LEFT'],
 	        	[Blockly.Msg.MOTOR_RIGHT, 'RIGHT'],
 	        	[Blockly.Msg.NAO_TOUCH_FRONT, 'FRONT'],
 	        	[Blockly.Msg.MOTOR_MIDDLE, 'MIDDLE'],
@@ -379,7 +379,7 @@ Blockly.Blocks['naoSensors_detectFace'] = {
 
 /**
  * Block waiting for a word recognition
- * 
+ *
  * @constructs naoSensors_chat
  * @param {Boolean} -
  *            any condition.
@@ -401,7 +401,7 @@ Blockly.Blocks['naoSensors_chat'] = {
     },
     /**
      * Create XML to represent the number of wait counts.
-     * 
+     *
      * @return {Element} XML storage element.
      * @this Blockly.Block
      */
@@ -418,7 +418,7 @@ Blockly.Blocks['naoSensors_chat'] = {
 
     /**
      * Parse XML to restore the wait inputs.
-     * 
+     *
      * @param {!Element}
      *            xmlElement XML storage element.
      * @this Blockly.Block
@@ -438,7 +438,7 @@ Blockly.Blocks['naoSensors_chat'] = {
     },
     /**
      * Update the shape according to the number of wait inputs.
-     * 
+     *
      * @param {Number}
      *            number of waits inputs.
      * @this Blockly.Block
