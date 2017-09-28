@@ -936,3 +936,5 @@ Blockly.Msg.BOB3_SAVENUMBER_TOOLTIP = 'Numbers must be integral values in the ra
 
 Blockly.Msg.NAO_RECOGNIZEWORD = 'recognize word from list';
 Blockly.Msg.NAO_RECOGNIZEWORD_TOOLTIP = 'Return a word from the given list when recognized by NAO';
+
+Blockly.Msg.POPUP_CONFIRM_CONTINUE = '<br><br><i>Press »OK« to discard your work. Press »Cancel« to stay here and save your work first.</i>';
