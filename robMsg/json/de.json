@@ -141,6 +141,7 @@
   "MENU_FAQ":"FAQ",
   "MENU_GENERAL":"Allgemeine Hilfe",
   "MENU_GALLERY":"Galerie",
+  "MENU_GALLERY_TOOLTIP":"Galerie",
   "MENU_LIST":"Liste ...",
   "MENU_LOGGING":"Logging",
   "MENU_LOG_IN":"anmelden ...",
@@ -187,6 +188,7 @@
   "MENU_ZOOM_IN" : "vergrößern",
   "MENU_ZOOM_RESET" : "zurücksezten",
   "MENU_ZOOM_OUT" : "verkleinern",
+  "MENU_SIM_POSE_TOOLTIP" : "Verschiebe den Roberta wieder an die Ausgangsposition.",
   "MESSAGE_CONFIGURATION_DELETED":"Du hast die Roboterkonfiguration »$« gelöscht.",
   "MESSAGE_EDIT_CHECK":"Dein Programm wird nun überprüft!",
   "MESSAGE_EDIT_SAVE_CONFIGURATION":"Deine Konfiguration »$« wurde gespeichert!",
@@ -865,6 +867,11 @@
   "POPUP_AGE" : "Alter",
   "YOUNGER_THEN_14" : "Ich bin jünger als 14!",
   "OLDER_THEN_14" : "Ich bin 14 oder älter!",
+  "ORA_USER_ACTIVATION_SENT_MAIL_SUCCESS" : "Wir haben dir eine Mail geschickt. Bitte schaue in deinem Postfach nach!",
+  "ORA_USER_ACTIVATION_SENT_MAIL_FAIL" : "Entschuldigun, wir konnten dir keine Mail zuschicken, bitte melde dich hier: »roberta-zentrale@iais.fraunhofer.de«.",
+  "ORA_USER_ACTIVATION_SUCCESS" : "Dein Benutzerkonto wurde erfolgreich verifiziert. Bitte logge dich ein!",
+  "ORA_ACCOUNT_NOT_ACTIVATED_TO_SHARE" : "Du kannst Programme nur teilen oder in die Gallerie hochladen, wenn dein Benutzerkonto verifiziert wurde.",
+  
   "HINT_USER_ACCOUNT" : "»IchBinBotman« oder »RobellaStracciatella«? Deinen richtigen Namen muss nicht jeder kennen. Denk dir lieber einen Spitznamen aus, an den du dich gut erinnern kannst!",
   "HINT_USER_PASSWORT" : "12345 ist kein gutes Passwort ;-)! Such dir lieber eine sichere Kombination aus Zahlen und Buchstaben aus, die du gut behalten kannst! Es muss mindestens sechs Zeichen lang sein!",
   "HINT_USER_PASSWORT_CONFIRM" : "Alles richtig geschrieben? Gib dein Passwort vorsichtshalber nochmal ein.",
@@ -872,5 +879,7 @@
   "HINT_USER_EMAIL" : "Diese Angabe ist freiwillig! Einige Funktionen sind aber nur mit E-Mail möglich. Du bist unter 14 Jahre alt? Dann bitte deine Eltern, dir bei der Anmeldung zu helfen, und gib ihre Mail-Adresse ein. <br><a href='https://www.open-roberta.org/index.php?id=138' target='_blank'>Mehr Infos ...</a>",
   "HINT_USER_AGE" : "Bist du jünger als 14 Jahre? Dann bitte deine Eltern, dir zu helfen. Sie können oben ihre E-Mail-Adresse zur Bestätigung deines Kontos angeben.",
 
-  "BLOCK_NOT_EXECUTED" : "Überprüfe die Einstellungen bei diesem Block. Er wird so nichts ausführen können."
+  "BLOCK_NOT_EXECUTED" : "Überprüfe die Einstellungen bei diesem Block. Er wird so nichts ausführen können.",
+  "RESEND_ACTIVATION" : "Bestätigungsmail erneut senden",
+  "ORA_USER_ACTIVATION_INVALID_URL" : "Dieser Link ist nicht mehr gültig. Bitte lasse dir die Verifizierungsmail nocheinmal zusenden."
 }

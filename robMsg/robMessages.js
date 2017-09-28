@@ -884,7 +884,7 @@ Blockly.Msg.YOUNGER_THEN_14 = 'I am younger than 14!';
 Blockly.Msg.OLDER_THEN_14 = 'I am 14 or older than 14!';
 Blockly.Msg.ORA_USER_ACTIVATION_SENT_MAIL_SUCCESS = 'We send a mail to you, please check your mailbox!';
 Blockly.Msg.ORA_USER_ACTIVATION_SENT_MAIL_FAIL = 'Sorry, we cannot send a mail to you, please contact »roberta-zentrale@iais.fraunhofer.de«';
-Blockly.Msg.ORA_USER_ACTIVATION_SUCCESS = 'Activation of the user account is successful!';
+Blockly.Msg.ORA_USER_ACTIVATION_SUCCESS = 'Your account is successfully verified! Please login!';
 Blockly.Msg.ORA_ACCOUNT_NOT_ACTIVATED_TO_SHARE = 'Your are not allowed to share. Please activate your account!';
 Blockly.Msg.SENSOR_JOYSTICK = 'joystick';
 Blockly.Msg.JOYSTICK_GETSAMPLE_TOOLTIP = 'Gets the current reading of one of the axises of the joystick';
@@ -932,9 +932,12 @@ Blockly.Msg.BLOCK_NOT_EXECUTED = 'The exection of this block will have no effect
 
 Blockly.Msg.BOB3_RECALL_NUMBER = 'recall number';
 Blockly.Msg.BOB3_REMEMBER_NUMBER = 'remember number';
-Blockly.Msg.BOB3_SAVENUMBER_TOOLTIP = 'Numbers must be integral values in the range of 0 to 255';
+Blockly.Msg.BOB3_SAVENUMBER_TOOLTIP = 'The number to remember should be an integer in the range of 0 to 255';
 
 Blockly.Msg.NAO_RECOGNIZEWORD = 'recognize word from list';
 Blockly.Msg.NAO_RECOGNIZEWORD_TOOLTIP = 'Return a word from the given list when recognized by NAO';
 
 Blockly.Msg.POPUP_CONFIRM_CONTINUE = '<br><br><i>Press »OK« to discard your work. Press »Cancel« to stay here and save your work first.</i>';
+Blockly.Msg.MENU_SIM_POSE_TOOLTIP = 'Move the robot back to it"s initial position.';
+Blockly.Msg.RESEND_ACTIVATION = 'resend verification email';
+Blockly.Msg.ORA_USER_ACTIVATION_INVALID_URL = 'The link is not valid anymore. Please ask for resending your verification mail again';
