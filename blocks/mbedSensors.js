@@ -45,10 +45,12 @@ Blockly.Blocks['mbedSensors_getSample'] = {
         } else {
             sensorType = new Blockly.FieldDropdown([ [ Blockly.Msg.SENSOR_KEY + ' ' + Blockly.Msg.SENSOR_PRESSED, 'KEYS_PRESSED' ],
                     [ Blockly.Msg.SENSOR_PIN + ' ' + Blockly.Msg.SENSOR_IS_TOUCHED, 'PIN_TOUCHED' ],
+                    [ Blockly.Msg.ANALOG, 'PIN_ANALOG' ], [ Blockly.Msg.DIGITAL, 'PIN_DIGITAL' ],
+                    [ Blockly.Msg.PULSE_HIGH, 'PIN_PULSEHIGH' ], [ Blockly.Msg.PULSE_LOW, 'PIN_PULSELOW' ],
                     [ Blockly.Msg.SENSOR_GESTURE, 'GESTURE_ACTIVE' ], [ Blockly.Msg.SENSOR_COMPASS, 'COMPASS_ANGLE' ],
                     [ Blockly.Msg.SENSOR_MIC, 'MICROPHONE' ], [ Blockly.Msg.SENSOR_TIME, 'TIME' ], [ Blockly.Msg.SENSOR_TEMPERATURE, 'TEMPERATURE' ],
                     [ Blockly.Msg.MODE_AMBIENTLIGHT, 'LIGHT_LEVEL' ],
-            [ Blockly.Msg.MODE_ACCELERATION, 'ACCELERATION' ] ], // [ Blockly.Msg.MODE_ORIENTATION, 'ORIENTATION' ] ]
+            [ Blockly.Msg.ACCELERATION, 'ACCELERATION' ] ], // [ Blockly.Msg.MODE_ORIENTATION, 'ORIENTATION' ] ]
             function(option) {
                 if (option && this.sourceBlock_.getFieldValue('SENSORTYPE') !== option) {
                     this.sourceBlock_.updateShape_(option);
@@ -112,6 +114,9 @@ Blockly.Blocks['mbedSensors_getSample'] = {
         var timer = new Blockly.FieldDropdown([ [ Blockly.Msg.SENSOR_TIMER + ' 1', '1' ] ]);
         var pin = new Blockly.FieldDropdown([ [ Blockly.Msg.SENSOR_PIN + ' 0', '0' ], [ Blockly.Msg.SENSOR_PIN + ' 1', '1' ], [ Blockly.Msg.SENSOR_PIN + ' 2', '2' ],
                               [ Blockly.Msg.SENSOR_PIN + ' 3', '3' ] ]);
+        var pinsAnalog = new Blockly.FieldDropdown([ [ Blockly.Msg.SENSOR_PIN + ' 1', '1' ], [ Blockly.Msg.SENSOR_PIN + ' 2', '2' ], [ Blockly.Msg.SENSOR_GROVE + ' A1', '5' ] ]);
+        var pinsDigital =  new Blockly.FieldDropdown([ [ Blockly.Msg.SENSOR_PIN + ' 0', '0' ], [ Blockly.Msg.SENSOR_PIN + ' 1', '1' ], [ Blockly.Msg.SENSOR_PIN + ' 2', '2' ],
+                [ Blockly.Msg.SENSOR_PIN + ' 3', '3' ], [ Blockly.Msg.SENSOR_GROVE + ' A0', '4' ], [ Blockly.Msg.SENSOR_GROVE + ' A1', '5' ] ]);
 
         var input = this.getInput('DROPDOWN');
         var toRemove = [];
@@ -139,6 +144,26 @@ Blockly.Blocks['mbedSensors_getSample'] = {
             input.appendField(pin, 'PIN');
             this.appendValue_('BOOL');
             this.setOutput(true, 'Boolean');
+        } else if (this.sensorType_ == 'PIN_ANALOG') {
+            input.appendField(Blockly.Msg.SENSOR_VALUE)
+            input.appendField(pinsAnalog, 'PIN');
+            this.appendValue_('NUM_REV', 500);
+            this.setOutput(true, 'Number');
+        } else if (this.sensorType_ == 'PIN_DIGITAL') {
+            input.appendField(Blockly.Msg.SENSOR_VALUE)
+            input.appendField(pinsDigital, 'PIN');
+            this.appendValue_('NUM_REV', 1);
+            this.setOutput(true, 'Number');
+        } else if (this.sensorType_ == 'PIN_PULSEHIGH') {
+            input.appendField(Blockly.Msg.SENSOR_VALUE)
+            input.appendField(pinsDigital, 'PIN');
+            this.appendValue_('NUM_REV', 1);
+            this.setOutput(true, 'Number');
+        } else if (this.sensorType_ == 'PIN_PULSELOW') {
+            input.appendField(Blockly.Msg.SENSOR_VALUE)
+            input.appendField(pinsDigital, 'PIN');
+            this.appendValue_('NUM_REV', 1);
+            this.setOutput(true, 'Number');
         } else if (this.sensorType_ == 'TIME') {
             input.appendField(Blockly.Msg.SENSOR_MS_TIMER).appendField(timer, 'SENSORNUM');
             this.appendValue_('NUM_REV', 500);
