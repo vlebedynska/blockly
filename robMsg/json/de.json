@@ -418,7 +418,7 @@
   "SENSOR_GROVE" : "Grove",
   "SENSOR_MIC" : "Mikrofon",
   "SET":"Setze",
-  "SERVER_NOT_AVAILABLE":"Das Open Roberta Lab ist zur Zeit nicht erreichbar. </br> Bitte überprüfe deine Internet Verbindung und lade diese Webseite neu. Falls das Problem weiterhin besteht, schreibe bitte eine Mail an folgende Adresse:</br>roberta-zentrale@iais.fraunhofer.de",
+  "SERVER_NOT_AVAILABLE":"Das Open Roberta Lab ist zur Zeit nicht erreichbar. </br>Die Internetverbindung wurde unterbrochen. Solltest du gerade einen EV3 mit dem USB-Kabel verbunden haben, genügt ein Klick auf die Programmieroberfläche.<br> Falls das Problem weiterhin besteht, überprüfe deine Internetverbindung und lade diese Webseite neu. Sollte das Problem erneut auftreten, schreibe bitte eine Mail an folgende Adresse:</br>roberta-zentrale@iais.fraunhofer.de",
   "SIM_BLOCK_NOT_SUPPORTED":"Diesen Block kann man leider nicht in der Simulation verwenden!",
   "SIM_CONFIGURATION_WARNING_SENSOR_MISSING":"Dieser Sensor ist nicht in der Roboterkonfiguration. Das Verhalten des Programmes auf dem realen Roboter wird anders als erwartet sein, bitte überprüfe die Roboterkonfiguration",
   "SIM_CONFIGURATION_WARNING_WRONG_SENSOR_PORT":"In diesem Block hast du einen falschen Sensorport angegeben! Das Verhalten des Programmes auf dem realen Roboter wird anders als erwartet sein, bitte überprüfe die Roboterkonfiguration",
@@ -881,5 +881,6 @@
 
   "BLOCK_NOT_EXECUTED" : "Überprüfe die Einstellungen bei diesem Block. Er wird so nichts ausführen können.",
   "RESEND_ACTIVATION" : "Bestätigungsmail erneut senden",
-  "ORA_USER_ACTIVATION_INVALID_URL" : "Dieser Link ist nicht mehr gültig. Bitte lasse dir die Verifizierungsmail nocheinmal zusenden."
+  "ORA_USER_ACTIVATION_INVALID_URL" : "Dieser Link ist nicht mehr gültig. Bitte lasse dir die Verifizierungsmail nocheinmal zusenden.",
+  "FLYOUT_VARIABLE_TEXT" : "Du möchtest mit Variablen arbeiten? Erzeuge sie zuerst mit einem Klick auf das + Zeichen im »Startblock«."
 }

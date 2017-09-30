@@ -151,7 +151,11 @@ Blockly.Variables.flyoutCategory = function(workspace) {
     }
   }
   var xmlList = [];
-  var variableType = ' ';
+  var variableType = ' '; 
+  if (globalList.length == 0 && localList.length == 0) {
+      var infoText = goog.dom.createDom('text');
+      xmlList.push(infoText);
+  }
   for (var i = 0; i < variableList.length; i++) {
     if (variableList[i] !== 'devider') {
       if (Blockly.Blocks['variables_set']) {

@@ -557,7 +557,7 @@ Blockly.Flyout.prototype.show = function(xmlList, opt_colour) {
     if (opt_colour) {
         var r = parseInt(opt_colour.substring(1, 3), 16);
         var g = parseInt(opt_colour.substring(3, 5), 16);
-        var b = parseInt(opt_colour.substring(5, 7), 16);       
+        var b = parseInt(opt_colour.substring(5, 7), 16);
         var colour = "#";
         colour += Math.round((1 - Blockly.FLYOUT_OPACITY) * 255 + Blockly.FLYOUT_OPACITY * r).toString(16);
         colour += Math.round((1 - Blockly.FLYOUT_OPACITY) * 255 + Blockly.FLYOUT_OPACITY * g).toString(16);
@@ -568,6 +568,7 @@ Blockly.Flyout.prototype.show = function(xmlList, opt_colour) {
     // Create the blocks to be shown in this flyout.
     var blocks = [];
     var gaps = [];
+    var text = [];
     this.permanentlyDisabled_.length = 0;
     for (var i = 0, xml; xml = xmlList[i]; i++) {
         if (xml.tagName && xml.tagName.toUpperCase() == 'BLOCK') {
@@ -581,9 +582,12 @@ Blockly.Flyout.prototype.show = function(xmlList, opt_colour) {
             var gap = parseInt(xml.getAttribute('gap'), 10);
             gaps.push(isNaN(gap) ? this.MARGIN * 3 : gap);
         }
+        if (xml.tagName && xml.tagName.toUpperCase() == 'TEXT') {
+            text.push('text');
+        }
     }
 
-    this.layoutBlocks_(blocks, gaps);
+    this.layoutBlocks_(blocks, gaps, text);
 
     // IE 11 is an incompetant browser that fails to fire mouseout events.
     // When the mouse is over the background, deselect all blocks.
@@ -620,10 +624,29 @@ Blockly.Flyout.prototype.show = function(xmlList, opt_colour) {
  *            <number>} gaps The visible gaps between blocks.
  * @private
  */
-Blockly.Flyout.prototype.layoutBlocks_ = function(blocks, gaps) {
+Blockly.Flyout.prototype.layoutBlocks_ = function(blocks, gaps, text) {
     var margin = this.MARGIN * this.workspace_.scale;
     var cursorX = this.RTL ? margin : margin + Blockly.BlockSvg.TAB_WIDTH;
     var cursorY = margin;
+    // create a foreign object with a div inside to show some text on top of the flyout
+    if (text.length > 0) {
+        var foreignObject = Blockly.createSvgElement('foreignObject', {
+            'x' : cursorX+6,
+            'y' : cursorY,
+            'width' : 150,
+            'height' : 100,
+        }, null);
+        var div = goog.dom.createDom('div', {
+            'id' : 'flyoutText',           
+        });
+        div.style ='background-color:rgba(255,255,255,0.25); border: solid 4px rgba(255,255,255,0);';
+        var textnode = document.createTextNode(Blockly.Msg.FLYOUT_VARIABLE_TEXT);
+        div.appendChild(textnode);
+        foreignObject.appendChild(div);
+        this.workspace_.getCanvas().insertBefore(foreignObject, null);
+        this.text_ = foreignObject;
+        cursorY += document.getElementById('flyoutText').offsetHeight + 20;
+    }
     for (var i = 0, block; block = blocks[i]; i++) {
         var allBlocks = block.getDescendants();
         for (var j = 0, child; child = allBlocks[j]; j++) {
@@ -679,6 +702,9 @@ Blockly.Flyout.prototype.clearOldBlocks_ = function() {
     for (var j = 0, rect; rect = this.buttons_[j]; j++) {
         goog.dom.removeNode(rect);
     }
+    // Delete the text from a previous showing
+    goog.dom.removeNode(this.text_);
+    this.text_ = null;
     this.buttons_.length = 0;
 };
 
@@ -1079,6 +1105,9 @@ Blockly.Flyout.prototype.reflowVertical = function(blocks) {
         }
         flyoutWidth = Math.max(flyoutWidth, width);
     }
+    if (this.text_) {
+        flyoutWidth = Math.max(flyoutWidth, 150);
+    }
     flyoutWidth += this.MARGIN * 1.5 + Blockly.BlockSvg.TAB_WIDTH;
     flyoutWidth *= this.workspace_.scale;
     flyoutWidth += Blockly.Scrollbar.scrollbarThickness;
@@ -1130,9 +1159,10 @@ Blockly.Flyout.prototype.reflow = function() {
 /**
  * In the horizontal RTL case all of the blocks will be laid out to the left of
  * the origin, but we won't know how big the workspace is until the layout pass
- * is done.
- * Now that it's done, shunt all the blocks to be right of the origin.
- * @param {!Array<!Blockly.Block>} blocks The blocks to reposition.
+ * is done. Now that it's done, shunt all the blocks to be right of the origin.
+ * 
+ * @param {!Array
+ *            <!Blockly.Block>} blocks The blocks to reposition.
  */
 Blockly.Flyout.prototype.offsetHorizontalRtlBlocks = function(blocks) {
     if (this.horizontalLayout_ && this.RTL) {
