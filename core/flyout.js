@@ -634,18 +634,18 @@ Blockly.Flyout.prototype.layoutBlocks_ = function(blocks, gaps, text) {
             'x' : cursorX+6,
             'y' : cursorY,
             'width' : 150,
-            'height' : 100,
         }, null);
         var div = goog.dom.createDom('div', {
             'id' : 'flyoutText',           
         });
-        div.style ='background-color:rgba(255,255,255,0.25); border: solid 4px rgba(255,255,255,0);';
+        div.style ='background-color:rgba(255,255,255,0.25); border: solid 4px rgba(255,255,255,0);color: #000;';
         var textnode = document.createTextNode(Blockly.Msg.FLYOUT_VARIABLE_TEXT);
         div.appendChild(textnode);
         foreignObject.appendChild(div);
         this.workspace_.getCanvas().insertBefore(foreignObject, null);
         this.text_ = foreignObject;
         cursorY += document.getElementById('flyoutText').offsetHeight + 20;
+        foreignObject.setAttribute("height", document.getElementById('flyoutText').offsetHeight);
     }
     for (var i = 0, block; block = blocks[i]; i++) {
         var allBlocks = block.getDescendants();

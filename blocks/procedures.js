@@ -987,7 +987,7 @@ Blockly.Blocks['robProcedures_defreturn'] = {
         .appendField('', 'WITH');
     this.appendStatementInput('STACK').appendField(Blockly.Msg.PROCEDURES_DEFNORETURN_DO);
     this.setMutator(new Blockly.MutatorPlus(['robProcedures_defreturn']));
-    this.setTooltip(Blockly.Msg.PROCEDURES_DEFNORETURN_TOOLTIP);
+    this.setTooltip(Blockly.Msg.PROCEDURES_DEFRETURN_TOOLTIP);
     this.appendValueInput('RETURN').
          setAlign(Blockly.ALIGN_RIGHT).
          appendField(Blockly.Msg.RETURN).

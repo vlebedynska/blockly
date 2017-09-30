@@ -329,6 +329,7 @@ Blockly.Blocks['robControls_for'] = {
     this.setInputsInline(true);
     this.declarationType_ = 'Number';
     // Assign 'this' to a variable for use in the tooltip closure below.
+    var thisBlock = this;
     this.setTooltip(function() {
       return Blockly.Msg.CONTROLS_FOR_TOOLTIP.replace('%1', thisBlock.getFieldValue('VAR'));
     });
@@ -484,6 +485,7 @@ Blockly.Blocks['robControls_forEach'] = {
     // Assign 'this' to a variable for use in the tooltip closure below.
     var thisBlock = this;
     this.listType_ = 'Number';
+    var thisBlock = this;
     this.setTooltip(function() {
       return Blockly.Msg.CONTROLS_FOREACH_TOOLTIP.replace('%1',
           thisBlock.getFieldValue('VAR'));
