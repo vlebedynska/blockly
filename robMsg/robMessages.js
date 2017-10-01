@@ -363,7 +363,7 @@ Blockly.Msg.POPUP_ROBOT_STATE_BUSY = 'busy';
 Blockly.Msg.POPUP_ROBOT_BATTERY = 'Voltage';
 Blockly.Msg.POPUP_ROBOT_WAIT = 'Waiting time';
 Blockly.Msg.POPUP_ROBOT_NOT_CONNECTED = 'You have to make a connection to your robot first.';
-Blockly.Msg.POPUP_CONFIRM_DELETE_PROGRAM = 'Do you really want to delete the program ?';
+Blockly.Msg.POPUP_CONFIRM_DELETE_PROGRAM = 'Do you really want to delete the following program or programs?<br>If you delete a shared program, you do not delete the program but the sharing.<br><br>If you delete a program with the owner »Gallery«, you remove your program from the gallery!';
 Blockly.Msg.POPUP_CONFIRM_DELETE_CONFIGURATION = 'Do you really want to delete the configuration ?';
 Blockly.Msg.POPUP_BEFOREUNLOAD = 'You have unsaved changes in your program or configuration. Sign in and save your program or configuration.';
 Blockly.Msg.POPUP_BEFOREUNLOAD_LOGGEDIN = 'You have unsaved changes in your program or configuration.';
@@ -379,6 +379,7 @@ Blockly.Msg.POPUP_CHANGE_PASSWORD = 'change password ...';
 Blockly.Msg.POPUP_CONTINUE = 'continue anyway';
 Blockly.Msg.POPUP_ROBOT_SYSTEM = 'System';
 Blockly.Msg.BUTTON_DO_SHARE = 'Share';
+Blockly.Msg.BUTTON_DO_UPLOAD_GALLERY = 'Upload »$« to the gallery';
 Blockly.Msg.BUTTON_EMPTY_LIST = 'Empty list';
 Blockly.Msg.MESSAGE_NOT_AVAILABLE = 'Not available.';
 Blockly.Msg.MESSAGE_INVALID_NAME = 'Please fill in a correct name. A correct name begins with a letter and can only contain letters or numbers.';
@@ -868,12 +869,18 @@ Blockly.Msg.PROGLIST_SHARE_WITH_GALLERY_TOOLTIP = 'Click here to upload your pro
 Blockly.Msg.CONFLIST_DELETE_ALL_TOOLTIP = 'Click here to delete all selected programs.';
 Blockly.Msg.CONFLIST_DELETE_TOOLTIP = 'Click here to delete your robot configuration.';
 Blockly.Msg.CONFLIST_LOAD_TOOLTIP = 'Click here to load your robot configuration in the configuration environment.';
-Blockly.Msg.DATATABLE_BY = 'by';
-Blockly.Msg.DATATABLE_NUMBER_OF_BLOCKS = 'blocks';
-Blockly.Msg.DATATABLE_DATE = 'modified';
+Blockly.Msg.GALLERY_BY = 'by';
+Blockly.Msg.GALLERY_DATE = 'created';
+Blockly.Msg.GALLERY_DISLIKE = 'dislike';
+Blockly.Msg.GALLERY_LIKE = 'like';
 Blockly.Msg.MENU_GALLERY = 'gallery';
 Blockly.Msg.MENU_GALLERY_TOOLTIP = 'gallery';
-Blockly.Msg.PROGLIST_SHARE_WITH_GALLERY = 'Do you really want to share your program with everybody? If you are not sure please check the question and answers <a href="https://www.open-roberta.org/index.php?id=138&L=1" target="_blank">here</a>.';
+Blockly.Msg.ORA_GALLERY_UPLOAD_SUCCESS = 'Your program »$« is now in the gallery!';
+Blockly.Msg.ORA_GALLERY_UPLOAD_ERROR = 'Your program »$« couldn"t be uploaded to the gallery, it seems as if it is already uploaded.';
+Blockly.Msg.ORA_LIKE_SAVE_SUCCESS = 'You like program »$« now!';
+Blockly.Msg.ORA_LIKE_SAVE_ERROR_EXISTS = 'You couldn"t like program »$«. Maybe you have already liked it.';
+Blockly.Msg.ORA_LIKE_DELETE_SUCCESS = 'You do not like program »$« anymore!';
+Blockly.Msg.PROGLIST_SHARE_WITH_GALLERY = 'Do you really want to share your program with everybody? If you are not sure please check the question and answers <a href="http://typo3.p404214.webspaceconfig.de/index.php?id=138&L=1" target="_blank">here</a>.';
 Blockly.Msg.GALLERY_SHARED_ALREADY = 'You have already uploaded this program to the gallery. If you want to change it, look for the copy from the gallery and modify it. You can also remove it from the gallery while deleting the copy from the gallery.';
 Blockly.Msg.MENU_CREATE_LINK = 'create program link ...';
 Blockly.Msg.POPUP_GET_LINK = 'Here is the link to your actual program. Please don"t change it, it probably won"t work anymore. It"s already copied to your clipboard!</br>$';
@@ -918,7 +925,7 @@ Blockly.Msg.HINT_USER_ACCOUNT = '»IAmBotman« or »RobellaStracciatella«? Not 
 Blockly.Msg.HINT_USER_PASSWORT = '12345 is no secure password. Rather think of a safe combination of numbers and letters that you will not forget.';
 Blockly.Msg.HINT_USER_PASSWORT_CONFIRM = 'Got it? Better make sure!';
 Blockly.Msg.HINT_USER_NAME = 'Enter your real name here if you like. This is just for you, no one else will see it.';
-Blockly.Msg.HINT_USER_EMAIL = 'This is voluntary! However, some functions of the lab are only available if you have verified your account by e-mail. You are younger than 14? Please ask your parents to help you out with one of their e-mail addresses. <br><a href="https://www.open-roberta.org/index.php?id=138&L=1" target="_blank">Further information ...</a>';
+Blockly.Msg.HINT_USER_EMAIL = 'This is voluntary! However, some functions of the lab are only available if you have verified your account by e-mail. You are younger than 14? Please ask your parents to help you out with one of their e-mail addresses. <br><a href="http://typo3.p404214.webspaceconfig.de/index.php?id=138&L=1" target="_blank">Further information ...</a>';
 Blockly.Msg.HINT_USER_AGE = 'Are you under 14? Then please ask your parents to help you. They can specify their e-mail address to confirm your account.';
 
 // bob3
