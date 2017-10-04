@@ -336,26 +336,6 @@ Blockly.Blocks['naoActions_playFile'] = {
     }
 };
 
-Blockly.Blocks['naoActions_recognizeWord'] = {
-    /**
-     * Recognize a word.
-     *
-     * @constructs naoActions_recognizeWord
-     * @this.Blockly.Block
-     * @param {String}
-     *            WORD Word to recognize
-     * @returns immediately
-     * @memberof Block
-     */
-     init : function() {
-         this.setColour(Blockly.CAT_ACTION_RGB);
-         this.appendValueInput('WORD').appendField(Blockly.Msg.NAO_RECOGNIZEWORD).setCheck(['Array_String', 'String']);
-         this.setPreviousStatement(false);
-         this.setNextStatement(false);
-         this.setOutput(true, 'String');
-         this.setTooltip(Blockly.Msg.NAO_RECOGNIZEWORD_TOOLTIP);
-     }
-};
 
 Blockly.Blocks['naoActions_setVolume'] = {
     /**
