@@ -616,3 +616,23 @@ Blockly.Blocks['naoActions_rasta'] = {
         this.setTooltip(Blockly.Msg.NAO_RASTA_TOOLTIP);
     }
 };
+
+Blockly.Blocks['naoActions_learnFace'] = {
+	    init : function() {
+	        this.setColour(Blockly.CAT_ACTION_RGB);
+	        this.appendValueInput('NAME').appendField(Blockly.Msg.NAO_LEARNFACEOF);
+	        this.setPreviousStatement(true);
+	        this.setNextStatement(true);
+	        this.setTooltip(Blockly.Msg.NAO_LEARNFACE_TOOLTIP);
+	    }
+};
+
+Blockly.Blocks['naoActions_forgetFace'] = {
+	    init : function() {
+	        this.setColour(Blockly.CAT_ACTION_RGB);
+	        this.appendValueInput('NAME').appendField(Blockly.Msg.NAO_FORGETFACEOF);
+	        this.setPreviousStatement(true);
+	        this.setNextStatement(true);
+	        this.setTooltip(Blockly.Msg.NAO_FORGETFACE_TOOLTIP);
+	    }
+};

@@ -357,48 +357,6 @@ Blockly.Blocks['naoSensors_getCurrent'] = {
 	    }
 	};
 
-Blockly.Blocks['naoSensors_naoMark'] = {
-	    /**
-	     * Get the number of a detected NAOMark.
-	     */
-
-	    init : function() {
-	        this.setColour(Blockly.CAT_SENSOR_RGB);
-	        this.appendDummyInput().appendField(Blockly.Msg.NAO_NAOMARK);
-	        this.setOutput(true, 'Number');
-	        this.setTooltip(Blockly.Msg.NAO_NAOMARK_TOOLTIP);
-	    }
-};
-
-Blockly.Blocks['naoSensors_learnFace'] = {
-	    init : function() {
-	        this.setColour(Blockly.CAT_SENSOR_RGB);
-	        this.appendValueInput('NAME').appendField(Blockly.Msg.NAO_LEARNFACEOF);
-	        this.setPreviousStatement(true);
-	        this.setNextStatement(true);
-	        this.setTooltip(Blockly.Msg.NAO_LEARNFACE_TOOLTIP);
-	    }
-};
-
-Blockly.Blocks['naoSensors_forgetFace'] = {
-	    init : function() {
-	        this.setColour(Blockly.CAT_SENSOR_RGB);
-	        this.appendValueInput('NAME').appendField(Blockly.Msg.NAO_FORGETFACEOF);
-	        this.setPreviousStatement(true);
-	        this.setNextStatement(true);
-	        this.setTooltip(Blockly.Msg.NAO_FORGETFACE_TOOLTIP);
-	    }
-};
-
-Blockly.Blocks['naoSensors_detectFace'] = {
-	    init : function() {
-	        this.setColour(Blockly.CAT_SENSOR_RGB);
-	        this.appendDummyInput().appendField(Blockly.Msg.NAO_DETECTFACE);
-	        this.setOutput(true, 'Boolean');
-	        this.setTooltip(Blockly.Msg.NAO_DETECTFACE_TOOLTIP);
-	    }
-};
-
 /**
  * Block waiting for a word recognition
  *
@@ -504,4 +462,26 @@ Blockly.Blocks['naoSensors_chat'] = {
             this.render();
         }
     }
+};
+
+Blockly.Blocks['naoSensors_naoMark'] = {
+	    /**
+	     * Get the number of a detected NAOMark.
+	     */
+
+	    init : function() {
+	        this.setColour(Blockly.CAT_SENSOR_RGB);
+	        this.appendDummyInput().appendField(Blockly.Msg.NAO_NAOMARK);
+	        this.setOutput(true, 'Number');
+	        this.setTooltip(Blockly.Msg.NAO_NAOMARK_TOOLTIP);
+	    }
+};
+
+Blockly.Blocks['naoSensors_detectFace'] = {
+	    init : function() {
+	        this.setColour(Blockly.CAT_SENSOR_RGB);
+	        this.appendDummyInput().appendField(Blockly.Msg.NAO_DETECTFACE);
+	        this.setOutput(true, 'Boolean');
+	        this.setTooltip(Blockly.Msg.NAO_DETECTFACE_TOOLTIP);
+	    }
 };
