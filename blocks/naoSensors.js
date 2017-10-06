@@ -41,7 +41,7 @@ Blockly.Blocks['naoSensors_getSample'] = {
 	        ]);
 	        var sensorType = new Blockly.FieldDropdown([ [ Blockly.Msg.SENSOR_TOUCH, 'NAO_TOUCHSENSOR' ],
 	                [ Blockly.Msg.NAO_DETECTFACE, 'NAO_DETECTFACE' ], [ Blockly.Msg.NAO_NAOMARK, 'NAO_NAOMARK' ], [ Blockly.Msg.SENSOR_SONAR, 'NAO_SONAR' ],
-	                [ Blockly.Msg.NAO_GYROMETER, 'NAO_GYROMETER' ], [ Blockly.Msg.NAO_ACCELEROMETER, 'NAO_ACCELEROMETER' ], [ Blockly.Msg.NAO_FSR, 'NAO_FSR' ], [ Blockly.Msg.NAO_RECOGNIZEDWORD, 'NAO_RECOGNIZEDWORD' ] ], function(option) {
+	                [ Blockly.Msg.NAO_GYROMETER, 'NAO_GYROMETER' ], [ Blockly.Msg.NAO_ACCELEROMETER, 'NAO_ACCELEROMETER' ], [ Blockly.Msg.NAO_FSR, 'NAO_FSR' ], [ Blockly.Msg.NAO_RECOGNIZEWORD, 'NAO_RECOGNIZEWORD' ] ], function(option) {
 	            if (option && this.sourceBlock_.getFieldValue('SENSORTYPE') !== option) {
 	                this.sourceBlock_.updateShape_(option);
 	            }
@@ -122,33 +122,43 @@ Blockly.Blocks['naoSensors_getSample'] = {
 	        for (var j = 0; j < toRemove.length; j++) {
 	            input.removeField(toRemove[j]);
 	        }
+					//this.inputList = [this.inputList[0]];
+					this.appendValueInput('WORD').setCheck(['Array_String', 'String']);
 	        if (this.sensorType_ == 'NAO_DETECTFACE') {
+						  this.removeInput('WORD', true);
 	            this.appendValue_('BOOL');
 	            this.setOutput(true, 'Boolean');
 	        } else if (this.sensorType_ == 'NAO_NAOMARK') {
+						  this.removeInput('WORD', true);
 	            this.appendValue_('BOOL');
 	            this.setOutput(true, 'Boolean');
 	        } else if (this.sensorType_ == 'NAO_SONAR') {
+						  this.removeInput('WORD', true);
 	            this.appendValue_('NUM_REV', 30);
 	            this.setOutput(true, 'Number');
 	        } else if (this.sensorType_ == 'NAO_GYROMETER') {
+						  this.removeInput('WORD', true);
 	            input.appendField(gyrocoord, 'COORDINATE');
 	            this.appendValue_('NUM_REV', 1);
 	            this.setOutput(true, 'Number');
 	        } else if (this.sensorType_ == 'NAO_ACCELEROMETER') {
+						  this.removeInput('WORD', true);
 	            input.appendField(accelcoord, 'COORDINATE');
 	            this.appendValue_('NUM_REV', 1);
 	            this.setOutput(true, 'Number');
 	        } else if (this.sensorType_ == 'NAO_FSR') {
+						  this.removeInput('WORD', true);
 	            input.appendField(side, 'SIDE');
 	            this.appendValue_('NUM_REV', 2);
 	            this.setOutput(true, 'Number');
 	        }  else if (this.sensorType_ == 'NAO_TOUCHSENSOR') {
+						  this.removeInput('WORD', true);
 	            input.appendField(position, 'POSITION').appendField(touchside, 'SIDE');
 	            this.appendValue_('BOOL');
 	            this.setOutput(true, 'Boolean');
-	        } else if (this.sensorType_ == 'NAO_RECOGNIZEDWORD') {
-            	this.appendValue_('TEXT', 'Open; Roberta; Lab');
+	        } else if (this.sensorType_ == 'NAO_RECOGNIZEWORD') {
+
+            	this.appendValue_('TEXT', 'OpenRoberta');
             	this.setOutput(true, 'String');
 	        }
 	        // sensorType.setValue(this.sensorType_);
@@ -234,25 +244,6 @@ Blockly.Blocks['naoSensors_dialog'] = {
 	     }
 	};
 
-
-Blockly.Blocks['naoSensors_recognizedWord'] = {
-	    /**
-	     * Returns last recognized word.
-	     *
-	     * @constructs naoActions_recognizeWord
-	     * @this.Blockly.Block
-	     * @param {String}
-	     *            PHRASE Phrase that is recognized
-	     * @returns immediately
-	     * @memberof Block
-	     */
-	    init : function() {
-	        this.setColour(Blockly.CAT_SENSOR_RGB);
-	        this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.GET + ' ' + Blockly.Msg.NAO_RECOGNIZEDWORD);
-		this.setOutput(true, 'String');
-	        this.setTooltip(Blockly.Msg.NAO_RECOGNIZEDWORD_TOOLTIP);
-	    }
-	};
 
 Blockly.Blocks['naoSensors_touchsensors'] = {
 	    /**
