@@ -47,7 +47,7 @@ Blockly.Blocks['bob3Actions_recall'] = {
         this.setColour(Blockly.CAT_ACTION_RGB);
         this.appendDummyInput().appendField(Blockly.Msg.BOB3_RECALL_NUMBER);
         this.setOutput(true, 'Number');
-        this.setTooltip(Blockly.Msg.BOB3_SAVENUMBER_TOOLTIP);
+        this.setTooltip(Blockly.Msg.BOB3_READNUMBER_TOOLTIP);
     }
 };
 

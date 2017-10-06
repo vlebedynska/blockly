@@ -562,7 +562,7 @@
   "PLAY_HALF": "halbe Note",
   "PLAY_QUARTER": "Viertelnote",
   "PLAY_EIGHTH": "Achtelnote",
-  "PLAY_SIXTEENTH": "Sechszehntelnote",
+  "PLAY_SIXTEENTH": "Sechzehntelnote",
   "LED_ON": "Schalte LED an",
   "LED_OFF": "Schalte LED aus",
   "SENSOR_GESTURE": "Lage",
@@ -893,5 +893,9 @@
   "BLOCK_NOT_EXECUTED" : "Überprüfe die Einstellungen bei diesem Block. Er wird so nichts ausführen können.",
   "RESEND_ACTIVATION" : "Bestätigungsmail erneut senden",
   "ORA_USER_ACTIVATION_INVALID_URL" : "Dieser Link ist nicht mehr gültig. Bitte lasse dir die Verifizierungsmail nocheinmal zusenden.",
-  "FLYOUT_VARIABLE_TEXT" : "Du möchtest mit Variablen arbeiten? Erzeuge sie zuerst mit einem Klick auf das + Zeichen im »Startblock«."
+  "FLYOUT_VARIABLE_TEXT" : "Du möchtest mit Variablen arbeiten? Erzeuge sie zuerst mit einem Klick auf das + Zeichen im »Startblock«.",
+  "BOB3_RECALL_NUMBER" : "lese Zahl aus Speicher",
+  "BOB3_REMEMBER_NUMBER" : "Speichere Zahl",
+  "BOB3_SAVENUMBER_TOOLTIP" : "Hier kannst du eine Zahl dauerhaft speichern. Sie sollte ganzzahlig sein und einen Wert zwischen 0 und 255 haben.",
+  "BOB3_READNUMBER_TOOLTIP" : "Gibt die zuvor gespeicherte Zahl zurück."
 }
