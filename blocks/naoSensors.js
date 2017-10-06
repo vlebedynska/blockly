@@ -123,7 +123,7 @@ Blockly.Blocks['naoSensors_getSample'] = {
 	            input.removeField(toRemove[j]);
 	        }
 					//this.inputList = [this.inputList[0]];
-					this.appendValueInput('WORD').setCheck(['Array_String', 'String']);
+
 	        if (this.sensorType_ == 'NAO_DETECTFACE') {
 						  this.removeInput('WORD', true);
 	            this.appendValue_('BOOL');
@@ -157,7 +157,7 @@ Blockly.Blocks['naoSensors_getSample'] = {
 	            this.appendValue_('BOOL');
 	            this.setOutput(true, 'Boolean');
 	        } else if (this.sensorType_ == 'NAO_RECOGNIZEWORD') {
-
+							this.appendValueInput('WORD').setCheck(['Array_String', 'String']);
             	this.appendValue_('TEXT', 'OpenRoberta');
             	this.setOutput(true, 'String');
 	        }
