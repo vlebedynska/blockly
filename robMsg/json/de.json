@@ -482,7 +482,7 @@
   "TOUR1_DESCRIPTION15":"Super,<br>dein Roboter ist jetzt 20 cm vorwärts gefahren,<br>genau wie du es programmiert hast!",
   "TOUR1_DESCRIPTION16":"Tschüss und viel Spaß beim Ausprobieren!",
   "ULTRASONIC_GETMODE_TOOLTIP":"Gibt den Modus des Ultraschallsensors zurück.",
-  "ULTRASONIC_GETSAMPLE_TOOLTIP":"Gibt den aktuellen Wert des Ultraschallsensors zurück.",
+  "ULTRASONIC_GETSAMPLE_TOOLTIP":"Gibt den aktuellen Wert des Ultraschallsensors in cm zurück. Die weiteste Entfernung ist 255 cm.",
   "ULTRASONIC_SETMODE_TOOLTIP":"Setzt den Modus des Ultraschallsensors.",
   "ULTRASONIC_TOOLTIP":"Block für den Ultraschallsensor.",
   "VALIDATION_FIELD_REQUIRED": "Dieses Feld darf nicht leer sein!",
