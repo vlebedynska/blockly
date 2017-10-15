@@ -35,18 +35,32 @@ goog.require('goog.dom');
  *            workspace The workspace to sit in.
  * @constructor
  */
-Blockly.RobControls = function(workspace, zoom) {
+Blockly.RobControls = function(workspace) {
+    this.scale_ = 1;
     this.workspace_ = workspace;
-    this.zoom_ = zoom;
+    this.zoom_ = this.workspace_.options.zoomOptions.controls;
+    this.zoomOptions_ = this.workspace_.options.zoomOptions;
+    this.controls_ = this.workspace_.options.robControls;
+    if (this.workspace_.options.zoomOptions) {
+        this.scale_ = this.workspace_.options.zoomOptions.startScale;
+    }
 };
 
 /**
- * Width of the button controls.
+ * Width of the control button including 2 px for margin.
  * 
  * @type {number}
  * @private
  */
-Blockly.RobControls.prototype.WIDTH_ = 148;
+Blockly.RobControls.prototype.WIDTH_ = 50;
+
+/**
+ * Width of the control panel.
+ * 
+ * @type {number}
+ * @private
+ */
+Blockly.RobControls.prototype.CONTROL_WIDTH_ = 0;
 
 /**
  * Height of the button controls.
@@ -70,7 +84,7 @@ Blockly.RobControls.prototype.MARGIN_BOTTOM_ = 12;
  * @type {number}
  * @private
  */
-Blockly.RobControls.prototype.MARGIN_SIDE_ = 62;
+Blockly.RobControls.prototype.MARGIN_SIDE_ = 12;
 
 /**
  * Paths for icons.
@@ -163,11 +177,22 @@ Blockly.RobControls.prototype.createDom = function() {
     var workspace = this.workspace_;
 //  this.simVisible_ = false;
     var control = this;
+    var pos = 0;
     this.svgGroup_ = Blockly.createSvgElement('g', {
         'class' : 'blocklyButtons'
     }, null);
-    this.runOnBrick = this.createButton_(this.PATH_RUNONBRICK_, 0, 0, 'MENU_START_BRICK');
-    this.runOnBrick.setAttribute("id", "runOnBrick");
+    for ( pos = 0; pos < Object.keys(this.controls_).length; pos++) {
+        if (this.controls_[pos] === 'run') {
+            this.runOnBrick = this.createButton_(this.PATH_RUNONBRICK_, pos, 0, 'MENU_START_BRICK');
+            this.runOnBrick.setAttribute("id", "runOnBrick");
+            this.CONTROL_WIDTH_ += this.WIDTH_;
+        } else if (this.controls_[pos] === 'save') {
+            this.saveProgram = this.createButton_(this.PATH_SAVEPROGRAM_, pos, 0, 'MENU_SAVE');
+            this.saveProgram.setAttribute("id", "saveProgram");
+            this.CONTROL_WIDTH_ += this.WIDTH_;
+        }
+    }
+
 //  this.runInSim = this.createButton_(this.PATH_RUNINSIM_, 1, 0, Blockly.Msg.MENU_START_SIM);
 //  this.simStop = this.createButton_(this.PATH_SIMSTOP_, 1, 0, Blockly.Msg.MENU_SIM_STOP);
 //  this.simStep = this.createButton_(this.PATH_SIMSTEP_, 1, 1);
@@ -182,22 +207,21 @@ Blockly.RobControls.prototype.createDom = function() {
 //  this.simStep.setAttribute('class', 'robButtonHidden');
 //  this.simPause.setAttribute("id", "simPause");
 //  this.simPause.setAttribute('class', 'robButtonHidden');
-    this.saveProgram = this.createButton_(this.PATH_SAVEPROGRAM_, 1, 0, 'MENU_SAVE');
-    this.saveProgram.setAttribute("id", "saveProgram");
 
     if (this.zoom_) {
         this.zoomVisible_ = false;
-        var zoom = this.createButton_(this.PATH_ZOOM_, 2, 0, 'MENU_ZOOM');
-        var zoominSvg = this.createButton_(this.PATH_ZOOMIN_, 2, 0, 'MENU_ZOOM_IN');
-        var zoomresetSvg = this.createButton_(this.PATH_ZOOMRESET_, 2, 1, 'MENU_ZOOM_RESET');
-        var zoomoutSvg = this.createButton_(this.PATH_ZOOMOUT_, 2, 2, 'MENU_ZOOM_OUT');
+        var zoom = this.createButton_(this.PATH_ZOOM_, pos, 0, 'MENU_ZOOM');
+        var zoominSvg = this.createButton_(this.PATH_ZOOMIN_, pos, 0, 'MENU_ZOOM_IN');
+        var zoomresetSvg = this.createButton_(this.PATH_ZOOMRESET_, pos, 1, 'MENU_ZOOM_RESET');
+        var zoomoutSvg = this.createButton_(this.PATH_ZOOMOUT_, pos, 2, 'MENU_ZOOM_OUT');
         zoominSvg.setAttribute('class', 'robButtonHidden');
         zoomoutSvg.setAttribute('class', 'robButtonHidden');
         zoomresetSvg.setAttribute('class', 'robButtonHidden');
 
         // Attach event listeners. 
+        var startScale = this.scale_;
         Blockly.bindEvent_(zoomresetSvg, 'mousedown', workspace, function(e) {
-            workspace.setScale(1);
+            workspace.setScale(startScale);
             workspace.scrollCenter();
             e.stopPropagation();
             e.preventDefault()
@@ -221,6 +245,7 @@ Blockly.RobControls.prototype.createDom = function() {
         this.zoom = zoom;
         this.zoomoutSvg = zoomoutSvg;
         this.zoomresetSvg = zoomresetSvg;
+        this.CONTROL_WIDTH_ += this.WIDTH_;
     }
     return this.svgGroup_;
 };
@@ -238,7 +263,7 @@ Blockly.RobControls.prototype.createDom = function() {
 Blockly.RobControls.prototype.createButton_ = function(pathD, posX, posY, tooltip) {
     var button = Blockly.createSvgElement('g', {
         'class' : 'robButton',
-        'transform' : 'translate(' + (posX * 50) + ',' + (posY * -50) + ')'
+        'transform' : 'translate(' + (posX * this.WIDTH_) + ',' + (posY * -this.WIDTH_) + ')'
     }, this.svgGroup_);
     var rect = Blockly.createSvgElement('rect', {
         'class' : 'blocklyButtonBack',
@@ -291,13 +316,13 @@ Blockly.RobControls.prototype.position = function() {
     if (this.workspace_.RTL) {
         this.left_ = this.MARGIN_SIDE_ + Blockly.Scrollbar.scrollbarThickness;
     } else {
-        this.left_ = metrics.viewWidth + metrics.absoluteLeft - this.WIDTH_ - this.MARGIN_SIDE_; //- Blockly.Scrollbar.scrollbarThickness;
+        this.left_ = metrics.viewWidth + metrics.absoluteLeft - this.scale_ * this.CONTROL_WIDTH_ - this.MARGIN_SIDE_ - this.scale_ * this.WIDTH_; //- Blockly.Scrollbar.scrollbarThickness;
     }
     if (this.simVisible_) {
         this.left_ += 159;
     }
-    this.top_ = metrics.viewHeight + metrics.absoluteTop - this.HEIGHT_ - this.MARGIN_BOTTOM_; //- Blockly.Scrollbar.scrollbarThickness;
-    this.svgGroup_.setAttribute('transform', 'translate(' + this.left_ + ',' + (this.top_) + ')');
+    this.top_ = metrics.viewHeight + metrics.absoluteTop - this.scale_ * this.HEIGHT_ - this.MARGIN_BOTTOM_; //- Blockly.Scrollbar.scrollbarThickness;
+    this.svgGroup_.setAttribute('transform', 'translate(' + this.left_ + ',' + (this.top_) + ') scale(' + this.scale_ + ')');
 };
 
 Blockly.RobControls.prototype.disable = function(button) {

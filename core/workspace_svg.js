@@ -171,8 +171,8 @@ Blockly.WorkspaceSvg.prototype.createDom = function(opt_backgroundClass) {
   if (this.options.hasTrashcan) {
     bottom = this.addTrashcan_(bottom);
   }
-  if (this.options.robControls && this.options.zoomOptions && this.options.zoomOptions.controls) {
-    this.addRobControls_(this.options.zoomOptions.controls);
+  if (this.options.robControls) {
+    this.addRobControls_();
   } else if (this.options.zoomOptions && this.options.zoomOptions.controls) {
     bottom = this.addZoomControls_(bottom);
   }
@@ -284,9 +284,9 @@ Blockly.WorkspaceSvg.prototype.addZoomControls_ = function(bottom) {
  * Add OpenRoberta controls.
  * @private
  */
-Blockly.WorkspaceSvg.prototype.addRobControls_ = function(zoom) {
+Blockly.WorkspaceSvg.prototype.addRobControls_ = function() {
   /** @type {Blockly.RobControls} */
-  this.robControls = new Blockly.RobControls(this, zoom);
+  this.robControls = new Blockly.RobControls(this);
   var svgRobControls_ = this.robControls.createDom();
   this.svgGroup_.appendChild(svgRobControls_);
 };
@@ -1010,7 +1010,7 @@ Blockly.WorkspaceSvg.prototype.updateRobControls = function() {
   }
   this.robControls.dispose();
   if (this.options.robControls && this.options.zoomOptions && this.options.zoomOptions.controls) {
-    this.addRobControls_(this.options.zoomOptions.controls);
+    this.addRobControls_(this.options.zoomOptions.controls,this.options.zoomOptions);
   } 
 };
 

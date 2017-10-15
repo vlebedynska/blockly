@@ -210,7 +210,7 @@ Blockly.parseOptions_ = function(options) {
     realtimeOptions: realtimeOptions,
     checkInTask: options['checkInTask'] || false,
     variableDeclaration: !!options['variableDeclaration'],
-    robControls: !!options['robControls'],
+    robControls: options['robControls'] || false,
   };
 };
 
@@ -397,7 +397,7 @@ Blockly.createMainWorkspace_ = function(svg, options) {
   // The SVG is now fully assembled.
   Blockly.svgResize(mainWorkspace);
   Blockly.WidgetDiv.createDom();
-  Blockly.Tooltip.createDom();
+  Blockly.Tooltip.createDom(mainWorkspace);
   return mainWorkspace;
 };
 

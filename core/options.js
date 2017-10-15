@@ -124,7 +124,7 @@ Blockly.Options = function(options) {
   this.toolboxPosition = toolboxPosition;
   this.checkInTask = options['checkInTask'] || false;
   this.variableDeclaration = !!options['variableDeclaration'];
-  this.robControls = !!options['robControls'];
+  this.robControls = options['robControls'] || false;
 };
 
 /**

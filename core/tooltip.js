@@ -115,12 +115,18 @@ Blockly.Tooltip.DIV = null;
 /**
  * Create the tooltip div and inject it onto the page.
  */
-Blockly.Tooltip.createDom = function() {
+Blockly.Tooltip.createDom = function(workspace) {
   if (Blockly.Tooltip.DIV) {
     return;  // Already created.
   }
+  var scale = 1;
+  if (workspace.options.zoomOptions) {
+      scale = workspace.options.zoomOptions.startScale;
+  }
+  
   // Create an HTML container for popup overlays (e.g. editor widgets).
   Blockly.Tooltip.DIV = goog.dom.createDom('div', 'blocklyTooltipDiv');
+  Blockly.Tooltip.DIV.setAttribute('style', 'transform: scale(' + scale + '); transform-origin: top left;');
   document.body.appendChild(Blockly.Tooltip.DIV);
 };
 
