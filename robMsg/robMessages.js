@@ -685,7 +685,7 @@ Blockly.Msg.NAO_RASTA = 'rasta';
 Blockly.Msg.NAO_GYROMETER = 'gyrometer';
 Blockly.Msg.NAO_ACCELEROMETER = 'accelerometer';
 Blockly.Msg.NAO_HEADSENSOR = 'head sensor';
-Blockly.Msg.NAO_NAOMARK = 'detect NAO mark';
+Blockly.Msg.NAO_NAOMARK = 'get last detected NAO mark(s)';
 Blockly.Msg.NAO_TAKEPICTURE = 'take picture';
 Blockly.Msg.NAO_RECORDVIDEO = 'record video';
 Blockly.Msg.NAO_FSR = 'force sensitive resistor';
@@ -822,7 +822,7 @@ Blockly.Msg.NAO_TOUCHSENSOR_TOOLTIP = 'Is true if the selected touchsensor on th
 Blockly.Msg.NAO_GYROMETER_TOOLTIP = 'Get the current reading from the gyrometer in the given direction.';
 Blockly.Msg.NAO_ACCELEROMETER_TOOLTIP = 'Get the current reading from the accelerometer in the given direction';
 
-Blockly.Msg.NAO_NAOMARK_TOOLTIP = 'Tries to detect and identify a NAO mark in the current camera picture. If a NAO mark is detected it will be identified and the block returns the corresponding. For a list of the NAO mark and the corresponding numbers refer to the wiki.';
+Blockly.Msg.NAO_NAOMARK_TOOLTIP = 'Returns an array of IDs of last detected NAO marks. If no marks are detected, an array consisting of 1 element with value -1 is returned. For a list of NAO marks with corresponding numbers refer to the wiki.';
 Blockly.Msg.NAO_FSR_TOOLTIP = 'Get the current reading from the force sensitive resistor under the feet of the robot.';
 Blockly.Msg.NAO_DIALOG_TOOLTIP = 'The robot tries to recognize the phrase and answers on success.';
 Blockly.Msg.NAO_RECOGNIZEDWORD_TOOLTIP = 'Returns the last word the robot recognized.';
@@ -951,3 +951,6 @@ Blockly.Msg.MENU_SIM_POSE_TOOLTIP = 'Move the robot back to it"s initial positio
 Blockly.Msg.RESEND_ACTIVATION = 'resend verification email';
 Blockly.Msg.ORA_USER_ACTIVATION_INVALID_URL = 'The link is not valid anymore. Please ask for resending your verification mail again';
 Blockly.Msg.FLYOUT_VARIABLE_TEXT = 'You need a variable? Please declare it first with a click on the + sign at the »start«\u00a0block.';
+
+Blockly.Msg.NAO_MARK_GET_INFORMATION = 'get information about NAO mark';
+Blockly.Msg.NAO_MARK_GET_INFORMATION_TOOLTIP = 'This block will return additional information about the given NAO mark in the format on a 1-d array with following values: [XAngle, YAngle, XSize, YSize, Heading], please note that all values are given in camera angles.';

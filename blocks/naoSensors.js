@@ -548,7 +548,7 @@ Blockly.Blocks['naoSensors_naoMark'] = {
     init : function() {
         this.setColour(Blockly.CAT_SENSOR_RGB);
         this.appendDummyInput().appendField(Blockly.Msg.NAO_NAOMARK);
-        this.setOutput(true, 'Number');
+        this.setOutput(true, 'Array_Number');
         this.setTooltip(Blockly.Msg.NAO_NAOMARK_TOOLTIP);
     }
 };
@@ -559,5 +559,19 @@ Blockly.Blocks['naoSensors_detectFace'] = {
         this.appendDummyInput().appendField(Blockly.Msg.NAO_DETECTFACE);
         this.setOutput(true, 'String');
         this.setTooltip(Blockly.Msg.NAO_DETECTFACE_TOOLTIP);
+    }
+};
+
+
+Blockly.Blocks['naoSensors_getMarkInformation'] = {
+    /**
+     * Get the information about given NaoMark.
+     */
+
+    init : function() {
+        this.setColour(Blockly.CAT_SENSOR_RGB);
+        this.appendValueInput('VALUE').setCheck('Number').appendField(Blockly.Msg.NAO_MARK_GET_INFORMATION);
+        this.setOutput(true, 'Array_Number');
+        this.setTooltip(Blockly.Msg.NAO_MARK_GET_INFORMATION_TOOLTIP);
     }
 };
