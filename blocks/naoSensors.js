@@ -132,8 +132,8 @@ Blockly.Blocks['naoSensors_getSample'] = {
             this.appendValue_('TEXT', 'Roberta');
             this.setOutput(true, 'String');
         } else if (this.sensorType_ == 'NAO_NAOMARK') {
-            this.appendValue_('BOOL');
-            this.setOutput(true, 'Boolean');
+            this.appendValue_('NUM_REV', 114);
+            this.setOutput(true, 'Number');
         } else if (this.sensorType_ == 'NAO_SONAR') {
             this.appendValue_('NUM_REV', 30);
             this.setOutput(true, 'Number');
@@ -557,7 +557,7 @@ Blockly.Blocks['naoSensors_detectFace'] = {
     init : function() {
         this.setColour(Blockly.CAT_SENSOR_RGB);
         this.appendDummyInput().appendField(Blockly.Msg.NAO_DETECTFACE);
-        this.setOutput(true, 'String');
+        this.setOutput(true, 'Array_String');
         this.setTooltip(Blockly.Msg.NAO_DETECTFACE_TOOLTIP);
     }
 };
@@ -573,5 +573,18 @@ Blockly.Blocks['naoSensors_getMarkInformation'] = {
         this.appendValueInput('VALUE').setCheck('Number').appendField(Blockly.Msg.NAO_MARK_GET_INFORMATION);
         this.setOutput(true, 'Array_Number');
         this.setTooltip(Blockly.Msg.NAO_MARK_GET_INFORMATION_TOOLTIP);
+    }
+};
+
+Blockly.Blocks['naoSensors_getFaceInformation'] = {
+    /**
+     * Get the information about given NaoFace.
+     */
+
+    init : function() {
+        this.setColour(Blockly.CAT_SENSOR_RGB);
+        this.appendValueInput('VALUE').setCheck('Number').appendField(Blockly.Msg.NAO_FACE_GET_INFORMATION);
+        this.setOutput(true, 'Array_Number');
+        this.setTooltip(Blockly.Msg.NAO_FACE_GET_INFORMATION_TOOLTIP);
     }
 };

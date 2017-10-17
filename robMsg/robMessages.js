@@ -696,7 +696,7 @@ Blockly.Msg.NAO_RECOGNIZEDWORD = 'recognized word';
 Blockly.Msg.NAO_RECOGNIZEWORDOR = 'or recognize word';
 Blockly.Msg.NAO_LEARNFACEOF = 'learn face of';
 Blockly.Msg.NAO_FORGETFACEOF = 'forget face of';
-Blockly.Msg.NAO_DETECTFACE = 'detect face';
+Blockly.Msg.NAO_DETECTFACE = 'get last detected recognized face(s)';
 Blockly.Msg.NAO_PERFORM = 'perform'
 Blockly.Msg.NAO_MOVE = 'move'
 Blockly.Msg.NAO_CURRENT = 'electric current of'
@@ -954,3 +954,6 @@ Blockly.Msg.FLYOUT_VARIABLE_TEXT = 'You need a variable? Please declare it first
 
 Blockly.Msg.NAO_MARK_GET_INFORMATION = 'get information about NAO mark';
 Blockly.Msg.NAO_MARK_GET_INFORMATION_TOOLTIP = 'This block will return additional information about the given NAO mark in the format on a 1-d array with following values: [XAngle, YAngle, XSize, YSize, Heading], please note that all values are given in camera angles.';
+
+Blockly.Msg.NAO_FACE_GET_INFORMATION = 'get information about recognized face';
+Blockly.Msg.NAO_FACE_GET_INFORMATION_TOOLTIP = 'This block will return additional information about the given recognized face in the format on a 1-d array with following values: [XAngle, YAngle, XSize, YSize, Heading], please note that all values are given in camera angles.';
