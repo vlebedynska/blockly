@@ -129,11 +129,11 @@ Blockly.Blocks['naoSensors_getSample'] = {
             input = this.getInput('DROPDOWN');
         }
         if (this.sensorType_ == 'NAO_DETECTFACE') {
-            this.appendValue_('TEXT', 'Roberta');
-            this.setOutput(true, 'String');
+            this.appendValue_('ARRAY_STRING', 'Roberta');
+            this.setOutput(true, 'Array_String');
         } else if (this.sensorType_ == 'NAO_NAOMARK') {
-            this.appendValue_('NUM_REV', 114);
-            this.setOutput(true, 'Number');
+          this.appendValue_('ARRAY_NUMBER', 114);
+          this.setOutput(true, 'Array_Number');
         } else if (this.sensorType_ == 'NAO_SONAR') {
             this.appendValue_('NUM_REV', 30);
             this.setOutput(true, 'Number');
@@ -235,6 +235,48 @@ Blockly.Blocks['naoSensors_getSample'] = {
             } else if (type == 'TEXT') {
                 block = this.workspace.newBlock('text');
                 block.setFieldValue(value, 'TEXT');
+            } else if (type == 'ARRAY_STRING') {
+              var block = this.workspace.newBlock('robLists_create_with');
+              block.setFieldValue('String', 'LIST_TYPE');
+              block.listType_ = 'String';
+              block.setOutput(true, 'Array_String');
+              block.getInput('ADD0').setCheck('String');
+              block.initSvg();
+              block.render();
+              block.updateShape_(-1);
+              block.updateShape_(-1);
+              if (!this.inTask) {
+                  block.setInTask(false);
+              }
+              var block_string = this.workspace.newBlock('text');
+              block_string.setFieldValue(value, 'TEXT');
+              block_string.initSvg();
+              block_string.render();
+              if (!this.inTask) {
+                  block_string.setInTask(false);
+              }
+              block.getInput('ADD0').connection.connect(block_string.outputConnection);
+            } else if (type == 'ARRAY_NUMBER') {
+              var block = this.workspace.newBlock('robLists_create_with');
+              block.setFieldValue('Number', 'LIST_TYPE');
+              block.listType_ = 'Number';
+              block.setOutput(true, 'Array_Number');
+              block.getInput('ADD0').setCheck('Number');
+              block.initSvg();
+              block.render();
+              block.updateShape_(-1);
+              block.updateShape_(-1);
+              if (!this.inTask) {
+                  block.setInTask(false);
+              }
+              var block_string = this.workspace.newBlock('math_number');
+              block_string.setFieldValue(value, 'NUM');
+              block_string.initSvg();
+              block_string.render();
+              if (!this.inTask) {
+                  block_string.setInTask(false);
+              }
+              block.getInput('ADD0').connection.connect(block_string.outputConnection);
             }
             block.initSvg();
             block.render();
@@ -583,8 +625,8 @@ Blockly.Blocks['naoSensors_getFaceInformation'] = {
 
     init : function() {
         this.setColour(Blockly.CAT_SENSOR_RGB);
-        this.appendValueInput('VALUE').setCheck('Number').appendField(Blockly.Msg.NAO_FACE_GET_INFORMATION);
-        this.setOutput(true, 'Array_Number');
+        this.appendValueInput('VALUE').setCheck('String').appendField(Blockly.Msg.NAO_FACE_GET_INFORMATION);
+        this.setOutput(true, 'Array_String');
         this.setTooltip(Blockly.Msg.NAO_FACE_GET_INFORMATION_TOOLTIP);
     }
 };

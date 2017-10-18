@@ -321,11 +321,11 @@ Blockly.Blocks['logic_compare'] = {
       var OPERATORS;
       var valueB = this.getInputTargetBlock('B');
       this.removeInput('B', true);
-      this.removeInput('OP_DROP', true);     
+      this.removeInput('OP_DROP', true);
       if (range == 'NUM_REV') {
         OPERATORS = Blockly.RTL ? [ [ '<', 'GT' ], [ '\u2264', 'GTE' ], [ '>', 'LT' ], [ '\u2265', 'LTE' ], [ '=', 'EQ' ], [ '\u2260', 'NEQ' ] ] : [
                     [ '>', 'GT' ], [ '\u2265', 'GTE' ], [ '<', 'LT' ], [ '\u2264', 'LTE' ], [ '=', 'EQ' ], [ '\u2260', 'NEQ' ] ];
-      } else if (range == 'BOOL') {
+      } else if (range == 'BOOL' || range == 'ARRAY_NUMBER' || range == 'ARRAY_STRING') {
         OPERATORS = Blockly.RTL ? [ [ '=', 'EQ' ], [ '\u2260', 'NEQ' ] ] : [ [ '=', 'EQ' ], [ '\u2260', 'NEQ' ] ];
       } else if (range == 'COLOUR') {
         OPERATORS = Blockly.RTL ? [ [ '=', 'EQ' ], [ '\u2260', 'NEQ' ] ] : [ [ '=', 'EQ' ], [ '\u2260', 'NEQ' ] ];
@@ -365,7 +365,7 @@ Blockly.Blocks['logic_compare'] = {
 //    }
 //    this.prevBlocks_[0] = blockA;
 //    this.prevBlocks_[1] = blockB;
-    
+
     // for roberta we need a different check to get changes in the visible type
     if (!this.workspace || Blockly.Block.dragMode_ == 2) {
       // Block has been deleted or is in move
@@ -380,7 +380,7 @@ Blockly.Blocks['logic_compare'] = {
       Blockly.Events.setGroup(false);
       if ((blockA.outputConnection.check_[0] === blockB.outputConnection.check_[0])) {
         return;
-      } 
+      }
       this.getInput('A').setCheck(blockA.outputConnection.check_);
       this.getInput('B').setCheck(blockA.outputConnection.check_);
     } else if (blockA) {
@@ -702,7 +702,7 @@ Blockly.Blocks['robControls_if'] = {
       var target = this.getInputTargetBlock('IF' + this.elseIfCount_);
       if (target) {
         target.unplug();
-        target.bumpNeighbours_();     
+        target.bumpNeighbours_();
       }
       this.removeInput('DO' + this.elseIfCount_);
       this.removeInput('IF' + this.elseIfCount_);
