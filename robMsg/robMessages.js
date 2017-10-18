@@ -880,7 +880,7 @@ Blockly.Msg.ORA_GALLERY_UPLOAD_ERROR = 'Your program »$« couldn"t be uploaded 
 Blockly.Msg.ORA_LIKE_SAVE_SUCCESS = 'You like program »$« now!';
 Blockly.Msg.ORA_LIKE_SAVE_ERROR_EXISTS = 'You couldn"t like program »$«. Maybe you have already liked it.';
 Blockly.Msg.ORA_LIKE_DELETE_SUCCESS = 'You do not like program »$« anymore!';
-Blockly.Msg.PROGLIST_SHARE_WITH_GALLERY = 'Do you really want to share your program with everybody? If you are not sure please check the question and answers <a href="http://typo3.p404214.webspaceconfig.de/index.php?id=138&L=1" target="_blank">here</a>.';
+Blockly.Msg.PROGLIST_SHARE_WITH_GALLERY = 'Do you really want to share your program with everybody? If you are not sure please check the question and answers <a href="https://www.roberta-home.de/index.php?id=138&L=1" target="_blank">here</a>.';
 Blockly.Msg.GALLERY_SHARED_ALREADY = 'You have already uploaded this program to the gallery. If you want to change it, look for the copy from the gallery and modify it. You can also remove it from the gallery while deleting the copy from the gallery.';
 Blockly.Msg.MENU_CREATE_LINK = 'create program link ...';
 Blockly.Msg.POPUP_GET_LINK = 'Here is the link to your actual program. Please don"t change it, it probably won"t work anymore. It"s already copied to your clipboard!</br>$';
@@ -888,12 +888,13 @@ Blockly.Msg.IMAGE_INVERT = 'invert';
 Blockly.Msg.IMAGE_SHIFT = 'shift';
 
 Blockly.Msg.POPUP_AGE = 'Age';
-Blockly.Msg.YOUNGER_THEN_14 = 'I am younger than 14!';
-Blockly.Msg.OLDER_THEN_14 = 'I am 14 or older than 14!';
+Blockly.Msg.YOUNGER_THEN_14 = 'I am younger than 16!';
+Blockly.Msg.OLDER_THEN_14 = 'I am 16 or older than 16!';
 Blockly.Msg.ORA_USER_ACTIVATION_SENT_MAIL_SUCCESS = 'We send a mail to you, please check your mailbox!';
 Blockly.Msg.ORA_USER_ACTIVATION_SENT_MAIL_FAIL = 'Sorry, we cannot send a mail to you, please contact »roberta-zentrale@iais.fraunhofer.de«';
 Blockly.Msg.ORA_USER_ACTIVATION_SUCCESS = 'Your account is successfully verified! Please login!';
-Blockly.Msg.ORA_ACCOUNT_NOT_ACTIVATED_TO_SHARE = 'Your are not allowed to share. Please activate your account!';
+Blockly.Msg.ORA_ACCOUNT_NOT_ACTIVATED_TO_SHARE = 'Your are not allowed to share. Please activate your account! <br><a href="https://www.roberta-home.de/index.php?id=138&L=1" target="_blank">Further information ...</a>';
+Blockly.Msg.ORA_USER_DEACTIVATION_SUCCESS = 'Your account is currently not verified, please check your mailbox!';
 Blockly.Msg.SENSOR_JOYSTICK = 'joystick';
 Blockly.Msg.JOYSTICK_GETSAMPLE_TOOLTIP = 'Gets the current reading of one of the axises of the joystick';
 
@@ -925,8 +926,8 @@ Blockly.Msg.HINT_USER_ACCOUNT = '»IAmBotman« or »RobellaStracciatella«? Not 
 Blockly.Msg.HINT_USER_PASSWORT = '12345 is no secure password. Rather think of a safe combination of numbers and letters that you will not forget.';
 Blockly.Msg.HINT_USER_PASSWORT_CONFIRM = 'Got it? Better make sure!';
 Blockly.Msg.HINT_USER_NAME = 'Enter your real name here if you like. This is just for you, no one else will see it.';
-Blockly.Msg.HINT_USER_EMAIL = 'This is voluntary! However, some functions of the lab are only available if you have verified your account by e-mail. You are younger than 14? Please ask your parents to help you out with one of their e-mail addresses. <br><a href="http://typo3.p404214.webspaceconfig.de/index.php?id=138&L=1" target="_blank">Further information ...</a>';
-Blockly.Msg.HINT_USER_AGE = 'Are you under 14? Then please ask your parents to help you. They can specify their e-mail address to confirm your account.';
+Blockly.Msg.HINT_USER_EMAIL = 'This is voluntary! However, some functions of the lab are only available if you have verified your account by e-mail. You are younger than 16? Please ask your parents to help you out with one of their e-mail addresses. <br><a href="https://www.roberta-home.de/index.php?id=138&L=1" target="_blank">Further information ...</a>';
+Blockly.Msg.HINT_USER_AGE = 'Are you under 16? Then please ask your parents to help you. They can specify their e-mail address to confirm your account.';
 
 // bob3
 Blockly.Msg.SENSOR_TOP = 'top';
