@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2017-10-18 17:27:06.098461",
+		"lastupdated": "2017-11-03 13:50:56.750070",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -1139,6 +1139,9 @@
 	"MESSAGE_EDIT_SAVE_GROUP_AS": "Your group has been created",
 	"ORA_GROUP_CREATE_ERROR_NOT_SAVED_TO_DB": "This group already exists",
 	"ORA_USER_GROUP_SAVE_AS_ERROR_USER_GROUP_EXISTS": "This user already belongs to the group",
+	"GO_TO_GROUPS": "Go to groups",
+	"POPUP_CONFIRM_DELETE_GROUP": "Confirm delete group",
+	"POPUP_CONFIRM_DELETE_USER_GROUP": "Confirm delet ",
 	"LIST_BACK_TOOLTIP": "Back to previous view.",
 	"PROGLIST_DELETE_ALL_TOOLTIP": "Click here to delete all selected programs.",
 	"PROGLIST_DELETE_TOOLTIP": "Click here to delete your program.",
