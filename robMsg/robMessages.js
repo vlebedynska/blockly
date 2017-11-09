@@ -588,6 +588,7 @@ Blockly.Msg.SENSOR_GESTURE_SHAKE = 'shaking';
 Blockly.Msg.SENSOR_GESTURE_FREEFALL = 'freely falling';
 Blockly.Msg.SENSOR_GESTURE_ACTIVE = 'active?';
 Blockly.Msg.SENSOR_TEMPERATURE = 'temperature sensor';
+
 Blockly.Msg.TOOLBOX_IMAGE = 'Images';
 Blockly.Msg.STRENGTH = 'strength';
 Blockly.Msg.ACCELERATION = 'acceleration mg';
@@ -961,3 +962,7 @@ Blockly.Msg.NAO_MARK_GET_INFORMATION_TOOLTIP = 'This block will return additiona
 
 Blockly.Msg.NAO_FACE_GET_INFORMATION = 'get information about recognized face';
 Blockly.Msg.NAO_FACE_GET_INFORMATION_TOOLTIP = 'This block will return additional information about the given recognized face in the format on a 1-d array with following values: [XAngle, YAngle, XSize, YSize, Heading], please note that all values are given in camera angles.';
+
+
+Blockly.Msg.SENSOR_RADIO_RSSI = 'radio RSSI sensor';
+Blockly.Msg.RADIO_GET_RSSI_TOOLTIP = 'Gets the RSSI of the last package.';
