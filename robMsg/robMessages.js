@@ -861,8 +861,8 @@ Blockly.Msg.MESSAGE_EDIT_SAVE_GROUP_AS = 'Your group has been created';
 Blockly.Msg.ORA_GROUP_CREATE_ERROR_NOT_SAVED_TO_DB = 'This group already exists';
 Blockly.Msg.ORA_USER_GROUP_SAVE_AS_ERROR_USER_GROUP_EXISTS = 'This user already belongs to the group';
 Blockly.Msg.GO_TO_GROUPS = 'Go to groups';
-Blockly.Msg.POPUP_CONFIRM_DELETE_GROUP = 'Confirm delete group';
-Blockly.Msg.POPUP_CONFIRM_DELETE_USER_GROUP = 'Confirm delet ';
+Blockly.Msg.POPUP_CONFIRM_DELETE_GROUP = 'Do you really want to delete these groups?';
+Blockly.Msg.POPUP_CONFIRM_DELETE_USER_GROUP = 'Do you really want to remove these users below from the current group?';
 
 Blockly.Msg.LIST_BACK_TOOLTIP = 'Back to previous view.';
 Blockly.Msg.PROGLIST_DELETE_ALL_TOOLTIP = 'Click here to delete all selected programs.';
