@@ -153,7 +153,7 @@ Blockly.Toolbox.prototype.init = function() {
   // Create an HTML container for the Toolbox menu.
   this.HtmlDiv = goog.dom.createDom('div', 'blocklyToolboxDiv');
   this.HtmlDiv.setAttribute('dir', workspace.RTL ? 'RTL' : 'LTR');
-  this.HtmlDiv.setAttribute('style', 'transform: scale(' + this.scale_ + '); transform-origin: top left;');
+  this.HtmlDiv.setAttribute('style', 'transform-origin: top left;');
   
   // for tabbed workspaces
   workspace.svgGroup_.parentNode.parentNode.appendChild(this.HtmlDiv);
@@ -258,10 +258,10 @@ Blockly.Toolbox.prototype.position = function() {
     } else {  // Left
       treeDiv.style.left = svgPosition.x + 'px';
     }
-    treeDiv.style.height = svgSize.height / this.scale_ + 'px';
+    treeDiv.style.height = svgSize.height + 'px';
     treeDiv.style.top = svgPosition.y + 'px';
-    this.width = this.scale_ * treeDiv.offsetWidth;
-    this.height = treeDiv.offsetWidth / this.scale_;
+    this.width = treeDiv.offsetWidth;
+    this.height = treeDiv.offsetWidth;
     if (this.toolboxPosition == Blockly.TOOLBOX_AT_LEFT) {
       // For some reason the LTR toolbox now reports as 1px too wide.
       this.width -= 1;
@@ -269,7 +269,7 @@ Blockly.Toolbox.prototype.position = function() {
   }
   // check if toolbox scrollbar-y is active or not
   var treeRoot = goog.dom.getElementByClass("blocklyTreeRoot");
-  if (treeDiv.offsetHeight / this.scale_ - treeRoot.clientHeight > 0) {
+  if (treeDiv.offsetHeight - treeRoot.clientHeight > 0) {
     goog.dom.classlist.remove(treeDiv, 'scroll');
   } else {
     goog.dom.classlist.add(treeDiv, 'scroll');

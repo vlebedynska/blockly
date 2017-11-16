@@ -831,6 +831,7 @@ Blockly.Msg.NAO_LEARNFACE_TOOLTIP = 'Learn and save a face under a given name in
 Blockly.Msg.NAO_FORGETFACE_TOOLTIP = 'Delete a face previously saved under a given name from the vision recognition database on the robot. ';
 Blockly.Msg.NAO_DETECTFACE_TOOLTIP = 'Detect a face previously learned and saved.';
 Blockly.Msg.NAO_GETCURRENT_TOOLTIP = 'Get the electric current from the motorboard in the selected joint.';
+
 //
 Blockly.Msg.MENU_CODE_DOWNLOAD_TOOLTIP = 'Download the source code of your program on the computer';
 Blockly.Msg.MENU_CODE_REFRESH_TOOLTIP = 'Refresh the source code, if you have changed the NEPO Blocks.';
@@ -951,6 +952,7 @@ Blockly.Msg.POPUP_CONFIRM_CONTINUE = '<br><br><i>Press »OK« to discard your wo
 Blockly.Msg.MENU_SIM_POSE_TOOLTIP = 'Move the robot back to it"s initial position.';
 Blockly.Msg.RESEND_ACTIVATION = 'resend verification email';
 Blockly.Msg.ORA_USER_ACTIVATION_INVALID_URL = 'The link is not valid anymore. Please ask for resending your verification mail again';
+Blockly.Msg.ORA_NAO_PROGRAM_UPLOAD_ERROR_SSH_CONNECTION = 'It seems that your robot is not connected to the Open Roberta Lab server, please check the connection tool!';
 Blockly.Msg.FLYOUT_VARIABLE_TEXT = 'You need a variable? Please declare it first with a click on the + sign at the »start«\u00a0block.';
 
 Blockly.Msg.NAO_MARK_GET_INFORMATION = 'get information about NAO mark';

@@ -809,6 +809,7 @@ Blockly.Msg.ORA_GROUP_CREATE_ERROR_NOT_SAVED_TO_DB = "This group already exists"
 Blockly.Msg.ORA_LIKE_DELETE_SUCCESS = "You do not like program »$« anymore!";  // untranslated
 Blockly.Msg.ORA_LIKE_SAVE_ERROR_EXISTS = "You couldn't like program »$«. Maybe you have already liked it.";  // untranslated
 Blockly.Msg.ORA_LIKE_SAVE_SUCCESS = "You like program »$« now!";  // untranslated
+Blockly.Msg.ORA_NAO_PROGRAM_UPLOAD_ERROR_SSH_CONNECTION = "It seems that your robot is not connected to the Open Roberta Lab server, please check the connection tool!";  // untranslated
 Blockly.Msg.ORA_OWNER_DOES_NOT_EXIST = "Обладатель не существует.";
 Blockly.Msg.ORA_PROGRAM_CONFIGURATION_NOT_COMPATIBLE = "Программа несовместима с конфигурацией.";
 Blockly.Msg.ORA_PROGRAM_DELETE_ERROR = "Во время удаления конфигурации робота произошла ошибка. Пожалуйста, попробуйте снова!";

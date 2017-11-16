@@ -264,7 +264,6 @@ Blockly.Trashcan.prototype.getClientRect = function() {
   var top = trashRect.top - this.MARGIN_HOTSPOT_*this.scale_;
   var width = (this.WIDTH_ + 2 * this.MARGIN_HOTSPOT_)*this.scale_;;
   var height = (this.LID_HEIGHT_ + this.BODY_HEIGHT_ + 2 * this.MARGIN_HOTSPOT_)*this.scale_;;
-  console.log(left+' '+top+' '+ width+' '+ height);
   return new goog.math.Rect(left, top, width, height);
 };
 

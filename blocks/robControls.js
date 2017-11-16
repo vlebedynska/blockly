@@ -52,7 +52,7 @@ Blockly.Blocks['robControls_start'] = {
         this.setColour(Blockly.CAT_ACTIVITY_RGB);
         var debug = new Blockly.FieldCheckbox("FALSE");
         var textDebug = new Blockly.Field(Blockly.Msg.START_PROGRAM_DEBUG);
-        if (this.workspace.device === 'calliope' || this.workspace.device === 'microbit') {
+        if (this.workspace.device === 'calliope' || this.workspace.device === 'microbit' || this.workspace.device === 'nao') {
             debug.setVisible(false);
             textDebug.setVisible(false);
         }
@@ -496,9 +496,6 @@ Blockly.Blocks['robControls_wait_for'] = {
 
             //TODO: move ardu and nibo to arduControls and niboControls
             var s;
-            console.log("device");
-            console.log(this.workspace.device);
-
             if (this.workspace.device === 'ardu') {
                 s = this.workspace.newBlock('robSensors_getSample_ardu');
             }

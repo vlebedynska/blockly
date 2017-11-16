@@ -483,16 +483,16 @@ Blockly.Css.CONTENT = [
 //  '}',
   
   '.blocklyTreeRow {',
-    'height: 40px;',
+    'height: 80px;',
     'line-height: 0;',
     'margin-bottom: 6px;',
    '}',
   
   '.blocklyToolboxDiv.small .blocklyTreeRow {',
-    'width: 55px;',
+    'width: 110px;',
   '}',
   '.blocklyToolboxDiv.scroll.small .blocklyTreeRow {',
-    'width: 70px;', // 55px + 17px (usually the browsers scrollbar width)
+    'width: 110px;', // 55px + 17px (usually the browsers scrollbar width)
   '}',
 
   '.blocklyHorizontalTree {',
@@ -520,9 +520,9 @@ Blockly.Css.CONTENT = [
   '.toolboxIcon {',
     'display: inline-block;',
     'position: relative;',
-    'top: 20px;',
-    'left: 8px;',
-    'font-size: 24px;',
+    'top: 36px;',
+    'left: 16px;',
+    'font-size: 48px;',
     'color: #fff;',
     'float: left;',
     'height: 0;',
@@ -595,15 +595,15 @@ Blockly.Css.CONTENT = [
   '.blocklyTreeLabel {',
     'font-family: sans-serif;',
     'position: relative;',
-    'top: 20px;',
+    'top: 38px;',
     'float: left;',
-    'font-size: 16pt;',
+    'font-size: 32pt;',
     'color: #fff;',
-    'padding: 0 0 0 3px;',
+    'padding: 0 0 0 6px;',
   '}',
   
   '.blocklyTreeSub {', 
-    '  font-size: 10pt;', 
+    '  font-size: 20pt;', 
   '}',
   
   '.blocklyToolboxDiv.small  .blocklyTreeLabel {',
@@ -611,16 +611,16 @@ Blockly.Css.CONTENT = [
   '}',
   
   '.blocklyTreeRow::after {',
-    'background-image: url(\'data:image/svg+xml;charset=UTF-8,<svg xmlns=\"http://www.w3.org/2000/svg\"><g><path class=\"blocklyConSelected\" fill=\"%23eee\" d=\"M1,41 v-11 l7.8,0.5 l2.5-5.5 c3-10.7,0.3-16.3-10.3-15.7 v-10 h30v41h-30z\"></path><path class=\"blocklyToolboxBackground\" stroke=\"%23eee\" stroke-width=\"2\" fill=\"none\" d=\"M1,40 v-10 l7.8,0.5 l2.5-5.5 c3-10.7,0.3-16.3-10.3-15.7 v-10\"></path></g></svg>\');',
+    'background-image: url(\'data:image/svg+xml;charset=UTF-8,<svg xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"scale(2)\"><path class=\"blocklyConSelected\" fill=\"%23eee\" d=\"M1,41 v-11 l7.8,0.5 l2.5-5.5 c3-10.7,0.3-16.3-10.3-15.7 v-10 h30v41h-30z\"></path><path class=\"blocklyToolboxBackground\" stroke=\"%23eee\" stroke-width=\"2\" fill=\"none\" d=\"M1,40 v-10 l7.8,0.5 l2.5-5.5 c3-10.7,0.3-16.3-10.3-15.7 v-10\"></path></g></svg>\');',
     'content: "";',
-    'width: 15px;',
-    'height: 40px;',
+    'width: 30px;',
+    'height: 80px;',
     'float: right;',
     'display: inline-block;',
   '}',
   
   '.blocklyTreeRow.selected::after {',
-    'background-image: url(\'data:image/svg+xml;charset=UTF-8,<svg xmlns=\"http://www.w3.org/2000/svg\"><g><path class=\"blocklyConSelected\" fill-opacity=\"0.7\" fill=\"%23eee\" d=\"M1,41 v-11 l7.8,0.5 l2.5-5.5 c3-10.7,0.3-16.3-10.3-15.7 v-10 h30v41h-30z\"></path><path class=\"blocklyToolboxBackground\" stroke=\"%23eee\" stroke-width=\"2\" fill=\"none\" d=\"M1,40 v-10 l7.8,0.5 l2.5-5.5 c3-10.7,0.3-16.3-10.3-15.7 v-10\"></path></g></svg>\');',
+    'background-image: url(\'data:image/svg+xml;charset=UTF-8,<svg xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"scale(2)\"><path class=\"blocklyConSelected\" fill-opacity=\"0.7\" fill=\"%23eee\" d=\"M1,41 v-11 l7.8,0.5 l2.5-5.5 c3-10.7,0.3-16.3-10.3-15.7 v-10 h30v41h-30z\"></path><path class=\"blocklyToolboxBackground\" stroke=\"%23eee\" stroke-width=\"2\" fill=\"none\" d=\"M1,40 v-10 l7.8,0.5 l2.5-5.5 c3-10.7,0.3-16.3-10.3-15.7 v-10\"></path></g></svg>\');',
   '}',
  
   '.blocklyToolboxDiv[dir="RTL"] .blocklyTreeRow .blocklyTreeLabel {',
@@ -629,14 +629,14 @@ Blockly.Css.CONTENT = [
   '}',
   
   '.blocklyToolboxDiv.scroll .blocklyTreeRow::after {',
-    'width: 15px;',
+    'width: 30px;',
   '}',
   
    '.blocklyToolboxDiv.scroll.small .blocklyTreeRow::after {',
     'width: 30px;',
   '}',
    '.blocklyToolboxDiv.scroll.small .blocklyTreeLabel {',
-    'padding: 0 17px 0 3px;',
+    'padding: 0 34px 0 6px;',
   '}',
  
   '.blocklyTreeSelected .blocklyTreeLabel {',
