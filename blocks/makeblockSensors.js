@@ -47,7 +47,7 @@ Blockly.Blocks['makeblockSensors_accelerometer_getSample'] = {
         this.setColour(Blockly.CAT_SENSOR_RGB);
         var dropdown = new Blockly.FieldDropdown([['X', 'X'], ['Y', 'Y'], ['Z', 'Z']]);
         var sensorPort = new Blockly.FieldDropdown([['Port 1', '1'], ['Port 2', '2'], ['Port 3', '3'], ['Port 4', '4']]);
-        this.appendDummyInput().appendField(Blockly.Msg.SENSOR_GET_SAMPLE).appendField(dropdown, 'COORDINATE').appendField(Blockly.Msg.NAO_ACCELEROMETER).appendField(sensorPort, 'SENSORPORT');
+        this.appendDummyInput().appendField(Blockly.Msg.SENSOR_GET_SAMPLE).appendField(dropdown, 'MODE').appendField(Blockly.Msg.NAO_ACCELEROMETER).appendField(sensorPort, 'SENSORPORT');
         this.setOutput(true, 'Number');
         this.setTooltip(Blockly.Msg.GYRO_TOOLTIP);
     }
