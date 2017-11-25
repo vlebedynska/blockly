@@ -30,6 +30,9 @@ goog.provide('Blockly.Xml');
 // goog.require('Blockly.Block');
 goog.require('goog.dom');
 
+Blockly.Xml.COORDINATE = 'MODE';
+Blockly.Xml.SENSORNUM = 'SENSORPORT'
+
 
 /**
  * Encode a block tree as XML.
@@ -674,7 +677,7 @@ Blockly.Xml.childToBlock = function(workspace, block, xmlChild) {
         // Titles were renamed to field in December 2013.
         // Fall through.
     case 'field':
-        var field = block.getField(name);
+        var field = block.getField(Blockly.Xml[name] || name);
         if (!field) {
             console.warn('Ignoring non-existent field ' + name + ' in block ' + prototypeName);
             break;

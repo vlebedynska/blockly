@@ -85,10 +85,12 @@ Blockly.FieldDropdown.prototype.init = function() {
   }
   // Add dropdown arrow: "option ▾" (LTR) or "▾ אופציה" (RTL)
   this.arrow_ = Blockly.createSvgElement('tspan', {}, null);
-  this.arrow_.appendChild(document.createTextNode(
+  //Beate: we have sometimes dropdowns with only one option, no need to show the arrow.
+  if (this.getOptions_().length >= 2 ) {
+    this.arrow_.appendChild(document.createTextNode(
       this.sourceBlock_.RTL ? Blockly.FieldDropdown.ARROW_CHAR + ' ' :
           ' ' + Blockly.FieldDropdown.ARROW_CHAR));
-
+  }
   Blockly.FieldDropdown.superClass_.init.call(this);
   // Force a reset of the text to add the arrow.
   var text = this.text_;
@@ -101,6 +103,10 @@ Blockly.FieldDropdown.prototype.init = function() {
  * @private
  */
 Blockly.FieldDropdown.prototype.showEditor_ = function() {
+  // Beate: we have sometimes dropdowns with only one option, no need to show the editor. 
+  if (this.getOptions_().length < 2){
+	return;
+  }
   Blockly.WidgetDiv.show(this, this.sourceBlock_.RTL, null);
   var thisField = this;
 

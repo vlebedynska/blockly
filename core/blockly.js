@@ -37,6 +37,7 @@ goog.require('Blockly.FieldColour');
 // Add it only if you need it.
 //goog.require('Blockly.FieldDate');
 goog.require('Blockly.FieldDropdown');
+goog.require('Blockly.FieldHidden');
 goog.require('Blockly.FieldDropdownImage');
 goog.require('Blockly.FieldImage');
 goog.require('Blockly.FieldTextInput');
