@@ -12,11 +12,11 @@ goog.require('Blockly.Blocks');
 Blockly.Blocks['makeblockSensors_gyroscope_getSample'] = {
     /**
      * Get a sample from the gyroscope.
-     *
+     * 
      * @constructs makeSensors_gyroscope_getSample
      * @this.Blockly.Block
      * @param {String/dropdown}
-     *            GYROAXIS - X, Y  axis of the gyroscope.
+     *            GYROAXIS - X, Y axis of the gyroscope.
      * @returns immediately
      * @returns {Number}
      * @memberof Block
@@ -34,11 +34,11 @@ Blockly.Blocks['makeblockSensors_gyroscope_getSample'] = {
 Blockly.Blocks['makeblockSensors_accelerometer_getSample'] = {
     /**
      * Get a sample from the gyroscope.
-     *
+     * 
      * @constructs makeSensors_accelerometer_getSample
      * @this.Blockly.Block
      * @param {String/dropdown}
-     *            GYROAXIS - X, Y,Z  axis of the acceleremoter.
+     *            GYROAXIS - X, Y,Z axis of the acceleremoter.
      * @returns immediately
      * @returns {Number}
      * @memberof Block
@@ -56,11 +56,11 @@ Blockly.Blocks['makeblockSensors_accelerometer_getSample'] = {
 Blockly.Blocks['makeblockSensors_flameSensor_getSample'] = {
     /**
      * Get a sample from the flame sensor.
-     *
+     * 
      * @constructs makeSensors_flameSensor_getSample
      * @this.Blockly.Block
      * @param {String/dropdown}
-     *           SENSORPORT- 1-4
+     *            SENSORPORT- 1-4
      * @returns immediately
      * @returns {Number}
      * @memberof Block
@@ -76,7 +76,7 @@ Blockly.Blocks['makeblockSensors_flameSensor_getSample'] = {
 
 Blockly.Blocks['makeblockSensors_ambientlight'] = {
     /**
-     *
+     * 
      * @constructs makeblockSensors_ambientlight
      * @this.Blockly.Block
      * @param {String/dropdown}
@@ -97,11 +97,11 @@ Blockly.Blocks['makeblockSensors_ambientlight'] = {
 Blockly.Blocks['makeblockSensors_voltageSensor_getSample'] = {
     /**
      * Get a sample from the voltage sensor.
-     *
+     * 
      * @constructs makeblockSensors_voltageSensor_getSample
      * @this.Blockly.Block
      * @param {String/dropdown}
-     *           SENSORPORT- 1-4
+     *            SENSORPORT- 1-4
      * @returns immediately
      * @returns {Number}
      * @memberof Block
@@ -117,7 +117,7 @@ Blockly.Blocks['makeblockSensors_voltageSensor_getSample'] = {
 
 Blockly.Blocks['makeblockSensors_motionSensor_getSample'] = {
     /**
-     *
+     * 
      * @constructs makeblockSensors_motionSensor_getSample
      * @this.Blockly.Block
      * @param {String/dropdown}
@@ -137,7 +137,7 @@ Blockly.Blocks['makeblockSensors_motionSensor_getSample'] = {
 
 Blockly.Blocks['makeblockSensors_light'] = {
     /**
-     *
+     * 
      * @constructs makeblockSensors_light
      * @this.Blockly.Block
      * @param {String/dropdown}
@@ -160,7 +160,7 @@ Blockly.Blocks['makeblockSensors_light'] = {
 Blockly.Blocks['makeblockSensors_temperature_getSample'] = {
     /**
      * Get the current reading from the compass sensor.
-     *
+     * 
      * @constructs mbedSensors_temperature_getSample
      * @this.Blockly.Block
      * @returns immediately
@@ -185,7 +185,7 @@ Blockly.Blocks['makeblockSensors_temperature_getSample'] = {
 Blockly.Blocks['makeblockSensors_getSample'] = {
     /**
      * Get the current reading from choosen sensor.
-     *
+     * 
      * @constructs mbedSensors_getSample
      * @this.Blockly.Block
      * @param {String/dropdown}
@@ -199,7 +199,7 @@ Blockly.Blocks['makeblockSensors_getSample'] = {
     },
     /**
      * Create XML to represent whether the sensor type has changed.
-     *
+     * 
      * @return {Element} XML storage element.
      * @this Blockly.Block
      */
@@ -210,7 +210,7 @@ Blockly.Blocks['makeblockSensors_getSample'] = {
     },
     /**
      * Parse XML to restore the sensor type.
-     *
+     * 
      * @param {!Element}
      *            xmlElement XML storage element.
      * @this Blockly.Block
@@ -223,7 +223,7 @@ Blockly.Blocks['makeblockSensors_getSample'] = {
 
     /**
      * Called whenever anything on the workspace changes.
-     *
+     * 
      * @this Blockly.Block
      */
     /*
@@ -232,7 +232,7 @@ Blockly.Blocks['makeblockSensors_getSample'] = {
      */
     /**
      * Called whenever the shape has to change.
-     *
+     * 
      * @this Blockly.Block
      */
     updateShape_ : function(option) {
@@ -248,7 +248,7 @@ Blockly.Blocks['makeblockSensors_getSample'] = {
 
     /**
      * Called whenever the blocks shape has changed.
-     *
+     * 
      * @this Blockly.Block
      */
     appendValue_ : function(type, value) {
@@ -259,7 +259,7 @@ Blockly.Blocks['makeblockSensors_getSample'] = {
 Blockly.Blocks['makeblockSensors_getSample_makeblock'] = {
     /**
      * Get the current reading from choosen sensor.
-     *
+     * 
      * @constructs robSensors_getSample
      * @this.Blockly.Block
      * @param {String/dropdown}
@@ -293,7 +293,7 @@ Blockly.Blocks['makeblockSensors_getSample_makeblock'] = {
     },
     /**
      * Create XML to represent whether the sensor type has changed.
-     *
+     * 
      * @return {Element} XML storage element.
      * @this Blockly.Block
      */
@@ -304,7 +304,7 @@ Blockly.Blocks['makeblockSensors_getSample_makeblock'] = {
     },
     /**
      * Parse XML to restore the sensor type.
-     *
+     * 
      * @param {!Element}
      *            xmlElement XML storage element.
      * @this Blockly.Block
@@ -317,7 +317,7 @@ Blockly.Blocks['makeblockSensors_getSample_makeblock'] = {
 
     /**
      * Called whenever anything on the workspace changes.
-     *
+     * 
      * @this Blockly.Block
      */
     /*
@@ -326,7 +326,7 @@ Blockly.Blocks['makeblockSensors_getSample_makeblock'] = {
      */
     /**
      * Called whenever the shape has to change.
-     *
+     * 
      * @this Blockly.Block
      */
     updateShape_ : function(option) {
@@ -371,7 +371,7 @@ Blockly.Blocks['makeblockSensors_getSample_makeblock'] = {
 
     /**
      * Called whenever the blocks shape has changed.
-     *
+     * 
      * @this Blockly.Block
      */
     appendValue_ : function(type, value) {

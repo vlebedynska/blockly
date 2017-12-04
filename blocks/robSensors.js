@@ -56,25 +56,22 @@ sensors.colour.ev3 = {
     modes : [ {
         name : 'COLOUR',
         type : 'Colour',
-        standardPort : '3',
         value : '#b30006'
     }, {
         name : 'LIGHT',
         type : 'Number',
         unit : 'PERCENT',
-        standardPort : '3',
         value : 50
     }, {
         name : 'AMBIENTLIGHT',
         type : 'Number',
         unit : 'PERCENT',
-        standardPort : '3',
         value : 50
     }, {
         name : 'RGB',
         type : 'Array_Number',
-        standardPort : '3'
-    } ]
+    } ],
+    standardPort : '3',
 };
 sensors.colour.nxt = sensors.colour.ev3;
 
@@ -156,24 +153,23 @@ sensors.gyro.ev3 = {
         name : 'ANGLE',
         type : 'Number',
         unit : 'DEGREE',
-        standardPort : '2',
         op : 'NUM_REV',
         value : 90
     }, {
         name : 'RATE',
         type : 'Number',
         unit : 'OMEGA',
-        standardPort : '2',
         op : 'NUM_REV',
         value : 90
     } ],
-    ports : [ [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ]
+    ports : [ [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ],
+    standardPort : '2',
 };
 
 sensors.infrared = {};
 sensors.infrared.ardu = {
     title : 'INFRARED',
-    ports : [ [ Blockly.Msg.MOTOR_LEFT, '1' ], [ Blockly.Msg.MOTOR_RIGHT, '2' ], [ Blockly.Msg.BOTH, 'BOTH' ] ],
+    ports : [ [ 'MOTOR_LEFT', '1' ], [ 'MOTOR_RIGHT', '2' ], [ 'BOTH', 'BOTH' ] ],
     modes : [ {
         name : 'OBSTACLE',
         type : 'Boolean',
@@ -213,7 +209,7 @@ sensors.key.ardu = {
         type : 'Boolean',
         question : true
     } ],
-    ports : [ [ '1', 'LEFT' ], [ '2', 'ENTER' ], [ '3', 'RIGHT' ], [ Blockly.Msg.SENSOR_KEY_ANY, 'ANY' ] ]
+    ports : [ [ '1', 'LEFT' ], [ '2', 'ENTER' ], [ '3', 'RIGHT' ], [ 'SENSOR_KEY_ANY', 'ANY' ] ]
 };
 sensors.key.calliope = {
     title : 'KEY',
@@ -232,9 +228,8 @@ sensors.key.ev3 = {
         type : 'Boolean',
         question : true
     } ],
-    ports : [ [ Blockly.Msg.SENSOR_KEY_ENTER, 'ENTER' ], [ Blockly.Msg.SENSOR_KEY_UP, 'UP' ], [ Blockly.Msg.SENSOR_KEY_DOWN, 'DOWN' ],
-            [ Blockly.Msg.SENSOR_KEY_LEFT, 'LEFT' ], [ Blockly.Msg.SENSOR_KEY_RIGHT, 'RIGHT' ], [ Blockly.Msg.SENSOR_KEY_ESCAPE, 'ESCAPE' ],
-            [ Blockly.Msg.SENSOR_KEY_ANY, 'ANY' ] ]
+    ports : [ [ 'SENSOR_KEY_ENTER', 'ENTER' ], [ 'SENSOR_KEY_UP', 'UP' ], [ 'SENSOR_KEY_DOWN', 'DOWN' ], [ 'SENSOR_KEY_LEFT', 'LEFT' ],
+            [ 'SENSOR_KEY_RIGHT', 'RIGHT' ], [ 'SENSOR_KEY_ESCAPE', 'ESCAPE' ], [ 'SENSOR_KEY_ANY', 'ANY' ] ]
 };
 
 sensors.key.nxt = {
@@ -244,7 +239,7 @@ sensors.key.nxt = {
         type : 'Boolean',
         question : true
     } ],
-    ports : [ [ Blockly.Msg.SENSOR_KEY_ENTER, 'ENTER' ], [ Blockly.Msg.SENSOR_KEY_LEFT, 'LEFT' ], [ Blockly.Msg.SENSOR_KEY_RIGHT, 'RIGHT' ] ]
+    ports : [ [ 'SENSOR_KEY_ENTER', 'ENTER' ], [ 'SENSOR_KEY_LEFT', 'LEFT' ], [ 'SENSOR_KEY_RIGHT', 'RIGHT' ] ]
 };
 
 sensors.light = {};
@@ -264,16 +259,15 @@ sensors.light.nxt = {
         name : 'LIGHT',
         type : 'Number',
         unit : 'PERCENT',
-        standardPort : '3',
         value : 50
     }, {
         name : 'AMBIENTLIGHT',
         type : 'Number',
         unit : 'PERCENT',
-        standardPort : '3',
         value : 50
     } ],
-    ports : [ [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ]
+    ports : [ [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ],
+    standardPort : '3',
 };
 
 sensors.sound = {};
@@ -294,11 +288,11 @@ sensors.sound.nxt = {
         name : 'SOUND',
         type : 'Number',
         unit : 'PERCENT',
-        standardPort : '2',
         op : 'NUM_REV',
         value : 50
     } ],
-    ports : [ [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ]
+    ports : [ [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ],
+    standardPort : '2',
 }
 
 sensors.temperature = {};
@@ -347,10 +341,20 @@ sensors.pinTouch.bob3 = {
         name : 'PRESSED',
         type : 'Boolean',
         question : true,
-        standardPort : '1'
-    } ]
+    } ],
+    standardPort : '1'
 };
 sensors.touch = {};
+sensors.touch.bob3 = {
+    title : 'TOUCH',
+    ports : [ [ 'MOTOR_LEFT', '2' ], [ 'MOTOR_RIGHT', '1' ] ],
+    extraPorts : [ [ 'SENSOR_TOP', '1' ], [ 'CENTER', '2' ], [ 'SENSOR_BOTTOM', '3' ], [ 'SENSOR_ANY', '0' ] ],
+    modes : [ {
+        name : 'PRESSED',
+        type : 'Boolean',
+        question : true,
+    } ]
+};
 sensors.touch.ev3 = {
     title : 'TOUCH',
     ports : [ [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ],
@@ -358,15 +362,15 @@ sensors.touch.ev3 = {
         name : 'PRESSED',
         type : 'Boolean',
         question : true,
-        standardPort : '1'
-    } ]
+    } ],
+    standardPort : '1'
 };
 sensors.touch.nxt = sensors.touch.ev3;
 
 sensors.ultrasonic = {};
 sensors.ultrasonic.ardu = {
     title : 'ULTRASONIC',
-    ports : [ [ Blockly.Msg.MOTOR_LEFT, '0' ], [ Blockly.Msg.CENTER, '1' ], [ Blockly.Msg.MOTOR_RIGHT, '2' ], [ Blockly.Msg.SENSOR_SONAR, '3' ] ],
+    ports : [ [ 'MOTOR_LEFT', '0' ], [ 'CENTER', '1' ], [ 'MOTOR_RIGHT', '2' ], [ 'SENSOR_SONAR', '3' ] ],
     modes : [ {
         name : 'DISTANCE',
         type : 'Number',
@@ -381,12 +385,11 @@ sensors.ultrasonic.ev3 = {
         name : 'DISTANCE',
         type : 'Number',
         unit : 'CM',
-        standardPort : '4'
     }, {
         name : 'PRESENCE',
         type : 'Boolean',
-        standardPort : '4'
-    } ]
+    } ],
+    standardPort : '4'
 };
 
 sensors.ultrasonic.nxt = {
@@ -396,15 +399,17 @@ sensors.ultrasonic.nxt = {
         name : 'DISTANCE',
         type : 'Number',
         unit : 'CM',
-        standardPort : '4'
-    } ]
+    } ],
+    standardPort : '4'
 };
 sensors.ultrasonic.mbot = sensors.ultrasonic.nxt;
 
 var sensorsAll = [];
 sensorsAll.ev3 = [ sensors.touch.ev3, sensors.ultrasonic.ev3, sensors.colour.ev3, sensors.infrared.ev3, sensors.encoder.ev3, sensors.key.ev3, sensors.gyro.ev3,
         sensors.timer.ev3 ];
-sensorsAll.bob3 = [ sensors.infrared.bob3, sensors.temperature.bob3, sensors.timer.bob3 ];
+sensorsAll.nxt = [ sensors.touch.nxt, sensors.sound.nxt, sensors.light.nxt, sensors.ultrasonic.nxt, sensors.encoder.nxt, sensors.key.nxt, sensors.colour.nxt,
+        sensors.timer.nxt ];
+sensorsAll.bob3 = [ sensors.touch.bob3, sensors.infrared.bob3, sensors.temperature.bob3, sensors.timer.bob3 ];
 
 function initSensors() {
     for ( var sensor in sensors) {
@@ -437,7 +442,7 @@ Blockly.Blocks['mbedSensors_compass_getSample'] = Blockly.Blocks['robSensors_com
 Blockly.Blocks['bob3Sensors_ambientlight'] = Blockly.Blocks['robSensors_infrared_getSample'];
 Blockly.Blocks['bob3Sensors_temperature_getSample'] = Blockly.Blocks['robSensors_temperature_getSample'];
 Blockly.Blocks['bob3Sensors_getCode'] = Blockly.Blocks['robSensors_code_getSample'];
-//Blockly.Blocks['bob3Sensors_touch_getSample'] = Blockly.Blocks['robSensors_arm_getSample'];
+Blockly.Blocks['bob3Sensors_touch_getSample'] = Blockly.Blocks['robSensors_touch_getSample'];
 Blockly.Blocks['bob3Sensors_getSample_bob3'] = Blockly.Blocks['robSensors_getSample'];
 
 //Blockly.Blocks['mbedSensors_key_isPressed'] = Blockly.Blocks['robSensors_key_getSample'];
@@ -524,25 +529,29 @@ Blockly.Blocks['robSensors_timer_reset'] = {
 };
 
 Blockly.Blocks['robSensors_generic'] = {
-    /**
-     * Get the current distance from the ultrasonic sensor.
-     * 
-     * @param {String/dropdown}
-     *            MODE - Mode of the sensor
-     * @param {String/dropdown}
-     *            SENSORPORT - port of the sensor
-     * @returns immediately
-     * @returns {Number}
-     * @memberof Block
-     */
     init : function(sensor) {
         this.setColour(Blockly.CAT_SENSOR_RGB);
         // do we have ports?
         var ports;
         if (sensor.ports) {
-            ports = new Blockly.FieldDropdown(sensor.ports);
+            var portsList = [];
+            for (var i = 0; i < sensor.ports.length; i++) {
+                portsList.push([ Blockly.Msg[sensor.ports[i][0]] || sensor.ports[i][0], sensor.ports[i][1] ]);
+            }
+            ports = new Blockly.FieldDropdown(portsList);
         } else {
             ports = new Blockly.FieldHidden();
+        }
+        // do we have extraPorts?
+        var extraPorts;
+        if (sensor.extraPorts) {
+            var portsList = [];
+            for (var i = 0; i < sensor.extraPorts.length; i++) {
+                portsList.push([ Blockly.Msg[sensor.extraPorts[i][0]] || sensor.extraPorts[i][0], sensor.extraPorts[i][1] ]);
+            }
+            extraPorts = new Blockly.FieldDropdown(portsList);
+        } else {
+            extraPorts = new Blockly.FieldHidden();
         }
         // do what kind of modes do we have?
         var modes;
@@ -562,14 +571,17 @@ Blockly.Blocks['robSensors_generic'] = {
         var firstMode = sensor.modes[0];
         // question or not?
         if (firstMode.question) {
-            this.appendDummyInput().appendField(Blockly.Msg['SENSOR_' + sensor.title] || sensor.title).appendField(modes, 'MODE').appendField(ports, 'SENSORPORT').appendField(Blockly.Msg['SENSOR_IS_'
+            this.appendDummyInput().appendField(Blockly.Msg['SENSOR_' + sensor.title + '_' + this.workspace.device.toUpperCase()]
+                    || Blockly.Msg['SENSOR_' + sensor.title] || sensor.title).appendField(modes, 'MODE').appendField(ports, 'SENSORPORT').appendField(extraPorts, 'SENSORPORT_EXTRA').appendField(Blockly.Msg['SENSOR_IS_'
                     + firstMode.name]
                     || firstMode.name);
-
         } else {
-            this.appendDummyInput().appendField(Blockly.Msg.GET).appendField(modes, 'MODE').appendField(Blockly.Msg['SENSOR_' + sensor.title] || sensor.title).appendField(ports, 'SENSORPORT').appendField(Blockly.Msg['SENSOR_UNIT_'
-                    + firstMode.unit]
-                    || firstMode.unit || '', 'UNIT');
+            this.appendDummyInput().appendField(Blockly.Msg.GET).appendField(modes, 'MODE').appendField(Blockly.Msg['SENSOR_UNIT_' + firstMode.unit]
+                    || firstMode.unit || '', 'UNIT').appendField(Blockly.Msg['SENSOR_' + sensor.title + '_' + this.workspace.device.toUpperCase()]
+                    || Blockly.Msg['SENSOR_' + sensor.title] || sensor.title).appendField(ports, 'SENSORPORT').appendField(extraPorts, 'SENSORPORT_EXTRA');
+        }
+        if (sensor.standardPort) {
+            ports.setValue(sensor.standardPort);
         }
         this.sensorMode_ = firstMode.name;
         this.setOutput(true, firstMode.type);
@@ -621,6 +633,7 @@ Blockly.Blocks['robSensors_generic_all'] = {
         this.setColour(Blockly.CAT_SENSOR_RGB);
         this.sensors = [];
         this.ports = [];
+        this.extraPorts = [];
 
         var modeSensor = [];
         for (var i = 0; i < sensors.length; i++) {
@@ -630,18 +643,35 @@ Blockly.Blocks['robSensors_generic_all'] = {
                     continue;
                 }
                 modeSensor.push([
-                        (Blockly.Msg['MODE_' + sensors[i].modes[j].name] || sensors[i].modes[j].name) + ' '
-                                + (Blockly.Msg['SENSOR_' + sensors[i].title] || sensors[i].title), sensors[i].title + '_' + sensors[i].modes[j].name ]);
+                        (Blockly.Msg['MODE_' + sensors[i].modes[j].name] || sensors[i].modes[j].name)
+                                + ' '
+                                + (Blockly.Msg['SENSOR_UNIT_' + sensors[i].modes[j].unit] || sensors[i].modes[j].unit || '')
+                                + ' '
+                                + (Blockly.Msg['SENSOR_' + sensors[i].title + '_' + this.workspace.device.toUpperCase()]
+                                        || Blockly.Msg['SENSOR_' + sensors[i].title] || sensors[i].title), sensors[i].title + '_' + sensors[i].modes[j].name ]);
                 if (sensors[i].ports) {
-                    this.ports.push(new Blockly.FieldDropdown(sensors[i].ports));
+                    var portsList = [];
+                    for (var k = 0; k < sensors[i].ports.length; k++) {
+                        portsList.push([ Blockly.Msg[sensors[i].ports[k][0]] || sensors[i].ports[k][0], sensors[i].ports[k][1] ]);
+                    }
+                    this.ports.push(new Blockly.FieldDropdown(portsList));
                 } else {
                     this.ports.push(new Blockly.FieldHidden());
+                }
+                if (sensors[i].extraPorts) {
+                    var portsList = [];
+                    for (var l = 0; l < sensors[i].extraPorts.length; l++) {
+                        portsList.push([ Blockly.Msg[sensors[i].extraPorts[l][0]] || sensors[i].extraPorts[l][0], sensors[i].extraPorts[l][1] ]);
+                    }
+                    this.extraPorts.push(new Blockly.FieldDropdown(portsList));
+                } else {
+                    this.extraPorts.push(new Blockly.FieldHidden());
                 }
                 this.sensors.push({
                     name : sensors[i].title,
                     mode : sensors[i].modes[j].name,
                     type : sensors[i].modes[j].type,
-                    standardPort : sensors[i].modes[j].standardPort,
+                    standardPort : sensors[i].standardPort,
                     unit : sensors[i].modes[j].unit,
                     op : sensors[i].modes[j].op,
                     value : sensors[i].modes[j].value
@@ -654,9 +684,7 @@ Blockly.Blocks['robSensors_generic_all'] = {
             }
         });
 
-        this.appendDummyInput('ROW').appendField(Blockly.Msg.GET).appendField(dropdownModes, 'SENSORTYPE').appendField(this.ports[0], 'SENSORPORT').appendField(Blockly.Msg['SENSOR_UNIT_'
-                + this.sensors[0].unit]
-                || this.sensors[0].unit || '', 'UNIT');
+        this.appendDummyInput('ROW').appendField(Blockly.Msg.GET, 'GET').appendField(dropdownModes, 'SENSORTYPE').appendField(this.ports[0], 'SENSORPORT').appendField(this.extraPorts[0], 'SENSORPORT_EXTRA');
 
         this.setOutput(true, sensors[0].modes[0].type);
 
@@ -699,12 +727,10 @@ Blockly.Blocks['robSensors_generic_all'] = {
                 }
             }
             // add ports again
-            input.appendField(this.ports[index], 'SENSORPORT');
+            input.appendField(this.ports[index], 'SENSORPORT').appendField(this.extraPorts[index], 'SENSORPORT_EXTRA');
             if (this.sensors[index].standardPort) {
                 this.ports[index].setValue(this.sensors[index].standardPort);
             }
-            // add units again
-            input.appendField(Blockly.Msg['SENSOR_UNIT_' + this.sensors[index].unit] || this.sensors[index].unit || '', 'UNIT');
             // set output
             this.setOutput(true, this.sensors[index].type);
 

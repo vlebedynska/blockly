@@ -325,7 +325,8 @@ Blockly.mouseToSvg = function(e, svg) {
  * @return {number} Length of shortest string.
  */
 Blockly.shortestStringLength = function(array) {
-  if (!array.length) {
+    //Beate: it may can happen that array is not an object
+  if (!array || !array.length) {
     return 0;
   }
   var len = array[0].length;

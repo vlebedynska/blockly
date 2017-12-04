@@ -31,7 +31,8 @@ goog.provide('Blockly.Xml');
 goog.require('goog.dom');
 
 Blockly.Xml.COORDINATE = 'MODE';
-Blockly.Xml.SENSORNUM = 'SENSORPORT'
+Blockly.Xml.SENSORNUM = 'SENSORPORT';
+Blockly.Xml.KEY = 'SENSORPORT';
 
 
 /**

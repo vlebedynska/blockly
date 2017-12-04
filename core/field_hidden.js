@@ -39,7 +39,7 @@ goog.require('Blockly.Field');
  * @constructor
  */
 Blockly.FieldHidden = function(text) {
-	Blockly.FieldHidden.superClass_.constructor.call(this, text);
+	Blockly.FieldHidden.superClass_.constructor.call(this, '');
 	this.size_ = new goog.math.Size(0, 0);
 };
 goog.inherits(Blockly.FieldHidden, Blockly.Field);
@@ -54,6 +54,10 @@ Blockly.FieldHidden.prototype.init = function() {
 		return;
 	}
 	// do nothing.
+};
+
+Blockly.FieldHidden.prototype.isVisible = function() {
+  return false;
 };
 
 Blockly.FieldHidden.prototype.updateTextNode_ = function() {

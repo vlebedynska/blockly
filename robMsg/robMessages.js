@@ -966,3 +966,13 @@ Blockly.Msg.NAO_FACE_GET_INFORMATION_TOOLTIP = 'This block will return additiona
 
 Blockly.Msg.SENSOR_RADIO_RSSI = 'radio RSSI sensor';
 Blockly.Msg.RADIO_GET_RSSI_TOOLTIP = 'Gets the RSSI of the last package.';
+
+Blockly.Msg.SENSOR_UNIT_CM = 'cm';
+Blockly.Msg.SENSOR_UNIT_DEGREE = '°';
+Blockly.Msg.SENSOR_UNIT_MS = 'ms';
+Blockly.Msg.SENSOR_UNIT_OMEGA = 'ω';
+Blockly.Msg.SENSOR_UNIT_PERCENT = '%';
+Blockly.Msg.SENSOR_TOUCH_BOB3 = 'arm';
+Blockly.Msg.SENSOR_SOUND_CALLIOPE = 'microphone';
+Blockly.Msg.MODE_VALUE = 'value';
+Blockly.Msg.MODE_PRESSED = 'pressed';

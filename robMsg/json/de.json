@@ -903,5 +903,9 @@
   "BOB3_SAVENUMBER_TOOLTIP" : "Hier kannst du eine Zahl dauerhaft speichern. Sie sollte ganzzahlig sein und einen Wert zwischen 0 und 255 haben.",
   "BOB3_READNUMBER_TOOLTIP" : "Gibt die zuvor gespeicherte Zahl zurück.",
   "SENSOR_RADIO_RSSI": "Radio RSSI Sensor",
-  "RADIO_GET_RSSI_TOOLTIP": "Gibt den RSSI Wert des zuletzt empfangenen Pakets zurück."
+  "RADIO_GET_RSSI_TOOLTIP": "Gibt den RSSI Wert des zuletzt empfangenen Pakets zurück.",
+  "MODE_VALUE": "Wert",
+  "SENSOR_TOUCH_BOB3" : "Arm",
+  "SENSOR_SOUND_CALLIOPE" : "Mikrofon",
+  "MODE_PRESSED" : "gedrückt"
 }
