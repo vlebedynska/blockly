@@ -507,7 +507,7 @@
   "VARIABLES_TYPE_NUMBER":"Zahl",
   "VARIABLES_TYPE_STRING":"Zeichenkette",
   "VARIABLES_TYPE_ARRAY_CONNECTION": "Liste Verbindung",
-  "WAIT":"Warte ms",
+  "WAIT":"Warte s",
   "WAIT_FOREVER":"unendlich",
   "WAIT_FOR_TOOLTIP":"Wartet auf Sensorwerte.",
   "WAIT_OR":"oder warte bis",

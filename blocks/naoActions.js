@@ -27,7 +27,8 @@ Blockly.Blocks['naoActions_mode'] = {
      */
     init : function() {
         var dropdown = new Blockly.FieldDropdown([ [ Blockly.Msg.NAO_MODE_ACTIVE, 'ACTIVE' ], [ Blockly.Msg.NAO_MODE_REST, 'REST' ],
-                [ Blockly.Msg.NAO_MODE_SIT, 'SIT' ] ]);
+        //     [ Blockly.Msg.NAO_MODE_SIT, 'SIT' ] ]);
+        ]);
         this.setColour(Blockly.CAT_ACTION_RGB);
         this.setInputsInline(true);
         this.appendDummyInput().appendField(Blockly.Msg.SET + ' ' + Blockly.Msg.MODE).appendField(dropdown, 'DIRECTION');
@@ -126,33 +127,12 @@ Blockly.Blocks['naoActions_moveJoint'] = {
      */
     init : function() {
         this.setColour(Blockly.CAT_ACTION_RGB);
-        var dropdown = new Blockly.FieldDropdown([ [ Blockly.Msg.NAO_JOINT_HEADYAW, 'HEADYAW' ], [ Blockly.Msg.NAO_JOINT_HEADPITCH, 'HEADPITCH' ],
-                [ Blockly.Msg.MOTOR_LEFT + " " + Blockly.Msg.NAO_JOINT_SHOULDERPITCH, 'LSHOULDERPITCH' ],
-                [ Blockly.Msg.MOTOR_LEFT + " " + Blockly.Msg.NAO_JOINT_SHOULDERROLL, 'LSHOULDERROLL' ],
-                [ Blockly.Msg.MOTOR_LEFT + " " + Blockly.Msg.NAO_JOINT_ELBOWYAW, 'LELBOWYAW' ],
-                [ Blockly.Msg.MOTOR_LEFT + " " + Blockly.Msg.NAO_JOINT_ELBOWROLL, 'LELBOWROLL' ],
-                [ Blockly.Msg.MOTOR_LEFT + " " + Blockly.Msg.NAO_JOINT_WRISTYAW, 'LWRISTYAW' ],
-                [ Blockly.Msg.MOTOR_LEFT + " " + Blockly.Msg.NAO_HAND, 'LHAND' ],
-                [ Blockly.Msg.MOTOR_LEFT + " " + Blockly.Msg.NAO_JOINT_HIPYAWPITCH, 'LHIPYAWPITCH' ],
-                [ Blockly.Msg.MOTOR_LEFT + " " + Blockly.Msg.NAO_JOINT_HIPROLL, 'LHIPROLL' ],
-                [ Blockly.Msg.MOTOR_LEFT + " " + Blockly.Msg.NAO_JOINT_HIPPITCH, 'LHIPPITCH' ],
-                [ Blockly.Msg.MOTOR_LEFT + " " + Blockly.Msg.NAO_JOINT_KNEEPITCH, 'LKNEEPITCH' ],
-                [ Blockly.Msg.MOTOR_LEFT + " " + Blockly.Msg.NAO_JOINT_ANKLEPITCH, 'LANKLEPITCH' ],
-                [ Blockly.Msg.MOTOR_LEFT + " " + Blockly.Msg.NAO_JOINT_ANKLEROLL, 'LANKLEROLL' ],
-                [ Blockly.Msg.MOTOR_RIGHT + " " + Blockly.Msg.NAO_JOINT_SHOULDERPITCH, 'RSHOULDERPITCH' ],
-                [ Blockly.Msg.MOTOR_RIGHT + " " + Blockly.Msg.NAO_JOINT_SHOULDERROLL, 'RSHOULDERROLL' ],
-                [ Blockly.Msg.MOTOR_RIGHT + " " + Blockly.Msg.NAO_JOINT_ELBOWYAW, 'RELBOWYAW' ],
-                [ Blockly.Msg.MOTOR_RIGHT + " " + Blockly.Msg.NAO_JOINT_ELBOWROLL, 'RELBOWROLL' ],
-                [ Blockly.Msg.MOTOR_RIGHT + " " + Blockly.Msg.NAO_JOINT_WRISTYAW, 'RWRISTYAW' ],
-                [ Blockly.Msg.MOTOR_RIGHT + " " + Blockly.Msg.NAO_HAND, 'RHAND' ],
-                [ Blockly.Msg.MOTOR_RIGHT + " " + Blockly.Msg.NAO_JOINT_HIPYAWPITCH, 'RHIPYAWPITCH' ],
-                [ Blockly.Msg.MOTOR_RIGHT + " " + Blockly.Msg.NAO_JOINT_HIPROLL, 'RHIPROLL' ],
-                [ Blockly.Msg.MOTOR_RIGHT + " " + Blockly.Msg.NAO_JOINT_HIPPITCH, 'RHIPPITCH' ],
-                [ Blockly.Msg.MOTOR_RIGHT + " " + Blockly.Msg.NAO_JOINT_KNEEPITCH, 'RKNEEPITCH' ],
-                [ Blockly.Msg.MOTOR_RIGHT + " " + Blockly.Msg.NAO_JOINT_ANKLEPITCH, 'RANKLEPITCH' ],
-                [ Blockly.Msg.MOTOR_RIGHT + " " + Blockly.Msg.NAO_JOINT_ANKLEROLL, 'RANKLEROLL' ] ]);
-        var mode = new Blockly.FieldDropdown([ [ Blockly.Msg.NAO_ABSOLUTE, 'ABSOLUTE' ], [ Blockly.Msg.NAO_RELATIVE, 'RELATIVE' ] ]);
-        this.appendValueInput('POWER').appendField(Blockly.Msg.NAO_MOVE).appendField(dropdown, 'joint').appendField(mode, 'MODE').appendField(Blockly.Msg.MODE_DEGREE).setCheck('Number');
+        var dropdown = new Blockly.FieldDropdown([ [ "rechten Arm", 'RSHOULDERPITCH' ], [ "linken Arm", 'LSHOULDERPITCH' ],
+                [ "rechten Unterarm", 'RELBOWROLL' ], [ "linken Unterarm", 'LELBOWROLL' ] ]);
+        this.mode = new Blockly.FieldDropdown([ [ Blockly.Msg.NAO_ABSOLUTE, 'ABSOLUTE' ], [ Blockly.Msg.NAO_RELATIVE, 'RELATIVE' ] ]);
+        this.appendValueInput('POWER').appendField('Hebe').appendField(dropdown, 'joint').appendField(this.mode, 'MODE').appendField('Grad').setCheck('Number');
+        this.mode.visible_ = false;
+        this.mode.size_ = new goog.math.Size(0, 0);
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setTooltip(Blockly.Msg.NAO_MOVEJOINT_TOOLTIP);
@@ -440,20 +420,10 @@ Blockly.Blocks['naoActions_setLanguage'] = {
      */
     init : function() {
         this.setColour(Blockly.CAT_ACTION_RGB);
-        var dropdown = new Blockly.FieldDropdown([ [ Blockly.Msg.NAO_LANGUAGE_GERMAN, 'GERMAN' ], [ Blockly.Msg.NAO_LANGUAGE_ENGLISH, 'ENGLISH' ],
-                [ Blockly.Msg.NAO_LANGUAGE_FRENCH, 'FRENCH' ], [ Blockly.Msg.NAO_LANGUAGE_JAPANESE, 'JAPANESE' ],
-                [ Blockly.Msg.NAO_LANGUAGE_CHINESE, 'CHINESE' ], [ Blockly.Msg.NAO_LANGUAGE_SPANISH, 'SPANISH' ],
-                [ Blockly.Msg.NAO_LANGUAGE_KOREAN, 'KOREAN' ], [ Blockly.Msg.NAO_LANGUAGE_ITALIAN, 'ITALIAN' ], [ Blockly.Msg.NAO_LANGUAGE_DUTCH, 'DUTCH' ],
-                [ Blockly.Msg.NAO_LANGUAGE_FINNISH, 'FINNISH' ], [ Blockly.Msg.NAO_LANGUAGE_POLISH, 'POLISH' ],
-                [ Blockly.Msg.NAO_LANGUAGE_RUSSIAN, 'RUSSIAN' ], [ Blockly.Msg.NAO_LANGUAGE_TURKISH, 'TURKISH' ],
-                [ Blockly.Msg.NAO_LANGUAGE_ARABIC, 'ARABIC' ], [ Blockly.Msg.NAO_LANGUAGE_CZECH, 'CZECH' ],
-                [ Blockly.Msg.NAO_LANGUAGE_PORTUGUESE, 'PORTUGUESE' ], [ Blockly.Msg.NAO_LANGUAGE_BRAZILIAN, 'BRAZILIAN' ],
-                [ Blockly.Msg.NAO_LANGUAGE_SWEDISH, 'SWEDISH' ], [ Blockly.Msg.NAO_LANGUAGE_DANISH, 'DANISH' ],
-                [ Blockly.Msg.NAO_LANGUAGE_NORWEGIAN, 'NORWEGIAN' ], [ Blockly.Msg.NAO_LANGUAGE_GREEK, 'GREEK' ], ]);
-        this.appendDummyInput().appendField(Blockly.Msg.NAO_SETLANGUAGE).appendField(dropdown, 'LANGUAGE');
+        var dropdown = new Blockly.FieldDropdown([ [ Blockly.Msg.MOTOR_RIGHT, 'GERMAN' ], [ Blockly.Msg.MOTOR_LEFT, 'ENGLISH' ] ]);
+        this.appendDummyInput().appendField('Greife mit Hand').appendField(dropdown, 'LANGUAGE');
         this.setPreviousStatement(true);
         this.setNextStatement(true);
-        this.setTooltip(Blockly.Msg.NAO_SETLANGUAGE_TOOLTIP);
     }
 };
 
@@ -653,7 +623,7 @@ Blockly.Blocks['naoActions_randomEyes'] = {
 Blockly.Blocks['naoActions_rasta'] = {
     /**
      * Color the eyes in red, green and yellow.
-     *
+     * 
      * @constructs naoActions_rasta
      * @param {Number}
      *            DURATION the eyes are colored
