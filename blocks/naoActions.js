@@ -430,6 +430,8 @@ Blockly.Blocks['naoActions_sayText'] = {
     init : function() {
         this.setColour(Blockly.CAT_ACTION_RGB);
         this.appendValueInput('OUT').appendField(Blockly.Msg.NAO_SAY);
+	this.appendValueInput('SPEED').appendField(Blockly.Msg.MOTOR_SPEED).setCheck('Number')
+	this.appendValueInput('SHAPE').appendField(Blockly.Msg.NAO_SHAPE).setCheck('Number')
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setTooltip(Blockly.Msg.NAO_SAY_TOOLTIP);

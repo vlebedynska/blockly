@@ -784,6 +784,7 @@ Blockly.Msg.NAO_HAND = 'hand';
 Blockly.Msg.NAO_ABSOLUTE = 'absolute';
 Blockly.Msg.NAO_RELATIVE = 'relative';
 Blockly.Msg.NAO_FILENAME = 'filename';
+Blockly.Msg.NAO_SHAPE = 'voice shape %';
 
 // Tooltips for the nao blocks
 /// NAO tooltips
@@ -806,7 +807,7 @@ Blockly.Msg.NAO_SETVOLUME_TOOLTIP = 'Set the volume in a range from 0 to 100.';
 Blockly.Msg.NAO_GETVOLUME_TOOLTIP = 'Get the volume.';
 Blockly.Msg.NAO_GETLANGUAGE_TOOLTIP = 'Get the active language. This is the language the robot is currently using for Text to Speech and Voice recognition.';
 Blockly.Msg.NAO_SETLANGUAGE_TOOLTIP = 'Set the language. Be aware that it is necessary to download the language pack before you can use it. For more information refer to the manual of your robot.'
-Blockly.Msg.NAO_SAY_TOOLTIP = 'The robot says the given text. It is also possible to enter special charaters. The robot will use the selected language to try and speak the entered text.';
+Blockly.Msg.NAO_SAY_TOOLTIP = 'The robot says the given text. It is also possible to enter special charaters. The robot will use the selected language to try and speak the entered text. Modify the speed (range: 50-400) and the shape of the voice (range: 50-200) with the input fields';
 Blockly.Msg.NAO_PLAYFILE_TOOLTIP = 'Plays a sound file from the robot. Enter the name of the file. The file needs to be transferred to the robot beforehand.';
 
 Blockly.Msg.NAO_TAKEPICTURE_TOOLTIP = 'Takes a picture and saves it on the robot. Access the robots file system to view the picture.';
