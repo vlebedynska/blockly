@@ -13,6 +13,75 @@ goog.require('Blockly.Blocks');
  * @lends Block
  */
 
+
+ Blockly.Blocks['robActions_setLanguage'] = {
+     /**
+      * Sets the language the robot uses.
+      *
+      * @constructs robActions_setLanguage
+      * @this.Blockly.Block
+      * @param {String}
+      *            LANGUAGE
+      * @returns immediately
+      * @memberof Block
+      */
+     init : function() {
+         this.setColour(Blockly.CAT_ACTION_RGB);
+         var dropdown = new Blockly.FieldDropdown([ [ Blockly.Msg.NAO_LANGUAGE_GERMAN, 'GERMAN' ], [ Blockly.Msg.NAO_LANGUAGE_ENGLISH, 'ENGLISH' ], [ Blockly.Msg.NAO_LANGUAGE_FRENCH, 'FRENCH' ], [ Blockly.Msg.NAO_LANGUAGE_SPANISH, 'SPANISH' ], [ Blockly.Msg.NAO_LANGUAGE_ITALIAN, 'ITALIAN' ], [ Blockly.Msg.NAO_LANGUAGE_DUTCH, 'DUTCH' ], [ Blockly.Msg.NAO_LANGUAGE_FINNISH, 'FINNISH' ], [ Blockly.Msg.NAO_LANGUAGE_POLISH, 'POLISH' ], [ Blockly.Msg.NAO_LANGUAGE_RUSSIAN, 'RUSSIAN' ], [ Blockly.Msg.NAO_LANGUAGE_TURKISH, 'TURKISH' ], [ Blockly.Msg.NAO_LANGUAGE_CZECH, 'CZECH' ], [ Blockly.Msg.NAO_LANGUAGE_PORTUGUESE, 'PORTUGUESE' ], [ Blockly.Msg.NAO_LANGUAGE_DANISH, 'DANISH' ], ]);
+         if (this.workspace.device === 'nao') {
+             dropdown = new Blockly.FieldDropdown([ [ Blockly.Msg.NAO_LANGUAGE_GERMAN, 'GERMAN' ], [ Blockly.Msg.NAO_LANGUAGE_ENGLISH, 'ENGLISH' ], [ Blockly.Msg.NAO_LANGUAGE_FRENCH, 'FRENCH' ], [ Blockly.Msg.NAO_LANGUAGE_JAPANESE, 'JAPANESE' ], [ Blockly.Msg.NAO_LANGUAGE_CHINESE, 'CHINESE' ], [ Blockly.Msg.NAO_LANGUAGE_SPANISH, 'SPANISH' ], [ Blockly.Msg.NAO_LANGUAGE_KOREAN, 'KOREAN' ], [ Blockly.Msg.NAO_LANGUAGE_ITALIAN, 'ITALIAN' ], [ Blockly.Msg.NAO_LANGUAGE_DUTCH, 'DUTCH' ], [ Blockly.Msg.NAO_LANGUAGE_FINNISH, 'FINNISH' ], [ Blockly.Msg.NAO_LANGUAGE_POLISH, 'POLISH' ], [ Blockly.Msg.NAO_LANGUAGE_RUSSIAN, 'RUSSIAN' ], [ Blockly.Msg.NAO_LANGUAGE_TURKISH, 'TURKISH' ], [ Blockly.Msg.NAO_LANGUAGE_ARABIC, 'ARABIC' ], [ Blockly.Msg.NAO_LANGUAGE_CZECH, 'CZECH' ], [ Blockly.Msg.NAO_LANGUAGE_PORTUGUESE, 'PORTUGUESE' ], [ Blockly.Msg.NAO_LANGUAGE_BRAZILIAN, 'BRAZILIAN' ], [ Blockly.Msg.NAO_LANGUAGE_SWEDISH, 'SWEDISH' ], [ Blockly.Msg.NAO_LANGUAGE_DANISH, 'DANISH' ], [ Blockly.Msg.NAO_LANGUAGE_NORWEGIAN, 'NORWEGIAN' ], [ Blockly.Msg.NAO_LANGUAGE_GREEK, 'GREEK' ], ]);
+         } else if (this.workspace.device === 'ev3') {
+             dropdown = new Blockly.FieldDropdown([ [ Blockly.Msg.NAO_LANGUAGE_GERMAN, 'GERMAN' ], [ Blockly.Msg.NAO_LANGUAGE_ENGLISH, 'ENGLISH' ], [ Blockly.Msg.NAO_LANGUAGE_FRENCH, 'FRENCH' ], [ Blockly.Msg.NAO_LANGUAGE_SPANISH, 'SPANISH' ], [ Blockly.Msg.NAO_LANGUAGE_ITALIAN, 'ITALIAN' ], [ Blockly.Msg.NAO_LANGUAGE_DUTCH, 'DUTCH' ], [ Blockly.Msg.NAO_LANGUAGE_FINNISH, 'FINNISH' ], [ Blockly.Msg.NAO_LANGUAGE_POLISH, 'POLISH' ], [ Blockly.Msg.NAO_LANGUAGE_RUSSIAN, 'RUSSIAN' ], [ Blockly.Msg.NAO_LANGUAGE_TURKISH, 'TURKISH' ], [ Blockly.Msg.NAO_LANGUAGE_CZECH, 'CZECH' ], [ Blockly.Msg.NAO_LANGUAGE_PORTUGUESE, 'PORTUGUESE' ], [ Blockly.Msg.NAO_LANGUAGE_DANISH, 'DANISH' ], ]);
+         }
+         this.appendDummyInput().appendField(Blockly.Msg.NAO_SETLANGUAGE).appendField(dropdown, 'LANGUAGE');
+         this.setPreviousStatement(true);
+         this.setNextStatement(true);
+         this.setTooltip(Blockly.Msg.NAO_SETLANGUAGE_TOOLTIP);
+     }
+ };
+
+ Blockly.Blocks['robActions_sayText'] = {
+     /**
+      * Say a text.
+      *
+      * @constructs robActions_sayText
+      * @this.Blockly.Block
+      * @param {String}
+      *            OUT Text to say
+      * @returns immediately
+      * @memberof Block
+      */
+     init : function() {
+         this.setColour(Blockly.CAT_ACTION_RGB);
+         this.appendValueInput('OUT').appendField(Blockly.Msg.NAO_SAY);
+         this.setPreviousStatement(true);
+         this.setNextStatement(true);
+         this.setTooltip(Blockly.Msg.NAO_SAY_TOOLTIP);
+     }
+ };
+
+ Blockly.Blocks['robActions_sayText_parameters'] = {
+     /**
+      * Say a text with additional parameters.
+      *
+      * @constructs robActions_sayText_parameters
+      * @this.Blockly.Block
+      * @param {String}
+      *            OUT Text to say
+      * @returns immediately
+      * @memberof Block
+      */
+     init : function() {
+         this.setColour(Blockly.CAT_ACTION_RGB);
+         this.appendValueInput('OUT').appendField(Blockly.Msg.NAO_SAY);
+                     this.appendValueInput('SPEED').appendField(Blockly.Msg.MOTOR_SPEED).setCheck('Number');
+                     this.appendValueInput('SHAPE').appendField(Blockly.Msg.NAO_SHAPE).setCheck('Number');
+         this.setPreviousStatement(true);
+         this.setNextStatement(true);
+         this.setTooltip(Blockly.Msg.NAO_SAY_TOOLTIP);
+     }
+ };
+
 Blockly.Blocks['robActions_motor_on'] = {
     /**
      * Turn motor on with specific power.
