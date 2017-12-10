@@ -1,5 +1,5 @@
 /**
- * @fileoverview Sensor blocks for all Systems.
+ * @fileoverview Sensor blocks for all systems.
  * @requires Blockly.Blocks
  * @author Beate
  */
@@ -11,6 +11,31 @@ goog.provide('Blockly.Blocks.robSensors');
 goog.require('Blockly.Blocks');
 
 // define sensors here as a property of sensors  ********************************************************************************
+
+/*- minimal example:
+ * 
+ * sensors.ultrasonic.ev3 = { 
+ *     title : 'ULTRASONIC', 
+ *     modes : [ { 
+ *         name : 'PRESENCE', 
+ *         type : 'Boolean', 
+ *     } ], 
+ * }; 
+ * 
+ */
+
+/*- all supported properties: 
+ * 
+ * title,  
+ * ports,  
+ * modes,  
+ *     name,  
+ *     type,  
+ *     value, 
+ *     unit, 
+ *     op, 
+ * standardPort 
+ */
 
 var sensors = {};
 sensors.battery = {};
@@ -36,7 +61,7 @@ sensors.code.bob3 = {
 sensors.colour = {};
 sensors.colour.ardu = {
     title : 'COLOUR',
-    ports : [ [ Blockly.Msg.MOTOR_LEFT, '1' ], [ Blockly.Msg.MOTOR_RIGHT, '2' ] ],
+    ports : [ [ 'MOTOR_LEFT', '1' ], [ 'MOTOR_RIGHT', '2' ] ],
     modes : [ {
         name : 'VALUE',
         type : 'Colour',
@@ -197,7 +222,7 @@ sensors.infrared.ev3 = {
         unit : 'CM'
     }, {
         name : 'PRESENCE',
-        type : 'Boolean',
+        type : 'Array_Number',
     } ]
 };
 
@@ -464,7 +489,7 @@ Blockly.Blocks['bob3Sensors_getSample_bob3'] = Blockly.Blocks['robSensors_getSam
 Blockly.Blocks['robSensors_encoder_reset'] = {
     /**
      * Reset the motor encoder.
-     *
+     * 
      * @constructs robSensors_encoder_reset
      * @this.Blockly.Block
      * @param {String/dropdown}
@@ -502,7 +527,7 @@ Blockly.Blocks['robSensors_gyro_reset'] = {
 Blockly.Blocks['robSensors_timer_reset'] = {
     /**
      * Reset the timer.
-     *
+     * 
      * @constructs robSensors_timer_reset
      * @this.Blockly.Block
      * @param {String/dropdown}
@@ -515,11 +540,9 @@ Blockly.Blocks['robSensors_timer_reset'] = {
         var sensorNum;
         if (this.workspace.device === 'nxt' || this.workspace.device === 'ardu' || this.workspace.device === 'bob3') {
             sensorNum = new Blockly.FieldDropdown([ [ Blockly.Msg.SENSOR_TIMER + ' 1', '1' ] ]);
-            this.data = 'nxt';
         } else {
             sensorNum = new Blockly.FieldDropdown([ [ Blockly.Msg.SENSOR_TIMER + ' 1', '1' ], [ Blockly.Msg.SENSOR_TIMER + ' 2', '2' ],
                     [ Blockly.Msg.SENSOR_TIMER + ' 3', '3' ], [ Blockly.Msg.SENSOR_TIMER + ' 4', '4' ], [ Blockly.Msg.SENSOR_TIMER + ' 5', '5' ] ]);
-            this.data = 'ev3';
         }
         this.appendDummyInput().appendField(Blockly.Msg.SENSOR_RESET).appendField(sensorNum, 'SENSORPORT').appendField(Blockly.Msg.SENSOR_RESET_II);
         this.setPreviousStatement(true);
@@ -529,6 +552,22 @@ Blockly.Blocks['robSensors_timer_reset'] = {
 };
 
 Blockly.Blocks['robSensors_generic'] = {
+    /*- Generic sensor definition. Will create e.g. the following xml: 
+     *
+     * <block type="robSensors_ultrasonic_getSample" id="vG?X/lTw]%:p!z.},u;r" intask="false">
+     *     <mutation mode="DISTANCE"></mutation> 
+     *     <field name="MODE">DISTANCE</field> 
+     *     <field name="SENSORPORT">4</field> 
+     *     <field name="SLOT"></field> 
+     * </block> 
+     *
+     */
+    /**
+     * @param {Object
+     *            sensor}
+     * 
+     * @memberof Block
+     */
     init : function(sensor) {
         this.setColour(Blockly.CAT_SENSOR_RGB);
         // do we have ports?
@@ -542,7 +581,7 @@ Blockly.Blocks['robSensors_generic'] = {
         } else {
             ports = new Blockly.FieldHidden();
         }
-        // do we have slot?
+        // do we have a slot?
         var slot;
         if (sensor.slot) {
             var portsList = [];
@@ -585,8 +624,12 @@ Blockly.Blocks['robSensors_generic'] = {
         }
         this.sensorMode_ = firstMode.name;
         this.setOutput(true, firstMode.type);
-        this.data = this.workspace.device;
-        this.setTooltip(Blockly.Msg[sensor.title + '_GETSAMPLE_TOOLTIP']);
+        var thisBlock = this;
+        this.setTooltip(function() {
+            var mode = thisBlock.getFieldValue('MODE');
+            return Blockly.Msg[sensor.title + '_' + mode + '_GETSAMPLE_TOOLTIP'] || Blockly.Msg[sensor.title + '_GETSAMPLE_TOOLTIP'] || sensor.title + '_'
+                    + mode + '_GETSAMPLE_TOOLTIP';
+        });
         this.type = 'robSensors_' + sensor.title.toLowerCase() + '_getSample';
 
         if (this.sensorMode_) {
@@ -618,16 +661,22 @@ Blockly.Blocks['robSensors_generic'] = {
 };
 
 Blockly.Blocks['robSensors_generic_all'] = {
-    /**
-     * Get the current distance from the ultrasonic sensor.
+    /*- Generic sensor definition. Will create the following xml: 
      *
-     * @param {String/dropdown}
-     *            MODE - Mode of the sensor
-     * @param {String/dropdown}
-     *            SENSORPORT - port of the sensor
-     * @returns immediately
-     * @returns {Number}
-     * @memberof Block
+     * <block type="robSensors_getSample" id=",eb_si_guT_Xi24OesW" intask="false">
+     *     <mutation input="COLOUR_COLOUR"></mutation> 
+     *     <fieldname="SENSORTYPE">COLOUR_COLOUR</field> 
+     *     <field name="SENSORPORT">3</field> 
+     *     <field name="SLOT"></field> 
+     * </block> 
+     *
+     */
+
+    /**
+     * 
+     * @param {Object
+     *            sensors} /* /*
+     * @memberof Block /
      */
     init : function(sensors) {
         this.setColour(Blockly.CAT_SENSOR_RGB);
@@ -687,9 +736,12 @@ Blockly.Blocks['robSensors_generic_all'] = {
         this.appendDummyInput('ROW').appendField(Blockly.Msg.GET, 'GET').appendField(dropdownModes, 'SENSORTYPE').appendField(this.ports[0], 'SENSORPORT').appendField(this.slot[0], 'SLOT');
 
         this.setOutput(true, sensors[0].modes[0].type);
-
-        this.data = this.workspace.device;
-        // this.setTooltip(Blockly.Msg[sensor.title + '_GETSAMPLE_TOOLTIP']);
+        var thisBlock = this;
+        this.setTooltip(function() {
+            var mode = thisBlock.getFieldValue('SENSORTYPE');
+            return Blockly.Msg[mode + '_GETSAMPLE_TOOLTIP'] || Blockly.Msg[mode.substr(0, mode.indexOf('_')) + '_GETSAMPLE_TOOLTIP'] || mode
+                    + '_GETSAMPLE_TOOLTIP';
+        });
         this.type = 'robSensors_getSample';
         this.sensorType_ = modeSensor[0][1];
 

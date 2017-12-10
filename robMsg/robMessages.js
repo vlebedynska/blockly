@@ -977,3 +977,8 @@ Blockly.Msg.SENSOR_TOUCH_BOB3 = 'arm';
 Blockly.Msg.SENSOR_SOUND_CALLIOPE = 'microphone';
 Blockly.Msg.MODE_VALUE = 'value';
 Blockly.Msg.MODE_PRESSED = 'pressed';
+Blockly.Msg.TOUCH_GETSAMPLE_TOOLTIP = Blockly.Msg.TOUCH_ISPRESSED_TOOLTIP;
+Blockly.Msg.KEY_GETSAMPLE_TOOLTIP = Blockly.Msg.KEY_ISPRESSED_TOOLTIP;
+Blockly.Msg.INFRARED_DISTANCE_GETSAMPLE_TOOLTIP = 'Gets the current relative distance from the infrared sensor. The values are between 1 and 75 cm.';
+Blockly.Msg.INFRARED_PRESENCE_GETSAMPLE_TOOLTIP = 'Returns an array of measurements for the presence of a beacon.';
+
