@@ -345,7 +345,9 @@ sensors.timer.ardu = {
 };
 
 sensors.timer.bob3 = sensors.timer.ardu;
+sensors.timer.calliope = sensors.timer.ardu;
 sensors.timer.nxt = sensors.timer.ardu;
+sensors.timer.microbit = sensors.timer.ardu;
 sensors.timer.ev3 = {
     title : 'TIMER',
     modes : [ {
@@ -475,7 +477,7 @@ Blockly.Blocks['bob3Sensors_getSample_bob3'] = Blockly.Blocks['robSensors_getSam
 //Blockly.Blocks['mbedSensors_gesture_isActive'] = Blockly.Blocks['robSensors_gesture_getSample'];
 //Blockly.Blocks['mbedSensors_compass_getSample'] = Blockly.Blocks['robSensors_compass_getSample'];
 //Blockly.Blocks['mbedSensors_microphone_getSample'] = Blockly.Blocks['robSensors_microphone_getSample'];
-//Blockly.Blocks['mbedSensors_timer_getSample'] = Blockly.Blocks['robSensors_timer_getSample'];
+Blockly.Blocks['mbedSensors_timer_getSample'] = Blockly.Blocks['robSensors_timer_getSample'];
 //Blockly.Blocks['mbedSensors_microphone_getSample'] = Blockly.Blocks['robSensors_microphone_getSample'];
 //Blockly.Blocks['mbedSensors_temperature_getSample'] = Blockly.Blocks['robSensors_temperature_getSample'];
 //Blockly.Blocks['mbedSensors_getRssi'] = Blockly.Blocks['robSensors_rssi_getSample'];
@@ -504,7 +506,7 @@ Blockly.Blocks['robSensors_encoder_reset'] = {
         if (this.workspace.device === 'ardu') {
             motorport = new Blockly.FieldDropdown([ [ Blockly.Msg.MOTOR_LEFT, 'B' ], [ Blockly.Msg.MOTOR_RIGHT, 'C' ] ]);
         }
-        this.appendDummyInput().appendField(Blockly.Msg.SENSOR_RESET).appendField(Blockly.Msg.SENSOR_ENCODER).appendField(motorport, 'MOTORPORT').appendField(Blockly.Msg.SENSOR_RESET_II);
+        this.appendDummyInput().appendField(Blockly.Msg.SENSOR_RESET).appendField(Blockly.Msg.SENSOR_ENCODER).appendField(motorport, 'SENSORPORT').appendField(Blockly.Msg.SENSOR_RESET_II);
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setTooltip(Blockly.Msg.ENCODER_RESET_TOOLTIP);

@@ -410,28 +410,28 @@ Blockly.Blocks['mbedSensors_timer_reset'] = {
     }
 };
 
-Blockly.Blocks['mbedSensors_timer_getSample'] = {
-    /**
-     * Get the current reading from the timer.
-     *
-     * @constructs mbedSensors_timer_getSample
-     * @this.Blockly.Block
-     * @param {String/dropdown}
-     *            TIMER - 1-10
-     * @returns immediately
-     * @returns {Number}
-     * @memberof Block
-     */
-
-    init : function() {
-        this.setColour(Blockly.CAT_SENSOR_RGB);
-        var sensorNum;
-        sensorNum = new Blockly.FieldDropdown([ [ Blockly.Msg.SENSOR_TIMER + ' 1', '1' ] ]);
-        this.appendDummyInput().appendField(Blockly.Msg.SENSOR_GET_SAMPLE).appendField(sensorNum, 'SENSORNUM').appendField(Blockly.Msg.SENSOR_MS_TIMER);
-        this.setOutput(true, 'Number');
-        this.setTooltip(Blockly.Msg.TIMER_GETSAMPLE_TOOLTIP);
-    }
-};
+//Blockly.Blocks['mbedSensors_timer_getSample'] = {
+//    /**
+//     * Get the current reading from the timer.
+//     *
+//     * @constructs mbedSensors_timer_getSample
+//     * @this.Blockly.Block
+//     * @param {String/dropdown}
+//     *            TIMER - 1-10
+//     * @returns immediately
+//     * @returns {Number}
+//     * @memberof Block
+//     */
+//
+//    init : function() {
+//        this.setColour(Blockly.CAT_SENSOR_RGB);
+//        var sensorNum;
+//        sensorNum = new Blockly.FieldDropdown([ [ Blockly.Msg.SENSOR_TIMER + ' 1', '1' ] ]);
+//        this.appendDummyInput().appendField(Blockly.Msg.SENSOR_GET_SAMPLE).appendField(sensorNum, 'SENSORNUM').appendField(Blockly.Msg.SENSOR_MS_TIMER);
+//        this.setOutput(true, 'Number');
+//        this.setTooltip(Blockly.Msg.TIMER_GETSAMPLE_TOOLTIP);
+//    }
+//};
 
 Blockly.Blocks['mbedSensors_pin_getSample'] = {
     /**

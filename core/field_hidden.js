@@ -39,7 +39,7 @@ goog.require('Blockly.Field');
  * @constructor
  */
 Blockly.FieldHidden = function(text) {
-	Blockly.FieldHidden.superClass_.constructor.call(this, '');
+	Blockly.FieldHidden.superClass_.constructor.call(this, text||'');
 	this.size_ = new goog.math.Size(0, 0);
 };
 goog.inherits(Blockly.FieldHidden, Blockly.Field);
