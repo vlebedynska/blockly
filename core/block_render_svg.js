@@ -417,6 +417,7 @@ Blockly.BlockSvg.prototype.renderCompute_ = function(iconWidth) {
     for (var j = 0, field; field = input.fieldRow[j]; j++) {
       // Beate: fix for invisible fields, to have correct calculation of the widths
       if(!field.isVisible()){
+        field.renderSep = 0;
         continue;
       }
       if (j != 0) {
