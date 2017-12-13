@@ -33,6 +33,7 @@ goog.require('goog.dom');
 // Blockly.Xml.COORDINATE = 'MODE';
 Blockly.Xml.SENSORNUM = 'SENSORPORT';
 Blockly.Xml.KEY = 'SENSORPORT';
+Blockly.Xml.MOTORPORT = 'SENSORPORT';
 Blockly.Xml.RED = 'LIGHT';
 
 /**
@@ -698,7 +699,7 @@ Blockly.Xml.childToBlock = function(workspace, block, xmlChild) {
         // Fall through.
     case 'field':
         var field;
-        if (block.workspace && block.workspace.device == 'calliope') {
+        if (block.workspace && (block.workspace.device == 'calliope' || block.workspace.device == 'microbit')) {
             field = block.getField(name);
         } else if (name == 'MOTORPORT' && block.type != 'robSensors_encoder_getSample' && block.type != 'robSensors_encoder_reset') {
             field = block.getField(name);

@@ -1067,6 +1067,7 @@ Blockly.Msg.SENSOR_UNIT_DEGREE = "°";  // untranslated
 Blockly.Msg.SENSOR_UNIT_MS = "ms";  // untranslated
 Blockly.Msg.SENSOR_UNIT_OMEGA = "ω";  // untranslated
 Blockly.Msg.SENSOR_UNIT_PERCENT = "%";  // untranslated
+Blockly.Msg.SENSOR_UNIT_VOLT = "V";  // untranslated
 Blockly.Msg.SENSOR_VALUE = "value";  // untranslated
 Blockly.Msg.SERVER_NOT_AVAILABLE = "Open Roberta Lab su an icin kullanilamiyor. </br> Lütfen internet baglantinizi kontrol edin ve sayfayi yeniden yüklemeyi deneyin. Probleminiz devam ederse, lütfen bizle email yoluyla baglantiya gecmekten cekinmeyin: </br>roberta-zentrale@iais.fraunhofer.de";
 Blockly.Msg.SET = "Ayarla";

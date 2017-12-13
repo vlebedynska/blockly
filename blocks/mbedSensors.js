@@ -6,7 +6,7 @@
 
 'use strict';
 
-goog.provide('Blockly.Blocks.mbedSensors');
+goog.provide('Blockly.Blocks.a');
 
 goog.require('Blockly.Blocks');
 

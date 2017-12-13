@@ -909,6 +909,6 @@
   "SENSOR_SOUND_CALLIOPE" : "Mikrofon",
   "MODE_PRESSED" : "gedrückt",
   "INFRARED_DISTANCE_GETSAMPLE_TOOLTIP" : "Gibt die relative Entfernung in cm vom Infrarotsensor zurück. Die Werte können zwischen 1 und 75 cm liegen.",
-  "INFRARED_PRESENCE_GETSAMPLE_TOOLTIP" : "Gibt eine Liste von Werten des Infrarotsensors zurück, wenn ein Beacon anwesend ist."
-  
+  "INFRARED_PRESENCE_GETSAMPLE_TOOLTIP" : "Gibt eine Liste von Werten des Infrarotsensors zurück, wenn ein Beacon anwesend ist.",
+  "SENSOR_BATTERY" : "Batterieladung"
 }
