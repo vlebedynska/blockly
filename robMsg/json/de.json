@@ -910,5 +910,12 @@
   "MODE_PRESSED" : "gedrückt",
   "INFRARED_DISTANCE_GETSAMPLE_TOOLTIP" : "Gibt die relative Entfernung in cm vom Infrarotsensor zurück. Die Werte können zwischen 1 und 75 cm liegen.",
   "INFRARED_PRESENCE_GETSAMPLE_TOOLTIP" : "Gibt eine Liste von Werten des Infrarotsensors zurück, wenn ein Beacon anwesend ist.",
-  "SENSOR_BATTERY" : "Batterieladung"
+  "SENSOR_BATTERY" : "Batterieladung",
+  "SENSOR_ACCELEROMETER" : "Beschleunigungssensor",
+  "MODE_ACCELERATION" : "Beschleunigung",
+  "SENSOR_PINTOUCH" : "Pin",
+  "MODE_PULSE_LOW":"Pulszeit LOW",
+  "MODE_PULSE_HIGH":"Pulszeit HIGH",
+  "MODE_ANALOG": "analogen",
+  "MODE_DIGITAL": "digitalen"
 }

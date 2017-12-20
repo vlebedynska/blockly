@@ -143,7 +143,7 @@ Blockly.Blocks['robSensors_generic'] = {
         }
         // do what kind of modes do we have?
         var modes;
-        if (sensor.modes[0].name && !sensor.modes[0].question) {
+        if (sensor.modes[0].name && sensor.modes.length > 1) {
             var modes = [];
             for (var i = 0; i < sensor.modes.length; i++) {
                 modes.push([ Blockly.Msg['MODE_' + sensor.modes[i].name] || sensor.modes[i].name, sensor.modes[i].name ]);

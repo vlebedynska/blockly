@@ -38,6 +38,21 @@ goog.require('Blockly.Blocks');
  */
 
 var sensors = {};
+
+sensors.accelerometer = {};
+sensors.accelerometer.calliope = {
+    title : 'ACCELEROMETER',
+    modes : [ {
+        name : 'VALUE',
+        type : 'Number',
+        unit : 'MILLIG',
+        op : 'NUM_REV',
+        value : 512
+    } ],
+    ports : [ [ 'x', 'X' ], [ 'y', 'Y' ], [ 'z', 'Z' ], [ 'STRENGTH', 'STRENGTH' ] ],
+};
+sensors.accelerometer.microbit = sensors.accelerometer.calliope;
+
 sensors.battery = {};
 sensors.battery.ardu = {
     title : 'BATTERY',
@@ -110,6 +125,7 @@ sensors.compass.ardu = {
     } ]
 };
 sensors.compass.calliope = sensors.compass.ardu;
+sensors.compass.microbit = sensors.compass.ardu;
 
 sensors.encoder = {};
 sensors.encoder.ardu = {
@@ -174,16 +190,37 @@ sensors.encoder.nxt = {
 
 sensors.gesture = {};
 sensors.gesture.calliope = {
+//    title : 'GESTURE',
+//    modes : [ {
+//        name : 'PRESSED',
+//        type : 'Boolean',
+//        question : true,
+//    } ],
+//    ports : [ [ 'SENSOR_GESTURE_UP', 'UP' ], [ 'SENSOR_GESTURE_DOWN', 'DOWN' ], [ 'SENSOR_GESTURE_FACE_UP', 'FACE_UP' ],
+//            [ 'SENSOR_GESTURE_FACE_DOWN', 'FACE_DOWN' ], [ 'SENSOR_GESTURE_SHAKE', 'SHAKE' ], [ 'SENSOR_GESTURE_FREEFALL', 'FREEFALL' ] ],
+//    standardPort : 'UP',
     title : 'GESTURE',
     modes : [ {
-        name : 'PRESSED',
+        name : 'UP',
         type : 'Boolean',
-        question : true,
-    } ],
-    ports : [ [ 'SENSOR_GESTURE_UP', 'UP' ], [ 'SENSOR_GESTURE_DOWN', 'DOWN' ], [ 'SENSOR_GESTURE_FACE_UP', 'FACE_UP' ],
-            [ 'SENSOR_GESTURE_FACE_DOWN', 'FACE_DOWN' ], [ 'SENSOR_GESTURE_SHAKE', 'SHAKE' ], [ 'SENSOR_GESTURE_FREEFALL', 'FREEFALL' ] ],
-    standardPort : 'UP',
+    }, {
+        name : 'FACE_UP',
+        type : 'Boolean',
+    }, {
+        name : 'FACE_DOWN',
+        type : 'Boolean',
+    }, {
+        name : 'FACE_UP',
+        type : 'Boolean',
+    }, {
+        name : 'SHAKE',
+        type : 'Boolean',
+    }, {
+        name : 'FREEFALL',
+        type : 'Boolean',
+    } ]
 };
+sensors.gesture.microbit = sensors.gesture.calliope;
 
 sensors.gyro = {};
 sensors.gyro.calliope = {
@@ -194,14 +231,8 @@ sensors.gyro.calliope = {
         unit : 'DEGREE',
         op : 'NUM_REV',
         value : 90
-    }, {
-        name : 'RATE',
-        type : 'Number',
-        unit : 'OMEGA',
-        op : 'NUM_REV',
-        value : 90
     } ],
-    ports : [ [ 'x', 'X' ], [ 'y', 'Y' ], [ 'z', 'Z' ] ],
+    ports : [ [ 'x', 'X' ], [ 'y', 'Y' ] ],
 };
 sensors.gyro.ev3 = {
     title : 'GYRO',
@@ -276,7 +307,6 @@ sensors.key.calliope = {
     } ],
     ports : [ [ 'A', 'button_a' ], [ 'B', 'button_b' ] ]
 };
-
 sensors.key.ev3 = {
     title : 'KEY',
     modes : [ {
@@ -287,7 +317,6 @@ sensors.key.ev3 = {
     ports : [ [ 'SENSOR_KEY_ENTER', 'ENTER' ], [ 'SENSOR_KEY_UP', 'UP' ], [ 'SENSOR_KEY_DOWN', 'DOWN' ], [ 'SENSOR_KEY_LEFT', 'LEFT' ],
             [ 'SENSOR_KEY_RIGHT', 'RIGHT' ], [ 'SENSOR_KEY_ESCAPE', 'ESCAPE' ], [ 'SENSOR_KEY_ANY', 'ANY' ] ]
 };
-
 sensors.key.nxt = {
     title : 'KEY',
     modes : [ {
@@ -297,6 +326,7 @@ sensors.key.nxt = {
     } ],
     ports : [ [ 'SENSOR_KEY_ENTER', 'ENTER' ], [ 'SENSOR_KEY_LEFT', 'LEFT' ], [ 'SENSOR_KEY_RIGHT', 'RIGHT' ] ]
 };
+sensors.key.microbit = sensors.key.calliope;
 
 sensors.light = {};
 sensors.light.ardu = {
@@ -389,6 +419,7 @@ sensors.temperature.bob3 = {
     } ]
 };
 sensors.temperature.calliope = sensors.temperature.bob3
+sensors.temperature.microbit = sensors.temperature.bob3
 
 sensors.timer = {};
 sensors.timer.ardu = {
@@ -402,7 +433,6 @@ sensors.timer.ardu = {
     } ],
     ports : [ [ ' 1', '1' ] ]
 };
-
 sensors.timer.bob3 = sensors.timer.ardu;
 sensors.timer.calliope = sensors.timer.ardu;
 sensors.timer.nxt = sensors.timer.ardu;
@@ -432,8 +462,45 @@ sensors.pin.bob3 = {
 };
 sensors.pin.calliope = {
     title : 'PIN',
-    ports : [ [ Blockly.Msg.SENSOR_PIN + ' 0', '0' ], [ Blockly.Msg.SENSOR_PIN + ' 1', '1' ], [ Blockly.Msg.SENSOR_PIN + ' 2', '2' ],
-            [ Blockly.Msg.SENSOR_PIN + ' 2', '2' ] ],
+    ports : [ [ ' 0', '0' ], [ ' 1', '1' ], [ ' 2', '2' ], [ ' 3', '3' ], [ 'SENSOR_GROVE' + ' A0', '4' ], [ 'SENSOR_GROVE' + ' A1', '5' ] ],
+    modes : [ {
+        name : 'ANALOG',
+        type : 'Number',
+    }, {
+        name : 'DIGITAL',
+        type : 'Number',
+    }, {
+        name : 'PULSE_HIGH',
+        type : 'Number',
+    }, {
+        name : 'PULSE_LOW',
+        type : 'Number',
+    } ],
+    standardPort : '1'
+};
+sensors.pin.microbit = {
+    title : 'PIN',
+    ports : [ [ ' 0', '0' ], [ ' 1', '1' ], [ ' 2', '2' ] ],
+    modes : [ {
+        name : 'ANALOG',
+        type : 'Number',
+    }, {
+        name : 'DIGITAL',
+        type : 'Number',
+    }, {
+        name : 'PULSE_HIGH',
+        type : 'Number',
+    }, {
+        name : 'PULSE_LOW',
+        type : 'Number',
+    } ],
+    standardPort : '1'
+};
+
+sensors.pintouch = {};
+sensors.pintouch.calliope = {
+    title : 'PINTOUCH',
+    ports : [ [ ' 0', '0' ], [ ' 1', '1' ], [ ' 2', '2' ], [ ' 3', '3' ] ],
     modes : [ {
         name : 'PRESSED',
         type : 'Boolean',
@@ -441,6 +508,7 @@ sensors.pin.calliope = {
     } ],
     standardPort : '1'
 };
+sensors.pintouch.microbit = sensors.pintouch.calliope;
 
 sensors.touch = {};
 sensors.touch.bob3 = {
@@ -509,8 +577,11 @@ sensorsAll.ev3 = [ sensors.touch.ev3, sensors.ultrasonic.ev3, sensors.colour.ev3
 sensorsAll.nxt = [ sensors.touch.nxt, sensors.sound.nxt, sensors.light.nxt, sensors.ultrasonic.nxt, sensors.encoder.nxt, sensors.key.nxt, sensors.colour.nxt,
         sensors.timer.nxt ];
 sensorsAll.bob3 = [ sensors.touch.bob3, sensors.infrared.bob3, sensors.temperature.bob3, sensors.timer.bob3 ];
-sensorsAll.calliope = [ sensors.key.calliope, sensors.pin.calliope, sensors.gesture.calliope, sensors.compass.calliope, sensors.sound.calliope,
-        sensors.timer.calliope, sensors.temperature.calliope ];
+sensorsAll.calliope = [ sensors.key.calliope, sensors.pintouch.calliope, sensors.gesture.calliope, sensors.compass.calliope, sensors.sound.calliope,
+        sensors.timer.calliope, sensors.temperature.calliope, sensors.light.calliope, sensors.pin.calliope, sensors.gyro.calliope,
+        sensors.accelerometer.calliope ];
+sensorsAll.microbit = [ sensors.key.microbit, sensors.pin.microbit, sensors.gesture.microbit, sensors.compass.microbit, sensors.timer.microbit,
+        sensors.temperature.microbit, sensors.pin.microbit, sensors.accelerometer.microbit ];
 
 function initSensors() {
     for ( var sensor in sensors) {
@@ -550,7 +621,7 @@ Blockly.Blocks['bob3Sensors_getSample_bob3'] = Blockly.Blocks['robSensors_getSam
 Blockly.Blocks['mbedSensors_getSample'] = Blockly.Blocks['robSensors_getSample'];
 Blockly.Blocks['mbedControls_wait_for'] = Blockly.Blocks['robControls_wait_for'];
 Blockly.Blocks['mbedSensors_key_isPressed'] = Blockly.Blocks['robSensors_key_getSample'];
-Blockly.Blocks['mbedSensors_pin_isTouched'] = Blockly.Blocks['robSensors_pin_getSample'];
+Blockly.Blocks['mbedSensors_pin_isTouched'] = Blockly.Blocks['robSensors_pintouch_getSample'];
 Blockly.Blocks['mbedSensors_gesture_isActive'] = Blockly.Blocks['robSensors_gesture_getSample'];
 Blockly.Blocks['mbedSensors_compass_getSample'] = Blockly.Blocks['robSensors_compass_getSample'];
 Blockly.Blocks['mbedSensors_microphone_getSample'] = Blockly.Blocks['robSensors_sound_getSample'];
@@ -560,4 +631,4 @@ Blockly.Blocks['mbedSensors_getRssi'] = Blockly.Blocks['robSensors_rssi_getSampl
 Blockly.Blocks['mbedSensors_ambientLight_getSample'] = Blockly.Blocks['robSensors_light_getSample'];
 Blockly.Blocks['mbedSensors_pin_getSample'] = Blockly.Blocks['robSensors_pin_getSample'];
 Blockly.Blocks['mbedSensors_rotation_getSample'] = Blockly.Blocks['robSensors_gyro_getSample'];
-Blockly.Blocks['mbedSensors_acceleration_getSample'] = Blockly.Blocks['robSensors_gyro_getSample'];
+Blockly.Blocks['mbedSensors_acceleration_getSample'] = Blockly.Blocks['robSensors_accelerometer_getSample'];

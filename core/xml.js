@@ -35,6 +35,11 @@ Blockly.Xml.SENSORNUM = 'SENSORPORT';
 Blockly.Xml.KEY = 'SENSORPORT';
 Blockly.Xml.MOTORPORT = 'SENSORPORT';
 Blockly.Xml.RED = 'LIGHT';
+Blockly.Xml.DIRECTION = 'SENSORPORT';
+Blockly.Xml.ROLL = 'ANGLE';
+Blockly.Xml.PITCH = 'ANGLE';
+Blockly.Xml.VALUETYPE = 'MODE';
+Blockly.Xml.PIN = 'SENSORPORT';
 
 /**
  * Encode a block tree as XML.
@@ -699,12 +704,16 @@ Blockly.Xml.childToBlock = function(workspace, block, xmlChild) {
         // Fall through.
     case 'field':
         var field;
-        if (block.workspace && (block.workspace.device == 'calliope' || block.workspace.device == 'microbit')) {
-            field = block.getField(name);
-        } else if (name == 'MOTORPORT' && block.type != 'robSensors_encoder_getSample' && block.type != 'robSensors_encoder_reset') {
+        if (name == 'MOTORPORT' && block.type != 'robSensors_encoder_getSample' && block.type != 'robSensors_encoder_reset') {
             field = block.getField(name);
         } else if (name == 'KEY' && block.type != 'robSensors_key_getSample') {
             field = block.getField(name);
+        } else if (name == 'DIRECTION' && block.type != 'robSensors_accelerometer_getSample') {
+            field = block.getField(name);
+        } else if (block.type == 'robSensors_gyro_getSample') {
+            if (xmlChild.textContent == 'ROLL' || xmlChild.textContent == 'PITCH') {
+                xmlChild.textContent = 'ANGLE';
+            }
         } else {
             field = block.getField(Blockly.Xml[name] || name);
         }
@@ -767,7 +776,9 @@ Blockly.Xml.childToBlock = function(workspace, block, xmlChild) {
 };
 /**
  * Remove any 'next' block (statements in a stack).
- * @param {!Element} xmlBlock XML block element.
+ * 
+ * @param {!Element}
+ *            xmlBlock XML block element.
  */
 Blockly.Xml.deleteNext = function(xmlBlock) {
     for (var i = 0, child; child = xmlBlock.childNodes[i]; i++) {
