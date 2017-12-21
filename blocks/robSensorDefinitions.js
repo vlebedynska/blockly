@@ -370,7 +370,6 @@ sensors.rssi.calliope = {
         name : 'VALUE',
         type : 'Number',
     } ],
-    ports : [ [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ]
 }
 
 sensors.sound = {};
@@ -462,25 +461,27 @@ sensors.pin.bob3 = {
 };
 sensors.pin.calliope = {
     title : 'PIN',
-    ports : [ [ ' 0', '0' ], [ ' 1', '1' ], [ ' 2', '2' ], [ ' 3', '3' ], [ 'SENSOR_GROVE' + ' A0', '4' ], [ 'SENSOR_GROVE' + ' A1', '5' ] ],
     modes : [ {
         name : 'ANALOG',
         type : 'Number',
+        ports : [ [ '1', '1' ], [ '2', '2' ], [ 'A1', '5' ] ],
     }, {
         name : 'DIGITAL',
         type : 'Number',
+        ports : [ [ '0', '0' ], [ '1', '1' ], [ '2', '2' ], [ '3', '3' ], [ 'A0', '4' ], [ 'A1', '5' ] ],
     }, {
         name : 'PULSE_HIGH',
         type : 'Number',
+        ports : [ [ '0', '0' ], [ '1', '1' ], [ '2', '2' ], [ '3', '3' ], [ 'A0', '4' ], [ 'A1', '5' ] ],
     }, {
         name : 'PULSE_LOW',
         type : 'Number',
+        ports : [ [ '0', '0' ], [ '1', '1' ], [ '2', '2' ], [ '3', '3' ], [ 'A0', '4' ], [ 'A1', '5' ] ],
     } ],
-    standardPort : '1'
 };
 sensors.pin.microbit = {
     title : 'PIN',
-    ports : [ [ ' 0', '0' ], [ ' 1', '1' ], [ ' 2', '2' ] ],
+    ports : [ [ '0', '0' ], [ '1', '1' ], [ '2', '2' ] ],
     modes : [ {
         name : 'ANALOG',
         type : 'Number',
@@ -494,7 +495,6 @@ sensors.pin.microbit = {
         name : 'PULSE_LOW',
         type : 'Number',
     } ],
-    standardPort : '1'
 };
 
 sensors.pintouch = {};
@@ -514,7 +514,7 @@ sensors.touch = {};
 sensors.touch.bob3 = {
     title : 'TOUCH',
     ports : [ [ 'MOTOR_LEFT', '2' ], [ 'MOTOR_RIGHT', '1' ] ],
-    slot : [ [ 'SENSOR_TOP', '1' ], [ 'CENTER', '2' ], [ 'SENSOR_BOTTOM', '3' ], [ 'SENSOR_ANY', '0' ] ],
+    slots : [ [ 'SENSOR_TOP', '1' ], [ 'CENTER', '2' ], [ 'SENSOR_BOTTOM', '3' ], [ 'SENSOR_ANY', '0' ] ],
     modes : [ {
         name : 'PRESSED',
         type : 'Boolean',
