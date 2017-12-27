@@ -167,13 +167,13 @@ Blockly.Blocks['robSensors_generic'] = {
         // question or not?
         if (firstMode.question) {
             this.appendDummyInput('ROW').appendField(Blockly.Msg['SENSOR_' + sensor.title + '_' + this.workspace.device.toUpperCase()]
-                    || Blockly.Msg['SENSOR_' + sensor.title] || sensor.title, 'SENSORTITLE').appendField(modes, 'MODE').appendField(ports, 'SENSORPORT').appendField(slots, 'SLOTS').appendField(Blockly.Msg['SENSOR_IS_'
+                    || Blockly.Msg['SENSOR_' + sensor.title] || sensor.title, 'SENSORTITLE').appendField(modes, 'MODE').appendField(ports, 'SENSORPORT').appendField(slots, 'SLOT').appendField(Blockly.Msg['SENSOR_IS_'
                     + firstMode.name]
                     || firstMode.name);
         } else {
             this.appendDummyInput('ROW').appendField(Blockly.Msg.GET).appendField(modes, 'MODE').appendField(Blockly.Msg['SENSOR_UNIT_' + firstMode.unit]
                     || firstMode.unit || '', 'UNIT').appendField(Blockly.Msg['SENSOR_' + sensor.title + '_' + this.workspace.device.toUpperCase()]
-                    || Blockly.Msg['SENSOR_' + sensor.title] || sensor.title, 'SENSORTITLE').appendField(ports, 'SENSORPORT').appendField(slots, 'SLOTS');
+                    || Blockly.Msg['SENSOR_' + sensor.title] || sensor.title, 'SENSORTITLE').appendField(ports, 'SENSORPORT').appendField(slots, 'SLOT');
         }
         if (sensor.standardPort) {
             ports.setValue(sensor.standardPort);
@@ -225,7 +225,7 @@ Blockly.Blocks['robSensors_generic'] = {
                             for (var j = 0; j < sensor.modes[i].ports.length; j++) {
                                 portList.push([ Blockly.Msg[sensor.modes[i].ports[j][0]] || sensor.modes[i].ports[j][0], sensor.modes[i].ports[j][1] ]);
                             }
-                            input.appendField(new Blockly.FieldDropdown(portList), 'SENSORPORT').appendField(new Blockly.FieldHidden(), 'SLOTS');
+                            input.appendField(new Blockly.FieldDropdown(portList), 'SENSORPORT').appendField(new Blockly.FieldHidden(), 'SLOT');
                         }
                     }
                 }
@@ -314,7 +314,7 @@ Blockly.Blocks['robSensors_generic_all'] = {
             }
         });
 
-        this.appendDummyInput('ROW').appendField(Blockly.Msg.GET, 'GET').appendField(dropdownModes, 'SENSORTYPE').appendField(this.ports[0], 'SENSORPORT').appendField(this.slots[0], 'SLOTS');
+        this.appendDummyInput('ROW').appendField(Blockly.Msg.GET, 'GET').appendField(dropdownModes, 'SENSORTYPE').appendField(this.ports[0], 'SENSORPORT').appendField(this.slots[0], 'SLOT');
 
         this.setOutput(true, sensors[0].modes[0].type);
         var thisBlock = this;
@@ -360,7 +360,7 @@ Blockly.Blocks['robSensors_generic_all'] = {
                 }
             }
             // add ports again
-            input.appendField(this.ports[index], 'SENSORPORT').appendField(this.slots[index], 'SLOTS');
+            input.appendField(this.ports[index], 'SENSORPORT').appendField(this.slots[index], 'SLOT');
             if (this.sensors[index].standardPort) {
                 this.ports[index].setValue(this.sensors[index].standardPort);
             }

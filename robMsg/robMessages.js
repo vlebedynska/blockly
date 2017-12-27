@@ -989,3 +989,4 @@ Blockly.Msg.MODE_ANALOG = 'analog';
 Blockly.Msg.MODE_DIGITAL = 'digital';
 Blockly.Msg.MODE_PULSE_LOW = 'pulse time LOW';
 Blockly.Msg.MODE_PULSE_HIGH = 'pulse time HIGH';
+Blockly.Msg.TEXT_COMMENT_TOOLTIP = 'Write a comment to your code here, to make it easier for you and others to read and understand your code. It will also generate an inline comment in the generated source code';

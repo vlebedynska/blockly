@@ -87,7 +87,7 @@ Blockly.Blocks['text_comment'] = {
         this.setColour(Blockly.CAT_TEXT_RGB);
         var comment = new Blockly.FieldTextInput('', this.validate);
         comment.maxDisplayLength = 75;
-        this.appendDummyInput().appendField(this.newComment_(false)).appendField(comment, 'TEXT').appendField(this.newComment_(true));        
+        this.appendDummyInput().appendField(this.newComment_(true)).appendField(comment, 'TEXT').appendField(this.newComment_(false));        
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setTooltip(Blockly.Msg.TEXT_COMMENT_TOOLTIP);
@@ -113,6 +113,13 @@ Blockly.Blocks['text_comment'] = {
             var file = 'data:image/svg+xml;charset=UTF-8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="-32 0 32 32" fill="#ffffff"><path transform="scale(-1,1)" d="M24 8h-17.333c-2.2 0-4 1.8-4 4v9.333c0 2.2 1.8 4 4 4h1.333v4l4-4h12c2.2 0 4-1.8 4-4v-9.333c0-2.2-1.8-4-4-4zM25.333 21.333c0 0.723-0.611 1.333-1.333 1.333h-17.333c-0.723 0-1.333-0.611-1.333-1.333v-9.333c0-0.723 0.611-1.333 1.333-1.333h17.333c0.723 0 1.333 0.611 1.333 1.333v9.333zM9.333 19.333c-1.472 0-2.667-1.195-2.667-2.667s1.195-2.667 2.667-2.667 2.667 1.195 2.667 2.667-1.195 2.667-2.667 2.667zM9.333 15.333c-0.736 0-1.333 0.597-1.333 1.333s0.597 1.333 1.333 1.333 1.333-0.597 1.333-1.333-0.597-1.333-1.333-1.333zM15.333 19.333c-1.472 0-2.667-1.195-2.667-2.667s1.195-2.667 2.667-2.667 2.667 1.195 2.667 2.667-1.195 2.667-2.667 2.667zM15.333 15.333c-0.736 0-1.333 0.597-1.333 1.333s0.597 1.333 1.333 1.333 1.333-0.597 1.333-1.333-0.597-1.333-1.333-1.333zM21.333 19.333c-1.472 0-2.667-1.195-2.667-2.667s1.195-2.667 2.667-2.667 2.667 1.195 2.667 2.667-1.195 2.667-2.667 2.667zM21.333 15.333c-0.736 0-1.333 0.597-1.333 1.333s0.597 1.333 1.333 1.333 1.333-0.597 1.333-1.333-0.597-1.333-1.333-1.333z"></path></svg>';
         }
         return new Blockly.FieldImage(file, 18, 18, '"');
+    },
+    /**
+     * Customized context menu
+     */
+    customContextMenu: function(options) {
+        // remove comment function for this particular block
+        options.splice(1, 1);
     }
 };
 
