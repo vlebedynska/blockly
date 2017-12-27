@@ -53,6 +53,7 @@
 <script src="../blocks/robControls.js"></script>
 <script src="../blocks/robSensors.js"></script>
 <script src="../blocks/robSensorDefinitions.js"></script>
+<script src="../blocks/mbedActions.js"></script>
 <link rel="stylesheet" type="text/css" href="typicons.css"></link>
 
 <script>
@@ -191,14 +192,6 @@
         console.time('Spaghetti domToWorkspace');
         Blockly.Xml.domToWorkspace(dom, workspace);
         console.timeEnd('Spaghetti domToWorkspace');
-    }
-
-    function toggleDevice() {
-        if (device === 'ev3')
-            device = 'ardu';
-        else
-            device = 'ev3';
-        workspace.setDevice(device);
     }
 
     var spaghettiXml = [ '  <block type="robControls_if">', '    <value name="IF0">', '      <block type="logic_compare">',
@@ -415,8 +408,7 @@ h1 {
 	<p>
 		Stress test: &nbsp; <input type="button" value="Airstrike!"
 			onclick="airstrike(100)"> <input type="button"
-			value="Spaghetti!" onclick="spaghetti(8)"> <input
-			type="button" value="Toggle device!" onclick="toggleDevice()">
+			value="Spaghetti!" onclick="spaghetti(8)">
 	</p>
 	<p>
 		Log events: &nbsp; <input type="checkbox"

@@ -619,7 +619,7 @@ Blockly.Blocks['bob3Sensors_touch_getSample'] = Blockly.Blocks['robSensors_touch
 Blockly.Blocks['bob3Sensors_getSample_bob3'] = Blockly.Blocks['robSensors_getSample'];
 
 Blockly.Blocks['mbedSensors_getSample'] = Blockly.Blocks['robSensors_getSample'];
-Blockly.Blocks['mbedControls_wait_for'] = Blockly.Blocks['robControls_wait_for'];
+// Blockly.Blocks['mbedControls_wait_for'] = Blockly.Blocks['robControls_wait_for'];
 Blockly.Blocks['mbedSensors_key_isPressed'] = Blockly.Blocks['robSensors_key_getSample'];
 Blockly.Blocks['mbedSensors_pin_isTouched'] = Blockly.Blocks['robSensors_pintouch_getSample'];
 Blockly.Blocks['mbedSensors_gesture_isActive'] = Blockly.Blocks['robSensors_gesture_getSample'];

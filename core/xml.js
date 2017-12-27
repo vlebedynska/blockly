@@ -32,14 +32,16 @@ goog.require('goog.dom');
 
 // Blockly.Xml.COORDINATE = 'MODE';
 Blockly.Xml.SENSORNUM = 'SENSORPORT';
-Blockly.Xml.KEY = 'SENSORPORT';
 Blockly.Xml.MOTORPORT = 'SENSORPORT';
-Blockly.Xml.RED = 'LIGHT';
 Blockly.Xml.DIRECTION = 'SENSORPORT';
+Blockly.Xml.ORIENTATION = 'SENSORPORT';
+Blockly.Xml.PIN = 'SENSORPORT';
+Blockly.Xml.KEY = 'SENSORPORT';
 Blockly.Xml.ROLL = 'ANGLE';
 Blockly.Xml.PITCH = 'ANGLE';
 Blockly.Xml.VALUETYPE = 'MODE';
-Blockly.Xml.PIN = 'SENSORPORT';
+Blockly.Xml.RED = 'LIGHT';
+Blockly.Xml.LEVEL = 'LEVEL';
 
 /**
  * Encode a block tree as XML.
@@ -635,6 +637,21 @@ Blockly.Xml.childToBlock = function(workspace, block, xmlChild) {
     case 'mutation':
         // Custom data for an advanced block.
         if (block.domToMutation) {
+            if (xmlChild.getAttribute('input') == 'TIME') {
+                xmlChild.setAttribute('input', 'TIMER_VALUE');
+            } else if (xmlChild.getAttribute('input') == 'KEYS_PRESSED') {
+                xmlChild.setAttribute('input', 'KEY_PRESSED');
+            } else if (xmlChild.getAttribute('input') == 'TEMPERATURE') {
+                xmlChild.setAttribute('input', 'TEMPERATURE_VALUE');
+            } else if (xmlChild.getAttribute('input') == 'MICROPHONE') {
+                xmlChild.setAttribute('input', 'SOUND_SOUND');
+            } else if (xmlChild.getAttribute('input') == 'LIGHT_LEVEL') {
+                xmlChild.setAttribute('input', 'LIGHT_VALUE');
+            } else if (xmlChild.getAttribute('input') == 'ORIENTATION') {
+                xmlChild.setAttribute('input', 'GYRO_ANGLE');
+            } else if (xmlChild.getAttribute('input') == 'ACCELERATION') {
+                xmlChild.setAttribute('input', 'ACCELEROMETER_VALUE');
+            }
             block.domToMutation(xmlChild);
             if (block.initSvg) {
                 // Mutation may have added some elements that need initalizing.
@@ -704,16 +721,40 @@ Blockly.Xml.childToBlock = function(workspace, block, xmlChild) {
         // Fall through.
     case 'field':
         var field;
-        if (name == 'MOTORPORT' && block.type != 'robSensors_encoder_getSample' && block.type != 'robSensors_encoder_reset') {
-            field = block.getField(name);
-        } else if (name == 'KEY' && block.type != 'robSensors_key_getSample') {
-            field = block.getField(name);
-        } else if (name == 'DIRECTION' && block.type != 'robSensors_accelerometer_getSample') {
-            field = block.getField(name);
-        } else if (block.type == 'robSensors_gyro_getSample') {
+        if (block.type == 'robSensors_gyro_getSample') {
             if (xmlChild.textContent == 'ROLL' || xmlChild.textContent == 'PITCH') {
                 xmlChild.textContent = 'ANGLE';
             }
+        } else if (block.type == 'robSensors_getSample') {
+            if (xmlChild.textContent == 'TOUCH') {
+                xmlChild.textContent = 'TOUCH_PRESSED';
+            } else if (xmlChild.textContent == 'TIME') {
+                xmlChild.textContent = 'TIMER_VALUE';
+            } else if (xmlChild.textContent == 'KEYS_PRESSED') {
+                xmlChild.textContent = 'KEY_PRESSED';
+            } else if (xmlChild.textContent == 'TEMPERATURE') {
+                xmlChild.textContent = 'TEMPERATURE_VALUE';
+            } else if (xmlChild.textContent == 'MICROPHONE') {
+                xmlChild.textContent = 'SOUND_SOUND';
+            } else if (xmlChild.textContent == 'LIGHT_LEVEL') {
+                xmlChild.textContent = 'LIGHT_VALUE';
+            } else if (xmlChild.textContent == 'ORIENTATION') {
+                xmlChild.textContent = 'GYRO_ANGLE';
+            } else if (xmlChild.textContent == 'ACCELERATION') {
+                xmlChild.textContent = 'ACCELEROMETER_VALUE';
+            } else if (xmlChild.textContent == 'PITCH') {
+                xmlChild.textContent = 'X';
+            } else if (xmlChild.textContent == 'ROLL') {
+                xmlChild.textContent = 'Y';
+            }
+        }
+        if (name == 'MOTORPORT' && block.type != 'robSensors_getSample' && block.type != 'robSensors_encoder_getSample'
+                && block.type != 'robSensors_encoder_reset') {
+            field = block.getField(name);
+        } else if (name == 'KEY' && block.type != 'robSensors_getSample' && block.type != 'robSensors_key_getSample') {
+            field = block.getField(name);
+        } else if (name == 'DIRECTION' && block.type != 'robSensors_getSample' && block.type != 'robSensors_accelerometer_getSample') {
+            field = block.getField(name);
         } else {
             field = block.getField(Blockly.Xml[name] || name);
         }
