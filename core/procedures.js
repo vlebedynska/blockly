@@ -167,16 +167,18 @@ Blockly.Procedures.robRename = function(text) {
   if (!text.match(/^[a-z][a-zA-Z0-9_]*$/))
     return null;
   // Ensure two identically-named procedures don't exist.
-  text = Blockly.Procedures.findLegalName(text, this.sourceBlock_);
-  // Rename any callers.  
-  var blocks = this.sourceBlock_.workspace.getAllBlocks();
-  for (var i = 0; i < blocks.length; i++) {
-    if (blocks[i].renameProcedure) {
-      blocks[i].renameProcedure(this.nameOld, text);
+  var legalName = Blockly.Procedures.findLegalName(text, this.sourceBlock_);
+  var oldName = this.text_;
+  if (oldName != text && oldName != legalName) {
+    // Rename any callers.  
+    var blocks = this.sourceBlock_.workspace.getAllBlocks();
+    for (var i = 0; i < blocks.length; i++) {
+      if (blocks[i].renameProcedure) {
+        blocks[i].renameProcedure(this.nameOld, text);
+      }
     }
   }
-  this.nameOld = text;
-  return text;
+  return legalName;
 };
 
 /**
