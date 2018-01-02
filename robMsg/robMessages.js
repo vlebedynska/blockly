@@ -990,3 +990,6 @@ Blockly.Msg.MODE_DIGITAL = 'digital';
 Blockly.Msg.MODE_PULSE_LOW = 'pulse time LOW';
 Blockly.Msg.MODE_PULSE_HIGH = 'pulse time HIGH';
 Blockly.Msg.TEXT_COMMENT_TOOLTIP = 'Write a comment to your code here, to make it easier for you and others to read and understand your code. It will also generate an inline comment in the generated source code';
+Blockly.Msg.MENU_ROBOT_STOP_HINT_EV3 = 'Press <span class="typcn typcn-media-stop"></span>+<span class="typcn typcn-arrow-sorted-down"></span>on the robot to abort the program!';
+Blockly.Msg.MENU_ROBOT_STOP_HINT_NXT = 'Press <span class="typcn typcn-media-cancel"></span>on the robot to abort the program!';
+Blockly.Msg.ORA_ROBOT_PUSH_RUN = Blockly.Msg.MESSAGE_EDIT_START;

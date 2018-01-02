@@ -747,6 +747,10 @@ Blockly.Xml.childToBlock = function(workspace, block, xmlChild) {
             } else if (xmlChild.textContent == 'ROLL') {
                 xmlChild.textContent = 'Y';
             }
+        } else if (block.type == 'robControls_start' && (workspace.device == 'calliope' || workspace.device == 'microbit')) {
+            if (xmlChild.textContent == 'TRUE') {
+                xmlChild.textContent = '';
+            }
         }
         if (name == 'MOTORPORT' && block.type != 'robSensors_getSample' && block.type != 'robSensors_encoder_getSample'
                 && block.type != 'robSensors_encoder_reset') {

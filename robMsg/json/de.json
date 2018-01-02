@@ -918,6 +918,7 @@
   "MODE_PULSE_HIGH":"Pulszeit HIGH",
   "MODE_ANALOG": "analogen",
   "MODE_DIGITAL": "digitalen",
-  "TEXT_COMMENT_TOOLTIP": "Dokumentiere dein Programm mit diesem Block damit du und andere es später leichter haben, dein Programm zu verstehen. Dieser Kommentar wird auch im generierten Source Code zu sehen sein."
-  
+  "TEXT_COMMENT_TOOLTIP": "Dokumentiere dein Programm mit diesem Block damit du und andere es später leichter haben, dein Programm zu verstehen. Dieser Kommentar wird auch im generierten Source Code zu sehen sein.",
+  "MENU_ROBOT_STOP_HINT_EV3": "Drücke<span class='typcn typcn-media-stop'></span>+<span class='typcn typcn-arrow-sorted-down'></span>am Roboter um das Programm zu beenden!",
+  "MENU_ROBOT_STOP_HINT_NXT": "Drücke<span class='typcn typcn-media-cancel'></span>am Roboter um das Programm zu beenden!"
 }
