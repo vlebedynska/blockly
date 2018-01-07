@@ -76,7 +76,7 @@ sensors.code.bob3 = {
 sensors.colour = {};
 sensors.colour.ardu = {
     title : 'COLOUR',
-    ports : [ [ 'MOTOR_LEFT', '1' ], [ 'MOTOR_RIGHT', '2' ] ],
+    ports : [ [ 'LEFT', '1' ], [ 'RIGHT', '2' ] ],
     modes : [ {
         name : 'COLOUR',
         type : 'Colour',
@@ -204,7 +204,7 @@ sensors.gesture.calliope = {
         name : 'UP',
         type : 'Boolean',
     }, {
-        name : 'FACE_UP',
+        name : 'DOWN',
         type : 'Boolean',
     }, {
         name : 'FACE_DOWN',
@@ -256,7 +256,7 @@ sensors.gyro.ev3 = {
 sensors.infrared = {};
 sensors.infrared.ardu = {
     title : 'INFRARED',
-    ports : [ [ 'MOTOR_LEFT', '1' ], [ 'MOTOR_RIGHT', '2' ], [ 'BOTH', 'BOTH' ] ],
+    ports : [ [ 'LEFT', '1' ], [ 'RIGHT', '2' ], [ 'BOTH', 'BOTH' ] ],
     modes : [ {
         name : 'OBSTACLE',
         type : 'Boolean',
@@ -449,16 +449,6 @@ sensors.timer.ev3 = {
 };
 
 sensors.pin = {};
-sensors.pin.bob3 = {
-    title : 'PIN',
-    ports : [ [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ],
-    modes : [ {
-        name : 'PRESSED',
-        type : 'Boolean',
-        question : true,
-    } ],
-    standardPort : '1'
-};
 sensors.pin.calliope = {
     title : 'PIN',
     modes : [ {
@@ -513,7 +503,7 @@ sensors.pintouch.microbit = sensors.pintouch.calliope;
 sensors.touch = {};
 sensors.touch.bob3 = {
     title : 'TOUCH',
-    ports : [ [ 'MOTOR_LEFT', '2' ], [ 'MOTOR_RIGHT', '1' ] ],
+    ports : [ [ 'LEFT', '2' ], [ 'RIGHT', '1' ] ],
     slots : [ [ 'SENSOR_TOP', '1' ], [ 'CENTER', '2' ], [ 'SENSOR_BOTTOM', '3' ], [ 'SENSOR_ANY', '0' ] ],
     modes : [ {
         name : 'PRESSED',
@@ -536,7 +526,7 @@ sensors.touch.nxt = sensors.touch.ev3;
 sensors.ultrasonic = {};
 sensors.ultrasonic.ardu = {
     title : 'ULTRASONIC',
-    ports : [ [ 'MOTOR_LEFT', '0' ], [ 'CENTER', '1' ], [ 'MOTOR_RIGHT', '2' ], [ 'SENSOR_SONAR', '3' ] ],
+    ports : [ [ 'LEFT', '0' ], [ 'CENTER', '1' ], [ 'RIGHT', '2' ], [ 'SENSOR_SONAR', '3' ] ],
     modes : [ {
         name : 'DISTANCE',
         type : 'Number',
@@ -580,7 +570,7 @@ sensorsAll.bob3 = [ sensors.touch.bob3, sensors.infrared.bob3, sensors.temperatu
 sensorsAll.calliope = [ sensors.key.calliope, sensors.pintouch.calliope, sensors.gesture.calliope, sensors.compass.calliope, sensors.sound.calliope,
         sensors.timer.calliope, sensors.temperature.calliope, sensors.light.calliope, sensors.pin.calliope, sensors.gyro.calliope,
         sensors.accelerometer.calliope ];
-sensorsAll.microbit = [ sensors.key.microbit, sensors.pin.microbit, sensors.gesture.microbit, sensors.compass.microbit, sensors.timer.microbit,
+sensorsAll.microbit = [ sensors.key.microbit, sensors.pintouch.microbit, sensors.gesture.microbit, sensors.compass.microbit, sensors.timer.microbit,
         sensors.temperature.microbit, sensors.pin.microbit, sensors.accelerometer.microbit ];
 
 function initSensors() {

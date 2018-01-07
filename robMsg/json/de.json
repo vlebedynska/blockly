@@ -920,5 +920,18 @@
   "MODE_DIGITAL": "digitalen",
   "TEXT_COMMENT_TOOLTIP": "Dokumentiere dein Programm mit diesem Block damit du und andere es später leichter haben, dein Programm zu verstehen. Dieser Kommentar wird auch im generierten Source Code zu sehen sein.",
   "MENU_ROBOT_STOP_HINT_EV3": "Drücke<span class='typcn typcn-media-stop'></span>+<span class='typcn typcn-arrow-sorted-down'></span>am Roboter um das Programm zu beenden!",
-  "MENU_ROBOT_STOP_HINT_NXT": "Drücke<span class='typcn typcn-media-cancel'></span>am Roboter um das Programm zu beenden!"
+  "MENU_ROBOT_STOP_HINT_NXT": "Drücke<span class='typcn typcn-media-cancel'></span>am Roboter um das Programm zu beenden!",
+  "INFO_DOCUMENTATION_HINT": "Beschreibe dein Programm hier ...",
+  "INFO_TAGS": "Tags",
+  "SENSOR_RSSI": "Empfangsstärke",
+  "SENSOR_RSSI_VALUE_GETSAMPLE_TOOLTIP": "Gibt die Signalstärke der letzten Nachricht zurück.",
+  "SENSOR_GESTURE_UP_GETSAMPLE_TOOLTIP": "Gibt »wahr« zurück, wenn die Lage aufrecht ist.",
+  "SENSOR_GESTURE_DOWN_GETSAMPLE_TOOLTIP": "Gibt »wahr« zurück, wenn die Lage koprüber ist.",
+  "SENSOR_GESTURE_FACE_UP_GETSAMPLE_TOOLTIP": "Gibt »wahr« zurück, wenn die Lage auf dem Rücken ist.",
+  "SENSOR_GESTURE_FACE_DOWN_GETSAMPLE_TOOLTIP": "Gibt »wahr« zurück, wenn die Lage auf der Vorderseite ist.",
+  "SENSOR_GESTURE_SHAKE_GETSAMPLE_TOOLTIP": "Gibt »wahr« zurück, wenn es geschüttelt wird.",
+  "SENSOR_GESTURE_FREEFALL_GETSAMPLE_TOOLTIP": "Gibt »wahr« zurück, wenn es frei fällt.",
+  "PIN_ISTOUCHED_TOOLTIP": "Gibt »wahr« zurück, wenn der ausgewählte Pin gedrückt wird.",
+  "RIGHT": "rechts",
+  "LEFT": "links"
 }

@@ -21,12 +21,11 @@
 /**
  * @fileoverview English strings.
  * @author Beate.Jost@iais.fraunhofer.de (Beate Jost)
- *
+ * 
  * After modifying this file, either run "build.py" from the parent directory,
- * or run (from this directory):
- * ../i18n/js_to_json.py
- * to regenerate json/{en,qqq,synonyms}.json.
- *
+ * or run (from this directory): ../i18n/js_to_json.py to regenerate
+ * json/{en,qqq,synonyms}.json.
+ * 
  * To convert all of the json files to .js files, run:
  * ../i18n/create_messages.py json/*.json
  */
@@ -36,18 +35,18 @@ goog.provide('Blockly.Msg.en');
 
 goog.require('Blockly.Msg');
 
-
 /**
  * Due to the frequency of long strings, the 80-column wrap rule need not apply
  * to message files.
  */
 
 /**
- * Tip: Generate URLs for read-only blocks by creating the blocks in the Code app,
- * then evaluating this in the console:
- * 'http://blockly-demo.appspot.com/static/apps/code/readonly.html?lang=en&xml=' + encodeURIComponent(Blockly.Xml.domToText(Blockly.Xml.workspaceToDom(Blockly.mainWorkspace)).slice(5, -6))
+ * Tip: Generate URLs for read-only blocks by creating the blocks in the Code
+ * app, then evaluating this in the console:
+ * 'http://blockly-demo.appspot.com/static/apps/code/readonly.html?lang=en&xml=' +
+ * encodeURIComponent(Blockly.Xml.domToText(Blockly.Xml.workspaceToDom(Blockly.mainWorkspace)).slice(5,
+ * -6))
  */
-
 
 // Tooltips for the robot blocks
 /// Rob Actions tooltips
@@ -964,7 +963,6 @@ Blockly.Msg.NAO_MARK_GET_INFORMATION_TOOLTIP = 'This block will return additiona
 Blockly.Msg.NAO_FACE_GET_INFORMATION = 'get information about recognized face';
 Blockly.Msg.NAO_FACE_GET_INFORMATION_TOOLTIP = 'This block will return additional information about the given recognized face in the format on a 1-d array with following values: [XAngle, YAngle, XSize, YSize, Heading], please note that all values are given in camera angles.';
 
-
 Blockly.Msg.SENSOR_RADIO_RSSI = 'radio RSSI sensor';
 Blockly.Msg.RADIO_GET_RSSI_TOOLTIP = 'Gets the RSSI of the last package.';
 
@@ -993,3 +991,40 @@ Blockly.Msg.TEXT_COMMENT_TOOLTIP = 'Write a comment to your code here, to make i
 Blockly.Msg.MENU_ROBOT_STOP_HINT_EV3 = 'Press <span class="typcn typcn-media-stop"></span>+<span class="typcn typcn-arrow-sorted-down"></span>on the robot to abort the program!';
 Blockly.Msg.MENU_ROBOT_STOP_HINT_NXT = 'Press <span class="typcn typcn-media-cancel"></span>on the robot to abort the program!';
 Blockly.Msg.ORA_ROBOT_PUSH_RUN = Blockly.Msg.MESSAGE_EDIT_START;
+Blockly.Msg.INFO_DOCUMENTATION_HINT = 'Document your program here ...';
+Blockly.Msg.INFO_TAGS = 'Tags';
+Blockly.Msg.MODE_UP = Blockly.Msg.SENSOR_GESTURE_UP;
+Blockly.Msg.MODE_DOWN = Blockly.Msg.SENSOR_GESTURE_DOWN;
+Blockly.Msg.MODE_FACE_UP = Blockly.Msg.SENSOR_GESTURE_FACE_UP;
+Blockly.Msg.MODE_FACE_DOWN = Blockly.Msg.SENSOR_GESTURE_FACE_DOWN;
+Blockly.Msg.MODE_SHAKE = Blockly.Msg.SENSOR_GESTURE_SHAKE;
+Blockly.Msg.MODE_FREEFALL = Blockly.Msg.SENSOR_GESTURE_FREEFALL;
+Blockly.Msg.SENSOR_ULTRASONIC_GETSAMPLE_TOOLTIP = Blockly.Msg.ULTRASONIC_GETSAMPLE_TOOLTIP;
+Blockly.Msg.SENSOR_COLOUR_GETSAMPLE_TOOLTIP = Blockly.Msg.COLOUR_GETSAMPLE_TOOLTIP;
+Blockly.Msg.SENSOR_INFRARED_GETSAMPLE_TOOLTIP = Blockly.Msg.INFRARED_GETSAMPLE_TOOLTIP;
+Blockly.Msg.SENSOR_ENCODER_GETSAMPLE_TOOLTIP = Blockly.Msg.ENCODER_GETSAMPLE_TOOLTIP;
+Blockly.Msg.SENSOR_GYRO_GETSAMPLE_TOOLTIP = Blockly.Msg.GYRO_GETSAMPLE_TOOLTIP;
+Blockly.Msg.SENSOR_FLAME_GETSAMPLE_TOOLTIP = Blockly.Msg.FLAME_GETSAMPLE_TOOLTIP;
+Blockly.Msg.SENSOR_TIMER_GETSAMPLE_TOOLTIP = Blockly.Msg.TIMER_GETSAMPLE_TOOLTIP;
+Blockly.Msg.SENSOR_BATTERY_GETSAMPLE_TOOLTIP = Blockly.Msg.BATTERY_GETSAMPLE_TOOLTIP;
+Blockly.Msg.SENSOR_LIGHT_GETSAMPLE_TOOLTIP = Blockly.Msg.LIGHT_GETSAMPLE_TOOLTIP;
+Blockly.Msg.SENSOR_SOUND_GETSAMPLE_TOOLTIP = Blockly.Msg.SOUND_GETSAMPLE_TOOLTIP;
+Blockly.Msg.SENSOR_TEMPERATURE_GETSAMPLE_TOOLTIP = Blockly.Msg.TEMPERATURE_GETSAMPLE_TOOLTIP;
+Blockly.Msg.SENSOR_COMPASS_GETSAMPLE_TOOLTIP = Blockly.Msg.COMPASS_GETSAMPLE_TOOLTIP;
+Blockly.Msg.SENSOR_SOUND_GETSAMPLE_TOOLTIP_CALLIOPE = Blockly.Msg.MICROPHONE_GETSAMPLE_TOOLTIP;
+Blockly.Msg.SENSOR_TOUCH_GETSAMPLE_TOOLTIP = Blockly.Msg.TOUCH_GETSAMPLE_TOOLTIP;
+Blockly.Msg.SENSOR_KEY_GETSAMPLE_TOOLTIP = Blockly.Msg.KEY_GETSAMPLE_TOOLTIP;
+Blockly.Msg.SENSOR_INFRARED_DISTANCE_GETSAMPLE_TOOLTIP = Blockly.Msg.INFRARED_DISTANCE_GETSAMPLE_TOOLTIP;
+Blockly.Msg.SENSOR_INFRARED_PRESENCE_GETSAMPLE_TOOLTIP = Blockly.Msg.INFRARED_PRESENCE_GETSAMPLE_TOOLTIP;
+Blockly.Msg.SENSOR_RSSI = 'signal strength';
+Blockly.Msg.SENSOR_RSSI_VALUE_GETSAMPLE_TOOLTIP = 'Gets the signal strength from the last received message.';
+Blockly.Msg.SENSOR_PINTOUCH_PRESSED_GETSAMPLE_TOOLTIP = Blockly.Msg.PIN_ISTOUCHED_TOOLTIP;
+Blockly.Msg.SENSOR_ACCELEROMETER_VALUE_GETSAMPLE_TOOLTIP = Blockly.Msg.ACCELEROMETER_ROTATION_TOOLTIP;
+Blockly.Msg.SENSOR_GESTURE_UP_GETSAMPLE_TOOLTIP = 'Returns »true« if the posture is upright.';
+Blockly.Msg.SENSOR_GESTURE_DOWN_GETSAMPLE_TOOLTIP = 'Returns »true« if the posture is down.';
+Blockly.Msg.SENSOR_GESTURE_FACE_UP_GETSAMPLE_TOOLTIP = 'Returns »true« if the posture is face up.';
+Blockly.Msg.SENSOR_GESTURE_FACE_DOWN_GETSAMPLE_TOOLTIP = 'Returns »true« if the posture is face down.';
+Blockly.Msg.SENSOR_GESTURE_SHAKE_GETSAMPLE_TOOLTIP = 'Returns »true« if it is shaken.';
+Blockly.Msg.SENSOR_GESTURE_FREEFALL_GETSAMPLE_TOOLTIP = 'Returns »true« if it is free falling.';
+Blockly.Msg.RIGHT = 'right';
+Blockly.Msg.LEFT = 'left';

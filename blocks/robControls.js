@@ -160,7 +160,15 @@ Blockly.Blocks['robControls_start_ardu'] = {
 
     init : function() {
         this.setColour(Blockly.CAT_ACTIVITY_RGB);
-        this.appendDummyInput().appendField(Blockly.Msg.START_PROGRAM).appendField('  ').appendField(new Blockly.FieldCheckbox("FALSE"), "DEBUG").appendField(Blockly.Msg.START_PROGRAM_DEBUG);
+        var debug;
+        var textDebug = new Blockly.FieldDropdown([ [ Blockly.Msg.START_PROGRAM_DEBUG, 'a' ] ]);
+        if (this.workspace.device === 'bob3') {
+            debug = new Blockly.FieldHidden();
+            this.appendDummyInput().appendField(Blockly.Msg.START_PROGRAM).appendField('  ').appendField(debug, "DEBUG");
+        } else {
+            debug = new Blockly.FieldCheckbox("FALSE");
+            this.appendDummyInput().appendField(Blockly.Msg.START_PROGRAM).appendField('  ').appendField(debug, "DEBUG").appendField(textDebug);
+        }
         this.declare_ = false;
         this.setPreviousStatement(false);
         this.setNextStatement(true, 'ardu');

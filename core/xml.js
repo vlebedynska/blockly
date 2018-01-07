@@ -759,6 +759,8 @@ Blockly.Xml.childToBlock = function(workspace, block, xmlChild) {
             field = block.getField(name);
         } else if (name == 'DIRECTION' && block.type != 'robSensors_getSample' && block.type != 'robSensors_accelerometer_getSample') {
             field = block.getField(name);
+        } else if (block.type == 'mbedActions_write_to_pin') {
+            field = block.getField(name);
         } else {
             field = block.getField(Blockly.Xml[name] || name);
         }
