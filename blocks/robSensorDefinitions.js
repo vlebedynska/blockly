@@ -488,6 +488,16 @@ sensors.pin.microbit = {
 };
 
 sensors.pintouch = {};
+sensors.pintouch.bob3 = {
+    title : 'PINTOUCH',
+    ports : [ [ 'LEFT', '2' ], [ 'RIGHT', '1' ] ],
+    slots : [ [ 'SENSOR_TOP', '1' ], [ 'CENTER', '2' ], [ 'SENSOR_BOTTOM', '3' ], [ 'SENSOR_ANY', '0' ] ],
+    modes : [ {
+        name : 'PRESSED',
+        type : 'Boolean',
+        question : true,
+    } ]
+};
 sensors.pintouch.calliope = {
     title : 'PINTOUCH',
     ports : [ [ ' 0', '0' ], [ ' 1', '1' ], [ ' 2', '2' ], [ ' 3', '3' ] ],
@@ -501,16 +511,6 @@ sensors.pintouch.calliope = {
 sensors.pintouch.microbit = sensors.pintouch.calliope;
 
 sensors.touch = {};
-sensors.touch.bob3 = {
-    title : 'TOUCH',
-    ports : [ [ 'LEFT', '2' ], [ 'RIGHT', '1' ] ],
-    slots : [ [ 'SENSOR_TOP', '1' ], [ 'CENTER', '2' ], [ 'SENSOR_BOTTOM', '3' ], [ 'SENSOR_ANY', '0' ] ],
-    modes : [ {
-        name : 'PRESSED',
-        type : 'Boolean',
-        question : true,
-    } ]
-};
 sensors.touch.ev3 = {
     title : 'TOUCH',
     ports : [ [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ],
@@ -566,7 +566,7 @@ sensorsAll.ev3 = [ sensors.touch.ev3, sensors.ultrasonic.ev3, sensors.colour.ev3
         sensors.timer.ev3 ];
 sensorsAll.nxt = [ sensors.touch.nxt, sensors.sound.nxt, sensors.light.nxt, sensors.ultrasonic.nxt, sensors.encoder.nxt, sensors.key.nxt, sensors.colour.nxt,
         sensors.timer.nxt ];
-sensorsAll.bob3 = [ sensors.touch.bob3, sensors.infrared.bob3, sensors.temperature.bob3, sensors.timer.bob3 ];
+sensorsAll.bob3 = [ sensors.pintouch.bob3, sensors.infrared.bob3, sensors.temperature.bob3, sensors.timer.bob3 ];
 sensorsAll.calliope = [ sensors.key.calliope, sensors.pintouch.calliope, sensors.gesture.calliope, sensors.compass.calliope, sensors.sound.calliope,
         sensors.timer.calliope, sensors.temperature.calliope, sensors.light.calliope, sensors.pin.calliope, sensors.gyro.calliope,
         sensors.accelerometer.calliope ];
@@ -605,7 +605,7 @@ Blockly.Blocks['robSensors_getSample_ardu'] = Blockly.Blocks['robSensors_getSamp
 Blockly.Blocks['bob3Sensors_ambientlight'] = Blockly.Blocks['robSensors_infrared_getSample'];
 Blockly.Blocks['bob3Sensors_temperature_getSample'] = Blockly.Blocks['robSensors_temperature_getSample'];
 Blockly.Blocks['bob3Sensors_getCode'] = Blockly.Blocks['robSensors_code_getSample'];
-Blockly.Blocks['bob3Sensors_touch_getSample'] = Blockly.Blocks['robSensors_touch_getSample'];
+Blockly.Blocks['bob3Sensors_touch_getSample'] = Blockly.Blocks['robSensors_pintouch_getSample'];
 Blockly.Blocks['bob3Sensors_getSample_bob3'] = Blockly.Blocks['robSensors_getSample'];
 
 Blockly.Blocks['mbedSensors_getSample'] = Blockly.Blocks['robSensors_getSample'];

@@ -16,7 +16,7 @@ goog.require('Blockly.Blocks');
 Blockly.Blocks['mbedActions_motor_on'] = {
     /**
      * Turn motor on with specific power.
-     *
+     * 
      * @constructs mbedActions_motor_on
      * @this.Blockly.Block
      * @param {String/dropdown}
@@ -41,7 +41,7 @@ Blockly.Blocks['mbedActions_motor_on'] = {
 Blockly.Blocks['mbedActions_single_motor_on'] = {
     /**
      * Turn single motor on with specific power.
-     *
+     * 
      * @constructs mbedActions_single_motor_on
      * @this.Blockly.Block
      * @param {Number}
@@ -62,7 +62,7 @@ Blockly.Blocks['mbedActions_single_motor_on'] = {
 Blockly.Blocks['mbedActions_single_motor_stop'] = {
     /**
      * Stop this motor.
-     *
+     * 
      * @constructs mbedActions_single_motor_stop
      * @this.Blockly.Block
      * @param {String/dropdown}
@@ -80,11 +80,10 @@ Blockly.Blocks['mbedActions_single_motor_stop'] = {
     }
 };
 
-
 Blockly.Blocks['mbedActions_motor_stop'] = {
     /**
      * Stop this motor.
-     *
+     * 
      * @constructs robActions_motor_stop
      * @this.Blockly.Block
      * @param {String/dropdown}
@@ -109,7 +108,7 @@ Blockly.Blocks['mbedActions_motor_stop'] = {
 Blockly.Blocks['mbedActions_display_text'] = {
     /**
      * Display a text on the screen.
-     *
+     * 
      * @constructs mbedActions_display_text
      * @this.Blockly.Block
      * @param {String}
@@ -130,7 +129,7 @@ Blockly.Blocks['mbedActions_display_text'] = {
 Blockly.Blocks['mbedActions_display_image'] = {
     /**
      * Display an image on the screen.
-     *
+     * 
      * @constructs mbedActions_display_image
      * @this.Blockly.Block
      * @param {String/dropdown}
@@ -157,7 +156,7 @@ Blockly.Blocks['mbedActions_display_image'] = {
     },
     /**
      * Create XML to represent the type of the element to show.
-     *
+     * 
      * @return {!Element} XML storage element.
      * @this Blockly.Block
      */
@@ -168,7 +167,7 @@ Blockly.Blocks['mbedActions_display_image'] = {
     },
     /**
      * Parse XML to restore the type of the element to show.
-     *
+     * 
      * @param {!Element}
      *            xmlElement XML storage element.
      * @this Blockly.Block
@@ -178,7 +177,7 @@ Blockly.Blocks['mbedActions_display_image'] = {
     },
     /**
      * Modify this block to have the correct number of inputs.
-     *
+     * 
      * @private
      * @this Blockly.Block
      */
@@ -198,7 +197,7 @@ Blockly.Blocks['mbedActions_display_image'] = {
 Blockly.Blocks['mbedActions_display_clear'] = {
     /**
      * Clear the display.
-     *
+     * 
      * @constructs mbedActions_display_clear
      * @this.Blockly.Block
      * @returns immediately
@@ -260,7 +259,7 @@ Blockly.Blocks['mbedActions_display_setBrightness'] = {
 Blockly.Blocks['mbedActions_play_tone'] = {
     /**
      * Play a tone.
-     *
+     * 
      * @constructs robActions_play_tone
      * @this.Blockly.Block
      * @param {Number}
@@ -286,7 +285,7 @@ Blockly.Blocks['mbedActions_play_tone'] = {
 Blockly.Blocks['mbedActions_play_note'] = {
     /**
      * Play a tone.
-     *
+     * 
      * @constructs mbedActions_play_tone
      * @this.Blockly.Block
      * @param {Number}
@@ -314,7 +313,7 @@ Blockly.Blocks['mbedActions_play_note'] = {
 Blockly.Blocks['mbedActions_play_setVolume'] = {
     /**
      * Set volume.
-     *
+     * 
      * @constructs mbedActions_play_setVolume
      * @this.Blockly.Block
      * @param {Number}
@@ -336,7 +335,7 @@ Blockly.Blocks['mbedActions_play_setVolume'] = {
 Blockly.Blocks['mbedActions_play_getVolume'] = {
     /**
      * Get current volume
-     *
+     * 
      * @constructs mbedActions_play_getVolume
      * @this.Blockly.Block
      * @returns immediately
@@ -357,7 +356,7 @@ Blockly.Blocks['mbedActions_play_getVolume'] = {
 Blockly.Blocks['mbedActions_leds_on'] = {
     /**
      * Turn bricklight on.
-     *
+     * 
      * @constructs mbedActions_brickLight_on
      * @this.Blockly.Block
      * @param {String/dropdown}
@@ -381,7 +380,7 @@ Blockly.Blocks['mbedActions_leds_on'] = {
 Blockly.Blocks['mbedActions_leds_off'] = {
     /**
      * Turn bricklight off.
-     *
+     * 
      * @constructs mbedActions_brickLight_off
      * @this.Blockly.Block
      * @returns immediately
@@ -401,7 +400,7 @@ Blockly.Blocks['mbedActions_leds_off'] = {
 Blockly.Blocks['mbedActions_write_to_pin'] = {
     /**
      * Sends to choosen pin value.
-     *
+     * 
      * @constructs mbedActions_write_to_pin
      * @this.Blockly.Block
      * @param {String/dropdown}
@@ -421,8 +420,8 @@ Blockly.Blocks['mbedActions_write_to_pin'] = {
                 this.sourceBlock_.updatePins_(option);
             }
         });
-        this.appendValueInput('VALUE').appendField(Blockly.Msg.PIN_WRITE).appendField(valueType, 'VALUETYPE').appendField(Blockly.Msg.VALUE_TO).appendField(new Blockly.FieldDropdown(
-                [ [ "dummy", '0' ] ]), 'PIN').setCheck('Number');
+        this.appendValueInput('VALUE').appendField(Blockly.Msg.PIN_WRITE).appendField(valueType, 'VALUETYPE').appendField(Blockly.Msg.VALUE_TO + ' '
+                + Blockly.Msg.SENSOR_PIN).appendField(new Blockly.FieldDropdown([ [ "dummy", '0' ] ]), 'PIN').setCheck('Number');
         this.protocol_ = 'ANALOG';
         this.setPreviousStatement(true);
         this.setNextStatement(true);
@@ -431,7 +430,7 @@ Blockly.Blocks['mbedActions_write_to_pin'] = {
     },
     /**
      * Create XML to represent whether the sensor type has changed.
-     *
+     * 
      * @return {Element} XML storage element.
      * @this Blockly.Block
      */
@@ -442,7 +441,7 @@ Blockly.Blocks['mbedActions_write_to_pin'] = {
     },
     /**
      * Parse XML to restore the sensor type.
-     *
+     * 
      * @param {!Element}
      *            xmlElement XML storage element.
      * @this Blockly.Block
@@ -455,26 +454,25 @@ Blockly.Blocks['mbedActions_write_to_pin'] = {
     updatePins_ : function(protocol) {
         this.protocol_ = protocol;
         if (this.workspace.device === 'microbit') {
-            var pins = [ [ Blockly.Msg.SENSOR_PIN + ' 0', '0' ], [ Blockly.Msg.SENSOR_PIN + ' 1', '1' ], [ Blockly.Msg.SENSOR_PIN + ' 2', '2' ] ];
+            var pins = [ [ '0', '0' ], [ '1', '1' ], [ '2', '2' ] ];
             var pinField = this.getField("PIN");
             pinField.menuGenerator_ = pins;
             pinField.setValue("0");
-            pinField.setText(Blockly.Msg.SENSOR_PIN + ' 0');
+            pinField.setText('0');
             return;
         }
         if (protocol === 'ANALOG') {
-            var pins = [ [ Blockly.Msg.SENSOR_PIN + ' 1', '1' ], [ Blockly.Msg.SENSOR_PIN + ' 2', '2' ], [ Blockly.Msg.SENSOR_GROVE + ' A1', '5' ] ];
+            var pins = [ [ '1', '1' ], [ '2', '2' ], [ 'A1', '5' ] ];
             var pinField = this.getField("PIN");
             pinField.menuGenerator_ = pins;
             pinField.setValue("1");
-            pinField.setText(Blockly.Msg.SENSOR_PIN + ' 1');
+            pinField.setText('1');
         } else if (protocol === 'DIGITAL') {
-            var pins = [ [ Blockly.Msg.SENSOR_PIN + ' 0', '0' ], [ Blockly.Msg.SENSOR_PIN + ' 1', '1' ], [ Blockly.Msg.SENSOR_PIN + ' 2', '2' ],
-                    [ Blockly.Msg.SENSOR_PIN + ' 3', '3' ], [ Blockly.Msg.SENSOR_GROVE + ' A0', '4' ], [ Blockly.Msg.SENSOR_GROVE + ' A1', '5' ] ];
+            var pins = [ [ '0', '0' ], [ '1', '1' ], [ '2', '2' ], [ '3', '3' ], [ 'A0', '4' ], [ 'A1', '5' ] ];
             var pinField = this.getField("PIN");
             pinField.menuGenerator_ = pins;
             pinField.setValue("0");
-            pinField.setText(Blockly.Msg.SENSOR_PIN + ' 0');
+            pinField.setText('0');
         }
     }
 };
