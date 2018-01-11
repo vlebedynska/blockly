@@ -767,6 +767,9 @@ Blockly.Xml.childToBlock = function(workspace, block, xmlChild) {
         if (!field) {
             console.warn('Ignoring non-existent field ' + name + ' in block ' + prototypeName);
             break;
+        } else if ((block.type == 'robProcedures_defreturn' || block.type == 'robProcedures_defnoreturn') && name == 'NAME') {
+            field.text_ = xmlChild.textContent;
+            field.updateTextNode_();
         }
         field.setValue(xmlChild.textContent);
         break;

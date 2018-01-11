@@ -810,7 +810,6 @@ Blockly.Blocks['robProcedures_defnoreturn'] = {
     this.setColour(Blockly.CAT_PROCEDURE_RGB);
     var name = Blockly.Procedures.findLegalName(Blockly.Msg.PROCEDURES_DEFNORETURN_PROCEDURE, this);
     var nameField = new Blockly.FieldTextInput(name, Blockly.Procedures.robRename);
-    nameField.nameOld = name;
     nameField.setSpellcheck(false);
     this.appendDummyInput()
         .appendField(nameField, 'NAME')
@@ -980,7 +979,6 @@ Blockly.Blocks['robProcedures_defreturn'] = {
     this.setColour(Blockly.CAT_PROCEDURE_RGB);
     var name = Blockly.Procedures.findLegalName(Blockly.Msg.PROCEDURES_DEFNORETURN_PROCEDURE, this);
     var nameField = new Blockly.FieldTextInput(name, Blockly.Procedures.robRename);
-    nameField.nameOld = name;
     nameField.setSpellcheck(false);
     this.appendDummyInput()
         .appendField(nameField, 'NAME')
