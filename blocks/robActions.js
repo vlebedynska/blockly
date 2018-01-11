@@ -27,16 +27,21 @@ goog.require('Blockly.Blocks');
       */
      init : function() {
          this.setColour(Blockly.CAT_ACTION_RGB);
-         var dropdown = new Blockly.FieldDropdown([ [ Blockly.Msg.NAO_LANGUAGE_GERMAN, 'GERMAN' ], [ Blockly.Msg.NAO_LANGUAGE_ENGLISH, 'ENGLISH' ], [ Blockly.Msg.NAO_LANGUAGE_FRENCH, 'FRENCH' ], [ Blockly.Msg.NAO_LANGUAGE_SPANISH, 'SPANISH' ], [ Blockly.Msg.NAO_LANGUAGE_ITALIAN, 'ITALIAN' ], [ Blockly.Msg.NAO_LANGUAGE_DUTCH, 'DUTCH' ], [ Blockly.Msg.NAO_LANGUAGE_FINNISH, 'FINNISH' ], [ Blockly.Msg.NAO_LANGUAGE_POLISH, 'POLISH' ], [ Blockly.Msg.NAO_LANGUAGE_RUSSIAN, 'RUSSIAN' ], [ Blockly.Msg.NAO_LANGUAGE_TURKISH, 'TURKISH' ], [ Blockly.Msg.NAO_LANGUAGE_CZECH, 'CZECH' ], [ Blockly.Msg.NAO_LANGUAGE_PORTUGUESE, 'PORTUGUESE' ], [ Blockly.Msg.NAO_LANGUAGE_DANISH, 'DANISH' ], ]);
+         var dropdown = new Blockly.FieldDropdown([ [ Blockly.Msg.LANGUAGE_GERMAN, 'GERMAN' ], [ Blockly.Msg.LANGUAGE_ENGLISH, 'ENGLISH' ], [ Blockly.Msg.LANGUAGE_FRENCH, 'FRENCH' ], [ Blockly.Msg.LANGUAGE_SPANISH, 'SPANISH' ], [ Blockly.Msg.LANGUAGE_ITALIAN, 'ITALIAN' ], [ Blockly.Msg.LANGUAGE_DUTCH, 'DUTCH' ], [ Blockly.Msg.LANGUAGE_FINNISH, 'FINNISH' ], [ Blockly.Msg.LANGUAGE_POLISH, 'POLISH' ], [ Blockly.Msg.LANGUAGE_RUSSIAN, 'RUSSIAN' ], [ Blockly.Msg.LANGUAGE_TURKISH, 'TURKISH' ], [ Blockly.Msg.LANGUAGE_CZECH, 'CZECH' ], [ Blockly.Msg.LANGUAGE_PORTUGUESE, 'PORTUGUESE' ], [ Blockly.Msg.LANGUAGE_DANISH, 'DANISH' ], ]);
          if (this.workspace.device === 'nao') {
-             dropdown = new Blockly.FieldDropdown([ [ Blockly.Msg.NAO_LANGUAGE_GERMAN, 'GERMAN' ], [ Blockly.Msg.NAO_LANGUAGE_ENGLISH, 'ENGLISH' ], [ Blockly.Msg.NAO_LANGUAGE_FRENCH, 'FRENCH' ], [ Blockly.Msg.NAO_LANGUAGE_JAPANESE, 'JAPANESE' ], [ Blockly.Msg.NAO_LANGUAGE_CHINESE, 'CHINESE' ], [ Blockly.Msg.NAO_LANGUAGE_SPANISH, 'SPANISH' ], [ Blockly.Msg.NAO_LANGUAGE_KOREAN, 'KOREAN' ], [ Blockly.Msg.NAO_LANGUAGE_ITALIAN, 'ITALIAN' ], [ Blockly.Msg.NAO_LANGUAGE_DUTCH, 'DUTCH' ], [ Blockly.Msg.NAO_LANGUAGE_FINNISH, 'FINNISH' ], [ Blockly.Msg.NAO_LANGUAGE_POLISH, 'POLISH' ], [ Blockly.Msg.NAO_LANGUAGE_RUSSIAN, 'RUSSIAN' ], [ Blockly.Msg.NAO_LANGUAGE_TURKISH, 'TURKISH' ], [ Blockly.Msg.NAO_LANGUAGE_ARABIC, 'ARABIC' ], [ Blockly.Msg.NAO_LANGUAGE_CZECH, 'CZECH' ], [ Blockly.Msg.NAO_LANGUAGE_PORTUGUESE, 'PORTUGUESE' ], [ Blockly.Msg.NAO_LANGUAGE_BRAZILIAN, 'BRAZILIAN' ], [ Blockly.Msg.NAO_LANGUAGE_SWEDISH, 'SWEDISH' ], [ Blockly.Msg.NAO_LANGUAGE_DANISH, 'DANISH' ], [ Blockly.Msg.NAO_LANGUAGE_NORWEGIAN, 'NORWEGIAN' ], [ Blockly.Msg.NAO_LANGUAGE_GREEK, 'GREEK' ], ]);
+             dropdown = new Blockly.FieldDropdown([ [ Blockly.Msg.LANGUAGE_GERMAN, 'GERMAN' ], [ Blockly.Msg.LANGUAGE_ENGLISH, 'ENGLISH' ], [ Blockly.Msg.LANGUAGE_FRENCH, 'FRENCH' ], [ Blockly.Msg.LANGUAGE_JAPANESE, 'JAPANESE' ], [ Blockly.Msg.LANGUAGE_CHINESE, 'CHINESE' ], [ Blockly.Msg.LANGUAGE_SPANISH, 'SPANISH' ], [ Blockly.Msg.LANGUAGE_KOREAN, 'KOREAN' ], [ Blockly.Msg.LANGUAGE_ITALIAN, 'ITALIAN' ], [ Blockly.Msg.LANGUAGE_DUTCH, 'DUTCH' ], [ Blockly.Msg.LANGUAGE_FINNISH, 'FINNISH' ], [ Blockly.Msg.LANGUAGE_POLISH, 'POLISH' ], [ Blockly.Msg.LANGUAGE_RUSSIAN, 'RUSSIAN' ], [ Blockly.Msg.LANGUAGE_TURKISH, 'TURKISH' ], [ Blockly.Msg.LANGUAGE_ARABIC, 'ARABIC' ], [ Blockly.Msg.LANGUAGE_CZECH, 'CZECH' ], [ Blockly.Msg.LANGUAGE_PORTUGUESE, 'PORTUGUESE' ], [ Blockly.Msg.LANGUAGE_BRAZILIAN, 'BRAZILIAN' ], [ Blockly.Msg.LANGUAGE_SWEDISH, 'SWEDISH' ], [ Blockly.Msg.LANGUAGE_DANISH, 'DANISH' ], [ Blockly.Msg.LANGUAGE_NORWEGIAN, 'NORWEGIAN' ], [ Blockly.Msg.LANGUAGE_GREEK, 'GREEK' ], ]);
          } else if (this.workspace.device === 'ev3') {
-             dropdown = new Blockly.FieldDropdown([ [ Blockly.Msg.NAO_LANGUAGE_GERMAN, 'GERMAN' ], [ Blockly.Msg.NAO_LANGUAGE_ENGLISH, 'ENGLISH' ], [ Blockly.Msg.NAO_LANGUAGE_FRENCH, 'FRENCH' ], [ Blockly.Msg.NAO_LANGUAGE_SPANISH, 'SPANISH' ], [ Blockly.Msg.NAO_LANGUAGE_ITALIAN, 'ITALIAN' ], [ Blockly.Msg.NAO_LANGUAGE_DUTCH, 'DUTCH' ], [ Blockly.Msg.NAO_LANGUAGE_FINNISH, 'FINNISH' ], [ Blockly.Msg.NAO_LANGUAGE_POLISH, 'POLISH' ], [ Blockly.Msg.NAO_LANGUAGE_RUSSIAN, 'RUSSIAN' ], [ Blockly.Msg.NAO_LANGUAGE_TURKISH, 'TURKISH' ], [ Blockly.Msg.NAO_LANGUAGE_CZECH, 'CZECH' ], [ Blockly.Msg.NAO_LANGUAGE_PORTUGUESE, 'PORTUGUESE' ], [ Blockly.Msg.NAO_LANGUAGE_DANISH, 'DANISH' ], ]);
+             dropdown = new Blockly.FieldDropdown([ [ Blockly.Msg.LANGUAGE_GERMAN, 'GERMAN' ], [ Blockly.Msg.LANGUAGE_ENGLISH, 'ENGLISH' ], [ Blockly.Msg.LANGUAGE_FRENCH, 'FRENCH' ], [ Blockly.Msg.LANGUAGE_SPANISH, 'SPANISH' ], [ Blockly.Msg.LANGUAGE_ITALIAN, 'ITALIAN' ], [ Blockly.Msg.LANGUAGE_DUTCH, 'DUTCH' ], [ Blockly.Msg.LANGUAGE_FINNISH, 'FINNISH' ], [ Blockly.Msg.LANGUAGE_POLISH, 'POLISH' ], [ Blockly.Msg.LANGUAGE_RUSSIAN, 'RUSSIAN' ], [ Blockly.Msg.LANGUAGE_TURKISH, 'TURKISH' ], [ Blockly.Msg.LANGUAGE_CZECH, 'CZECH' ], [ Blockly.Msg.LANGUAGE_PORTUGUESE, 'PORTUGUESE' ], [ Blockly.Msg.LANGUAGE_DANISH, 'DANISH' ], ]);
          }
-         this.appendDummyInput().appendField(Blockly.Msg.NAO_SETLANGUAGE).appendField(dropdown, 'LANGUAGE');
+         this.appendDummyInput().appendField(Blockly.Msg.SETLANGUAGE).appendField(dropdown, 'LANGUAGE');
          this.setPreviousStatement(true);
          this.setNextStatement(true);
-         this.setTooltip(Blockly.Msg.NAO_SETLANGUAGE_TOOLTIP);
+         this.setTooltip(Blockly.Msg.SETLANGUAGE_TOOLTIP);
+         if (this.workspace.device === 'nao') {
+             this.setTooltip(Blockly.Msg.NAO_SETLANGUAGE_TOOLTIP);
+         } else if (this.workspace.device === 'ev3') {
+             this.setTooltip(Blockly.Msg.SETLANGUAGE_TOOLTIP);
+         }
      }
  };
 
@@ -53,10 +58,10 @@ goog.require('Blockly.Blocks');
       */
      init : function() {
          this.setColour(Blockly.CAT_ACTION_RGB);
-         this.appendValueInput('OUT').appendField(Blockly.Msg.NAO_SAY);
+         this.appendValueInput('OUT').appendField(Blockly.Msg.SAY);
          this.setPreviousStatement(true);
          this.setNextStatement(true);
-         this.setTooltip(Blockly.Msg.NAO_SAY_TOOLTIP);
+         this.setTooltip(Blockly.Msg.SAY_TOOLTIP);
      }
  };
 
@@ -73,12 +78,12 @@ goog.require('Blockly.Blocks');
       */
      init : function() {
          this.setColour(Blockly.CAT_ACTION_RGB);
-         this.appendValueInput('OUT').appendField(Blockly.Msg.NAO_SAY);
-                     this.appendValueInput('SPEED').appendField(Blockly.Msg.MOTOR_SPEED).setCheck('Number');
-                     this.appendValueInput('SHAPE').appendField(Blockly.Msg.NAO_SHAPE).setCheck('Number');
+         this.appendValueInput('OUT').appendField(Blockly.Msg.SAY);
+         this.appendValueInput('VOICESPEED').appendField(Blockly.Msg.VOICE_SPEED).setCheck('Number');
+         this.appendValueInput('VOICEPITCH').appendField(Blockly.Msg.VOICE_PITCH).setCheck('Number');
          this.setPreviousStatement(true);
          this.setNextStatement(true);
-         this.setTooltip(Blockly.Msg.NAO_SAY_TOOLTIP);
+         this.setTooltip(Blockly.Msg.SAY_PARAMETERS_TOOLTIP);
      }
  };
 
