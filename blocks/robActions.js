@@ -567,7 +567,7 @@ Blockly.Blocks['robActions_play_setVolume'] = {
     init : function() {
         // this.setHelpUrl(Blockly.Msg.PLAY_SETVOLUME_HELPURL);
         this.setColour(Blockly.CAT_ACTION_RGB);
-        this.appendValueInput('VOLUME').appendField(Blockly.Msg.SET + ' ' + Blockly.Msg.PLAY_VOLUME).setCheck('Number');
+        this.appendValueInput('VOLUME').appendField(Blockly.Msg.SET + ' ' + Blockly.Msg.PLAY_VOLUME + ' ' + Blockly.Msg.SENSOR_UNIT_PERCENT).setCheck('Number');
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setTooltip(Blockly.Msg.PLAY_SETVOLUME_TOOLTIP);
