@@ -42,6 +42,9 @@ Blockly.Xml.PITCH = 'ANGLE';
 Blockly.Xml.VALUETYPE = 'MODE';
 Blockly.Xml.RED = 'LIGHT';
 Blockly.Xml.LEVEL = 'LEVEL';
+Blockly.Xml.GESTURE = 'MODE';
+Blockly.Xml.ARM = 'SENSORPORT';
+Blockly.Xml.ARMPAIR = 'SLOT';
 
 /**
  * Encode a block tree as XML.
@@ -646,12 +649,12 @@ Blockly.Xml.childToBlock = function(workspace, block, xmlChild) {
             } else if (xmlChild.getAttribute('input') == 'MICROPHONE') {
                 xmlChild.setAttribute('input', 'SOUND_SOUND');
             } else if (xmlChild.getAttribute('input') == 'LIGHT_LEVEL') {
-                xmlChild.setAttribute('input', 'LIGHT_VALUE');
+                xmlChild.setAttribute('input', 'INFRARED_AMBIENTLIGHT');
             } else if (xmlChild.getAttribute('input') == 'ORIENTATION') {
                 xmlChild.setAttribute('input', 'GYRO_ANGLE');
             } else if (xmlChild.getAttribute('input') == 'ACCELERATION') {
                 xmlChild.setAttribute('input', 'ACCELEROMETER_VALUE');
-            }
+            } 
             block.domToMutation(xmlChild);
             if (block.initSvg) {
                 // Mutation may have added some elements that need initalizing.
@@ -725,6 +728,10 @@ Blockly.Xml.childToBlock = function(workspace, block, xmlChild) {
             if (xmlChild.textContent == 'ROLL' || xmlChild.textContent == 'PITCH') {
                 xmlChild.textContent = 'ANGLE';
             }
+        } else if (block.type == 'robSensors_colour_getSample' && xmlChild.textContent == 'RED') {
+            xmlChild.textContent = 'LIGHT';
+        } else if (block.type == 'robSensors_infrared_getSample' && xmlChild.textContent == 'SEEK') {
+            xmlChild.textContent = 'PRESENCE';
         } else if (block.type == 'robSensors_getSample') {
             if (xmlChild.textContent == 'TOUCH') {
                 xmlChild.textContent = 'TOUCH_PRESSED';
@@ -737,7 +744,7 @@ Blockly.Xml.childToBlock = function(workspace, block, xmlChild) {
             } else if (xmlChild.textContent == 'MICROPHONE') {
                 xmlChild.textContent = 'SOUND_SOUND';
             } else if (xmlChild.textContent == 'LIGHT_LEVEL') {
-                xmlChild.textContent = 'LIGHT_VALUE';
+                xmlChild.textContent = 'INFRARED_AMBIENTLIGHT';
             } else if (xmlChild.textContent == 'ORIENTATION') {
                 xmlChild.textContent = 'GYRO_ANGLE';
             } else if (xmlChild.textContent == 'ACCELERATION') {
@@ -765,7 +772,7 @@ Blockly.Xml.childToBlock = function(workspace, block, xmlChild) {
             field = block.getField(Blockly.Xml[name] || name);
         }
         if (!field) {
-            console.warn('Ignoring non-existent field ' + name + ' in block ' + prototypeName);
+            console.warn('Ignoring non-existent field ' + name + ' in block ' + block.type);
             break;
         } else if ((block.type == 'robProcedures_defreturn' || block.type == 'robProcedures_defnoreturn') && name == 'NAME') {
             field.text_ = xmlChild.textContent;
@@ -777,7 +784,7 @@ Blockly.Xml.childToBlock = function(workspace, block, xmlChild) {
     case 'statement':
         input = block.getInput(name);
         if (!input) {
-            console.warn('Ignoring non-existent input ' + name + ' in block ' + prototypeName);
+            console.warn('Ignoring non-existent input ' + name + ' in block ' + block.type);
             break;
         }
 
