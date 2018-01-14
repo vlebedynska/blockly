@@ -938,5 +938,7 @@
   "LEFT": "links",
   "SAY_TOOLTIP": "Der Roboter sagt den angegebenen Text.",
   "SAY_PARAMETERS_TOOLTIP": "Der Roboter sagt den angegebenen Text. Zusätzlich kann die Sprechgeschwindigkeit (0 langsam - 100 schnell) und die Stimmlage (0 tief - 100 hoch) verändert werden.",
-  "SETLANGUAGE_TOOLTIP": "Setzt die Sprache für den Sage Block."
+  "SETLANGUAGE_TOOLTIP": "Setzt die Sprache für den Sage Block.",
+  "ORA_ROBOT_PUSH_RUN_CALLIOPE2016": "Dein Programm »$« wird auf Calliope übertragen, drücke »Reset« zum Starten!",
+  "ORA_ROBOT_PUSH_RUN_NXT": "Dein Programm »$« wird auf den NXT übertragen, starte es auf dem Roboter!"
 }

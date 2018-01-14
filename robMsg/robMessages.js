@@ -1031,3 +1031,5 @@ Blockly.Msg.SENSOR_GESTURE_SHAKE_GETSAMPLE_TOOLTIP = 'Returns »true« if it is 
 Blockly.Msg.SENSOR_GESTURE_FREEFALL_GETSAMPLE_TOOLTIP = 'Returns »true« if it is free falling.';
 Blockly.Msg.RIGHT = 'right';
 Blockly.Msg.LEFT = 'left';
+Blockly.Msg.ORA_ROBOT_PUSH_RUN_CALLIOPE2016 = 'Your program »$« is downloaded to Calliope, press the reset button to start!';
+Blockly.Msg.ORA_ROBOT_PUSH_RUN_NXT = 'Your program »$« is downloaded to the NXT, start it on the robot!';
