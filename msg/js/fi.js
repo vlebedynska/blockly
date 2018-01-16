@@ -533,8 +533,8 @@ Blockly.Msg.MENU_RIGHT_INFO_TOOLTIP = "Avaa/sulje lisätietoikkuna";
 Blockly.Msg.MENU_ROBOT = "robot";
 Blockly.Msg.MENU_ROBOT_STATE_INFO = "tietoja";
 Blockly.Msg.MENU_ROBOT_STATE_TOOLTIP = "tietoja robotista";
-Blockly.Msg.MENU_ROBOT_STOP_HINT_EV3 = "Press <span class='typcn typcn-media-stop'></span>+<span class='typcn typcn-arrow-sorted-down'></span>on the robot to abort the program!";  // untranslated
-Blockly.Msg.MENU_ROBOT_STOP_HINT_NXT = "Press <span class='typcn typcn-media-cancel'></span>on the robot to abort the program!";  // untranslated
+Blockly.Msg.MENU_ROBOT_STOP_HINT_EV3 = "Press <span class='typcn typcn-media-stop'></span>+<span class='typcn typcn-arrow-sorted-down'></span> buttons on the robot to abort the program!";  // untranslated
+Blockly.Msg.MENU_ROBOT_STOP_HINT_NXT = "Press <span class='typcn typcn-media-cancel'></span> button on the robot to abort the program!";  // untranslated
 Blockly.Msg.MENU_ROBOT_TOOLTIP = "robotit";
 Blockly.Msg.MENU_SAVE = "tallenna";
 Blockly.Msg.MENU_SAVE_AS = "tallenna nimellä ...";
@@ -842,7 +842,7 @@ Blockly.Msg.ORA_ROBOT_FIRMWAREUPDATE_POSSIBLE = "The firmware was updated";  // 
 Blockly.Msg.ORA_ROBOT_NOT_CONNECTED = "Robottia ei ole yhdistetty.";
 Blockly.Msg.ORA_ROBOT_NOT_WAITING = "The robot does not wait for a run command.";  // untranslated
 Blockly.Msg.ORA_ROBOT_PUSH_RUN = "Robot waited and now the jar is pushed to the robot";  // untranslated
-Blockly.Msg.ORA_ROBOT_PUSH_RUN_CALLIOPE2016 = "Your program »$« is downloaded to Calliope, press the reset button to start!";  // untranslated
+Blockly.Msg.ORA_ROBOT_PUSH_RUN_CALLIOPE2016 = "Your program »$« is downloaded to Calliope, press the reset button to start it!";  // untranslated
 Blockly.Msg.ORA_ROBOT_PUSH_RUN_NXT = "Your program »$« is downloaded to the NXT, start it on the robot!";  // untranslated
 Blockly.Msg.ORA_ROBOT_SET_SUCCESS = "Switched to robot system »$«!";  // untranslated
 Blockly.Msg.ORA_SERVER_ERROR = "Server-Error";  // untranslated

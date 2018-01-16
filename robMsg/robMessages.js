@@ -991,8 +991,8 @@ Blockly.Msg.MODE_DIGITAL = 'digital';
 Blockly.Msg.MODE_PULSE_LOW = 'pulse time LOW';
 Blockly.Msg.MODE_PULSE_HIGH = 'pulse time HIGH';
 Blockly.Msg.TEXT_COMMENT_TOOLTIP = 'Write a comment to your code here, to make it easier for you and others to read and understand your code. It will also generate an inline comment in the generated source code';
-Blockly.Msg.MENU_ROBOT_STOP_HINT_EV3 = 'Press <span class="typcn typcn-media-stop"></span>+<span class="typcn typcn-arrow-sorted-down"></span>on the robot to abort the program!';
-Blockly.Msg.MENU_ROBOT_STOP_HINT_NXT = 'Press <span class="typcn typcn-media-cancel"></span>on the robot to abort the program!';
+Blockly.Msg.MENU_ROBOT_STOP_HINT_EV3 = 'Press <span class="typcn typcn-media-stop"></span>+<span class="typcn typcn-arrow-sorted-down"></span> buttons on the robot to abort the program!';
+Blockly.Msg.MENU_ROBOT_STOP_HINT_NXT = 'Press <span class="typcn typcn-media-cancel"></span> button on the robot to abort the program!';
 Blockly.Msg.ORA_ROBOT_PUSH_RUN = Blockly.Msg.MESSAGE_EDIT_START;
 Blockly.Msg.INFO_DOCUMENTATION_HINT = 'Document your program here ...';
 Blockly.Msg.INFO_TAGS = 'Tags';
@@ -1031,5 +1031,5 @@ Blockly.Msg.SENSOR_GESTURE_SHAKE_GETSAMPLE_TOOLTIP = 'Returns »true« if it is 
 Blockly.Msg.SENSOR_GESTURE_FREEFALL_GETSAMPLE_TOOLTIP = 'Returns »true« if it is free falling.';
 Blockly.Msg.RIGHT = 'right';
 Blockly.Msg.LEFT = 'left';
-Blockly.Msg.ORA_ROBOT_PUSH_RUN_CALLIOPE2016 = 'Your program »$« is downloaded to Calliope, press the reset button to start!';
+Blockly.Msg.ORA_ROBOT_PUSH_RUN_CALLIOPE2016 = 'Your program »$« is downloaded to Calliope, press the reset button to start it!';
 Blockly.Msg.ORA_ROBOT_PUSH_RUN_NXT = 'Your program »$« is downloaded to the NXT, start it on the robot!';

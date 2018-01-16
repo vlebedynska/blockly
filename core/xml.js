@@ -37,8 +37,6 @@ Blockly.Xml.DIRECTION = 'SENSORPORT';
 Blockly.Xml.ORIENTATION = 'SENSORPORT';
 Blockly.Xml.PIN = 'SENSORPORT';
 Blockly.Xml.KEY = 'SENSORPORT';
-Blockly.Xml.ROLL = 'ANGLE';
-Blockly.Xml.PITCH = 'ANGLE';
 Blockly.Xml.VALUETYPE = 'MODE';
 Blockly.Xml.RED = 'LIGHT';
 Blockly.Xml.LEVEL = 'LEVEL';
@@ -649,12 +647,23 @@ Blockly.Xml.childToBlock = function(workspace, block, xmlChild) {
             } else if (xmlChild.getAttribute('input') == 'MICROPHONE') {
                 xmlChild.setAttribute('input', 'SOUND_SOUND');
             } else if (xmlChild.getAttribute('input') == 'LIGHT_LEVEL') {
-                xmlChild.setAttribute('input', 'INFRARED_AMBIENTLIGHT');
+                if (workspace.device == 'calliope') {
+                    xmlChild.setAttribute('input', 'LIGHT_VALUE');
+                } else {
+                    xmlChild.setAttribute('input', 'INFRARED_AMBIENTLIGHT');
+                }
             } else if (xmlChild.getAttribute('input') == 'ORIENTATION') {
                 xmlChild.setAttribute('input', 'GYRO_ANGLE');
             } else if (xmlChild.getAttribute('input') == 'ACCELERATION') {
                 xmlChild.setAttribute('input', 'ACCELEROMETER_VALUE');
-            } 
+            } else if (xmlChild.getAttribute('mode') == 'SEEK') {
+                xmlChild.setAttribute('mode', 'PRESENCE');
+            } else if (xmlChild.getAttribute('input') == 'GESTURE_ACTIVE') {
+                xmlChild.setAttribute('input', 'GESTURE_UP');
+            } else if (xmlChild.getAttribute('mode') == 'RED') {
+                xmlChild.setAttribute('mode', 'LIGHT');
+            }
+
             block.domToMutation(xmlChild);
             if (block.initSvg) {
                 // Mutation may have added some elements that need initalizing.
@@ -724,14 +733,21 @@ Blockly.Xml.childToBlock = function(workspace, block, xmlChild) {
         // Fall through.
     case 'field':
         var field;
-        if (block.type == 'robSensors_gyro_getSample') {
-            if (xmlChild.textContent == 'ROLL' || xmlChild.textContent == 'PITCH') {
-                xmlChild.textContent = 'ANGLE';
-            }
-        } else if (block.type == 'robSensors_colour_getSample' && xmlChild.textContent == 'RED') {
+        if ((block.type == 'robSensors_colour_getSample' || block.type == 'robSensors_light_getSample') && xmlChild.textContent == 'RED') {
             xmlChild.textContent = 'LIGHT';
         } else if (block.type == 'robSensors_infrared_getSample' && xmlChild.textContent == 'SEEK') {
             xmlChild.textContent = 'PRESENCE';
+        } else if (((block.type == 'robSensors_gyro_getSample' && name == 'MODE') || (block.type == 'robSensors_getSample' && name == 'ORIENTATION'))
+                && (xmlChild.textContent == 'ROLL' || xmlChild.textContent == 'PITCH')) {
+            var sensorPort;
+            if (xmlChild.textContent == 'PITCH') {
+                sensorPort = goog.dom.createDom('field', null, "X");
+            } else if (xmlChild.textContent == 'ROLL') {
+                sensorPort = goog.dom.createDom('field', null, "Y");
+            }
+            sensorPort.setAttribute('name', "SENSORPORT");
+            xmlChild.parentNode.appendChild(sensorPort);
+            xmlChild.textContent = 'ANGLE';
         } else if (block.type == 'robSensors_getSample') {
             if (xmlChild.textContent == 'TOUCH') {
                 xmlChild.textContent = 'TOUCH_PRESSED';
@@ -744,15 +760,15 @@ Blockly.Xml.childToBlock = function(workspace, block, xmlChild) {
             } else if (xmlChild.textContent == 'MICROPHONE') {
                 xmlChild.textContent = 'SOUND_SOUND';
             } else if (xmlChild.textContent == 'LIGHT_LEVEL') {
-                xmlChild.textContent = 'INFRARED_AMBIENTLIGHT';
+                if (workspace.device == 'calliope') {
+                    xmlChild.textContent = 'LIGHT_VALUE';
+                } else {
+                    xmlChild.textContent = 'INFRARED_AMBIENTLIGHT';
+                }
             } else if (xmlChild.textContent == 'ORIENTATION') {
                 xmlChild.textContent = 'GYRO_ANGLE';
             } else if (xmlChild.textContent == 'ACCELERATION') {
                 xmlChild.textContent = 'ACCELEROMETER_VALUE';
-            } else if (xmlChild.textContent == 'PITCH') {
-                xmlChild.textContent = 'X';
-            } else if (xmlChild.textContent == 'ROLL') {
-                xmlChild.textContent = 'Y';
             }
         } else if (block.type == 'robControls_start' && (workspace.device == 'calliope' || workspace.device == 'microbit')) {
             if (xmlChild.textContent == 'TRUE') {
@@ -768,6 +784,13 @@ Blockly.Xml.childToBlock = function(workspace, block, xmlChild) {
             field = block.getField(name);
         } else if (block.type == 'mbedActions_write_to_pin') {
             field = block.getField(name);
+        } else if (name == 'GESTURE' && block.type == 'robSensors_getSample') {
+            field = block.getField('SENSORTYPE');
+            var content = xmlChild.textContent;
+            xmlChild.textContent = 'GESTURE_' + content;
+            block.updateShape_('GESTURE_' + content);
+        } else if (name == 'GESTURE') {
+            field = block.getField('MODE');
         } else {
             field = block.getField(Blockly.Xml[name] || name);
         }

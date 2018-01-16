@@ -533,8 +533,8 @@ Blockly.Msg.MENU_RIGHT_INFO_TOOLTIP = "Open/close info view";  // untranslated
 Blockly.Msg.MENU_ROBOT = "robô";
 Blockly.Msg.MENU_ROBOT_STATE_INFO = "informação";
 Blockly.Msg.MENU_ROBOT_STATE_TOOLTIP = "informação do robô";
-Blockly.Msg.MENU_ROBOT_STOP_HINT_EV3 = "Press <span class='typcn typcn-media-stop'></span>+<span class='typcn typcn-arrow-sorted-down'></span>on the robot to abort the program!";  // untranslated
-Blockly.Msg.MENU_ROBOT_STOP_HINT_NXT = "Press <span class='typcn typcn-media-cancel'></span>on the robot to abort the program!";  // untranslated
+Blockly.Msg.MENU_ROBOT_STOP_HINT_EV3 = "Press <span class='typcn typcn-media-stop'></span>+<span class='typcn typcn-arrow-sorted-down'></span> buttons on the robot to abort the program!";  // untranslated
+Blockly.Msg.MENU_ROBOT_STOP_HINT_NXT = "Press <span class='typcn typcn-media-cancel'></span> button on the robot to abort the program!";  // untranslated
 Blockly.Msg.MENU_ROBOT_TOOLTIP = "robôs";
 Blockly.Msg.MENU_SAVE = "guardar";
 Blockly.Msg.MENU_SAVE_AS = "guardar como …";
@@ -842,7 +842,7 @@ Blockly.Msg.ORA_ROBOT_FIRMWAREUPDATE_POSSIBLE = "O firmware foi atualizado";
 Blockly.Msg.ORA_ROBOT_NOT_CONNECTED = "Não existe nenhum robô conectado. Verifica se o robô está ligado, conecta-o ao servidor e insere a palavra-passe no menu robô - conectar. <br />Se tiveres dúvidas quanto ao procedimento, consulta as nossas páginas de ajuda.";
 Blockly.Msg.ORA_ROBOT_NOT_WAITING = "O robô não espera um comando para executar o programa.";
 Blockly.Msg.ORA_ROBOT_PUSH_RUN = "O robô esperou e o programa gerado será enviado para o robô";
-Blockly.Msg.ORA_ROBOT_PUSH_RUN_CALLIOPE2016 = "Your program »$« is downloaded to Calliope, press the reset button to start!";  // untranslated
+Blockly.Msg.ORA_ROBOT_PUSH_RUN_CALLIOPE2016 = "Your program »$« is downloaded to Calliope, press the reset button to start it!";  // untranslated
 Blockly.Msg.ORA_ROBOT_PUSH_RUN_NXT = "Your program »$« is downloaded to the NXT, start it on the robot!";  // untranslated
 Blockly.Msg.ORA_ROBOT_SET_SUCCESS = "Switched to robot system »$«!";  // untranslated
 Blockly.Msg.ORA_SERVER_ERROR = "Erro do servidor";

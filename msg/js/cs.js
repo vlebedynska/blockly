@@ -533,8 +533,8 @@ Blockly.Msg.MENU_RIGHT_INFO_TOOLTIP = "Otevře/zavře zobrazení informací";
 Blockly.Msg.MENU_ROBOT = "robot";
 Blockly.Msg.MENU_ROBOT_STATE_INFO = "informace";
 Blockly.Msg.MENU_ROBOT_STATE_TOOLTIP = "Informace o robotovi";
-Blockly.Msg.MENU_ROBOT_STOP_HINT_EV3 = "Press <span class='typcn typcn-media-stop'></span>+<span class='typcn typcn-arrow-sorted-down'></span>on the robot to abort the program!";  // untranslated
-Blockly.Msg.MENU_ROBOT_STOP_HINT_NXT = "Press <span class='typcn typcn-media-cancel'></span>on the robot to abort the program!";  // untranslated
+Blockly.Msg.MENU_ROBOT_STOP_HINT_EV3 = "Press <span class='typcn typcn-media-stop'></span>+<span class='typcn typcn-arrow-sorted-down'></span> buttons on the robot to abort the program!";  // untranslated
+Blockly.Msg.MENU_ROBOT_STOP_HINT_NXT = "Press <span class='typcn typcn-media-cancel'></span> button on the robot to abort the program!";  // untranslated
 Blockly.Msg.MENU_ROBOT_TOOLTIP = "roboti";
 Blockly.Msg.MENU_SAVE = "uložit";
 Blockly.Msg.MENU_SAVE_AS = "uložit jako...";
@@ -842,7 +842,7 @@ Blockly.Msg.ORA_ROBOT_FIRMWAREUPDATE_POSSIBLE = "Firmware byl aktualizován";
 Blockly.Msg.ORA_ROBOT_NOT_CONNECTED = "Robot není připojen. Zkontrolujte, zda je robot zapnut, připojte ho k serveru a zadejte jeho heslo v menu robot-připojení. <br />Pokud máte stále problémy, podívejte se na stránky s nápovědou.";
 Blockly.Msg.ORA_ROBOT_NOT_WAITING = "Robot nečeká na příkaz start.";
 Blockly.Msg.ORA_ROBOT_PUSH_RUN = "Robot čekal a nyní je soubor jar přenášen do robota.";
-Blockly.Msg.ORA_ROBOT_PUSH_RUN_CALLIOPE2016 = "Your program »$« is downloaded to Calliope, press the reset button to start!";  // untranslated
+Blockly.Msg.ORA_ROBOT_PUSH_RUN_CALLIOPE2016 = "Your program »$« is downloaded to Calliope, press the reset button to start it!";  // untranslated
 Blockly.Msg.ORA_ROBOT_PUSH_RUN_NXT = "Your program »$« is downloaded to the NXT, start it on the robot!";  // untranslated
 Blockly.Msg.ORA_ROBOT_SET_SUCCESS = "Switched to robot system »$«!";  // untranslated
 Blockly.Msg.ORA_SERVER_ERROR = "Chyba serveru";

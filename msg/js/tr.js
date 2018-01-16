@@ -533,8 +533,8 @@ Blockly.Msg.MENU_RIGHT_INFO_TOOLTIP = "Open/close info view";  // untranslated
 Blockly.Msg.MENU_ROBOT = "Robot";
 Blockly.Msg.MENU_ROBOT_STATE_INFO = "Bilgi";
 Blockly.Msg.MENU_ROBOT_STATE_TOOLTIP = "Robot bilgisi";
-Blockly.Msg.MENU_ROBOT_STOP_HINT_EV3 = "Press <span class='typcn typcn-media-stop'></span>+<span class='typcn typcn-arrow-sorted-down'></span>on the robot to abort the program!";  // untranslated
-Blockly.Msg.MENU_ROBOT_STOP_HINT_NXT = "Press <span class='typcn typcn-media-cancel'></span>on the robot to abort the program!";  // untranslated
+Blockly.Msg.MENU_ROBOT_STOP_HINT_EV3 = "Press <span class='typcn typcn-media-stop'></span>+<span class='typcn typcn-arrow-sorted-down'></span> buttons on the robot to abort the program!";  // untranslated
+Blockly.Msg.MENU_ROBOT_STOP_HINT_NXT = "Press <span class='typcn typcn-media-cancel'></span> button on the robot to abort the program!";  // untranslated
 Blockly.Msg.MENU_ROBOT_TOOLTIP = "Robotlar";
 Blockly.Msg.MENU_SAVE = "Kaydet";
 Blockly.Msg.MENU_SAVE_AS = "Farkli kaydet ..";
@@ -842,7 +842,7 @@ Blockly.Msg.ORA_ROBOT_FIRMWAREUPDATE_POSSIBLE = "Aygit yazilimi güncellendi.";
 Blockly.Msg.ORA_ROBOT_NOT_CONNECTED = "Bagli robot yok. Robotunuzun açık oldugunu kontrol edin, sunucuya baglayin ve robotunuzun sifresini menüde bulunan robot-baglan secenegi altindan girin. <br/> Eger bunu yaparken bir problem yasarsaniz, lütfen yardim sayfalarimiza bakin.";
 Blockly.Msg.ORA_ROBOT_NOT_WAITING = "Robot, bir çalış komutu beklemiyor.";
 Blockly.Msg.ORA_ROBOT_PUSH_RUN = "Robot bekledi ve şimdi jar robota gönderildi.";
-Blockly.Msg.ORA_ROBOT_PUSH_RUN_CALLIOPE2016 = "Your program »$« is downloaded to Calliope, press the reset button to start!";  // untranslated
+Blockly.Msg.ORA_ROBOT_PUSH_RUN_CALLIOPE2016 = "Your program »$« is downloaded to Calliope, press the reset button to start it!";  // untranslated
 Blockly.Msg.ORA_ROBOT_PUSH_RUN_NXT = "Your program »$« is downloaded to the NXT, start it on the robot!";  // untranslated
 Blockly.Msg.ORA_ROBOT_SET_SUCCESS = "Switched to robot system »$«!";  // untranslated
 Blockly.Msg.ORA_SERVER_ERROR = "Sunucu-Hatasi.";

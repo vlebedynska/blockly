@@ -533,8 +533,8 @@ Blockly.Msg.MENU_RIGHT_INFO_TOOLTIP = "Open/close info view";  // untranslated
 Blockly.Msg.MENU_ROBOT = "robot";
 Blockly.Msg.MENU_ROBOT_STATE_INFO = "info";
 Blockly.Msg.MENU_ROBOT_STATE_TOOLTIP = "Info robot";
-Blockly.Msg.MENU_ROBOT_STOP_HINT_EV3 = "Press <span class='typcn typcn-media-stop'></span>+<span class='typcn typcn-arrow-sorted-down'></span>on the robot to abort the program!";  // untranslated
-Blockly.Msg.MENU_ROBOT_STOP_HINT_NXT = "Press <span class='typcn typcn-media-cancel'></span>on the robot to abort the program!";  // untranslated
+Blockly.Msg.MENU_ROBOT_STOP_HINT_EV3 = "Press <span class='typcn typcn-media-stop'></span>+<span class='typcn typcn-arrow-sorted-down'></span> buttons on the robot to abort the program!";  // untranslated
+Blockly.Msg.MENU_ROBOT_STOP_HINT_NXT = "Press <span class='typcn typcn-media-cancel'></span> button on the robot to abort the program!";  // untranslated
 Blockly.Msg.MENU_ROBOT_TOOLTIP = "robots";
 Blockly.Msg.MENU_SAVE = "sauvegarder";
 Blockly.Msg.MENU_SAVE_AS = "sauvegarder sous...";
@@ -842,7 +842,7 @@ Blockly.Msg.ORA_ROBOT_FIRMWAREUPDATE_POSSIBLE = "Le robot est mise à jour avec 
 Blockly.Msg.ORA_ROBOT_NOT_CONNECTED = "Le robot n'est pas connecté au serveur. Regarde, si le robot est allumé, puis connecte le au serveur avec le mot de passe sous - connexion serveur.<br/> Si cela ne fonctionne pas, regarde dans l'aide.";
 Blockly.Msg.ORA_ROBOT_NOT_WAITING = "Le robot est actuellement inactif.";
 Blockly.Msg.ORA_ROBOT_PUSH_RUN = "Envoi du programme en cours, le robot va démarrer.";
-Blockly.Msg.ORA_ROBOT_PUSH_RUN_CALLIOPE2016 = "Your program »$« is downloaded to Calliope, press the reset button to start!";  // untranslated
+Blockly.Msg.ORA_ROBOT_PUSH_RUN_CALLIOPE2016 = "Your program »$« is downloaded to Calliope, press the reset button to start it!";  // untranslated
 Blockly.Msg.ORA_ROBOT_PUSH_RUN_NXT = "Your program »$« is downloaded to the NXT, start it on the robot!";  // untranslated
 Blockly.Msg.ORA_ROBOT_SET_SUCCESS = "Switched to robot system »$«!";  // untranslated
 Blockly.Msg.ORA_SERVER_ERROR = "Erreur du serveur";
