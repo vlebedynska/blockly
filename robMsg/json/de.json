@@ -1,9 +1,4 @@
 {
-  "@metadata":{
-    "authors":[
-      "Beate"
-    ]
-  },
   "ACTIVITY_TOOLTIP":"Block für eine zusätzliche Aktivität.",
   "ACTOR_TOOLTIP":"Represents any actor.",
   "BRICKLIGHT":"Statusleuchte",
