@@ -307,7 +307,7 @@
   "POPUP_USERNAME_LOGOFF": "tu n'es pas inscrit",
   "POPUP_VALUE": "valeur",
   "PROCEDURES_DEFNORETURN_PROCEDURE": "faire quelque chose",
-  "PROCEDURES_TITLE": "fonction \\\" disponible",
+  "PROCEDURES_TITLE": "fonction",
   "PROCEDURES_VARIABLES_ERROR": "Erreur de variable",
   "PROCEDURES_VARIABLES_LOOP_ERROR": "Erreur dans la boucle: problème avec la variable",
   "SENSOR_BATTERY": "voltage en mV",
