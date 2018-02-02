@@ -516,7 +516,12 @@ Blockly.Blocks['robBrick_actor'] = {
 
     init : function() {
         this.setColour(Blockly.CAT_ACTION_RGB);
-        this.appendDummyInput('ACTOR').appendField(Blockly.Msg.MOTOR_OTHER);
+        var consumerType = new Blockly.FieldDropdown([ [ Blockly.Msg.MOTOR, 'OTHER' ], [ Blockly.Msg.LED, 'EXTERNAL_LED' ] ]);
+        if (this.workspace.device === 'ev3') {
+            this.appendDummyInput('ACTOR').appendField(Blockly.Msg.MOTOR_OTHER).appendField(consumerType, 'CONSUMER_TYPE').setAlign(Blockly.ALIGN_RIGHT);
+        } else {
+            this.appendDummyInput('ACTOR').appendField(Blockly.Msg.MOTOR_OTHER);
+        }
         this.setOutput(true, 'Actor');
         this.setTooltip(Blockly.Msg.ACTOR_TOOLTIP);
     }

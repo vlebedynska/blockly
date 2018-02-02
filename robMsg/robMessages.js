@@ -575,6 +575,7 @@ Blockly.Msg.PLAY_HALF = 'half note';
 Blockly.Msg.PLAY_QUARTER = 'quarter note';
 Blockly.Msg.PLAY_EIGHTH = 'eighth note';
 Blockly.Msg.PLAY_SIXTEENTH = 'sixteenth note';
+Blockly.Msg.LED = 'LED';
 Blockly.Msg.LED_ON = 'turn LED on';
 Blockly.Msg.LED_OFF = 'turn LED off';
 Blockly.Msg.SENSOR_GESTURE = 'gesture';

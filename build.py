@@ -42,7 +42,7 @@ if sys.version_info[0] != 2:
                   "You are using: " + sys.version)
 
 import errno, glob, httplib, json, os, re, subprocess, threading, urllib
-
+import shutil
 
 def import_path(fullpath):
   """Import a file with full path specification.
@@ -52,7 +52,24 @@ def import_path(fullpath):
       fullpath:  Path and filename of import.
 
   Returns:
-      An imported module.
+      An imported module.#self.gen_generator("javascript")
+    #self.gen_generator("python")
+    #self.gen_generator("php")
+    #self.gen_generator("dart")
+    #self.gen_generator("lua")
+    self.copy_files()
+  
+  def copy_files(self):
+    print("Copying files to robertalab!")
+    shutil.rmtree("../robertalab/OpenRobertaParent/OpenRobertaServer/staticResources/blockly/media")
+    shutil.rmtree("../robertalab/OpenRobertaParent/OpenRobertaServer/staticResources/blockly/msg")
+    shutil.rmtree("../robertalab/OpenRobertaParent/OpenRobertaServer/staticResources/blockly/tests")
+    shutil.copytree("media", "../robertalab/OpenRobertaParent/OpenRobertaServer/staticResources/blockly/media")
+    shutil.copytree("msg", "../robertalab/OpenRobertaParent/OpenRobertaServer/staticResources/blockly/msg")
+    shutil.copytree("tests", "../robertalab/OpenRobertaParent/OpenRobertaServer/staticResources/blockly/tests")
+    shutil.copy2("blockly_compressed.js", "../robertalab/OpenRobertaParent/OpenRobertaServer/staticResources/blockly")
+    shutil.copy2("blocks_compressed.js", "../robertalab/OpenRobertaParent/OpenRobertaServer/staticResources/blockly")
+    print("Copying finished!")
   """
   path, filename = os.path.split(fullpath)
   filename, ext = os.path.splitext(filename)
@@ -175,11 +192,24 @@ class Gen_compressed(threading.Thread):
   def run(self):
     self.gen_core()
     self.gen_blocks()
-    self.gen_generator("javascript")
-    self.gen_generator("python")
-    self.gen_generator("php")
-    self.gen_generator("dart")
-    self.gen_generator("lua")
+    #self.gen_generator("javascript")
+    #self.gen_generator("python")
+    #self.gen_generator("php")
+    #self.gen_generator("dart")
+    #self.gen_generator("lua")
+    self.copy_files()
+  
+  def copy_files(self):
+    print("Copying files to robertalab!")
+    shutil.rmtree("../robertalab/OpenRobertaParent/OpenRobertaServer/staticResources/blockly/media")
+    shutil.rmtree("../robertalab/OpenRobertaParent/OpenRobertaServer/staticResources/blockly/msg")
+    shutil.rmtree("../robertalab/OpenRobertaParent/OpenRobertaServer/staticResources/blockly/tests")
+    shutil.copytree("media", "../robertalab/OpenRobertaParent/OpenRobertaServer/staticResources/blockly/media")
+    shutil.copytree("msg", "../robertalab/OpenRobertaParent/OpenRobertaServer/staticResources/blockly/msg")
+    shutil.copytree("tests", "../robertalab/OpenRobertaParent/OpenRobertaServer/staticResources/blockly/tests")
+    shutil.copy2("blockly_compressed.js", "../robertalab/OpenRobertaParent/OpenRobertaServer/staticResources/blockly")
+    shutil.copy2("blocks_compressed.js", "../robertalab/OpenRobertaParent/OpenRobertaServer/staticResources/blockly")
+    print("Copying finished!")
 
   def gen_core(self):
     target_filename = "blockly_compressed.js"
