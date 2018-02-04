@@ -112,7 +112,9 @@ Blockly.Xml.blockToDom = function(block, statement_list) {
             if (mutation !== undefined
                     && mutation != null
                     && (block.type.indexOf('Controls_if') !== -1 || block.type.indexOf('Controls_wait_for') !== -1 || block.type.indexOf('Controls_wait') !== -1)) {
-                //  && (block.type == 'robControls_if' || block.type == 'robControls_ifElse' || block.type == 'robControls_wait_for' || block.type == 'robControls_wait')) {
+                // && (block.type == 'robControls_if' || block.type ==
+                // 'robControls_ifElse' || block.type == 'robControls_wait_for'
+                // || block.type == 'robControls_wait')) {
                 element.appendChild(repetitions);
                 repe = true;
             }
@@ -122,7 +124,8 @@ Blockly.Xml.blockToDom = function(block, statement_list) {
     function fieldToDom(field) {
         if (field.name && field.EDITABLE) {
             var value = field.getValue();
-            // check for numerals with decimal comma and convert them to decimal point
+            // check for numerals with decimal comma and convert them to decimal
+            // point
             var testNum = field.getValue().replace(/,/g, '.');
             if (!isNaN(testNum)) {
                 value = String(testNum);
@@ -139,7 +142,7 @@ Blockly.Xml.blockToDom = function(block, statement_list) {
         }
     }
 
-    //THIS IF STATEMENET SHOULD BE TESTED
+    // THIS IF STATEMENET SHOULD BE TESTED
     if (block.mutationToDom) {
         // Custom data for an advanced block.
         var mutation = block.mutationToDom();
@@ -260,7 +263,7 @@ Blockly.Xml.appendlistToDom = function(parentDom, block) {
  */
 Blockly.Xml.cloneShadow_ = function(shadow) {
     shadow = shadow.cloneNode(true);
-    // Walk the tree looking for whitespace.  Don't prune whitespace in a tag.
+    // Walk the tree looking for whitespace. Don't prune whitespace in a tag.
     var node = shadow;
     var textNode;
     while (node) {
@@ -380,7 +383,7 @@ Blockly.Xml.domToWorkspace = function(xml, workspace) {
     }
     Blockly.Field.startCache();
     // Safari 7.1.3 is known to provide node lists with extra references to
-    // children beyond the lists' length.  Trust the length, do not use the
+    // children beyond the lists' length. Trust the length, do not use the
     // looping pattern of checking the index for an object.
     var childCount = xml.childNodes.length;
     var existingGroup = Blockly.Events.getGroup();
@@ -420,7 +423,9 @@ Blockly.Xml.domToWorkspace = function(xml, workspace) {
         }
     }
 
-    // make sure the start block is in the first column, to avoid errors while instantiating blocks with global variables before the variable declaration
+    // make sure the start block is in the first column, to avoid errors while
+    // instantiating blocks with global variables before the variable
+    // declaration
     for (var i = 0; i < xmlBlockList.length; i++) {
         if (xmlBlockList[i][0].getAttribute('type').indexOf('Controls_start') !== -1) {
             xmlBlockList[i] = xmlBlockList.splice(0, 1, xmlBlockList[i])[0];
@@ -473,10 +478,12 @@ Blockly.Xml.domToBlock = function(xmlBlockList, workspace) {
         for (var i = blocks.length - 1; i >= 0; i--) {
             blocks[i].render(false);
         }
-        // Populating the connection database may be defered until after the blocks
+        // Populating the connection database may be defered until after the
+        // blocks
         // have renderend.
         setTimeout(function() {
-            if (topBlock.workspace) { // Check that the block hasn't been deleted.
+            if (topBlock.workspace) { // Check that the block hasn't been
+                // deleted.
                 topBlock.setConnectionsHidden(false);
             }
         }, 1);
@@ -519,7 +526,7 @@ Blockly.Xml.domToBlockHeadless_ = function(xmlBlockList, workspace) {
     var blockChild = null;
     for (var i = 0, xmlChild; xmlChild = xmlBlock.childNodes[i]; i++) {
         if (xmlChild.nodeType == 3) {
-            // Ignore any text at the <block> level.  It's all whitespace anyway.
+            // Ignore any text at the <block> level. It's all whitespace anyway.
             continue;
         }
 
@@ -668,6 +675,8 @@ Blockly.Xml.childToBlock = function(workspace, block, xmlChild) {
                 xmlChild.setAttribute('input', 'PIN_PULSE_HIGH');
             } else if (xmlChild.getAttribute('input') == 'PIN_PULSELOW') {
                 xmlChild.setAttribute('input', 'PIN_PULSE_LOW');
+            } else if (xmlChild.getAttribute('input') == 'PIN_TOUCHED') {
+                xmlChild.setAttribute('input', 'PINTOUCH_PRESSED');
             }
             block.domToMutation(xmlChild);
             if (block.initSvg) {
@@ -778,6 +787,8 @@ Blockly.Xml.childToBlock = function(workspace, block, xmlChild) {
                 xmlChild.textContent = 'PIN_PULSE_HIGH';
             } else if (xmlChild.textContent == 'PIN_PULSELOW') {
                 xmlChild.textContent = 'PIN_PULSE_LOW';
+            } else if (xmlChild.textContent == 'PIN_TOUCHED') {
+                xmlChild.textContent = 'PINTOUCH_PRESSED';
             }
         } else if (block.type == 'robControls_start' && (workspace.device == 'calliope' || workspace.device == 'microbit')) {
             if (xmlChild.textContent == 'TRUE') {
@@ -863,7 +874,7 @@ Blockly.Xml.childToBlock = function(workspace, block, xmlChild) {
     case 'repetitions':
         break;
     default:
-        // Unknown tag; ignore.  Same principle as HTML parsers.
+        // Unknown tag; ignore. Same principle as HTML parsers.
         console.warn('Ignoring unknown tag: ' + xmlChild.nodeName);
     }
 };

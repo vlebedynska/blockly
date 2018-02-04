@@ -902,7 +902,7 @@
   "SENSOR_RADIO_RSSI": "Radio RSSI Sensor",
   "RADIO_GET_RSSI_TOOLTIP": "Gibt den RSSI Wert des zuletzt empfangenen Pakets zurück.",
   "MODE_VALUE": "Wert",
-  "SENSOR_TOUCH_BOB3" : "Arm",
+  "SENSOR_PINTOUCH_BOB3" : "Arm",
   "SENSOR_SOUND_CALLIOPE" : "Mikrofon",
   "MODE_PRESSED" : "gedrückt",
   "INFRARED_DISTANCE_GETSAMPLE_TOOLTIP" : "Gibt die relative Entfernung in cm vom Infrarotsensor zurück. Die Werte können zwischen 1 und 75 cm liegen.",
