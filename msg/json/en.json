@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2018-02-07 10:33:41.828540",
+		"lastupdated": "2018-02-09 15:40:40.606499",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -523,6 +523,7 @@
 	"SENSOR_KEY_ANY": "any",
 	"SENSOR_ANY": "anyplace",
 	"SENSOR_RESET": "reset",
+	"SENSOR_CALIBRATE": "calibrate",
 	"SENSOR_RESET_II": "",
 	"SENSOR_GET_SAMPLE": "get value",
 	"SENSOR_VALUE": "value",
@@ -550,6 +551,7 @@
 	"MODE_RATE": "rate",
 	"MODE_ACCELERATION": "acceleration",
 	"MODE_ORIENTATION": "orientation",
+	"MODE_COMPASS": "compass",
 	"LOOP": "repeat until",
 	"LOOP_FOREVER": "repeat indefinitely",
 	"CONNECTION_SEND_DATA": "send message",
@@ -859,6 +861,7 @@
 	"SENSOR_SONAR": "sonar",
 	"SENSOR_COMPASS": "compass sensor",
 	"COMPASS_TOOLTIP": "Represents a compass sensor.",
+	"COMPASS_CALIBRATE_TOOLTIP": "Calibrates the compass. Turn the compass sensor VERY slowly for two times (about 40 seconds).",
 	"SOUND_TOOLTIP": "Represents a sound sensor.",
 	"MOTOR_ARDU_TOOLTIP": "Represents a Bot'n Roll chassis motor.",
 	"NXTBRICK_TOOLTIP": "Represents the NXT brick with connected actors and sensors. There are also inbuilt actors and sensors available, e.g. buttons, display ...",

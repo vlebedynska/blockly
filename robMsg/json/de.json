@@ -935,5 +935,8 @@
   "SAY_PARAMETERS_TOOLTIP": "Der Roboter sagt den angegebenen Text. Zusätzlich kann die Sprechgeschwindigkeit (0 langsam - 100 schnell) und die Stimmlage (0 tief - 100 hoch) verändert werden.",
   "SETLANGUAGE_TOOLTIP": "Setzt die Sprache für den Sage Block.",
   "ORA_ROBOT_PUSH_RUN_CALLIOPE2016": "Dein Programm »$« wird auf Calliope übertragen, drücke »Reset« zum Starten!",
-  "ORA_ROBOT_PUSH_RUN_NXT": "Dein Programm »$« wird auf den NXT übertragen, starte es auf dem Roboter!"
+  "ORA_ROBOT_PUSH_RUN_NXT": "Dein Programm »$« wird auf den NXT übertragen, starte es auf dem Roboter!",
+  "COMPASS_CALIBRATE_TOOLTIP": "Kalibriert den Kompass. Drehe den Kompass Sensor zwei Mal GANZ langsam (ca. 40 Sekunden).",
+  "SENSOR_CALIBRATE": "Kalibriere",
+  "MODE_COMPASS": "Kompass"
 }
