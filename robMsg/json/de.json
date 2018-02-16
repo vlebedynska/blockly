@@ -938,5 +938,10 @@
   "ORA_ROBOT_PUSH_RUN_NXT": "Dein Programm »$« wird auf den NXT übertragen, starte es auf dem Roboter!",
   "COMPASS_CALIBRATE_TOOLTIP": "Kalibriert den Kompass. Drehe den Kompass Sensor zwei Mal GANZ langsam (ca. 40 Sekunden).",
   "SENSOR_CALIBRATE": "Kalibriere",
-  "MODE_COMPASS": "Kompass"
+  "MODE_COMPASS": "Kompass",
+  "SENSOR_IRSEEKER": "Infrarot Sucher",
+  "IRSEEKER_TOOLTIP": "Block für den HiTechnic IRSeeker V2 Sensor.",
+  "MODE_MODULATED": "Moduliert",
+  "MODE_UNMODULATED": "Unmoduliert",
+  "SENSOR_IRSEEKER_GETSAMPLE_TOOLTIP": "Gibt die Position einer Infrarot Signalleuchte."
 }

@@ -242,6 +242,22 @@ Blockly.Blocks['robBrick_infrared'] = {
     }
 };
 
+Blockly.Blocks['robBrick_irseeker'] = {
+    /**
+     * Represent an HiTechnic IRSeeker V2 sensor.
+     *
+     * @constructs robBrick_irseeker
+     * @memberof Block
+     */
+
+    init : function() {
+        this.setColour(Blockly.CAT_SENSOR_RGB);
+        this.appendDummyInput().appendField(Blockly.Msg.SENSOR_IRSEEKER);
+        this.setOutput(true, 'Sensor');
+        this.setTooltip(Blockly.Msg.IRSEEKER_TOOLTIP);
+    }
+};
+
 Blockly.Blocks['robBrick_touch'] = {
     /**
      * Represent a touch sensor.
