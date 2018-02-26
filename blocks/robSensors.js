@@ -92,7 +92,7 @@ Blockly.Blocks['robSensors_compass_calibrate'] = {
     init : function() {
         this.setColour(Blockly.CAT_SENSOR_RGB);
         var sensorPort = new Blockly.FieldDropdown([ [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ]);
-        this.appendDummyInput().appendField(Blockly.Msg.SENSOR_CALIBRATE).appendField(Blockly.Msg.SENSOR_COMPASS).appendField(sensorPort, 'SENSORPORT');
+        this.appendDummyInput().appendField(Blockly.Msg.SENSOR_CALIBRATE).appendField(Blockly.Msg.SENSOR_COMPASS_EV3).appendField(sensorPort, 'SENSORPORT');
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setTooltip(Blockly.Msg.COMPASS_CALIBRATE_TOOLTIP);

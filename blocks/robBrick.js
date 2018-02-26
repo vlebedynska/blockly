@@ -288,7 +288,11 @@ Blockly.Blocks['robBrick_compass'] = {
 
     init : function() {
         this.setColour(Blockly.CAT_SENSOR_RGB);
-        this.appendDummyInput().appendField(Blockly.Msg.SENSOR_COMPASS);
+        if (this.workspace.device === 'ev3') {
+            this.appendDummyInput().appendField(Blockly.Msg.SENSOR_COMPASS_EV3);
+        } else {
+            this.appendDummyInput().appendField(Blockly.Msg.SENSOR_COMPASS);
+        }
         this.setOutput(true, 'Sensor');
         this.setTooltip(Blockly.Msg.COMPASS_TOOLTIP);
     }
