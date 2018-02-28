@@ -948,5 +948,15 @@
   "MODE_UNMODULATED": "Unmoduliert",
   "SENSOR_IRSEEKER_GETSAMPLE_TOOLTIP": "Gibt die Position einer Infrarot Signalleuchte.",
   "ERROR_MISSING_PARAMETER": "Ein Eingabewert fehlt!",
-  "ERROR_MISSING_RETURN": "Der Funktionsrückgabewert fehlt!"
+  "ERROR_MISSING_RETURN": "Der Funktionsrückgabewert fehlt!",
+  "INPUT": "Eingang",
+  "MOTION_SENSOR": "Bewegungssensor",
+  "POTENTIOMETER": "Drehsensor",
+  "SERVO_MOTOR": "Servomotor",
+  "PULSE": "Puls",
+  "RELAY": "Relaikarte",
+  "HUMIDITY": "Luftfeuchtigkeit",
+  "AND": "und",
+  "STEP_MOTOR": "Schrittmotor",
+  "SENSOR_MOISTURE": "Feuchtigkeitsensor"  
 }
