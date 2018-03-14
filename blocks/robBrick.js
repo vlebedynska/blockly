@@ -294,7 +294,11 @@ Blockly.Blocks['robBrick_compass'] = {
             this.appendDummyInput().appendField(Blockly.Msg.SENSOR_COMPASS);
         }
         this.setOutput(true, 'Sensor');
-        this.setTooltip(Blockly.Msg.COMPASS_TOOLTIP);
+        if (this.workspace.device === 'ev3') {
+            this.setTooltip(Blockly.Msg.COMPASS_TOOLTIP_EV3);
+        } else {
+            this.setTooltip(Blockly.Msg.COMPASS_TOOLTIP);
+        }
     }
 };
 

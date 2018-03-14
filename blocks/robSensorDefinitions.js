@@ -309,9 +309,11 @@ sensors.irseeker.ev3 = {
     modes : [ {
         name : 'MODULATED',
         type : 'Number',
+        unit : 'DEGREE'
     }, {
         name : 'UNMODULATED',
-        type : 'Number'
+        type : 'Number',
+        unit : 'DEGREE'
     } ]
 }
 

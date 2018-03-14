@@ -543,7 +543,7 @@
   "SENSOR_COMPASS" : "Kompasssensor",
   "SENSOR_COMPASS_EV3" : "HT Kompasssensor",
   "COMPASS_TOOLTIP" : "Block für den Kompasssensor.",
-  "COMPASS_EV3_TOOLTIP" : "Block für den HighTechnic NXT Kompasssensor.",
+  "COMPASS_TOOLTIP_EV3" : "Block für den HiTechnic NXT Kompasssensor.",
   "SOUND_TOOLTIP" : "Block für den Geräuschsensor.",
   "MOTOR_ARDU_TOOLTIP" : "Block a Bot'n Roll chassis motor.",
   "NXTBRICK_TOOLTIP" : "Block für den NXT Stein mit den angeschlossenen Aktoren und Sensoren. Es gibt auch weitere eingebaute Aktoren und Sensoren, wie z. B. das Display, die Tasten ...",
