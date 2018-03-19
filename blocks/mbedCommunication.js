@@ -34,7 +34,7 @@ Blockly.Blocks['mbedCommunication_sendBlock'] = {
 //                this.sourceBlock_.updateType_(option);
 //            }
 //        });
-        var dataType = new Blockly.FieldDropdown([ [ Blockly.Msg.VARIABLES_TYPE_STRING, 'String' ] ], function(option) {
+        var dataType = new Blockly.FieldDropdown([ [ Blockly.Msg.VARIABLES_TYPE_NUMBER, 'Number' ], [ Blockly.Msg.VARIABLES_TYPE_BOOLEAN, 'Boolean' ], [ Blockly.Msg.VARIABLES_TYPE_STRING, 'String' ] ], function(option) {
             if (option && this.sourceBlock_.getFieldValue('TYPE') !== option) {
                 this.sourceBlock_.updateType_(option);
             }
@@ -43,7 +43,7 @@ Blockly.Blocks['mbedCommunication_sendBlock'] = {
         for (var i = 0; i < 8; i++) {
             power.push([ i.toString(), i.toString() ]);
         }
-        this.dataType_ = 'String';
+        this.dataType_ = 'Number';
         this.appendValueInput('sendData').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.CONNECTION_SEND_DATA).appendField(dataType, 'TYPE').setCheck(this.dataType_);
         this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.CONNECTION_POWER).appendField(new Blockly.FieldDropdown(power), 'POWER');
         this.setTooltip(Blockly.Msg.CONNECTION_MBED_SEND_TOOLTIP);
@@ -91,12 +91,12 @@ Blockly.Blocks['mbedCommunication_receiveBlock'] = {
 
     init : function() {
         this.setColour(Blockly.CAT_COMMUNICATION_RGB);
-        var dataType = new Blockly.FieldDropdown([ [ Blockly.Msg.VARIABLES_TYPE_STRING, 'String' ] ], function(option) {
+        var dataType = new Blockly.FieldDropdown([ [ Blockly.Msg.VARIABLES_TYPE_NUMBER, 'Number' ], [ Blockly.Msg.VARIABLES_TYPE_BOOLEAN, 'Boolean' ], [ Blockly.Msg.VARIABLES_TYPE_STRING, 'String' ] ], function(option) {
             if (option && this.sourceBlock_.getFieldValue('TYPE') !== option) {
                 this.sourceBlock_.updateType_(option);
             }
         });
-        this.dataType_ = 'String';
+        this.dataType_ = 'Number';
         this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.CONNECTION_RECEIVED_DATA).appendField(dataType, 'TYPE');
         this.setOutput(true, this.dataType_);
         this.setTooltip(Blockly.Msg.CONNECTION_MBED_RECEIVE_TOOLTIP);
