@@ -946,5 +946,7 @@
   "IRSEEKER_TOOLTIP": "Block für den HiTechnic NXT IRSeeker V2 Sensor.",
   "MODE_MODULATED": "Moduliert",
   "MODE_UNMODULATED": "Unmoduliert",
-  "SENSOR_IRSEEKER_GETSAMPLE_TOOLTIP": "Gibt die Position einer Infrarot Signalleuchte."
+  "SENSOR_IRSEEKER_GETSAMPLE_TOOLTIP": "Gibt die Position einer Infrarot Signalleuchte.",
+  "ERROR_MISSING_PARAMETER": "Ein Eingabewert fehlt!",
+  "ERROR_MISSING_RETURN": "Der Funktionsrückgabewert fehlt!"
 }

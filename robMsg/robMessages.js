@@ -1045,3 +1045,5 @@ Blockly.Msg.RIGHT = 'right';
 Blockly.Msg.LEFT = 'left';
 Blockly.Msg.ORA_ROBOT_PUSH_RUN_CALLIOPE2016 = 'Your program »$« is downloaded to Calliope, press the reset button to start it!';
 Blockly.Msg.ORA_ROBOT_PUSH_RUN_NXT = 'Your program »$« is downloaded to the NXT, start it on the robot!';
+Blockly.Msg.ERROR_MISSING_PARAMETER = 'An input value is missing!';
+Blockly.Msg.ERROR_MISSING_RETURN = 'The function return value is missing!';
