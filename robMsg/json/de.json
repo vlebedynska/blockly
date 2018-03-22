@@ -950,13 +950,16 @@
   "ERROR_MISSING_PARAMETER": "Ein Eingabewert fehlt!",
   "ERROR_MISSING_RETURN": "Der Funktionsrückgabewert fehlt!",
   "INPUT": "Eingang",
-  "MOTION_SENSOR": "Bewegungssensor",
-  "POTENTIOMETER": "Drehsensor",
+  "SENSOR_MOTION": "Bewegungssensor",
+  "SENSOR_ROTATION": "Drehsensor",
+  "SENSOR_POTENTIOMETER": "Potentiometer",
   "SERVO_MOTOR": "Servomotor",
-  "PULSE": "Puls",
+  "SENSOR_PULSE": "Pulssensor",
   "RELAY": "Relaikarte",
-  "HUMIDITY": "Luftfeuchtigkeit",
+  "SENSOR_HUMIDITY": "Luftfeuchtigkeit",
   "AND": "und",
   "STEP_MOTOR": "Schrittmotor",
-  "SENSOR_MOISTURE": "Feuchtigkeitsensor"  
+  "SENSOR_MOISTURE": "Feuchtigkeitsensor",
+  "SENSOR_DROP": "Tropfensensor",
+  "SENSOR_RFID": "RFID Reader"
 }

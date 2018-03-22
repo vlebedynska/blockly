@@ -1278,14 +1278,17 @@
 	"ERROR_MISSING_RETURN": "",
 	"OUTPUT": "",
 	"INPUT": "",
-	"MOTION_SENSOR": "",
-	"POTENTIOMETER": "",
+	"SENSOR_MOTION": "",
+	"SENSOR_POTENTIOMETER": "",
 	"SERVO_MOTOR": "",
-	"PULSE": "",
+	"SENSOR_PULSE": "",
 	"RELAY": "",
-	"HUMIDITY": "",
+	"SENSOR_HUMIDITY": "",
 	"AND": "",
 	"STEP_MOTOR": "",
 	"SENSOR_MOISTURE": "",
-	"MODE_MOISTURE": ""
+	"MODE_MOISTURE": "",
+	"SENSOR_ROTATION": "",
+	"SENSOR_DROP": "",
+	"SENSOR_RFID": ""
 }

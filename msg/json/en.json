@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2018-04-10 23:00:23.997838",
+		"lastupdated": "2018-04-11 07:03:51.812608",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -1284,14 +1284,17 @@
 	"ERROR_MISSING_RETURN": "The function return value is missing!",
 	"OUTPUT": "output",
 	"INPUT": "input",
-	"MOTION_SENSOR": "motion sensor",
-	"POTENTIOMETER": "potentiometer",
+	"SENSOR_MOTION": "motion sensor",
+	"SENSOR_POTENTIOMETER": "potentiometer",
 	"SERVO_MOTOR": "servo motor",
-	"PULSE": "pulse",
+	"SENSOR_PULSE": "pulse sensor",
 	"RELAY": "relay",
-	"HUMIDITY": "humidity",
+	"SENSOR_HUMIDITY": "humidity sensor",
 	"AND": "and",
 	"STEP_MOTOR": "step motor",
 	"SENSOR_MOISTURE": "moisture sensor",
-	"MODE_MOISTURE": "moisture"
+	"MODE_MOISTURE": "moisture",
+	"SENSOR_ROTATION": "rotation sensor",
+	"SENSOR_DROP": "drop sensor",
+	"SENSOR_RFID": "RFID reader"
 }
