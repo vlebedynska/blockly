@@ -451,33 +451,8 @@ Blockly.Blocks['robControls_forEach'] = {
     this.nameOld = Blockly.Msg.VARIABLES_TITLE;
     this.getField("VAR").setText(Blockly.Msg.VARIABLES_DEFAULT_NAME);
     this.getField("VAR").setValidator(this.validateName); 
-    var declType;
-    if (this.workspace.device === 'calliope' || this.workspace.device === 'microbit') {
-        declType = new Blockly.FieldDropdown([ 
-                   [Blockly.Msg.VARIABLES_TYPE_NUMBER, 'Number' ], 
-                   [Blockly.Msg.VARIABLES_TYPE_STRING, 'String' ],
-                   [Blockly.Msg.VARIABLES_TYPE_BOOLEAN, 'Boolean' ], 
-                   [Blockly.Msg.VARIABLES_TYPE_COLOUR, 'Colour' ], 
-                   [Blockly.Msg.VARIABLES_TYPE_IMAGE, 'Image' ]], 
-                   function(option) {
-                     if (option && this.sourceBlock_.getFieldValue('TYPE') !== option) {
-                       this.sourceBlock_.updateType(option);
-                     }
-                   });
-    } else {
-        declType = new Blockly.FieldDropdown([ 
-            [Blockly.Msg.VARIABLES_TYPE_NUMBER, 'Number' ], 
-            [Blockly.Msg.VARIABLES_TYPE_STRING, 'String' ],
-            [Blockly.Msg.VARIABLES_TYPE_BOOLEAN, 'Boolean' ], 
-            [Blockly.Msg.VARIABLES_TYPE_COLOUR, 'Colour' ], 
-            [Blockly.Msg.VARIABLES_TYPE_CONNECTION, 'Connection' ]], 
-            function(option) {
-              if (option && this.sourceBlock_.getFieldValue('TYPE') !== option) {
-                this.sourceBlock_.updateType(option);
-              }
-            });
-    }
-    this.getInput('LIST').appendField(declType, 'TYPE');
+    this.declType_ =Blockly.LIST_TYPE_DROPDOWN(this.workspace.device);
+    this.getInput('LIST').appendField(this.declType_, 'TYPE');
     var temp = this.getInput('LIST').fieldRow.pop();
     this.getInput('LIST').fieldRow.splice(1, 0, temp);
     this.appendStatementInput('DO')
@@ -562,7 +537,7 @@ Blockly.Blocks['robControls_forEach'] = {
       Blockly.Variables.updateType(this.getFieldValue('VAR'), arrayType.replace('Array_',''));
     }
   },
-  updateType : function(option) {
+  updateType_: function(option) {
         this.listType_ = option;
         this.getInput('LIST').connection.setCheck('Array_' + this.listType_);
         Blockly.Variables.updateType(this.getFieldValue('VAR'), option);

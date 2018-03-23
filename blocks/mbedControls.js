@@ -216,7 +216,7 @@ Blockly.Blocks['mbedControls_wait_for'] = {
             var connection = this.getInput('WAIT' + this.waitCount_).connection;
             connection.connect(lc.outputConnection);
 
-            var s = this.workspace.newBlock('mbedSensors_getSample');
+            var s = this.workspace.newBlock('robSensors_getSample');
             s.initSvg();
             s.render();
             connection = lc.getInput('A').connection;
