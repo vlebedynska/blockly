@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2018-04-11 07:03:51.812608",
+		"lastupdated": "2018-04-11 07:05:38.902792",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -1296,5 +1296,13 @@
 	"MODE_MOISTURE": "moisture",
 	"SENSOR_ROTATION": "rotation sensor",
 	"SENSOR_DROP": "drop sensor",
-	"SENSOR_RFID": "RFID reader"
+	"SENSOR_RFID": "RFID reader",
+	"ACTION_LCD": "LCD",
+	"ACTION_LCDI2C": "LCD",
+	"ACTION_LED": "LED",
+	"ACTION_PLAY": "play",
+	"ACTION_RELAY": "relay",
+	"ACTION_RGBLED": "RGB LED",
+	"ACTION_STEPMOTOR": "step motor",
+	"ACTION_SERVO": "servo motor"
 }

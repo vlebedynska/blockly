@@ -1290,5 +1290,13 @@
 	"MODE_MOISTURE": "",
 	"SENSOR_ROTATION": "",
 	"SENSOR_DROP": "",
-	"SENSOR_RFID": ""
+	"SENSOR_RFID": "",
+	"ACTION_LCD": "",
+	"ACTION_LCDI2C": "",
+	"ACTION_LED": "",
+	"ACTION_PLAY": "",
+	"ACTION_RELAY": "",
+	"ACTION_RGBLED": "",
+	"ACTION_STEPMOTOR": "",
+	"ACTION_SERVO": ""
 }
