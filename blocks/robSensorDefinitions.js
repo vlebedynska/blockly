@@ -113,22 +113,26 @@ sensors.colour.ev3 = {
     } ],
     standardPort : '3',
 };
-sensors.colour.nxt = sensors.colour.ev3;
-sensors.colour.nxt.modes = [ {
-    name : 'COLOUR',
-    type : 'Colour',
-    value : '#b30006'
-}, {
-    name : 'LIGHT',
-    type : 'Number',
-    unit : 'PERCENT',
-    value : 50
-}, {
-    name : 'AMBIENTLIGHT',
-    type : 'Number',
-    unit : 'PERCENT',
-    value : 50
-} ];
+sensors.colour.nxt = {
+    title : 'COLOUR',
+    ports : [ [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ],
+    modes : [ {
+        name : 'COLOUR',
+        type : 'Colour',
+        value : '#b30006'
+    }, {
+        name : 'LIGHT',
+        type : 'Number',
+        unit : 'PERCENT',
+        value : 50
+    }, {
+        name : 'AMBIENTLIGHT',
+        type : 'Number',
+        unit : 'PERCENT',
+        value : 50
+    }, ],
+    standardPort : '3',
+};
 
 sensors.compass = {};
 sensors.compass.ardu = {
