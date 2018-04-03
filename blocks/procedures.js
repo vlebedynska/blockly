@@ -926,7 +926,7 @@ Blockly.Blocks['robProcedures_defreturn'] = {
    * @this Blockly.Block
    */
   init: function() {
-    this.declType_= Blockly.TYPE_DROPDOWN(this.workspace.device);
+    var returnDropdown = Blockly.TYPE_DROPDOWN(this.workspace.device, 'none');
     this.setHelpUrl(Blockly.Msg.PROCEDURES_DEFNORETURN_HELPURL);
     this.setColour(Blockly.CAT_PROCEDURE_RGB);
     var name = Blockly.Procedures.findLegalName(Blockly.Msg.PROCEDURES_DEFNORETURN_PROCEDURE, this);
@@ -941,7 +941,7 @@ Blockly.Blocks['robProcedures_defreturn'] = {
     this.appendValueInput('RETURN').
          setAlign(Blockly.ALIGN_RIGHT).
          appendField(Blockly.Msg.RETURN).
-         appendField(this.declType_, 'TYPE').
+         appendField(returnDropdown, 'TYPE').
          appendField(Blockly.Msg.PROCEDURES_DEFRETURN_BACK).
          setCheck('Number');
     this.declare_ = false;
@@ -1046,6 +1046,7 @@ Blockly.Blocks['robProcedures_defreturn'] = {
    * @this Blockly.Block
    */
   addDeclarationStatement_ : function() {
+    var returnDropdown = Blockly.TYPE_DROPDOWN(this.workspace.device, 'none');
     this.setFieldValue(Blockly.Msg.PROCEDURES_BEFORE_PARAMS, 'WITH');
     var returnConnectionTarget = this.getInput('RETURN').connection.targetConnection;
     var stackConnectionTarget = this.getInput('STACK').connection.targetConnection;
@@ -1057,8 +1058,8 @@ Blockly.Blocks['robProcedures_defreturn'] = {
     this.appendStatementInput('STACK').appendField(Blockly.Msg.PROCEDURES_DEFNORETURN_DO);
     this.appendValueInput('RETURN').
          setAlign(Blockly.ALIGN_RIGHT).
-         appendField(Blockly.Msg.GET).
-         appendField(this.declType_, 'TYPE').
+         appendField(Blockly.Msg.RETURN).
+         appendField(returnDropdown, 'TYPE').
          appendField(Blockly.Msg.PROCEDURES_DEFRETURN_BACK).
          setCheck(this.returnType_);
     this.setFieldValue(this.returnType_, 'TYPE');
@@ -1069,9 +1070,11 @@ Blockly.Blocks['robProcedures_defreturn'] = {
       this.getInput('STACK').connection.connect(stackConnectionTarget);
     }
   },
+  
   updateType_: function(option) {
     if (option && this.getFieldValue('TYPE') !== option) {
       this.returnType_ = option;
+      this.getInput('RETURN').setCheck(this.returnType_);
       Blockly.Procedures.updateCallers(
                          this.getFieldValue('NAME'),
                          this.returnType_,

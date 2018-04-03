@@ -272,7 +272,8 @@ Blockly.DATA_TYPE['Array_Colour'] = "#39378B";
 Blockly.DATA_TYPE['Array_Connection'] = "#39378B";
 Blockly.DATA_TYPE['Array_Image'] = "#39378B";
 
-Blockly.TYPE_DROPDOWN = function(device) {
+Blockly.TYPE_DROPDOWN = function(device, opt_handler) {
+    var handler = opt_handler || 'updateShape_';
     switch (device) {
     case 'calliope':
         return new Blockly.FieldDropdown([
@@ -289,8 +290,8 @@ Blockly.TYPE_DROPDOWN = function(device) {
         ], function(option) {
             if (option && this.sourceBlock_.getFieldValue('TYPE') !== option) {
                 this.sourceBlock_.updateType_(option);
-                if (this.sourceBlock_.updateShape_)
-                    this.sourceBlock_.updateShape_(0, option);
+                if (this.sourceBlock_[handler])
+                    this.sourceBlock_[handler](0, option);
             }
         });
     case 'ardu':
@@ -310,8 +311,8 @@ Blockly.TYPE_DROPDOWN = function(device) {
         ], function(option) {
             if (option && this.sourceBlock_.getFieldValue('TYPE') !== option) {
                 this.sourceBlock_.updateType_(option);
-                if (this.sourceBlock_.updateShape_)
-                    this.sourceBlock_.updateShape_(0, option);
+                if (this.sourceBlock_[handler])
+                    this.sourceBlock_[handler](0, option);
             }
         });
     case 'ev3':
@@ -330,15 +331,18 @@ Blockly.TYPE_DROPDOWN = function(device) {
         ], function(option) {
             if (option && this.sourceBlock_.getFieldValue('TYPE') !== option) {
                 this.sourceBlock_.updateType_(option);
-                if (this.sourceBlock_.updateShape_)
-                    this.sourceBlock_.updateShape_(0, option);
+                if (this.sourceBlock_[handler])
+                    this.sourceBlock_[handler](0, option);
             }
         });
     default:
         return new Blockly.FieldDropdown([ [ Blockly.Msg.VARIABLES_TYPE_NUMBER, 'Number' ] ], function(option) {
             this.sourceBlock_.updateType_(option);
-            if (this.sourceBlock_.updateShape_)
-                this.sourceBlock_.updateShape_(0, option);
+            if (option && this.sourceBlock_.getFieldValue('TYPE') !== option) {
+                this.sourceBlock_.updateType_(option);
+                if (this.sourceBlock_[handler])
+                    this.sourceBlock_[handler](0, option);
+            }
         });
     }
 }
