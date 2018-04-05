@@ -8,7 +8,7 @@
 
 goog.provide('Blockly.Blocks.robActors');
 
-goog.require('Blockly.Blocks.robActorDefs');
+goog.require('Blockly.Blocks.robActorDefinitions');
 goog.require('Blockly.Blocks');
 
 Blockly.Blocks['robConf_generic'] = {
