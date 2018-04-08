@@ -45,7 +45,7 @@
   "CONFIGURATION_ERROR_SENSOR_WRONG": "¡Sensor erróneo conectado al puerto!",
   "CONFLIST_DELETE_ALL_TOOLTIP": "Haz clic aquí para borrar todos los programas seleccionados.",
   "CONFLIST_DELETE_TOOLTIP": "Haz clic aquí para borrar la configuración de tu robot.",
-  "CONFLIST_LOAD_TOOLTIP": "Haz clic aquí para cargar la configuración de tu robot en el entorno de configuración.\n",
+  "CONFLIST_LOAD_TOOLTIP": "Haz clic aquí para cargar la configuración de tu robot en el entorno de configuración.",
   "CONNECTION_CHECK": "¿está activa la conexión al robot  %1 ?",
   "CONNECTION_CHECK_TOOLTIP": "comprobar si la conexión al robot es activa",
   "CONNECTION_CONNECT": "Conectar al robot de nombre",

@@ -53,6 +53,7 @@ Blockly.inject = function(container, opt_options) {
   var options = new Blockly.Options(opt_options || {});
   var svg = Blockly.createDom_(container, options);
   var workspace = Blockly.createMainWorkspace_(svg, options);
+  workspace.container = container.id;
   Blockly.init_(workspace);
   workspace.markFocused();
   Blockly.bindEvent_(svg, 'focus', workspace, workspace.markFocused);

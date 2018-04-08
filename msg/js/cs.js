@@ -89,6 +89,8 @@ Blockly.Msg.CONFIGURATION_ERROR_MULTIPLE_RIGHT_MOTORS = "V konfiguraci je přiř
 Blockly.Msg.CONFIGURATION_ERROR_OTHER_NOT_SUPPORTED = "Other power consumer does not support this type of block!";  // untranslated
 Blockly.Msg.CONFIGURATION_ERROR_SENSOR_MISSING = "Tento senzor není připojen do portu.";
 Blockly.Msg.CONFIGURATION_ERROR_SENSOR_WRONG = "Do daného portu je připojen špatný senzor.";
+Blockly.Msg.CONFIGURATION_NO_PORT = "no port";  // untranslated
+Blockly.Msg.CONFIGURATION_PORT = "Port1";  // untranslated
 Blockly.Msg.CONFLIST_DELETE_ALL_TOOLTIP = "Klikni zde pro vymazání všech vybraných programů.";
 Blockly.Msg.CONFLIST_DELETE_TOOLTIP = "Klikni zde pro vymazání konfigurace robota.";
 Blockly.Msg.CONFLIST_LOAD_TOOLTIP = "Klikni zde pro nahrání nastavení robota do prostředí pro konfiguraci.";
@@ -190,12 +192,9 @@ Blockly.Msg.DUPLICATE_BLOCK = "Duplikovat";
 Blockly.Msg.ENABLE_BLOCK = "Povolit blok";
 Blockly.Msg.ENCODER_GETSAMPLE_TOOLTIP = "Vrátí aktuální hodnotu z tachometru motoru.";
 Blockly.Msg.ENCODER_RESET_TOOLTIP = "Vynuluje tachometr motoru.";
-<<<<<<< cc37c7efbaad20dc8a45ea9aa5cf5171eee4f930
+Blockly.Msg.ENCODER_TOOLTIP = "Represents an encoder.";  // untranslated
 Blockly.Msg.ERROR_MISSING_PARAMETER = "An input value is missing!";  // untranslated
 Blockly.Msg.ERROR_MISSING_RETURN = "The function return value is missing!";  // untranslated
-=======
-Blockly.Msg.ENCODER_TOOLTIP = "Represents an encoder.";  // untranslated
->>>>>>> OpenRoberta/robertalab#756 added default values to the configuration blocks; added tooltips
 Blockly.Msg.EV3BRICK_TOOLTIP = "Představuje kostku EV3 s připojenými pohony a senzory. Jsou zde také dostupné zabudované pohony a senzory, například tlačítka, displej...";
 Blockly.Msg.EXPAND_ALL = "Rozbalit bloky";
 Blockly.Msg.EXPAND_BLOCK = "Rozbalit blok";

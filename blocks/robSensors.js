@@ -39,7 +39,6 @@ Blockly.Blocks['robSensors_encoder_reset'] = {
 };
 
 Blockly.Blocks['robSensors_gyro_reset'] = {
-
     init : function() {
         this.setColour(Blockly.CAT_SENSOR_RGB);
         // this.setInputsInline(true);
@@ -69,7 +68,7 @@ Blockly.Blocks['robSensors_timer_reset'] = {
             sensorNum = new Blockly.FieldDropdown([ [ Blockly.Msg.SENSOR_TIMER + ' 1', '1' ] ]);
         } else {
             sensorNum = new Blockly.FieldDropdown([ [ Blockly.Msg.SENSOR_TIMER + ' 1', '1' ], [ Blockly.Msg.SENSOR_TIMER + ' 2', '2' ],
-                    [ Blockly.Msg.SENSOR_TIMER + ' 3', '3' ], [ Blockly.Msg.SENSOR_TIMER + ' 4', '4' ], [ Blockly.Msg.SENSOR_TIMER + ' 5', '5' ] ]);
+                [ Blockly.Msg.SENSOR_TIMER + ' 3', '3' ], [ Blockly.Msg.SENSOR_TIMER + ' 4', '4' ], [ Blockly.Msg.SENSOR_TIMER + ' 5', '5' ] ]);
         }
         this.appendDummyInput().appendField(Blockly.Msg.SENSOR_RESET).appendField(sensorNum, 'SENSORPORT').appendField(Blockly.Msg.SENSOR_RESET_II);
         this.setPreviousStatement(true);
@@ -157,7 +156,7 @@ Blockly.Blocks['robSensors_generic'] = {
         }
         // do we have ports?
         var ports;
-        if (sensor.ports) {
+        if (typeof sensor.ports === 'object') {
             var portList = [];
             for (var i = 0; i < sensor.ports.length; i++) {
                 portList.push([ Blockly.Msg[sensor.ports[i][0]] || sensor.ports[i][0], sensor.ports[i][1] ]);
@@ -167,6 +166,23 @@ Blockly.Blocks['robSensors_generic'] = {
             var portList = [];
             for (var i = 0; i < sensor.modes[0].ports.length; i++) {
                 portList.push([ Blockly.Msg[sensor.modes[0].ports[i][0]] || sensor.modes[0].ports[i][0], sensor.modes[0].ports[i][1] ]);
+            }
+            ports = new Blockly.FieldDropdown(portList);
+        } else if (sensor.ports === 'CONFIGURATION') {
+            this.dependConfig = true;
+            var portList = [];
+            var blocks = Blockly.Workspace.getByContainer("bricklyDiv").getAllBlocks();
+            for (var x = 0; x < blocks.length; x++) {
+                var func = blocks[x].getConfigDecl;
+                if (func) {
+                    var config = func.call();
+                    if (config[0].toUpperCase() === sensor.title) {
+                        portList.push([ config[1], config[1].toUpperCase() ]);
+                    }
+                }
+            }
+            if (portList.length === 0) {
+                portList.push([ Blockly.Msg.CONFIGURATION_NO_PORT || Blockly.checkMsgKey('CONFIGURATION_NO_PORT'), (Blockly.Msg.CONFIGURATION_NO_PORT || Blockly.checkMsgKey('CONFIGURATION_NO_PORT')).toUpperCase() ]);
             }
             ports = new Blockly.FieldDropdown(portList);
         } else {
@@ -188,14 +204,14 @@ Blockly.Blocks['robSensors_generic'] = {
         // question or not?
         if (firstMode.question) {
             this.appendDummyInput('ROW').appendField(Blockly.Msg['SENSOR_' + sensor.title + '_' + this.workspace.device.toUpperCase()]
-                    || Blockly.Msg['SENSOR_' + sensor.title] || Blockly.checkMsgKey('SENSOR_' + sensor.title), 'SENSORTITLE').appendField(modes, 'MODE').appendField(ports, 'SENSORPORT').appendField(slots, 'SLOT').appendField(Blockly.Msg['SENSOR_IS_'
-                    + firstMode.name]
-                    || firstMode.name);
+                || Blockly.Msg['SENSOR_' + sensor.title] || Blockly.checkMsgKey('SENSOR_' + sensor.title), 'SENSORTITLE').appendField(modes, 'MODE').appendField(ports, 'SENSORPORT').appendField(slots, 'SLOT').appendField(Blockly.Msg['SENSOR_IS_'
+                + firstMode.name]
+                || firstMode.name);
         } else {
             this.appendDummyInput('ROW').appendField(Blockly.Msg.GET).appendField(modes, 'MODE').appendField(Blockly.Msg['SENSOR_UNIT_' + firstMode.unit]
-                    || Blockly.checkMsgKey(firstMode.unit), 'UNIT').appendField(Blockly.Msg['SENSOR_' + sensor.title + '_'
-                    + this.workspace.device.toUpperCase()]
-                    || Blockly.Msg['SENSOR_' + sensor.title] || Blockly.checkMsgKey('SENSOR_' + sensor.title), 'SENSORTITLE').appendField(ports, 'SENSORPORT').appendField(slots, 'SLOT');
+                || Blockly.checkMsgKey(firstMode.unit), 'UNIT').appendField(Blockly.Msg['SENSOR_' + sensor.title + '_'
+                + this.workspace.device.toUpperCase()]
+                || Blockly.Msg['SENSOR_' + sensor.title] || Blockly.checkMsgKey('SENSOR_' + sensor.title), 'SENSORTITLE').appendField(ports, 'SENSORPORT').appendField(slots, 'SLOT');
         }
         if (sensor.standardPort) {
             ports.setValue(sensor.standardPort);
@@ -206,11 +222,10 @@ Blockly.Blocks['robSensors_generic'] = {
         this.setTooltip(function() {
             var mode = thisBlock.getFieldValue('MODE');
             return Blockly.Msg['SENSOR_' + sensor.title + '_' + mode + '_GETSAMPLE_TOOLTIP_' + thisBlock.workspace.device.toUpperCase()]
-                    || Blockly.Msg['SENSOR_' + sensor.title + '_' + mode + '_GETSAMPLE_TOOLTIP']
-                    || Blockly.Msg['SENSOR_' + sensor.title + '_GETSAMPLE_TOOLTIP'] || Blockly.checkMsgKey('SENSOR_' + sensor.title + '_GETSAMPLE_TOOLTIP');
+                || Blockly.Msg['SENSOR_' + sensor.title + '_' + mode + '_GETSAMPLE_TOOLTIP']
+                || Blockly.Msg['SENSOR_' + sensor.title + '_GETSAMPLE_TOOLTIP'] || Blockly.checkMsgKey('SENSOR_' + sensor.title + '_GETSAMPLE_TOOLTIP');
         });
-        this.type = 'robSensors_' + sensor.title.toLowerCase() + '_getSample';
-
+        this.type = 'robSensors_' + this.sensor + '_getSample';
         if (this.sensorMode_) {
             this.mutationToDom = function() {
                 var container = document.createElement('mutation');
@@ -290,13 +305,13 @@ Blockly.Blocks['robSensors_generic_all'] = {
                     continue;
                 }
                 modeSensor.push([
-                        (Blockly.Msg['MODE_' + sensors[i].modes[j].name] || Blockly.checkMsgKey(sensors[i].modes[j].name))
-                                + ' '
-                                + (Blockly.Msg['SENSOR_UNIT_' + sensors[i].modes[j].unit] || Blockly.checkMsgKey(sensors[i].modes[j].unit))
-                                + ' '
-                                + (Blockly.Msg['SENSOR_' + sensors[i].title + '_' + this.workspace.device.toUpperCase()]
-                                        || Blockly.Msg['SENSOR_' + sensors[i].title] || Blockly.checkMsgKey(sensors[i].title)),
-                        sensors[i].title + '_' + sensors[i].modes[j].name ]);
+                    (Blockly.Msg['MODE_' + sensors[i].modes[j].name] || Blockly.checkMsgKey(sensors[i].modes[j].name))
+                    + ' '
+                    + (Blockly.Msg['SENSOR_UNIT_' + sensors[i].modes[j].unit] || Blockly.checkMsgKey(sensors[i].modes[j].unit))
+                    + ' '
+                    + (Blockly.Msg['SENSOR_' + sensors[i].title + '_' + this.workspace.device.toUpperCase()]
+                    || Blockly.Msg['SENSOR_' + sensors[i].title] || Blockly.checkMsgKey(sensors[i].title)),
+                    sensors[i].title + '_' + sensors[i].modes[j].name ]);
                 if (sensors[i].ports) {
                     var portsList = [];
                     for (var k = 0; k < sensors[i].ports.length; k++) {
@@ -346,9 +361,9 @@ Blockly.Blocks['robSensors_generic_all'] = {
         this.setTooltip(function() {
             var mode = thisBlock.getFieldValue('SENSORTYPE');
             return Blockly.Msg['SENSOR_' + mode + '_GETSAMPLE_TOOLTIP_' + thisBlock.workspace.device.toUpperCase()]
-                    || Blockly.Msg['SENSOR_' + mode + '_GETSAMPLE_TOOLTIP']
-                    || Blockly.Msg['SENSOR_' + mode.substr(0, mode.indexOf('_')) + '_GETSAMPLE_TOOLTIP']
-                    || Blockly.checkMsgKey('SENSOR_' + mode.substr(0, mode.indexOf('_')) + '_GETSAMPLE_TOOLTIP');
+                || Blockly.Msg['SENSOR_' + mode + '_GETSAMPLE_TOOLTIP']
+                || Blockly.Msg['SENSOR_' + mode.substr(0, mode.indexOf('_')) + '_GETSAMPLE_TOOLTIP']
+                || Blockly.checkMsgKey('SENSOR_' + mode.substr(0, mode.indexOf('_')) + '_GETSAMPLE_TOOLTIP');
         });
         this.type = 'robSensors_getSample';
         this.sensorType_ = modeSensor[0][1];

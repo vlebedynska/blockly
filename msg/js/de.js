@@ -89,6 +89,8 @@ Blockly.Msg.CONFIGURATION_ERROR_MULTIPLE_RIGHT_MOTORS = "Es kann nur ein rechter
 Blockly.Msg.CONFIGURATION_ERROR_OTHER_NOT_SUPPORTED = "Anderer Stromverbraucher unterstützt diese Art von Block nicht!";
 Blockly.Msg.CONFIGURATION_ERROR_SENSOR_MISSING = "In der Roboterkonfiguration ist dieser Sensor nicht mit einem Sensorport verbunden!";
 Blockly.Msg.CONFIGURATION_ERROR_SENSOR_WRONG = "In der Roboterkonfiguration ist ein anderer Sensor mit diesem Sensorport verbunden!";
+Blockly.Msg.CONFIGURATION_NO_PORT = "no port";  // untranslated
+Blockly.Msg.CONFIGURATION_PORT = "Port1";  // untranslated
 Blockly.Msg.CONFLIST_DELETE_ALL_TOOLTIP = "Klicke hier um alle ausgewählten Roboterkonfigurationen zu löschen.";
 Blockly.Msg.CONFLIST_DELETE_TOOLTIP = "Klicke hier um deine Roboterkonfiguration zu löschen.";
 Blockly.Msg.CONFLIST_LOAD_TOOLTIP = "Klicke hier um deine Roboterkonfiguration in die Konfigurationsumgebung zu laden.";
@@ -190,12 +192,9 @@ Blockly.Msg.DUPLICATE_BLOCK = "Kopieren";
 Blockly.Msg.ENABLE_BLOCK = "Block aktivieren";
 Blockly.Msg.ENCODER_GETSAMPLE_TOOLTIP = "Gibt den aktuellen Wert des Drehsensors zurück.";
 Blockly.Msg.ENCODER_RESET_TOOLTIP = "Setzt den Drehsensor zurück.";
-<<<<<<< cc37c7efbaad20dc8a45ea9aa5cf5171eee4f930
+Blockly.Msg.ENCODER_TOOLTIP = "Block für den Drehsensor.";
 Blockly.Msg.ERROR_MISSING_PARAMETER = "Ein Eingabewert fehlt!";
 Blockly.Msg.ERROR_MISSING_RETURN = "Der Funktionsrückgabewert fehlt!";
-=======
-Blockly.Msg.ENCODER_TOOLTIP = "Block für den Drehsensor.";
->>>>>>> OpenRoberta/robertalab#756 added default values to the configuration blocks; added tooltips
 Blockly.Msg.EV3BRICK_TOOLTIP = "Block für den EV3 Stein mit den angeschlossenen Aktoren und Sensoren. Es gibt auch weitere eingebaute Aktoren und Sensoren, wie z. B. das Display, die Tasten ...";
 Blockly.Msg.EXPAND_ALL = "Alle Blöcke entfalten";
 Blockly.Msg.EXPAND_BLOCK = "Block entfalten";

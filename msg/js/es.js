@@ -89,9 +89,11 @@ Blockly.Msg.CONFIGURATION_ERROR_MULTIPLE_RIGHT_MOTORS = "¡Tienes más de un mot
 Blockly.Msg.CONFIGURATION_ERROR_OTHER_NOT_SUPPORTED = "Other power consumer does not support this type of block!";  // untranslated
 Blockly.Msg.CONFIGURATION_ERROR_SENSOR_MISSING = "¡Este sensor no está conectado al puerto!";
 Blockly.Msg.CONFIGURATION_ERROR_SENSOR_WRONG = "¡Sensor erróneo conectado al puerto!";
+Blockly.Msg.CONFIGURATION_NO_PORT = "no port";  // untranslated
+Blockly.Msg.CONFIGURATION_PORT = "Port1";  // untranslated
 Blockly.Msg.CONFLIST_DELETE_ALL_TOOLTIP = "Haz clic aquí para borrar todos los programas seleccionados.";
 Blockly.Msg.CONFLIST_DELETE_TOOLTIP = "Haz clic aquí para borrar la configuración de tu robot.";
-Blockly.Msg.CONFLIST_LOAD_TOOLTIP = "Haz clic aquí para cargar la configuración de tu robot en el entorno de configuración. ";
+Blockly.Msg.CONFLIST_LOAD_TOOLTIP = "Haz clic aquí para cargar la configuración de tu robot en el entorno de configuración.";
 Blockly.Msg.CONNECTION_BOB3_RECEIVE_TOOLTIP = "Reads a message via the IR receiver. Only numbers can be received.";  // untranslated
 Blockly.Msg.CONNECTION_BOB3_SEND_TOOLTIP = "Sends a message of type number to another Bob3. Hold the Bob3's face to face!";  // untranslated
 Blockly.Msg.CONNECTION_CHECK = "¿está activa la conexión al robot  %1 ?";
@@ -190,12 +192,9 @@ Blockly.Msg.DUPLICATE_BLOCK = "Duplicar";
 Blockly.Msg.ENABLE_BLOCK = "Activar bloque";
 Blockly.Msg.ENCODER_GETSAMPLE_TOOLTIP = "Obtiene la lectura actual del encoder del motor";
 Blockly.Msg.ENCODER_RESET_TOOLTIP = "Reinicia el encoder del motor";
-<<<<<<< cc37c7efbaad20dc8a45ea9aa5cf5171eee4f930
+Blockly.Msg.ENCODER_TOOLTIP = "Represents an encoder.";  // untranslated
 Blockly.Msg.ERROR_MISSING_PARAMETER = "An input value is missing!";  // untranslated
 Blockly.Msg.ERROR_MISSING_RETURN = "The function return value is missing!";  // untranslated
-=======
-Blockly.Msg.ENCODER_TOOLTIP = "Represents an encoder.";  // untranslated
->>>>>>> OpenRoberta/robertalab#756 added default values to the configuration blocks; added tooltips
 Blockly.Msg.EV3BRICK_TOOLTIP = "Ladrillo EV3";
 Blockly.Msg.EXPAND_ALL = "Expandir bloques";
 Blockly.Msg.EXPAND_BLOCK = "Expandir bloque";

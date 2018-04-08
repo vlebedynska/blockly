@@ -149,8 +149,8 @@ Blockly.Toolbox.prototype.init = function() {
   this.HtmlDiv = goog.dom.createDom('div', 'blocklyToolboxDiv');
   this.HtmlDiv.setAttribute('dir', workspace.RTL ? 'RTL' : 'LTR');
   
-  // for tabbed workspaces
-  workspace.svgGroup_.parentNode.parentNode.appendChild(this.HtmlDiv);
+  workspace.svgGroup_.parentNode.parentNode.parentNode.appendChild(this.HtmlDiv);
+  // workspace.svgGroup_.parentNode.parentNode.appendChild(this.HtmlDiv); not needed anymore
   
   // Clicking on toolbox closes popups.
   Blockly.bindEvent_(this.HtmlDiv, 'mousedown', this,
@@ -253,7 +253,7 @@ Blockly.Toolbox.prototype.position = function() {
       treeDiv.style.left = svgPosition.x + 'px';
     }
     treeDiv.style.height = svgSize.height + 'px';
-    treeDiv.style.top = 0; //svgPosition.y + 'px';
+    treeDiv.style.top = svgPosition.y + 'px';
     this.width = treeDiv.offsetWidth;
     if (this.toolboxPosition == Blockly.TOOLBOX_AT_LEFT) {
       // For some reason the LTR toolbox now reports as 1px too wide.

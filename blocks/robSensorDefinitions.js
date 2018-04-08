@@ -71,7 +71,7 @@ sensors.potentiometer.arduino = {
         type : 'Number',
         unit : 'VOLT',
     } ],
-    ports : [ [ 'Test1', 'Test1' ], [ 'Test2', 'Test2' ] ]
+    ports : 'CONFIGURATION'
 };
 
 sensors.code = {};
@@ -241,20 +241,20 @@ sensors.encoder.arduino = {
         op : 'NUM_REV',
         value : 2
     } ],
-    ports : [ [ 'Test1', 'Test1' ], [ 'Test2', 'Test2' ] ]
+    ports : 'CONFIGURATION'
 };
 
 sensors.gesture = {};
 sensors.gesture.calliope = {
-//    title : 'GESTURE',
-//    modes : [ {
-//        name : 'PRESSED',
-//        type : 'Boolean',
-//        question : true,
-//    } ],
-//    ports : [ [ 'SENSOR_GESTURE_UP', 'UP' ], [ 'SENSOR_GESTURE_DOWN', 'DOWN' ], [ 'SENSOR_GESTURE_FACE_UP', 'FACE_UP' ],
-//            [ 'SENSOR_GESTURE_FACE_DOWN', 'FACE_DOWN' ], [ 'SENSOR_GESTURE_SHAKE', 'SHAKE' ], [ 'SENSOR_GESTURE_FREEFALL', 'FREEFALL' ] ],
-//    standardPort : 'UP',
+    //    title : 'GESTURE',
+    //    modes : [ {
+    //        name : 'PRESSED',
+    //        type : 'Boolean',
+    //        question : true,
+    //    } ],
+    //    ports : [ [ 'SENSOR_GESTURE_UP', 'UP' ], [ 'SENSOR_GESTURE_DOWN', 'DOWN' ], [ 'SENSOR_GESTURE_FACE_UP', 'FACE_UP' ],
+    //            [ 'SENSOR_GESTURE_FACE_DOWN', 'FACE_DOWN' ], [ 'SENSOR_GESTURE_SHAKE', 'SHAKE' ], [ 'SENSOR_GESTURE_FREEFALL', 'FREEFALL' ] ],
+    //    standardPort : 'UP',
     title : 'GESTURE',
     modes : [ {
         name : 'UP',
@@ -327,8 +327,8 @@ sensors.infrared.arduino = {
     modes : [ {
         name : 'VALUE',
         type : 'Number'
-    }],
-    ports : [ [ 'Test1', 'Test1' ], [ 'Test2', 'Test2' ] ]
+    } ],
+    ports : 'CONFIGURATION'
 };
 
 sensors.infrared.bob3 = {
@@ -385,7 +385,7 @@ sensors.key.arduino = {
         type : 'Boolean',
         question : true
     } ],
-    ports : [ [ 'Test1', 'Test1' ], [ 'Test2', 'Test2' ] ]
+    ports : 'CONFIGURATION'
 };
 sensors.key.calliope = {
     title : 'KEY',
@@ -404,7 +404,7 @@ sensors.key.ev3 = {
         question : true
     } ],
     ports : [ [ 'SENSOR_KEY_ENTER', 'ENTER' ], [ 'SENSOR_KEY_UP', 'UP' ], [ 'SENSOR_KEY_DOWN', 'DOWN' ], [ 'SENSOR_KEY_LEFT', 'LEFT' ],
-            [ 'SENSOR_KEY_RIGHT', 'RIGHT' ], [ 'SENSOR_KEY_ESCAPE', 'ESCAPE' ], [ 'SENSOR_KEY_ANY', 'ANY' ] ]
+        [ 'SENSOR_KEY_RIGHT', 'RIGHT' ], [ 'SENSOR_KEY_ESCAPE', 'ESCAPE' ], [ 'SENSOR_KEY_ANY', 'ANY' ] ]
 };
 sensors.key.nxt = {
     title : 'KEY',
@@ -428,13 +428,13 @@ sensors.light.ardu = {
     ports : [ [ '0', '0' ], [ '1', '1' ], [ '2', '2' ], [ '3', '3' ], [ '4', '4' ], [ '5', '5' ], [ '6', '6' ], [ '7', '7' ] ]
 };
 sensors.light.arduino = {
-  title : 'LIGHT',
-  modes : [ {
-      name : 'LIGHT',
-      type : 'Number',
-      unit : 'PERCENT'
-  } ],
-  ports : [ [ 'Test1', 'Test1' ], [ 'Test2', 'Test2' ] ]
+    title : 'LIGHT',
+    modes : [ {
+        name : 'LIGHT',
+        type : 'Number',
+        unit : 'PERCENT'
+    } ],
+    ports : 'CONFIGURATION'
 }
 sensors.light.calliope = {
     title : 'LIGHT',
@@ -523,7 +523,7 @@ sensors.temperature.arduino = {
         unit : 'DEGREE',
         value : 20
     } ],
-    ports : [ [ 'Test1', 'Test1' ], [ 'Test2', 'Test2' ] ]
+    ports : 'CONFIGURATION'
 };
 
 
@@ -651,7 +651,7 @@ sensors.ultrasonic.arduino = {
         type : 'Number',
         unit : 'CM',
     } ],
-    ports : [ [ 'Test1', 'Test1' ], [ 'Test2', 'Test2' ] ]
+    ports : 'CONFIGURATION'
 };
 sensors.ultrasonic.ev3 = {
     title : 'ULTRASONIC',
@@ -681,86 +681,86 @@ sensors.ultrasonic.mbot = sensors.ultrasonic.nxt;
 
 sensors.moisture = {};
 sensors.moisture.arduino = {
-  title : 'MOISTURE',
-  modes : [ {
-      name : 'VALUE',
-      type : 'Number',
-      unit : 'PERCENT'
-  } ],
-  ports : [ [ 'Test1', 'Test1' ], [ 'Test2', 'Test2' ] ]
+    title : 'MOISTURE',
+    modes : [ {
+        name : 'VALUE',
+        type : 'Number',
+        unit : 'PERCENT'
+    } ],
+    ports : 'CONFIGURATION'
 }
 
 sensors.humidity = {};
 sensors.humidity.arduino = {
-  title : 'HUMIDITY',
-  modes : [ {
-      name : 'VALUE',
-      type : 'Number',
-      unit : 'PERCENT'
-  } ],
-  ports : [ [ 'Test1', 'Test1' ], [ 'Test2', 'Test2' ] ]
+    title : 'HUMIDITY',
+    modes : [ {
+        name : 'VALUE',
+        type : 'Number',
+        unit : 'PERCENT'
+    } ],
+    ports : 'CONFIGURATION'
 }
 
 sensors.motion = {};
 sensors.motion.arduino = {
-  title : 'MOTION',
-  modes : [ {
-    name : 'PRESENCE',
-    type : 'Boolean',
-  } ],
-  ports : [ [ 'Test1', 'Test1' ], [ 'Test2', 'Test2' ] ]
+    title : 'MOTION',
+    modes : [ {
+        name : 'PRESENCE',
+        type : 'Boolean',
+    } ],
+    ports : 'CONFIGURATION'
 }
 
 sensors.pulse = {};
 sensors.pulse.arduino = {
-  title : 'PULSE',
-  modes : [ {
-      name : 'VALUE',
-      type : 'Number',
-      unit : 'PERCENT'
-  } ],
-  ports : [ [ 'Test1', 'Test1' ], [ 'Test2', 'Test2' ] ]
+    title : 'PULSE',
+    modes : [ {
+        name : 'VALUE',
+        type : 'Number',
+        unit : 'PERCENT'
+    } ],
+    ports : 'CONFIGURATION'
 }
 
 sensors.drop = {};
 sensors.drop.arduino = {
-  title : 'DROP',
-  modes : [ {
-      name : 'VALUE',
-      type : 'Number',
-      unit : 'PERCENT'
-  } ],
-  ports : [ [ 'Test1', 'Test1' ], [ 'Test2', 'Test2' ] ]
+    title : 'DROP',
+    modes : [ {
+        name : 'VALUE',
+        type : 'Number',
+        unit : 'PERCENT'
+    } ],
+    ports : 'CONFIGURATION'
 }
 
 sensors.rfid = {};
 sensors.rfid.arduino = {
-  title : 'RFID',
-  modes : [ {
-      name : 'VALUE',
-      type : 'Number'
-  } ],
-  ports : [ [ 'Test1', 'Test1' ], [ 'Test2', 'Test2' ] ]
+    title : 'RFID',
+    modes : [ {
+        name : 'VALUE',
+        type : 'Number'
+    } ],
+    ports : 'CONFIGURATION'
 }
 
 var sensorsAll = [];
 sensorsAll.ardu = [ sensors.infrared.ardu, sensors.light.ardu, sensors.compass.ardu, sensors.ultrasonic.ardu, sensors.colour.ardu, sensors.key.ardu ];
 sensorsAll.ev3 = [ sensors.touch.ev3, sensors.ultrasonic.ev3, sensors.colour.ev3, sensors.infrared.ev3, sensors.encoder.ev3, sensors.key.ev3, sensors.gyro.ev3,
-        sensors.timer.ev3, sensors.compass.ev3, sensors.irseeker.ev3 ];
+    sensors.timer.ev3, sensors.compass.ev3, sensors.irseeker.ev3 ];
 sensorsAll.nxt = [ sensors.touch.nxt, sensors.sound.nxt, sensors.light.nxt, sensors.ultrasonic.nxt, sensors.encoder.nxt, sensors.key.nxt, sensors.colour.nxt,
-        sensors.timer.nxt ];
+    sensors.timer.nxt ];
 sensorsAll.bob3 = [ sensors.pintouch.bob3, sensors.infrared.bob3, sensors.temperature.bob3, sensors.timer.bob3 ];
 sensorsAll.calliope = [ sensors.key.calliope, sensors.pintouch.calliope, sensors.gesture.calliope, sensors.compass.calliope, sensors.sound.calliope,
-        sensors.timer.calliope, sensors.temperature.calliope, sensors.light.calliope, sensors.pin.calliope, sensors.gyro.calliope,
-        sensors.accelerometer.calliope ];
+    sensors.timer.calliope, sensors.temperature.calliope, sensors.light.calliope, sensors.pin.calliope, sensors.gyro.calliope,
+    sensors.accelerometer.calliope ];
 sensorsAll.microbit = [ sensors.key.microbit, sensors.pintouch.microbit, sensors.gesture.microbit, sensors.compass.microbit, sensors.timer.microbit,
-        sensors.temperature.microbit, sensors.pin.microbit, sensors.accelerometer.microbit ];
+    sensors.temperature.microbit, sensors.pin.microbit, sensors.accelerometer.microbit ];
 sensorsAll.arduino = [ sensors.key.arduino, sensors.timer.arduino, sensors.temperature.arduino, sensors.ultrasonic.arduino, sensors.light.arduino,
-   sensors.moisture.arduino, sensors.potentiometer.arduino, sensors.infrared.arduino, sensors.humidity.arduino, sensors.encoder.arduino, sensors.motion.arduino,
-  sensors.pulse.arduino, sensors.drop.arduino, sensors.rfid.arduino   ];
+    sensors.moisture.arduino, sensors.potentiometer.arduino, sensors.infrared.arduino, sensors.humidity.arduino, sensors.encoder.arduino, sensors.motion.arduino,
+    sensors.pulse.arduino, sensors.drop.arduino, sensors.rfid.arduino ];
 
 function initSensors() {
-    for ( var sensor in sensors) {
+    for (var sensor in sensors) {
         if (sensors.hasOwnProperty(sensor)) {
             Blockly.Blocks['robSensors_' + sensor + '_getSample'] = {
                 sensor : sensor,
@@ -770,7 +770,8 @@ function initSensors() {
             };
         }
     }
-};
+}
+;
 
 initSensors();
 

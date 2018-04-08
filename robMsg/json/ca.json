@@ -45,7 +45,7 @@
   "CONFIGURATION_ERROR_SENSOR_WRONG": "Sensor erròni connectat al port!",
   "CONFLIST_DELETE_ALL_TOOLTIP": "Fes clic aquí per esborrar tots els programes seleccionats.",
   "CONFLIST_DELETE_TOOLTIP": "Fes clic aquí per esborrar la configuració del teu robot.",
-  "CONFLIST_LOAD_TOOLTIP": "Fes clic aquí per carregar la configuració del teu robot a l'entorn de configuració.\n",
+  "CONFLIST_LOAD_TOOLTIP": "Fes clic aquí per carregar la configuració del teu robot a l'entorn de configuració.",
   "CONNECTION_CHECK": "Està activada la connexió al robot %1 ?",
   "CONNECTION_CHECK_TOOLTIP": "Comprova si la connexió al robot està activada.",
   "CONNECTION_CONNECT": "Connectar al robot anomenat",

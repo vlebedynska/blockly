@@ -1094,3 +1094,5 @@ Blockly.Msg.SENSOR_MOTION_GETSAMPLE_TOOLTIP = 'Gets the current reading from the
 Blockly.Msg.SENSOR_DROP_GETSAMPLE_TOOLTIP = 'Gets the current reading from the drop sensor.';
 Blockly.Msg.SENSOR_PULSE_GETSAMPLE_TOOLTIP = 'Gets the current reading from the pulse sensor.';
 Blockly.Msg.SENSOR_RFID_GETSAMPLE_TOOLTIP = 'Gets the current reading from the RFID reader.';
+Blockly.Msg.CONFIGURATION_PORT = 'Port1';
+Blockly.Msg.CONFIGURATION_NO_PORT = 'no port';

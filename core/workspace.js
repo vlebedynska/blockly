@@ -326,6 +326,19 @@ Blockly.Workspace.getById = function(id) {
 };
 
 /**
+ * Find the workspace with the specified container name.
+ * @param {string} container Name of the container holding the workspace.
+ * @return {Blockly.Workspace} The sought after workspace or null if not found.
+ */
+Blockly.Workspace.getByContainer = function(container) {
+  for (var key in Blockly.Workspace.WorkspaceDB_) {
+    if (Blockly.Workspace.WorkspaceDB_[key].container === container)
+      return Blockly.Workspace.WorkspaceDB_[key];
+  }
+  return null;
+};
+
+/**
  * Find the block on this workspace with the specified ID.
  * @param {string} id ID of block to find.
  * @return {Blockly.Block} The sought after block or null if not found.

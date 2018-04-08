@@ -29,6 +29,7 @@ goog.require('Blockly.Blocks');
 
 var actionBlocks = {};
 
+var actors = {};
 actors.lcd = {};
 actors.lcd.arduino = {
     title : 'LCD',

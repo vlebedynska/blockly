@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2018-04-11 07:08:35.906995",
+		"lastupdated": "2018-04-12 21:42:07.401292",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -1328,5 +1328,7 @@
 	"SENSOR_MOTION_GETSAMPLE_TOOLTIP": "Gets the current reading from the motion sensor.",
 	"SENSOR_DROP_GETSAMPLE_TOOLTIP": "Gets the current reading from the drop sensor.",
 	"SENSOR_PULSE_GETSAMPLE_TOOLTIP": "Gets the current reading from the pulse sensor.",
-	"SENSOR_RFID_GETSAMPLE_TOOLTIP": "Gets the current reading from the RFID reader."
+	"SENSOR_RFID_GETSAMPLE_TOOLTIP": "Gets the current reading from the RFID reader.",
+	"CONFIGURATION_PORT": "Port1",
+	"CONFIGURATION_NO_PORT": "no port"
 }

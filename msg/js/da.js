@@ -89,6 +89,8 @@ Blockly.Msg.CONFIGURATION_ERROR_MULTIPLE_RIGHT_MOTORS = "You have multiple right
 Blockly.Msg.CONFIGURATION_ERROR_OTHER_NOT_SUPPORTED = "Other power consumer does not support this type of block!";  // untranslated
 Blockly.Msg.CONFIGURATION_ERROR_SENSOR_MISSING = "Sensor mangler på den angivne port!";
 Blockly.Msg.CONFIGURATION_ERROR_SENSOR_WRONG = "Forkert sensor tilsluttet den angivne port!";
+Blockly.Msg.CONFIGURATION_NO_PORT = "no port";  // untranslated
+Blockly.Msg.CONFIGURATION_PORT = "Port1";  // untranslated
 Blockly.Msg.CONFLIST_DELETE_ALL_TOOLTIP = "Click here to delete all selected programs.";  // untranslated
 Blockly.Msg.CONFLIST_DELETE_TOOLTIP = "Click here to delete your robot configuration.";  // untranslated
 Blockly.Msg.CONFLIST_LOAD_TOOLTIP = "Click here to load your robot configuration in the configuration environment.";  // untranslated
@@ -190,12 +192,9 @@ Blockly.Msg.DUPLICATE_BLOCK = "Duplikér";
 Blockly.Msg.ENABLE_BLOCK = "Aktivér blok";
 Blockly.Msg.ENCODER_GETSAMPLE_TOOLTIP = "Aflæser motor-enkoderen.";
 Blockly.Msg.ENCODER_RESET_TOOLTIP = "Nulstiller motor-enkoderen.";
-<<<<<<< cc37c7efbaad20dc8a45ea9aa5cf5171eee4f930
+Blockly.Msg.ENCODER_TOOLTIP = "Represents an encoder.";  // untranslated
 Blockly.Msg.ERROR_MISSING_PARAMETER = "An input value is missing!";  // untranslated
 Blockly.Msg.ERROR_MISSING_RETURN = "The function return value is missing!";  // untranslated
-=======
-Blockly.Msg.ENCODER_TOOLTIP = "Represents an encoder.";  // untranslated
->>>>>>> OpenRoberta/robertalab#756 added default values to the configuration blocks; added tooltips
 Blockly.Msg.EV3BRICK_TOOLTIP = "EV3 klods.";
 Blockly.Msg.EXPAND_ALL = "Fold blokkene ud";
 Blockly.Msg.EXPAND_BLOCK = "Fold blokken ud";

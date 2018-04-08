@@ -51,6 +51,7 @@ goog.require('Blockly.WidgetDiv');
 goog.require('Blockly.WorkspaceSvg');
 goog.require('Blockly.constants');
 goog.require('Blockly.reservedWords');
+goog.require('Blockly.RobConfig');
 goog.require('Blockly.inject');
 goog.require('Blockly.utils');
 goog.require('goog.color');

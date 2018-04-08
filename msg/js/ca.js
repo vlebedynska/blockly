@@ -89,9 +89,11 @@ Blockly.Msg.CONFIGURATION_ERROR_MULTIPLE_RIGHT_MOTORS = "Tens més d'un motor dr
 Blockly.Msg.CONFIGURATION_ERROR_OTHER_NOT_SUPPORTED = "Other power consumer does not support this type of block!";  // untranslated
 Blockly.Msg.CONFIGURATION_ERROR_SENSOR_MISSING = "Aquest sensor no està connectat al port!";
 Blockly.Msg.CONFIGURATION_ERROR_SENSOR_WRONG = "Sensor erròni connectat al port!";
+Blockly.Msg.CONFIGURATION_NO_PORT = "no port";  // untranslated
+Blockly.Msg.CONFIGURATION_PORT = "Port1";  // untranslated
 Blockly.Msg.CONFLIST_DELETE_ALL_TOOLTIP = "Fes clic aquí per esborrar tots els programes seleccionats.";
 Blockly.Msg.CONFLIST_DELETE_TOOLTIP = "Fes clic aquí per esborrar la configuració del teu robot.";
-Blockly.Msg.CONFLIST_LOAD_TOOLTIP = "Fes clic aquí per carregar la configuració del teu robot a l'entorn de configuració. ";
+Blockly.Msg.CONFLIST_LOAD_TOOLTIP = "Fes clic aquí per carregar la configuració del teu robot a l'entorn de configuració.";
 Blockly.Msg.CONNECTION_BOB3_RECEIVE_TOOLTIP = "Reads a message via the IR receiver. Only numbers can be received.";  // untranslated
 Blockly.Msg.CONNECTION_BOB3_SEND_TOOLTIP = "Sends a message of type number to another Bob3. Hold the Bob3's face to face!";  // untranslated
 Blockly.Msg.CONNECTION_CHECK = "Està activada la connexió al robot %1 ?";
@@ -190,12 +192,9 @@ Blockly.Msg.DUPLICATE_BLOCK = "Duplica";
 Blockly.Msg.ENABLE_BLOCK = "Activa bloc";
 Blockly.Msg.ENCODER_GETSAMPLE_TOOLTIP = "Obté la lectura de l'encoder del motor.";
 Blockly.Msg.ENCODER_RESET_TOOLTIP = "Reinicia l'encoder del motor.";
-<<<<<<< cc37c7efbaad20dc8a45ea9aa5cf5171eee4f930
+Blockly.Msg.ENCODER_TOOLTIP = "Represents an encoder.";  // untranslated
 Blockly.Msg.ERROR_MISSING_PARAMETER = "An input value is missing!";  // untranslated
 Blockly.Msg.ERROR_MISSING_RETURN = "The function return value is missing!";  // untranslated
-=======
-Blockly.Msg.ENCODER_TOOLTIP = "Represents an encoder.";  // untranslated
->>>>>>> OpenRoberta/robertalab#756 added default values to the configuration blocks; added tooltips
 Blockly.Msg.EV3BRICK_TOOLTIP = "Bloc EV3 amb sensors i actuadors connectats. També hi ha sensors i actuadors interns disponibles, ex. botons, pantalla...";
 Blockly.Msg.EXPAND_ALL = "Expandir blocs";
 Blockly.Msg.EXPAND_BLOCK = "Expandir bloc";
