@@ -253,7 +253,7 @@ Blockly.Toolbox.prototype.position = function() {
       treeDiv.style.left = svgPosition.x + 'px';
     }
     treeDiv.style.height = svgSize.height + 'px';
-    treeDiv.style.top = svgPosition.y + 'px';
+    treeDiv.style.top = 0; //svgPosition.y + 'px';
     this.width = treeDiv.offsetWidth;
     if (this.toolboxPosition == Blockly.TOOLBOX_AT_LEFT) {
       // For some reason the LTR toolbox now reports as 1px too wide.
