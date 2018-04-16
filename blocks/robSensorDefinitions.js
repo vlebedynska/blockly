@@ -53,6 +53,19 @@ sensors.accelerometer.calliope = {
 };
 sensors.accelerometer.microbit = sensors.accelerometer.calliope;
 
+sensors.accelerometer.nao = {
+    title : 'ACCELEROMETER',
+    modes : [ {
+        name : 'VALUE',
+        type : 'Number',
+        unit : 'MILLIG',
+        op : 'NUM_REV',
+        value : 512
+    } ],
+    ports : [ [ 'x', 'X' ], [ 'y', 'Y' ], [ 'z', 'Z' ] ],
+};
+
+
 sensors.battery = {};
 sensors.battery.ardu = {
     title : 'BATTERY',
@@ -290,6 +303,8 @@ sensors.gyro.calliope = {
     } ],
     ports : [ [ 'x', 'X' ], [ 'y', 'Y' ] ],
 };
+sensors.gyro.nao = sensors.gyro.calliope;
+
 sensors.gyro.ev3 = {
     title : 'GYRO',
     modes : [ {
@@ -679,6 +694,15 @@ sensors.ultrasonic.nxt = {
 };
 sensors.ultrasonic.mbot = sensors.ultrasonic.nxt;
 
+sensors.ultrasonic.nao = {
+    title : 'ULTRASONIC',
+    modes : [ {
+        name : 'DISTANCE',
+        type : 'Number',
+        unit : 'CM',
+    }]
+};
+
 sensors.moisture = {};
 sensors.moisture.arduino = {
     title : 'MOISTURE',
@@ -757,7 +781,8 @@ sensorsAll.microbit = [ sensors.key.microbit, sensors.pintouch.microbit, sensors
     sensors.temperature.microbit, sensors.pin.microbit, sensors.accelerometer.microbit ];
 sensorsAll.arduino = [ sensors.key.arduino, sensors.timer.arduino, sensors.temperature.arduino, sensors.ultrasonic.arduino, sensors.light.arduino,
     sensors.moisture.arduino, sensors.potentiometer.arduino, sensors.infrared.arduino, sensors.humidity.arduino, sensors.encoder.arduino, sensors.motion.arduino,
-    sensors.pulse.arduino, sensors.drop.arduino, sensors.rfid.arduino ];
+		       sensors.pulse.arduino, sensors.drop.arduino, sensors.rfid.arduino ];
+sensorsAll.nao = [ sensors.accelerometer.nao ];
 
 function initSensors() {
     for (var sensor in sensors) {
@@ -809,3 +834,4 @@ Blockly.Blocks['mbedSensors_ambientLight_getSample'] = Blockly.Blocks['robSensor
 Blockly.Blocks['mbedSensors_pin_getSample'] = Blockly.Blocks['robSensors_pin_getSample'];
 Blockly.Blocks['mbedSensors_rotation_getSample'] = Blockly.Blocks['robSensors_gyro_getSample'];
 Blockly.Blocks['mbedSensors_acceleration_getSample'] = Blockly.Blocks['robSensors_accelerometer_getSample'];
+Blockly.Blocks['naoSensors_accelerometer'] = Blockly.Blocks['robSensors_accelerometer_getSample']; 
