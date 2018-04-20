@@ -470,14 +470,15 @@ h1 {
         </category>
     </category>
     <category name='TOOLBOX_SENSOR' svg="true">
-        <block type='naoSensors_touchsensors'></block>
+        <block type='robSensors_touch_getSample'></block>
         <block type='robSensors_ultrasonic_getSample'></block>
         <block type='robSensors_gyro_getSample'></block>
         <block type='robSensors_accelerometer_getSample'></block>
-        <block type='naoSensors_fsr'></block>
+	<block type='robSensors_fsr_getSample'></block>
         <block type='naoSensors_getCurrent'></block>
-        <block type='naoSensors_naoMark'></block>
-       	<block type='naoSensors_detectFace'></block>
+     	<block type='robSensors_detectmark_getSample'></block>
+       	<block type='robSensors_detectface_getSample'></block>
+	<block type='naoSensors_dialog'></block>
         <block type='naoSensors_getFaceInformation'>
             <value name='VALUE'>
                 <block type='text'>

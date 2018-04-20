@@ -696,7 +696,6 @@ Blockly.Msg.NAO_RASTA = 'rasta';
 Blockly.Msg.NAO_GYROMETER = 'gyrometer';
 Blockly.Msg.NAO_ACCELEROMETER = 'accelerometer';
 Blockly.Msg.NAO_HEADSENSOR = 'head sensor';
-Blockly.Msg.NAO_NAOMARK = 'get last detected NAO mark(s)';
 Blockly.Msg.NAO_TAKEPICTURE = 'take picture';
 Blockly.Msg.NAO_RECORDVIDEO = 'record video';
 Blockly.Msg.NAO_FSR = 'force sensitive resistor';
@@ -707,7 +706,6 @@ Blockly.Msg.NAO_RECOGNIZEDWORD = 'recognized word';
 Blockly.Msg.NAO_RECOGNIZEWORDOR = 'or recognize word';
 Blockly.Msg.NAO_LEARNFACEOF = 'learn face of';
 Blockly.Msg.NAO_FORGETFACEOF = 'forget face of';
-Blockly.Msg.NAO_DETECTFACE = 'get last recognized face(s)';
 Blockly.Msg.NAO_PERFORM = 'perform'
 Blockly.Msg.NAO_MOVE = 'move'
 Blockly.Msg.NAO_CURRENT = 'electric current of'
@@ -836,15 +834,14 @@ Blockly.Msg.NAO_RASTA_TOOLTIP = 'The color of the eyes is changed between green,
 Blockly.Msg.NAO_TOUCHSENSOR_TOOLTIP = 'Is true if the selected touchsensor on the robot was touched.';
 Blockly.Msg.NAO_GYROMETER_TOOLTIP = 'Get the current reading from the gyrometer in the given direction.';
 Blockly.Msg.NAO_ACCELEROMETER_TOOLTIP = 'Get the current reading from the accelerometer in the given direction';
-
-Blockly.Msg.NAO_NAOMARK_TOOLTIP = 'Returns an array of IDs of last detected NAO marks. If no marks are detected, an array consisting of 1 element with value -1 is returned. For a list of NAO marks with corresponding numbers refer to the wiki.';
-Blockly.Msg.NAO_FSR_TOOLTIP = 'Get the current reading from the force sensitive resistor under the feet of the robot.';
-Blockly.Msg.NAO_DIALOG_TOOLTIP = 'The robot tries to recognize the phrase and answers on success.';
+Blockly.Msg.FSR_TOOLTIP = 'Get the current reading from the force sensitive resistor under the feet of the robot.';
+Blockly.Msg.NAO_DIALOG_TOOLTI
+P = 'The robot tries to recognize the phrase and answers on success.';
 Blockly.Msg.NAO_RECOGNIZEDWORD_TOOLTIP = 'Returns the last word the robot recognized.';
 
 Blockly.Msg.NAO_LEARNFACE_TOOLTIP = 'Learn and save a face under a given name in the vision recognition database on the robot.';
 Blockly.Msg.NAO_FORGETFACE_TOOLTIP = 'Delete a face previously saved under a given name from the vision recognition database on the robot. ';
-Blockly.Msg.NAO_DETECTFACE_TOOLTIP = 'Detect a face previously learned and saved.';
+
 Blockly.Msg.NAO_GETCURRENT_TOOLTIP = 'Get the electric current from the motorboard in the selected joint.';
 //
 Blockly.Msg.MENU_CODE_DOWNLOAD_TOOLTIP = 'Download the source code of your program on the computer';
@@ -987,10 +984,14 @@ Blockly.Msg.SENSOR_UNIT_MILLIG = 'milli-g';
 Blockly.Msg.SENSOR_UNIT_OMEGA = 'ω';
 Blockly.Msg.SENSOR_UNIT_PERCENT = '%';
 Blockly.Msg.SENSOR_UNIT_VOLT = 'V';
+Blockly.Msg.SENSOR_UNIT_ACCEL = 'm/s²';
+Blockly.Msg.SENSOR_UNIT_NEWTON = 'N';
+Blockly.Msg.SENSOR_UNIT_AMPERE = 'A';
 Blockly.Msg.SENSOR_PINTOUCH_BOB3 = 'arm';
 Blockly.Msg.SENSOR_SOUND_CALLIOPE = 'microphone';
 Blockly.Msg.MODE_VALUE = 'value';
 Blockly.Msg.MODE_PRESSED = 'pressed';
+Blockly.Msg.MODE_CURRENT = 'current';
 Blockly.Msg.TOUCH_GETSAMPLE_TOOLTIP = Blockly.Msg.TOUCH_ISPRESSED_TOOLTIP;
 Blockly.Msg.KEY_GETSAMPLE_TOOLTIP = Blockly.Msg.KEY_ISPRESSED_TOOLTIP;
 Blockly.Msg.INFRARED_DISTANCE_GETSAMPLE_TOOLTIP = 'Gets the current relative distance from the infrared sensor. The values are between 1 and 75 cm.';
@@ -1096,3 +1097,15 @@ Blockly.Msg.SENSOR_PULSE_GETSAMPLE_TOOLTIP = 'Gets the current reading from the 
 Blockly.Msg.SENSOR_RFID_GETSAMPLE_TOOLTIP = 'Gets the current reading from the RFID reader.';
 Blockly.Msg.CONFIGURATION_PORT = 'Port1';
 Blockly.Msg.CONFIGURATION_NO_PORT = 'no port';
+
+Blockly.Msg.MODE_HAND = 'Hand';
+Blockly.Msg.MODE_HEAD = 'Head';
+Blockly.Msg.MODE_BUMPER = 'Bumper';
+Blockly.Msg.SENSOR_FSR = 'fsr sensor';
+
+Blockly.Msg.SENSOR_FSR_GETSAMPLE_TOOLTIP = 'Get the current reading from the force sensitive resistor under the feet of the robot.';
+Blockly.Msg.SENSOR_DETECTFACE = 'get last recognized face(s)';
+Blockly.Msg.SENSOR_DETECTFACE_GETSAMPLE_TOOLTIP = 'Detect a face previously learned and saved.';
+Blockly.Msg.SENSOR_DETECTMARK = 'get last detected NAO mark(s)';
+Blockly.Msg.SENSOR_DETECTMARK_GETSAMPLE_TOOLTIP = 'Returns an array of IDs of last detected NAO marks. If no marks are detected, an array consisting of 1 element with value -1 is returned. For a list of NAO marks with corresponding numbers refer to the wiki.';
+

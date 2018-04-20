@@ -49,7 +49,7 @@ sensors.accelerometer.calliope = {
         op : 'NUM_REV',
         value : 512
     } ],
-    ports : [ [ 'x', 'X' ], [ 'y', 'Y' ], [ 'z', 'Z' ], [ 'STRENGTH', 'STRENGTH' ] ],
+    ports : [ [ 'x', 'X' ], [ 'y', 'Y' ], [ 'z', 'Z' ], [ 'STRENGTH', 'STRENGTH' ] ]
 };
 sensors.accelerometer.microbit = sensors.accelerometer.calliope;
 
@@ -62,7 +62,7 @@ sensors.accelerometer.nao = {
         op : 'NUM_REV',
         value : 512
     } ],
-    ports : [ [ 'x', 'X' ], [ 'y', 'Y' ], [ 'z', 'Z' ] ],
+    ports : [ [ 'x', 'X' ], [ 'y', 'Y' ], [ 'z', 'Z' ] ]
 };
 
 
@@ -72,7 +72,7 @@ sensors.battery.ardu = {
     modes : [ {
         name : 'VALUE',
         type : 'Number',
-        unit : 'VOLT',
+        unit : 'VOLT'
     } ]
 };
 
@@ -82,7 +82,7 @@ sensors.potentiometer.arduino = {
     modes : [ {
         name : 'VALUE',
         type : 'Number',
-        unit : 'VOLT',
+        unit : 'VOLT'
     } ],
     ports : 'CONFIGURATION'
 };
@@ -108,10 +108,10 @@ sensors.colour.ardu = {
     }, {
         name : 'LIGHT',
         type : 'Number',
-        unit : 'PERCENT',
+        unit : 'PERCENT'
     }, {
         name : 'RGB',
-        type : 'Array_Number',
+        type : 'Array_Number'
     } ]
 };
 sensors.colour.ev3 = {
@@ -133,9 +133,9 @@ sensors.colour.ev3 = {
         value : 50
     }, {
         name : 'RGB',
-        type : 'Array_Number',
+        type : 'Array_Number'
     } ],
-    standardPort : '3',
+    standardPort : '3'
 };
 sensors.colour.nxt = {
     title : 'COLOUR',
@@ -155,7 +155,7 @@ sensors.colour.nxt = {
         unit : 'PERCENT',
         value : 50
     }, ],
-    standardPort : '3',
+    standardPort : '3'
 };
 
 sensors.compass = {};
@@ -164,7 +164,7 @@ sensors.compass.ardu = {
     modes : [ {
         name : 'ANGLE',
         type : 'Number',
-        unit : 'DEGREE',
+        unit : 'DEGREE'
     } ]
 };
 sensors.compass.calliope = sensors.compass.ardu;
@@ -174,14 +174,14 @@ sensors.compass.ev3 = {
     modes : [ {
         name : 'ANGLE',
         type : 'Number',
-        unit : 'DEGREE',
+        unit : 'DEGREE'
     }, {
         name : 'COMPASS',
         type : 'Number',
-        unit : 'DEGREE',
+        unit : 'DEGREE'
     } ],
     ports : [ [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ],
-    standardPort : '1',
+    standardPort : '1'
 };
 
 sensors.encoder = {};
@@ -190,15 +190,15 @@ sensors.encoder.ardu = {
     modes : [ {
         name : 'DEGREE',
         type : 'Number',
-        unit : 'DEGREE',
+        unit : 'DEGREE'
     }, {
         name : 'ROTATION',
         type : 'Number',
-        unit : '',
+        unit : ''
     }, {
         name : 'DISTANCE',
         type : 'Number',
-        unit : 'CM',
+        unit : 'CM'
     } ],
     ports : [ [ 'A', 'A' ], [ 'B', 'B' ], [ 'C', 'C' ], [ 'D', 'D' ] ]
 };
@@ -219,7 +219,7 @@ sensors.encoder.ev3 = {
     }, {
         name : 'DISTANCE',
         type : 'Number',
-        unit : 'CM',
+        unit : 'CM'
     } ],
     ports : [ [ 'A', 'A' ], [ 'B', 'B' ], [ 'C', 'C' ], [ 'D', 'D' ] ]
 };
@@ -271,22 +271,22 @@ sensors.gesture.calliope = {
     title : 'GESTURE',
     modes : [ {
         name : 'UP',
-        type : 'Boolean',
+        type : 'Boolean'
     }, {
         name : 'DOWN',
-        type : 'Boolean',
+        type : 'Boolean'
     }, {
         name : 'FACE_DOWN',
-        type : 'Boolean',
+        type : 'Boolean'
     }, {
         name : 'FACE_UP',
-        type : 'Boolean',
+        type : 'Boolean'
     }, {
         name : 'SHAKE',
-        type : 'Boolean',
+        type : 'Boolean'
     }, {
         name : 'FREEFALL',
-        type : 'Boolean',
+        type : 'Boolean'
     } ]
 };
 sensors.gesture.microbit = sensors.gesture.calliope;
@@ -364,7 +364,7 @@ sensors.infrared.ev3 = {
         unit : 'CM'
     }, {
         name : 'PRESENCE',
-        type : 'Array_Number',
+        type : 'Array_Number'
     } ]
 };
 
@@ -457,7 +457,7 @@ sensors.light.calliope = {
         name : 'VALUE',
         type : 'Number',
         unit : 'PERCENT'
-    } ],
+    } ]
 };
 sensors.light.nxt = {
     title : 'LIGHT',
@@ -473,7 +473,7 @@ sensors.light.nxt = {
         value : 50
     } ],
     ports : [ [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ],
-    standardPort : '3',
+    standardPort : '3'
 };
 
 sensors.rssi = {};
@@ -481,9 +481,9 @@ sensors.rssi.calliope = {
     title : 'RSSI',
     modes : [ {
         name : 'VALUE',
-        type : 'Number',
-    } ],
-}
+        type : 'Number'
+    } ]
+};
 
 sensors.sound = {};
 sensors.sound.calliope = {
@@ -494,7 +494,7 @@ sensors.sound.calliope = {
         unit : 'PERCENT',
         op : 'NUM_REV',
         value : 50
-    } ],
+    } ]
 }
 sensors.sound.ev3 = {
     title : 'SOUND',
@@ -517,7 +517,7 @@ sensors.sound.nxt = {
         value : 50
     } ],
     ports : [ [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ],
-    standardPort : '2',
+    standardPort : '2'
 }
 
 sensors.temperature = {};
@@ -580,37 +580,37 @@ sensors.pin.calliope = {
     modes : [ {
         name : 'ANALOG',
         type : 'Number',
-        ports : [ [ '1', '1' ], [ '2', '2' ], [ 'A1', '5' ] ],
+        ports : [ [ '1', '1' ], [ '2', '2' ], [ 'A1', '5' ] ]
     }, {
         name : 'DIGITAL',
         type : 'Number',
-        ports : [ [ '0', '0' ], [ '1', '1' ], [ '2', '2' ], [ '3', '3' ], [ 'A0', '4' ], [ 'A1', '5' ] ],
+        ports : [ [ '0', '0' ], [ '1', '1' ], [ '2', '2' ], [ '3', '3' ], [ 'A0', '4' ], [ 'A1', '5' ] ]
     }, {
         name : 'PULSE_HIGH',
         type : 'Number',
-        ports : [ [ '0', '0' ], [ '1', '1' ], [ '2', '2' ], [ '3', '3' ], [ 'A0', '4' ], [ 'A1', '5' ] ],
+        ports : [ [ '0', '0' ], [ '1', '1' ], [ '2', '2' ], [ '3', '3' ], [ 'A0', '4' ], [ 'A1', '5' ] ]
     }, {
         name : 'PULSE_LOW',
         type : 'Number',
-        ports : [ [ '0', '0' ], [ '1', '1' ], [ '2', '2' ], [ '3', '3' ], [ 'A0', '4' ], [ 'A1', '5' ] ],
-    } ],
+        ports : [ [ '0', '0' ], [ '1', '1' ], [ '2', '2' ], [ '3', '3' ], [ 'A0', '4' ], [ 'A1', '5' ] ]
+    } ]
 };
 sensors.pin.microbit = {
     title : 'PIN',
     ports : [ [ '0', '0' ], [ '1', '1' ], [ '2', '2' ] ],
     modes : [ {
         name : 'ANALOG',
-        type : 'Number',
+        type : 'Number'
     }, {
         name : 'DIGITAL',
-        type : 'Number',
+        type : 'Number'
     }, {
         name : 'PULSE_HIGH',
-        type : 'Number',
+        type : 'Number'
     }, {
         name : 'PULSE_LOW',
-        type : 'Number',
-    } ],
+        type : 'Number'
+    } ]
 };
 
 sensors.pintouch = {};
@@ -621,7 +621,7 @@ sensors.pintouch.bob3 = {
     modes : [ {
         name : 'PRESSED',
         type : 'Boolean',
-        question : true,
+        question : true
     } ]
 };
 sensors.pintouch.calliope = {
@@ -630,7 +630,7 @@ sensors.pintouch.calliope = {
     modes : [ {
         name : 'PRESSED',
         type : 'Boolean',
-        question : true,
+        question : true
     } ],
     standardPort : '1'
 };
@@ -643,11 +643,66 @@ sensors.touch.ev3 = {
     modes : [ {
         name : 'PRESSED',
         type : 'Boolean',
-        question : true,
+        question : true
     } ],
     standardPort : '1'
 };
 sensors.touch.nxt = sensors.touch.ev3;
+
+sensors.touch.nao = {
+    title : 'TOUCH',
+    modes : [ {
+        name : 'PRESSED',
+        type : 'Boolean',
+        ports : [ [ 'MOTOR_LEFT', 'left' ], [ 'MOTOR_RIGHT', 'right' ] ]
+    }, {
+        name : 'HEAD',
+        type : 'Boolean',
+        ports : [ [ 'NAO_TOUCH_FRONT', 'front' ], [ 'MOTOR_MIDDLE', 'middle' ], [ 'NAO_TOUCH_REAR', 'rear' ] ]
+    }, {
+        name : 'BUMPER',
+        type : 'Boolean',
+        ports : [ [ 'MOTOR_LEFT', 'left' ], [ 'MOTOR_RIGHT', 'right' ] ]
+    } ]
+};
+
+sensors.fsr = {};
+sensors.fsr.nao = {
+    title : 'FSR',
+    modes : [ {
+        name : 'VALUE',
+        type : 'Number',
+        unit : 'NEWTON',
+        op : 'NUM_REV',
+        value : 90
+    } ],    
+    ports : [ [ 'MOTOR_LEFT', 'left' ], [ 'MOTOR_RIGHT', 'right' ] ]
+};
+
+sensors.detectface = {};
+sensors.detectface.nao = {
+    title : 'DETECTFACE',
+    modes : [ {
+        name : 'VALUE',
+        type : 'Array_Number'
+    } ]
+};
+
+sensors.detectmark = {};
+sensors.detectmark.nao = {
+    title : 'DETECTMARK',
+    modes : [ {
+        name : 'VALUE',
+        type : 'Array_Number'
+    } ]
+};
+
+sensors.electriccurrent = {};
+sensors.electriccurrent.nao = {
+    title : 'ELECTRICCURRENT',
+    modes : [
+    ]
+};
 
 sensors.ultrasonic = {};
 sensors.ultrasonic.ardu = {
@@ -656,7 +711,7 @@ sensors.ultrasonic.ardu = {
     modes : [ {
         name : 'DISTANCE',
         type : 'Number',
-        unit : 'CM',
+        unit : 'CM'
     } ]
 };
 sensors.ultrasonic.arduino = {
@@ -664,7 +719,7 @@ sensors.ultrasonic.arduino = {
     modes : [ {
         name : 'DISTANCE',
         type : 'Number',
-        unit : 'CM',
+        unit : 'CM'
     } ],
     ports : 'CONFIGURATION'
 };
@@ -674,10 +729,10 @@ sensors.ultrasonic.ev3 = {
     modes : [ {
         name : 'DISTANCE',
         type : 'Number',
-        unit : 'CM',
+        unit : 'CM'
     }, {
         name : 'PRESENCE',
-        type : 'Boolean',
+        type : 'Boolean'
     } ],
     standardPort : '4'
 };
@@ -688,7 +743,7 @@ sensors.ultrasonic.nxt = {
     modes : [ {
         name : 'DISTANCE',
         type : 'Number',
-        unit : 'CM',
+        unit : 'CM'
     } ],
     standardPort : '4'
 };
@@ -699,7 +754,7 @@ sensors.ultrasonic.nao = {
     modes : [ {
         name : 'DISTANCE',
         type : 'Number',
-        unit : 'CM',
+        unit : 'CM'
     }]
 };
 
@@ -730,7 +785,7 @@ sensors.motion.arduino = {
     title : 'MOTION',
     modes : [ {
         name : 'PRESENCE',
-        type : 'Boolean',
+        type : 'Boolean'
     } ],
     ports : 'CONFIGURATION'
 }
@@ -782,7 +837,7 @@ sensorsAll.microbit = [ sensors.key.microbit, sensors.pintouch.microbit, sensors
 sensorsAll.arduino = [ sensors.key.arduino, sensors.timer.arduino, sensors.temperature.arduino, sensors.ultrasonic.arduino, sensors.light.arduino,
     sensors.moisture.arduino, sensors.potentiometer.arduino, sensors.infrared.arduino, sensors.humidity.arduino, sensors.encoder.arduino, sensors.motion.arduino,
 		       sensors.pulse.arduino, sensors.drop.arduino, sensors.rfid.arduino ];
-sensorsAll.nao = [ sensors.accelerometer.nao ];
+sensorsAll.nao = [ sensors.accelerometer.nao, sensors.gyro.nao, sensors.ultrasonic.nao, sensors.touch.nao, sensors.fsr.nao, sensors.detectface.nao, sensors.detectmark.nao ];
 
 function initSensors() {
     for (var sensor in sensors) {
