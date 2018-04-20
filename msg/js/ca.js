@@ -704,6 +704,7 @@ Blockly.Msg.NAO_CAMERA = "cámera";
 Blockly.Msg.NAO_CAMERA_BOTTOM = "abajo";
 Blockly.Msg.NAO_CAMERA_TOP = "arriba";
 Blockly.Msg.NAO_CURRENT = "corriente eléctrica apagada";
+Blockly.Msg.NAO_DIALOG_TOOLTIP = "El robot intenta reconocer la frase y responde en caso de conseguirlo";
 Blockly.Msg.NAO_FACE_GET_INFORMATION = "get information about recognized face";  // untranslated
 Blockly.Msg.NAO_FACE_GET_INFORMATION_TOOLTIP = "This block will return additional information about the given recognized face in the format on a 1-d array with following values: [XAngle, YAngle, XSize, YSize, Heading], please note that all values are given in camera angles.";  // untranslated
 Blockly.Msg.NAO_FILENAME = "nombre de archivo";

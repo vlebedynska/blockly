@@ -47,7 +47,7 @@ sensors.accelerometer.calliope = {
         type : 'Number',
         unit : 'MILLIG',
         op : 'NUM_REV',
-        value : 512
+        value : 0
     } ],
     ports : [ [ 'x', 'X' ], [ 'y', 'Y' ], [ 'z', 'Z' ], [ 'STRENGTH', 'STRENGTH' ] ]
 };

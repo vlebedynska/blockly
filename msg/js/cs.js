@@ -704,6 +704,7 @@ Blockly.Msg.NAO_CAMERA = "kamera";
 Blockly.Msg.NAO_CAMERA_BOTTOM = "spodní";
 Blockly.Msg.NAO_CAMERA_TOP = "vrchní";
 Blockly.Msg.NAO_CURRENT = "elektrický proud";
+Blockly.Msg.NAO_DIALOG_TOOLTIP = "Robot se pokusí rozpoznat frázi a odpovědět v případě úspěchu.";
 Blockly.Msg.NAO_FACE_GET_INFORMATION = "get information about recognized face";  // untranslated
 Blockly.Msg.NAO_FACE_GET_INFORMATION_TOOLTIP = "This block will return additional information about the given recognized face in the format on a 1-d array with following values: [XAngle, YAngle, XSize, YSize, Heading], please note that all values are given in camera angles.";  // untranslated
 Blockly.Msg.NAO_FILENAME = "jméno souboru";
