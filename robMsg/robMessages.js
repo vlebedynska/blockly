@@ -707,7 +707,7 @@ Blockly.Msg.NAO_LEARNFACEOF = 'learn face of';
 Blockly.Msg.NAO_FORGETFACEOF = 'forget face of';
 Blockly.Msg.NAO_PERFORM = 'perform'
 Blockly.Msg.NAO_MOVE = 'move'
-Blockly.Msg.NAO_CURRENT = 'electric current of'
+
 
 // Parameters for the nao blocks
 /// NAO parameters
@@ -841,7 +841,7 @@ Blockly.Msg.NAO_RECOGNIZEDWORD_TOOLTIP = 'Returns the last word the robot recogn
 Blockly.Msg.NAO_LEARNFACE_TOOLTIP = 'Learn and save a face under a given name in the vision recognition database on the robot.';
 Blockly.Msg.NAO_FORGETFACE_TOOLTIP = 'Delete a face previously saved under a given name from the vision recognition database on the robot. ';
 
-Blockly.Msg.NAO_GETCURRENT_TOOLTIP = 'Get the electric current from the motorboard in the selected joint.';
+
 //
 Blockly.Msg.MENU_CODE_DOWNLOAD_TOOLTIP = 'Download the source code of your program on the computer';
 Blockly.Msg.MENU_CODE_REFRESH_TOOLTIP = 'Refresh the source code, if you have changed the NEPO Blocks.';
@@ -1109,4 +1109,21 @@ Blockly.Msg.SENSOR_DETECTFACE = 'get last recognized face(s)';
 Blockly.Msg.SENSOR_DETECTFACE_GETSAMPLE_TOOLTIP = 'Detect a face previously learned and saved.';
 Blockly.Msg.SENSOR_DETECTMARK = 'get last detected NAO mark(s)';
 Blockly.Msg.SENSOR_DETECTMARK_GETSAMPLE_TOOLTIP = 'Returns an array of IDs of last detected NAO marks. If no marks are detected, an array consisting of 1 element with value -1 is returned. For a list of NAO marks with corresponding numbers refer to the wiki.';
-
+Blockly.Msg.SENSOR_ELECTRICCURRENT = 'electric current of'
+Blockly.Msg.SENSOR_ELECTRICCURRENT_GETSAMPLE_TOOLTIP = 'Get the electric current from the motorboard in the selected joint.';
+Blockly.Msg.SLOT_YAW = 'yaw';
+Blockly.Msg.SLOT_PITCH = 'pitch'
+Blockly.Msg.PORT_SCHOULDER = 'schoulder';
+Blockly.Msg.PORT_ELBOW = 'elbow';
+Blockly.Msg.PORT_WRIST = 'wrist';
+Blockly.Msg.PORT_HIP = 'hip';
+Blockly.Msg.PORT_KNEE = 'knee';
+Blockly.Msg.PORT_ANKLE = 'ankle';
+Blockly.Msg.SLOT_LEFT_PITCH = 'left pitch';
+Blockly.Msg.SLOT_LEFT_ROLL = 'left roll';
+Blockly.Msg.SLOT_LEFT_YAW = 'left yaw';
+Blockly.Msg.SLOT_LEFT_YAW_PITCH = 'left yaw pitch';
+Blockly.Msg.SLOT_RIGHT_PITCH = 'right pitch';
+Blockly.Msg.SLOT_RIGHT_ROLL = 'right roll';
+Blockly.Msg.SLOT_RIGHT_YAW = 'right yaw';
+Blockly.Msg.SLOT_RIGHT_YAW_PITCH = 'right yaw pitch';

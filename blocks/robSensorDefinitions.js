@@ -239,7 +239,7 @@ sensors.encoder.nxt = {
     }, {
         name : 'DISTANCE',
         type : 'Number',
-        unit : 'CM',
+        unit : 'CM'
     } ],
     ports : [ [ 'A', 'A' ], [ 'B', 'B' ], [ 'C', 'C' ] ]
 };
@@ -300,7 +300,7 @@ sensors.gyro.calliope = {
         op : 'NUM_REV',
         value : 90
     } ],
-    ports : [ [ 'x', 'X' ], [ 'y', 'Y' ] ],
+    ports : [ [ 'x', 'X' ], [ 'y', 'Y' ] ]
 };
 sensors.gyro.nao = sensors.gyro.calliope;
 
@@ -320,7 +320,7 @@ sensors.gyro.ev3 = {
         value : 90
     } ],
     ports : [ [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ],
-    standardPort : '2',
+    standardPort : '2'
 };
 
 sensors.infrared = {};
@@ -329,10 +329,10 @@ sensors.infrared.ardu = {
     ports : [ [ 'LEFT', '1' ], [ 'RIGHT', '2' ], [ 'BOTH', 'BOTH' ] ],
     modes : [ {
         name : 'OBSTACLE',
-        type : 'Boolean',
+        type : 'Boolean'
     }, {
         name : 'PRESENCE',
-        type : 'Boolean',
+        type : 'Boolean'
     } ]
 };
 
@@ -651,7 +651,7 @@ sensors.touch.nao = {
     modes : [ {
         name : 'PRESSED',
         type : 'Boolean',
-        question : true,
+        question : true
     } ],
     ports : [ {
         port : [ 'PORT_HEAD', 'HEAD' ],
@@ -675,7 +675,7 @@ sensors.fsr.nao = {
         op : 'NUM_REV',
         value : 90
     } ],
-    ports : [ [ 'MOTOR_LEFT', 'left' ], [ 'MOTOR_RIGHT', 'right' ] ]
+    ports : [ [ 'LEFT', 'LEFT' ], [ 'RIGHT', 'RIGHT' ] ]
 };
 
 sensors.detectface = {};
@@ -699,7 +699,53 @@ sensors.detectmark.nao = {
 sensors.electriccurrent = {};
 sensors.electriccurrent.nao = {
     title : 'ELECTRICCURRENT',
-    modes : []
+    modes : [ {
+        name : 'VALUE',
+        type : 'Number',
+        unit : 'AMPERE'
+    } ],
+    ports : [ {
+        port : [ 'PORT_HEAD', 'HEAD' ],
+        slots : [ [ 'SLOT_YAW', 'YAW' ], [ 'SLOT_PITCH', 'PITCH' ] ]
+    }, {
+        port : [ 'PORT_SCHOULDER', 'SCHOULDER' ],
+        slots : [ [ 'SLOT_LEFT_PITCH', 'LEFT_PITCH' ],
+                  [ 'SLOT_LEFT_ROLL', 'LEFT_ROLL' ],
+                  [ 'SLOT_RIGHT_PITCH', 'RIGHT_PITCH' ],
+                  [ 'SLOT_RIGHT_ROLL', 'LEFT_RIGHT_ROLL' ] ]
+    }, {
+        port : [ 'PORT_ELBOW', 'ELBOW' ],
+        slots : [ [ 'SLOT_LEFT_YAW', 'LEFT_YAW' ],
+                  [ 'SLOT_LEFT_ROLL', 'LEFT_ROLL' ],
+                  [ 'SLOT_RIGHT_YAW', 'RIGHT_YAW' ],
+                  [ 'SLOT_RIGHT_ROLL', 'RIGHT_ROLL' ] ]
+    }, {
+        port : [ 'PORT_WRIST', 'WRIST' ],
+        slots : [ [ 'SLOT_LEFT_YAW', 'LEFT_YAW' ],
+                  [ 'SLOT_RIGHT_YAW', 'RIGHT_YAW' ] ]
+    }, {
+        port : [ 'PORT_HAND', 'HAND' ],
+        slots : [ [ 'LEFT', 'LEFT' ],
+                  [ 'RIGHT', 'RIGHT' ] ]
+    }, {
+        port : [ 'PORT_HIP', 'HIP' ],
+        slots : [ [ 'SLOT_LEFT_YAW_PITCH', 'LEFT_YAW_PITCH' ],
+                  [ 'SLOT_LEFT_ROLL', 'LEFT_ROLL' ],
+                  [ 'SLOT_LEFT_PITCH', 'LEFT_PITCH' ],
+                  [ 'SLOT_RIGHT_YAW_PITCH', 'RIGHT_YAW_PITCH' ],
+                  [ 'SLOT_RIGHT_ROLL', 'RIGHT_ROLL' ],
+                  [ 'SLOT_RIGHT_PITCH', 'RIGHT_PITCH' ] ]
+    }, {
+        port : [ 'PORT_KNEE', 'KNEE' ],
+        slots : [ [ 'SLOT_LEFT_PITCH', 'LEFT_PITCH' ],
+                  [ 'SLOT_RIGHT_PITCH', 'RIGHT_PITCH' ] ]
+    }, {
+        port : [ 'PORT_ANKLE', 'ANKLE' ],
+        slots : [ [ 'SLOT_LEFT_PITCH', 'LEFT_PITCH' ],
+                  [ 'SLOT_LEFT_ROLL', 'LEFT_ROLL' ],
+                  [ 'SLOT_RIGHT_PITCH', 'RIGHT_PITCH' ],
+                  [ 'SLOT_RIGHT_ROLL', 'LEFT_RIGHT_ROLL' ] ]
+    } ]
 };
 
 sensors.ultrasonic = {};
