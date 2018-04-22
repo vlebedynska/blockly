@@ -1001,7 +1001,11 @@ Blockly.Msg.PORT_HAND = "hand";  // untranslated
 Blockly.Msg.PORT_HEAD = "head";  // untranslated
 Blockly.Msg.PORT_HIP = "hip";  // untranslated
 Blockly.Msg.PORT_KNEE = "knee";  // untranslated
+<<<<<<< 3bb78ac51ae8d3ca191aa67ca2d7aba63733df78
 Blockly.Msg.PORT_SCHOULDER = "schoulder";  // untranslated
+=======
+Blockly.Msg.PORT_SHOULDER = "schoulder";  // untranslated
+>>>>>>> OpenRoberta/robertalab#806 fix the shoulder misspelling
 Blockly.Msg.PORT_WRIST = "wrist";  // untranslated
 Blockly.Msg.POTENTIOMETER_TOOLTIP = "Represents a potentiometer .";  // untranslated
 Blockly.Msg.PROCEDURES_ALLOW_STATEMENTS = "permiti decraratzionis";

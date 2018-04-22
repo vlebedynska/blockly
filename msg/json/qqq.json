@@ -1338,7 +1338,11 @@
 	"SENSOR_ELECTRICCURRENT_GETSAMPLE_TOOLTIP": "",
 	"SLOT_YAW": "",
 	"SLOT_PITCH": "",
+<<<<<<< 3bb78ac51ae8d3ca191aa67ca2d7aba63733df78
 	"PORT_SCHOULDER": "",
+=======
+	"PORT_SHOULDER": "",
+>>>>>>> OpenRoberta/robertalab#806 fix the shoulder misspelling
 	"PORT_ELBOW": "",
 	"PORT_WRIST": "",
 	"PORT_HIP": "",

@@ -708,11 +708,11 @@ sensors.electriccurrent.nao = {
         port : [ 'PORT_HEAD', 'HEAD' ],
         slots : [ [ 'SLOT_YAW', 'YAW' ], [ 'SLOT_PITCH', 'PITCH' ] ]
     }, {
-        port : [ 'PORT_SCHOULDER', 'SCHOULDER' ],
+        port : [ 'PORT_SHOULDER', 'SHOULDER' ],
         slots : [ [ 'SLOT_LEFT_PITCH', 'LEFT_PITCH' ],
                   [ 'SLOT_LEFT_ROLL', 'LEFT_ROLL' ],
                   [ 'SLOT_RIGHT_PITCH', 'RIGHT_PITCH' ],
-                  [ 'SLOT_RIGHT_ROLL', 'LEFT_RIGHT_ROLL' ] ]
+                  [ 'SLOT_RIGHT_ROLL', 'RIGHT_ROLL' ] ]
     }, {
         port : [ 'PORT_ELBOW', 'ELBOW' ],
         slots : [ [ 'SLOT_LEFT_YAW', 'LEFT_YAW' ],
@@ -744,7 +744,7 @@ sensors.electriccurrent.nao = {
         slots : [ [ 'SLOT_LEFT_PITCH', 'LEFT_PITCH' ],
                   [ 'SLOT_LEFT_ROLL', 'LEFT_ROLL' ],
                   [ 'SLOT_RIGHT_PITCH', 'RIGHT_PITCH' ],
-                  [ 'SLOT_RIGHT_ROLL', 'LEFT_RIGHT_ROLL' ] ]
+                  [ 'SLOT_RIGHT_ROLL', 'RIGHT_ROLL' ] ]
     } ]
 };
 
