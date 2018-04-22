@@ -474,6 +474,7 @@ h1 {
         <block type='robSensors_ultrasonic_getSample'></block>
         <block type='robSensors_gyro_getSample'></block>
         <block type='robSensors_accelerometer_getSample'></block>
+        <block type='robSensors_getSample'></block>
 	<block type='robSensors_fsr_getSample'></block>
         <block type='naoSensors_getCurrent'></block>
      	<block type='robSensors_detectmark_getSample'></block>
@@ -545,7 +546,7 @@ h1 {
                 	<block type='logic_compare'>
                     	<mutation operator_range='BOOL'></mutation>
                         	<value name='A'>
-                                <block type='naoSensors_getSample'>
+                                <block type='robSensors_getSample'>
                                 </block>
                             </value>
                             <value name='B'>

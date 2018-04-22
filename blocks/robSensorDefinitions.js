@@ -65,7 +65,6 @@ sensors.accelerometer.nao = {
     ports : [ [ 'x', 'X' ], [ 'y', 'Y' ], [ 'z', 'Z' ] ]
 };
 
-
 sensors.battery = {};
 sensors.battery.ardu = {
     title : 'BATTERY',
@@ -419,7 +418,7 @@ sensors.key.ev3 = {
         question : true
     } ],
     ports : [ [ 'SENSOR_KEY_ENTER', 'ENTER' ], [ 'SENSOR_KEY_UP', 'UP' ], [ 'SENSOR_KEY_DOWN', 'DOWN' ], [ 'SENSOR_KEY_LEFT', 'LEFT' ],
-        [ 'SENSOR_KEY_RIGHT', 'RIGHT' ], [ 'SENSOR_KEY_ESCAPE', 'ESCAPE' ], [ 'SENSOR_KEY_ANY', 'ANY' ] ]
+            [ 'SENSOR_KEY_RIGHT', 'RIGHT' ], [ 'SENSOR_KEY_ESCAPE', 'ESCAPE' ], [ 'SENSOR_KEY_ANY', 'ANY' ] ]
 };
 sensors.key.nxt = {
     title : 'KEY',
@@ -541,7 +540,6 @@ sensors.temperature.arduino = {
     ports : 'CONFIGURATION'
 };
 
-
 sensors.temperature.calliope = sensors.temperature.bob3
 sensors.temperature.microbit = sensors.temperature.bob3
 
@@ -648,21 +646,22 @@ sensors.touch.ev3 = {
     standardPort : '1'
 };
 sensors.touch.nxt = sensors.touch.ev3;
-
 sensors.touch.nao = {
     title : 'TOUCH',
     modes : [ {
         name : 'PRESSED',
         type : 'Boolean',
-        ports : [ [ 'MOTOR_LEFT', 'left' ], [ 'MOTOR_RIGHT', 'right' ] ]
+        question : true,
+    } ],
+    ports : [ {
+        port : [ 'PORT_HEAD', 'HEAD' ],
+        slots : [ [ 'SLOT_FRONT', 'FRONT' ], [ 'SLOT_MIDDLE', 'MIDDLE' ], [ 'SLOT_REAR', 'REAR' ] ]
     }, {
-        name : 'HEAD',
-        type : 'Boolean',
-        ports : [ [ 'NAO_TOUCH_FRONT', 'front' ], [ 'MOTOR_MIDDLE', 'middle' ], [ 'NAO_TOUCH_REAR', 'rear' ] ]
+        port : [ 'PORT_HAND', 'HAND' ],
+        slots : [ [ 'LEFT', 'LEFT' ], [ 'RIGHT', 'RIGHT' ] ]
     }, {
-        name : 'BUMPER',
-        type : 'Boolean',
-        ports : [ [ 'MOTOR_LEFT', 'left' ], [ 'MOTOR_RIGHT', 'right' ] ]
+        port : [ 'PORT_BUMPER', 'BUMPER' ],
+        slots : [ [ 'LEFT', 'LEFT' ], [ 'RIGHT', 'RIGHT' ] ]
     } ]
 };
 
@@ -675,7 +674,7 @@ sensors.fsr.nao = {
         unit : 'NEWTON',
         op : 'NUM_REV',
         value : 90
-    } ],    
+    } ],
     ports : [ [ 'MOTOR_LEFT', 'left' ], [ 'MOTOR_RIGHT', 'right' ] ]
 };
 
@@ -700,8 +699,7 @@ sensors.detectmark.nao = {
 sensors.electriccurrent = {};
 sensors.electriccurrent.nao = {
     title : 'ELECTRICCURRENT',
-    modes : [
-    ]
+    modes : []
 };
 
 sensors.ultrasonic = {};
@@ -755,7 +753,7 @@ sensors.ultrasonic.nao = {
         name : 'DISTANCE',
         type : 'Number',
         unit : 'CM'
-    }]
+    } ]
 };
 
 sensors.moisture = {};
@@ -825,22 +823,23 @@ sensors.rfid.arduino = {
 var sensorsAll = [];
 sensorsAll.ardu = [ sensors.infrared.ardu, sensors.light.ardu, sensors.compass.ardu, sensors.ultrasonic.ardu, sensors.colour.ardu, sensors.key.ardu ];
 sensorsAll.ev3 = [ sensors.touch.ev3, sensors.ultrasonic.ev3, sensors.colour.ev3, sensors.infrared.ev3, sensors.encoder.ev3, sensors.key.ev3, sensors.gyro.ev3,
-    sensors.timer.ev3, sensors.compass.ev3, sensors.irseeker.ev3 ];
+        sensors.timer.ev3, sensors.compass.ev3, sensors.irseeker.ev3 ];
 sensorsAll.nxt = [ sensors.touch.nxt, sensors.sound.nxt, sensors.light.nxt, sensors.ultrasonic.nxt, sensors.encoder.nxt, sensors.key.nxt, sensors.colour.nxt,
-    sensors.timer.nxt ];
+        sensors.timer.nxt ];
 sensorsAll.bob3 = [ sensors.pintouch.bob3, sensors.infrared.bob3, sensors.temperature.bob3, sensors.timer.bob3 ];
 sensorsAll.calliope = [ sensors.key.calliope, sensors.pintouch.calliope, sensors.gesture.calliope, sensors.compass.calliope, sensors.sound.calliope,
-    sensors.timer.calliope, sensors.temperature.calliope, sensors.light.calliope, sensors.pin.calliope, sensors.gyro.calliope,
-    sensors.accelerometer.calliope ];
+        sensors.timer.calliope, sensors.temperature.calliope, sensors.light.calliope, sensors.pin.calliope, sensors.gyro.calliope,
+        sensors.accelerometer.calliope ];
 sensorsAll.microbit = [ sensors.key.microbit, sensors.pintouch.microbit, sensors.gesture.microbit, sensors.compass.microbit, sensors.timer.microbit,
-    sensors.temperature.microbit, sensors.pin.microbit, sensors.accelerometer.microbit ];
+        sensors.temperature.microbit, sensors.pin.microbit, sensors.accelerometer.microbit ];
 sensorsAll.arduino = [ sensors.key.arduino, sensors.timer.arduino, sensors.temperature.arduino, sensors.ultrasonic.arduino, sensors.light.arduino,
-    sensors.moisture.arduino, sensors.potentiometer.arduino, sensors.infrared.arduino, sensors.humidity.arduino, sensors.encoder.arduino, sensors.motion.arduino,
-		       sensors.pulse.arduino, sensors.drop.arduino, sensors.rfid.arduino ];
-sensorsAll.nao = [ sensors.accelerometer.nao, sensors.gyro.nao, sensors.ultrasonic.nao, sensors.touch.nao, sensors.fsr.nao, sensors.detectface.nao, sensors.detectmark.nao ];
+        sensors.moisture.arduino, sensors.potentiometer.arduino, sensors.infrared.arduino, sensors.humidity.arduino, sensors.encoder.arduino,
+        sensors.motion.arduino, sensors.pulse.arduino, sensors.drop.arduino, sensors.rfid.arduino ];
+sensorsAll.nao = [ sensors.touch.nao, sensors.accelerometer.nao, sensors.gyro.nao, sensors.ultrasonic.nao, sensors.fsr.nao, sensors.detectface.nao,
+        sensors.detectmark.nao ];
 
 function initSensors() {
-    for (var sensor in sensors) {
+    for ( var sensor in sensors) {
         if (sensors.hasOwnProperty(sensor)) {
             Blockly.Blocks['robSensors_' + sensor + '_getSample'] = {
                 sensor : sensor,
@@ -850,8 +849,7 @@ function initSensors() {
             };
         }
     }
-}
-;
+};
 
 initSensors();
 
@@ -889,4 +887,4 @@ Blockly.Blocks['mbedSensors_ambientLight_getSample'] = Blockly.Blocks['robSensor
 Blockly.Blocks['mbedSensors_pin_getSample'] = Blockly.Blocks['robSensors_pin_getSample'];
 Blockly.Blocks['mbedSensors_rotation_getSample'] = Blockly.Blocks['robSensors_gyro_getSample'];
 Blockly.Blocks['mbedSensors_acceleration_getSample'] = Blockly.Blocks['robSensors_accelerometer_getSample'];
-Blockly.Blocks['naoSensors_accelerometer'] = Blockly.Blocks['robSensors_accelerometer_getSample']; 
+Blockly.Blocks['naoSensors_accelerometer'] = Blockly.Blocks['robSensors_accelerometer_getSample'];

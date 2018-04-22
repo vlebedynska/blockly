@@ -742,10 +742,11 @@ Blockly.Msg.LANGUAGE_DANISH = 'Danish';
 Blockly.Msg.LANGUAGE_NORWEGIAN = 'Norwegian';
 Blockly.Msg.LANGUAGE_GREEK = 'Greek';
 Blockly.Msg.NAO_INTENSITY = 'intensity';
-Blockly.Msg.NAO_TOUCH_FRONT = 'front';
-Blockly.Msg.NAO_TOUCH_REAR = 'rear';
-Blockly.Msg.NAO_TOUCH_HAND = 'hand';
-Blockly.Msg.NAO_TOUCH_BUMPER = 'bumper';
+Blockly.Msg.SLOT_FRONT = 'front';
+Blockly.Msg.SLOT_MIDDLE = 'middle';
+Blockly.Msg.SLOT_REAR = 'rear';
+Blockly.Msg.PORT_HAND = 'hand';
+Blockly.Msg.PORT_BUMPER = 'bumper';
 Blockly.Msg.NAO_CAMERA_TOP = 'top';
 Blockly.Msg.NAO_CAMERA_BOTTOM = 'bottom';
 Blockly.Msg.NAO_QQVGA = '160*120';
@@ -1100,9 +1101,7 @@ Blockly.Msg.SENSOR_RFID_GETSAMPLE_TOOLTIP = 'Gets the current reading from the R
 Blockly.Msg.CONFIGURATION_PORT = 'Port1';
 Blockly.Msg.CONFIGURATION_NO_PORT = 'no port';
 
-Blockly.Msg.MODE_HAND = 'Hand';
-Blockly.Msg.MODE_HEAD = 'Head';
-Blockly.Msg.MODE_BUMPER = 'Bumper';
+Blockly.Msg.PORT_HEAD = 'head';
 Blockly.Msg.SENSOR_FSR = 'fsr sensor';
 
 Blockly.Msg.SENSOR_FSR_GETSAMPLE_TOOLTIP = 'Get the current reading from the force sensitive resistor under the feet of the robot.';
