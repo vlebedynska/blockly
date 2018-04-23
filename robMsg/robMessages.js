@@ -1133,3 +1133,5 @@ Blockly.Msg.FOURDIGITDISPLAY_SHOW_TOOLTIP = 'Displays a number [0-9999] on the G
 Blockly.Msg.FOURDIGITDISPLAY_CLEAR_TOOLTIP = 'Clears the Grove 4-Digit Display by Seeed.'
 Blockly.Msg.COLON = 'colon';
 Blockly.Msg.FROM_POSITION = 'from position';
+Blockly.Msg.LEDBAR = 'LED Bar';
+Blockly.Msg.LEDBAR_SET_TOOLTIP = 'Sets the specified LED [0-9] on the Grove LED Bar v2.0 by Seeed to the given brightness [0-8]. The LED Bar has to be connected to the A1 (right) Grove connector.';

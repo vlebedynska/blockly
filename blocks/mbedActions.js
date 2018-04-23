@@ -236,6 +236,17 @@ Blockly.Blocks['mbedActions_display_setPixel'] = {
     }
 };
 
+Blockly.Blocks['mbedActions_ledBar_set'] = {
+    init : function() {
+        this.setColour(Blockly.CAT_ACTION_RGB);
+        this.appendValueInput('X').setCheck('Number').appendField(Blockly.Msg.SET + ' ' + Blockly.Msg.LEDBAR).setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.X);
+        this.appendValueInput('BRIGHTNESS').setCheck('Number').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.DISPLAY_PIXEL_BRIGHTNESS);
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setTooltip(Blockly.Msg.LEDBAR_SET_TOOLTIP);
+    }
+};
+
 Blockly.Blocks['mbedActions_display_getBrightness'] = {
     init : function() {
         this.setColour(Blockly.CAT_ACTION_RGB);
