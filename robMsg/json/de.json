@@ -995,7 +995,7 @@
   "SENSOR_PULSE_GETSAMPLE_TOOLTIP":"Gibt den aktuellen Wert des Pulssensors zurück.",
   "SENSOR_RFID_GETSAMPLE_TOOLTIP":"Gibt den aktuellen Wert des RFID Readers zurück.",
   "FOURDIGITDISPLAY": "4-Ziffern Display",
-  "FOURDIGITDISPLAY_SHOW_TOOLTIP": "Zeigt die Zahl [0-9999] auf dem Grove 4-Digit Display von Seeed an. Position [0-3] gibt dabei die Startposition der Zahl an",
+  "FOURDIGITDISPLAY_SHOW_TOOLTIP": "Zeigt die Zahl [0-9999] auf dem Grove 4-Digit Display von Seeed an. Position [0-3] gibt dabei die Startposition der Zahl an. Das Display muss mit dem A1 (rechten) Grove Anschluss verbunden werden.",
   "FOURDIGITDISPLAY_CLEAR_TOOLTIP": "Löscht die Anzeige des Grove 4-Digit Display von Seeed.",
   "COLON":"Doppelpunkt",
   "FROM_POSITION":"ab Position"
