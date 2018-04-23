@@ -1,11 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-<<<<<<< 3bb78ac51ae8d3ca191aa67ca2d7aba63733df78
-		"lastupdated": "2018-04-23 10:50:31.911952",
-=======
-		"lastupdated": "2018-04-23 13:06:31.781824",
->>>>>>> OpenRoberta/robertalab#806 fix the shoulder misspelling
+		"lastupdated": "2018-04-23 13:19:03.892910",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -1348,11 +1344,7 @@
 	"SENSOR_ELECTRICCURRENT_GETSAMPLE_TOOLTIP": "Get the electric current from the motorboard in the selected joint.",
 	"SLOT_YAW": "yaw",
 	"SLOT_PITCH": "pitch",
-<<<<<<< 3bb78ac51ae8d3ca191aa67ca2d7aba63733df78
-	"PORT_SCHOULDER": "schoulder",
-=======
 	"PORT_SHOULDER": "schoulder",
->>>>>>> OpenRoberta/robertalab#806 fix the shoulder misspelling
 	"PORT_ELBOW": "elbow",
 	"PORT_WRIST": "wrist",
 	"PORT_HIP": "hip",
