@@ -1127,3 +1127,9 @@ Blockly.Msg.SLOT_RIGHT_PITCH = 'right pitch';
 Blockly.Msg.SLOT_RIGHT_ROLL = 'right roll';
 Blockly.Msg.SLOT_RIGHT_YAW = 'right yaw';
 Blockly.Msg.SLOT_RIGHT_YAW_PITCH = 'right yaw pitch';
+
+Blockly.Msg.FOURDIGITDISPLAY = '4-Digit Display';
+Blockly.Msg.FOURDIGITDISPLAY_SHOW_TOOLTIP = 'Displays a number [0-9999] on the Grove 4-Digit Display by Seeed. Position [0-3] represents the starting position of the number.';
+Blockly.Msg.FOURDIGITDISPLAY_CLEAR_TOOLTIP = 'Clears the Grove 4-Digit Display by Seeed.'
+Blockly.Msg.COLON = 'colon';
+Blockly.Msg.FROM_POSITION = 'from position';

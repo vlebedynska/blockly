@@ -256,6 +256,28 @@ Blockly.Blocks['mbedActions_display_setBrightness'] = {
     }
 };
 
+Blockly.Blocks['mbedActions_fourDigitDisplay_show'] = {
+    init : function() {
+        this.setColour(Blockly.CAT_ACTION_RGB);
+        this.appendValueInput('VALUE').appendField(Blockly.Msg.DISPLAY_SHOW + " " + Blockly.Msg.FOURDIGITDISPLAY).appendField(Blockly.Msg.VARIABLES_TYPE_NUMBER).setCheck('Number');
+        this.appendValueInput('POSITION').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.FROM_POSITION).setCheck('Number');
+        this.appendValueInput('COLON').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.COLON).setCheck('Boolean');
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setTooltip(Blockly.Msg.FOURDIGITDISPLAY_SHOW_TOOLTIP);
+    }
+};
+
+Blockly.Blocks['mbedActions_fourDigitDisplay_clear'] = {
+    init : function() {
+        this.setColour(Blockly.CAT_ACTION_RGB);
+        this.appendDummyInput().appendField(Blockly.Msg.DISPLAY_CLEAR).appendField(Blockly.Msg.FOURDIGITDISPLAY);
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setTooltip(Blockly.Msg.FOURDIGITDISPLAY_CLEAR_TOOLTIP);
+    }
+};
+
 Blockly.Blocks['mbedActions_play_tone'] = {
     /**
      * Play a tone.

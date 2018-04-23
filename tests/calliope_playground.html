@@ -309,6 +309,25 @@
                     </block>
                 </value>
             </block>
+            <block type="mbedActions_fourDigitDisplay_show">
+                <value name="VALUE">
+                    <block type="math_number">
+                        <field name="NUM">1234</field>
+                    </block>
+                </value>
+                <value name="POSITION">
+                    <block type="math_number">
+                        <field name="NUM">0</field>
+                    </block>
+                </value>
+                <value name="COLON">
+                    <block type="logic_boolean">
+                        <field name="BOOL">TRUE</field>
+                    </block>
+                </value>
+            </block>
+            <block type="mbedActions_fourDigitDisplay_clear">
+            </block>
         </category>
         <category name="TOOLBOX_LIGHT" svg="true">
             <block type="mbedActions_leds_on">
