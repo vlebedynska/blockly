@@ -43,7 +43,7 @@ function initConfBlocks() {
             Blockly.Blocks['robConf_' + confBlock] = {
                 confBlock : confBlock,
                 init : function() {
-                    Blockly.Blocks['robConf_generic'].init.call(this, confBlocks[this.confBlock][this.workspace.device]);
+                    Blockly.Blocks['robActor_generic'].init.call(this, confBlocks[this.confBlock][this.workspace.device]);
                 }
             };
         }

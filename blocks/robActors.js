@@ -11,7 +11,7 @@ goog.provide('Blockly.Blocks.robActors');
 goog.require('Blockly.Blocks.robActorDefinitions');
 goog.require('Blockly.Blocks');
 
-Blockly.Blocks['robConf_generic'] = {
+Blockly.Blocks['robActor_generic'] = {
     /*- Generic sensor definition. Will create e.g. the following xml:
      *
      * <block type="robSensors_ultrasonic_getSample" id="vG?X/lTw]%:p!z.},u;r" intask="true">
