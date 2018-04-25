@@ -225,6 +225,8 @@
   "MODE_RATE":"Drehrate",
   "MODE_ROTATION":"Umdrehungen",
   "MODE_STATE":"Zustand",
+  "MODE_HUMIDITY":"Luftfeuchtigkeit",
+  "MODE_TEMPERATURE":"Temperatur",
   "MOTOR":"Motor",
   "MOTORDIFF_ON_FOR_TOOLTIP":"Startet den Roboter mit einer bestimmten Geschwindigkeit und stoppt nach einer bestimmten Strecke.",
   "MOTORDIFF_ON_TOOLTIP":"Startet den Roboter mit einer bestimmten Geschwindigkeit.",
@@ -1000,5 +1002,6 @@
   "COLON":"Doppelpunkt",
   "FROM_POSITION":"ab Position",
   "LEDBAR":"LED Leiste",
-  "LEDBAR_SET_TOOLTIP":"Setzt die angegebene LED [0-9] auf der Grove LED Bar v2.0 von Seeed auf die gewünschte Helligkeit [0-8]. Die LED Leiste muss mit dem A1 (rechten) Grove Anschluss verbunden werden."
+  "LEDBAR_SET_TOOLTIP":"Setzt die angegebene LED [0-9] auf der Grove LED Bar v2.0 von Seeed auf die gewünschte Helligkeit [0-8]. Die LED Leiste muss mit dem A1 (rechten) Grove Anschluss verbunden werden.",
+  "MODE_SERIAL":"Kartenserie"
 }

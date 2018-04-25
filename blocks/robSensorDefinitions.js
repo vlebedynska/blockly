@@ -817,9 +817,13 @@ sensors.humidity = {};
 sensors.humidity.arduino = {
     title : 'HUMIDITY',
     modes : [ {
-        name : 'VALUE',
+        name : 'HUMIDITY',
         type : 'Number',
         unit : 'PERCENT'
+    }, {
+        name : 'TEMPERATURE',
+        type : 'Number',
+        unit : 'DEGREE'
     } ],
     ports : 'CONFIGURATION'
 }
@@ -859,9 +863,12 @@ sensors.drop.arduino = {
 sensors.rfid = {};
 sensors.rfid.arduino = {
     title : 'RFID',
-    modes : [ {
-        name : 'VALUE',
+    modes : [  {
+        name : 'SERIAL',
         type : 'Number'
+    }, {
+        name : 'PRESENCE',
+        type : 'Boolean'
     } ],
     ports : 'CONFIGURATION'
 }
