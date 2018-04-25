@@ -57,10 +57,10 @@ confBlocks.light.arduino = {
 confBlocks.moisture = {};
 confBlocks.moisture.arduino = {
     title : 'MOISTURE',
-    ports : [ [ 'S', 'S' ] ],
-    pins : pinsA_UNO,
-    sensor : true,
-    standardPins : [ '6' ]
+    ports : [ ['S', 'S'] ],
+    pins: pinsA_UNO,
+    sensor: true,
+    standardPins: ['A0']
 };
 
 confBlocks.potentiometer = {};
@@ -83,10 +83,10 @@ confBlocks.infrared.wedo = {
 
 confBlocks.infrared.arduino = {
     title : 'INFRARED',
-    ports : [ [ 'output', 'OUTPUT' ] ],
-    pins : pinsD_UNO,
-    sensor : true,
-    standardPins : [ '13' ]
+    ports : [ ['output', 'OUTPUT'] ],
+    pins: pinsD_UNO,
+    sensor: true,
+    standardPins: ['11']
 };
 
 confBlocks.temperature = {};
@@ -125,8 +125,8 @@ confBlocks.motion.arduino = {
     standardPins : [ '7' ]
 };
 
-confBlocks.button = {};
-confBlocks.button.arduino = {
+confBlocks.key = {};
+confBlocks.key.arduino = {
     title : 'KEY',
     ports : [ [ 'output', 'OUTPUT' ] ],
     pins : pinsD_UNO,
@@ -185,9 +185,9 @@ confBlocks.led.arduino = {
     standardPins : [ '13' ]
 };
 
-confBlocks.play = {};
-confBlocks.play.arduino = {
-    title : 'PLAY',
+confBlocks.buzzer = {};
+confBlocks.buzzer.arduino = {
+    title : 'BUZZER',
     ports : [ [ '+', '+' ] ],
     pins : pinsD_UNO,
     sensor : false,

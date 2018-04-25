@@ -295,6 +295,7 @@ Blockly.TYPE_DROPDOWN = function(device, opt_handler) {
             }
         });
     case 'ardu':
+    case 'arduino':
     case 'bob3':
     case 'makeblock':
     case 'nao':

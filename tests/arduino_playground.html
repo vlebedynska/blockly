@@ -48,6 +48,9 @@
 <script src="../blocks/robControls.js"></script>
 <script src="../blocks/robSensors.js"></script>
 <script src="../blocks/robSensorDefinitions.js"></script>
+<script src="../blocks/robConfig.js"></script>
+<script src="../blocks/robConfigDefinitions.js"></script>
+<script src="../blocks/robActions.js"></script>
 <link rel="stylesheet" type="text/css" href="typicons.css"></link>
 
 <script>
@@ -258,6 +261,8 @@ h1 {
 
 <toolbox_set id="toolbox" style="display: none">
 	<category name="TOOLBOX_ACTION" svg="true">
+
+
 	</category>
 	<category name="TOOLBOX_SENSOR" svg="true">
 		<block type="robSensors_light_getSample"></block>
@@ -334,6 +339,7 @@ h1 {
 		</category>
 	</category>
 	<category name="TOOLBOX_LOGIC" svg="true">
+    <block type="robConf_button"></block>
 		<block type="logic_compare"></block>
 		<block type="logic_operation"></block>
 		<block type="logic_negate"></block>

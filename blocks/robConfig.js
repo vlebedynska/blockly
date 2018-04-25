@@ -25,7 +25,7 @@ Blockly.Blocks['robConf_generic'] = {
     /**
      * @param {Object
      *            sensor}
-     * 
+     *
      * @memberof Block
      */
     init : function(confBlock) {

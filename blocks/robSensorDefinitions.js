@@ -472,6 +472,9 @@ sensors.infrared.arduino = {
     modes : [ {
         name : 'VALUE',
         type : 'Number'
+    }, {
+        name : 'PRESENCE',
+        type : 'Boolean'
     } ],
     ports : 'CONFIGURATION'
 };
@@ -734,8 +737,7 @@ sensors.pulse.arduino = {
     title : 'PULSE',
     modes : [ {
         name : 'VALUE',
-        type : 'Number',
-        unit : 'PERCENT'
+        type : 'Number'
     } ],
     ports : 'CONFIGURATION'
 };
