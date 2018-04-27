@@ -297,7 +297,6 @@ Blockly.TYPE_DROPDOWN = function(device, opt_handler) {
     case 'ardu':
     case 'bob3':
     case 'makeblock':
-    case 'microbit':
     case 'nao':
         return new Blockly.FieldDropdown([
             [ Blockly.Msg.VARIABLES_TYPE_NUMBER, 'Number' ],
@@ -308,6 +307,23 @@ Blockly.TYPE_DROPDOWN = function(device, opt_handler) {
             [ Blockly.Msg.VARIABLES_TYPE_ARRAY_BOOLEAN, 'Array_Boolean' ],
             [ Blockly.Msg.VARIABLES_TYPE_ARRAY_STRING, 'Array_String' ],
             [ Blockly.Msg.VARIABLES_TYPE_ARRAY_COLOUR, 'Array_Colour' ]
+        ], function(option) {
+            if (option && this.sourceBlock_.getFieldValue('TYPE') !== option) {
+                this.sourceBlock_.updateType_(option);
+                if (this.sourceBlock_[handler])
+                    this.sourceBlock_[handler](0, option);
+            }
+        });
+    case 'microbit':
+        return new Blockly.FieldDropdown([
+            [ Blockly.Msg.VARIABLES_TYPE_NUMBER, 'Number' ],
+            [ Blockly.Msg.VARIABLES_TYPE_BOOLEAN, 'Boolean' ],
+            [ Blockly.Msg.VARIABLES_TYPE_STRING, 'String' ],
+            [ Blockly.Msg.VARIABLES_TYPE_IMAGE, 'Image' ],
+            [ Blockly.Msg.VARIABLES_TYPE_ARRAY_NUMBER, 'Array_Number' ],
+            [ Blockly.Msg.VARIABLES_TYPE_ARRAY_BOOLEAN, 'Array_Boolean' ],
+            [ Blockly.Msg.VARIABLES_TYPE_ARRAY_STRING, 'Array_String' ],
+            [ Blockly.Msg.VARIABLES_TYPE_ARRAY_IMAGE, 'Array_Image' ]
         ], function(option) {
             if (option && this.sourceBlock_.getFieldValue('TYPE') !== option) {
                 this.sourceBlock_.updateType_(option);
@@ -384,8 +400,7 @@ Blockly.LIST_TYPE_DROPDOWN = function(device) {
             this.sourceBlock_.updateType_(option);
         });
     default:
-        return new Blockly.FieldDropdown([
-            [ Blockly.Msg.VARIABLES_TYPE_NUMBER, 'Number' ] ], function(option) {
+        return new Blockly.FieldDropdown([ [ Blockly.Msg.VARIABLES_TYPE_NUMBER, 'Number' ] ], function(option) {
             this.sourceBlock_.updateType_(option);
         });
     }
