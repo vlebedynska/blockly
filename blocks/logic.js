@@ -573,7 +573,7 @@ Blockly.Blocks['robControls_ifElse'] = {
     }
     var container = document.createElement('mutation');
       if (this.elseIfCount_) {
-        container.setAttribute('elseIf', this.elseIfCount_);
+        container.setAttribute('elseif', this.elseIfCount_);
       }
       if (this.elseCount_) {
         container.setAttribute('else', 1);
@@ -668,7 +668,7 @@ Blockly.Blocks['robControls_if'] = {
     }
     var container = document.createElement('mutation');
     if (this.elseIfCount_) {
-      container.setAttribute('elseIf', this.elseIfCount_);
+      container.setAttribute('elseif', this.elseIfCount_);
     }
     return container;
   },
