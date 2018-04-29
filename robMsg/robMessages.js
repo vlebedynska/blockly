@@ -51,6 +51,8 @@ goog.require('Blockly.Msg');
 // Tooltips for the robot blocks
 /// Rob Actions tooltips
 Blockly.Msg.MOTOR_ON_TOOLTIP = 'Turns motor on with specific power.';
+Blockly.Msg.MOTOR_ON_TOOLTIP_CALLIOPE = 'Turns motor A, B or A+B on with a specific power.';
+Blockly.Msg.SINGLE_MOTOR_ON_TOOLTIP_CALLIOPE = 'Turns the single motor on with a specific power. Power can be positiv or negativ for reverse direction.';
 Blockly.Msg.MOTOR_ON_FOR_TOOLTIP = 'Turns motor on and stops motor after execution of rotations/degrees.';
 Blockly.Msg.MOTOR_GETPOWER_TOOLTIP = 'Gets current power of this motor.';
 Blockly.Msg.MOTOR_SETPOWER_TOOLTIP = 'Sets power of this motor.';

@@ -22,7 +22,7 @@ Blockly.Blocks['mbedActions_motor_on'] = {
      * @param {String/dropdown}
      *            MOTORPORT - A, B, A + B
      * @param {Number}
-     *            POWER relative - -100-100
+     *            POWER relative - 0-100
      * @returns immediately
      * @memberof Block
      */
@@ -34,7 +34,7 @@ Blockly.Blocks['mbedActions_motor_on'] = {
         this.appendValueInput('POWER').appendField(motorPort, 'MOTORPORT').appendField(Blockly.Msg.ON).appendField(Blockly.Msg.MOTOR_SPEED).setCheck('Number');
         this.setPreviousStatement(true);
         this.setNextStatement(true);
-        this.setTooltip(Blockly.Msg.MOTOR_ON_TOOLTIP);
+        this.setTooltip(Blockly.Msg['MOTOR_ON_TOOLTIP_' + this.workspace.device.toUpperCase()] || Blockly.Msg.MOTOR_ON_TOOLTIP);
     }
 };
 
@@ -55,7 +55,7 @@ Blockly.Blocks['mbedActions_single_motor_on'] = {
         this.appendValueInput('POWER').appendField(Blockly.Msg.MOTOR).appendField(Blockly.Msg.MOTOR_ON).appendField(Blockly.Msg.ON).appendField(Blockly.Msg.MOTOR_SPEED).setCheck('Number');
         this.setPreviousStatement(true);
         this.setNextStatement(true);
-        this.setTooltip(Blockly.Msg.MOTOR_ON_TOOLTIP);
+        this.setTooltip(Blockly.Msg['SINGLE_MOTOR_ON_TOOLTIP_' + this.workspace.device.toUpperCase()] || Blockly.Msg.SINGLE_MOTOR_ON_TOOLTIP);
     }
 };
 

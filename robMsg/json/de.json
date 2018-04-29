@@ -249,6 +249,8 @@
   "MOTOR_NONE":"keine",
   "MOTOR_ON_FOR_TOOLTIP":"Startet Motor und stoppt Motor nach Ausführung von Drehungen (kompletten oder nach angegebenen Grad).",
   "MOTOR_ON_TOOLTIP":"Startet Motor mit einer bestimmten Leistung.",
+  "MOTOR_ON_TOOLTIP_CALLIOPE":"Startet Motor A, B oder A+B mit einer bestimmten Leistung. Die Motoren drehen nur in eine Richtung mit einer Leistung von 0 - 100%.",
+  "SINGLE_MOTOR_ON_TOOLTIP_CALLIOPE":"Startet den einzelen Motor mit einer bestimmten Leistung, -100% - 100%, wobei negative Werte die Drehrichtung umkehren",
   "MOTOR_OTHER":"Anderer Stromverbraucher",
   "MOTOR_PORT":"Motor Port",
   "MOTOR_REGULATION":"Regulierung",
