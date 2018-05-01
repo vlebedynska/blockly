@@ -220,7 +220,8 @@ sensors.encoder.ev3 = {
         type : 'Number',
         unit : 'CM'
     } ],
-    ports : [ [ 'A', 'A' ], [ 'B', 'B' ], [ 'C', 'C' ], [ 'D', 'D' ] ]
+    ports : [ [ 'A', 'A' ], [ 'B', 'B' ], [ 'C', 'C' ], [ 'D', 'D' ] ],
+    standardPort : 'B'
 };
 sensors.encoder.nxt = {
     title : 'ENCODER',
@@ -241,7 +242,8 @@ sensors.encoder.nxt = {
         type : 'Number',
         unit : 'CM'
     } ],
-    ports : [ [ 'A', 'A' ], [ 'B', 'B' ], [ 'C', 'C' ] ]
+    ports : [ [ 'A', 'A' ], [ 'B', 'B' ], [ 'C', 'C' ] ],
+    standardPort : 'B'
 };
 
 sensors.encoder.arduino = {
