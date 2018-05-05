@@ -675,7 +675,7 @@ sensors.fsr.nao = {
         type : 'Number',
         unit : 'NEWTON',
         op : 'NUM_REV',
-        value : 90
+        value : 10
     } ],
     ports : [ [ 'LEFT', 'LEFT' ], [ 'RIGHT', 'RIGHT' ] ]
 };
@@ -684,8 +684,12 @@ sensors.detectface = {};
 sensors.detectface.nao = {
     title : 'DETECTFACE',
     modes : [ {
-        name : 'VALUE',
-        type : 'Array_Number'
+        name : 'NAMEONE',
+        type : 'String',
+        value : 'Roberta'
+    }, {
+        name : 'NAMEALL',
+        type : 'Array_String',
     } ]
 };
 
@@ -693,8 +697,13 @@ sensors.detectmark = {};
 sensors.detectmark.nao = {
     title : 'DETECTMARK',
     modes : [ {
-        name : 'VALUE',
-        type : 'Array_Number'
+        name : 'IDONE',
+        type : 'Number',
+        value : '84',
+        op : 'NUM_EQ'
+    }, {
+        name : 'IDALL',
+        type : 'Array_Number',
     } ]
 };
 
@@ -706,48 +715,43 @@ sensors.electriccurrent.nao = {
         type : 'Number',
         unit : 'AMPERE'
     } ],
-    ports : [ {
-        port : [ 'PORT_HEAD', 'HEAD' ],
-        slots : [ [ 'SLOT_YAW', 'YAW' ], [ 'SLOT_PITCH', 'PITCH' ] ]
-    }, {
-        port : [ 'PORT_SHOULDER', 'SHOULDER' ],
-        slots : [ [ 'SLOT_LEFT_PITCH', 'LEFT_PITCH' ],
-                  [ 'SLOT_LEFT_ROLL', 'LEFT_ROLL' ],
-                  [ 'SLOT_RIGHT_PITCH', 'RIGHT_PITCH' ],
-                  [ 'SLOT_RIGHT_ROLL', 'RIGHT_ROLL' ] ]
-    }, {
-        port : [ 'PORT_ELBOW', 'ELBOW' ],
-        slots : [ [ 'SLOT_LEFT_YAW', 'LEFT_YAW' ],
-                  [ 'SLOT_LEFT_ROLL', 'LEFT_ROLL' ],
-                  [ 'SLOT_RIGHT_YAW', 'RIGHT_YAW' ],
-                  [ 'SLOT_RIGHT_ROLL', 'RIGHT_ROLL' ] ]
-    }, {
-        port : [ 'PORT_WRIST', 'WRIST' ],
-        slots : [ [ 'SLOT_LEFT_YAW', 'LEFT_YAW' ],
-                  [ 'SLOT_RIGHT_YAW', 'RIGHT_YAW' ] ]
-    }, {
-        port : [ 'PORT_HAND', 'HAND' ],
-        slots : [ [ 'LEFT', 'LEFT' ],
-                  [ 'RIGHT', 'RIGHT' ] ]
-    }, {
-        port : [ 'PORT_HIP', 'HIP' ],
-        slots : [ [ 'SLOT_LEFT_YAW_PITCH', 'LEFT_YAW_PITCH' ],
-                  [ 'SLOT_LEFT_ROLL', 'LEFT_ROLL' ],
-                  [ 'SLOT_LEFT_PITCH', 'LEFT_PITCH' ],
-                  [ 'SLOT_RIGHT_YAW_PITCH', 'RIGHT_YAW_PITCH' ],
-                  [ 'SLOT_RIGHT_ROLL', 'RIGHT_ROLL' ],
-                  [ 'SLOT_RIGHT_PITCH', 'RIGHT_PITCH' ] ]
-    }, {
-        port : [ 'PORT_KNEE', 'KNEE' ],
-        slots : [ [ 'SLOT_LEFT_PITCH', 'LEFT_PITCH' ],
-                  [ 'SLOT_RIGHT_PITCH', 'RIGHT_PITCH' ] ]
-    }, {
-        port : [ 'PORT_ANKLE', 'ANKLE' ],
-        slots : [ [ 'SLOT_LEFT_PITCH', 'LEFT_PITCH' ],
-                  [ 'SLOT_LEFT_ROLL', 'LEFT_ROLL' ],
-                  [ 'SLOT_RIGHT_PITCH', 'RIGHT_PITCH' ],
-                  [ 'SLOT_RIGHT_ROLL', 'RIGHT_ROLL' ] ]
-    } ]
+    ports : [
+            {
+                port : [ 'PORT_HEAD', 'HEAD' ],
+                slots : [ [ 'SLOT_YAW', 'YAW' ], [ 'SLOT_PITCH', 'PITCH' ] ]
+            },
+            {
+                port : [ 'PORT_SHOULDER', 'SHOULDER' ],
+                slots : [ [ 'SLOT_LEFT_PITCH', 'LEFT_PITCH' ], [ 'SLOT_LEFT_ROLL', 'LEFT_ROLL' ], [ 'SLOT_RIGHT_PITCH', 'RIGHT_PITCH' ],
+                        [ 'SLOT_RIGHT_ROLL', 'RIGHT_ROLL' ] ]
+            },
+            {
+                port : [ 'PORT_ELBOW', 'ELBOW' ],
+                slots : [ [ 'SLOT_LEFT_YAW', 'LEFT_YAW' ], [ 'SLOT_LEFT_ROLL', 'LEFT_ROLL' ], [ 'SLOT_RIGHT_YAW', 'RIGHT_YAW' ],
+                        [ 'SLOT_RIGHT_ROLL', 'RIGHT_ROLL' ] ]
+            },
+            {
+                port : [ 'PORT_WRIST', 'WRIST' ],
+                slots : [ [ 'SLOT_LEFT_YAW', 'LEFT_YAW' ], [ 'SLOT_RIGHT_YAW', 'RIGHT_YAW' ] ]
+            },
+            {
+                port : [ 'PORT_HAND', 'HAND' ],
+                slots : [ [ 'LEFT', 'LEFT' ], [ 'RIGHT', 'RIGHT' ] ]
+            },
+            {
+                port : [ 'PORT_HIP', 'HIP' ],
+                slots : [ [ 'SLOT_LEFT_YAW_PITCH', 'LEFT_YAW_PITCH' ], [ 'SLOT_LEFT_ROLL', 'LEFT_ROLL' ], [ 'SLOT_LEFT_PITCH', 'LEFT_PITCH' ],
+                        [ 'SLOT_RIGHT_YAW_PITCH', 'RIGHT_YAW_PITCH' ], [ 'SLOT_RIGHT_ROLL', 'RIGHT_ROLL' ], [ 'SLOT_RIGHT_PITCH', 'RIGHT_PITCH' ] ]
+            },
+            {
+                port : [ 'PORT_KNEE', 'KNEE' ],
+                slots : [ [ 'SLOT_LEFT_PITCH', 'LEFT_PITCH' ], [ 'SLOT_RIGHT_PITCH', 'RIGHT_PITCH' ] ]
+            },
+            {
+                port : [ 'PORT_ANKLE', 'ANKLE' ],
+                slots : [ [ 'SLOT_LEFT_PITCH', 'LEFT_PITCH' ], [ 'SLOT_LEFT_ROLL', 'LEFT_ROLL' ], [ 'SLOT_RIGHT_PITCH', 'RIGHT_PITCH' ],
+                        [ 'SLOT_RIGHT_ROLL', 'RIGHT_ROLL' ] ]
+            } ]
 };
 
 sensors.ultrasonic = {};
@@ -865,7 +869,7 @@ sensors.drop.arduino = {
 sensors.rfid = {};
 sensors.rfid.arduino = {
     title : 'RFID',
-    modes : [  {
+    modes : [ {
         name : 'SERIAL',
         type : 'Number'
     }, {

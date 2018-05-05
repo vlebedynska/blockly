@@ -976,11 +976,11 @@ Blockly.Msg.RESEND_ACTIVATION = 'resend verification email';
 Blockly.Msg.ORA_USER_ACTIVATION_INVALID_URL = 'The link is not valid anymore. Please ask for resending your verification mail again';
 Blockly.Msg.FLYOUT_VARIABLE_TEXT = 'You need a variable? Please declare it first with a click on the + sign at the »start«\u00a0block.';
 
-Blockly.Msg.NAO_MARK_GET_INFORMATION = 'get information about NAO mark';
-Blockly.Msg.NAO_MARK_GET_INFORMATION_TOOLTIP = 'This block will return additional information about the given NAO mark in the format on a 1-d array with following values: [XAngle, YAngle, XSize, YSize, Heading], please note that all values are given in camera angles.';
+Blockly.Msg.NAO_MARK_GET_INFORMATION = 'get information about NAO Mark';
+Blockly.Msg.NAO_MARK_GET_INFORMATION_TOOLTIP = 'Returns additional information about the given NAO mark in an array with following values: [XAngle, YAngle, XSize, YSize, Heading], please note that all values are given in camera angles.';
 
-Blockly.Msg.NAO_FACE_GET_INFORMATION = 'get information about recognized face';
-Blockly.Msg.NAO_FACE_GET_INFORMATION_TOOLTIP = 'This block will return additional information about the given recognized face in the format on a 1-d array with following values: [XAngle, YAngle, XSize, YSize, Heading], please note that all values are given in camera angles.';
+Blockly.Msg.NAO_FACE_GET_INFORMATION = 'get information about detected face';
+Blockly.Msg.NAO_FACE_GET_INFORMATION_TOOLTIP = 'Returns additional information about the given detected in an array with following values: [XAngle, YAngle, XSize, YSize, Heading], please note that all values are given in camera angles.';
 
 Blockly.Msg.SENSOR_RADIO_RSSI = 'radio RSSI sensor';
 Blockly.Msg.RADIO_GET_RSSI_TOOLTIP = 'Gets the RSSI of the last package.';
@@ -1107,14 +1107,13 @@ Blockly.Msg.CONFIGURATION_PORT = 'Port1';
 Blockly.Msg.CONFIGURATION_NO_PORT = 'no port';
 
 Blockly.Msg.PORT_HEAD = 'head';
-Blockly.Msg.SENSOR_FSR = 'fsr sensor';
-
+Blockly.Msg.SENSOR_FSR = 'force-sensing resistor';
 Blockly.Msg.SENSOR_FSR_GETSAMPLE_TOOLTIP = 'Get the current reading from the force sensitive resistor under the feet of the robot.';
-Blockly.Msg.SENSOR_DETECTFACE = 'get last recognized face(s)';
+Blockly.Msg.SENSOR_DETECTFACE = 'face detector';
 Blockly.Msg.SENSOR_DETECTFACE_GETSAMPLE_TOOLTIP = 'Detect a face previously learned and saved.';
-Blockly.Msg.SENSOR_DETECTMARK = 'get last detected NAO mark(s)';
-Blockly.Msg.SENSOR_DETECTMARK_GETSAMPLE_TOOLTIP = 'Returns an array of IDs of last detected NAO marks. If no marks are detected, an array consisting of 1 element with value -1 is returned. For a list of NAO marks with corresponding numbers refer to the wiki.';
-Blockly.Msg.SENSOR_ELECTRICCURRENT = 'electric current of'
+Blockly.Msg.SENSOR_DETECTMARK = 'NAO Mark sensor';
+Blockly.Msg.SENSOR_DETECTMARK_GETSAMPLE_TOOLTIP = 'Returns one or an array of IDs (number) of the last detected NAO Mark(s). If no marks are detected, -1 or an array consisting of 1 element with value -1 is returned. For a list of NAO marks with corresponding numbers refer to the wiki.';
+Blockly.Msg.SENSOR_ELECTRICCURRENT = 'current sensor'
 Blockly.Msg.SENSOR_ELECTRICCURRENT_GETSAMPLE_TOOLTIP = 'Get the electric current from the motorboard in the selected joint.';
 Blockly.Msg.SLOT_YAW = 'yaw';
 Blockly.Msg.SLOT_PITCH = 'pitch'
@@ -1140,3 +1139,9 @@ Blockly.Msg.COLON = 'colon';
 Blockly.Msg.FROM_POSITION = 'from position';
 Blockly.Msg.LEDBAR = 'LED Bar';
 Blockly.Msg.LEDBAR_SET_TOOLTIP = 'Sets the specified LED [0-9] on the Grove LED Bar v2.0 by Seeed to the given brightness [0-8]. The LED Bar has to be connected to the A1 (right) Grove connector.';
+Blockly.Msg.MODE_IDONE = 'ID';
+Blockly.Msg.MODE_IDALL = 'IDs (list)';
+Blockly.Msg.MODE_NAMEONE = 'name';
+Blockly.Msg.MODE_NAMEALL = 'names (list)';
+
+

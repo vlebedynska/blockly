@@ -329,7 +329,7 @@ Blockly.Blocks['logic_compare'] = {
         OPERATORS = Blockly.RTL ? [ [ '=', 'EQ' ], [ '\u2260', 'NEQ' ] ] : [ [ '=', 'EQ' ], [ '\u2260', 'NEQ' ] ];
       } else if (range == 'COLOUR') {
         OPERATORS = Blockly.RTL ? [ [ '=', 'EQ' ], [ '\u2260', 'NEQ' ] ] : [ [ '=', 'EQ' ], [ '\u2260', 'NEQ' ] ];
-      } else if (range == 'TEXT') {
+      } else if (range == 'TEXT' || range == 'NUM_EQ') {
           OPERATORS = Blockly.RTL ? [ [ '=', 'EQ' ], [ '\u2260', 'NEQ' ] ] : [ [ '=', 'EQ' ], [ '\u2260', 'NEQ' ] ];
       } else {
         OPERATORS = Blockly.RTL ? [ [ '>', 'LT' ], [ '\u2265', 'LTE' ], [ '<', 'GT' ], [ '\u2264', 'GTE' ], [ '=', 'EQ' ], [ '\u2260', 'NEQ' ] ] : [

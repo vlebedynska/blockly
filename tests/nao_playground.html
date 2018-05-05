@@ -5,7 +5,7 @@
 <title>Blockly Playground</title>
 <script src="../blockly_compressed.js"></script>
 <script src="../msg/js/de.js"></script>
-<script src="../robMsg/robMessages.js"></script>
+<!-- <script src="../robMsg/robMessages.js"></script> -->
 <script src="../core/blockly.js"></script>
 <script src="../core/css.js"></script>
 <script src="../core/inject.js"></script>
@@ -396,7 +396,7 @@ h1 {
             <block type='naoActions_playFile'>
             	<value name='OUT'>
                     <block type='text'>
-                        <field name='TEXT'>roberta</field>
+                        <field name='TEXT'>Roberta</field>
                     </block>
                 </value>
             </block>
@@ -424,14 +424,14 @@ h1 {
 		<block type='naoActions_learnFace'>
             		<value name='NAME'>
                 	    <block type='text'>
-                	        <field name='TEXT'>roberta</field>
+                	        <field name='TEXT'>Roberta</field>
                 	    </block>
                 	</value>
         	</block>
         	<block type='naoActions_forgetFace'>
             		<value name='NAME'>
                 	    <block type='text'>
-                        	<field name='TEXT'>roberta</field>
+                        	<field name='TEXT'>Roberta</field>
                     	</block>
                 	</value>
         	</block>
@@ -470,20 +470,19 @@ h1 {
         </category>
     </category>
     <category name='TOOLBOX_SENSOR' svg="true">
+        <block type='robSensors_getSample'></block>
         <block type='robSensors_touch_getSample'></block>
         <block type='robSensors_ultrasonic_getSample'></block>
         <block type='robSensors_gyro_getSample'></block>
         <block type='robSensors_accelerometer_getSample'></block>
-        <block type='robSensors_getSample'></block>
-	<block type='robSensors_fsr_getSample'></block>
+     	<block type='robSensors_fsr_getSample'></block>
         <block type='robSensors_electriccurrent_getSample'></block>
      	<block type='robSensors_detectmark_getSample'></block>
        	<block type='robSensors_detectface_getSample'></block>
-	<block type='naoSensors_dialog'></block>
         <block type='naoSensors_getFaceInformation'>
             <value name='VALUE'>
                 <block type='text'>
-                    <field name='TEXT'>roberta</field>
+                    <field name='TEXT'>Roberta</field>
                 </block>
             </value>
        	</block>
