@@ -13,84 +13,98 @@ goog.require('Blockly.Blocks');
  * @lends Block
  */
 
+Blockly.Blocks['robActions_setLanguage'] = {
+    /**
+     * Sets the language the robot uses.
+     * 
+     * @constructs robActions_setLanguage
+     * @this.Blockly.Block
+     * @param {String}
+     *            LANGUAGE
+     * @returns immediately
+     * @memberof Block
+     */
+    init : function() {
+        this.setColour(Blockly.CAT_ACTION_RGB);
+        var dropdown = new Blockly.FieldDropdown([ [ Blockly.Msg.LANGUAGE_GERMAN, 'GERMAN' ], [ Blockly.Msg.LANGUAGE_ENGLISH, 'ENGLISH' ],
+                [ Blockly.Msg.LANGUAGE_FRENCH, 'FRENCH' ], [ Blockly.Msg.LANGUAGE_SPANISH, 'SPANISH' ], [ Blockly.Msg.LANGUAGE_ITALIAN, 'ITALIAN' ],
+                [ Blockly.Msg.LANGUAGE_DUTCH, 'DUTCH' ], [ Blockly.Msg.LANGUAGE_FINNISH, 'FINNISH' ], [ Blockly.Msg.LANGUAGE_POLISH, 'POLISH' ],
+                [ Blockly.Msg.LANGUAGE_RUSSIAN, 'RUSSIAN' ], [ Blockly.Msg.LANGUAGE_TURKISH, 'TURKISH' ], [ Blockly.Msg.LANGUAGE_CZECH, 'CZECH' ],
+                [ Blockly.Msg.LANGUAGE_PORTUGUESE, 'PORTUGUESE' ], [ Blockly.Msg.LANGUAGE_DANISH, 'DANISH' ], ]);
+        if (this.workspace.device === 'nao') {
+            dropdown = new Blockly.FieldDropdown([ [ Blockly.Msg.LANGUAGE_GERMAN, 'GERMAN' ], [ Blockly.Msg.LANGUAGE_ENGLISH, 'ENGLISH' ],
+                    [ Blockly.Msg.LANGUAGE_FRENCH, 'FRENCH' ], [ Blockly.Msg.LANGUAGE_JAPANESE, 'JAPANESE' ], [ Blockly.Msg.LANGUAGE_CHINESE, 'CHINESE' ],
+                    [ Blockly.Msg.LANGUAGE_SPANISH, 'SPANISH' ], [ Blockly.Msg.LANGUAGE_KOREAN, 'KOREAN' ], [ Blockly.Msg.LANGUAGE_ITALIAN, 'ITALIAN' ],
+                    [ Blockly.Msg.LANGUAGE_DUTCH, 'DUTCH' ], [ Blockly.Msg.LANGUAGE_FINNISH, 'FINNISH' ], [ Blockly.Msg.LANGUAGE_POLISH, 'POLISH' ],
+                    [ Blockly.Msg.LANGUAGE_RUSSIAN, 'RUSSIAN' ], [ Blockly.Msg.LANGUAGE_TURKISH, 'TURKISH' ], [ Blockly.Msg.LANGUAGE_ARABIC, 'ARABIC' ],
+                    [ Blockly.Msg.LANGUAGE_CZECH, 'CZECH' ], [ Blockly.Msg.LANGUAGE_PORTUGUESE, 'PORTUGUESE' ],
+                    [ Blockly.Msg.LANGUAGE_BRAZILIAN, 'BRAZILIAN' ], [ Blockly.Msg.LANGUAGE_SWEDISH, 'SWEDISH' ], [ Blockly.Msg.LANGUAGE_DANISH, 'DANISH' ],
+                    [ Blockly.Msg.LANGUAGE_NORWEGIAN, 'NORWEGIAN' ], [ Blockly.Msg.LANGUAGE_GREEK, 'GREEK' ], ]);
+        } else if (this.workspace.device === 'ev3') {
+            dropdown = new Blockly.FieldDropdown([ [ Blockly.Msg.LANGUAGE_GERMAN, 'GERMAN' ], [ Blockly.Msg.LANGUAGE_ENGLISH, 'ENGLISH' ],
+                    [ Blockly.Msg.LANGUAGE_FRENCH, 'FRENCH' ], [ Blockly.Msg.LANGUAGE_SPANISH, 'SPANISH' ], [ Blockly.Msg.LANGUAGE_ITALIAN, 'ITALIAN' ],
+                    [ Blockly.Msg.LANGUAGE_DUTCH, 'DUTCH' ], [ Blockly.Msg.LANGUAGE_FINNISH, 'FINNISH' ], [ Blockly.Msg.LANGUAGE_POLISH, 'POLISH' ],
+                    [ Blockly.Msg.LANGUAGE_RUSSIAN, 'RUSSIAN' ], [ Blockly.Msg.LANGUAGE_TURKISH, 'TURKISH' ], [ Blockly.Msg.LANGUAGE_CZECH, 'CZECH' ],
+                    [ Blockly.Msg.LANGUAGE_PORTUGUESE, 'PORTUGUESE' ], [ Blockly.Msg.LANGUAGE_DANISH, 'DANISH' ], ]);
+        }
+        this.appendDummyInput().appendField(Blockly.Msg.SET + ' ' + Blockly.Msg.LANGUAGE).appendField(dropdown, 'LANGUAGE');
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setTooltip(Blockly.Msg.SETLANGUAGE_TOOLTIP);
+        if (this.workspace.device === 'nao') {
+            this.setTooltip(Blockly.Msg.NAO_SETLANGUAGE_TOOLTIP);
+        } else if (this.workspace.device === 'ev3') {
+            this.setTooltip(Blockly.Msg.SETLANGUAGE_TOOLTIP);
+        }
+    }
+};
 
- Blockly.Blocks['robActions_setLanguage'] = {
-     /**
-      * Sets the language the robot uses.
-      *
-      * @constructs robActions_setLanguage
-      * @this.Blockly.Block
-      * @param {String}
-      *            LANGUAGE
-      * @returns immediately
-      * @memberof Block
-      */
-     init : function() {
-         this.setColour(Blockly.CAT_ACTION_RGB);
-         var dropdown = new Blockly.FieldDropdown([ [ Blockly.Msg.LANGUAGE_GERMAN, 'GERMAN' ], [ Blockly.Msg.LANGUAGE_ENGLISH, 'ENGLISH' ], [ Blockly.Msg.LANGUAGE_FRENCH, 'FRENCH' ], [ Blockly.Msg.LANGUAGE_SPANISH, 'SPANISH' ], [ Blockly.Msg.LANGUAGE_ITALIAN, 'ITALIAN' ], [ Blockly.Msg.LANGUAGE_DUTCH, 'DUTCH' ], [ Blockly.Msg.LANGUAGE_FINNISH, 'FINNISH' ], [ Blockly.Msg.LANGUAGE_POLISH, 'POLISH' ], [ Blockly.Msg.LANGUAGE_RUSSIAN, 'RUSSIAN' ], [ Blockly.Msg.LANGUAGE_TURKISH, 'TURKISH' ], [ Blockly.Msg.LANGUAGE_CZECH, 'CZECH' ], [ Blockly.Msg.LANGUAGE_PORTUGUESE, 'PORTUGUESE' ], [ Blockly.Msg.LANGUAGE_DANISH, 'DANISH' ], ]);
-         if (this.workspace.device === 'nao') {
-             dropdown = new Blockly.FieldDropdown([ [ Blockly.Msg.LANGUAGE_GERMAN, 'GERMAN' ], [ Blockly.Msg.LANGUAGE_ENGLISH, 'ENGLISH' ], [ Blockly.Msg.LANGUAGE_FRENCH, 'FRENCH' ], [ Blockly.Msg.LANGUAGE_JAPANESE, 'JAPANESE' ], [ Blockly.Msg.LANGUAGE_CHINESE, 'CHINESE' ], [ Blockly.Msg.LANGUAGE_SPANISH, 'SPANISH' ], [ Blockly.Msg.LANGUAGE_KOREAN, 'KOREAN' ], [ Blockly.Msg.LANGUAGE_ITALIAN, 'ITALIAN' ], [ Blockly.Msg.LANGUAGE_DUTCH, 'DUTCH' ], [ Blockly.Msg.LANGUAGE_FINNISH, 'FINNISH' ], [ Blockly.Msg.LANGUAGE_POLISH, 'POLISH' ], [ Blockly.Msg.LANGUAGE_RUSSIAN, 'RUSSIAN' ], [ Blockly.Msg.LANGUAGE_TURKISH, 'TURKISH' ], [ Blockly.Msg.LANGUAGE_ARABIC, 'ARABIC' ], [ Blockly.Msg.LANGUAGE_CZECH, 'CZECH' ], [ Blockly.Msg.LANGUAGE_PORTUGUESE, 'PORTUGUESE' ], [ Blockly.Msg.LANGUAGE_BRAZILIAN, 'BRAZILIAN' ], [ Blockly.Msg.LANGUAGE_SWEDISH, 'SWEDISH' ], [ Blockly.Msg.LANGUAGE_DANISH, 'DANISH' ], [ Blockly.Msg.LANGUAGE_NORWEGIAN, 'NORWEGIAN' ], [ Blockly.Msg.LANGUAGE_GREEK, 'GREEK' ], ]);
-         } else if (this.workspace.device === 'ev3') {
-             dropdown = new Blockly.FieldDropdown([ [ Blockly.Msg.LANGUAGE_GERMAN, 'GERMAN' ], [ Blockly.Msg.LANGUAGE_ENGLISH, 'ENGLISH' ], [ Blockly.Msg.LANGUAGE_FRENCH, 'FRENCH' ], [ Blockly.Msg.LANGUAGE_SPANISH, 'SPANISH' ], [ Blockly.Msg.LANGUAGE_ITALIAN, 'ITALIAN' ], [ Blockly.Msg.LANGUAGE_DUTCH, 'DUTCH' ], [ Blockly.Msg.LANGUAGE_FINNISH, 'FINNISH' ], [ Blockly.Msg.LANGUAGE_POLISH, 'POLISH' ], [ Blockly.Msg.LANGUAGE_RUSSIAN, 'RUSSIAN' ], [ Blockly.Msg.LANGUAGE_TURKISH, 'TURKISH' ], [ Blockly.Msg.LANGUAGE_CZECH, 'CZECH' ], [ Blockly.Msg.LANGUAGE_PORTUGUESE, 'PORTUGUESE' ], [ Blockly.Msg.LANGUAGE_DANISH, 'DANISH' ], ]);
-         }
-         this.appendDummyInput().appendField(Blockly.Msg.SETLANGUAGE).appendField(dropdown, 'LANGUAGE');
-         this.setPreviousStatement(true);
-         this.setNextStatement(true);
-         this.setTooltip(Blockly.Msg.SETLANGUAGE_TOOLTIP);
-         if (this.workspace.device === 'nao') {
-             this.setTooltip(Blockly.Msg.NAO_SETLANGUAGE_TOOLTIP);
-         } else if (this.workspace.device === 'ev3') {
-             this.setTooltip(Blockly.Msg.SETLANGUAGE_TOOLTIP);
-         }
-     }
- };
+Blockly.Blocks['robActions_sayText'] = {
+    /**
+     * Say a text.
+     * 
+     * @constructs robActions_sayText
+     * @this.Blockly.Block
+     * @param {String}
+     *            OUT Text to say
+     * @returns immediately
+     * @memberof Block
+     */
+    init : function() {
+        this.setColour(Blockly.CAT_ACTION_RGB);
+        this.appendValueInput('OUT').appendField(Blockly.Msg.SAY);
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setTooltip(Blockly.Msg.SAY_TOOLTIP);
+    }
+};
 
- Blockly.Blocks['robActions_sayText'] = {
-     /**
-      * Say a text.
-      *
-      * @constructs robActions_sayText
-      * @this.Blockly.Block
-      * @param {String}
-      *            OUT Text to say
-      * @returns immediately
-      * @memberof Block
-      */
-     init : function() {
-         this.setColour(Blockly.CAT_ACTION_RGB);
-         this.appendValueInput('OUT').appendField(Blockly.Msg.SAY);
-         this.setPreviousStatement(true);
-         this.setNextStatement(true);
-         this.setTooltip(Blockly.Msg.SAY_TOOLTIP);
-     }
- };
-
- Blockly.Blocks['robActions_sayText_parameters'] = {
-     /**
-      * Say a text with additional parameters.
-      *
-      * @constructs robActions_sayText_parameters
-      * @this.Blockly.Block
-      * @param {String}
-      *            OUT Text to say
-      * @returns immediately
-      * @memberof Block
-      */
-     init : function() {
-         this.setColour(Blockly.CAT_ACTION_RGB);
-         this.appendValueInput('OUT').appendField(Blockly.Msg.SAY);
-         this.appendValueInput('VOICESPEED').appendField(Blockly.Msg.VOICE_SPEED).setCheck('Number');
-         this.appendValueInput('VOICEPITCH').appendField(Blockly.Msg.VOICE_PITCH).setCheck('Number');
-         this.setPreviousStatement(true);
-         this.setNextStatement(true);
-         this.setTooltip(Blockly.Msg.SAY_PARAMETERS_TOOLTIP);
-     }
- };
+Blockly.Blocks['robActions_sayText_parameters'] = {
+    /**
+     * Say a text with additional parameters.
+     * 
+     * @constructs robActions_sayText_parameters
+     * @this.Blockly.Block
+     * @param {String}
+     *            OUT Text to say
+     * @returns immediately
+     * @memberof Block
+     */
+    init : function() {
+        this.setColour(Blockly.CAT_ACTION_RGB);
+        this.appendValueInput('OUT').appendField(Blockly.Msg.SAY);
+        this.appendValueInput('VOICESPEED').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.VOICE_SPEED).setCheck('Number');
+        this.appendValueInput('VOICEPITCH').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.VOICE_PITCH).setCheck('Number');
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setTooltip(Blockly.Msg.SAY_PARAMETERS_TOOLTIP);
+    }
+};
 
 Blockly.Blocks['robActions_motor_on'] = {
     /**
      * Turn motor on with specific power.
-     *
+     * 
      * @constructs robActions_motor_on
      * @this.Blockly.Block
      * @param {String/dropdown}
@@ -122,7 +136,7 @@ Blockly.Blocks['robActions_motor_on'] = {
 Blockly.Blocks['robActions_motor_on_for'] = {
     /**
      * Turn motor on and stop motor after execution of rotations/degrees.
-     *
+     * 
      * @constructs robActions_motor_on_for
      * @this.Blockly.Block
      * @param {String/dropdown}
@@ -163,7 +177,7 @@ Blockly.Blocks['robActions_motor_on_for'] = {
 Blockly.Blocks['robActions_motor_on_for_ardu'] = {
     /**
      * Turn motor on and stop motor after execution of rotations/degrees.
-     *
+     * 
      * @constructs robActions_motor_on_for
      * @this.Blockly.Block
      * @param {String/dropdown}
@@ -191,7 +205,7 @@ Blockly.Blocks['robActions_motor_on_for_ardu'] = {
 Blockly.Blocks['robActions_motor_getPower'] = {
     /**
      * Get current power of this motor.
-     *
+     * 
      * @constructs robActions_getPower
      * @this.Blockly.Block
      * @param {String/dropdown}
@@ -217,7 +231,7 @@ Blockly.Blocks['robActions_motor_getPower'] = {
 Blockly.Blocks['robActions_motor_setPower'] = {
     /**
      * Set current power of this motor (not used).
-     *
+     * 
      * @constructs robActions_setPower
      * @this.Blockly.Block
      * @param {String/dropdown}
@@ -244,7 +258,7 @@ Blockly.Blocks['robActions_motor_setPower'] = {
 Blockly.Blocks['robActions_motor_stop'] = {
     /**
      * Stop this motor.
-     *
+     * 
      * @constructs robActions_motor_stop
      * @this.Blockly.Block
      * @param {String/dropdown}
@@ -366,7 +380,7 @@ Blockly.Blocks['robActions_motorDiff_curve_for'] = {
 Blockly.Blocks['robActions_display_picture'] = {
     /**
      * Display a picture on the screen.
-     *
+     * 
      * @constructs robActions_display_picture
      * @this.Blockly.Block
      * @param {String/dropdown}
@@ -398,7 +412,7 @@ Blockly.Blocks['robActions_display_picture'] = {
 Blockly.Blocks['robActions_display_picture_new'] = {
     /**
      * Display a picture on the screen.
-     *
+     * 
      * @constructs robActions_display_picture_new
      * @this.Blockly.Block
      * @param {String/dropdown}
@@ -422,7 +436,7 @@ Blockly.Blocks['robActions_display_picture_new'] = {
 Blockly.Blocks['robActions_display_text'] = {
     /**
      * Display a text on the screen.
-     *
+     * 
      * @constructs robActions_display_text
      * @this.Blockly.Block
      * @param {String}
@@ -456,7 +470,7 @@ Blockly.Blocks['robActions_display_text'] = {
 Blockly.Blocks['robActions_display_clear'] = {
     /**
      * Clear the display.
-     *
+     * 
      * @constructs robActions_display_clear
      * @this.Blockly.Block
      * @returns immediately
@@ -476,7 +490,7 @@ Blockly.Blocks['robActions_display_clear'] = {
 Blockly.Blocks['robActions_display_matrix'] = {
     /**
      * Display points on the matrix.
-     *
+     * 
      * @constructs robActions_display_matrix
      * @this.Blockly.Block
      * @returns immediately
@@ -505,7 +519,7 @@ Blockly.Blocks['robActions_display_matrix'] = {
 Blockly.Blocks['robActions_play_tone'] = {
     /**
      * Play a tone.
-     *
+     * 
      * @constructs robActions_play_tone
      * @this.Blockly.Block
      * @param {Number}
@@ -531,7 +545,7 @@ Blockly.Blocks['robActions_play_tone'] = {
 Blockly.Blocks['robActions_play_file'] = {
     /**
      * Play a sound file.
-     *
+     * 
      * @constructs robActions_play_file
      * @this.Blockly.Block
      * @param {String/dropdown}
@@ -556,7 +570,7 @@ Blockly.Blocks['robActions_play_file'] = {
 Blockly.Blocks['robActions_play_setVolume'] = {
     /**
      * Set volume.
-     *
+     * 
      * @constructs robActions_play_setVolume
      * @this.Blockly.Block
      * @param {Number}
@@ -578,7 +592,7 @@ Blockly.Blocks['robActions_play_setVolume'] = {
 Blockly.Blocks['robActions_play_getVolume'] = {
     /**
      * Get current volume
-     *
+     * 
      * @constructs robActions_play_getVolume
      * @this.Blockly.Block
      * @returns immediately
@@ -599,7 +613,7 @@ Blockly.Blocks['robActions_play_getVolume'] = {
 Blockly.Blocks['robActions_brickLight_on'] = {
     /**
      * Turn bricklight on.
-     *
+     * 
      * @constructs robActions_brickLight_on
      * @this.Blockly.Block
      * @param {String/dropdown}
@@ -636,7 +650,7 @@ Blockly.Blocks['robActions_brickLight_on'] = {
 Blockly.Blocks['robActions_sensorLight_on'] = {
     /**
      * Turn sensor light on.
-     *
+     * 
      * @constructs robActions_brickLight_on
      * @this.Blockly.Block
      * @param {String/dropdown}
@@ -666,7 +680,7 @@ Blockly.Blocks['robActions_sensorLight_on'] = {
 Blockly.Blocks['robActions_brickLight_off'] = {
     /**
      * Turn bricklight off.
-     *
+     * 
      * @constructs robActions_brickLight_off
      * @this.Blockly.Block
      * @returns immediately
@@ -686,7 +700,7 @@ Blockly.Blocks['robActions_brickLight_off'] = {
 Blockly.Blocks['robActions_brickLight_reset'] = {
     /**
      * Reset bricklight. Set the default bricklight: green and blinking.
-     *
+     * 
      * @constructs robActions_brickLight_reset
      * @this.Blockly.Block
      * @returns immediately

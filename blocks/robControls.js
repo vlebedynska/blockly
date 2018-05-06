@@ -52,7 +52,7 @@ Blockly.Blocks['robControls_start'] = {
         this.setColour(Blockly.CAT_ACTIVITY_RGB);
         var debug;
         var textDebug = new Blockly.FieldDropdown([ [ Blockly.Msg.START_PROGRAM_DEBUG, 'a' ] ]);
-        if (this.workspace.device === 'calliope' || this.workspace.device === 'microbit') {
+        if (this.workspace.device !== 'ev3') {
             debug = new Blockly.FieldHidden();
             this.appendDummyInput().appendField(Blockly.Msg.START_PROGRAM).appendField('  ').appendField(debug, "DEBUG");
         } else {

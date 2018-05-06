@@ -682,11 +682,11 @@ Blockly.Msg.POPUP_DOWNLOAD_SAVE = 'Save';
 Blockly.Msg.NAO_TAI_CHI = 'tai chi';
 Blockly.Msg.NAO_WAVE = 'wave';
 Blockly.Msg.NAO_WIPE_FOREHEAD = 'wipe forehead';
-Blockly.Msg.NAO_APPLYPOSTURE = 'apply posture';
+Blockly.Msg.NAO_APPLYPOSTURE = 'let NAO';
 Blockly.Msg.NAO_POINTAT = 'point at';
 Blockly.Msg.NAO_LOOKAT = 'look at';
-Blockly.Msg.NAO_STIFFNESS = 'stiffness of';
-Blockly.Msg.NAO_AUTONOMOUS = 'autonomous life';
+Blockly.Msg.NAO_STIFFNESS = 'lock motors';
+Blockly.Msg.NAO_AUTONOMOUS = 'turn autonomous life';
 Blockly.Msg.NAO_WALK = 'walk';
 Blockly.Msg.NAO_WALKTO = 'walk to';
 Blockly.Msg.NAO_STOP = 'stop movement';
@@ -706,8 +706,6 @@ Blockly.Msg.NAO_FSR = 'force sensitive resistor';
 Blockly.Msg.NAO_PLAY_FILE = 'play file';
 Blockly.Msg.NAO_PHRASE = 'phrase';
 Blockly.Msg.NAO_ANSWER = 'answer';
-Blockly.Msg.NAO_RECOGNIZEDWORD = 'recognized word';
-Blockly.Msg.NAO_RECOGNIZEWORDOR = 'or recognize word';
 Blockly.Msg.NAO_LEARNFACEOF = 'learn face of';
 Blockly.Msg.NAO_FORGETFACEOF = 'forget face of';
 Blockly.Msg.NAO_PERFORM = 'perform'
@@ -716,13 +714,15 @@ Blockly.Msg.NAO_MOVE = 'move'
 
 // Parameters for the nao blocks
 /// NAO parameters
-Blockly.Msg.NAO_POSTURE_STAND = 'Stand';
-Blockly.Msg.NAO_POSTURE_STANDINIT = 'StandInit';
-Blockly.Msg.NAO_POSTURE_STANDZERO = 'StandZero';
-Blockly.Msg.NAO_POSTURE_SITRELAX = 'SitRelax';
-Blockly.Msg.NAO_POSTURE_LYINGBELLY = 'LyingBelly';
-Blockly.Msg.NAO_POSTURE_LYINGBACK = 'LyingBack';
-Blockly.Msg.NAO_POSTURE_CROUCH = 'Crouch';
+Blockly.Msg.NAO_POSTURE_REST = 'rest';
+Blockly.Msg.NAO_POSTURE_STAND = 'stand';
+Blockly.Msg.NAO_POSTURE_STANDINIT = 'stand init';
+Blockly.Msg.NAO_POSTURE_STANDZERO = 'stand zero';
+Blockly.Msg.NAO_POSTURE_SIT = 'sit';
+Blockly.Msg.NAO_POSTURE_SITRELAX = 'sit relaxed';
+Blockly.Msg.NAO_POSTURE_LYINGBELLY = 'lie belly';
+Blockly.Msg.NAO_POSTURE_LYINGBACK = 'lie back';
+Blockly.Msg.NAO_POSTURE_CROUCH = 'crouch';
 Blockly.Msg.NAO_FRAME_TORSO = 'torso';
 Blockly.Msg.NAO_FRAME_WORLD = 'world';
 Blockly.Msg.LANGUAGE_GERMAN = 'German';
@@ -768,9 +768,6 @@ Blockly.Msg.NAO_LED_CHEST = 'chest';
 Blockly.Msg.NAO_LED_HEAD = 'head';
 Blockly.Msg.NAO_LED_FOOT = 'foot';
 Blockly.Msg.NAO_LED_ALL = 'all';
-Blockly.Msg.NAO_MODE_ACTIVE = 'active';
-Blockly.Msg.NAO_MODE_REST = 'rest';
-Blockly.Msg.NAO_MODE_SIT = 'sit';
 Blockly.Msg.NAO_PART_BODY = 'body';
 Blockly.Msg.NAO_PART_HEAD = 'head';
 Blockly.Msg.NAO_PART_ARMS = 'arms';
@@ -802,7 +799,6 @@ Blockly.Msg.VOICE_PITCH = 'voice pitch';
 
 // Tooltips for the nao blocks
 /// NAO tooltips
-Blockly.Msg.NAO_MODE_TOOLTIP = 'This block allows to move the robot in to three different modes. Active makes the robot activate all motors and go to a standing position. Rest makes the robotgo to a prone stance and deactivate all motors. In Sit also all motors will be deactivated and the robot will sit down.';
 Blockly.Msg.NAO_APPLYPOSTURE_TOOLTIP = 'Robot goes into the selected posture. Use the dropdown menu to choose between different stand, sit and lying positions.';
 Blockly.Msg.NAO_STIFFNESS_TOOLTIP = 'The stiffness of the selected body part of the robot is turned on or off. Be aware that releasing the leg motors while the robot is standing may result in downfall.';
 Blockly.Msg.NAO_AUTONOMOUS_TOOLTIP = 'Turn the robots autonomous life on or off. When it is turned on the robot will react to sounds and try to detect faces. Turn it off if this behaviour interrupts your programm.'
@@ -840,8 +836,8 @@ Blockly.Msg.NAO_TOUCHSENSOR_TOOLTIP = 'Is true if the selected touchsensor on th
 Blockly.Msg.NAO_GYROMETER_TOOLTIP = 'Get the current reading from the gyrometer in the given direction.';
 Blockly.Msg.NAO_ACCELEROMETER_TOOLTIP = 'Get the current reading from the accelerometer in the given direction';
 Blockly.Msg.FSR_TOOLTIP = 'Get the current reading from the force sensitive resistor under the feet of the robot.';
-Blockly.Msg.NAO_DIALOG_TOOLTIP = 'The robot tries to recognize the phrase and answers on success.';
-Blockly.Msg.NAO_RECOGNIZEDWORD_TOOLTIP = 'Returns the last word the robot recognized.';
+Blockly.Msg.NAO_RECOGNIZEWORD_TOOLTIP = 'Returns the last word the robot recognized.';
+Blockly.Msg.NAO_RECOGNIZEWORD = 'speech recognizer of';
 
 Blockly.Msg.NAO_LEARNFACE_TOOLTIP = 'Learn and save a face under a given name in the vision recognition database on the robot.';
 Blockly.Msg.NAO_FORGETFACE_TOOLTIP = 'Delete a face previously saved under a given name from the vision recognition database on the robot. ';
@@ -865,6 +861,7 @@ Blockly.Msg.DISPLAY_PIXEL_TITLE = 'LED';
 Blockly.Msg.DISPLAY_PIXEL_BRIGHTNESS = 'brightness';
 Blockly.Msg.X = 'x';
 Blockly.Msg.Y = 'y';
+Blockly.Msg.Z = 'z';
 Blockly.Msg.DISPLAY_GET_PIXEL_TOOLTIP = 'Returns the brightness for this led. 0 means the led is turned off, 9 is the brightest value.';
 Blockly.Msg.DISPLAY_SET_PIXEL_TOOLTIP = 'Sets the brightness for this led. 0 means the led is turned off, 9 is the brightest value. With x and y you can determine the position of the led you would like to change.';
 Blockly.Msg.DISPLAY_GET_BRIGHTNESS_TOOLTIP = 'Returns the brightness for all leds of the display. 0 means all leds are turned off, 9 is the brightest value.';
@@ -967,8 +964,7 @@ Blockly.Msg.BOB3_REMEMBER_NUMBER = 'remember number';
 Blockly.Msg.BOB3_SAVENUMBER_TOOLTIP = 'The number to store should be an integer in the range of 0 to 255';
 Blockly.Msg.BOB3_READNUMBER_TOOLTIP = 'Returns the previously stored number.';
 
-Blockly.Msg.NAO_RECOGNIZEWORD = 'recognize word from list';
-Blockly.Msg.NAO_RECOGNIZEWORD_TOOLTIP = 'Return a word from the given list when recognized by NAO';
+Blockly.Msg.NAO_RECOGNIZEWORD_TOOLTIP = 'Returns a word from the given list when recognized by NAO';
 
 Blockly.Msg.POPUP_CONFIRM_CONTINUE = '<br><br><i>Press »OK« to discard your work. Press »Cancel« to stay here and save your work first.</i>';
 Blockly.Msg.MENU_SIM_POSE_TOOLTIP = 'Move the robot back to it"s initial position.';
@@ -976,10 +972,7 @@ Blockly.Msg.RESEND_ACTIVATION = 'resend verification email';
 Blockly.Msg.ORA_USER_ACTIVATION_INVALID_URL = 'The link is not valid anymore. Please ask for resending your verification mail again';
 Blockly.Msg.FLYOUT_VARIABLE_TEXT = 'You need a variable? Please declare it first with a click on the + sign at the »start«\u00a0block.';
 
-Blockly.Msg.NAO_MARK_GET_INFORMATION = 'get information about NAO Mark';
 Blockly.Msg.NAO_MARK_GET_INFORMATION_TOOLTIP = 'Returns additional information about the given NAO mark in an array with following values: [XAngle, YAngle, XSize, YSize, Heading], please note that all values are given in camera angles.';
-
-Blockly.Msg.NAO_FACE_GET_INFORMATION = 'get information about detected face';
 Blockly.Msg.NAO_FACE_GET_INFORMATION_TOOLTIP = 'Returns additional information about the given detected in an array with following values: [XAngle, YAngle, XSize, YSize, Heading], please note that all values are given in camera angles.';
 
 Blockly.Msg.SENSOR_RADIO_RSSI = 'radio RSSI sensor';
@@ -1143,5 +1136,9 @@ Blockly.Msg.MODE_IDONE = 'ID';
 Blockly.Msg.MODE_IDALL = 'IDs (list)';
 Blockly.Msg.MODE_NAMEONE = 'name';
 Blockly.Msg.MODE_NAMEALL = 'names (list)';
+Blockly.Msg.MODE_WORD = 'word';
+Blockly.Msg.MODE_INFO = 'information';
+Blockly.Msg.ABOUT = 'about';
+Blockly.Msg.THETA = 'theta';
 
 
