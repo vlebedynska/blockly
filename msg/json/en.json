@@ -1,11 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-<<<<<<< 50e8e6a8f2f7106d67c8f1fcaa69b887d441e23d
-		"lastupdated": "2018-05-07 10:05:16.115232",
-=======
-		"lastupdated": "2018-05-07 12:55:38.724317",
->>>>>>> OpenRoberta/robertalab#806 add the get electric current in wait until block
+		"lastupdated": "2018-05-07 16:25:38.163661",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},

@@ -155,7 +155,9 @@ Blockly.Blocks['robSensors_generic'] = {
             modes = new Blockly.FieldHidden(sensor.modes[0].name);
         }
         // do we have ports?
+
         var ports;
+        this.sensorPort_ = 'NO';
         if (typeof sensor.ports === 'object') {
             var portList = [];
             if (!sensor.ports[0].port) {
@@ -180,6 +182,7 @@ Blockly.Blocks['robSensors_generic'] = {
                 portList.push([ Blockly.Msg[sensor.modes[0].ports[i][0]] || sensor.modes[0].ports[i][0], sensor.modes[0].ports[i][1] ]);
             }
             ports = new Blockly.FieldDropdown(portList);
+            this.sensorPort_ = sensor.modes[0].ports[0][1];
         } else if (sensor.ports === 'CONFIGURATION') {
             this.dependConfig = true;
             var portList = [];
@@ -245,13 +248,14 @@ Blockly.Blocks['robSensors_generic'] = {
                     || Blockly.Msg['SENSOR_' + sensor.title + '_GETSAMPLE_TOOLTIP'] || Blockly.checkMsgKey('SENSOR_' + sensor.title + '_GETSAMPLE_TOOLTIP');
         });
         this.type = 'robSensors_' + this.sensor + '_getSample';
-        this.sensorPort_ = 'NO';
 
         if (this.sensorMode_) {
             this.mutationToDom = function() {
                 var container = document.createElement('mutation');
                 container.setAttribute('mode', this.sensorMode_);
-                container.setAttribute('port', this.sensorPort_);
+                if (this.sensorPort_ !== 'NO') {
+                    container.setAttribute('port', this.sensorPort_);
+                }
                 return container;
             };
             this.domToMutation = function(xmlElement) {
@@ -469,7 +473,9 @@ Blockly.Blocks['robSensors_generic_all'] = {
         this.mutationToDom = function() {
             var container = document.createElement('mutation');
             container.setAttribute('input', this.sensorType_);
-            container.setAttribute('port', this.sensorPort_);
+            if (this.sensorPort_ !== 'NO') {
+                container.setAttribute('port', this.sensorPort_);
+            }
             return container;
         };
         this.domToMutation = function(xmlElement) {
