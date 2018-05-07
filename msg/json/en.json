@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2018-05-06 23:29:17.674547",
+		"lastupdated": "2018-05-07 07:19:25.330346",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -984,8 +984,7 @@
 	"NAO_WALK": "walk",
 	"NAO_WALKTO": "walk to",
 	"NAO_STOP": "stop movement",
-	"NAO_GETLANGUAGE": "get language",
-	"SETLANGUAGE": "set language",
+	"LANGUAGE": "language",
 	"SAY": "say",
 	"NAO_BLINK": "blink",
 	"NAO_LED": "LED",
