@@ -798,10 +798,10 @@ Blockly.Msg.VOICE_PITCH = 'voice pitch';
 
 // Tooltips for the nao blocks
 /// NAO tooltips
-Blockly.Msg.NAO_APPLYPOSTURE_TOOLTIP = 'Robot goes into the selected posture. Use the dropdown menu to choose between different stand, sit and lying positions.';
-Blockly.Msg.NAO_STIFFNESS_TOOLTIP = 'The stiffness of the selected body part of the robot is turned on or off. Be aware that releasing the leg motors while the robot is standing may result in downfall.';
-Blockly.Msg.NAO_AUTONOMOUS_TOOLTIP = 'Turn the robots autonomous life on or off. When it is turned on the robot will react to sounds and try to detect faces. Turn it off if this behaviour interrupts your programm.'
-Blockly.Msg.NAO_HAND_TOOLTIP = 'Open or close a single hand of the robot.';
+Blockly.Msg.NAO_APPLYPOSTURE_TOOLTIP = 'Robot will take the selected posture or position. Use the dropdown menu to choose one.';
+Blockly.Msg.NAO_STIFFNESS_TOOLTIP = 'The stiffness of the selected body part of the robot will be turned on or off. Be aware that releasing the leg motors while the robot is standing may result in robot collapsing.';
+Blockly.Msg.NAO_AUTONOMOUS_TOOLTIP = 'Turn the robots autonomous life on or off. While "on" the robot will react to sounds, move slightly from side to side and try to track faces. Turn it off if this behaviour interrupts your program.'
+Blockly.Msg.NAO_HAND_TOOLTIP = 'Open or close a single hand (wrist) of the robot.';
 Blockly.Msg.NAO_MOVEJOINT_TOOLTIP = 'Move a single joint of the robot. A relative movement means that the current position of the selected joint is used to calculate the new position. Be aware that every joint has different limits. Therefore the input range for the degerees varies.';
 
 Blockly.Msg.NAO_WALK_TOOLTIP = 'Makes the robot walk a distance entered in cm. Distances below 10cm might lead to no movement at all. Depending on your robot and the surface the robots is walking on the distance might not be exact.';
@@ -813,7 +813,7 @@ Blockly.Msg.NAO_ANIMATION_TOOLTIP = 'Perform the selected animation. TaiChi is a
 Blockly.Msg.NAO_POINTLOOKAT_TOOLTIP = 'Robot points or looks at a given position. The robot will move one of its hands or the head. Select the frame that is the point of reference. The values are entered in centimeter. Refer to the wiki for more information about the coordinate systems.';
 
 Blockly.Msg.NAO_SETVOLUME_TOOLTIP = 'Set the volume in a range from 0 to 100.';
-Blockly.Msg.NAO_GETVOLUME_TOOLTIP = 'Get the volume.';
+Blockly.Msg.NAO_GETVOLUME_TOOLTIP = 'Get current volume.';
 Blockly.Msg.NAO_GETLANGUAGE_TOOLTIP = 'Get the active language. This is the language the robot is currently using for Text to Speech and Voice recognition.';
 Blockly.Msg.SETLANGUAGE_TOOLTIP = 'Set the language.';
 Blockly.Msg.NAO_SETLANGUAGE_TOOLTIP = 'Set the language. Be aware that it is necessary to download the language pack before you can use it. For more information refer to the manual of your robot.';
@@ -824,9 +824,9 @@ Blockly.Msg.NAO_PLAYFILE_TOOLTIP = 'Plays a sound file from the robot. Enter the
 Blockly.Msg.NAO_TAKEPICTURE_TOOLTIP = 'Takes a picture and saves it on the robot. Access the robots file system to view the picture.';
 Blockly.Msg.NAO_RECORDVIDEO_TOOLTIP = 'Records a video and saves it on the robot. Access the robots file system to view the video.';
 
-Blockly.Msg.NAO_LED_TOOLTIP = 'Set the color of a group of LEDs.';
-Blockly.Msg.NAO_SETINTENSITY_TOOLTIP = 'Set the intensity of a group of LEDs in a range from 0 to 100.';
-Blockly.Msg.NAO_LEDOFF_TOOLTIP = 'Turn the selected LEDs off.';
+Blockly.Msg.NAO_LED_TOOLTIP = 'Set the color of selected LED(s). Eyes and feet LEDs are available.';
+Blockly.Msg.NAO_SETINTENSITY_TOOLTIP = 'Set the intensity of selected LED(s) in a range from 0 to 100. Ears, head and chest LEDs are available';
+Blockly.Msg.NAO_LEDOFF_TOOLTIP = 'Turn the selected LED(s) off.';
 Blockly.Msg.NAO_LEDRESET_TOOLTIP = 'Reset the selected LEDs to their original state regarding colour and intensity.';
 Blockly.Msg.NAO_RANDOMEYES_TOOLTIP = 'The color of the eyes is changed randomly for a specified amount of time entered in milliseconds.';
 Blockly.Msg.NAO_RASTA_TOOLTIP = 'The color of the eyes is changed between green, yellow and red for a specified amount of time entered in milliseconds.';
