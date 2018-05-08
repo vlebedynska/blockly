@@ -605,7 +605,8 @@ Blockly.Blocks['naoActions_forgetFace'] = {
     init : function() {
         this.setColour(Blockly.CAT_ACTION_RGB);
         this.appendValueInput('NAME').appendField(Blockly.Msg.NAO_FORGETFACEOF);
-        this.setOutput(true, 'Boolean');
+        this.setNextStatement(true);
+        this.setPreviousStatement(true);
         this.setTooltip(Blockly.Msg.NAO_FORGETFACE_TOOLTIP);
     }
 };
