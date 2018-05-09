@@ -443,6 +443,7 @@
   "TIMER_GETSAMPLE_TOOLTIP":"Gibt den aktuellen Wert des Zeitgebers zurück.",
   "TIMER_RESET_TOOLTIP":"Setzt den Zeitgeber zurück.",
   "TOOLBOX_ACTION":"Aktion",
+  "TOOLBOX_WALK":"Gehen",
   "TOOLBOX_COLOUR":"Farben",
   "TOOLBOX_COMMUNICATION":"Nachrichten",
   "TOOLBOX_CONTROL":"Kontrolle",
@@ -1046,6 +1047,8 @@
   "ABOUT" : "über",
   "NAO_STIFFNESS" : "Blockiere Motoren",
   "NAO_AUTONOMOUS" : "Schalte autonomes Verhalten",
-  "THETA" : "Theta"
+  "THETA" : "Theta",
+  "START_PROGRAM_AUTOMOMOUSLIFE" : "autonomes Verhalten"
+  
 }
  

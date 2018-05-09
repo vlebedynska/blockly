@@ -504,9 +504,9 @@ Blockly.Msg.VALIDATION_CONTAINS_SPECIAL_CHARACTERS = 'Valid special characters: 
 Blockly.Msg.VALIDATION_MAX_LENGTH = 'The max. lenght is 25 characters!'
 
 Blockly.Msg.SIM_BLOCK_NOT_SUPPORTED = 'Unfortunately you can not use this block in the simulation!';
-Blockly.Msg.SIM_CONFIGURATION_WARNING_SENSOR_MISSING = 'This sensor is not in the configuration! The behavior of the program on the real robot will be different than expected!';
-Blockly.Msg.SIM_CONFIGURATION_WARNING_WRONG_SENSOR_PORT = 'In this block you have used a wrong sensor port! The behavior of the program on the real robot will be different than expected, please check the robot configuration!';
-Blockly.Msg.SIM_CONFIGURATION_WARNING_WRONG_INFRARED_SENSOR_PORT = 'The infrared sensor is not connected in the configuration! The behavior of the program on the real robot will be different than expected, please check the robot configuration!';
+Blockly.Msg.SIM_CONFIGURATION_WARNING_SENSOR_MISSING = 'This sensor is not in the configuration! The behaviour of the program on the real robot will be different than expected!';
+Blockly.Msg.SIM_CONFIGURATION_WARNING_WRONG_SENSOR_PORT = 'In this block you have used a wrong sensor port! The behaviour of the program on the real robot will be different than expected, please check the robot configuration!';
+Blockly.Msg.SIM_CONFIGURATION_WARNING_WRONG_INFRARED_SENSOR_PORT = 'The infrared sensor is not connected in the configuration! The behaviour of the program on the real robot will be different than expected, please check the robot configuration!';
 Blockly.Msg.SERVER_NOT_AVAILABLE = 'The Open Roberta Lab is currently not available. </br>Your internet connection was interrupted. If you currently have an EV3 connected via the USB cable solve this with a click on the programming environment.<br>If this problem persists please check your internet connection and try to reload this website. If you have this problem again, please don"t hesitate to contact us via mail:</br>roberta-zentrale@iais.fraunhofer.de';
 Blockly.Msg.MENU_MESSAGE_DOWNLOAD = 'Your program has been successfully downloaded.';
 Blockly.Msg.POPUP_PROGRAM_TERMINATED_UNEXPECTED = 'The execution of the program on the robot has terminated unexpectedly!';
@@ -686,7 +686,7 @@ Blockly.Msg.NAO_APPLYPOSTURE = 'let NAO';
 Blockly.Msg.NAO_POINTAT = 'point at';
 Blockly.Msg.NAO_LOOKAT = 'look at';
 Blockly.Msg.NAO_STIFFNESS = 'lock motors';
-Blockly.Msg.NAO_AUTONOMOUS = 'turn autonomous life';
+Blockly.Msg.NAO_AUTONOMOUS = 'turn autonomous behaviour';
 Blockly.Msg.NAO_WALK = 'walk';
 Blockly.Msg.NAO_WALKTO = 'walk to';
 Blockly.Msg.NAO_STOP = 'stop movement';
@@ -800,7 +800,7 @@ Blockly.Msg.VOICE_PITCH = 'voice pitch';
 /// NAO tooltips
 Blockly.Msg.NAO_APPLYPOSTURE_TOOLTIP = 'Robot will take the selected posture or position. Use the dropdown menu to choose one.';
 Blockly.Msg.NAO_STIFFNESS_TOOLTIP = 'The stiffness of the selected body part of the robot will be turned on or off. Be aware that releasing the leg motors while the robot is standing may result in robot collapsing.';
-Blockly.Msg.NAO_AUTONOMOUS_TOOLTIP = 'Turn the robots autonomous life on or off. While "on" the robot will react to sounds, move slightly from side to side and try to track faces. Turn it off if this behaviour interrupts your program.'
+Blockly.Msg.NAO_AUTONOMOUS_TOOLTIP = 'Turn the robots autonomous behaviour on or off. While "on" the robot will react to sounds, move slightly from side to side and try to track faces. Turn it off if this behaviour interrupts your program.'
 Blockly.Msg.NAO_HAND_TOOLTIP = 'Open or close a single hand (wrist) of the robot.';
 Blockly.Msg.NAO_MOVEJOINT_TOOLTIP = 'Move a single joint of the robot. A relative movement means that the current position of the selected joint is used to calculate the new position. Be aware that every joint has different limits. Therefore the input range for the degerees varies.';
 
@@ -1139,5 +1139,5 @@ Blockly.Msg.MODE_WORD = 'word';
 Blockly.Msg.MODE_INFO = 'information';
 Blockly.Msg.ABOUT = 'about';
 Blockly.Msg.THETA = 'theta';
-
+Blockly.Msg.START_PROGRAM_AUTOMOMOUSLIFE = 'autonomous behaviour';
 

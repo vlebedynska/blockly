@@ -5,7 +5,7 @@
 <title>Blockly Playground</title>
 <script src="../blockly_compressed.js"></script>
 <script src="../msg/js/de.js"></script>
-<script src="../robMsg/robMessages.js"></script>
+<!-- <script src="../robMsg/robMessages.js"></script> -->
 <script src="../core/blockly.js"></script>
 <script src="../core/css.js"></script>
 <script src="../core/inject.js"></script>
@@ -63,9 +63,10 @@
 var rtl = (document.location.search == '?rtl');
 var workspace = null;
 var device = 'nao'
+var toolbox;
 
 function start() {
-  var toolbox = document.getElementById('toolbox');
+  toolbox = document.getElementById('toolboxBeginner');
   workspace = Blockly.inject('blocklyDiv',
           {comments: true,
            disable: true,
@@ -166,7 +167,7 @@ function logger(e) {
 
 function airstrike(n) {
   var prototypes = [];
-  var toolbox = document.getElementById('toolbox');
+  toolbox = document.getElementById('toolboxBeginner');
   var blocks = toolbox.getElementsByTagName('block');
   for (var i = 0, block; block = blocks[i]; i++) {
     prototypes.push(block.getAttribute('type'));
@@ -195,12 +196,13 @@ function spaghetti(n) {
   console.timeEnd('Spaghetti domToWorkspace');
 }
 
-function toggleDevice() {
-  if (device ==='ev3')
-      device = 'ardu';
-      else
-          device = 'ev3';
-  workspace.setDevice(device);
+function toggleToolbox(){
+    if (toolbox.id == 'toolboxExpert'){
+        toolbox = document.getElementById('toolboxBeginner');
+    } else {
+        toolbox = document.getElementById('toolboxExpert');
+    }
+    workspace.updateToolbox(toolbox);
 }
 
 var spaghettiXml = [
@@ -263,12 +265,155 @@ h1 {
 
   <div id="blocklyDiv"></div>
 
-<toolbox_set id="toolbox" style="display: none">
+<toolbox_set id="toolboxBeginner" style="display: none">
+    <category name="TEST" svg="true">
+        <block type='robControls_start'></block>
+        <block type="robSensors_getSample"></block>
+    </category>
+   <category name="TOOLBOX_ACTION" svg="true">
+      <block type="naoActions_applyPosture"></block> 
+      <block type="naoActions_walk">
+         <field name="DIRECTION">FOREWARD</field>
+         <value name="POWER">
+            <block type="math_number">
+               <field name="NUM">50</field>
+            </block>
+         </value>
+      </block>
+      <block type="naoActions_turn">
+         <field name="DIRECTION">LEFT</field>
+         <value name="POWER">
+            <block type="math_number">
+               <field name="NUM">90</field>
+            </block>
+         </value>
+      </block>
+      <block type="naoActions_animation"></block>     
+       <block type="robActions_sayText">
+         <value name="OUT">
+            <block type="text">
+               <field name="TEXT">Hallo</field>
+            </block>
+         </value>
+      </block>
+      <block type="naoActions_rgbLeds">
+         <value name="COLOR">
+            <block type="naoColour_picker">
+               <field name="COLOUR">#ff0000</field>
+            </block>
+         </value>
+      </block>
+      <block type="naoActions_setIntensity">
+         <value name="INTENSITY">
+            <block type="math_number">
+               <field name="NUM">50</field>
+            </block>
+         </value>
+      </block>
+      <block type="naoActions_ledOff"></block>
+      <block type="naoActions_randomEyes">
+         <value name="DURATION">
+            <block type="math_number">
+               <field name="NUM">2000</field>
+            </block>
+         </value>
+      </block>
+      <block type="naoActions_rasta">
+         <value name="DURATION">
+            <block type="math_number">
+               <field name="NUM">2000</field>
+            </block>
+         </value>
+      </block>
+      <block type="naoActions_setVolume">
+         <value name="VOLUME">
+            <block type="math_number">
+               <field name="NUM">50</field>
+            </block>
+         </value>
+      </block>
+   </category>
+   <category name="TOOLBOX_SENSOR" svg="true">
+      <block type="robSensors_touch_getSample"></block>
+        <block type="robSensors_ultrasonic_getSample"></block>
+        <block type="robSensors_detectmark_getSample"></block>
+        <block type="naoSensors_getMarkInformation">
+            <value name="VALUE">
+                <block type="math_number">
+                    <field name="NUM">84</field>
+                </block>
+            </value>
+            </block>
+        <block type="robSensors_detectface_getSample"></block>
+         <block type="naoSensors_getFaceInformation">
+            <value name="VALUE">
+                <block type="text">
+                    <field name="TEXT">Roberta</field>
+                </block>
+            </value>
+        </block>
+        <block type="naoSensors_recognizeWord"></block>
+   </category>
+   <category name="TOOLBOX_CONTROL" svg="true">
+      <block type="robControls_if"></block>
+      <block type="robControls_ifElse"></block>
+      <block type="controls_whileUntil">
+          <field name="MODE">UNTIL</field>
+          <value name="BOOL">
+              <block type="robSensors_touch_getSample">
+              </block>
+         </value>
+     </block>
+      <block type="robControls_wait_time">
+         <value name="WAIT">
+            <block type="math_number">
+               <field name="NUM">500</field>
+            </block>
+         </value>
+      </block>
+      <block type="robControls_wait_for">
+         <value name="WAIT0">
+            <block type="logic_compare">
+               <field name="OP">EQ</field>
+               <mutation operator_range="BOOL"></mutation>
+               <value name="A">
+                  <block type="robSensors_getSample"></block>
+               </value>
+               <value name="B">
+                  <block type="logic_boolean"></block>
+               </value>
+            </block>
+         </value>
+      </block>
+   </category>
+   <category name="TOOLBOX_LOGIC" svg="true">
+      <block type="logic_compare"></block>
+      <block type="logic_operation"></block>
+      <block type="logic_boolean"></block>
+   </category>
+   <category name="TOOLBOX_MATH" svg="true">
+      <block type="math_number"></block>
+      <block type="math_arithmetic"></block>
+   </category>
+   <category name="TOOLBOX_TEXT" svg="true">
+      <block type="text"></block>
+      <block type="text_comment"></block>
+   </category>
+   <category name="TOOLBOX_COLOUR" svg="true">
+      <block type="naoColour_picker"></block>
+      <block type="naoColour_rgb"></block>
+   </category>
+   <category name="TOOLBOX_VARIABLE" custom="VARIABLE" svg="true"></category>
+</toolbox_set>
+
+<toolbox_set id="toolboxExpert" style="display: none">
+    <category name="TEST" svg="true">
+        <block type='robControls_start'></block>
+        <block type="robSensors_getSample"></block>
+    </category>
     <category name="TOOLBOX_ACTION" svg="true">
         <category name="TOOLBOX_MOVE" svg="true">
-            <block type="naoActions_applyPosture"></block>
-            <block type="naoActions_stiffness"></block>
-            <block type="naoActions_autonomous"></block>
+            <block type="naoActions_applyPosture"></block>           
             <block type="naoActions_hand"></block>
             <block type="naoActions_moveJoint">
                 <value name="POWER">
@@ -277,13 +422,14 @@ h1 {
                     </block>
                 </value>
             </block>
+            <block type="naoActions_stiffness"></block>
         </category>
         <category name="TOOLBOX_WALK" svg="true">
             <block type="naoActions_walk">
                 <field name="DIRECTION">FOREWARD</field>
                 <value name="POWER">
                     <block type="math_number">
-                        <field name="NUM">2</field>
+                        <field name="NUM">50</field>
                     </block>
                 </value>
             </block>
@@ -291,7 +437,7 @@ h1 {
                 <field name="DIRECTION">LEFT</field>
                 <value name="POWER">
                     <block type="math_number">
-                        <field name="NUM">20</field>
+                        <field name="NUM">90</field>
                     </block>
                 </value>
             </block>
@@ -333,6 +479,7 @@ h1 {
         </category>
         <category name="TOOLBOX_ANIMATION" svg="true">
             <block type="naoActions_animation"></block>
+            <block type="naoActions_autonomous"></block>
             <block type="naoActions_pointLookAt">
                 <value name="X">
                     <block type="math_number">
@@ -356,19 +503,7 @@ h1 {
                 </value>
             </block>
         </category>
-        <category name="TOOLBOX_SOUND" svg="true">
-            <block type="naoActions_setVolume">
-                <value name="VOLUME">
-                    <block type="math_number">
-                        <field name="NUM">50</field>
-                    </block>
-                </value>
-            </block>
-            <block type="naoActions_getVolume"></block>
-            <block type="robActions_setLanguage">
-                <field name="LANGUAGE">GERMAN</field>
-            </block>
-            <block type="naoActions_getLanguage"></block>
+        <category name="TOOLBOX_SOUND" svg="true">          
             <block type="robActions_sayText">
                 <value name="OUT">
                     <block type="text">
@@ -393,15 +528,41 @@ h1 {
                     </block>
                 </value>
             </block>
-            <block type="naoActions_playFile">
+<!--             <block type="naoActions_playFile">
                 <value name="OUT">
                     <block type="text">
                         <field name="TEXT">Roberta</field>
                     </block>
                 </value>
+            </block> -->
+            <block type="naoActions_getLanguage"></block>
+            <block type="robActions_setLanguage">
+                <field name="LANGUAGE">GERMAN</field>
+            </block>
+            <block type="naoActions_getVolume"></block>
+            <block type="naoActions_setVolume">
+                <value name="VOLUME">
+                    <block type="math_number">
+                        <field name="NUM">50</field>
+                    </block>
+                </value>
             </block>
         </category>
         <category name="TOOLBOX_VISION" svg="true">
+            <block type="naoActions_learnFace">
+                <value name="NAME">
+                    <block type="text">
+                        <field name="TEXT">Roberta</field>
+                    </block>
+                </value>
+            </block>
+            <block type="naoActions_forgetFace">
+                <value name="NAME">
+                    <block type="text">
+                        <field name="TEXT">Roberta</field>
+                    </block>
+                </value>
+            </block>
             <block type="naoActions_takePicture">
                 <value name="FILENAME">
                     <block type="text">
@@ -420,21 +581,7 @@ h1 {
                         <field name="TEXT">RobertaVideo</field>
                     </block>
                 </value>
-            </block>
-            <block type="naoActions_learnFace">
-                <value name="NAME">
-                    <block type="text">
-                        <field name="TEXT">Roberta</field>
-                    </block>
-                </value>
-            </block>
-            <block type="naoActions_forgetFace">
-                <value name="NAME">
-                    <block type="text">
-                        <field name="TEXT">Roberta</field>
-                    </block>
-                </value>
-            </block>
+            </block>            
         </category>
         <category name="TOOLBOX_LIGHT" svg="true">
             <block type="naoActions_rgbLeds">
@@ -470,30 +617,29 @@ h1 {
         </category>
     </category>
     <category name="TOOLBOX_SENSOR" svg="true">
-        <block type="robSensors_getSample"></block>
         <block type="robSensors_touch_getSample"></block>
         <block type="robSensors_ultrasonic_getSample"></block>
-        <block type="robSensors_gyro_getSample"></block>
-        <block type="robSensors_accelerometer_getSample"></block>
-        <block type="robSensors_fsr_getSample"></block>
-        <block type="robSensors_electriccurrent_getSample"></block>
         <block type="robSensors_detectmark_getSample"></block>
-        <block type="naoSensors_recognizeWord"></block>
-        <block type="robSensors_detectface_getSample"></block>
         <block type="naoSensors_getMarkInformation">
             <value name="VALUE">
                 <block type="math_number">
                     <field name="NUM">84</field>
                 </block>
             </value>
-        </block>
-        <block type="naoSensors_getFaceInformation">
+            </block>
+        <block type="robSensors_detectface_getSample"></block>
+         <block type="naoSensors_getFaceInformation">
             <value name="VALUE">
                 <block type="text">
                     <field name="TEXT">Roberta</field>
                 </block>
             </value>
         </block>
+        <block type="naoSensors_recognizeWord"></block>
+        <block type="robSensors_gyro_getSample"></block>
+        <block type="robSensors_accelerometer_getSample"></block>
+        <block type="robSensors_fsr_getSample"></block>
+        <block type="robSensors_electriccurrent_getSample"></block>    
     </category>
     <category name="TOOLBOX_CONTROL" svg="true">
         <category name="TOOLBOX_DECISION" svg="true">
@@ -502,6 +648,7 @@ h1 {
         </category>
         <category name="TOOLBOX_LOOP" svg="true">
             <block type="robControls_loopForever"></block>
+            <block type="controls_whileUntil"></block>
             <block type="controls_repeat_ext">
                 <value name="TIMES">
                     <block type="math_number">
@@ -509,7 +656,7 @@ h1 {
                     </block>
                 </value>
             </block>
-            <block type="controls_whileUntil"></block>
+            
             <block type="robControls_for">
                 <value name="FROM">
                     <block type="math_number">
@@ -530,16 +677,15 @@ h1 {
             <block type="robControls_forEach"></block>
             <block type="controls_flow_statements"></block>
         </category>
-        <category name="TOOLBOX_WAIT" svg="true">
-            <block type='robControls_start'></block>
-            <block type="robControls_wait"></block>
+        <category name="TOOLBOX_WAIT" svg="true">    
             <block type="robControls_wait_time">
                 <value name="WAIT">
                     <block type="math_number">
                         <field name="NUM">500</field>
                     </block>
                 </value>
-            </block>
+            </block>        
+            <block type="robControls_wait"></block>          
             <block type="robControls_wait_for">
                 <value name="WAIT0">
                     <block type="logic_compare">
@@ -629,7 +775,6 @@ h1 {
                 <block type="math_number"></block>
             </value>
         </block>
-        Lists
         <block type="robLists_repeat">
             <value name="NUM">
                 <block type="math_number">
@@ -646,7 +791,23 @@ h1 {
     </category>
     <category name="TOOLBOX_COLOUR" svg="true">
         <block type="naoColour_picker"></block>
-        <block type="naoColour_rgb"></block>
+        <block type="naoColour_rgb">
+            <value name="RED">
+                <block type="math_number" intask="false">
+                    <field name="NUM">120</field>
+                </block>
+            </value>
+            <value name="GREEN">
+                <block type="math_number" intask="false">
+                    <field name="NUM">120</field>
+                </block>
+            </value>
+            <value name="BLUE">
+                <block type="math_number" intask="false">
+                    <field name="NUM">120</field>
+                </block>
+            </value>
+        </block>
     </category>
     <category name="TOOLBOX_VARIABLE" custom="VARIABLE" svg="true"></category>
     <category name="TOOLBOX_PROCEDURE" custom="PROCEDURE" svg="true"></category>
@@ -688,7 +849,7 @@ h1 {
     Stress test: &nbsp;
     <input type="button" value="Airstrike!" onclick="airstrike(100)">
     <input type="button" value="Spaghetti!" onclick="spaghetti(8)">
-    <input type="button" value="Toggle device!" onclick="toggleDevice()">
+    <input type="button" value="Toggle toolbox" onclick="toggleToolbox()">
   </p>
   <p>
     Log events: &nbsp;

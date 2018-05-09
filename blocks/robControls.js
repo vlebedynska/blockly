@@ -51,14 +51,20 @@ Blockly.Blocks['robControls_start'] = {
     init : function() {
         this.setColour(Blockly.CAT_ACTIVITY_RGB);
         var debug;
-        var textDebug = new Blockly.FieldDropdown([ [ Blockly.Msg.START_PROGRAM_DEBUG, 'a' ] ]);
-        if (this.workspace.device !== 'ev3') {
+        switch (this.workspace.device) {
+        case 'ev3':
+            debug = new Blockly.FieldCheckbox("FALSE");
+            var textDebug = new Blockly.FieldDropdown([ [ Blockly.Msg.START_PROGRAM_DEBUG || 'START_PROGRAM_DEBUG', 'a' ] ]);
+            this.appendDummyInput().appendField(Blockly.Msg.START_PROGRAM).appendField('  ').appendField(debug, "DEBUG").appendField(textDebug);
+            break;
+        case 'nao':
+            var textAtonomousLife = new Blockly.FieldDropdown([ [ Blockly.Msg.START_PROGRAM_AUTOMOMOUSLIFE || 'START_PROGRAM_AUTOMOMOUSLIFE', 'a' ] ]);
+            debug = new Blockly.FieldCheckbox("FALSE");
+            this.appendDummyInput().appendField(Blockly.Msg.START_PROGRAM).appendField('  ').appendField(debug, "DEBUG").appendField(textAtonomousLife);
+            break;
+        default:
             debug = new Blockly.FieldHidden();
             this.appendDummyInput().appendField(Blockly.Msg.START_PROGRAM).appendField('  ').appendField(debug, "DEBUG");
-        } else {
-            debug = new Blockly.FieldCheckbox("FALSE");
-            this.appendDummyInput().appendField(Blockly.Msg.START_PROGRAM).appendField('  ').appendField(debug, "DEBUG").appendField(textDebug);
-
         }
         this.declare_ = false;
         this.setPreviousStatement(false);

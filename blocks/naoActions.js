@@ -394,7 +394,7 @@ Blockly.Blocks['naoActions_getLanguage'] = {
      */
     init : function() {
         this.setColour(Blockly.CAT_ACTION_RGB);
-        this.appendDummyInput().appendField(Blockly.Msg.GET + ' ' +Blockly.Msg.LANGUAGE);
+        this.appendDummyInput().appendField(Blockly.Msg.GET + ' ' + Blockly.Msg.LANGUAGE);
         this.setOutput(true, 'String');
         this.setTooltip(Blockly.Msg.NAO_GETLANGUAGE_TOOLTIP);
     }
@@ -490,9 +490,9 @@ Blockly.Blocks['naoActions_setIntensity'] = {
      */
     init : function() {
         this.setColour(Blockly.CAT_ACTION_RGB);
-        var led = new Blockly.FieldDropdown([ [ Blockly.Msg.NAO_LED_EARS, 'EARS' ], [ Blockly.Msg.MOTOR_LEFT + " " + Blockly.Msg.NAO_LED_EAR, 'LEFTEAR' ],
-                [ Blockly.Msg.MOTOR_RIGHT + " " + Blockly.Msg.NAO_LED_EAR, 'RIGHTEAR' ], [ Blockly.Msg.NAO_LED_CHEST, 'CHEST' ],
-                [ Blockly.Msg.NAO_LED_HEAD, 'HEAD' ] ]);
+        var led = new Blockly.FieldDropdown([ [ Blockly.Msg.NAO_LED_HEAD, 'HEAD' ], [ Blockly.Msg.NAO_LED_EARS, 'EARS' ],
+                [ Blockly.Msg.MOTOR_LEFT + " " + Blockly.Msg.NAO_LED_EAR, 'LEFTEAR' ], [ Blockly.Msg.MOTOR_RIGHT + " " + Blockly.Msg.NAO_LED_EAR, 'RIGHTEAR' ],
+                [ Blockly.Msg.NAO_LED_CHEST, 'CHEST' ] ]);
         this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.NAO_LED).appendField(led, 'LED');
         this.appendValueInput('INTENSITY').setCheck('Number').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.NAO_INTENSITY);
         this.setPreviousStatement(true);
