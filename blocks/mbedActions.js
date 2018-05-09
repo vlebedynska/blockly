@@ -508,3 +508,29 @@ Blockly.Blocks['mbedActions_write_to_pin'] = {
         }
     }
 };
+
+Blockly.Blocks['mbedActions_pin_set_pull'] = {
+    /**
+     * Sets the chosen pin to the specified pull.
+     * 
+     * @constructs mbedActions_pin_set_pull
+     * @this.Blockly.Block
+     * @param {String/dropdown}
+     *            PULL - up, down, none
+     * @param {String/dropdown}
+     *            PIN - 0-3
+     * @returns immediately
+     * @memberof Block
+     */
+
+    init : function() {
+        this.setColour(Blockly.CAT_ACTION_RGB);
+        var pull = new Blockly.FieldDropdown([ [ Blockly.Msg.PIN_PULL_UP, 'UP' ], [ Blockly.Msg.PIN_PULL_DOWN, 'DOWN' ], [ Blockly.Msg.PIN_PULL_NONE, 'NONE' ] ]);
+        var pins = new Blockly.FieldDropdown([ [ '0', '0' ], [ '1', '1' ], [ '2', '2' ], [ '3', '3' ], [ 'A0', '4' ], [ 'A1', '5' ] ]);
+        this.appendDummyInput().appendField(Blockly.Msg.SET + ' ' + Blockly.Msg.PIN_PULL).appendField(pull, 'PIN_PULL')
+        .appendField(Blockly.Msg.ON + ' ' + Blockly.Msg.SENSOR_PIN).appendField(pins, 'PIN_PORT'); // shouldnt be called PIN, would need a special clause in xml.js like mbedActions_write_to_pin
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setTooltip(Blockly.Msg.PIN_SET_PULL_TOOLTIP);
+    }
+};

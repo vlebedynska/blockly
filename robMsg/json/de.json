@@ -1048,7 +1048,11 @@
   "NAO_STIFFNESS" : "Blockiere Motoren",
   "NAO_AUTONOMOUS" : "Schalte autonomes Verhalten",
   "THETA" : "Theta",
-  "START_PROGRAM_AUTOMOMOUSLIFE" : "autonomes Verhalten"
-  
+  "START_PROGRAM_AUTOMOMOUSLIFE" : "autonomes Verhalten",
+  "PIN_PULL" : "Pull",
+  "PIN_PULL_UP" : "up",
+  "PIN_PULL_DOWN" : "down",
+  "PIN_PULL_NONE" : "keiner",
+  "PIN_SET_PULL_TOOLTIP" : "Setzt den Pull des ausgewählten digitalen Pins."
 }
  
