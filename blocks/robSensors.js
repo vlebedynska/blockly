@@ -182,7 +182,7 @@ Blockly.Blocks['robSensors_generic'] = {
                 portList.push([ Blockly.Msg[sensor.modes[0].ports[i][0]] || sensor.modes[0].ports[i][0], sensor.modes[0].ports[i][1] ]);
             }
             ports = new Blockly.FieldDropdown(portList);
-            this.sensorPort_ = sensor.modes[0].ports[0][1];
+            //this.sensorPort_ = sensor.modes[0].ports[0][1];
         } else if (sensor.ports === 'CONFIGURATION') {
             this.dependConfig = true;
             var portList = [];

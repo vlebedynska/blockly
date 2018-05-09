@@ -96,8 +96,8 @@ Blockly.Blocks['controls_whileUntil'] = {
    */
   init: function() {
     var OPERATORS =
-        [[Blockly.Msg.CONTROLS_WHILEUNTIL_OPERATOR_WHILE, 'WHILE'],
-         [Blockly.Msg.CONTROLS_WHILEUNTIL_OPERATOR_UNTIL, 'UNTIL']];
+        [[Blockly.Msg.CONTROLS_WHILEUNTIL_OPERATOR_UNTIL, 'UNTIL'], 
+        [Blockly.Msg.CONTROLS_WHILEUNTIL_OPERATOR_WHILE, 'WHILE']];
     this.setHelpUrl(Blockly.Msg.CONTROLS_WHILEUNTIL_HELPURL);
     this.setColour(Blockly.CAT_CONTROL_RGB);
     this.appendValueInput('BOOL')
