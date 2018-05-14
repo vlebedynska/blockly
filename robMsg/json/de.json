@@ -916,6 +916,8 @@
   "INFRARED_PRESENCE_GETSAMPLE_TOOLTIP" : "Gibt eine Liste von Werten des Infrarotsensors zurück, wenn ein Beacon anwesend ist.",
   "SENSOR_BATTERY" : "Batterieladung",
   "SENSOR_ACCELEROMETER" : "Beschleunigungssensor",
+  "SENSOR_WALL" : "Wandsensor",
+  "SENSOR_DROP_OFF": "Drop off sensor",
   "MODE_ACCELERATION" : "Beschleunigung",
   "SENSOR_PINTOUCH" : "Pin",
   "MODE_PULSE_LOW":"Pulszeit LOW",

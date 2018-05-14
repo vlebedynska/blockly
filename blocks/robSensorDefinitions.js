@@ -65,6 +65,8 @@ sensors.accelerometer.nao = {
     ports : [ [ 'x', 'X' ], [ 'y', 'Y' ], [ 'z', 'Z' ] ]
 };
 
+sensors.accelerometer.vorwerk = sensors.accelerometer.calliope;
+
 sensors.battery = {};
 sensors.battery.ardu = {
     title : 'BATTERY',
@@ -73,17 +75,6 @@ sensors.battery.ardu = {
         type : 'Number',
         unit : 'VOLT'
     } ]
-};
-
-sensors.potentiometer = {};
-sensors.potentiometer.arduino = {
-    title : 'POTENTIOMETER',
-    modes : [ {
-        name : 'VALUE',
-        type : 'Number',
-        unit : 'VOLT'
-    } ],
-    ports : 'CONFIGURATION'
 };
 
 sensors.code = {};
@@ -183,6 +174,55 @@ sensors.compass.ev3 = {
     standardPort : '1'
 };
 
+sensors.detectface = {};
+sensors.detectface.nao = {
+    title : 'DETECTFACE',
+    modes : [ {
+        name : 'NAMEONE',
+        type : 'String',
+        value : 'Roberta'
+    }, {
+        name : 'NAMEALL',
+        type : 'Array_String'
+    } ]
+};
+
+sensors.drop = {};
+sensors.drop.arduino = {
+    title : 'DROP',
+    modes : [ {
+        name : 'VALUE',
+        type : 'Number',
+        unit : 'PERCENT'
+    } ],
+    ports : 'CONFIGURATION'
+};
+
+sensors.drop_off = {};
+sensors.drop_off.vorwerk = {
+    title : 'DROP_OFF',
+    modes : [ {
+        name : 'DISTANCE',
+        type : 'Number',
+        unit : 'CM'
+    } ],
+    ports : [ ['LEFT', 'LEFT'], ['RIGHT', 'RIGHT'] ]
+};
+
+sensors.detectmark = {};
+sensors.detectmark.nao = {
+    title : 'DETECTMARK',
+    modes : [ {
+        name : 'IDONE',
+        type : 'Number',
+        value : '84',
+        op : 'NUM_EQ'
+    }, {
+        name : 'IDALL',
+        type : 'Array_Number'
+    } ]
+};
+
 sensors.encoder = {};
 sensors.encoder.ardu = {
     title : 'ENCODER',
@@ -201,6 +241,7 @@ sensors.encoder.ardu = {
     } ],
     ports : [ [ 'A', 'A' ], [ 'B', 'B' ], [ 'C', 'C' ], [ 'D', 'D' ] ]
 };
+
 sensors.encoder.ev3 = {
     title : 'ENCODER',
     modes : [ {
@@ -223,6 +264,7 @@ sensors.encoder.ev3 = {
     ports : [ [ 'A', 'A' ], [ 'B', 'B' ], [ 'C', 'C' ], [ 'D', 'D' ] ],
     standardPort : 'B'
 };
+
 sensors.encoder.nxt = {
     title : 'ENCODER',
     modes : [ {
@@ -256,6 +298,66 @@ sensors.encoder.arduino = {
         value : 2
     } ],
     ports : 'CONFIGURATION'
+};
+
+sensors.electriccurrent = {};
+sensors.electriccurrent.nao = {
+    title : 'ELECTRICCURRENT',
+    modes : [ {
+        name : 'VALUE',
+        type : 'Number',
+        unit : 'AMPERE'
+    } ],
+    ports : [
+            {
+                port : [ 'PORT_HEAD', 'HEAD' ],
+                slots : [ [ 'SLOT_YAW', 'YAW' ], [ 'SLOT_PITCH', 'PITCH' ] ]
+            },
+            {
+                port : [ 'PORT_SHOULDER', 'SHOULDER' ],
+                slots : [ [ 'SLOT_LEFT_PITCH', 'LEFT_PITCH' ], [ 'SLOT_LEFT_ROLL', 'LEFT_ROLL' ], [ 'SLOT_RIGHT_PITCH', 'RIGHT_PITCH' ],
+                        [ 'SLOT_RIGHT_ROLL', 'RIGHT_ROLL' ] ]
+            },
+            {
+                port : [ 'PORT_ELBOW', 'ELBOW' ],
+                slots : [ [ 'SLOT_LEFT_YAW', 'LEFT_YAW' ], [ 'SLOT_LEFT_ROLL', 'LEFT_ROLL' ], [ 'SLOT_RIGHT_YAW', 'RIGHT_YAW' ],
+                        [ 'SLOT_RIGHT_ROLL', 'RIGHT_ROLL' ] ]
+            },
+            {
+                port : [ 'PORT_WRIST', 'WRIST' ],
+                slots : [ [ 'SLOT_LEFT_YAW', 'LEFT_YAW' ], [ 'SLOT_RIGHT_YAW', 'RIGHT_YAW' ] ]
+            },
+            {
+                port : [ 'PORT_HAND', 'HAND' ],
+                slots : [ [ 'LEFT', 'LEFT' ], [ 'RIGHT', 'RIGHT' ] ]
+            },
+            {
+                port : [ 'PORT_HIP', 'HIP' ],
+                slots : [ [ 'SLOT_LEFT_YAW_PITCH', 'LEFT_YAW_PITCH' ], [ 'SLOT_LEFT_ROLL', 'LEFT_ROLL' ], [ 'SLOT_LEFT_PITCH', 'LEFT_PITCH' ],
+                        [ 'SLOT_RIGHT_YAW_PITCH', 'RIGHT_YAW_PITCH' ], [ 'SLOT_RIGHT_ROLL', 'RIGHT_ROLL' ], [ 'SLOT_RIGHT_PITCH', 'RIGHT_PITCH' ] ]
+            },
+            {
+                port : [ 'PORT_KNEE', 'KNEE' ],
+                slots : [ [ 'SLOT_LEFT_PITCH', 'LEFT_PITCH' ], [ 'SLOT_RIGHT_PITCH', 'RIGHT_PITCH' ] ]
+            },
+            {
+                port : [ 'PORT_ANKLE', 'ANKLE' ],
+                slots : [ [ 'SLOT_LEFT_PITCH', 'LEFT_PITCH' ], [ 'SLOT_LEFT_ROLL', 'LEFT_ROLL' ], [ 'SLOT_RIGHT_PITCH', 'RIGHT_PITCH' ],
+                        [ 'SLOT_RIGHT_ROLL', 'RIGHT_ROLL' ] ]
+            } ]
+};
+
+sensors.fsr = {};
+sensors.fsr.nao = {
+    title : 'FSR',
+    modes : [ {
+        name : 'VALUE',
+        type : 'Number',
+        unit : 'NEWTON',
+        op : 'NUM_REV',
+        value : 10
+    } ],
+    ports : [ [ 'LEFT', 'LEFT' ], [ 'RIGHT', 'RIGHT' ] ]
 };
 
 sensors.gesture = {};
@@ -324,6 +426,21 @@ sensors.gyro.ev3 = {
     ports : [ [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ],
     standardPort : '2'
 };
+
+sensors.humidity = {};
+sensors.humidity.arduino = {
+    title : 'HUMIDITY',
+    modes : [ {
+        name : 'HUMIDITY',
+        type : 'Number',
+        unit : 'PERCENT'
+    }, {
+        name : 'TEMPERATURE',
+        type : 'Number',
+        unit : 'DEGREE'
+    } ],
+    ports : 'CONFIGURATION'
+}
 
 sensors.infrared = {};
 sensors.infrared.ardu = {
@@ -394,6 +511,7 @@ sensors.key.ardu = {
     } ],
     ports : [ [ '1', 'LEFT' ], [ '2', 'ENTER' ], [ '3', 'RIGHT' ], [ 'SENSOR_KEY_ANY', 'ANY' ] ]
 };
+
 sensors.key.arduino = {
     title : 'KEY',
     modes : [ {
@@ -403,6 +521,7 @@ sensors.key.arduino = {
     } ],
     ports : 'CONFIGURATION'
 };
+
 sensors.key.calliope = {
     title : 'KEY',
     modes : [ {
@@ -422,6 +541,7 @@ sensors.key.ev3 = {
     ports : [ [ 'SENSOR_KEY_ENTER', 'ENTER' ], [ 'SENSOR_KEY_UP', 'UP' ], [ 'SENSOR_KEY_DOWN', 'DOWN' ], [ 'SENSOR_KEY_LEFT', 'LEFT' ],
             [ 'SENSOR_KEY_RIGHT', 'RIGHT' ], [ 'SENSOR_KEY_ESCAPE', 'ESCAPE' ], [ 'SENSOR_KEY_ANY', 'ANY' ] ]
 };
+
 sensors.key.nxt = {
     title : 'KEY',
     modes : [ {
@@ -443,6 +563,7 @@ sensors.light.ardu = {
     } ],
     ports : [ [ '0', '0' ], [ '1', '1' ], [ '2', '2' ], [ '3', '3' ], [ '4', '4' ], [ '5', '5' ], [ '6', '6' ], [ '7', '7' ] ]
 };
+
 sensors.light.arduino = {
     title : 'LIGHT',
     modes : [ {
@@ -451,7 +572,8 @@ sensors.light.arduino = {
         unit : 'PERCENT'
     } ],
     ports : 'CONFIGURATION'
-}
+};
+
 sensors.light.calliope = {
     title : 'LIGHT',
     modes : [ {
@@ -460,6 +582,7 @@ sensors.light.calliope = {
         unit : 'PERCENT'
     } ]
 };
+
 sensors.light.nxt = {
     title : 'LIGHT',
     modes : [ {
@@ -477,101 +600,36 @@ sensors.light.nxt = {
     standardPort : '3'
 };
 
-sensors.rssi = {};
-sensors.rssi.calliope = {
-    title : 'RSSI',
-    modes : [ {
-        name : 'VALUE',
-        type : 'Number'
-    } ]
-};
-
-sensors.sound = {};
-sensors.sound.calliope = {
-    title : 'SOUND',
-    modes : [ {
-        name : 'SOUND',
-        type : 'Number',
-        unit : 'PERCENT',
-        op : 'NUM_REV',
-        value : 50
-    } ]
-}
-sensors.sound.ev3 = {
-    title : 'SOUND',
-    modes : [ {
-        name : 'SOUND',
-        type : 'Number',
-        unit : 'PERCENT',
-        op : 'NUM_REV',
-        value : 50
-    } ],
-    ports : [ [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ]
-}
-sensors.sound.nxt = {
-    title : 'SOUND',
-    modes : [ {
-        name : 'SOUND',
-        type : 'Number',
-        unit : 'PERCENT',
-        op : 'NUM_REV',
-        value : 50
-    } ],
-    ports : [ [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ],
-    standardPort : '2'
-}
-
-sensors.temperature = {};
-sensors.temperature.bob3 = {
-    title : 'TEMPERATURE',
+sensors.moisture = {};
+sensors.moisture.arduino = {
+    title : 'MOISTURE',
     modes : [ {
         name : 'VALUE',
         type : 'Number',
-        unit : 'DEGREE',
-        value : 20
-    } ]
-};
-sensors.temperature.arduino = {
-    title : 'TEMPERATURE',
-    modes : [ {
-        name : 'VALUE',
-        type : 'Number',
-        unit : 'DEGREE',
-        value : 20
+        unit : 'PERCENT'
     } ],
     ports : 'CONFIGURATION'
 };
 
-sensors.temperature.calliope = sensors.temperature.bob3
-sensors.temperature.microbit = sensors.temperature.bob3
-
-sensors.timer = {};
-sensors.timer.ardu = {
-    title : 'TIMER',
+sensors.motion = {};
+sensors.motion.arduino = {
+    title : 'MOTION',
     modes : [ {
-        name : 'VALUE',
-        type : 'Number',
-        unit : 'MS',
-        op : 'NUM_REV',
-        value : 500
+        name : 'PRESENCE',
+        type : 'Boolean'
     } ],
-    ports : [ [ ' 1', '1' ] ]
+    ports : 'CONFIGURATION'
 };
-sensors.timer.bob3 = sensors.timer.ardu;
-sensors.timer.calliope = sensors.timer.ardu;
-sensors.timer.nxt = sensors.timer.ardu;
-sensors.timer.microbit = sensors.timer.ardu;
-sensors.timer.arduino = sensors.timer.ardu;
-sensors.timer.ev3 = {
-    title : 'TIMER',
+
+sensors.potentiometer = {};
+sensors.potentiometer.arduino = {
+    title : 'POTENTIOMETER',
     modes : [ {
         name : 'VALUE',
         type : 'Number',
-        unit : 'MS',
-        op : 'NUM_REV',
-        value : 500
+        unit : 'VOLT'
     } ],
-    ports : [ [ ' 1', '1' ], [ ' 2', '2' ], [ ' 3', '3' ], [ ' 4', '4' ], [ ' 5', '5' ] ]
+    ports : 'CONFIGURATION'
 };
 
 sensors.pin = {};
@@ -631,6 +689,7 @@ sensors.pintouch.bob3 = {
         question : true
     } ]
 };
+
 sensors.pintouch.calliope = {
     title : 'PINTOUCH',
     ports : [ [ ' 0', '0' ], [ ' 1', '1' ], [ ' 2', '2' ], [ ' 3', '3' ] ],
@@ -641,7 +700,133 @@ sensors.pintouch.calliope = {
     } ],
     standardPort : '1'
 };
+
 sensors.pintouch.microbit = sensors.pintouch.calliope;
+
+sensors.pulse = {};
+sensors.pulse.arduino = {
+    title : 'PULSE',
+    modes : [ {
+        name : 'VALUE',
+        type : 'Number',
+        unit : 'PERCENT'
+    } ],
+    ports : 'CONFIGURATION'
+};
+
+sensors.rssi = {};
+sensors.rssi.calliope = {
+    title : 'RSSI',
+    modes : [ {
+        name : 'VALUE',
+        type : 'Number'
+    } ]
+};
+
+sensors.rfid = {};
+sensors.rfid.arduino = {
+    title : 'RFID',
+    modes : [ {
+        name : 'SERIAL',
+        type : 'Number'
+    }, {
+        name : 'PRESENCE',
+        type : 'Boolean'
+    } ],
+    ports : 'CONFIGURATION'
+};
+
+sensors.sound = {};
+sensors.sound.calliope = {
+    title : 'SOUND',
+    modes : [ {
+        name : 'SOUND',
+        type : 'Number',
+        unit : 'PERCENT',
+        op : 'NUM_REV',
+        value : 50
+    } ]
+}
+sensors.sound.ev3 = {
+    title : 'SOUND',
+    modes : [ {
+        name : 'SOUND',
+        type : 'Number',
+        unit : 'PERCENT',
+        op : 'NUM_REV',
+        value : 50
+    } ],
+    ports : [ [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ]
+};
+
+sensors.sound.nxt = {
+    title : 'SOUND',
+    modes : [ {
+        name : 'SOUND',
+        type : 'Number',
+        unit : 'PERCENT',
+        op : 'NUM_REV',
+        value : 50
+    } ],
+    ports : [ [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ],
+    standardPort : '2'
+}
+
+sensors.temperature = {};
+sensors.temperature.bob3 = {
+    title : 'TEMPERATURE',
+    modes : [ {
+        name : 'VALUE',
+        type : 'Number',
+        unit : 'DEGREE',
+        value : 20
+    } ]
+};
+
+sensors.temperature.arduino = {
+    title : 'TEMPERATURE',
+    modes : [ {
+        name : 'VALUE',
+        type : 'Number',
+        unit : 'DEGREE',
+        value : 20
+    } ],
+    ports : 'CONFIGURATION'
+};
+
+sensors.temperature.calliope = sensors.temperature.bob3
+sensors.temperature.microbit = sensors.temperature.bob3
+
+sensors.timer = {};
+sensors.timer.ardu = {
+    title : 'TIMER',
+    modes : [ {
+        name : 'VALUE',
+        type : 'Number',
+        unit : 'MS',
+        op : 'NUM_REV',
+        value : 500
+    } ],
+    ports : [ [ ' 1', '1' ] ]
+};
+sensors.timer.bob3 = sensors.timer.ardu;
+sensors.timer.calliope = sensors.timer.ardu;
+sensors.timer.nxt = sensors.timer.ardu;
+sensors.timer.microbit = sensors.timer.ardu;
+sensors.timer.arduino = sensors.timer.ardu;
+sensors.timer.ev3 = {
+    title : 'TIMER',
+    modes : [ {
+        name : 'VALUE',
+        type : 'Number',
+        unit : 'MS',
+        op : 'NUM_REV',
+        value : 500
+    } ],
+    ports : [ [ ' 1', '1' ], [ ' 2', '2' ], [ ' 3', '3' ], [ ' 4', '4' ], [ ' 5', '5' ] ]
+};
+
+
 
 sensors.touch = {};
 sensors.touch.ev3 = {
@@ -674,91 +859,15 @@ sensors.touch.nao = {
     } ]
 };
 
-sensors.fsr = {};
-sensors.fsr.nao = {
-    title : 'FSR',
+sensors.touch.vorwerk = {
+    title : 'TOUCH',
     modes : [ {
-        name : 'VALUE',
-        type : 'Number',
-        unit : 'NEWTON',
-        op : 'NUM_REV',
-        value : 10
+        name : 'PRESSED',
+        type : 'Boolean',
+        question : true
     } ],
-    ports : [ [ 'LEFT', 'LEFT' ], [ 'RIGHT', 'RIGHT' ] ]
-};
-
-sensors.detectface = {};
-sensors.detectface.nao = {
-    title : 'DETECTFACE',
-    modes : [ {
-        name : 'NAMEONE',
-        type : 'String',
-        value : 'Roberta'
-    }, {
-        name : 'NAMEALL',
-        type : 'Array_String',
-    } ]
-};
-
-sensors.detectmark = {};
-sensors.detectmark.nao = {
-    title : 'DETECTMARK',
-    modes : [ {
-        name : 'IDONE',
-        type : 'Number',
-        value : '84',
-        op : 'NUM_EQ'
-    }, {
-        name : 'IDALL',
-        type : 'Array_Number'
-    } ]
-};
-
-sensors.electriccurrent = {};
-sensors.electriccurrent.nao = {
-    title : 'ELECTRICCURRENT',
-    modes : [ {
-        name : 'VALUE',
-        type : 'Number',
-        unit : 'AMPERE'
-    } ],
-    ports : [
-            {
-                port : [ 'PORT_HEAD', 'HEAD' ],
-                slots : [ [ 'SLOT_YAW', 'YAW' ], [ 'SLOT_PITCH', 'PITCH' ] ]
-            },
-            {
-                port : [ 'PORT_SHOULDER', 'SHOULDER' ],
-                slots : [ [ 'SLOT_LEFT_PITCH', 'LEFT_PITCH' ], [ 'SLOT_LEFT_ROLL', 'LEFT_ROLL' ], [ 'SLOT_RIGHT_PITCH', 'RIGHT_PITCH' ],
-                        [ 'SLOT_RIGHT_ROLL', 'RIGHT_ROLL' ] ]
-            },
-            {
-                port : [ 'PORT_ELBOW', 'ELBOW' ],
-                slots : [ [ 'SLOT_LEFT_YAW', 'LEFT_YAW' ], [ 'SLOT_LEFT_ROLL', 'LEFT_ROLL' ], [ 'SLOT_RIGHT_YAW', 'RIGHT_YAW' ],
-                        [ 'SLOT_RIGHT_ROLL', 'RIGHT_ROLL' ] ]
-            },
-            {
-                port : [ 'PORT_WRIST', 'WRIST' ],
-                slots : [ [ 'SLOT_LEFT_YAW', 'LEFT_YAW' ], [ 'SLOT_RIGHT_YAW', 'RIGHT_YAW' ] ]
-            },
-            {
-                port : [ 'PORT_HAND', 'HAND' ],
-                slots : [ [ 'LEFT', 'LEFT' ], [ 'RIGHT', 'RIGHT' ] ]
-            },
-            {
-                port : [ 'PORT_HIP', 'HIP' ],
-                slots : [ [ 'SLOT_LEFT_YAW_PITCH', 'LEFT_YAW_PITCH' ], [ 'SLOT_LEFT_ROLL', 'LEFT_ROLL' ], [ 'SLOT_LEFT_PITCH', 'LEFT_PITCH' ],
-                        [ 'SLOT_RIGHT_YAW_PITCH', 'RIGHT_YAW_PITCH' ], [ 'SLOT_RIGHT_ROLL', 'RIGHT_ROLL' ], [ 'SLOT_RIGHT_PITCH', 'RIGHT_PITCH' ] ]
-            },
-            {
-                port : [ 'PORT_KNEE', 'KNEE' ],
-                slots : [ [ 'SLOT_LEFT_PITCH', 'LEFT_PITCH' ], [ 'SLOT_RIGHT_PITCH', 'RIGHT_PITCH' ] ]
-            },
-            {
-                port : [ 'PORT_ANKLE', 'ANKLE' ],
-                slots : [ [ 'SLOT_LEFT_PITCH', 'LEFT_PITCH' ], [ 'SLOT_LEFT_ROLL', 'LEFT_ROLL' ], [ 'SLOT_RIGHT_PITCH', 'RIGHT_PITCH' ],
-                        [ 'SLOT_RIGHT_ROLL', 'RIGHT_ROLL' ] ]
-            } ]
+    ports : [ [ 'LEFT', 'LEFT' ], ['RIGHT', 'RIGHT'] ],
+    slots : [ ['SLOT_FRONT', 'FRONT'], ['SLOT_SIDE', 'SIDE']]
 };
 
 sensors.ultrasonic = {};
@@ -815,76 +924,27 @@ sensors.ultrasonic.nao = {
     } ]
 };
 
-sensors.moisture = {};
-sensors.moisture.arduino = {
-    title : 'MOISTURE',
+sensors.ultrasonic.vorwerk = {
+    title : 'ULTRASONIC',
     modes : [ {
-        name : 'VALUE',
+        name : 'DISTANCE',
         type : 'Number',
-        unit : 'PERCENT'
+        unit : 'CM'
     } ],
-    ports : 'CONFIGURATION'
-}
+    ports: [ [ 'LEFT', 'LEFT' ], [ 'CENTER', 'CENTER' ], [ 'RIGHT', 'RIGHT' ] ],
+    slots: [ [ 'LEFT', 'LEFT' ], [ 'CENTER', 'CENTER' ], [ 'RIGHT', 'RIGHT' ] ]
+};
 
-sensors.humidity = {};
-sensors.humidity.arduino = {
-    title : 'HUMIDITY',
+sensors.wall = {};
+sensors.wall.vorwerk = {
+    title : 'WALL',
     modes : [ {
-        name : 'HUMIDITY',
+        name : 'DISTANCE',
         type : 'Number',
-        unit : 'PERCENT'
-    }, {
-        name : 'TEMPERATURE',
-        type : 'Number',
-        unit : 'DEGREE'
-    } ],
-    ports : 'CONFIGURATION'
-}
+        unit : 'CM'
+    } ]
+};
 
-sensors.motion = {};
-sensors.motion.arduino = {
-    title : 'MOTION',
-    modes : [ {
-        name : 'PRESENCE',
-        type : 'Boolean'
-    } ],
-    ports : 'CONFIGURATION'
-}
-
-sensors.pulse = {};
-sensors.pulse.arduino = {
-    title : 'PULSE',
-    modes : [ {
-        name : 'VALUE',
-        type : 'Number',
-        unit : 'PERCENT'
-    } ],
-    ports : 'CONFIGURATION'
-}
-
-sensors.drop = {};
-sensors.drop.arduino = {
-    title : 'DROP',
-    modes : [ {
-        name : 'VALUE',
-        type : 'Number',
-        unit : 'PERCENT'
-    } ],
-    ports : 'CONFIGURATION'
-}
-
-sensors.rfid = {};
-sensors.rfid.arduino = {
-    title : 'RFID',
-    modes : [ {
-        name : 'SERIAL',
-        type : 'Number'
-    }, {
-        name : 'PRESENCE',
-        type : 'Boolean'
-    } ],
-    ports : 'CONFIGURATION'
-}
 
 var sensorsAll = [];
 sensorsAll.ardu = [ sensors.infrared.ardu, sensors.light.ardu, sensors.compass.ardu, sensors.ultrasonic.ardu, sensors.colour.ardu, sensors.key.ardu ];
@@ -903,6 +963,7 @@ sensorsAll.arduino = [ sensors.key.arduino, sensors.timer.arduino, sensors.tempe
         sensors.motion.arduino, sensors.pulse.arduino, sensors.drop.arduino, sensors.rfid.arduino ];
 sensorsAll.nao = [ sensors.touch.nao, sensors.accelerometer.nao, sensors.gyro.nao, sensors.ultrasonic.nao, sensors.fsr.nao, sensors.electriccurrent.nao, sensors.detectface.nao,
         sensors.detectmark.nao ];
+sensorsAll.vorwerk = [ sensors.touch.vorwerk, sensors.accelerometer.vorwerk, sensors.ultrasonic.vorwerk, sensors.wall.vorwerk, sensors.drop_off.vorwerk ];
 
 function initSensors() {
     for ( var sensor in sensors) {
