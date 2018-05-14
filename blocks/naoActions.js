@@ -122,8 +122,8 @@ Blockly.Blocks['naoActions_moveJoint'] = {
                 [ Blockly.Msg.PORT_KNEE + " " + Blockly.Msg.SLOT_RIGHT_PITCH, 'RKNEEPITCH' ],
                 [ Blockly.Msg.PORT_ANKLE + " " + Blockly.Msg.SLOT_LEFT_PITCH, 'LANKLEPITCH' ],
                 [ Blockly.Msg.PORT_ANKLE + " " + Blockly.Msg.SLOT_RIGHT_PITCH, 'RANKLEPITCH' ],
-                [ Blockly.Msg.PORT_ANKLE + " " + Blockly.Msg.SLOT_RIGHT_ROLL, 'RANKLEROLL' ],
-                [ Blockly.Msg.PORT_ANKLE + " " + Blockly.Msg.SLOT_RIGHT_ROLL, 'LANKLEROLL' ] ]);
+                [ Blockly.Msg.PORT_ANKLE + " " + Blockly.Msg.SLOT_LEFT_ROLL, 'LANKLEROLL' ],
+                [ Blockly.Msg.PORT_ANKLE + " " + Blockly.Msg.SLOT_RIGHT_ROLL, 'RANKLEROLL' ] ]);
         var mode = new Blockly.FieldDropdown([ [ Blockly.Msg.NAO_ABSOLUTE, 'ABSOLUTE' ], [ Blockly.Msg.NAO_RELATIVE, 'RELATIVE' ] ]);
         this.appendValueInput('POWER').appendField(Blockly.Msg.NAO_MOVE).appendField(dropdown, 'joint').appendField(mode, 'MODE').appendField(Blockly.Msg.SENSOR_UNIT_DEGREE).setCheck('Number');
         this.setPreviousStatement(true);
