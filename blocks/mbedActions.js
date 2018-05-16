@@ -495,7 +495,8 @@ Blockly.Blocks['mbedActions_write_to_pin'] = {
         }
         if (protocol === 'ANALOG') {
             var pins = [ [ 'P1', '1' ], [ 'P2', '2' ], [ 'A1', '5' ],
-                         [ 'C4', 'C4'], [ 'C5', 'C5'], [ 'C6', 'C6'] ];
+                         [ 'C04', 'C04'], [ 'C05', 'C05'], [ 'C06', 'C06'],
+                         [ 'C16', 'C16'], [ 'C17', 'C17'] ];
             var pinField = this.getField("PIN");
             pinField.menuGenerator_ = pins;
             pinField.setValue("1");
@@ -503,7 +504,8 @@ Blockly.Blocks['mbedActions_write_to_pin'] = {
         } else if (protocol === 'DIGITAL') {
             var pins = [ [ 'P0', '0' ], [ 'P1', '1' ], [ 'P2', '2' ], [ 'P3', '3' ], [ 'A0', '4' ], [ 'A1', '5' ],
                          [ 'C04', 'C04'], [ 'C05', 'C05'], [ 'C06', 'C06'], [ 'C07', 'C07'], [ 'C08', 'C08'], [ 'C09', 'C09'],
-                         [ 'C10', 'C10'], [ 'C11', 'C11'], [ 'C12', 'C12'] ];
+                         [ 'C10', 'C10'], [ 'C11', 'C11'], [ 'C12', 'C12'], [ 'C16', 'C16'], [ 'C17', 'C17'], [ 'C18', 'C18'],
+                         [ 'C19', 'C19'] ];
             var pinField = this.getField("PIN");
             pinField.menuGenerator_ = pins;
             pinField.setValue("0");
@@ -531,7 +533,8 @@ Blockly.Blocks['mbedActions_pin_set_pull'] = {
         var pull = new Blockly.FieldDropdown([ [ Blockly.Msg.PIN_PULL_UP, 'UP' ], [ Blockly.Msg.PIN_PULL_DOWN, 'DOWN' ], [ Blockly.Msg.PIN_PULL_NONE, 'NONE' ] ]);
         var pins = new Blockly.FieldDropdown([ [ 'P0', '0' ], [ 'P1', '1' ], [ 'P2', '2' ], [ 'P3', '3' ], [ 'A0', '4' ], [ 'A1', '5' ],
                                                [ 'C04', 'C04'], [ 'C05', 'C05'], [ 'C06', 'C06'], [ 'C07', 'C07'], [ 'C08', 'C08'], [ 'C09', 'C09'],
-                                               [ 'C10', 'C10'], [ 'C11', 'C11'], [ 'C12', 'C12'] ]);
+                                               [ 'C10', 'C10'], [ 'C11', 'C11'], [ 'C12', 'C12'], [ 'C16', 'C16'], [ 'C17', 'C17'], [ 'C18', 'C18'],
+                                               [ 'C19', 'C19'] ]);
         this.appendDummyInput().appendField(Blockly.Msg.SET + ' ' + Blockly.Msg.PIN_PULL).appendField(pull, 'PIN_PULL')
         .appendField(Blockly.Msg.ON + ' ' + Blockly.Msg.SENSOR_PIN).appendField(pins, 'PIN_PORT'); // shouldnt be called PIN, would need a special clause in xml.js like mbedActions_write_to_pin
         this.setPreviousStatement(true);
