@@ -286,7 +286,7 @@ Blockly.TYPE_DROPDOWN = function(device, opt_handler) {
             [ Blockly.Msg.VARIABLES_TYPE_ARRAY_BOOLEAN, 'Array_Boolean' ],
             [ Blockly.Msg.VARIABLES_TYPE_ARRAY_STRING, 'Array_String' ],
             [ Blockly.Msg.VARIABLES_TYPE_ARRAY_COLOUR, 'Array_Colour' ],
-            [ Blockly.Msg.VARIABLES_TYPE_ARRAY_IMAGE, 'Array_Image' ],
+            [ Blockly.Msg.VARIABLES_TYPE_ARRAY_IMAGE, 'Array_Image' ]
         ], function(option) {
             if (option && this.sourceBlock_.getFieldValue('TYPE') !== option) {
                 this.sourceBlock_.updateType_(option);
@@ -298,6 +298,7 @@ Blockly.TYPE_DROPDOWN = function(device, opt_handler) {
     case 'bob3':
     case 'makeblock':
     case 'nao':
+    case 'vorwerk':
         return new Blockly.FieldDropdown([
             [ Blockly.Msg.VARIABLES_TYPE_NUMBER, 'Number' ],
             [ Blockly.Msg.VARIABLES_TYPE_BOOLEAN, 'Boolean' ],
@@ -380,6 +381,7 @@ Blockly.LIST_TYPE_DROPDOWN = function(device) {
     case 'makeblock':
     case 'microbit':
     case 'nao':
+    case 'vorwerk':
         return new Blockly.FieldDropdown([
             [ Blockly.Msg.VARIABLES_TYPE_NUMBER, 'Number' ],
             [ Blockly.Msg.VARIABLES_TYPE_BOOLEAN, 'Boolean' ],
