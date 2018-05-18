@@ -1155,3 +1155,16 @@ Blockly.Msg.BRICK_IPADDRESS = 'ip address';
 Blockly.Msg.BRICK_PORT = 'port';
 Blockly.Msg.BRICK_USERNAME = 'user name';
 Blockly.Msg.BRICK_PASSWORD = 'password';
+Blockly.Msg.BRUSH_ON = 'Turn Brush On (RPM)';
+Blockly.Msg.BRUSH_ON_TOOLTIP = 'Turns on the brush with RPM of the motor (0<=RPM<=10000)';
+Blockly.Msg.BRUSH_OFF = 'Turn Brush Off';
+Blockly.Msg.BRUSH_OFF_TOOLTIP = 'Turn the brush off.';
+Blockly.Msg.SIDE_BRUSH_OFF = 'Turn Side Brush Off';
+Blockly.Msg.SIDE_BRUSH_OFF_TOOLTIP = 'Turn the side brush off.';
+Blockly.Msg.SIDE_BRUSH_STATUS = 'Side Brush';
+Blockly.Msg.SIDE_BRUSH_TOOLTIP = 'Turn on/off the side brush.';
+
+Blockly.Msg.VACUUM_ON = 'Turn Vacuum On (%)';
+Blockly.Msg.VACUUM_ON_TOOLTIP = 'Turns on the vacuum speed in procent';
+Blockly.Msg.VACUUM_OFF = 'Turn Vacuum Off';
+Blockly.Msg.VACUUM_OFF_TOOLTIP = 'Turn the vacuum off.';
