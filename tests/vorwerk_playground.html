@@ -269,11 +269,13 @@ h1 {
     </category>
    <category name="TOOLBOX_ACTION" svg="true">
 	<block type="vorwerkActions_play_file"></block>
-	<block type="vorwerkActions_brush_on"></block>
+	<block type="vorwerkActions_brush_on"><value name="OUT"><block type="math_number"><field name="NUM">20</field></block></value></block>
 	<block type="vorwerkActions_brush_off"></block>
 	<block type="vorwerkActions_side_brush"></block>
-	<block type="vorwerkActions_vacuum_on"></block>
+	<block type="vorwerkActions_vacuum_on"><value name="OUT"><block type="math_number"><field name="NUM">20</field></block></value></block>
 	<block type="vorwerkActions_vacuum_off"></block>
+	<block type="vorwerkActions_motor_on_for"><field name="MOTORPORT">LEFT</field><value name="POWER"><block type="math_number"><field name="NUM">30</field></block></value><value name="VALUE"><block type="math_number"><field name="NUM">20</field></block></value></block>
+	<block type="vorwerkActions_motor_stop"></block>	
    </category>
    <category name="TOOLBOX_SENSOR" svg="true">
      <block type="robSensors_touch_getSample"></block>

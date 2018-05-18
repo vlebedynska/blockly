@@ -133,3 +133,57 @@ Blockly.Blocks['vorwerkActions_vacuum_off'] = {
         this.setTooltip(Blockly.Msg.VACUUM_OFF_TOOLTIP);
     }
 };
+
+Blockly.Blocks['vorwerkActions_motor_on_for'] = {
+    /**
+     * Turn motor on and stop motor after execution of given distance.
+     * 
+     * @constructs vorwerkActions_motor_on_for
+     * @this.Blockly.Block
+     * @param {String/dropdown}
+     *            MOTORPORT - LEFT or RIGHT
+     * @param {String/dropdown}
+     *            MOTORROTATION - Distance
+     * @param {Number}
+     *            POWER Speed relative - 0-100
+     * @param {Number}
+     *            VALUE Number distance
+     * @returns after execution
+     * @memberof Block
+     */
+    init : function() {
+        var ports = [ [ Blockly.Msg.MOTOR_PORT + ' ' + Blockly.Msg.LEFT, 'LEFT' ], [ Blockly.Msg.MOTOR_PORT + ' ' + Blockly.Msg.RIGHT, 'RIGHT' ] ];
+      
+        this.setColour(Blockly.CAT_ACTION_RGB);
+        var motorPort = new Blockly.FieldDropdown(ports);
+        var motorDistance = new Blockly.FieldDropdown([ [ Blockly.Msg.MOTOR_DISTANCE, 'DISTANCE' ] ]);
+        this.appendValueInput('POWER').appendField(motorPort, 'MOTORPORT').appendField(Blockly.Msg.ON).appendField(Blockly.Msg.MOTOR_SPEED).setCheck('Number');
+        this.appendValueInput('VALUE').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.FOR).appendField(motorDistance, 'MOTORROTATION').setCheck('Number');
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setTooltip(Blockly.Msg.MOTOR_ON_FOR_TOOLTIP);
+    }
+};
+
+Blockly.Blocks['vorwerkActions_motor_stop'] = {
+    /**
+     * Stop this motor.
+     * 
+     * @constructs vorwerkActions_motor_stop
+     * @this.Blockly.Block
+     * @param {String/dropdown}
+     *            MOTORPORT - LEFT or RIGHT
+     * @returns immediately
+     * @memberof Block
+     */
+    init : function() {
+        this.setColour(Blockly.CAT_ACTION_RGB);
+        var ports = [ [ Blockly.Msg.MOTOR_PORT + ' ' + Blockly.Msg.LEFT, 'LEFT' ], [ Blockly.Msg.MOTOR_PORT + ' ' + Blockly.Msg.RIGHT, 'RIGHT' ] ];
+        var motorPort = new Blockly.FieldDropdown(ports);
+
+        this.appendDummyInput().appendField(Blockly.Msg.MOTOR_STOP).appendField(motorPort, 'MOTORPORT');
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setTooltip(Blockly.Msg.MOTOR_STOP_TOOLTIP);
+    }
+};
