@@ -131,6 +131,31 @@ Blockly.Blocks['robBrick_ardu-Brick'] = {
     }
 };
 
+Blockly.Blocks['robBrick_vorwerk-Brick'] = {
+    /**
+     * vorwerk brick.
+     *
+     * @constructs robBrick_vorwerk-Brick
+     * @memberof Block
+     */
+
+    init : function() {
+        this.setColour('#BBBBBB');
+        this.setInputsInline(false);
+        var ipAddress = new Blockly.FieldTextInput('0.0.0.0', Blockly.FieldTextInput.nonnegativeNumberValidator)
+        var port = new Blockly.FieldTextInput('22', Blockly.FieldTextInput.nonnegativeNumberValidator)
+        var username = new Blockly.FieldTextInput('pi', Blockly.FieldTextInput.nonnegativeNumberValidator)
+        var password = new Blockly.FieldTextInput('raspberry', Blockly.FieldTextInput.nonnegativeNumberValidator)
+        this.appendDummyInput().appendField(new Blockly.FieldLabel('Vorwerk', 'brick_label'));
+        this.appendDummyInput().appendField(Blockly.Msg.BRICK_IPADDRESS).appendField(ipAddress, 'IP_ADDRESS');
+        this.appendDummyInput().appendField(Blockly.Msg.BRICK_PORT).appendField(port, 'PORT');
+        this.appendDummyInput().appendField(Blockly.Msg.BRICK_USERNAME).appendField(username, 'USERNAME');
+        this.appendDummyInput().appendField(Blockly.Msg.BRICK_PASSWORD).appendField(password, 'PASSWORD');
+        this.setTooltip(Blockly.Msg.NAOBRICK_TOOLTIP);
+        this.setDeletable(false);
+    }
+};
+
 Blockly.Blocks['robBrick_voltage'] = {
     /**
      * Represent a voltage sensor.

@@ -1151,3 +1151,7 @@ Blockly.Msg.ABOUT = 'about';
 Blockly.Msg.THETA = 'theta';
 Blockly.Msg.START_PROGRAM_AUTOMOMOUSLIFE = 'autonomous behaviour';
 
+Blockly.Msg.BRICK_IPADDRESS = 'ip address';
+Blockly.Msg.BRICK_PORT = 'port';
+Blockly.Msg.BRICK_USERNAME = 'user name';
+Blockly.Msg.BRICK_PASSWORD = 'password';
