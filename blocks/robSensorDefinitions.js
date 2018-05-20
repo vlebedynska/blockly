@@ -935,7 +935,7 @@ sensors.ultrasonic.vorwerk = {
         type : 'Number',
         unit : 'CM'
     } ],
-    ports: [ [ 'LEFT', 'LEFT' ], [ 'CENTER', 'CENTER' ], [ 'RIGHT', 'RIGHT' ] ],
+    ports: [ [ 'LEFT', 'LEFT_ULTRASONIC' ], [ 'CENTER', 'CENTER_ULTRASONIC' ], [ 'RIGHT', 'RIGHT_ULTRASONIC' ] ],
     slots: [ [ 'LEFT', 'LEFT' ], [ 'CENTER', 'CENTER' ], [ 'RIGHT', 'RIGHT' ] ]
 };
 
