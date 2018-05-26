@@ -453,6 +453,19 @@ Blockly.init_ = function(mainWorkspace) {
   if (options.hasSounds) {
     Blockly.inject.loadSounds_(options.pathToMedia, mainWorkspace);
   }
+  
+  if (options.theme !== 'default') {
+      for (var key in options.theme.category) {
+          if (options.theme.category.hasOwnProperty(key)) {
+              Blockly[key] = options.theme.category[key];
+          }
+      }
+      for (var key in options.theme.data_type) {
+          if (options.theme.data_type.hasOwnProperty(key)) {
+              Blockly.DATA_TYPE[key] = options.theme.data_type[key];
+          }
+      }
+  }
 };
 
 /**
