@@ -464,6 +464,7 @@
   "TOOLBOX_TEXT":"Text",
   "TOOLBOX_VARIABLE":"Variablen",
   "TOOLBOX_WAIT":"Warten",
+  "TOOLBOX_CLEANING" : "Reinigung",
   "TOUCH_ISPRESSED_TOOLTIP":"Ist der Berührungssensor gedrückt?",
   "TOUCH_TOOLTIP":"Block für den Berührungssensor.",
   "TOUR1_DESCRIPTION00":"weiter",
@@ -917,7 +918,7 @@
   "SENSOR_BATTERY" : "Batterieladung",
   "SENSOR_ACCELEROMETER" : "Beschleunigungssensor",
   "SENSOR_WALL" : "Wandsensor",
-  "SENSOR_DROP_OFF": "Drop off sensor",
+  "SENSOR_DROP_OFF": "Sturzsensor",
   "MODE_ACCELERATION" : "Beschleunigung",
   "SENSOR_PINTOUCH" : "Pin",
   "MODE_PULSE_LOW":"Pulszeit LOW",
@@ -1055,6 +1056,23 @@
   "PIN_PULL_UP" : "up",
   "PIN_PULL_DOWN" : "down",
   "PIN_PULL_NONE" : "keiner",
-  "PIN_SET_PULL_TOOLTIP" : "Setzt den Pull des ausgewählten digitalen Pins."
+  "PIN_SET_PULL_TOOLTIP" : "Setzt den Pull des ausgewählten digitalen Pins.",
+  "BRICK_IPADDRESS" : "IP-Adresse",
+"BRICK_PORT" : "Port",
+"BRICK_USERNAME" : "Benutzername",
+"BRICK_PASSWORD" : "Passwort",
+"BRUSH_ON" : "Stelle Staubbürste an (RPM)",
+"BRUSH_ON_TOOLTIP" : "Turns on the brush with RPM of the motor (0<=RPM<=10000)",
+"BRUSH_OFF" : "Stoppe Staubbürste",
+"BRUSH_OFF_TOOLTIP" : "Turns the brush off.",
+"SIDE_BRUSH_OFF" : "turn side brush off",
+"SIDE_BRUSH_OFF_TOOLTIP" : "Turns the side brush off.",
+"SIDE_BRUSH_STATUS" : "Seitliche Staubbürste",
+"SIDE_BRUSH_TOOLTIP" : "Turns the side brush on or off .",
+
+"VACUUM_ON" : "Stelle Saugdüse an %",
+"VACUUM_ON_TOOLTIP" : "Turns on the vacuum speed in procent",
+"VACUUM_OFF" : "Stoppe Saugdüse",
+"VACUUM_OFF_TOOLTIP" : "Turns the vacuum off."
 }
  

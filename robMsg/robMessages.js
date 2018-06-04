@@ -290,6 +290,7 @@ Blockly.Msg.TOOLBOX_WALK = 'Walk';
 Blockly.Msg.TOOLBOX_MOVE = 'Move';
 Blockly.Msg.TOOLBOX_ANIMATION = 'Animation';
 Blockly.Msg.TOOLBOX_VISION = 'Vision';
+Blockly.Msg.TOOLBOX_CLEANING = 'Cleaning';
 //
 /// These texts are used outside of Blockly, but are placed in the Blockly namespace
 Blockly.Msg.MENU_EDIT = 'edit';
@@ -1155,16 +1156,16 @@ Blockly.Msg.BRICK_IPADDRESS = 'ip address';
 Blockly.Msg.BRICK_PORT = 'port';
 Blockly.Msg.BRICK_USERNAME = 'user name';
 Blockly.Msg.BRICK_PASSWORD = 'password';
-Blockly.Msg.BRUSH_ON = 'Turn Brush On (RPM)';
+Blockly.Msg.BRUSH_ON = 'turn brush on (RPM)';
 Blockly.Msg.BRUSH_ON_TOOLTIP = 'Turns on the brush with RPM of the motor (0<=RPM<=10000)';
-Blockly.Msg.BRUSH_OFF = 'Turn Brush Off';
-Blockly.Msg.BRUSH_OFF_TOOLTIP = 'Turn the brush off.';
-Blockly.Msg.SIDE_BRUSH_OFF = 'Turn Side Brush Off';
-Blockly.Msg.SIDE_BRUSH_OFF_TOOLTIP = 'Turn the side brush off.';
-Blockly.Msg.SIDE_BRUSH_STATUS = 'Side Brush';
-Blockly.Msg.SIDE_BRUSH_TOOLTIP = 'Turn on/off the side brush.';
+Blockly.Msg.BRUSH_OFF = 'turn brush Off';
+Blockly.Msg.BRUSH_OFF_TOOLTIP = 'Turns the brush off.';
+Blockly.Msg.SIDE_BRUSH_OFF = 'turn side brush off';
+Blockly.Msg.SIDE_BRUSH_OFF_TOOLTIP = 'Turns the side brush off.';
+Blockly.Msg.SIDE_BRUSH_STATUS = 'turn side brush';
+Blockly.Msg.SIDE_BRUSH_TOOLTIP = 'Turns the side brush on or off .';
 
-Blockly.Msg.VACUUM_ON = 'Turn Vacuum On (%)';
+Blockly.Msg.VACUUM_ON = 'turn vacuum on %';
 Blockly.Msg.VACUUM_ON_TOOLTIP = 'Turns on the vacuum speed in procent';
-Blockly.Msg.VACUUM_OFF = 'Turn Vacuum Off';
-Blockly.Msg.VACUUM_OFF_TOOLTIP = 'Turn the vacuum off.';
+Blockly.Msg.VACUUM_OFF = 'turn vacuum off';
+Blockly.Msg.VACUUM_OFF_TOOLTIP = 'Turns the vacuum off.';
