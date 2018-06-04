@@ -19,9 +19,9 @@
  */
 
 /**
- * @fileoverview Dropdown input field.  Used for editable titles and variables.
- * In the interests of a consistent UI, the toolbox shares some functions and
- * properties with the context menu.
+ * @fileoverview Dropdown input field. Used for editable titles and variables.
+ *               In the interests of a consistent UI, the toolbox shares some
+ *               functions and properties with the context menu.
  * @author fraser@google.com (Neil Fraser)
  */
 'use strict';
@@ -39,13 +39,16 @@ goog.require('goog.userAgent');
 
 /**
  * Class for an editable dropdown field.
- * @param {(!Array.<!Array.<string>>|!Function)} menuGenerator An array of
- *     options for a dropdown list, or a function which generates these options.
- * @param {Function=} opt_validator A function that is executed when a new
- *     option is selected, with the newly selected value as its sole argument.
- *     If it returns a value, that value (which must be one of the options) will
- *     become selected in place of the newly selected option, unless the return
- *     value is null, in which case the change is aborted.
+ * 
+ * @param {(!Array.
+ *            <!Array.<string>>|!Function)} menuGenerator An array of options
+ *            for a dropdown list, or a function which generates these options.
+ * @param {Function=}
+ *            opt_validator A function that is executed when a new option is
+ *            selected, with the newly selected value as its sole argument. If
+ *            it returns a value, that value (which must be one of the options)
+ *            will become selected in place of the newly selected option, unless
+ *            the return value is null, in which case the change is aborted.
  * @extends {Blockly.Field}
  * @constructor
  */
@@ -90,6 +93,8 @@ Blockly.FieldDropdown.prototype.init = function() {
     this.arrow_.appendChild(document.createTextNode(
       this.sourceBlock_.RTL ? Blockly.FieldDropdown.ARROW_CHAR + ' ' :
           ' ' + Blockly.FieldDropdown.ARROW_CHAR));
+  } else {
+      this.arrow_.appendChild(document.createTextNode(''));
   }
   Blockly.FieldDropdown.superClass_.init.call(this);
   // Force a reset of the text to add the arrow.
@@ -100,6 +105,7 @@ Blockly.FieldDropdown.prototype.init = function() {
 
 /**
  * Create a dropdown menu under the text.
+ * 
  * @private
  */
 Blockly.FieldDropdown.prototype.showEditor_ = function() {
@@ -202,8 +208,9 @@ Blockly.FieldDropdown.prototype.showEditor_ = function() {
 };
 
 /**
- * Factor out common words in statically defined options.
- * Create prefix and/or suffix labels.
+ * Factor out common words in statically defined options. Create prefix and/or
+ * suffix labels.
+ * 
  * @private
  */
 Blockly.FieldDropdown.prototype.trimOptions_ = function() {
@@ -243,8 +250,9 @@ Blockly.FieldDropdown.prototype.trimOptions_ = function() {
 
 /**
  * Return a list of the options for this dropdown.
- * @return {!Array.<!Array.<string>>} Array of option tuples:
- *     (human-readable text, language-neutral name).
+ * 
+ * @return {!Array.<!Array.<string>>} Array of option tuples: (human-readable
+ *         text, language-neutral name).
  * @private
  */
 Blockly.FieldDropdown.prototype.getOptions_ = function() {
@@ -256,6 +264,7 @@ Blockly.FieldDropdown.prototype.getOptions_ = function() {
 
 /**
  * Get the language-neutral value from this dropdown menu.
+ * 
  * @return {string} Current text.
  */
 Blockly.FieldDropdown.prototype.getValue = function() {
@@ -264,7 +273,9 @@ Blockly.FieldDropdown.prototype.getValue = function() {
 
 /**
  * Set the language-neutral value for this dropdown menu.
- * @param {string} newValue New value to set.
+ * 
+ * @param {string}
+ *            newValue New value to set.
  */
 Blockly.FieldDropdown.prototype.setValue = function(newValue) {
   if (newValue === null || newValue === this.value_) {
@@ -290,8 +301,10 @@ Blockly.FieldDropdown.prototype.setValue = function(newValue) {
 };
 
 /**
- * Set the text in this field.  Trigger a rerender of the source block.
- * @param {?string} text New text.
+ * Set the text in this field. Trigger a rerender of the source block.
+ * 
+ * @param {?string}
+ *            text New text.
  */
 Blockly.FieldDropdown.prototype.setText = function(text) {
   if (this.sourceBlock_ && this.arrow_) {

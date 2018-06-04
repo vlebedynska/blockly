@@ -184,15 +184,17 @@ Blockly.Blocks['robSensors_generic'] = {
             ports = new Blockly.FieldDropdown(portList);
             //this.sensorPort_ = sensor.modes[0].ports[0][1];
         } else if (sensor.ports === 'CONFIGURATION') {
-            this.dependConfig = true;
             var portList = [];
-            var blocks = Blockly.Workspace.getByContainer("bricklyDiv").getAllBlocks();
-            for (var x = 0; x < blocks.length; x++) {
-                var func = blocks[x].getConfigDecl;
-                if (func) {
-                    var config = func.call();
-                    if (config[0].toUpperCase() === sensor.title) {
-                        portList.push([ config[1], config[1].toUpperCase() ]);
+            var container = Blockly.Workspace.getByContainer("bricklyDiv");
+            if (container) {
+                var blocks = Blockly.Workspace.getByContainer("bricklyDiv").getAllBlocks();
+                for (var x = 0; x < blocks.length; x++) {
+                    var func = blocks[x].getConfigDecl;
+                    if (func) {
+                        var config = func.call(this);
+                        if (config.type.toUpperCase() === sensor.title) {
+                            portList.push([ config.name, config.name.toUpperCase() ]);
+                        }
                     }
                 }
             }
@@ -201,6 +203,10 @@ Blockly.Blocks['robSensors_generic'] = {
                         (Blockly.Msg.CONFIGURATION_NO_PORT || Blockly.checkMsgKey('CONFIGURATION_NO_PORT')).toUpperCase() ]);
             }
             ports = new Blockly.FieldDropdown(portList);
+            this.dependConfig = {
+                'type' : this.sensor,
+                'dropDown' : ports
+            };
         } else {
             ports = new Blockly.FieldHidden();
         }
@@ -375,7 +381,27 @@ Blockly.Blocks['robSensors_generic_all'] = {
                         sensors[i].title + '_' + sensors[i].modes[j].name ]);
                 if (sensors[i].ports) {
                     var portsList = [];
-                    if (!sensors[i].ports[0].port) {
+                    if (sensors[i].ports === 'CONFIGURATION') {
+                        var container = Blockly.Workspace.getByContainer("bricklyDiv");
+                        if (container) {
+                            var blocks = Blockly.Workspace.getByContainer("bricklyDiv").getAllBlocks();
+                            for (var x = 0; x < blocks.length; x++) {
+                                var func = blocks[x].getConfigDecl;
+                                if (func) {
+                                    var config = func.call();
+                                    if (config.type.toUpperCase() === sensors[i].title) {
+                                        portsList.push([ config.name, config.name.toUpperCase() ]);
+                                    }
+                                }
+                            }
+                        }
+                        if (portsList.length === 0) {
+                            portsList.push([ Blockly.Msg.CONFIGURATION_NO_PORT || Blockly.checkMsgKey('CONFIGURATION_NO_PORT'),
+                                    (Blockly.Msg.CONFIGURATION_NO_PORT || Blockly.checkMsgKey('CONFIGURATION_NO_PORT')).toUpperCase() ]);
+                        }
+                        this.ports.push(portsList);
+                        this.mutPorts.push('NO');
+                    } else if (!sensors[i].ports[0].port) {
                         for (var k = 0; k < sensors[i].ports.length; k++) {
                             portsList.push([ Blockly.Msg[sensors[i].ports[k][0]] || sensors[i].ports[k][0], sensors[i].ports[k][1] ]);
                         }
@@ -436,15 +462,14 @@ Blockly.Blocks['robSensors_generic_all'] = {
                 this.sourceBlock_.updateShape_(option);
             }
         });
-        var dropDownPorts;
         if (this.mutPorts[0] == 'NO') {
             if (this.ports[0].length <= 0) {
-                dropdownPorts = new Blockly.FieldHidden();
+                this.dropDownPorts = new Blockly.FieldHidden();
             } else {
-                dropDownPorts = new Blockly.FieldDropdown(this.ports[0]);
+                this.dropDownPorts = new Blockly.FieldDropdown(this.ports[0]);
             }
         } else {
-            dropDownPorts = new Blockly.FieldDropdown(this.ports[0], function(option) {
+            this.dropDownPorts = new Blockly.FieldDropdown(this.ports[0], function(option) {
                 if (option && this.sourceBlock_.getFieldValue('SENSORPORT') !== option) {
                     this.sourceBlock_.updatePort_(option);
                 }
@@ -454,7 +479,7 @@ Blockly.Blocks['robSensors_generic_all'] = {
         if (Array.isArray(this.slots[0])) {
             slots = this.slots[0][0];
         }
-        this.appendDummyInput('ROW').appendField(Blockly.Msg.GET, 'GET').appendField(dropdownModes, 'SENSORTYPE').appendField(dropDownPorts, 'SENSORPORT').appendField(slots, 'SLOT');
+        this.appendDummyInput('ROW').appendField(Blockly.Msg.GET, 'GET').appendField(dropdownModes, 'SENSORTYPE').appendField(this.dropDownPorts, 'SENSORPORT').appendField(slots, 'SLOT');
 
         this.setOutput(true, sensors[0].modes[0].type);
         var thisBlock = this;
@@ -469,7 +494,14 @@ Blockly.Blocks['robSensors_generic_all'] = {
         this.type = 'robSensors_getSample';
         this.sensorType_ = modeSensor[0][1];
         this.sensorPort_ = this.mutPorts[0];
-
+        if (sensors[0].ports === 'CONFIGURATION') {
+            this.dependConfig = function() {
+                return {
+                    'type' : this.sensorType_.split("_")[0].toLowerCase(),
+                    'dropDown' : this.dropDownPorts
+                };
+            };
+        }
         this.mutationToDom = function() {
             var container = document.createElement('mutation');
             container.setAttribute('input', this.sensorType_);
@@ -549,21 +581,50 @@ Blockly.Blocks['robSensors_generic_all'] = {
                 }
             }
             // add ports again
-            var dropDownPorts;
             if (this.mutPorts[index] == 'NO') {
-                if (this.ports[index].length <= 0) {
-                    dropDownPorts = new Blockly.FieldHidden();
+                if (sensors[index].ports === 'CONFIGURATION') {
+                    var portsList = [];
+                    var container = Blockly.Workspace.getByContainer("bricklyDiv");
+                    if (container) {
+                        var blocks = Blockly.Workspace.getByContainer("bricklyDiv").getAllBlocks();
+                        for (var x = 0; x < blocks.length; x++) {
+                            var func = blocks[x].getConfigDecl;
+                            if (func) {
+                                var config = func.call();
+                                if (config.type.toUpperCase() === sensors[i].title) {
+                                    portsList.push([ config.name, config.name.toUpperCase() ]);
+                                }
+                            }
+                        }
+                    }
+                    if (portsList.length === 0) {
+                        portsList.push([ Blockly.Msg.CONFIGURATION_NO_PORT || Blockly.checkMsgKey('CONFIGURATION_NO_PORT'),
+                                (Blockly.Msg.CONFIGURATION_NO_PORT || Blockly.checkMsgKey('CONFIGURATION_NO_PORT')).toUpperCase() ]);
+                    }
+                    this.ports[index] = portsList;
+                    this.dropDownPorts = new Blockly.FieldDropdown(this.ports[index]);
+                    this.dependConfig = function() {
+                        return {
+                            'type' : this.sensorType_.split("_")[0].toLowerCase(),
+                            'dropDown' : this.dropDownPorts
+                        };
+                    };
                 } else {
-                    dropDownPorts = new Blockly.FieldDropdown(this.ports[index]);
+                    delete this.dependConfig;
+                }
+                if (this.ports[index].length <= 0) {
+                    this.dropDownPorts = new Blockly.FieldHidden();
+                } else {
+                    this.dropDownPorts = new Blockly.FieldDropdown(this.ports[index]);
                 }
             } else {
-                dropDownPorts = new Blockly.FieldDropdown(this.ports[index], function(option) {
+                this.dropDownPorts = new Blockly.FieldDropdown(this.ports[index], function(option) {
                     if (option && this.sourceBlock_.getFieldValue('SENSOPORT') !== option) {
                         this.sourceBlock_.updatePort_(option);
                     }
                 });
             }
-            input.appendField(dropDownPorts, 'SENSORPORT');
+            input.appendField(this.dropDownPorts, 'SENSORPORT');
             if (!this.slots[index].length) {
                 input.appendField(this.slots[index], 'SLOT');
             } else {
@@ -571,7 +632,7 @@ Blockly.Blocks['robSensors_generic_all'] = {
             }
 
             if (this.sensors[index].standardPort) {
-                dropDownPorts.setValue(this.sensors[index].standardPort);
+                this.dropDownPorts.setValue(this.sensors[index].standardPort);
             }
             this.sensorPort_ = this.mutPorts[index];
 

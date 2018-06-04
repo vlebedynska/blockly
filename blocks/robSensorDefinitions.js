@@ -206,7 +206,7 @@ sensors.drop_off.vorwerk = {
         type : 'Number',
         unit : 'CM'
     } ],
-    ports : [ ['LEFT', 'LEFT'], ['RIGHT', 'RIGHT'] ]
+    ports : [ [ 'LEFT', 'LEFT' ], [ 'RIGHT', 'RIGHT' ] ]
 };
 
 sensors.detectmark = {};
@@ -427,6 +427,18 @@ sensors.gyro.ev3 = {
     standardPort : '2'
 };
 
+sensors.gyro.wedo = {
+    title : 'GYRO',
+    modes : [ {
+        name : 'TILTED',
+        type : 'Boolean',
+        question : true,
+    } ],
+    slots : [ [ 'SLOT_TILTED_UP', 'UP' ], [ 'SLOT_TILTED_DOWN', 'DOWN' ], [ 'SLOT_TILTED_BACK', 'BACK' ], [ 'SLOT_TILTED_FRONT', 'FRONT' ],
+            [ 'SLOT_TILTED_NO', 'NO' ], [ 'SLOT_TILTED_ANY', 'ANY' ] ],
+    ports : 'CONFIGURATION'
+};
+
 sensors.humidity = {};
 sensors.humidity.arduino = {
     title : 'HUMIDITY',
@@ -483,6 +495,17 @@ sensors.infrared.ev3 = {
     }, {
         name : 'PRESENCE',
         type : 'Array_Number'
+    } ]
+};
+
+sensors.infrared.wedo = {
+    title : 'INFRARED',
+    ports : 'CONFIGURATION',
+    modes : [ {
+        name : 'DISTANCE',
+        type : 'Number',
+        // unit : 'CM'
+        value : 10
     } ]
 };
 
@@ -635,34 +658,33 @@ sensors.potentiometer.arduino = {
 sensors.pin = {};
 sensors.pin.calliope = {
     title : 'PIN',
-    modes : [ {
-        name : 'ANALOG',
-        type : 'Number',
-        ports : [ [ 'P1', '1' ], [ 'P2', '2' ], [ 'A1', '5' ],
-                  [ 'C04', 'C04'], [ 'C05', 'C05'], [ 'C06', 'C06'],
-                  [ 'C16', 'C16'], [ 'C17', 'C17'] ]
-    }, {
-        name : 'DIGITAL',
-        type : 'Number',
-        ports : [ [ 'P0', '0' ], [ 'P1', '1' ], [ 'P2', '2' ], [ 'P3', '3' ], [ 'A0', '4' ], [ 'A1', '5' ],
-                  [ 'C04', 'C04'], [ 'C05', 'C05'], [ 'C06', 'C06'], [ 'C07', 'C07'], [ 'C08', 'C08'], [ 'C09', 'C09'],
-                  [ 'C10', 'C10'], [ 'C11', 'C11'], [ 'C12', 'C12'], [ 'C16', 'C16'], [ 'C17', 'C17'], [ 'C18', 'C18'],
-                  [ 'C19', 'C19'] ]
-    }, {
-        name : 'PULSE_HIGH',
-        type : 'Number',
-        ports : [ [ 'P0', '0' ], [ 'P1', '1' ], [ 'P2', '2' ], [ 'P3', '3' ], [ 'A0', '4' ], [ 'A1', '5' ],
-                  [ 'C04', 'C04'], [ 'C05', 'C05'], [ 'C06', 'C06'], [ 'C07', 'C07'], [ 'C08', 'C08'], [ 'C09', 'C09'],
-                  [ 'C10', 'C10'], [ 'C11', 'C11'], [ 'C12', 'C12'], [ 'C16', 'C16'], [ 'C17', 'C17'], [ 'C18', 'C18'],
-                  [ 'C19', 'C19'] ]
-    }, {
-        name : 'PULSE_LOW',
-        type : 'Number',
-        ports : [ [ 'P0', '0' ], [ 'P1', '1' ], [ 'P2', '2' ], [ 'P3', '3' ], [ 'A0', '4' ], [ 'A1', '5' ],
-                  [ 'C04', 'C04'], [ 'C05', 'C05'], [ 'C06', 'C06'], [ 'C07', 'C07'], [ 'C08', 'C08'], [ 'C09', 'C09'],
-                  [ 'C10', 'C10'], [ 'C11', 'C11'], [ 'C12', 'C12'], [ 'C16', 'C16'], [ 'C17', 'C17'], [ 'C18', 'C18'],
-                  [ 'C19', 'C19'] ]
-    } ]
+    modes : [
+            {
+                name : 'ANALOG',
+                type : 'Number',
+                ports : [ [ 'P1', '1' ], [ 'P2', '2' ], [ 'A1', '5' ], [ 'C04', 'C04' ], [ 'C05', 'C05' ], [ 'C06', 'C06' ], [ 'C16', 'C16' ], [ 'C17', 'C17' ] ]
+            },
+            {
+                name : 'DIGITAL',
+                type : 'Number',
+                ports : [ [ 'P0', '0' ], [ 'P1', '1' ], [ 'P2', '2' ], [ 'P3', '3' ], [ 'A0', '4' ], [ 'A1', '5' ], [ 'C04', 'C04' ], [ 'C05', 'C05' ],
+                        [ 'C06', 'C06' ], [ 'C07', 'C07' ], [ 'C08', 'C08' ], [ 'C09', 'C09' ], [ 'C10', 'C10' ], [ 'C11', 'C11' ], [ 'C12', 'C12' ],
+                        [ 'C16', 'C16' ], [ 'C17', 'C17' ], [ 'C18', 'C18' ], [ 'C19', 'C19' ] ]
+            },
+            {
+                name : 'PULSE_HIGH',
+                type : 'Number',
+                ports : [ [ 'P0', '0' ], [ 'P1', '1' ], [ 'P2', '2' ], [ 'P3', '3' ], [ 'A0', '4' ], [ 'A1', '5' ], [ 'C04', 'C04' ], [ 'C05', 'C05' ],
+                        [ 'C06', 'C06' ], [ 'C07', 'C07' ], [ 'C08', 'C08' ], [ 'C09', 'C09' ], [ 'C10', 'C10' ], [ 'C11', 'C11' ], [ 'C12', 'C12' ],
+                        [ 'C16', 'C16' ], [ 'C17', 'C17' ], [ 'C18', 'C18' ], [ 'C19', 'C19' ] ]
+            },
+            {
+                name : 'PULSE_LOW',
+                type : 'Number',
+                ports : [ [ 'P0', '0' ], [ 'P1', '1' ], [ 'P2', '2' ], [ 'P3', '3' ], [ 'A0', '4' ], [ 'A1', '5' ], [ 'C04', 'C04' ], [ 'C05', 'C05' ],
+                        [ 'C06', 'C06' ], [ 'C07', 'C07' ], [ 'C08', 'C08' ], [ 'C09', 'C09' ], [ 'C10', 'C10' ], [ 'C11', 'C11' ], [ 'C12', 'C12' ],
+                        [ 'C16', 'C16' ], [ 'C17', 'C17' ], [ 'C18', 'C18' ], [ 'C19', 'C19' ] ]
+            } ]
 };
 sensors.pin.microbit = {
     title : 'PIN',
@@ -818,6 +840,7 @@ sensors.timer.calliope = sensors.timer.ardu;
 sensors.timer.nxt = sensors.timer.ardu;
 sensors.timer.microbit = sensors.timer.ardu;
 sensors.timer.arduino = sensors.timer.ardu;
+sensors.timer.wedo = sensors.timer.ardu;
 sensors.timer.ev3 = {
     title : 'TIMER',
     modes : [ {
@@ -829,8 +852,6 @@ sensors.timer.ev3 = {
     } ],
     ports : [ [ ' 1', '1' ], [ ' 2', '2' ], [ ' 3', '3' ], [ ' 4', '4' ], [ ' 5', '5' ] ]
 };
-
-
 
 sensors.touch = {};
 sensors.touch.ev3 = {
@@ -870,8 +891,8 @@ sensors.touch.vorwerk = {
         type : 'Boolean',
         question : true
     } ],
-    ports : [ [ 'LEFT', 'LEFT' ], ['RIGHT', 'RIGHT'] ],
-    slots : [ ['SLOT_FRONT', 'FRONT'], ['SLOT_SIDE', 'SIDE']]
+    ports : [ [ 'LEFT', 'LEFT' ], [ 'RIGHT', 'RIGHT' ] ],
+    slots : [ [ 'SLOT_FRONT', 'FRONT' ], [ 'SLOT_SIDE', 'SIDE' ] ]
 };
 
 sensors.ultrasonic = {};
@@ -935,8 +956,8 @@ sensors.ultrasonic.vorwerk = {
         type : 'Number',
         unit : 'CM'
     } ],
-    ports: [ [ 'LEFT', 'LEFT_ULTRASONIC' ], [ 'CENTER', 'CENTER_ULTRASONIC' ], [ 'RIGHT', 'RIGHT_ULTRASONIC' ] ],
-    slots: [ [ 'LEFT', 'LEFT' ], [ 'CENTER', 'CENTER' ], [ 'RIGHT', 'RIGHT' ] ]
+    ports : [ [ 'LEFT', 'LEFT_ULTRASONIC' ], [ 'CENTER', 'CENTER_ULTRASONIC' ], [ 'RIGHT', 'RIGHT_ULTRASONIC' ] ],
+    slots : [ [ 'LEFT', 'LEFT' ], [ 'CENTER', 'CENTER' ], [ 'RIGHT', 'RIGHT' ] ]
 };
 
 sensors.wall = {};
@@ -948,7 +969,6 @@ sensors.wall.vorwerk = {
         unit : 'CM'
     } ]
 };
-
 
 var sensorsAll = [];
 sensorsAll.ardu = [ sensors.infrared.ardu, sensors.light.ardu, sensors.compass.ardu, sensors.ultrasonic.ardu, sensors.colour.ardu, sensors.key.ardu ];
@@ -965,9 +985,10 @@ sensorsAll.microbit = [ sensors.key.microbit, sensors.pintouch.microbit, sensors
 sensorsAll.arduino = [ sensors.key.arduino, sensors.timer.arduino, sensors.temperature.arduino, sensors.ultrasonic.arduino, sensors.light.arduino,
         sensors.moisture.arduino, sensors.potentiometer.arduino, sensors.infrared.arduino, sensors.humidity.arduino, sensors.encoder.arduino,
         sensors.motion.arduino, sensors.pulse.arduino, sensors.drop.arduino, sensors.rfid.arduino ];
-sensorsAll.nao = [ sensors.touch.nao, sensors.accelerometer.nao, sensors.gyro.nao, sensors.ultrasonic.nao, sensors.fsr.nao, sensors.electriccurrent.nao, sensors.detectface.nao,
-        sensors.detectmark.nao ];
+sensorsAll.nao = [ sensors.touch.nao, sensors.accelerometer.nao, sensors.gyro.nao, sensors.ultrasonic.nao, sensors.fsr.nao, sensors.electriccurrent.nao,
+        sensors.detectface.nao, sensors.detectmark.nao ];
 sensorsAll.vorwerk = [ sensors.touch.vorwerk, sensors.accelerometer.vorwerk, sensors.ultrasonic.vorwerk, sensors.wall.vorwerk, sensors.drop_off.vorwerk ];
+sensorsAll.wedo = [ sensors.gyro.wedo, sensors.infrared.wedo, sensors.timer.wedo];
 
 function initSensors() {
     for ( var sensor in sensors) {

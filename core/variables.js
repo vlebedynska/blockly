@@ -84,36 +84,10 @@ Blockly.Variables.renameVariable = function(oldName, newName, workspace) {
   var blocks = workspace.getAllBlocks();
   // Iterate through every block.
   for (var i = 0; i < blocks.length; i++) {
+      //if (blocks[i].renameVar)
     blocks[i].renameVar(oldName, newName);
   }
   Blockly.Events.setGroup(false);
-};
-
-/**
- * Find all instances of the specified variable, check and rename them.
- * @param {string} oldName Variable to rename.
- * @param {string} newName New variable name.
- */
-Blockly.Variables.robRenameVariable = function(name) {
-  var block = this.sourceBlock_;
-  var oldName = block.getFieldValue('VAR');
-  name = name.replace(/[\s\xa0]+/g, '').replace(/^ | $/g, '');
-  // no name set -> invalid
-  if (name === '')
-    return null;
-  if (!name.match(/^[a-zA-Z][a-zA-Z_$0-9]*$/))
-    return null;
-  // Ensure two identically-named variables don't exist.
-  name = Blockly.Variables.findLegalName(name, block);
-  var blocks = Blockly.mainWorkspace.getAllBlocks();
-  // Iterate through every block.
-  for (var x = 0; x < blocks.length; x++) {
-    var func = blocks[x].renameVar;
-    if (func) {
-      func.call(blocks[x], oldName, name);
-    }
-  }
-  return name;
 };
 
 /**

@@ -114,22 +114,61 @@ Blockly.Blocks['robActions_motor_on'] = {
      * @returns immediately
      * @memberof Block
      */
-
     init : function() {
-        var ports = [ [ Blockly.Msg.MOTOR_PORT + ' A', 'A' ], [ Blockly.Msg.MOTOR_PORT + ' B', 'B' ], [ Blockly.Msg.MOTOR_PORT + ' C', 'C' ] ];
-        if (this.workspace.device === 'ev3') {
-            ports.push([ Blockly.Msg.MOTOR_PORT + ' D', 'D' ]);
-        } else if (this.workspace.device === 'ardu') {
+        var ports = [];
+        switch (this.workspace.device) {
+        case 'ev3':
+            ports = [ [ Blockly.Msg.MOTOR_PORT + ' A', 'A' ], [ Blockly.Msg.MOTOR_PORT + ' B', 'B' ], [ Blockly.Msg.MOTOR_PORT + ' C', 'C' ],
+                    [ Blockly.Msg.MOTOR_PORT + ' D', 'D' ] ];
+            break;
+        case 'nxt':
+            ports = [ [ Blockly.Msg.MOTOR_PORT + ' A', 'A' ], [ Blockly.Msg.MOTOR_PORT + ' B', 'B' ], [ Blockly.Msg.MOTOR_PORT + ' C', 'C' ] ];
+            break;
+        case 'ardu':
             ports = [ [ Blockly.Msg.MOTOR + ' ' + Blockly.Msg.MOTOR_LEFT, 'B' ], [ Blockly.Msg.MOTOR + ' ' + Blockly.Msg.MOTOR_RIGHT, 'C' ] ];
-        } else if (this.workspace.device === 'makeblock') {
+            break;
+        case 'makeblock':
             ports = [ [ Blockly.Msg.MOTOR + ' ' + 'M1', 'M1' ], [ Blockly.Msg.MOTOR + ' ' + 'M2', 'M2' ] ];
+            break;
+        case 'wedo':
+            this.action = 'MOTOR';
+            ports = [];
+            var container = Blockly.Workspace.getByContainer("bricklyDiv");
+            if (container) {
+                var blocks = Blockly.Workspace.getByContainer("bricklyDiv").getAllBlocks();
+                for (var x = 0; x < blocks.length; x++) {
+                    var func = blocks[x].getConfigDecl;
+                    if (func) {
+                        var config = func.call(blocks[x]);
+                        if (config.type === 'motor') {
+                            ports.push([ config.name, config.name.toUpperCase() ]);
+                        }
+                    }
+                }
+            }
+            if (ports.length === 0) {
+                ports.push([ Blockly.Msg.CONFIGURATION_NO_PORT || Blockly.checkMsgKey('CONFIGURATION_NO_PORT'),
+                        (Blockly.Msg.CONFIGURATION_NO_PORT || Blockly.checkMsgKey('CONFIGURATION_NO_PORT')).toUpperCase() ]);
+            }
+            break;
+        default:
+            ports = [ 'INVALID DEVICE TYPE', 'UNDEFINED' ];
         }
+        var dropDownPorts = new Blockly.FieldDropdown(ports);
         this.setColour(Blockly.CAT_ACTION_RGB);
-        var motorPort = new Blockly.FieldDropdown(ports);
-        this.appendValueInput('POWER').appendField(motorPort, 'MOTORPORT').appendField(Blockly.Msg.ON).appendField(Blockly.Msg.MOTOR_SPEED).setCheck('Number');
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setTooltip(Blockly.Msg.MOTOR_ON_TOOLTIP);
+        if (this.workspace.device !== 'wedo') {
+            this.appendValueInput('POWER').appendField(dropDownPorts, 'MOTORPORT').appendField(Blockly.Msg.ON).appendField(Blockly.Msg.MOTOR_SPEED).setCheck('Number');
+        } else {
+            this.appendValueInput('POWER').appendField(Blockly.Msg.ACTION_MOTOR).appendField(dropDownPorts, 'MOTORPORT').appendField(Blockly.Msg.ON).appendField(Blockly.Msg.MOTOR_SPEED).setCheck('Number');
+
+            this.dependConfig = {
+                'type' : 'motor',
+                'dropDown' : dropDownPorts
+            };
+        }
     }
 };
 
@@ -151,6 +190,7 @@ Blockly.Blocks['robActions_motor_on_for'] = {
      * @memberof Block
      */
     init : function() {
+        this.setColour(Blockly.CAT_ACTION_RGB);
         var ports = [ [ Blockly.Msg.MOTOR_PORT + ' A', 'A' ], [ Blockly.Msg.MOTOR_PORT + ' B', 'B' ], [ Blockly.Msg.MOTOR_PORT + ' C', 'C' ] ];
         if (this.workspace.device === 'ev3') {
             ports.push([ Blockly.Msg.MOTOR_PORT + ' D', 'D' ]);
@@ -159,14 +199,42 @@ Blockly.Blocks['robActions_motor_on_for'] = {
         } else if (this.workspace.device === 'makeblock') {
             ports = [ [ Blockly.Msg.MOTOR + ' ' + 'M1', 'M1' ], [ Blockly.Msg.MOTOR + ' ' + 'M2', 'M2' ] ];
         }
-        this.setColour(Blockly.CAT_ACTION_RGB);
-        var motorPort = new Blockly.FieldDropdown(ports);
-        var motorRotation = new Blockly.FieldDropdown([ [ Blockly.Msg.MOTOR_ROTATION, 'ROTATIONS' ], [ Blockly.Msg.MOTOR_DEGREE, 'DEGREE' ] ]);
-        this.appendValueInput('POWER').appendField(motorPort, 'MOTORPORT').appendField(Blockly.Msg.ON).appendField(Blockly.Msg.MOTOR_SPEED).setCheck('Number');
-        if (this.workspace.device === 'ardu' || this.workspace.device === 'makeblock') {
-            this.appendValueInput('VALUE').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.SENSOR_TIME + ' ms').setCheck('Number');
+        if (this.workspace.device === 'wedo') {
+            this.action = 'MOTOR';
+            var portList = [];
+            var container = Blockly.Workspace.getByContainer("bricklyDiv");
+            if (container) {
+                var blocks = Blockly.Workspace.getByContainer("bricklyDiv").getAllBlocks();
+                for (var x = 0; x < blocks.length; x++) {
+                    var func = blocks[x].getConfigDecl;
+                    if (func) {
+                        var config = func.call(blocks[x]);
+                        if (config.type === 'motor') {
+                            portList.push([ config.name, config.name.toUpperCase() ]);
+                        }
+                    }
+                }
+            }
+            if (portList.length === 0) {
+                portList.push([ Blockly.Msg.CONFIGURATION_NO_PORT || Blockly.checkMsgKey('CONFIGURATION_NO_PORT'),
+                        (Blockly.Msg.CONFIGURATION_NO_PORT || Blockly.checkMsgKey('CONFIGURATION_NO_PORT')).toUpperCase() ]);
+            }
+            var ports = new Blockly.FieldDropdown(portList);
+            this.dependConfig = {
+                'type' : 'motor',
+                'dropDown' : ports
+            };
+            this.appendValueInput('POWER').appendField(Blockly.Msg.ACTION_MOTOR).appendField(ports, 'MOTORPORT').appendField(Blockly.Msg.ON).appendField(Blockly.Msg.MOTOR_SPEED).setCheck('Number');
+            this.appendValueInput('VALUE').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.SENSOR_TIME + ' ' + Blockly.Msg.SENSOR_UNIT_MS).setCheck('Number');
         } else {
-            this.appendValueInput('VALUE').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.FOR).appendField(motorRotation, 'MOTORROTATION').setCheck('Number');
+            var motorPort = new Blockly.FieldDropdown(ports);
+            var motorRotation = new Blockly.FieldDropdown([ [ Blockly.Msg.MOTOR_ROTATION, 'ROTATIONS' ], [ Blockly.Msg.MOTOR_DEGREE, 'DEGREE' ] ]);
+            this.appendValueInput('POWER').appendField(motorPort, 'MOTORPORT').appendField(Blockly.Msg.ON).appendField(Blockly.Msg.MOTOR_SPEED).setCheck('Number');
+            if (this.workspace.device === 'ardu' || this.workspace.device === 'makeblock') {
+                this.appendValueInput('VALUE').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.SENSOR_TIME + ' ' + Blockly.Msg.SENSOR_UNIT_MS).setCheck('Number');
+            } else {
+                this.appendValueInput('VALUE').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.FOR).appendField(motorRotation, 'MOTORROTATION').setCheck('Number');
+            }
         }
         this.setPreviousStatement(true);
         this.setNextStatement(true);
@@ -275,8 +343,36 @@ Blockly.Blocks['robActions_motor_stop'] = {
             ports.push([ Blockly.Msg.MOTOR_PORT + ' D', 'D' ]);
         }
         var motorPort = new Blockly.FieldDropdown(ports);
-        var mode = new Blockly.FieldDropdown([ [ Blockly.Msg.MOTOR_FLOAT, 'FLOAT' ], [ Blockly.Msg.MOTOR_BRAKE, 'NONFLOAT' ] ]);
-        this.appendDummyInput().appendField(Blockly.Msg.MOTOR_STOP).appendField(motorPort, 'MOTORPORT').appendField(mode, 'MODE');
+        if (this.workspace.device === 'wedo') {
+            this.action = 'MOTOR';
+            var portList = [];
+            var container = Blockly.Workspace.getByContainer("bricklyDiv");
+            if (container) {
+                var blocks = Blockly.Workspace.getByContainer("bricklyDiv").getAllBlocks();
+                for (var x = 0; x < blocks.length; x++) {
+                    var func = blocks[x].getConfigDecl;
+                    if (func) {
+                        var config = func.call(blocks[x]);
+                        if (config.type === 'motor') {
+                            portList.push([ config.name, config.name.toUpperCase() ]);
+                        }
+                    }
+                }
+            }
+            if (portList.length === 0) {
+                portList.push([ Blockly.Msg.CONFIGURATION_NO_PORT || Blockly.checkMsgKey('CONFIGURATION_NO_PORT'),
+                        (Blockly.Msg.CONFIGURATION_NO_PORT || Blockly.checkMsgKey('CONFIGURATION_NO_PORT')).toUpperCase() ]);
+            }
+            var ports = new Blockly.FieldDropdown(portList);
+            this.dependConfig = {
+                'type' : 'motor',
+                'dropDown' : ports
+            };
+            this.appendDummyInput().appendField(Blockly.Msg.MOTOR_STOP).appendField(Blockly.Msg.ACTION_MOTOR).appendField(ports, 'MOTORPORT');
+        } else {
+            var mode = new Blockly.FieldDropdown([ [ Blockly.Msg.MOTOR_FLOAT, 'FLOAT' ], [ Blockly.Msg.MOTOR_BRAKE, 'NONFLOAT' ] ]);
+            this.appendDummyInput().appendField(Blockly.Msg.MOTOR_STOP).appendField(motorPort, 'MOTORPORT').appendField(mode, 'MODE');
+        }
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setTooltip(Blockly.Msg.MOTOR_STOP_TOOLTIP);
@@ -456,10 +552,12 @@ Blockly.Blocks['robActions_display_text'] = {
         } else {
             this.appendValueInput('OUT').appendField(Blockly.Msg.DISPLAY_SHOW + ' ' + Blockly.Msg.DISPLAY_TEXT);
         }
-        if (this.workspace.device !== 'ardu') {
+        if (this.workspace.device !== 'ardu' && this.workspace.device !== 'wedo') {
             this.appendValueInput('COL').setCheck('Number').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.DISPLAY_COL);
         }
-        this.appendValueInput('ROW').setCheck('Number').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.DISPLAY_ROW);
+        if (this.workspace.device !== 'wedo') {
+            this.appendValueInput('ROW').setCheck('Number').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.DISPLAY_ROW);
+        }
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setTooltip(Blockly.Msg.DISPLAY_TEXT_TOOLTIP);

@@ -199,7 +199,7 @@ Blockly.FieldVariable.dropdownChange = function(text) {
       }
       return null;
     }
-  } else {
+  } else if (this.sourceBlock_.setType) {
     this.sourceBlock_.setType(this.getText(), Blockly.Variables.getType(text));
   }
   return undefined;

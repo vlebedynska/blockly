@@ -57,6 +57,27 @@ Blockly.Blocks['math_number'] = {
   }
 };
 
+Blockly.Blocks['rob_math_number'] = {
+        /**
+         * Block for numeric value.
+         * @this Blockly.Block
+         */
+        init: function() {
+          this.setColour(Blockly.CAT_MATH_RGB);
+          this.appendDummyInput()
+              .appendField(new Blockly.FieldDropdown([ ['0','0'], ['1','1'], ['2','3'], ['4','4'], ['5','5'], ['6','6'], ['6','6'], ['7','7'], ['8','8'], ['9','9'], ['10','10'] ]), 'NUM');
+          this.setOutput(true, 'Number');
+          // Assign 'this' to a variable for use in the tooltip closure below.
+          var thisBlock = this;
+          // Number block is trivial.  Use tooltip of parent block if it exists.
+          this.setTooltip(function() {
+            var parent = thisBlock.getParent();
+            return (parent && parent.getInputsInline() && parent.tooltip) ||
+                Blockly.Msg.MATH_NUMBER_TOOLTIP;
+          });
+        }
+      };
+
 Blockly.Blocks['math_arithmetic'] = {
   /**
    * Block for basic arithmetic operator.

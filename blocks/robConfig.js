@@ -25,11 +25,12 @@ Blockly.Blocks['robConf_generic'] = {
     /**
      * @param {Object
      *            sensor}
-     *
+     * 
      * @memberof Block
      */
     init : function(confBlock) {
         this.setColour(confBlock.sensor ? Blockly.CAT_SENSOR_RGB : Blockly.CAT_ACTION_RGB);
+
         var validateName = function(name) {
             var block = this.sourceBlock_;
             name = name.replace(/[\s\xa0]+/g, '').replace(/^ | $/g, '');
@@ -39,13 +40,32 @@ Blockly.Blocks['robConf_generic'] = {
             if (!name.match(/^[a-zA-Z][a-zA-Z_$0-9]*$/))
                 return null;
             // Ensure two identically-named variables don't exist.
-            name = Blockly.Variables.findLegalName(name, block);
+            name = Blockly.RobConfig.findLegalName(name, block);
             Blockly.RobConfig.renameConfig(this.sourceBlock_, block.nameOld, name, Blockly.Workspace.getByContainer("blocklyDiv"));
             block.nameOld = name;
             return name;
         };
-        var ports;
-        var pins;
+
+        var type = confBlock.sensor ? 'SENSOR_' : 'ACTION_';
+        // TODO discuss if "Port1" is the best default name
+        var name = Blockly.RobConfig.findLegalName(Blockly.Msg.CONFIGURATION_PORT || Blockly.checkMsgKey('CONFIGURATION_PORT'), this);
+        this.nameOld = name;
+        var nameField = new Blockly.FieldTextInput(name, validateName);
+        this.appendDummyInput().appendField(Blockly.Msg[type + confBlock.title] || type + confBlock.title, 'SENSORTITLE').appendField(nameField, 'NAME');
+
+        if (confBlock.bricks) {
+            // TODO discuss default name "Brick"
+            this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField('Brickname').appendField(new Blockly.FieldVariable('Brick1'), 'VAR');
+            this.getVars = function() {
+                return [ this.getFieldValue('VAR') ];
+            };
+            this.renameVar = function(oldName, newName) {
+                if (Blockly.Names.equals(oldName, this.getFieldValue('VAR'))) {
+                    this.setFieldValue(newName, 'VAR');
+                }
+            };
+        }
+        var ports, pins;
         var portList = [];
         if (confBlock.ports) {
             for (var i = 0; i < confBlock.ports.length; i++) {
@@ -55,47 +75,42 @@ Blockly.Blocks['robConf_generic'] = {
         } else {
             ports = new Blockly.FieldHidden();
         }
-        var type = confBlock.sensor ? 'SENSOR_' : 'ACTION_'
-        // this.appendDummyInput('ROW').appendField(Blockly.Msg[type + confBlock.title], 'SENSORTITLE');
-        var name = Blockly.Variables.findLegalName(Blockly.Msg.CONFIGURATION_PORT || Blockly.checkMsgKey('CONFIGURATION_PORT'), this);
-        this.nameOld = name;
-        var nameField = new Blockly.FieldTextInput(name, validateName);
-        //this.appendDummyInput('ROW').appendField(Blockly.Msg[type + confBlock.title], 'SENSORTITLE').appendField(Blockly.Msg.POPUP_NAME + ':').appendField(nameField, 'NAME');
-        this.appendDummyInput().appendField(Blockly.Msg[type + confBlock.title], 'SENSORTITLE').appendField(nameField, 'NAME');
 
-        for (var i = 0; i < portList.length; i++) {
-            //if (!(portList[i][0] == 'SCK' || portList[i][0] == 'MOSI' || portList[i][0] == 'MISO')) {
-            pins = new Blockly.FieldDropdown(confBlock.pins);
-            if (confBlock.standardPins) {
-                pins.setValue(confBlock.standardPins[i]);
+        if (confBlock.pins) {
+            for (var i = 0; i < portList.length; i++) {
+                //if (!(portList[i][0] == 'SCK' || portList[i][0] == 'MOSI' || portList[i][0] == 'MISO')) {
+                pins = new Blockly.FieldDropdown(confBlock.pins);
+                if (confBlock.standardPins) {
+                    pins.setValue(confBlock.standardPins[i]);
+                }
+                //            } else {
+                //                switch (portList[i][0]) {
+                //                case 'SCK':
+                //                    pins = '13';
+                //                    break;
+                //                case 'MOSI':
+                //                    pins = '11';
+                //                    break;
+                //                default:
+                //                    pins = '12';
+                //                }
+                //            }
+                this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(portList[i][0]).appendField(pins, portList[i][1]);
             }
-            //            } else {
-            //                switch (portList[i][0]) {
-            //                case 'SCK':
-            //                    pins = '13';
-            //                    break;
-            //                case 'MOSI':
-            //                    pins = '11';
-            //                    break;
-            //                default:
-            //                    pins = '12';
-            //                }
-            //            }
-            this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(portList[i][0]).appendField(pins, portList[i][1]);
         }
         this.setTooltip(function() {
             return Blockly.Msg[confBlock.title + '_TOOLTIP'];
         });
-        this.type = 'robConf_' + confBlock.title.toLowerCase();       
-        this.getVarDecl = function() {
-            return [ this.getFieldValue('NAME') ];
-        };
+        this.type = 'robConf_' + confBlock.title.toLowerCase();
         var that = this;
         this.getConfigDecl = function() {
-            return [ that.confBlock, that.getFieldValue('NAME') ];
+            return {
+                'type' : confBlock.title.toLowerCase(),
+                'name' : that.getFieldValue('NAME')
+            }
         };
         this.onDispose = function() {
             Blockly.RobConfig.disposeConfig(this);
-        }
+        };
     }
 };
