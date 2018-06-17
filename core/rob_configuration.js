@@ -59,9 +59,6 @@ Blockly.RobConfig.renameConfig = function(thatBlock, oldName, newName, workspace
             dropDown.menuGenerator_.push([ newName, newName.toUpperCase() ]);
             dropDown.arrow_.replaceChild(document.createTextNode(dropDown.sourceBlock_.RTL ? Blockly.FieldDropdown.ARROW_CHAR + ' ' : ' '
                     + Blockly.FieldDropdown.ARROW_CHAR), dropDown.arrow_.childNodes[0]);
-            var temp = dropDown.getText();
-            dropDown.setText(temp + "'");
-            dropDown.setText(temp);
         }
     }
     Blockly.Events.setGroup(false);

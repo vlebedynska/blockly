@@ -327,7 +327,7 @@ Blockly.FieldDropdown.prototype.setText = function(text) {
     }
   }
 
-  if (this.sourceBlock_ && this.sourceBlock_.rendered) {
+  if (this.sourceBlock_ && this.sourceBlock_.rendered && this.sourceBlock_.workspace == Blockly.getMainWorkspace()) {
     this.sourceBlock_.render();
     this.sourceBlock_.bumpNeighbours_();
   }
