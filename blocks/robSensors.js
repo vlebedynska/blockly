@@ -582,7 +582,7 @@ Blockly.Blocks['robSensors_generic_all'] = {
             }
             // add ports again
             if (this.mutPorts[index] == 'NO') {
-                if (sensors[index].ports === 'CONFIGURATION') {
+                if (this.ports[index] === 'CONFIGURATION') {
                     var portsList = [];
                     var container = Blockly.Workspace.getByContainer("bricklyDiv");
                     if (container) {

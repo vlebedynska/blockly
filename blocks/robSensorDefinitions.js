@@ -730,7 +730,16 @@ sensors.pintouch.calliope = {
     standardPort : '1'
 };
 
-sensors.pintouch.microbit = sensors.pintouch.calliope;
+sensors.pintouch.microbit = {
+    title : 'PINTOUCH',
+    ports : [ [ ' 0', '0' ], [ ' 1', '1' ], [ ' 2', '2' ] ],
+    modes : [ {
+        name : 'PRESSED',
+        type : 'Boolean',
+        question : true
+    } ],
+    standardPort : '1'
+};
 
 sensors.pulse = {};
 sensors.pulse.arduino = {
@@ -990,7 +999,7 @@ sensorsAll.arduino = [ sensors.key.arduino, sensors.timer.arduino, sensors.tempe
 sensorsAll.nao = [ sensors.touch.nao, sensors.accelerometer.nao, sensors.gyro.nao, sensors.ultrasonic.nao, sensors.fsr.nao, sensors.electriccurrent.nao,
         sensors.detectface.nao, sensors.detectmark.nao ];
 sensorsAll.vorwerk = [ sensors.touch.vorwerk, sensors.accelerometer.vorwerk, sensors.ultrasonic.vorwerk, sensors.wall.vorwerk, sensors.drop_off.vorwerk ];
-sensorsAll.wedo = [ sensors.gyro.wedo, sensors.infrared.wedo, sensors.timer.wedo];
+sensorsAll.wedo = [ sensors.gyro.wedo, sensors.infrared.wedo, sensors.timer.wedo ];
 
 function initSensors() {
     for ( var sensor in sensors) {
