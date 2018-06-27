@@ -875,6 +875,43 @@ Blockly.Blocks['robActions_brickLight_on'] = {
     }
 };
 
+Blockly.Blocks['robActions_led_on'] = {
+    /**
+     * Turns single led on.
+     * 
+     * @constructs robActions_led_on
+     * @this.Blockly.Block
+     * @returns immediately
+     * @memberof Block
+     */
+    init : function() {
+
+        this.setColour(Blockly.CAT_ACTION_RGB);
+        this.appendValueInput('COLOR').appendField(Blockly.Msg.LED_ON).appendField(Blockly.Msg.BRICKLIGHT_COLOR).setCheck('Colour');
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setTooltip(Blockly.Msg.LED_ON_TOOLTIP);
+    }
+};
+
+Blockly.Blocks['robActions_led_off'] = {
+    /**
+     * Turns single led off.
+     * 
+     * @constructs robActions_led_off
+     * @this.Blockly.Block
+     * @returns immediately
+     * @memberof Block
+     */
+    init : function() {
+        this.setColour(Blockly.CAT_ACTION_RGB);
+        this.appendDummyInput().appendField(Blockly.Msg.LED_OFF);
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setTooltip(Blockly.Msg.LED_OFF_TOOLTIP);
+    }
+};
+
 Blockly.Blocks['robActions_sensorLight_on'] = {
     /**
      * Turn sensor light on.
