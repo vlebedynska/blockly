@@ -300,7 +300,7 @@ h1 {
         <block type="robActions_led_on">
             <value name="COLOR">
                 <block type="robColour_picker">
-                    <field name="COLOUR">#ff0000</field>
+                    <field name="COLOUR">#532115</field>
                 </block>
             </value>
         </block>
@@ -369,28 +369,34 @@ h1 {
     </category>
     <category name="TOOLBOX_COLOUR" svg="true">
         <block type="robColour_picker">
-            <field name="COLOUR">#585858</field>
+            <field name="COLOUR">#FF1493</field>
         </block>
         <block type="robColour_picker">
-            <field name="COLOUR">#000000</field>
+            <field name="COLOUR">#9370DB</field>
         </block>
         <block type="robColour_picker">
-            <field name="COLOUR">#0057a6</field>
+            <field name="COLOUR">#4876FF</field>
         </block>
         <block type="robColour_picker">
-            <field name="COLOUR">#00642e</field>
+            <field name="COLOUR">#8EE5EE</field>
         </block>
         <block type="robColour_picker">
-            <field name="COLOUR">#f7d117</field>
+            <field name="COLOUR">#00FFFF</field>
         </block>
         <block type="robColour_picker">
-            <field name="COLOUR">#b30006</field>
+            <field name="COLOUR">#ADFF2F</field>
         </block>
         <block type="robColour_picker">
+            <field name="COLOUR">#FFFF00</field>
+        </block>
+        <block type="robColour_picker">
+            <field name="COLOUR">#FFA500</field>
+        </block>
+          <block type="robColour_picker">
+            <field name="COLOUR">#FF0000</field>
+        </block>
+          <block type="robColour_picker">
             <field name="COLOUR">#FFFFFF</field>
-        </block>
-        <block type="robColour_picker">
-            <field name="COLOUR">#532115</field>
         </block>
     </category>
     <category name="TOOLBOX_VARIABLE" custom="VARIABLE" svg="true"></category>
@@ -424,8 +430,9 @@ h1 {
             </block>
             <block type="robActions_motor_stop"></block>
         </category>
-        <category name="TOOLBOX_SOUND" svg="true">
-            <block type="mbedActions_play_tone">
+        <category name="TOOLBOX_SOUND" svg="true">        
+            <block type="mbedActions_play_note"></block>
+            <block type="robActions_play_tone">
                 <value name="FREQUENCE">
                     <block type="math_number">
                         <field name="NUM">300</field>
@@ -437,13 +444,12 @@ h1 {
                     </block>
                 </value>
             </block>
-            <block type="mbedActions_play_note"></block>
         </category>
         <category name="TOOLBOX_LIGHT" svg="true">
             <block type="robActions_led_on">
                 <value name="COLOR">
                     <block type="robColour_picker">
-                        <field name="COLOUR">#ff0000</field>
+                        <field name="COLOUR">#532115</field>
                     </block>
                 </value>
             </block>
@@ -488,7 +494,6 @@ h1 {
                     </block>
                 </value>
             </block>
-            <block type="robControls_forEach"></block>
             <block type="controls_flow_statements"></block>
         </category>
         <category name="TOOLBOX_WAIT" svg="true">
@@ -568,32 +573,37 @@ h1 {
         <block type="text"></block>
         <block type="text_comment"></block>
         <block type="robText_join"></block>
-        <block type="robText_append"></block>
     </category>
     <category name="TOOLBOX_COLOUR" svg="true">
         <block type="robColour_picker">
-            <field name="COLOUR">#585858</field>
+            <field name="COLOUR">#FF1493</field>
         </block>
         <block type="robColour_picker">
-            <field name="COLOUR">#000000</field>
+            <field name="COLOUR">#9370DB</field>
         </block>
         <block type="robColour_picker">
-            <field name="COLOUR">#0057a6</field>
+            <field name="COLOUR">#4876FF</field>
         </block>
         <block type="robColour_picker">
-            <field name="COLOUR">#00642e</field>
+            <field name="COLOUR">#8EE5EE</field>
         </block>
         <block type="robColour_picker">
-            <field name="COLOUR">#f7d117</field>
+            <field name="COLOUR">#00FFFF</field>
         </block>
         <block type="robColour_picker">
-            <field name="COLOUR">#b30006</field>
+            <field name="COLOUR">#ADFF2F</field>
         </block>
         <block type="robColour_picker">
+            <field name="COLOUR">#FFFF00</field>
+        </block>
+        <block type="robColour_picker">
+            <field name="COLOUR">#FFA500</field>
+        </block>
+          <block type="robColour_picker">
+            <field name="COLOUR">#FF0000</field>
+        </block>
+          <block type="robColour_picker">
             <field name="COLOUR">#FFFFFF</field>
-        </block>
-        <block type="robColour_picker">
-            <field name="COLOUR">#532115</field>
         </block>
     </category>
     <category name="TOOLBOX_VARIABLE" custom="VARIABLE" svg="true"></category>

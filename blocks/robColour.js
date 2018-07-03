@@ -42,8 +42,10 @@ Blockly.Blocks['robColour_picker'] = {
             break;
         case 'ardu':
         case 'ev3':
-        case 'wedo':
             colorField.setColours([ '#000000', '#0057A6', '#00642E', '#532115', '#585858', '#B30006', '#F7D117', '#FFFFFF' ]).setColumns(8);
+            break;
+        case 'wedo':
+            colorField.setColours([ '#FF1493', '#9370DB', '#4876FF', '#8EE5EE', '#00FFFF', '#ADFF2F', '#FFFF00', '#FFA500', '#FF0000', '#FFFFFF' ]).setColumns(10);
             break;
         default:
         // all colors are available, nothing to constrain
