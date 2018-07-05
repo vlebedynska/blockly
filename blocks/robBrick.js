@@ -74,7 +74,7 @@ Blockly.Blocks['robBrick_WeDo-Brick'] = {
         this.setInputsInline(false);
         this.appendDummyInput().appendField(new Blockly.FieldLabel(this.workspace.device.toUpperCase(), 'brick_label'));
         this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(nameField, 'VAR');
-        //this.setDeletable(false);
+       //this.setDeletable(false);
     },
     validateName : function(name) {
         var block = this.sourceBlock_;
@@ -82,11 +82,11 @@ Blockly.Blocks['robBrick_WeDo-Brick'] = {
         // no name set -> invalid
         if (name === '')
             return null;
-        if (!name.match(/^[a-zA-Z][a-zA-Z_$0-9]*$/))
+        if (!name.match(/^[a-zA-Z][a-zA-Z_$/0-9]*$/))
             return null;
         // Ensure two identically-named variables don't exist.
         name = Blockly.Variables.findLegalName(name, block);
-        Blockly.Variables.renameVariable(block.nameOld, name, Blockly.getMainWorkspace());
+        Blockly.Variables.renameVariable(block.nameOld, name, this.sourceBlock_.workspace);
         block.nameOld = name;
         return name;
     },
