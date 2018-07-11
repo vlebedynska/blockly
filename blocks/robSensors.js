@@ -582,7 +582,7 @@ Blockly.Blocks['robSensors_generic_all'] = {
             }
             // add ports again
             if (this.mutPorts[index] == 'NO') {
-                if (this.ports[index] === 'CONFIGURATION') {
+                if (sensors[index].ports === 'CONFIGURATION') {
                     var portsList = [];
                     var container = Blockly.Workspace.getByContainer("bricklyDiv");
                     if (container) {
@@ -605,7 +605,7 @@ Blockly.Blocks['robSensors_generic_all'] = {
                     this.dropDownPorts = new Blockly.FieldDropdown(this.ports[index]);
                     this.dependConfig = function() {
                         return {
-                            'type' : this.sensorType_.split("_")[0].toLowerCase(),
+                            'type' : this.sensorType_.split("_")[index].toLowerCase(),
                             'dropDown' : this.dropDownPorts
                         };
                     };
