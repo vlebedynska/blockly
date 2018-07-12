@@ -334,7 +334,35 @@ Blockly.Blocks['mbedActions_play_note'] = {
         var frequence = new Blockly.FieldNote('261.626');
         var duration = new Blockly.FieldDropdown([ [ Blockly.Msg.PLAY_WHOLE, '2000' ], [ Blockly.Msg.PLAY_HALF, '1000' ], [ Blockly.Msg.PLAY_QUARTER, '500' ],
                 [ Blockly.Msg.PLAY_EIGHTH, '250' ], [ Blockly.Msg.PLAY_SIXTEENTH, '125' ] ]);
-        this.appendDummyInput().appendField(Blockly.Msg.PLAY).appendField(duration, 'DURATION').appendField(frequence, 'FREQUENCE');
+        if (this.workspace.device === 'wedo') {
+            this.action = 'BUZZER';
+            var portList = [];
+            var container = Blockly.Workspace.getByContainer("bricklyDiv");
+            if (container) {
+                var blocks = Blockly.Workspace.getByContainer("bricklyDiv").getAllBlocks();
+                for (var x = 0; x < blocks.length; x++) {
+                    var func = blocks[x].getConfigDecl;
+                    if (func) {
+                        var config = func.call(blocks[x]);
+                        if (config.type === 'buzzer') {
+                            portList.push([ config.name, config.name.toUpperCase() ]);
+                        }
+                    }
+                }
+            }
+            if (portList.length === 0) {
+                portList.push([ Blockly.Msg.CONFIGURATION_NO_PORT || Blockly.checkMsgKey('CONFIGURATION_NO_PORT'),
+                        (Blockly.Msg.CONFIGURATION_NO_PORT || Blockly.checkMsgKey('CONFIGURATION_NO_PORT')).toUpperCase() ]);
+            }
+            var ports = new Blockly.FieldDropdown(portList);
+            this.dependConfig = {
+                'type' : 'buzzer',
+                'dropDown' : ports
+            };
+            this.appendDummyInput().appendField(Blockly.Msg.PLAY).appendField(ports, 'ACTORPORT').appendField(duration, 'DURATION').appendField(frequence, 'FREQUENCE');
+        } else {
+            this.appendDummyInput().appendField(Blockly.Msg.PLAY).appendField(duration, 'DURATION').appendField(frequence, 'FREQUENCE');
+        }
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setTooltip(Blockly.Msg.PLAY_NOTE_TOOLTIP);
@@ -494,18 +522,15 @@ Blockly.Blocks['mbedActions_write_to_pin'] = {
             return;
         }
         if (protocol === 'ANALOG') {
-            var pins = [ [ 'P1', '1' ], [ 'P2', '2' ], [ 'A1', '5' ],
-                         [ 'C04', 'C04'], [ 'C05', 'C05'], [ 'C06', 'C06'],
-                         [ 'C16', 'C16'], [ 'C17', 'C17'] ];
+            var pins = [ [ 'P1', '1' ], [ 'P2', '2' ], [ 'A1', '5' ], [ 'C04', 'C04' ], [ 'C05', 'C05' ], [ 'C06', 'C06' ], [ 'C16', 'C16' ], [ 'C17', 'C17' ] ];
             var pinField = this.getField("PIN");
             pinField.menuGenerator_ = pins;
             pinField.setValue("1");
             pinField.setText('P1');
         } else if (protocol === 'DIGITAL') {
-            var pins = [ [ 'P0', '0' ], [ 'P1', '1' ], [ 'P2', '2' ], [ 'P3', '3' ], [ 'A0', '4' ], [ 'A1', '5' ],
-                         [ 'C04', 'C04'], [ 'C05', 'C05'], [ 'C06', 'C06'], [ 'C07', 'C07'], [ 'C08', 'C08'], [ 'C09', 'C09'],
-                         [ 'C10', 'C10'], [ 'C11', 'C11'], [ 'C12', 'C12'], [ 'C16', 'C16'], [ 'C17', 'C17'], [ 'C18', 'C18'],
-                         [ 'C19', 'C19'] ];
+            var pins = [ [ 'P0', '0' ], [ 'P1', '1' ], [ 'P2', '2' ], [ 'P3', '3' ], [ 'A0', '4' ], [ 'A1', '5' ], [ 'C04', 'C04' ], [ 'C05', 'C05' ],
+                    [ 'C06', 'C06' ], [ 'C07', 'C07' ], [ 'C08', 'C08' ], [ 'C09', 'C09' ], [ 'C10', 'C10' ], [ 'C11', 'C11' ], [ 'C12', 'C12' ],
+                    [ 'C16', 'C16' ], [ 'C17', 'C17' ], [ 'C18', 'C18' ], [ 'C19', 'C19' ] ];
             var pinField = this.getField("PIN");
             pinField.menuGenerator_ = pins;
             pinField.setValue("0");
@@ -530,13 +555,13 @@ Blockly.Blocks['mbedActions_pin_set_pull'] = {
 
     init : function() {
         this.setColour(Blockly.CAT_ACTION_RGB);
-        var pull = new Blockly.FieldDropdown([ [ Blockly.Msg.PIN_PULL_UP, 'UP' ], [ Blockly.Msg.PIN_PULL_DOWN, 'DOWN' ], [ Blockly.Msg.PIN_PULL_NONE, 'NONE' ] ]);
-        var pins = new Blockly.FieldDropdown([ [ 'P0', '0' ], [ 'P1', '1' ], [ 'P2', '2' ], [ 'P3', '3' ], [ 'A0', '4' ], [ 'A1', '5' ],
-                                               [ 'C04', 'C04'], [ 'C05', 'C05'], [ 'C06', 'C06'], [ 'C07', 'C07'], [ 'C08', 'C08'], [ 'C09', 'C09'],
-                                               [ 'C10', 'C10'], [ 'C11', 'C11'], [ 'C12', 'C12'], [ 'C16', 'C16'], [ 'C17', 'C17'], [ 'C18', 'C18'],
-                                               [ 'C19', 'C19'] ]);
-        this.appendDummyInput().appendField(Blockly.Msg.SET + ' ' + Blockly.Msg.PIN_PULL).appendField(pull, 'PIN_PULL')
-        .appendField(Blockly.Msg.ON + ' ' + Blockly.Msg.SENSOR_PIN).appendField(pins, 'PIN_PORT'); // shouldnt be called PIN, would need a special clause in xml.js like mbedActions_write_to_pin
+        var pull = new Blockly.FieldDropdown(
+                [ [ Blockly.Msg.PIN_PULL_UP, 'UP' ], [ Blockly.Msg.PIN_PULL_DOWN, 'DOWN' ], [ Blockly.Msg.PIN_PULL_NONE, 'NONE' ] ]);
+        var pins = new Blockly.FieldDropdown([ [ 'P0', '0' ], [ 'P1', '1' ], [ 'P2', '2' ], [ 'P3', '3' ], [ 'A0', '4' ], [ 'A1', '5' ], [ 'C04', 'C04' ],
+                [ 'C05', 'C05' ], [ 'C06', 'C06' ], [ 'C07', 'C07' ], [ 'C08', 'C08' ], [ 'C09', 'C09' ], [ 'C10', 'C10' ], [ 'C11', 'C11' ], [ 'C12', 'C12' ],
+                [ 'C16', 'C16' ], [ 'C17', 'C17' ], [ 'C18', 'C18' ], [ 'C19', 'C19' ] ]);
+        this.appendDummyInput().appendField(Blockly.Msg.SET + ' ' + Blockly.Msg.PIN_PULL).appendField(pull, 'PIN_PULL').appendField(Blockly.Msg.ON + ' '
+                + Blockly.Msg.SENSOR_PIN).appendField(pins, 'PIN_PORT'); // shouldnt be called PIN, would need a special clause in xml.js like mbedActions_write_to_pin
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setTooltip(Blockly.Msg.PIN_SET_PULL_TOOLTIP);

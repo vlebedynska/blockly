@@ -72,6 +72,7 @@ Blockly.Blocks['robBrick_WeDo-Brick'] = {
         var nameField = new Blockly.FieldTextInput(name, this.validateName);
         this.setColour('#BBBBBB');
         this.setInputsInline(false);
+        this.setDeletable(false);
         this.appendDummyInput().appendField(new Blockly.FieldLabel(this.workspace.device.toUpperCase(), 'brick_label'));
         this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(nameField, 'VAR');
        //this.setDeletable(false);
@@ -114,8 +115,8 @@ Blockly.Blocks['robBrick_conf_motor'] = {
         this.nameOld = name;
         var nameField = new Blockly.FieldTextInput(name, this.validateName);
         this.appendDummyInput().appendField(Blockly.Msg.ACTION_MOTOR, 'ACTIONTITLE').appendField(nameField, 'NAME');
-        // TODO discuss default name "Brick"
-        this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField('Brickname').appendField(new Blockly.FieldVariable('Brick1'), 'VAR');
+        // TODO discuss default name "WeDo_1"
+        this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField('Brickname').appendField(new Blockly.FieldVariable('WeDo_1'), 'VAR');
         this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField('connector').appendField(new Blockly.FieldDropdown([ [ '1', '1' ], [ '2', '2' ] ]), 'CONNECTOR');
     },
     validateName : function(name) {

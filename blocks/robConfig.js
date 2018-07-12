@@ -25,7 +25,7 @@ Blockly.Blocks['robConf_generic'] = {
     /**
      * @param {Object
      *            sensor}
-     *
+     * 
      * @memberof Block
      */
     init : function(confBlock) {
@@ -55,7 +55,24 @@ Blockly.Blocks['robConf_generic'] = {
 
         if (confBlock.bricks) {
             // TODO discuss default name "Brick"
-            this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField('Brickname').appendField(new Blockly.FieldVariable('Brick1'), 'VAR');
+            var container = Blockly.Workspace.getByContainer("bricklyDiv");
+            if (container) {
+                var topBlocks = Blockly.getMainWorkspace().getTopBlocks(true);
+                var variableList = [];
+                for (var i = 0; i < topBlocks.length; i++) {
+                    var block = topBlocks[i];
+                    if (block.type.indexOf('robBrick_') !== -1) {
+                        if (block.getVarDecl) {
+                            variableList.push([ block.getVarDecl()[0], block.getVarDecl()[0].toUpperCase() ]);
+                        }
+                    }
+                }
+            }
+            if (variableList.length == 0) {
+                variableList.push([[ 'INVALID_NAME', 'INVALID_NAME' ]]);
+            }
+            var brickName = new Blockly.FieldDropdown(variableList);
+            this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField('Brickname').appendField(brickName, 'VAR');
             this.getVars = function() {
                 return [ this.getFieldValue('VAR') ];
             };

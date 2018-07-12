@@ -537,7 +537,6 @@ sensors.key.ardu = {
     } ],
     ports : [ [ '1', 'LEFT' ], [ '2', 'ENTER' ], [ '3', 'RIGHT' ], [ 'SENSOR_KEY_ANY', 'ANY' ] ]
 };
-
 sensors.key.arduino = {
     title : 'KEY',
     modes : [ {
@@ -547,7 +546,6 @@ sensors.key.arduino = {
     } ],
     ports : 'CONFIGURATION'
 };
-
 sensors.key.calliope = {
     title : 'KEY',
     modes : [ {
@@ -567,7 +565,6 @@ sensors.key.ev3 = {
     ports : [ [ 'SENSOR_KEY_ENTER', 'ENTER' ], [ 'SENSOR_KEY_UP', 'UP' ], [ 'SENSOR_KEY_DOWN', 'DOWN' ], [ 'SENSOR_KEY_LEFT', 'LEFT' ],
             [ 'SENSOR_KEY_RIGHT', 'RIGHT' ], [ 'SENSOR_KEY_ESCAPE', 'ESCAPE' ], [ 'SENSOR_KEY_ANY', 'ANY' ] ]
 };
-
 sensors.key.nxt = {
     title : 'KEY',
     modes : [ {
@@ -578,6 +575,15 @@ sensors.key.nxt = {
     ports : [ [ 'SENSOR_KEY_ENTER', 'ENTER' ], [ 'SENSOR_KEY_LEFT', 'LEFT' ], [ 'SENSOR_KEY_RIGHT', 'RIGHT' ] ]
 };
 sensors.key.microbit = sensors.key.calliope;
+sensors.key.wedo = {
+    title : 'KEY',
+    modes : [ {
+        name : 'PRESSED',
+        type : 'Boolean',
+        question : true
+    } ],
+    ports : 'CONFIGURATION'
+};
 
 sensors.light = {};
 sensors.light.ardu = {
@@ -999,7 +1005,7 @@ sensorsAll.arduino = [ sensors.key.arduino, sensors.timer.arduino, sensors.tempe
 sensorsAll.nao = [ sensors.touch.nao, sensors.accelerometer.nao, sensors.gyro.nao, sensors.ultrasonic.nao, sensors.fsr.nao, sensors.electriccurrent.nao,
         sensors.detectface.nao, sensors.detectmark.nao ];
 sensorsAll.vorwerk = [ sensors.touch.vorwerk, sensors.accelerometer.vorwerk, sensors.ultrasonic.vorwerk, sensors.wall.vorwerk, sensors.drop_off.vorwerk ];
-sensorsAll.wedo = [ sensors.gyro.wedo, sensors.infrared.wedo, sensors.timer.wedo ];
+sensorsAll.wedo = [ sensors.key.wedo, sensors.gyro.wedo, sensors.infrared.wedo, sensors.timer.wedo ];
 
 function initSensors() {
     for ( var sensor in sensors) {

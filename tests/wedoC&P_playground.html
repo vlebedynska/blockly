@@ -256,6 +256,7 @@ h1 {
         <block type="robActions_led_off"></block>
     </category>
     <category name="TOOLBOX_SENSOR" svg="true">
+        <block type='robSensors_key_getSample'></block>
         <block type="robSensors_infrared_getSample"></block>
         <block type="robSensors_gyro_getSample"></block>
         <block type="robSensors_timer_getSample"></block>
@@ -267,7 +268,7 @@ h1 {
         <block type="robControls_loopForever"></block>
         <block type="controls_whileUntil">
             <value name="BOOL">
-                <block type="robSensors_gyro_getSample"></block>
+                <block type="robSensors_key_getSample"></block>
             </value>
         </block>
         <block type="robControls_wait_time">
@@ -380,7 +381,7 @@ h1 {
             <block type="robActions_display_clear"></block>
         </category>
         <category name="TOOLBOX_SOUND" svg="true">
-            <block type="mbedActions_play_tone">
+            <block type="robActions_play_tone">
                 <value name="FREQUENCE">
                     <block type="math_number">
                         <field name="NUM">300</field>
@@ -406,6 +407,7 @@ h1 {
         </category>
     </category>
     <category name="TOOLBOX_SENSOR" svg="true">
+        <block type='robSensors_key_getSample'></block>
         <block type='robSensors_gyro_getSample'></block>
         <block type='robSensors_infrared_getSample'></block>
         <block type="robSensors_timer_getSample"></block>
@@ -557,11 +559,14 @@ h1 {
 
 <toolbox_set id="toolbox-Configuration" style="display: none">
     <category name="TOOLBOX_ACTION" svg="true">
-        <block type=robConf_motor>
+        <block type=robConf_motor></block>
+        <block type=robConf_buzzer></block>
+        <block type=robConf_led></block>
     </category>
     <category name="TOOLBOX_SENSOR" svg="true">
         <block type="robConf_infrared"></block>
         <block type="robConf_gyro"></block>
+        <block type="robConf_key"></block>
     </category>
 </toolbox_set>
 	</body>
