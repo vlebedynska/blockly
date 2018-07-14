@@ -69,7 +69,7 @@ Blockly.Blocks['robConf_generic'] = {
                 }
             }
             if (variableList.length == 0) {
-                variableList.push([[ 'INVALID_NAME', 'INVALID_NAME' ]]);
+                variableList.push([ [ 'INVALID_NAME', 'INVALID_NAME' ] ]);
             }
             var brickName = new Blockly.FieldDropdown(variableList);
             this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField('Brickname').appendField(brickName, 'VAR');
