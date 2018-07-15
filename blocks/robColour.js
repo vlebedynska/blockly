@@ -45,6 +45,7 @@ Blockly.Blocks['robColour_picker'] = {
             colorField.setColours([ '#000000', '#0057A6', '#00642E', '#532115', '#585858', '#B30006', '#F7D117', '#FFFFFF' ]).setColumns(8);
             break; 
         case 'wedo':
+            colorField = new Blockly.FieldColour('#FFFFFE');
             colorField.setColours([ '#FF1493', '#800080', '#4876FF', '#00FFFF', '#90EE90', '#008000', '#FFFF00', '#FFA500', '#FF0000', '#FFFFFE' ]).setColumns(10);
             break;
         default:

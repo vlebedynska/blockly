@@ -810,7 +810,7 @@ Blockly.BlockSvg.prototype.showContextMenu_ = function(e) {
   this.helpUrl = function() {
       var blocklyDiv = document.getElementById("blocklyDiv");
       if (blocklyDiv && !blocklyDiv.classList.contains("rightActive")) {
-          var progHelp = document.getElementById("progHelp");
+          var progHelp = document.getElementById("helpButton");
           if (progHelp) {
               progHelp.click();
           }
