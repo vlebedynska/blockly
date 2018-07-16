@@ -83,7 +83,7 @@ Blockly.Blocks['robBrick_WeDo-Brick'] = {
         // no name set -> invalid
         if (name === '')
             return null;
-        if (!name.match(/^[a-zA-Z][a-zA-Z_$/0-9]*$/))
+        if (!name.match(/^[a-zA-Z][a-zA-Z_\-:!§$%@=?\*+~#\.$/0-9]*$/))
             return null;
         // Ensure two identically-named variables don't exist.
         name = Blockly.Variables.findLegalName(name, block);
