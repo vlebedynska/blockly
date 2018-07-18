@@ -1191,3 +1191,5 @@ Blockly.Msg.SLOT_TILTED_BACK = 'back';
 Blockly.Msg.SLOT_TILTED_FRONT = 'front';
 Blockly.Msg.SLOT_TILTED_NO = 'not';
 Blockly.Msg.SLOT_TILTED_ANY = 'any';
+Blockly.Msg.CONNECTOR = 'connection';
+Blockly.Msg.BRICKNAME_WEDO = 'WeDo';

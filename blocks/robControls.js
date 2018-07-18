@@ -513,9 +513,7 @@ Blockly.Blocks['robControls_wait_for'] = {
 
             //TODO: move ardu and nibo to arduControls and niboControls
             var s;
-            console.log("device");
-            console.log(this.workspace.device);
-
+        
             if (this.workspace.device === 'ardu') {
                 s = this.workspace.newBlock('robSensors_getSample_ardu');
             } else if (this.workspace.device === 'bob3') {

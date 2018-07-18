@@ -1083,5 +1083,7 @@
 	"SLOT_TILTED_ANY": "irgendwie",
 	"SENSOR_IS_TILTED": "geneigt?",
 	"MODE_TILTED": "(geneigt)",
-	"ACTION_MOTOR": "Motor"
+	"ACTION_MOTOR": "Motor",
+	"CONNECTOR": "Anschluss",
+    "BRICKNAME_WEDO": "WeDo"
 }

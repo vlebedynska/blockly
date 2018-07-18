@@ -47,14 +47,13 @@ Blockly.Blocks['robConf_generic'] = {
         };
 
         var type = confBlock.sensor ? 'SENSOR_' : 'ACTION_';
-        // TODO discuss if "Port1" is the best default name
-        var name = Blockly.RobConfig.findLegalName(Blockly.Msg.CONFIGURATION_PORT || Blockly.checkMsgKey('CONFIGURATION_PORT'), this);
+        var name = Blockly.RobConfig.findLegalName(Blockly.Msg[type + confBlock.title].charAt(0).toUpperCase() || Blockly.Msg[type + confBlock.title]
+                || Blockly.checkMsgKey('CONFIGURATION_PORT'), this);
         this.nameOld = name;
         var nameField = new Blockly.FieldTextInput(name, validateName);
         this.appendDummyInput().appendField(Blockly.Msg[type + confBlock.title] || type + confBlock.title, 'SENSORTITLE').appendField(nameField, 'NAME');
 
         if (confBlock.bricks) {
-            // TODO discuss default name "Brick"
             var container = Blockly.Workspace.getByContainer("bricklyDiv");
             if (container) {
                 var topBlocks = Blockly.getMainWorkspace().getTopBlocks(true);
@@ -72,7 +71,7 @@ Blockly.Blocks['robConf_generic'] = {
                 variableList.push([ [ 'INVALID_NAME', 'INVALID_NAME' ] ]);
             }
             var brickName = new Blockly.FieldDropdown(variableList);
-            this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField('Brickname').appendField(brickName, 'VAR');
+            this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg['BRICKNAME_' + this.workspace.device.toUpperCase()]).appendField(brickName, 'VAR');
             this.getVars = function() {
                 return [ this.getFieldValue('VAR') ];
             };

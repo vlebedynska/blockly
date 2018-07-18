@@ -67,7 +67,7 @@ Blockly.Blocks['robBrick_Arduino-Brick'] = {
 
 Blockly.Blocks['robBrick_WeDo-Brick'] = {
     init : function() {
-        var name = Blockly.Variables.findLegalName('Brick1', this);
+        var name = Blockly.Variables.findLegalName(Blockly.Msg.BRICKNAME_WEDO.charAt(0).toUpperCase(), this);
         this.nameOld = name;
         var nameField = new Blockly.FieldTextInput(name, this.validateName);
         this.setColour('#BBBBBB');
@@ -97,59 +97,6 @@ Blockly.Blocks['robBrick_WeDo-Brick'] = {
     getVars : function() {
         return [ this.getFieldValue('VAR') ];
     },
-};
-
-Blockly.Blocks['robBrick_conf_motor'] = {
-    /**
-     * Represent a voltage sensor.
-     * 
-     * @constructs robBrick_voltage
-     * @memberof Block
-     */
-
-    init : function() {
-        this.setColour(Blockly.CAT_ACTION_RGB);
-
-        // TODO discuss if "Port1" is the best default name      
-        var name = Blockly.Variables.findLegalName(Blockly.Msg.CONFIGURATION_PORT || Blockly.checkMsgKey('CONFIGURATION_PORT'), this);
-        this.nameOld = name;
-        var nameField = new Blockly.FieldTextInput(name, this.validateName);
-        this.appendDummyInput().appendField(Blockly.Msg.ACTION_MOTOR, 'ACTIONTITLE').appendField(nameField, 'NAME');
-        // TODO discuss default name "WeDo_1"
-        this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField('Brickname').appendField(new Blockly.FieldVariable('WeDo_1'), 'VAR');
-        this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField('connector').appendField(new Blockly.FieldDropdown([ [ '1', '1' ], [ '2', '2' ] ]), 'CONNECTOR');
-    },
-    validateName : function(name) {
-        var block = this.sourceBlock_;
-        name = name.replace(/[\s\xa0]+/g, '').replace(/^ | $/g, '');
-        // no name set -> invalid
-        if (name === '')
-            return null;
-        if (!name.match(/^[a-zA-Z][a-zA-Z_$0-9]*$/))
-            return null;
-        // Ensure two identically-named variables don't exist.
-        name = Blockly.Variables.findLegalName(name, block);
-        Blockly.RobConfig.renameConfig(this.sourceBlock_, block.nameOld, name, Blockly.Workspace.getByContainer("blocklyDiv"));
-        block.nameOld = name;
-        return name;
-    },
-    getVarDecl : function() {
-        return [ this.getFieldValue('NAME') ];
-    },
-    getVars : function() {
-        return [ this.getFieldValue('VAR') ];
-    },
-    renameVar : function(oldName, newName) {
-        if (Blockly.Names.equals(oldName, this.getFieldValue('VAR'))) {
-            this.setFieldValue(newName, 'VAR');
-        }
-    },
-    getConfigDecl : function() {
-        return [ 'motor', this.getFieldValue('NAME') ];
-    },
-    onDispose : function() {
-        Blockly.RobConfig.disposeConfig(this);
-    }
 };
 
 Blockly.Blocks['robBrick_makeBlock-Brick'] = {
