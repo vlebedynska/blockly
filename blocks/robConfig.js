@@ -25,7 +25,7 @@ Blockly.Blocks['robConf_generic'] = {
     /**
      * @param {Object
      *            sensor}
-     *
+     * 
      * @memberof Block
      */
     init : function(confBlock) {
@@ -94,31 +94,21 @@ Blockly.Blocks['robConf_generic'] = {
 
         if (confBlock.pins) {
             for (var i = 0; i < portList.length; i++) {
-                //if (!(portList[i][0] == 'SCK' || portList[i][0] == 'MOSI' || portList[i][0] == 'MISO')) {
-                pins = new Blockly.FieldDropdown(confBlock.pins);
+                pins = new Blockly.FieldDropdown(confBlock.pins.call(this, this.workspace.subDevice));
                 if (confBlock.standardPins) {
                     pins.setValue(confBlock.standardPins[i]);
                 }
-                //            } else {
-                //                switch (portList[i][0]) {
-                //                case 'SCK':
-                //                    pins = '13';
-                //                    break;
-                //                case 'MOSI':
-                //                    pins = '11';
-                //                    break;
-                //                default:
-                //                    pins = '12';
-                //                }
-                //            }
                 this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(portList[i][0]).appendField(pins, portList[i][1]);
             }
         }
 
         if (confBlock.fixedPorts) {
-          for (var i = 0; i < confBlock.fixedPorts.length; i++) {
-              this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(confBlock.fixedPorts[i][0], 'FIXEDPORT') .appendField(confBlock.fixedPorts[i][1], 'VAR');
-          }
+            console.log(confBlock.fixedPorts);
+            for (var i = 0; i < confBlock.fixedPorts.length; i++) {
+                var dropDown = new Blockly.FieldDropdown([ [ confBlock.fixedPorts[i][1], confBlock.fixedPorts[i][1] ] ]);
+                console.log(dropDown);
+                this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(confBlock.fixedPorts[i][0]).appendField(dropDown);
+            }
         }
 
         this.setTooltip(function() {

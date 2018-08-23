@@ -52,6 +52,7 @@ Blockly.Workspace = function(opt_options) {
   /** @type {number} */
   this.toolboxPosition = this.options.toolboxPosition;
   this.device = '';
+  this.subDevice = '';
   this.version = '';
   this.description = '';
   /**
@@ -344,11 +345,16 @@ Blockly.Workspace.getByContainer = function(container) {
  * @return {Blockly.Block} The sought after block or null if not found.
  */
 Blockly.Workspace.prototype.setDevice = function(device) {
-  this.device = device;
-  if (this.toolbox_)
-      this.toolbox_.flyout_.workspace_.device = device;
-  if (this.flyout_)
-      this.flyout_.workspace_.device = device;
+  this.device = device.group;
+  this.subDevice = device.robot;
+  if (this.toolbox_) {
+    this.toolbox_.flyout_.workspace_.device = device.group;
+    this.toolbox_.flyout_.workspace_.subDevice = device.robot;
+  }
+  if (this.flyout_) {
+    this.flyout_.workspace_.device = device.group;
+    this.flyout_.workspace_.subDevice = device.robot;
+  }
 };
 
 /**

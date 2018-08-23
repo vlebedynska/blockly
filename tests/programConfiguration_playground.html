@@ -144,7 +144,7 @@
 		options.horizontalLayout = horizontalLayout;
 		options.toolboxPosition = position;
 		workspace[suffix] = Blockly.inject(suffix, options);
-		workspace[suffix].setDevice('arduino');
+		workspace[suffix].setDevice({group:'arduino', robot:'uno'});
 
 	}
 </script>

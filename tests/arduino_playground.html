@@ -88,7 +88,7 @@ function start() {
            variableDeclaration: true,
            robControls: true
           });
-  workspace.setDevice(device);
+  workspace.setDevice({group:device, robot:'uno'});
   // Restore previously displayed text.
   if (sessionStorage) {
     var text = sessionStorage.getItem('textarea');
@@ -192,7 +192,7 @@ function spaghetti(n) {
 }
 
 function toggleDevice() {
-  workspace.setDevice('arduino');
+    workspace.setDevice({group:device, robot:'uno'});
 }
 
 var spaghettiXml = [
@@ -257,179 +257,47 @@ h1 {
 </head>
 <body onload="start()">
 
-	<div id="blocklyDiv"></div>
+    <div id="blocklyDiv"></div>
 
-<toolbox_set id="toolbox" style="display: none">
-	<category name="TOOLBOX_ACTION" svg="true">
+    <toolbox_set id="toolbox" style="display: none"> <category name="TOOLBOX_ACTION" svg="true"> </category> <category name="TOOLBOX_SENSOR"
+        svg="true"> <block type="robSensors_light_getSample"></block> <block type="robSensors_ultrasonic_getSample"></block> <block
+        type="robSensors_moisture_getSample"></block> <block type="robSensors_key_getSample"></block> <block type="robSensors_timer_getSample"></block> <block
+        type="robSensors_temperature_getSample"></block> <block type="robSensors_potentiometer_getSample"></block> <block type="robSensors_infrared_getSample"></block>
+    <block type="robSensors_humidity_getSample"></block> <block type="robSensors_encoder_getSample"></block> <block type="robSensors_motion_getSample"></block>
+    <block type="robSensors_drop_getSample"></block> <block type="robSensors_pulse_getSample"></block> <block type="robSensors_rfid_getSample"></block> </category> <category
+        name="TOOLBOX_CONTROL" svg="true"> <category name="TOOLBOX_DECISION" svg="true"> <block type="robControls_if"></block> <block
+        type="robControls_ifElse"></block> </category> <category name="TOOLBOX_LOOP" svg="true"> <block type="robControls_loopForever"></block> <block
+        type="controls_repeat_ext"> <value name="TIMES"> <block type="math_number"> <field name="NUM">10</field> </block> </value> </block> <block
+        type="controls_whileUntil"></block> <block type="robControls_for"> <value name="FROM"> <block type="math_number"> <field
+        name="NUM">1</field> </block> </value> <value name="TO"> <block type="math_number"> <field name="NUM">10</field> </block> </value> <value name="BY"> <block
+        type="math_number"> <field name="NUM">1</field> </block> </value> </block> <block type="robControls_forEach"></block> <block type="controls_flow_statements"></block> </category> <category
+        name="TOOLBOX_WAIT" svg="true"> <block type="robControls_wait"></block> <block type="robControls_wait_time"> <value name="WAIT">
+    <block type="math_number"> <field name="NUM">500</field> </block> </value> </block> <block type="robControls_wait_for"> <value name="WAIT0"> <block
+        type="logic_compare"> <value name="A"> <block type="robSensors_getSample_arduino"></block> </value> <value name="B"> <block
+        type="logic_boolean"></block> </value> </block> </value> </block> </category> </category> <category name="TOOLBOX_LOGIC" svg="true"> <block type="robConf_button"></block> <block
+        type="logic_compare"></block> <block type="logic_operation"></block> <block type="logic_negate"></block> <block type="logic_boolean"></block> <block
+        type="logic_null"></block> <block type="logic_ternary"></block> </category> <category name="TOOLBOX_MATH" svg="true"> <block type="math_number"></block>
+    <block type="math_arithmetic"></block> <block type="math_single"></block> <block type="math_trig"></block> <block type="math_constant"></block> <block
+        type="math_number_property"></block> <block type="robMath_change"> <value name="DELTA"> <block type="math_number"> <field
+        name="NUM">1</field> </block> </value> </block> <block type="math_round"></block> <block type="math_on_list"></block> <block type="math_modulo"></block> <block
+        type="math_constrain"> <value name="LOW"> <block type="math_number"> <field name="NUM">1</field> </block> </value> <value name="HIGH"> <block
+        type="math_number"> <field name="NUM">100</field> </block> </value> </block> <block type="math_random_int"> <value name="FROM"> <block
+        type="math_number"> <field name="NUM">1</field> </block> </value> <value name="TO"> <block type="math_number"> <field name="NUM">100</field> </block> </value> </block>
+    <block type="math_random_float"></block> </category> <category name="TOOLBOX_TEXT" svg="true"> <block type="text"></block> <block type="robText_append"></block>
+    </category> <category name="TOOLBOX_LIST" svg="true"> <block type="robLists_create_with"> <mutation items="0" list_type="Number"></mutation> </block> <block
+        type="robLists_create_with"> <value name="ADD0"> <block type="math_number"></block> </value> <value name="ADD1"> <block
+        type="math_number"></block> </value> <value name="ADD2"> <block type="math_number"></block> </value> </block> <block type="robLists_length"></block> <block
+        type="robLists_isEmpty"></block> <block type="robLists_indexOf"></block> <block type="robLists_getIndex"></block> <block type="robLists_setIndex"></block>
+    </category> <category name="TOOLBOX_COLOUR" svg="true"> <block type="robColour_picker"></block> </category> <category name="TOOLBOX_VARIABLE" custom="VARIABLE"
+        svg="true"></category> <category name="TOOLBOX_PROCEDURE" custom="PROCEDURE" svg="true"></category> </toolbox_set>
 
+    <h1>Blockly Playground</h1>
 
-	</category>
-	<category name="TOOLBOX_SENSOR" svg="true">
-		<block type="robSensors_light_getSample"></block>
-		<block type="robSensors_ultrasonic_getSample"></block>
-		<block type="robSensors_moisture_getSample"></block>
-    <block type="robSensors_key_getSample"></block>
-    <block type="robSensors_timer_getSample"></block>
-    <block type="robSensors_temperature_getSample"></block>
-    <block type="robSensors_potentiometer_getSample"></block>
-    <block type="robSensors_infrared_getSample"></block>
-    <block type="robSensors_humidity_getSample"></block>
-    <block type="robSensors_encoder_getSample"></block>
-    <block type="robSensors_motion_getSample"></block>
-    <block type="robSensors_drop_getSample"></block>
-    <block type="robSensors_pulse_getSample"></block>
-    <block type="robSensors_rfid_getSample"></block>
-	</category>
-	<category name="TOOLBOX_CONTROL" svg="true">
-		<category name="TOOLBOX_DECISION" svg="true">
-			<block type="robControls_if"></block>
-			<block type="robControls_ifElse"></block>
-		</category>
-		<category name="TOOLBOX_LOOP" svg="true">
-			<block type="robControls_loopForever"></block>
-			<block type="controls_repeat_ext">
-				<value name="TIMES">
-					<block type="math_number">
-						<field name="NUM">10</field>
-					</block>
-				</value>
-			</block>
-			<block type="controls_whileUntil"></block>
-			<block type="robControls_for">
-				<value name="FROM">
-					<block type="math_number">
-						<field name="NUM">1</field>
-					</block>
-				</value>
-				<value name="TO">
-					<block type="math_number">
-						<field name="NUM">10</field>
-					</block>
-				</value>
-				<value name="BY">
-					<block type="math_number">
-						<field name="NUM">1</field>
-					</block>
-				</value>
-			</block>
-			<block type="robControls_forEach"></block>
-			<block type="controls_flow_statements"></block>
-		</category>
-		<category name="TOOLBOX_WAIT" svg="true">
-			<block type="robControls_wait"></block>
-			<block type="robControls_wait_time">
-				<value name="WAIT">
-					<block type="math_number">
-						<field name="NUM">500</field>
-					</block>
-				</value>
-			</block>
-			<block type="robControls_wait_for">
-				<value name="WAIT0">
-					<block type="logic_compare">
-						<value name="A">
-							<block type="robSensors_getSample_arduino"></block>
-						</value>
-						<value name="B">
-							<block type="logic_boolean"></block>
-						</value>
-					</block>
-				</value>
-			</block>
-		</category>
-	</category>
-	<category name="TOOLBOX_LOGIC" svg="true">
-    <block type="robConf_button"></block>
-		<block type="logic_compare"></block>
-		<block type="logic_operation"></block>
-		<block type="logic_negate"></block>
-		<block type="logic_boolean"></block>
-		<block type="logic_null"></block>
-		<block type="logic_ternary"></block>
-	</category>
-	<category name="TOOLBOX_MATH" svg="true">
-		<block type="math_number"></block>
-		<block type="math_arithmetic"></block>
-		<block type="math_single"></block>
-		<block type="math_trig"></block>
-		<block type="math_constant"></block>
-		<block type="math_number_property"></block>
-		<block type="robMath_change">
-			<value name="DELTA">
-				<block type="math_number">
-					<field name="NUM">1</field>
-				</block>
-			</value>
-		</block>
-		<block type="math_round"></block>
-		<block type="math_on_list"></block>
-		<block type="math_modulo"></block>
-		<block type="math_constrain">
-			<value name="LOW">
-				<block type="math_number">
-					<field name="NUM">1</field>
-				</block>
-			</value>
-			<value name="HIGH">
-				<block type="math_number">
-					<field name="NUM">100</field>
-				</block>
-			</value>
-		</block>
-		<block type="math_random_int">
-			<value name="FROM">
-				<block type="math_number">
-					<field name="NUM">1</field>
-				</block>
-			</value>
-			<value name="TO">
-				<block type="math_number">
-					<field name="NUM">100</field>
-				</block>
-			</value>
-		</block>
-		<block type="math_random_float"></block>
-	</category>
-	<category name="TOOLBOX_TEXT" svg="true">
-		<block type="text"></block>
-		<block type="robText_append"></block>
-	</category>
-	<category name="TOOLBOX_LIST" svg="true">
-		<block type="robLists_create_with">
-			<mutation items="0" list_type="Number"></mutation>
-		</block>
-		<block type="robLists_create_with">
-			<value name="ADD0">
-				<block type="math_number"></block>
-			</value>
-			<value name="ADD1">
-				<block type="math_number"></block>
-			</value>
-			<value name="ADD2">
-				<block type="math_number"></block>
-			</value>
-		</block>
-		<block type="robLists_length"></block>
-		<block type="robLists_isEmpty"></block>
-		<block type="robLists_indexOf"></block>
-		<block type="robLists_getIndex"></block>
-		<block type="robLists_setIndex"></block>
-	</category>
-	<category name="TOOLBOX_COLOUR" svg="true">
-		<block type="robColour_picker"></block>
-	</category>
-	<category name="TOOLBOX_VARIABLE" custom="VARIABLE" svg="true"></category>
-	<category name="TOOLBOX_PROCEDURE" custom="PROCEDURE" svg="true"></category>
-</toolbox_set>
+    <p>
+        <a href="javascript:void(workspace.setVisible(true))">Show</a> - <a href="javascript:void(workspace.setVisible(false))">Hide</a>
+    </p>
 
-	<h1>Blockly Playground</h1>
-
-	<p>
-		<a href="javascript:void(workspace.setVisible(true))">Show</a> - <a
-			href="javascript:void(workspace.setVisible(false))">Hide</a>
-	</p>
-
-	<script>
+    <script>
     if (rtl) {
       document.write('[ &larr; RTL. Switch to <A HREF="?ltr">LTR</A>. ]');
     } else {
@@ -437,31 +305,21 @@ h1 {
     }
   </script>
 
-	<p>
-		<input type="button" value="Export to XML" onclick="toXml()">
-		&nbsp; <input type="button" value="Import from XML"
-			onclick="fromXml()" id="import"> <br> <input
-			type="button" value="To JavaScript" onclick="toCode('JavaScript')">
-		&nbsp; <input type="button" value="To Python"
-			onclick="toCode('Python')"> &nbsp; <input type="button"
-			value="To PHP" onclick="toCode('PHP')"> &nbsp; <input
-			type="button" value="To Lua" onclick="toCode('Lua')"> &nbsp;
-		<input type="button" value="To Dart" onclick="toCode('Dart')">
-		<br>
-		<textarea id="importExport" style="width: 26%; height: 12em"
-			onchange="taChange();" onkeyup="taChange()"></textarea>
-	</p>
+    <p>
+        <input type="button" value="Export to XML" onclick="toXml()"> &nbsp; <input type="button" value="Import from XML" onclick="fromXml()"
+            id="import"> <br> <input type="button" value="To JavaScript" onclick="toCode('JavaScript')"> &nbsp; <input type="button"
+            value="To Python" onclick="toCode('Python')"> &nbsp; <input type="button" value="To PHP" onclick="toCode('PHP')"> &nbsp; <input
+            type="button" value="To Lua" onclick="toCode('Lua')"> &nbsp; <input type="button" value="To Dart" onclick="toCode('Dart')"> <br>
+        <textarea id="importExport" style="width: 26%; height: 12em" onchange="taChange();" onkeyup="taChange()"></textarea>
+    </p>
 
-	<p>
-		Stress test: &nbsp; <input type="button" value="Airstrike!"
-			onclick="airstrike(100)"> <input type="button"
-			value="Spaghetti!" onclick="spaghetti(8)"> <input
-			type="button" value="Toggle device!" onclick="toggleDevice()">
-	</p>
-	<p>
-		Log events: &nbsp; <input type="checkbox"
-			onclick="logEvents(this.checked)" id="logCheck">
-	</p>
+    <p>
+        Stress test: &nbsp; <input type="button" value="Airstrike!" onclick="airstrike(100)"> <input type="button" value="Spaghetti!"
+            onclick="spaghetti(8)"> <input type="button" value="Toggle device!" onclick="toggleDevice()">
+    </p>
+    <p>
+        Log events: &nbsp; <input type="checkbox" onclick="logEvents(this.checked)" id="logCheck">
+    </p>
 
 </body>
 </html>
