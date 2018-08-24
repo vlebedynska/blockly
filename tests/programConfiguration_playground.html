@@ -144,7 +144,7 @@
 		options.horizontalLayout = horizontalLayout;
 		options.toolboxPosition = position;
 		workspace[suffix] = Blockly.inject(suffix, options);
-		workspace[suffix].setDevice({group:'arduino', robot:'uno'});
+		workspace[suffix].setDevice({group:'arduino', robot:'mega'});
 
 	}
 </script>
@@ -219,6 +219,9 @@ h1 {
 			<block type="robActions_motor_on_for_ardu"></block>
 			<block type="robActions_set_relay"></block>
 			<block type="robActions_motor_on_for"></block>
+            <block type="robActions_serial_print"></block>
+            <block type="robActions_write_to_pin"></block>
+            <block type="robActions_pin_set_pull"></block>
 	  </category>
 	<category name="TOOLBOX_SENSOR" svg="true"> <block
 		type="robSensors_light_getSample"></block> <block
