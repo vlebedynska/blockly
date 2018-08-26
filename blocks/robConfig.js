@@ -51,7 +51,8 @@ Blockly.Blocks['robConf_generic'] = {
                 || Blockly.checkMsgKey('CONFIGURATION_PORT'), this);
         this.nameOld = name;
         var nameField = new Blockly.FieldTextInput(name, validateName);
-        this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg[type + confBlock.title] || type + confBlock.title, 'SENSORTITLE').appendField(nameField, 'NAME');
+        this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg[type + confBlock.title + "_" + this.workspace.device.toUpperCase()]
+                || Blockly.Msg[type + confBlock.title] || type + confBlock.title, 'SENSORTITLE').appendField(nameField, 'NAME');
 
         if (confBlock.bricks) {
             var container = Blockly.Workspace.getByContainer("bricklyDiv");

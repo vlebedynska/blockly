@@ -591,7 +591,6 @@ Blockly.Blocks['robActions_display_text'] = {
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setTooltip(Blockly.Msg.DISPLAY_TEXT_TOOLTIP);
-        // this.setHelp(new Blockly.Help(Blockly.Msg.DISPLAY_TEXT_HELP));
     }
 };
 
@@ -619,12 +618,11 @@ Blockly.Blocks['robActions_display_text_i2c'] = {
         };
         this.appendDummyInput().appendField(Blockly.Msg.ACTION_LCDI2C, 'ACTORTITEL').appendField(dropDownPorts, 'ACTORPORT');
         this.appendValueInput('OUT').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.DISPLAY_SHOW + ' ' + Blockly.Msg.DISPLAY_TEXT);
-        this.appendValueInput('ROW').setCheck('Number').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.DISPLAY_ROW);
         this.appendValueInput('COL').setCheck('Number').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.DISPLAY_COL);
+        this.appendValueInput('ROW').setCheck('Number').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.DISPLAY_ROW);
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setTooltip(Blockly.Msg.DISPLAY_TEXT_TOOLTIP);
-        // this.setHelp(new Blockly.Help(Blockly.Msg.DISPLAY_TEXT_HELP));
     }
 };
 
@@ -863,11 +861,6 @@ Blockly.Blocks['robActions_brickLight_on'] = {
         // this.setInputsInline(true);
         var dropdownColor = new Blockly.FieldDropdown([ [ Blockly.Msg.BRICKLIGHT_GREEN, 'GREEN' ], [ Blockly.Msg.BRICKLIGHT_ORANGE, 'ORANGE' ],
                 [ Blockly.Msg.BRICKLIGHT_RED, 'RED' ] ]);
-        if (this.workspace.device === 'arduino') {
-            this.appendDummyInput().appendField(Blockly.Msg.LED);
-        } else {
-            this.appendDummyInput().appendField(Blockly.Msg.BRICKLIGHT);
-        }
         var dropdownLightState;
         if (this.workspace.device === 'ardu' || this.workspace.device === 'arduino') {
             dropdownLightState = new Blockly.FieldDropdown([ [ Blockly.Msg.BRICKLIGHT_ON, 'ON' ], [ Blockly.Msg.OFF, 'OFF' ] ]);
@@ -876,21 +869,21 @@ Blockly.Blocks['robActions_brickLight_on'] = {
                     [ Blockly.Msg.BRICKLIGHT_DOUBLE_FLASH, 'DOUBLE_FLASH' ] ]);
             this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.BRICKLIGHT_COLOR).appendField(dropdownColor, 'SWITCH_COLOR');
         }
-
         if (this.workspace.device === 'arduino') {
             var dropDownPorts = getConfigPorts('led');
             this.dependConfig = {
                 'type' : 'led',
                 'dropDown' : dropDownPorts
             };
-            this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(dropDownPorts, 'ACTORPORT').appendField(dropdownLightState, 'SWITCH_BLINK');
+            this.appendDummyInput().appendField(Blockly.Msg.LED).setAlign(Blockly.ALIGN_RIGHT).appendField(dropDownPorts, 'ACTORPORT').appendField(dropdownLightState, 'SWITCH_BLINK');
+        } else if (this.workspace.device === 'ardu') {
+            this.appendDummyInput().appendField(Blockly.Msg.BRICKLIGHT).setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.MOD).appendField(dropdownLightState, 'SWITCH_BLINK');
         } else {
             this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.MOD).appendField(dropdownLightState, 'SWITCH_BLINK');
         }
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setTooltip(Blockly.Msg.BRICKLIGHT_ON_TOOLTIP);
-        // this.setHelp(new Blockly.Help(Blockly.Msg.BRICKLIGHT_ON_HELP));
     }
 };
 
