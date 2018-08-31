@@ -695,6 +695,21 @@ sensors.pin.calliope = {
                         [ 'C16', 'C16' ], [ 'C17', 'C17' ], [ 'C18', 'C18' ], [ 'C19', 'C19' ] ]
             } ]
 };
+sensors.pin.arduino = {
+    title : 'PIN',
+    modes : [
+            {
+                name : 'ANALOG',
+                type : 'Number',
+                ports : [ [ 'A0', 'A0' ], [ 'A1', 'A1' ], [ 'A2', 'A2' ], [ 'A3', 'A3' ], [ 'A4', 'A4' ], [ 'A5', 'A5' ] ]
+            },
+            {
+                name : 'DIGITAL',
+                type : 'Number',
+                ports : [ [ '0', '0' ], [ '1', '1' ], [ '2', '2' ], [ '3', '3' ], [ '4', '4' ], [ '5', '5' ], [ '6', '6' ], [ '7', '7' ], [ '8', '8' ], [ '9', '9' ], [ '10', '10' ],
+                 [ '11', '11' ], [ '12', '12' ], [ '13', '13' ] ]
+            } ]
+};
 sensors.pin.microbit = {
     title : 'PIN',
     ports : [ [ '0', '0' ], [ '1', '1' ], [ '2', '2' ] ],
@@ -712,6 +727,7 @@ sensors.pin.microbit = {
         type : 'Number'
     } ]
 };
+
 
 sensors.pintouch = {};
 sensors.pintouch.bob3 = {
