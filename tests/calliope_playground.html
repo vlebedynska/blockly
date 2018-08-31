@@ -91,7 +91,7 @@
                        variableDeclaration: true,
                        robControls: true
                       });
-              workspace.setDevice(device);
+              workspace.setDevice({group: device, robot: device});
               // Restore previously displayed text.
               if (sessionStorage) {
                 var text = sessionStorage.getItem('textarea');
@@ -503,13 +503,26 @@
 			</block>
 		</category>
 		<category name="TOOLBOX_MOVE" svg="true">
-			<block type="mbedActions_motor_on">
-				<value name="POWER">
+			<block type="mbedActions_motors_on">
+				<value name="POWER_A">
 					<block type="math_number">
 						<field name="NUM">30</field>
 					</block>
 				</value>
+                <value name="POWER_B">
+                    <block type="math_number">
+                        <field name="NUM">0</field>
+                    </block>
+                </value>
 			</block>
+            <block type="mbedActions_motors_stop"></block>
+            <block type="mbedActions_motor_on">
+                <value name="POWER">
+                    <block type="math_number">
+                        <field name="NUM">30</field>
+                    </block>
+                </value>
+            </block>
 			<block type="mbedActions_motor_stop"></block>
 			<block type="mbedActions_single_motor_on">
 				<value name="POWER">

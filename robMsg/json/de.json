@@ -256,6 +256,7 @@
 	"MOTOR_ON_FOR_TOOLTIP_MS": "Startet den Motor und stoppt den Motor nach dem die Zeit verstrichen ist.",
 	"MOTOR_ON_TOOLTIP": "Startet Motor mit einer bestimmten Leistung.",
 	"MOTOR_ON_TOOLTIP_CALLIOPE": "Startet Motor A, B oder A+B mit einer bestimmten Leistung. Die Motoren drehen nur in eine Richtung mit einer Leistung von 0 - 100%.",
+	"MOTORS_ON_TOOLTIP_CALLIOPE": "Startet Motor A und B mit einer bestimmten Leistung. Die Motoren drehen nur in eine Richtung mit einer Leistung von 0 - 100%.",
 	"SINGLE_MOTOR_ON_TOOLTIP_CALLIOPE": "Startet den einzelen Motor mit einer bestimmten Leistung, -100% - 100%, wobei negative Werte die Drehrichtung umkehren",
 	"MOTOR_OTHER": "Anderer Stromverbraucher",
 	"MOTOR_PORT": "Motor Port",
@@ -268,6 +269,7 @@
 	"MOTOR_SPEED": "Tempo %",
 	"MOTOR_STOP": "Stoppe",
 	"MOTOR_STOP_TOOLTIP": "Stoppt diesen Motor.",
+	"MOTORS_STOP_TOOLTIP": "Stoppt die beiden Motoren A und B.",
 	"MOTOR_TURN": "Drehe",
 	"NO": "nein",
 	"OFF": "aus",
@@ -1092,8 +1094,10 @@
 	"MODE_TILTED": "(geneigt)",
 	"ACTION_MOTOR": "Motor",
 	"CONNECTOR": "Anschluss",
-  "BRICKNAME_WEDO": "WeDo",
+    "BRICKNAME_WEDO": "WeDo",
 	"STEPS_PER_REVOLUTION": "Schritte pro Umdrehung",
 	"ROTATIONS_PER_MINUTE": "Umdrehungen pro Minute",
-	"SET_RELAY": "Schalte Relaikarte"
+	"SET_RELAY": "Schalte Relaikarte",
+	"ACTION_SERIAL_PRINT": "Zeige auf Serial Monitor",
+    "ACTION_SERIAL_PRINT_TOOLTIP": "Zeige Daten auf dem Serial Monitor. Im USB Programm findest du den Serial Monitor oben, unter Anzeige."
 }

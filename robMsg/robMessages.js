@@ -52,6 +52,7 @@ goog.require('Blockly.Msg');
 /// Rob Actions tooltips
 Blockly.Msg.MOTOR_ON_TOOLTIP = 'Turns motor on with specific power.';
 Blockly.Msg.MOTOR_ON_TOOLTIP_CALLIOPE = 'Turns motor A, B or A+B on with a specific power.';
+Blockly.Msg.MOTORS_ON_TOOLTIP_CALLIOPE = 'Turns motor A and B on with a specific power.';
 Blockly.Msg.SINGLE_MOTOR_ON_TOOLTIP_CALLIOPE = 'Turns the single motor on with a specific power. Power can be positiv or negativ for reverse direction.';
 Blockly.Msg.MOTOR_ON_FOR_TOOLTIP = 'Turns motor on and stops motor after execution of rotations/degrees.';
 Blockly.Msg.MOTOR_ON_FOR_TOOLTIP_MS = 'Turns motor on and stops motor after execution after time has passed.';
@@ -59,6 +60,7 @@ Blockly.Msg.STEP_MOTOR_ON_TOOLTIP = 'Turns motor on with a provided speed in rpm
 Blockly.Msg.MOTOR_GETPOWER_TOOLTIP = 'Gets current power of this motor.';
 Blockly.Msg.MOTOR_SETPOWER_TOOLTIP = 'Sets power of this motor.';
 Blockly.Msg.MOTOR_STOP_TOOLTIP = 'Stops this motor.';
+Blockly.Msg.MOTORS_STOP_TOOLTIP = 'Stops both motors, A and B.';
 Blockly.Msg.MOTORDIFF_ON_TOOLTIP = 'Starts the robot with specific speed.';
 Blockly.Msg.MOTORDIFF_ON_FOR_TOOLTIP = 'Starts the robot with specific speed and stops after specific distance.';
 Blockly.Msg.MOTORDIFF_STOP_TOOLTIP = 'Stops the robot.';
@@ -1199,3 +1201,5 @@ Blockly.Msg.CONNECTOR = 'connection';
 Blockly.Msg.BRICKNAME_WEDO = 'WeDo';
 Blockly.Msg.STEPS_PER_REVOLUTION = 'steps per revolution';
 Blockly.Msg.ROTATIONS_PER_MINUTE = 'rotations per minute';
+Blockly.Msg.ACTION_SERIAL_PRINT = 'show on Serial Monitor';
+Blockly.Msg.ACTION_SERIAL_PRINT_TOOLTIP = 'Show data on Serial Monitor. You can find the Serial Monitor in the USB Programm on top, under View.'

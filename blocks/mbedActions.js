@@ -38,6 +38,30 @@ Blockly.Blocks['mbedActions_motor_on'] = {
     }
 };
 
+Blockly.Blocks['mbedActions_motors_on'] = {
+        /**
+         * Turn both motor on with specific power.
+         * 
+         * @constructs mbedActions_motors_on
+         * @this.Blockly.Block
+         * @param {Number}
+         *            POWER relative - 0-100
+         * @returns immediately
+         * @memberof Block
+         */
+
+        init : function() {
+            var ports = [ [ Blockly.Msg.MOTOR_PORT + ' A', 'A' ], [ Blockly.Msg.MOTOR_PORT + ' B', 'B' ], [ Blockly.Msg.MOTOR_PORT + ' A + B', 'AB' ] ];
+            this.setColour(Blockly.CAT_ACTION_RGB);
+            var motorPort = new Blockly.FieldDropdown(ports);
+            this.appendValueInput('POWER_A').appendField(Blockly.Msg.MOTOR_PORT + ' A').appendField(Blockly.Msg.ON).appendField(Blockly.Msg.MOTOR_SPEED).setCheck('Number');
+            this.appendValueInput('POWER_B').setAlign(Blockly.ALIGN_RIGHT).appendField('B').appendField(Blockly.Msg.ON).appendField(Blockly.Msg.MOTOR_SPEED).setCheck('Number');
+            this.setPreviousStatement(true);
+            this.setNextStatement(true);
+            this.setTooltip(Blockly.Msg['MOTORS_ON_TOOLTIP_' + this.workspace.device.toUpperCase()] || Blockly.Msg.MOTOR_ON_TOOLTIP);
+        }
+    };
+
 Blockly.Blocks['mbedActions_single_motor_on'] = {
     /**
      * Turn single motor on with specific power.
@@ -103,6 +127,24 @@ Blockly.Blocks['mbedActions_motor_stop'] = {
         this.setTooltip(Blockly.Msg.MOTOR_STOP_TOOLTIP);
     }
 };
+
+Blockly.Blocks['mbedActions_motors_stop'] = {
+        /**
+         * Stop both motors.
+         * 
+         * @constructs robActions_motor_stop
+         * @this.Blockly.Block
+         * @returns immediately
+         * @memberof Block
+         */
+        init : function() {
+            this.setColour(Blockly.CAT_ACTION_RGB);
+            this.appendDummyInput().appendField(Blockly.Msg.MOTOR_STOP).appendField(Blockly.Msg.MOTOR_PORT + " A + B");
+            this.setPreviousStatement(true);
+            this.setNextStatement(true);
+            this.setTooltip(Blockly.Msg.MOTORS_STOP_TOOLTIP);
+        }
+    };
 
 Blockly.Blocks['mbedActions_display_text'] = {
     /**
