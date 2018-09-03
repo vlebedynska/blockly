@@ -127,7 +127,7 @@ confBlocks.infrared = {};
 confBlocks.infrared.wedo = {
     title: 'INFRARED',
     bricks: true,
-    ports: [[Blockly.Msg.CONNECTOR, 'CONNECTOR']],
+    ports: [['CONNECTOR', 'CONNECTOR']],
     pins: Blockly.Blocks.robConfigDefinitions['pins_wedo'],
     sensor: true
 };
@@ -348,7 +348,7 @@ confBlocks.gyro = {};
 confBlocks.gyro.wedo = {
     title: 'GYRO',
     bricks: true,
-    ports: [[Blockly.Msg.CONNECTOR, 'CONNECTOR']],
+    ports: [['CONNECTOR', 'CONNECTOR']],
     pins: Blockly.Blocks.robConfigDefinitions['pins_wedo'],
     sensor: true
 };
@@ -357,7 +357,7 @@ confBlocks.motor = {};
 confBlocks.motor.wedo = {
     title: 'MOTOR',
     bricks: true,
-    ports: [[Blockly.Msg.CONNECTOR, 'CONNECTOR']],
+    ports: [['CONNECTOR', 'CONNECTOR']],
     pins: Blockly.Blocks.robConfigDefinitions['pins_wedo'],
     action: true
 };

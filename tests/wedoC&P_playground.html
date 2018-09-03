@@ -159,7 +159,7 @@
 		options.horizontalLayout = horizontalLayout;
 		options.toolboxPosition = position;
 		workspace[suffix] = Blockly.inject(suffix, options);
-		workspace[suffix].setDevice('wedo');
+		workspace[suffix].setDevice({group:'wedo', robot:'wedo'});
 
 	}
 	

@@ -182,7 +182,7 @@ Blockly.svgResize = function(workspace) {
   }
   var svg = mainWorkspace.getParentSvg();
   var div = svg.parentNode;
-  if (!div) {
+  if (!div || div.offsetWidth == 0) {
     // Workspace deleted, or something.
     return;
   }
