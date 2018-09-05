@@ -690,7 +690,7 @@ Blockly.Msg.IMAGE_GET_TOOLTIP_SKULL = 'skull';
 Blockly.Msg.IMAGE_GET_TOOLTIP_UMBRELLA = 'umbrella';
 Blockly.Msg.IMAGE_GET_TOOLTIP_SNAKE = 'snake';
 Blockly.Msg.IMAGE_GET_TOOLTIP_SAD = 'sad';
-Blockly.Msg.ACCELERATION_TOOLTIP = 'Get the acceleration value in milli-gravitys.';
+Blockly.Msg.ACCELERATION_TOOLTIP = 'Get the acceleration value in milli-gravities.';
 Blockly.Msg.ACCELEROMETER_ROTATION_TOOLTIP = 'Get the tilt or rotations in degrees.';
 
 Blockly.Msg.POPUP_DOWNLOAD = 'Download your program to »$«';
