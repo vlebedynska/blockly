@@ -64,7 +64,6 @@
     var rtl = (document.location.search == '?rtl');
     var workspace = null;
     var device = 'bob3'
-
     function start() {
         var toolbox = document.getElementById('toolbox');
         workspace = Blockly.inject('blocklyDiv', {
@@ -111,7 +110,6 @@
         }
         taChange();
     }
-
     function toXml() {
         var output = document.getElementById('importExport');
         var xml = Blockly.Xml.workspaceToDom(workspace);
@@ -120,20 +118,17 @@
         output.select();
         taChange();
     }
-
     function fromXml() {
         var input = document.getElementById('importExport');
         var xml = Blockly.Xml.textToDom(input.value);
         Blockly.Xml.domToWorkspace(xml, workspace);
         taChange();
     }
-
     function toCode(lang) {
         var output = document.getElementById('importExport');
         output.value = Blockly[lang].workspaceToCode(workspace);
         taChange();
     }
-
     // Disable the "Import from XML" button if the XML is invalid.
     // Preserve text between page reloads.
     function taChange() {
@@ -149,7 +144,6 @@
         }
         document.getElementById('import').disabled = !valid;
     }
-
     function logEvents(state) {
         var checkbox = document.getElementById('logCheck');
         checkbox.checked = state;
@@ -162,11 +156,9 @@
             workspace.removeChangeListener(logger);
         }
     }
-
     function logger(e) {
         console.log(e);
     }
-
     function airstrike(n) {
         var prototypes = [];
         var toolbox = document.getElementById('toolbox');
@@ -183,7 +175,6 @@
             block.render();
         }
     }
-
     function spaghetti(n) {
         var xml = spaghettiXml;
         for (var i = 0; i < n; i++) {
@@ -195,7 +186,6 @@
         Blockly.Xml.domToWorkspace(dom, workspace);
         console.timeEnd('Spaghetti domToWorkspace');
     }
-
     function toggleDevice() {
         if (device === 'ev3')
             device = 'ardu';
@@ -203,7 +193,6 @@
             device = 'ev3';
         workspace.setDevice(device);
     }
-
     var spaghettiXml = [ '  <block type="robControls_if">', '    <value name="IF0">', '      <block type="logic_compare">',
             '        <field name="OP">EQ</field>', '        <value name="A">', '          <block type="math_arithmetic">',
             '            <field name="OP">MULTIPLY</field>', '            <value name="A">', '              <block type="math_number">',
@@ -218,24 +207,20 @@
 html, body {
 	height: 100%;
 }
-
 body {
 	background-color: #fff;
 	font-family: sans-serif;
 	overflow: hidden;
 }
-
 h1 {
 	font-weight: normal;
 	font-size: 140%;
 }
-
 #blocklyDiv {
 	float: right;
 	height: 95%;
 	width: 70%;
 }
-
 #importExport {
 	font-family: monospace;
 }
