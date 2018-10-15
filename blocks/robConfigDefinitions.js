@@ -68,6 +68,24 @@ Blockly.Blocks.robConfigDefinitions['pinsAnalog'].nano = function() {
 Blockly.Blocks.robConfigDefinitions['pinsAnalog'].mega = function() {
     return createPins( 0, 15, "A", "A" );
 };
+Blockly.Blocks.robConfigDefinitions['pinsAnalogWrite'] = {};
+Blockly.Blocks.robConfigDefinitions['pinsAnalogWrite'].uno = function() {
+    var part1 = createPins( 3, 3 );
+    var part2 = createPins( 5, 6 );
+    var part3 = createPins( 9, 11 );
+    return part1.concat( part2 ).concat( part3 );
+};
+Blockly.Blocks.robConfigDefinitions['pinsAnalogWrite'].nano = function() {
+    var part1 = createPins( 3, 3, "D" );
+    var part2 = createPins( 5, 6, "D" );
+    var part3 = createPins( 9, 11, "D" );
+    return part1.concat( part2 ).concat( part3 );
+};
+Blockly.Blocks.robConfigDefinitions['pinsAnalogWrite'].mega = function() {
+    var part1 = createPins( 2, 13 );
+    var part2 = createPins( 44, 46 );
+    return part1.concat( part2 );
+};
 
 Blockly.Blocks.robConfigDefinitions['pins_wedo'] = function() {
     return createPins( 1, 2 );
@@ -360,6 +378,46 @@ confBlocks.motor.wedo = {
     ports: [['CONNECTOR', 'CONNECTOR']],
     pins: Blockly.Blocks.robConfigDefinitions['pins_wedo'],
     action: true
+};
+
+confBlocks.digitalout = {};
+confBlocks.digitalout.arduino = {
+    title: 'DIGITALOUT',
+    ports: [['output', 'OUTPUT']],
+    pins: function( a ) {
+        return Blockly.Blocks.robConfigDefinitions['pinsDigital'][a];
+    },
+    sensor: true,
+};
+
+confBlocks.analogout = {};
+confBlocks.analogout.arduino = {
+    title: 'ANALOGOUT',
+    ports: [['output', 'OUTPUT']],
+    pins: function( a ) {
+        return Blockly.Blocks.robConfigDefinitions['pinsAnalog'][a];
+    },
+    sensor: true,
+};
+
+confBlocks.digitalin = {};
+confBlocks.digitalin.arduino = {
+    title: 'DIGITALIN',
+    ports: [['input', 'INPUT']],
+    pins: function( a ) {
+        return Blockly.Blocks.robConfigDefinitions['pinsDigital'][a];
+    },
+    sensor: false,
+};
+
+confBlocks.analogin = {};
+confBlocks.analogin.arduino = {
+    title: 'ANALOGIN',
+    ports: [['input', 'INPUT']],
+    pins: function( a ) {
+        return Blockly.Blocks.robConfigDefinitions['pinsAnalogWrite'][a];
+    },
+    sensor: false,
 };
 
 function initConfBlocks() {

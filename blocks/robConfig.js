@@ -111,7 +111,7 @@ Blockly.Blocks['robConf_generic'] = {
         }
 
         this.setTooltip(function() {
-            return Blockly.Msg[confBlock.title + '_TOOLTIP'];
+            return Blockly.Msg[confBlock.title + '_TOOLTIP'] || confBlock.title + '_TOOLTIP';
         });
         this.type = 'robConf_' + confBlock.title.toLowerCase();
         var that = this;

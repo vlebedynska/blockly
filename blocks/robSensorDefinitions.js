@@ -728,6 +728,23 @@ sensors.motion.mbot = {
     } ],
     ports : [ [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ],
     standardPort : '3'
+}
+
+sensors.out = {};
+sensors.out.arduino = {
+    title : 'OUT',
+    modes : [ {
+        name : 'ANALOG',
+        type : 'Number',
+        value : '100',
+        op : 'NUM_REV'
+    }, {
+        name : 'DIGITAL',
+        type : 'Number',
+        value : '1',
+        op : 'NUM_EQ'
+    } ],
+    ports : 'CONFIGURATION'
 };
 
 sensors.potentiometer = {};
@@ -783,21 +800,6 @@ sensors.pin.calliope = {
                         [ 'C16', 'C16' ], [ 'C17', 'C17' ], [ 'C18', 'C18' ], [ 'C19', 'C19' ] ]
             } ]
 };
-sensors.pin.arduino = {
-    title : 'PIN',
-    modes : [
-            {
-                name : 'ANALOG',
-                type : 'Number',
-                ports : [ [ 'A0', 'A0' ], [ 'A1', 'A1' ], [ 'A2', 'A2' ], [ 'A3', 'A3' ], [ 'A4', 'A4' ], [ 'A5', 'A5' ] ]
-            },
-            {
-                name : 'DIGITAL',
-                type : 'Number',
-                ports : [ [ '0', '0' ], [ '1', '1' ], [ '2', '2' ], [ '3', '3' ], [ '4', '4' ], [ '5', '5' ], [ '6', '6' ], [ '7', '7' ], [ '8', '8' ], [ '9', '9' ], [ '10', '10' ],
-                 [ '11', '11' ], [ '12', '12' ], [ '13', '13' ] ]
-            } ]
-};
 sensors.pin.microbit = {
     title : 'PIN',
     ports : [ [ '0', '0' ], [ '1', '1' ], [ '2', '2' ] ],
@@ -815,7 +817,6 @@ sensors.pin.microbit = {
         type : 'Number'
     } ]
 };
-
 
 sensors.pintouch = {};
 sensors.pintouch.bob3 = {
@@ -1136,9 +1137,9 @@ sensorsAll.calliope = [ sensors.key.calliope, sensors.pintouch.calliope, sensors
         sensors.accelerometer.calliope ];
 sensorsAll.microbit = [ sensors.key.microbit, sensors.pintouch.microbit, sensors.gesture.microbit, sensors.compass.microbit, sensors.timer.microbit,
         sensors.temperature.microbit, sensors.pin.microbit, sensors.accelerometer.microbit ];
-sensorsAll.arduino = [ sensors.key.arduino, sensors.timer.arduino, sensors.temperature.arduino, sensors.ultrasonic.arduino, sensors.light.arduino,
-        sensors.moisture.arduino, sensors.potentiometer.arduino, sensors.infrared.arduino, sensors.humidity.arduino, sensors.encoder.arduino,
-        sensors.motion.arduino, sensors.pulse.arduino, sensors.drop.arduino, sensors.rfid.arduino ];
+sensorsAll.arduino = [ sensors.out.arduino, sensors.key.arduino, sensors.timer.arduino, sensors.temperature.arduino, sensors.ultrasonic.arduino,
+        sensors.light.arduino, sensors.moisture.arduino, sensors.potentiometer.arduino, sensors.infrared.arduino, sensors.humidity.arduino,
+        sensors.encoder.arduino, sensors.motion.arduino, sensors.pulse.arduino, sensors.drop.arduino, sensors.rfid.arduino ];
 sensorsAll.nao = [ sensors.touch.nao, sensors.accelerometer.nao, sensors.gyro.nao, sensors.ultrasonic.nao, sensors.fsr.nao, sensors.electriccurrent.nao,
         sensors.detectface.nao, sensors.detectmark.nao ];
 sensorsAll.vorwerk = [ sensors.touch.vorwerk, sensors.accelerometer.vorwerk, sensors.ultrasonic.vorwerk, sensors.wall.vorwerk, sensors.drop_off.vorwerk ];

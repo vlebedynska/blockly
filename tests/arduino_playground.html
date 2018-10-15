@@ -88,7 +88,7 @@ function start() {
            variableDeclaration: true,
            robControls: true
           });
-  workspace.setDevice({group:device, robot:'uno'});
+  workspace.setDevice({group:device, robot:'nano'});
   // Restore previously displayed text.
   if (sessionStorage) {
     var text = sessionStorage.getItem('textarea');
@@ -192,7 +192,7 @@ function spaghetti(n) {
 }
 
 function toggleDevice() {
-    workspace.setDevice({group:device, robot:'uno'});
+    workspace.setDevice({group:device, robot:'nano'});
 }
 
 var spaghettiXml = [
@@ -259,7 +259,7 @@ h1 {
 
     <div id="blocklyDiv"></div>
 
-    <toolbox_set id="toolbox" style="display: none"> <category name="TOOLBOX_ACTION" svg="true"> <block type="robActions_write_to_pin"></block></category> <category name="TOOLBOX_SENSOR"
+    <toolbox_set id="toolbox" style="display: none"> <category name="TOOLBOX_ACTION" svg="true"> <block type="robActions_write_to_pin"></block><block type="robActions_pin_set_pull"></block></category> <category name="TOOLBOX_SENSOR"
         svg="true"> <block type="robSensors_light_getSample"></block> <block type="robSensors_ultrasonic_getSample"></block> <block
         type="robSensors_moisture_getSample"></block> <block type="robSensors_key_getSample"></block> <block type="robSensors_timer_getSample"></block> <block
         type="robSensors_temperature_getSample"></block> <block type="robSensors_potentiometer_getSample"></block> <block type="robSensors_infrared_getSample"></block>

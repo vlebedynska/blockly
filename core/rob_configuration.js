@@ -59,7 +59,9 @@ Blockly.RobConfig.renameConfig = function(thatBlock, oldName, newName, workspace
             dropDown.menuGenerator_.push([ newName, newName.toUpperCase() ]);
             dropDown.arrow_.replaceChild(document.createTextNode(dropDown.sourceBlock_.RTL ? Blockly.FieldDropdown.ARROW_CHAR + ' ' : ' '
                     + Blockly.FieldDropdown.ARROW_CHAR), dropDown.arrow_.childNodes[0]);
+            dropDown.setValue(newName.toUpperCase());
         }
+        block.render();
     }
     Blockly.Events.setGroup(false);
 };
@@ -107,6 +109,7 @@ Blockly.RobConfig.disposeConfig = function(thisBlock) {
                 dropDown.setValue(dropDown.menuGenerator_[0][1]);
             }
         }
+        block.render();
     }
     Blockly.Events.setGroup(false);
 }

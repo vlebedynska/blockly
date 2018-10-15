@@ -21,11 +21,11 @@
 /**
  * @fileoverview English strings.
  * @author Beate.Jost@iais.fraunhofer.de (Beate Jost)
- *
+ * 
  * After modifying this file, either run "build.py" from the parent directory,
  * or run (from this directory): ../i18n/js_to_json.py to regenerate
  * json/{en,qqq,synonyms}.json.
- *
+ * 
  * To convert all of the json files to .js files, run:
  * ../i18n/create_messages.py json/*.json
  */
@@ -99,7 +99,7 @@ Blockly.Msg.ENCODER_RESET_TOOLTIP = 'Resets the motor encoder.';
 Blockly.Msg.ENCODER_GETSAMPLE_TOOLTIP = 'Gets the current reading from the motor encoder.';
 Blockly.Msg.GYRO_RESET_TOOLTIP = 'Resets the gyro sensor.';
 Blockly.Msg.GYRO_GETSAMPLE_TOOLTIP = 'Gets the current reading from the gyro sensor.';
-Blockly.Msg.SENSOR_GYRO_GETSAMPLE_TOOLTIP_WEDO= 'Is the gyro sensor tilted in the indicated manner?';
+Blockly.Msg.SENSOR_GYRO_GETSAMPLE_TOOLTIP_WEDO = 'Is the gyro sensor tilted in the indicated manner?';
 Blockly.Msg.FLAME_GETSAMPLE_TOOLTIP = 'Gets the current reading from the flame sensor.';
 Blockly.Msg.TIMER_RESET_TOOLTIP = 'Resets the timer.';
 Blockly.Msg.TIMER_GETSAMPLE_TOOLTIP = 'Gets the current reading from the timer.';
@@ -409,8 +409,7 @@ Blockly.Msg.POPUP_REPEAT_PASSWORD = 'Repeat password';
 Blockly.Msg.POPUP_CHANGE_PASSWORD = 'change password ...';
 Blockly.Msg.POPUP_CONTINUE = 'continue anyway';
 Blockly.Msg.POPUP_ROBOT_SYSTEM = 'System';
-Blockly.Msg.POPUP_DISPLAY_HEADER = 'Output from your program',
-Blockly.Msg.BUTTON_DO_SHARE = 'Share';
+Blockly.Msg.POPUP_DISPLAY_HEADER = 'Output from your program', Blockly.Msg.BUTTON_DO_SHARE = 'Share';
 Blockly.Msg.BUTTON_DO_UPLOAD_GALLERY = 'Upload »$« to the gallery';
 Blockly.Msg.BUTTON_EMPTY_LIST = 'Empty list';
 Blockly.Msg.MESSAGE_NOT_AVAILABLE = 'Not available.';
@@ -746,7 +745,6 @@ Blockly.Msg.NAO_FORGETFACEOF = 'forget face of';
 Blockly.Msg.NAO_PERFORM = 'perform'
 Blockly.Msg.NAO_MOVE = 'move'
 
-
 // Parameters for the nao blocks
 /// NAO parameters
 Blockly.Msg.NAO_POSTURE_REST = 'rest';
@@ -877,7 +875,6 @@ Blockly.Msg.NAO_RECOGNIZEWORD = 'speech recognizer of';
 Blockly.Msg.NAO_LEARNFACE_TOOLTIP = 'Learn and save a face under a given name in the vision recognition database on the robot.';
 Blockly.Msg.NAO_FORGETFACE_TOOLTIP = 'Delete a face previously saved under a given name from the vision recognition database on the robot. ';
 
-
 //
 Blockly.Msg.MENU_CODE_DOWNLOAD_TOOLTIP = 'Download the source code of your program on the computer';
 Blockly.Msg.MENU_CODE_REFRESH_TOOLTIP = 'Refresh the source code, if you have changed the NEPO Blocks.';
@@ -957,8 +954,8 @@ Blockly.Msg.MESSAGE_ROBOT_DISCONNECTED = 'An active robot was disconnected';
 Blockly.Msg.INTERNAL_PORT = 'internal';
 Blockly.Msg.PULSE_LOW = 'pulse time LOW';
 Blockly.Msg.PULSE_HIGH = 'pulse time HIGH';
-Blockly.Msg.SENSOR_PIN_ANALOG_GETSAMPLE_TOOLTIP = 'Returns the value from the specified analog pin. The value is between 0 and 1023.';
-Blockly.Msg.SENSOR_PIN_DIGITAL_GETSAMPLE_TOOLTIP = 'Returns the value from the specified digital pin. The value is either HIGH »1« or LOW »0«.';
+Blockly.Msg.SENSOR_ANALOG_OUT_GETSAMPLE_TOOLTIP = 'Returns the value from the specified analog pin. The value is between 0 and 1024.';
+Blockly.Msg.SENSOR_DIGITAL_OUT_GETSAMPLE_TOOLTIP = 'Returns the value from the specified digital pin. The value is either HIGH »1« or LOW »0«.';
 Blockly.Msg.SENSOR_PIN_PULSE_HIGH_GETSAMPLE_TOOLTIP = 'Returns the pulse HIGH on a pin in microseconds or -1 if no complete pulse was received within the timeout.';
 Blockly.Msg.SENSOR_PIN_PULSE_LOW_GETSAMPLE_TOOLTIP = 'Returns the pulse LOW on a pin in microseconds or -1 if no complete pulse was received within the timeout.';
 Blockly.Msg.CONNECTION_POWER = 'with strength';
@@ -1040,8 +1037,8 @@ Blockly.Msg.SENSOR_INFRARED_DISTANCE_GETSAMPLE_TOOLTIP_WEDO = 'Gets the current 
 Blockly.Msg.INFRARED_PRESENCE_GETSAMPLE_TOOLTIP = 'Returns an array of measurements for the presence of a beacon.';
 Blockly.Msg.SENSOR_ACCELEROMETER = 'accelerometer';
 Blockly.Msg.SENSOR_PINTOUCH = 'pin';
-Blockly.Msg.MODE_ANALOG = 'analog';
-Blockly.Msg.MODE_DIGITAL = 'digital';
+Blockly.Msg.MODE_ANALOG = 'analog value';
+Blockly.Msg.MODE_DIGITAL = 'digital value';
 Blockly.Msg.MODE_PULSE_LOW = 'pulse time LOW';
 Blockly.Msg.MODE_PULSE_HIGH = 'pulse time HIGH';
 Blockly.Msg.TEXT_COMMENT_TOOLTIP = 'Write a comment to your code here, to make it easier for you and others to read and understand your code. It will also generate an inline comment in the generated source code';
@@ -1224,7 +1221,22 @@ Blockly.Msg.BRICKNAME_WEDO = 'WeDo';
 Blockly.Msg.STEPS_PER_REVOLUTION = 'steps per revolution';
 Blockly.Msg.ROTATIONS_PER_MINUTE = 'rpm';
 Blockly.Msg.ACTION_SERIAL_PRINT = 'show on Serial Monitor';
-Blockly.Msg.ACTION_SERIAL_PRINT_TOOLTIP = 'Show data on Serial Monitor. You can find the Serial Monitor in the USB Programm on top, under View.'
+Blockly.Msg.ACTION_SERIAL_PRINT_TOOLTIP = 'Show data on the Serial Monitor. You can find the Serial Monitor in the USB Programm on top, under View.'
 Blockly.Msg.TO = 'to';
 Blockly.Msg.GEARED_MOTOR = 'grared motor';
 Blockly.Msg.LED_MATRIX = 'LED matrix';
+Blockly.Msg.ACTION_IN = 'input';
+Blockly.Msg.SENSOR_OUT = 'output';
+Blockly.Msg.ACTION_DIGITALIN = 'input digital';
+Blockly.Msg.SENSOR_DIGITALOUT = 'output digital';
+Blockly.Msg.ACTION_ANALOGIN = 'input analog';
+Blockly.Msg.SENSOR_ANALOGOUT = 'output analog';
+Blockly.Msg.DIGITALIN_TOOLTIP = 'Represents any actuator connected to a digital pin.';
+Blockly.Msg.DIGITALOUT_TOOLTIP = 'Represents any sensor connected to a digital.';
+Blockly.Msg.ANALOGIN_TOOLTIP = 'Represents any actuator connected to an analog pin';
+Blockly.Msg.ANALOGOUT_TOOLTIP = 'Represents any sensor connected to an analog pin';
+Blockly.Msg.SENSOR_OUT_ANALOG_GETSAMPLE_TOOLTIP = 'Returns the value from the specified analog pin. The value is between 0 and 1024.';
+Blockly.Msg.SENSOR_OUT_DIGITAL_GETSAMPLE_TOOLTIP = 'Returns the value from the specified digital pin. The value is either HIGH »1« or LOW »0«.';
+Blockly.Msg.ACTOR_MODE_ANALOGIN_TOOLTIP = 'Writes an analog value (PWM wave) to a pin. Only values between 0 and 255 should be used';
+Blockly.Msg.ACTOR_MODE_DIGITALIN_TOOLTIP = 'Writes a HIGH or a LOW value to a digital pin. Only the values HIGH »1« and LOW »0« should be used.';
+
