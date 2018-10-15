@@ -693,7 +693,6 @@ Blockly.Msg.MODE_RGB = "RGB (rosso, verde, blu)";
 Blockly.Msg.MODE_ROTATION = "rotazione";
 Blockly.Msg.MODE_SENSOR1 = "Light Sensor1";  // untranslated
 Blockly.Msg.MODE_SENSOR2 = "Light Sensor2";  // untranslated
-Blockly.Msg.MODE_SERIAL = "card serial";  // untranslated
 Blockly.Msg.MODE_SOUND = "suono";
 Blockly.Msg.MODE_TEMPERATURE = "temperature";  // untranslated
 Blockly.Msg.MODE_TILTED = "tilted";  // untranslated

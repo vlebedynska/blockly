@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2018-10-15 22:40:52.390653",
+		"lastupdated": "2018-10-15 22:45:21.665539",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -574,7 +574,6 @@
 	"MODE_UNMODULATED": "unmodulated",
 	"MODE_HUMIDITY": "humidity",
 	"MODE_TEMPERATURE": "temperature",
-	"MODE_SERIAL": "card serial",
 	"MODE_X": "X-value",
 	"MODE_Y": "Y-value",
 	"MODE_Z": "Z-value",

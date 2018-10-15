@@ -693,7 +693,6 @@ Blockly.Msg.MODE_RGB = "RGB";
 Blockly.Msg.MODE_ROTATION = "旋轉";
 Blockly.Msg.MODE_SENSOR1 = "Light Sensor1";  // untranslated
 Blockly.Msg.MODE_SENSOR2 = "Light Sensor2";  // untranslated
-Blockly.Msg.MODE_SERIAL = "卡式串列";
 Blockly.Msg.MODE_SOUND = "聲音";
 Blockly.Msg.MODE_TEMPERATURE = "溫度";
 Blockly.Msg.MODE_TILTED = "傾斜";

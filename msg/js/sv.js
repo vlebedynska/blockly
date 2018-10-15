@@ -693,7 +693,6 @@ Blockly.Msg.MODE_RGB = "RGB";
 Blockly.Msg.MODE_ROTATION = "rotation";
 Blockly.Msg.MODE_SENSOR1 = "Light Sensor1";  // untranslated
 Blockly.Msg.MODE_SENSOR2 = "Light Sensor2";  // untranslated
-Blockly.Msg.MODE_SERIAL = "kort seriell";
 Blockly.Msg.MODE_SOUND = "ljud";
 Blockly.Msg.MODE_TEMPERATURE = "temperatur";
 Blockly.Msg.MODE_TILTED = "lutad";

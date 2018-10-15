@@ -261,7 +261,6 @@ Blockly.Msg.MODE_MODULATED = 'modulated';
 Blockly.Msg.MODE_UNMODULATED = 'unmodulated';
 Blockly.Msg.MODE_HUMIDITY = 'humidity';
 Blockly.Msg.MODE_TEMPERATURE = 'temperature';
-Blockly.Msg.MODE_SERIAL = 'card serial';
 Blockly.Msg.MODE_X = 'X-value';
 Blockly.Msg.MODE_Y = 'Y-value';
 Blockly.Msg.MODE_Z = 'Z-value';
