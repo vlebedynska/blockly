@@ -58,15 +58,15 @@ sensors.accelerometer.mbot = {
     modes : [ {
         name : 'X',
         type : 'Number',
-        unit : 'MILLIG'
+        unit : 'g'
     }, {
       name : 'Y',
       type : 'Number',
-      unit : 'MILLIG'
+      unit : 'g'
     }, {
       name : 'Z',
       type : 'Number',
-      unit : 'MILLIG'
+      unit : 'g'
     } ],
     ports : [ [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ]
 };
@@ -1126,7 +1126,7 @@ sensors.joystick.mbot = {
 var sensorsAll = [];
 sensorsAll.ardu = [ sensors.infrared.ardu, sensors.light.ardu, sensors.compass.ardu, sensors.ultrasonic.ardu, sensors.colour.ardu, sensors.key.ardu ];
 sensorsAll.mbot = [ sensors.touch.mbot, sensors.ultrasonic.mbot, sensors.light.mbot, sensors.infrared.mbot, sensors.gyro.mbot, sensors.accelerometer.mbot,
-  sensors.sound.mbot, sensors.temperature.mbot, sensors.motion.mbot, sensors.key.mbot, sensors.timer.mbot, sensors.potentiometer.mbot, sensors.flame.mbot ];
+  sensors.sound.mbot, sensors.temperature.mbot, sensors.motion.mbot, sensors.key.mbot, sensors.timer.mbot, sensors.potentiometer.mbot ];
 sensorsAll.ev3 = [ sensors.touch.ev3, sensors.ultrasonic.ev3, sensors.colour.ev3, sensors.infrared.ev3, sensors.encoder.ev3, sensors.key.ev3, sensors.gyro.ev3,
         sensors.timer.ev3, sensors.compass.ev3, sensors.irseeker.ev3 ];
 sensorsAll.nxt = [ sensors.touch.nxt, sensors.sound.nxt, sensors.light.nxt, sensors.ultrasonic.nxt, sensors.encoder.nxt, sensors.key.nxt, sensors.colour.nxt,

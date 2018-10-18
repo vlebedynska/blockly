@@ -115,6 +115,7 @@
 	"IF_TOOLTIP": "Prüft die Bedingung in wenn. Falls die Bedingung wahr ist, führt die dann-Aktion aus.",
 	"INFRARED_GETMODE_TOOLTIP": "Gibt den Modus des Infrarotsensors zurück.",
 	"INFRARED_GETSAMPLE_TOOLTIP": "Gibt den aktuellen Wert des Infrarotsensors zurück.",
+	"INFRARED_GETSAMPLE_TOOLTIP_MBOT": "Gibt den aktuellen Wert des Lichtsensors zurück, ob es eine schwarze Linie gibt (wahr/falsch).",
 	"INFRARED_SETMODE_TOOLTIP": "Setzt den Modus des Infrarotsensors.",
 	"INFRARED_TOOLTIP": "Block für den Infrarotsensor.",
 	"KEY_ISPRESSEDANDRELEASED_TOOLTIP": "Wurde die ausgewählte Taste gedrückt und wieder losgelassen?",
@@ -1115,6 +1116,7 @@
 	"SET_RELAY_ARDUINO": "Schalte Relais SRD-05VDC-SL-C",
 	"TO": "an",
 	"SENSOR_ULTRASONIC_DISTANCE_GETSAMPLE_TOOLTIP_ARDUINO": "Gibt den aktuellen Wert des Ultraschallsensors in cm zurück. Die weiteste Entfernung ist 400 cm.",
+	"SENSOR_ULTRASONIC_DISTANCE_GETSAMPLE_TOOLTIP_MBOT": "Gibt den aktuellen Wert des Ultraschallsensors in cm zurück. Die weiteste Entfernung ist 400 cm. Die näheste Entfernung ist 3 cm.",
 	"MODE_X": "X-Wert",
 	"MODE_Y": "Y-Wert",
 	"MODE_Z": "Z-Wert",
@@ -1133,5 +1135,6 @@
 	"SENSOR_ANALOGOUT_GETSAMPLE_TOOLTIP": "Gibt den Wert gemessen am analogen Pin zurück. Der Wert kann zwischen 0 und 1024 liegen.",
 	"SENSOR_DIGITALOUT_GETSAMPLE_TOOLTIP": "Gibt den Wert gemessen am digitalen Pin zurück. Der Wert kann entweder HIGH »1« oder LOW »0« sein.",
 	"ACTOR_MODE_ANALOGIN_TOOLTIP": "Schreibt einen analogen Wert (PWM wave) auf einen Pin. Werte zwischen 0 und 255 können eingegeben werden.",
-	"ACTOR_MODE_DIGITALIN_TOOLTIP": "Schreibt einen digitalen Wert auf einen Pin. Die Werte HIGH »1« oder LOW »0« können eingegeben werden."
+	"ACTOR_MODE_DIGITALIN_TOOLTIP": "Schreibt einen digitalen Wert auf einen Pin. Die Werte HIGH »1« oder LOW »0« können eingegeben werden.",
+	"ACTION_INFRARED": "Infrarotstrahler"
 }

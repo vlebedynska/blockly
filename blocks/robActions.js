@@ -1,5 +1,5 @@
 /**
- * @fileoverview Action blocks for EV3.
+ * @fileoverview Action blocks.
  * @requires Blockly.Blocks
  * @author Beate
  */
@@ -369,6 +369,9 @@ Blockly.Blocks['robActions_motor_stop'] = {
         if (this.workspace.device === 'ev3') {
             ports.push([ Blockly.Msg.MOTOR_PORT + ' D', 'D' ]);
         }
+        if (this.workspace.device === 'mbot') {
+            ports = [ [ Blockly.Msg.MOTOR_PORT + ' M1', 'M1' ], [ Blockly.Msg.MOTOR_PORT + ' M2', 'M2' ] ];
+        }
         var motorPort = new Blockly.FieldDropdown(ports);
         if (this.workspace.device === 'wedo') {
             this.action = 'MOTOR';
@@ -396,9 +399,12 @@ Blockly.Blocks['robActions_motor_stop'] = {
                 'dropDown' : ports
             };
             this.appendDummyInput().appendField(Blockly.Msg.MOTOR_STOP).appendField(Blockly.Msg.ACTION_MOTOR).appendField(ports, 'MOTORPORT');
-        } else {
+        } else if (this.workspace.device != 'mbot') {
             var mode = new Blockly.FieldDropdown([ [ Blockly.Msg.MOTOR_FLOAT, 'FLOAT' ], [ Blockly.Msg.MOTOR_BRAKE, 'NONFLOAT' ] ]);
             this.appendDummyInput().appendField(Blockly.Msg.MOTOR_STOP).appendField(motorPort, 'MOTORPORT').appendField(mode, 'MODE');
+        }
+        else {
+          this.appendDummyInput().appendField(Blockly.Msg.MOTOR_STOP).appendField(motorPort, 'MOTORPORT');
         }
         this.setPreviousStatement(true);
         this.setNextStatement(true);
