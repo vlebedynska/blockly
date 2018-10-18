@@ -3,9 +3,9 @@
  * @requires Blockly.Blocks
  * @author Beate
  */
-'use strict'; 
+'use strict';
 
-goog.provide('Blockly.Blocks.robActions'); 
+goog.provide('Blockly.Blocks.robActions');
 
 goog.require('Blockly.Blocks');
 goog.require('Blockly.Blocks.robConfigDefinitions');
@@ -935,8 +935,8 @@ Blockly.Blocks['robActions_led_on'] = {
                 'dropDown' : ports
             };
         }
-        if (this.workspace.device === 'mbot'){
-            ports = new Blockly.FieldDropdown( [[ 'LED0', '0' ], [ 'LED1', '1' ] ]);
+        if (this.workspace.device === 'mbot') {
+            ports = new Blockly.FieldDropdown([ [ 'LED0', '0' ], [ 'LED1', '1' ] ]);
         }
         this.appendValueInput('COLOR').appendField(Blockly.Msg.LED_ON).appendField(ports, 'ACTORPORT').appendField(Blockly.Msg.BRICKLIGHT_COLOR).setCheck('Colour');
         this.setPreviousStatement(true);
@@ -988,8 +988,8 @@ Blockly.Blocks['robActions_led_off'] = {
                 'dropDown' : ports
             };
         }
-        if (this.workspace.device === 'mbot'){
-            ports = new Blockly.FieldDropdown( [[ 'LED0', '0' ], [ 'LED1', '1' ] ]);
+        if (this.workspace.device === 'mbot') {
+            ports = new Blockly.FieldDropdown([ [ 'LED0', '0' ], [ 'LED1', '1' ] ]);
         }
         this.appendDummyInput().appendField(Blockly.Msg.LED_OFF).appendField(ports, 'ACTORPORT');
         this.setPreviousStatement(true);
@@ -1144,23 +1144,13 @@ Blockly.Blocks['robActions_write_pin'] = {
         this.setColour(Blockly.CAT_ACTION_RGB);
         this.dropDownPorts = getConfigPorts('analogin');
         var that = this;
-        var valueType = new Blockly.FieldDropdown(
-                [ [ Blockly.Msg.MODE_DIGITAL, 'MODE_DIGITAL' ], [ Blockly.Msg.MODE_ANALOG, 'MODE_ANALOG' ] ],
-                function(option) {
-                    if (option && this.sourceBlock_.getFieldValue('MODE') !== option) {
-                        var configBlockName = option.toLowerCase() + 'in';
-                        var dropDownPorts = getConfigPorts(configBlockName);
-                        that.dependConfig.type = configBlockName;
-                        that.dropDownPorts.menuGenerator_ = dropDownPorts.menuGenerator_;
-                        that.dropDownPorts.arrow_.replaceChild(document.createTextNode(' '), that.dropDownPorts.arrow_.childNodes[0]);
-                        if (that.dropDownPorts.menuGenerator_.length > 1) {
-                            that.dropDownPorts.arrow_.replaceChild(document.createTextNode(' ' + Blockly.FieldDropdown.ARROW_CHAR), that.dropDownPorts.arrow_.childNodes[0]);
-                        }
-                        that.dropDownPorts.setValue(that.dropDownPorts.menuGenerator_[0][0]);
-                    }
-                });
+        var valueType = new Blockly.FieldDropdown([ [ Blockly.Msg.MODE_DIGITAL, 'DIGITAL' ], [ Blockly.Msg.MODE_ANALOG, 'ANALOG' ] ], function(option) {
+            if (option && this.sourceBlock_.getFieldValue('MODE') !== option) {
+                that.updatePorts(option);
+            }
+        });
         this.dependConfig = {
-            'type' : 'analogin',
+            'type' : 'digitalin',
             'dropDown' : this.dropDownPorts
         };
         this.appendValueInput('VALUE').appendField(Blockly.Msg.PIN_WRITE).appendField(valueType, 'MODE').appendField(Blockly.Msg.ACTION_IN).appendField(this.dropDownPorts, 'ACTORPORT').setCheck('Number');
@@ -1169,6 +1159,18 @@ Blockly.Blocks['robActions_write_pin'] = {
         this.setTooltip(function() {
             return Blockly.Msg['ACTOR_' + that.getFieldValue('MODE') + 'IN_TOOLTIP'] || 'ACTOR_' + that.getFieldValue('MODE') + 'IN_TOOLTIP';
         });
+        this.updatePorts('DIGITAL');
+    },
+    updatePorts : function(option) {
+        var configBlockName = option.toLowerCase() + 'in';
+        var dropDownPorts = getConfigPorts(configBlockName);
+        this.dependConfig.type = configBlockName;
+        this.dropDownPorts.menuGenerator_ = dropDownPorts.menuGenerator_;
+        this.dropDownPorts.arrow_ && this.dropDownPorts.arrow_.replaceChild(document.createTextNode(' '), this.dropDownPorts.arrow_.childNodes[0]);
+        if (this.dropDownPorts.arrow_ && this.dropDownPorts.menuGenerator_.length > 1) {
+            this.dropDownPorts.arrow_.replaceChild(document.createTextNode(' ' + Blockly.FieldDropdown.ARROW_CHAR), that.dropDownPorts.arrow_.childNodes[0]);
+        }
+        this.dropDownPorts.setValue(this.dropDownPorts.menuGenerator_[0][0]);
     }
 };
 
