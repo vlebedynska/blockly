@@ -590,7 +590,7 @@ Blockly.Blocks['naoSensors_naoMark'] = {
     init : function() {
         this.setColour(Blockly.CAT_SENSOR_RGB);
         this.appendDummyInput().appendField(Blockly.Msg.NAO_NAOMARK);
-        this.setOutput(true, 'Array_Number');
+        this.setOutput(true, 'Number');
         this.setTooltip(Blockly.Msg.NAO_NAOMARK_TOOLTIP);
     }
 };
