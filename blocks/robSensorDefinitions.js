@@ -1066,7 +1066,16 @@ sensors.ultrasonic.nxt = {
     } ],
     standardPort : '4'
 };
-sensors.ultrasonic.mbot = sensors.ultrasonic.nxt;
+sensors.ultrasonic.mbot = {
+    title : 'ULTRASONIC',
+    ports : [ [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ],
+    modes : [ {
+        name : 'DISTANCE',
+        type : 'Number',
+        unit : 'CM'
+    } ],
+    standardPort : '3'
+};
 
 sensors.ultrasonic.nao = {
     title : 'ULTRASONIC',
