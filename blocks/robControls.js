@@ -177,7 +177,7 @@ Blockly.Blocks['robControls_start_ardu'] = {
         }
         this.declare_ = false;
         this.setPreviousStatement(false);
-        this.setNextStatement(true, 'ardu');
+        this.setNextStatement(true, 'botnroll');
         this.setDeletable(false);
         this.setMutatorPlus(new Blockly.MutatorPlus([ 'robControls_start_ardu' ]));
         this.setTooltip(Blockly.Msg.START_TOOLTIP);
@@ -514,7 +514,7 @@ Blockly.Blocks['robControls_wait_for'] = {
             //TODO: move ardu and nibo to arduControls and niboControls
             var s;
 
-            if (this.workspace.device === 'ardu') {
+            if (this.workspace.device === 'botnroll') {
                 s = this.workspace.newBlock('robSensors_getSample_ardu');
             } else if (this.workspace.device === 'bob3') {
                 s = this.workspace.newBlock('bob3Sensors_getSample_bob3');
@@ -583,7 +583,7 @@ Blockly.Blocks['robControls_loopForever_ardu'] = {
         var title = new Blockly.FieldLabel(Blockly.Msg.LOOP_FOREVER);
         this.appendDummyInput().appendField(title, 'TITLE_FOREVER');
         this.appendStatementInput('DO').appendField(Blockly.Msg.CONTROLS_REPEAT_INPUT_DO);
-        this.setPreviousStatement(true, 'ardu');
+        this.setPreviousStatement(true, 'botnroll');
         this.setNextStatement(false);
         this.setDeletable(false);
         this.setMovable(false);

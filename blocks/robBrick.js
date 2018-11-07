@@ -294,7 +294,7 @@ Blockly.Blocks['robBrick_light'] = {
         this.setColour(Blockly.CAT_SENSOR_RGB);
         this.setOutput(true, 'Sensor');
         this.appendDummyInput().appendField(Blockly.Msg.SENSOR_LIGHT);
-        if (this.workspace.device === 'ardu') {
+        if (this.workspace.device === 'botnroll') {
             this.setTooltip(Blockly.Msg.LIGHT_ARDU_TOOLTIP);
         } else {
             this.setTooltip(Blockly.Msg.LIGHT_TOOLTIP);
@@ -576,7 +576,7 @@ Blockly.Blocks['robBrick_motor_middle'] = {
         this.setColour(Blockly.CAT_ACTION_RGB);
         var motorRegulation = new Blockly.FieldDropdown([ [ Blockly.Msg.YES, 'TRUE' ], [ Blockly.Msg.NO, 'FALSE' ] ]);
         var motorReverse = new Blockly.FieldDropdown([ [ Blockly.Msg.MOTOR_FOREWARD, 'OFF' ], [ Blockly.Msg.MOTOR_BACKWARD, 'ON' ] ]);
-        if (this.workspace.device === 'ardu') {
+        if (this.workspace.device === 'botnroll') {
             this.appendDummyInput().appendField(Blockly.Msg.MOTOR);
         } else {
             this.appendDummyInput().appendField(Blockly.Msg.MOTOR_MIDDLE + ' ' + Blockly.Msg.MOTOR);

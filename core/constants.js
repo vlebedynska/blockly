@@ -294,7 +294,7 @@ Blockly.TYPE_DROPDOWN = function(device, opt_handler) {
                     this.sourceBlock_[handler](0, option);
             }
         });
-    case 'ardu':
+    case 'botnroll':
     case 'arduino':
     case 'bob3':
     case 'mbot':
@@ -404,7 +404,7 @@ Blockly.LIST_TYPE_DROPDOWN = function(device) {
         ], function(option) {
             this.sourceBlock_.updateType_(option);
         });
-    case 'ardu':
+    case 'botnroll':
     case 'bob3':
     case 'makeblock':
     case 'microbit':

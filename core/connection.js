@@ -550,8 +550,9 @@ Blockly.Connection.prototype.checkType_ = function(otherConnection) {
     // special case for variable declarations
     if ((this.check_ == 'declaration_only' && !otherConnection.check_) || (!this.check_ && otherConnection.check_ == 'declaration_only'))
       return false;
-    // special case for ardu startblock
-    if ((this.check_ == 'ardu' && !otherConnection.check_) || (!this.check_ && otherConnection.check_ == 'ardu'))
+    // special case for botnroll startblock
+    if ((this.check_ == 'botnroll' && !otherConnection.check_) || (!this.check_ && otherConnection.check_ == 
+'botnroll'))
       return false;
     // One or both sides are promiscuous enough that anything will fit.
     return true;

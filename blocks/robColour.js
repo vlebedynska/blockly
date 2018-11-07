@@ -40,7 +40,7 @@ Blockly.Blocks['robColour_picker'] = {
         case 'bob3':
             colorField.setColours([ '#000000', '#0000FF', '#228822', '#4466EE', '#4488AA', '#6633AA', '#6699EE', '#55FF99', '#00FF00', '#77FFDD', '#00FFFF', '#DD4422', '#FF0000', '#FF0088', '#FF00FF', '#FF7755', '#FF8800', '#FFFF00', '#FFFFFF' ]).setColumns(19);
             break;
-        case 'ardu':
+        case 'botnroll':
         case 'ev3':
             colorField.setColours([ '#000000', '#0057A6', '#00642E', '#532115', '#585858', '#B30006', '#F7D117', '#FFFFFF' ]).setColumns(8);
             break; 

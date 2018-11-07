@@ -38,6 +38,6 @@ Blockly.PYTHON = ['False', 'None', 'True', 'and', 'as', 'assert', 'break', 'clas
 Blockly.ev3 = Blockly.JAVA;
 Blockly.microbit = Blockly.PYTHON;
 Blockly.calliope = Blockly.CPP;
-Blockly.ardu = Blockly.CPP;
+Blockly.botnroll = Blockly.CPP;
 Blockly.nxt = Blockly.CPP;
 Blockly.nao = Blockly.PYTHON;
