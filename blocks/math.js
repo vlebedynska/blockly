@@ -42,13 +42,7 @@ Blockly.Blocks['math_number'] = {
     init : function() {
         this.setHelpUrl(Blockly.Msg.MATH_NUMBER_HELPURL);
         this.setColour(Blockly.CAT_MATH_RGB);
-        this.numWalk = new Blockly.FieldDropdown([ [ '50', '50' ], [ '52', '52' ], [ '54', '54' ], [ '56', '56' ], [ '58', '58' ], [ '60', '60' ] ]);
-        this.numTurn = new Blockly.FieldDropdown([ [ '45', '45' ], [ '60', '60' ], [ '90', '90' ], [ '180', '180' ] ]);
-        this.numDegreeElbow = new Blockly.FieldDropdown([ [ '45', '45' ], [ '60', '60' ], [ '90', '90' ] ]);
-        this.numDegreeShoulder = new Blockly.FieldDropdown([ [ '45', '45' ], [ '60', '30' ], [ '90', '0' ] ]);
-        this.numWait = new Blockly.FieldDropdown([ [ '1', '1' ], [ '2', '2' ], [ '3', '3' ], [ '4', '4' ], [ '5', '5' ] ]);
-        this.numSchoulder = new Blockly.FieldDropdown([ [ '5', '5' ], [ '6', '6' ] ]);
-        this.appendDummyInput('MATH').appendField(this.numWait, 'NUM');
+        this.appendDummyInput('MATH').appendField(new Blockly.FieldDropdown([ [ '1', '1' ], [ '2', '2' ], [ '3', '3' ], [ '4', '4' ], [ '5', '5' ] ]), 'NUM');
         this.setOutput(true, 'Number');
         // Assign 'this' to a variable for use in the tooltip closure below.
         this.setTooltip(function() {
@@ -66,43 +60,70 @@ Blockly.Blocks['math_number'] = {
     },
     domToMutation : function(xmlElement) {
         var parentType = xmlElement.getAttribute('name');
-        if (parentType)
-            this.update_(parentType);
-    },
-    update_ : function(parent) {
-        console.log(this.getParent());
-        if ((this.getParent() && this.getParent().type == this.parentType_) || (this.getParent() && this.getParent().getField('joint')
-                && this.getParent().getField('joint').getValue() == this.parentValue_)) {
-            return;
+        if (parentType) {
+            this.parentType_ = parentType;
+            this.update_();
         }
+    },
+    update_ : function() {
+//        if (!this.getParent()) {
+//            return;
+//        }
+//        if (this.getParent()
+//                && (this.getParent().type == this.parentType_ || this.getParent().getField('joint')
+//                        && this.getParent().getField('joint').getValue() == this.parentValue_)) {
+//            return;
+//        }
+        var numWalk = [ [ '30', '30' ], [ '32', '32' ], [ '34', '34' ], [ '36', '36' ], [ '38', '38' ], [ '40', '40' ], [ '42', '42' ], [ '44', '44' ],
+                [ '46', '46' ], [ '48', '48' ], [ '50', '50' ] ];
+        var numTurn = [ [ '45', '45' ], [ '60', '60' ], [ '90', '90' ], [ '180', '180' ] ];
+        var numDegreeElbowRight = [ [ "45", "45" ], [ "60", "60" ], [ "90", "90" ] ];
+        var numDegreeElbowLeft = [ [ "45", "-45" ], [ "60", "-60" ], [ "90", "-90" ] ];
+        var numDegreeShoulder = [ [ '45', '45' ], [ '60', '30' ], [ '90', '0' ] ];
+        var numWait = [ [ '1', '1' ], [ '2', '2' ], [ '3', '3' ], [ '4', '4' ], [ '5', '5' ] ];
+        var numSchoulder = [ [ '5', '5' ], [ '6', '6' ] ];
         var input = this.getInput('MATH');
         input.removeField('NUM');
-        if (parent == 'robControls_wait_time') {
-            input.appendField(this.numWait, 'NUM');
-        } else if (parent == 'naoActions_walk') {
-            input.appendField(this.numWalk, 'NUM');
-        } else if (parent == 'naoActions_turn') {
-            input.appendField(this.numTurn, 'NUM');
-        } else {
+        switch (this.parentType_) {
+        case 'robControls_wait_time':
+            input.appendField(new Blockly.FieldDropdown(numWait), 'NUM');
+            break;
+        case 'naoActions_walk':
+            input.appendField(new Blockly.FieldDropdown(numWalk), 'NUM');
+            break;
+        case 'naoActions_turn':
+            input.appendField(new Blockly.FieldDropdown(numTurn), 'NUM');
+            break;
+        case 'naoActions_moveJoint':
             if (this.getParent() && this.getParent().getField('joint').getValue().indexOf('SHOULDER') < 0) {
+                if (this.getParent().getField('joint').getValue() === 'RELBOWROLL') {
+                    input.appendField(new Blockly.FieldDropdown(numDegreeElbowRight), 'NUM');
+                } else {
+                    input.appendField(new Blockly.FieldDropdown(numDegreeElbowLeft), 'NUM');
+                }
                 this.parentValue_ = this.getParent().getField('joint').getValue();
-                input.appendField(this.numDegreeElbow, 'NUM');
             } else if (this.getParent() && this.getParent().getField('joint')) {
+                input.appendField(new Blockly.FieldDropdown(numDegreeShoulder), 'NUM');
                 this.parentValue_ = this.getParent().getField('joint').getValue();
-                input.appendField(this.numDegreeShoulder, 'NUM');
             } else {
-                input.appendField(this.numDegreeShoulder, 'NUM');
+                input.appendField(new Blockly.FieldDropdown(numDegreeShoulder), 'NUM');
+                this.parentValue_ = "RSHOULDERPITCH";
             }
-
+            break;
+        default:
+            input.appendField(new Blockly.FieldNumber('0', Blockly.FieldTextInput.numberValidator), 'NUM');
         }
     },
     onchange : function() {
-        if (!this.workspace || Blockly.Block.dragMode_ == 2 || !this.getParent()) {
-            // Block has been deleted or is in move
+        if (!this.workspace
+                || Blockly.Block.dragMode_ == 2
+                || !this.getParent()
+                || (this.getParent().type === this.parentType_ && this.getParent().getField('joint') && this.getParent().getField('joint').getValue() === this.parentValue_)
+                || (this.getParent().type === this.parentType_ && !this.getParent().getField('joint'))) {
             return;
         }
         this.parentType_ = this.getParent().type;
-        this.update_(this.parentType_);
+        this.update_();
     }
 };
 
