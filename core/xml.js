@@ -90,7 +90,7 @@ Blockly.Xml.blockToDom = function(block, statement_list) {
     if (mutation && (mutation.hasChildNodes() || mutation.hasAttributes())) {
       element.appendChild(mutation);
       if (mutation !== undefined && mutation != null
-            && (block.type.indexOf('Controls_if') !== -1 || block.type.indexOf('Controls_wait_for') !== -1 || block.type.indexOf('Controls_wait') !== -1)) {
+            && (block.type.indexOf('robProcedures_') !== -1 || block.type.indexOf('Controls_if') !== -1 || block.type.indexOf('Controls_ifElse') !== -1 || block.type.indexOf('Controls_wait_for') !== -1 || block.type.indexOf('Controls_wait') !== -1)) {
          //  && (block.type == 'robControls_if' || block.type == 'robControls_ifElse' || block.type == 'robControls_wait_for' || block.type == 'robControls_wait')) {
          element.appendChild(repetitions);
          repe = true;
@@ -123,7 +123,10 @@ Blockly.Xml.blockToDom = function(block, statement_list) {
     // Custom data for an advanced block.
     var mutation = block.mutationToDom();
     if (mutation) {
-      if (mutation !== undefined && mutation != null && block.type == 'robProcedures_defreturn' ) {
+      if (mutation !== undefined && mutation != null && 
+         (block.type.indexOf('robProcedures_') !== -1 || block.type.indexOf('Controls_if') !== -1 || 
+          block.type.indexOf('Controls_ifElse') !== -1 || block.type.indexOf('Controls_wait_for') !== -1 || 
+          block.type.indexOf('Controls_wait') !== -1)) {          
         element.appendChild(repetitions);
         repe = true;
       }
@@ -488,7 +491,7 @@ Blockly.Xml.domToBlockHeadless_ = function(xmlBlockList, workspace) {
             continue;
         }
 
-        if (xmlChild.nodeName != 'repetitions') {
+        if (xmlChild.nodeName.toLowerCase() != 'repetitions') {
             Blockly.Xml.childToBlock(workspace, block, xmlChild);
         } else {
             for (var u = 0, xmlRepetChild; xmlRepetChild = xmlChild.childNodes[u]; u++) {

@@ -670,7 +670,7 @@
   "NAO_GYROMETER": "Gyroskop",
   "NAO_ACCELEROMETER": "Beschleunigungssensor",
   "NAO_HEADSENSOR": "Kopfsensor",
-  "NAO_NAOMARK": "Detektiere NAO Marker",
+  "NAO_NAOMARK": "gib ID NAO Mark Sensor",
   "NAO_SELECTCAMERA": "Wähle Kamera",
   "NAO_TAKEPICTURE": "Mache Foto mit",
   "NAO_RECORDVIDEO": "Nehme Video auf mit",
