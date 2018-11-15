@@ -86,7 +86,7 @@ sensors.accelerometer.nao = {
 sensors.accelerometer.vorwerk = sensors.accelerometer.calliope;
 
 sensors.battery = {};
-sensors.battery.ardu = {
+sensors.battery.botnroll = {
     title : 'BATTERY',
     modes : [ {
         name : 'VALUE',
@@ -106,7 +106,7 @@ sensors.code.bob3 = {
 };
 
 sensors.colour = {};
-sensors.colour.ardu = {
+sensors.colour.botnroll = {
     title : 'COLOUR',
     ports : [ [ 'LEFT', '1' ], [ 'RIGHT', '2' ] ],
     modes : [ {
@@ -167,7 +167,7 @@ sensors.colour.nxt = {
 };
 
 sensors.compass = {};
-sensors.compass.ardu = {
+sensors.compass.botnroll = {
     title : 'COMPASS',
     modes : [ {
         name : 'ANGLE',
@@ -175,8 +175,8 @@ sensors.compass.ardu = {
         unit : 'DEGREE'
     } ]
 };
-sensors.compass.calliope = sensors.compass.ardu;
-sensors.compass.microbit = sensors.compass.ardu;
+sensors.compass.calliope = sensors.compass.botnroll;
+sensors.compass.microbit = sensors.compass.botnroll;
 sensors.compass.ev3 = {
     title : 'COMPASS',
     modes : [ {
@@ -242,7 +242,7 @@ sensors.detectmark.nao = {
 };
 
 sensors.encoder = {};
-sensors.encoder.ardu = {
+sensors.encoder.botnroll = {
     title : 'ENCODER',
     modes : [ {
         name : 'DEGREE',
@@ -487,7 +487,7 @@ sensors.humidity.arduino = {
 }
 
 sensors.infrared = {};
-sensors.infrared.ardu = {
+sensors.infrared.botnroll = {
     title : 'INFRARED',
     ports : [ [ 'LEFT', '1' ], [ 'RIGHT', '2' ], [ 'BOTH', 'BOTH' ] ],
     modes : [ {
@@ -573,7 +573,7 @@ sensors.irseeker.ev3 = {
 }
 
 sensors.key = {};
-sensors.key.ardu = {
+sensors.key.botnroll = {
     title : 'KEY',
     modes : [ {
         name : 'PRESSED',
@@ -643,7 +643,7 @@ sensors.key.wedo = {
 };
 
 sensors.light = {};
-sensors.light.ardu = {
+sensors.light.botnroll = {
     title : 'LIGHT',
     modes : [ {
         name : 'LIGHT',
@@ -950,7 +950,7 @@ sensors.temperature.calliope = sensors.temperature.bob3
 sensors.temperature.microbit = sensors.temperature.bob3
 
 sensors.timer = {};
-sensors.timer.ardu = {
+sensors.timer.botnroll = {
     title : 'TIMER',
     modes : [ {
         name : 'VALUE',
@@ -1024,7 +1024,7 @@ sensors.touch.vorwerk = {
 };
 
 sensors.ultrasonic = {};
-sensors.ultrasonic.ardu = {
+sensors.ultrasonic.botnroll = {
     title : 'ULTRASONIC',
     ports : [ [ 'LEFT', '0' ], [ 'CENTER', '1' ], [ 'RIGHT', '2' ], [ 'SENSOR_SONAR', '3' ] ],
     modes : [ {
@@ -1133,7 +1133,7 @@ sensors.joystick.mbot = {
 };
 
 var sensorsAll = [];
-sensorsAll.ardu = [ sensors.infrared.ardu, sensors.light.ardu, sensors.compass.ardu, sensors.ultrasonic.ardu, sensors.colour.ardu, sensors.key.ardu ];
+sensorsAll.botnroll = [ sensors.infrared.botnroll, sensors.light.botnroll, sensors.compass.botnroll, sensors.ultrasonic.botnroll, sensors.colour.botnroll, sensors.key.botnroll ];
 sensorsAll.mbot = [ sensors.touch.mbot, sensors.ultrasonic.mbot, sensors.light.mbot, sensors.infrared.mbot, sensors.gyro.mbot, sensors.accelerometer.mbot,
   sensors.sound.mbot, sensors.temperature.mbot, sensors.motion.mbot, sensors.key.mbot, sensors.timer.mbot, sensors.potentiometer.mbot ];
 sensorsAll.ev3 = [ sensors.touch.ev3, sensors.ultrasonic.ev3, sensors.colour.ev3, sensors.infrared.ev3, sensors.encoder.ev3, sensors.key.ev3, sensors.gyro.ev3,
