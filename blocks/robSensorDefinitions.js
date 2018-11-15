@@ -961,13 +961,13 @@ sensors.timer.botnroll = {
     } ],
     ports : [ [ ' 1', '1' ] ]
 };
-sensors.timer.bob3 = sensors.timer.ardu;
-sensors.timer.calliope = sensors.timer.ardu;
-sensors.timer.nxt = sensors.timer.ardu;
-sensors.timer.microbit = sensors.timer.ardu;
-sensors.timer.arduino = sensors.timer.ardu;
+sensors.timer.bob3 = sensors.timer.botnroll;
+sensors.timer.calliope = sensors.timer.botnroll;
+sensors.timer.nxt = sensors.timer.botnroll;
+sensors.timer.microbit = sensors.timer.botnroll;
+sensors.timer.arduino = sensors.timer.botnroll;
 sensors.timer.mbot = sensors.timer.arduino;
-sensors.timer.wedo = sensors.timer.ardu;
+sensors.timer.wedo = sensors.timer.botnroll;
 sensors.timer.ev3 = {
     title : 'TIMER',
     modes : [ {
