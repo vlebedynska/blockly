@@ -848,11 +848,9 @@ Blockly.Blocks['robLists_create_with'] = {
                 target.dispose();
             }
             var input = this.getInput('ADD' + i);
-            //input.connection.setShadowDom(null);
             input.setCheck(option);
             var block = this.getNewValue();
             block.initSvg();
-            //  block.setShadow(true);
             block.render();
             input.connection.connect(block.outputConnection);
         }
@@ -890,6 +888,18 @@ Blockly.Blocks['robLists_create_with'] = {
         case 'Connection':
             block = this.workspace.newBlock('logic_null');
             return block;
+        }
+    },
+    onchange : function(e) {
+        if (!this.workspace || Blockly.Block.dragMode_ == 2 || this.workspace.device !== 'nxt') {
+            // Block has been deleted or is in move or the device is not an NXT
+            return;
+        }
+        var block = this.getSurroundParent();
+        if (!block || block.type.indexOf('Variables_declare') == -1) {
+            this.setErrorText(Blockly.Msg.LIST_CREATE_WITH_ERROR);
+        } else {
+            this.setErrorText(null);
         }
     }
 };

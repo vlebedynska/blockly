@@ -61,7 +61,7 @@
     // Depending on the URL argument, render as LTR or RTL.
     var rtl = (document.location.search == '?rtl');
     var workspace = null;
-    var device = 'nxt'
+    var device = 'nxt';
 
     function start() {
         var toolbox = document.getElementById('toolbox');
@@ -93,7 +93,7 @@
             variableDeclaration : true,
             robControls : true
         });
-        workspace.setDevice(device);
+        workspace.setDevice({group: device, robot: device});
         // Restore previously displayed text.
         if (sessionStorage) {
             var text = sessionStorage.getItem('textarea');
