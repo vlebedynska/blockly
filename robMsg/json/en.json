@@ -292,6 +292,7 @@
   "MODE": "mode",
   "MODE_ACCELERATION": "acceleration",
   "MODE_AMBIENTLIGHT": "ambient light",
+  "MODE_REFLEXION": "reflected light",
   "MODE_ANGLE": "angle",
   "MODE_CLOSE": "close",
   "MODE_COLOUR": "colour",

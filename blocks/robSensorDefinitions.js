@@ -517,6 +517,10 @@ sensors.infrared.bob3 = {
         name : 'AMBIENTLIGHT',
         type : 'Number',
         unit : 'PERCENT'
+    }, {
+        name : 'REFLEXION',
+        type : 'Number',
+        unit : 'PERCENT'
     } ]
 };
 
