@@ -419,7 +419,7 @@ Blockly.init_ = function(mainWorkspace) {
         }
       });
 
-  Blockly.bindEvent_(window, 'resize', null,
+  Blockly.bindEvent_(window, 'load', null,
       function() {
         Blockly.hideChaff(true);
         Blockly.asyncSvgResize(mainWorkspace);

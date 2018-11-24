@@ -107,28 +107,17 @@ Blockly.FieldTextInput.prototype.setSpellcheck = function(check) {
  *     focus.  Defaults to false.
  * @private
  */
-Blockly.FieldTextInput.prototype.showEditor_ = function(opt_quietInput) {
+Blockly.FieldTextInput.prototype.showEditor_ = function() {
   this.workspace_ = this.sourceBlock_.workspace;
-  var quietInput = opt_quietInput || false;
-  if (!quietInput && (goog.userAgent.MOBILE || goog.userAgent.ANDROID ||
-                      goog.userAgent.IPAD)) {
-    // Mobile browsers have issues with in-line textareas (focus & keyboards).
-    var newValue = window.prompt(Blockly.Msg.CHANGE_VALUE_TITLE, this.text_);
-    if (this.sourceBlock_ && this.validator_) {
-      var override = this.validator_(newValue);
-      if (override !== undefined) {
-        newValue = override;
-      }
-    }
-    this.setValue(newValue);
-    return;
-  }
-
   Blockly.WidgetDiv.show(this, this.sourceBlock_.RTL, this.widgetDispose_());
   var div = Blockly.WidgetDiv.DIV;
   // Create the input.
   var htmlInput = goog.dom.createDom('input', 'blocklyHtmlInput');
   htmlInput.setAttribute('spellcheck', this.spellcheck_);
+  if (this.inputType === 'number') {
+    // chose tel as an input type to force touch devices to display a numeric keypad (if supported)
+    htmlInput.setAttribute('type', 'tel');
+  }
   var fontSize =
       (Blockly.FieldTextInput.FONTSIZE * this.workspace_.scale) + 'pt';
   div.style.fontSize = fontSize;
@@ -141,11 +130,9 @@ Blockly.FieldTextInput.prototype.showEditor_ = function(opt_quietInput) {
   htmlInput.oldValue_ = null;
   this.validate_();
   this.resizeEditor_();
-  if (!quietInput) {
-    htmlInput.focus();
-    htmlInput.select();
-  }
-
+  htmlInput.focus();
+  htmlInput.select();
+  
   // Bind to keydown -- trap Enter without IME and Esc to hide.
   htmlInput.onKeyDownWrapper_ =
       Blockly.bindEvent_(htmlInput, 'keydown', this, this.onHtmlInputKeyDown_);

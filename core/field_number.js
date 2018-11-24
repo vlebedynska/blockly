@@ -41,5 +41,6 @@ goog.require('Blockly.FieldTextInput');
 Blockly.FieldNumber = function(text, opt_validator) {
   Blockly.FieldNumber.superClass_.constructor.call(this, text,
       opt_validator);
+  this.inputType = 'number';
 };
 goog.inherits(Blockly.FieldNumber, Blockly.FieldTextInput);

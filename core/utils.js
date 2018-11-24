@@ -295,8 +295,7 @@ Blockly.getSvgXY_ = function(element, workspace) {
  * @return {!SVGElement} Newly created SVG element.
  */
 Blockly.createSvgElement = function(name, attrs, parent, opt_workspace) {
-    var e = /** @type {!SVGElement} */
-    (document.createElementNS(Blockly.SVG_NS, name));
+    var e = /** @type {!SVGElement} */ (document.createElementNS(Blockly.SVG_NS, name));
     for ( var key in attrs) {
         e.setAttribute(key, attrs[key]);
     }
