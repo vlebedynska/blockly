@@ -83,7 +83,7 @@ Blockly.FieldPixelbox.prototype.init = function() {
 
         if (!text) {
             // Prevent the field from disappearing if empty.
-            text = Blockly.Field.NBSP;
+            text = ' ';
         }
         var textNode = document.createTextNode(text);
         this.textElement_.appendChild(textNode);
