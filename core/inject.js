@@ -446,7 +446,9 @@ Blockly.init_ = function(mainWorkspace) {
 
   if (options.hasScrollbars) {
     mainWorkspace.scrollbar = new Blockly.ScrollbarPair(mainWorkspace);
-    mainWorkspace.scrollbar.resize();
+    if (mainWorkspace.scrollbar.workspace_.getMetrics().viewHeight !== undefined){
+        mainWorkspace.scrollbar.resize();
+    }
   }
 
   // Load the sounds.
