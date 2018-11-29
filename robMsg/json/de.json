@@ -206,7 +206,7 @@
 	"MESSAGE_EDIT_SAVE_PROGRAM": "Dein Programm »$« wurde gespeichert!",
 	"MESSAGE_EDIT_SAVE_PROGRAM_AS": "Dein Programm wurde als »$« gespeichert!",
 	"MESSAGE_EDIT_START": "Dein Programm »$« startet gleich auf dem Roboter!",
-	"MESSAGE_FIRMWARE_ERROR": "Die Firmware des Open Roberta Lab passt nicht zur Firmware Deines Roboters. Schick uns bitte eine Email.",
+	"MESSAGE_FIRMWARE_ERROR": "Die Firmware deines Roboters ist neuer als die des Open Roberta Labs. Bitte melde dem Betreiber deines Servers, dass der Server geupdated werden muss.",
 	"MESSAGE_INVALID_NAME": "Der Name kann nur aus Buchstaben und Zahlen bestehen. Wichtig ist auch, dass ein Buchstabe an erster Stelle steht. Versuche es nochmal.",
 	"MESSAGE_INVALID_CONF_NAME": "Der Name kann nur aus Buchstaben und Zahlen bestehen. Wichtig ist auch, dass ein Buchstabe an erster Stelle steht und der Standardname »[Roboter]basis« nicht verwendet wird. Versuche es nochmal.",
 	"MESSAGE_NOT_AVAILABLE": "Diese Funktion gibt es leider noch nicht.",
@@ -1138,5 +1138,6 @@
 	"ACTOR_MODE_ANALOGIN_TOOLTIP": "Schreibt einen analogen Wert (PWM wave) auf einen Pin. Werte zwischen 0 und 255 können eingegeben werden.",
 	"ACTOR_MODE_DIGITALIN_TOOLTIP": "Schreibt einen digitalen Wert auf einen Pin. Die Werte HIGH »1« oder LOW »0« können eingegeben werden.",
 	"ACTION_INFRARED": "Infrarotstrahler",
-	"LIST_CREATE_WITH_ERROR": "Fehler: Dieser Block kann nur an einen Block angefügt werden, der eine Variable erzeugt."
+	"LIST_CREATE_WITH_ERROR": "Fehler: Dieser Block kann nur an einen Block angefügt werden, der eine Variable erzeugt.",
+    "POPUP_SCANNED_ROBOTS" : "Gefundene Roboter"
 }
