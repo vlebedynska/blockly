@@ -421,7 +421,7 @@ Blockly.LIST_TYPE_DROPDOWN = function(device) {
         });
     case 'botnroll':
     case 'bob3':
-    case 'makeblock':
+    case 'mbot':
     case 'microbit':
     case 'nao':
     case 'vorwerk':
