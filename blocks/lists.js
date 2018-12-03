@@ -897,7 +897,7 @@ Blockly.Blocks['robLists_create_with'] = {
         }
         var block = this.getSurroundParent();
         if (!block || block.type.indexOf('Variables_declare') == -1) {
-            this.setErrorText(Blockly.Msg.LIST_CREATE_WITH_ERROR);
+            this.setErrorText(Blockly.Msg.ORA_LIST_CREATE_WITH_ERROR);
         } else {
             this.setErrorText(null);
         }

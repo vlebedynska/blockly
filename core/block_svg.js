@@ -1439,6 +1439,17 @@ Blockly.BlockSvg.prototype.setWarningText = function(text, opt_id) {
 };
 
 /**
+ * Returns the error on this block (or '' if none).
+ * @return {string} Block's error.
+ */
+Blockly.BlockSvg.prototype.getErrorText = function() {
+    if (this.error) {
+        return this.error.getText();
+    }
+    return '';
+};
+
+/**
  * Set this block's error text.
  * @param {?string} text The text, or null to delete.
  * @param {string=} opt_id An optional ID for the error text to be able to

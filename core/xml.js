@@ -104,6 +104,10 @@ Blockly.Xml.blockToDom = function(block, statement_list) {
     statement_list.push(element);
     element.setAttribute('type', block.type);
     element.setAttribute('id', block.id);
+    console.log(block.getErrorText());
+    if(block.getErrorText() != '') {
+        element.setAttribute('error_attribute', true);
+    }
     if (block.mutationToDom) {
         // Custom data for an advanced block.
         var mutation = block.mutationToDom();

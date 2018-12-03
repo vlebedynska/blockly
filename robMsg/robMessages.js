@@ -1242,6 +1242,6 @@ Blockly.Msg.SENSOR_OUT_DIGITAL_GETSAMPLE_TOOLTIP = 'Returns the value from the s
 Blockly.Msg.ACTOR_MODE_ANALOGIN_TOOLTIP = 'Writes an analog value (PWM wave) to a pin. Only values between 0 and 255 should be used';
 Blockly.Msg.ACTOR_MODE_DIGITALIN_TOOLTIP = 'Writes a HIGH or a LOW value to a digital pin. Only the values HIGH »1« and LOW »0« should be used.';
 Blockly.Msg.ACTION_INFRARED = 'infrared emitter';
-Blockly.Msg.LIST_CREATE_WITH_ERROR = 'Error: This block may be used only within a variable declaration.';
+Blockly.Msg.ORA_LIST_CREATE_WITH_ERROR = 'Error: This block may be used only within a variable declaration.';
 Blockly.Msg.POPUP_SCANNED_ROBOTS = 'found robots';
 Blockly.Msg.POPUP_DISPLAY_HEADER = 'output of your program';
