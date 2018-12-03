@@ -1245,3 +1245,5 @@ Blockly.Msg.ACTION_INFRARED = 'infrared emitter';
 Blockly.Msg.ORA_LIST_CREATE_WITH_ERROR = 'Error: This block may be used only within a variable declaration.';
 Blockly.Msg.POPUP_SCANNED_ROBOTS = 'found robots';
 Blockly.Msg.POPUP_DISPLAY_HEADER = 'output of your program';
+Blockly.Msg.CONNECTION_MAKEBLOCK_RECEIVE_TOOLTIP = 'Reads a message from the IR receiver. Only strings can be received.';
+Blockly.Msg.CONNECTION_MAKEBLOCK_SEND_TOOLTIP = 'Sends a message of type string to another mBot. Hold the mBots"s face to face!';
