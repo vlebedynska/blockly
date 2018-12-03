@@ -9,6 +9,8 @@ goog.provide('Blockly.Blocks.makeblockImage');
 
 goog.require('Blockly.Blocks');
 
+//TODO once this block will be used, move it to another file
+
 /**
  * @lends Block
  */

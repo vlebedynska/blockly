@@ -411,7 +411,7 @@ Blockly.Blocks['robControls_wait'] = {
  * @param {Boolean} -
  *            any condition.
  * @returns after (first) condition is true.
- * @memberof BlockrobControls_wait_for
+ * @memberof BlockrobControls_wait_time
  */
 
 Blockly.Blocks['robControls_wait_time'] = {
@@ -512,8 +512,6 @@ Blockly.Blocks['robControls_wait_for'] = {
                 s = this.workspace.newBlock('robSensors_getSample_ardu');
             } else if (this.workspace.device === 'bob3') {
                 s = this.workspace.newBlock('bob3Sensors_getSample_bob3');
-            } else if (this.workspace.device === 'mbot') {
-                s = this.workspace.newBlock('makeblockSensors_getSample_makeblock');
             } else {
                 s = this.workspace.newBlock('robSensors_getSample');
             }

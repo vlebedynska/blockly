@@ -16,7 +16,7 @@ goog.require('Blockly.Blocks');
 Blockly.Blocks['bob3Communication_sendBlock'] = {
     /**
      * Send a message to another device, maybe via the roberta lab server.
-     *
+     * 
      * @this.Blockly.Block
      * @param {data}
      *            DATA - message content (numbers only)
@@ -26,42 +26,22 @@ Blockly.Blocks['bob3Communication_sendBlock'] = {
 
     init : function() {
         this.setColour(Blockly.CAT_COMMUNICATION_RGB);
-//        var dataType = new Blockly.FieldDropdown([[ Blockly.Msg.VARIABLES_TYPE_NUMBER, 'Number' ]], function(option) {
-//            if (option && this.sourceBlock_.getFieldValue('TYPE') !== option) {
-//                this.sourceBlock_.updateType_(option);
-//            }
-//        });
-//        this.dataType_ = 'Number';
-        this.appendValueInput('sendData').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.CONNECTION_SEND_DATA).setCheck('Number');
-        this.setTooltip(Blockly.Msg.CONNECTION_BOB3_SEND_TOOLTIP);
+        if (this.workspace.device === 'bob3') {
+            this.appendValueInput('sendData').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.CONNECTION_SEND_DATA).setCheck('Number');
+        } else if (this.workspace.device === 'mbot') {
+            this.appendValueInput('sendData').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.CONNECTION_SEND_DATA).setCheck('String');
+        }
+        this.setTooltip(Blockly.Msg['CONNECTION_SEND_TOOLTIP_' + this.workspace.device.toUpperCase()]);
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setInputsInline(false);
-    },
-//    mutationToDom : function() {
-//        if (this.dataType_ === undefined) {
-//            return false;
-//        }
-//        var container = document.createElement('mutation');
-//        container.setAttribute('datatype', this.dataType_);
-//        return container;
-//    },
-//    domToMutation : function(xmlElement) {
-//        this.dataType_ = xmlElement.getAttribute('datatype');
-//        if (this.dataType_) {
-//            this.getInput('sendData').setCheck(this.dataType_);
-//        }
-//    },
-//    updateType_ : function(option) {
-//        this.dataType_ = option;
-//        this.getInput('sendData').setCheck(this.dataType_);
-//    },
+    }
 };
 
 Blockly.Blocks['bob3Communication_receiveBlock'] = {
     /**
      * Send a message to another device, maybe via the roberta lab server.
-     *
+     * 
      * @constructs bob3Communication_receiveBlock
      * @this.Blockly.Block
      * @param {data}
@@ -72,33 +52,13 @@ Blockly.Blocks['bob3Communication_receiveBlock'] = {
 
     init : function() {
         this.setColour(Blockly.CAT_COMMUNICATION_RGB);
-//        var dataType = new Blockly.FieldDropdown([ [ Blockly.Msg.VARIABLES_TYPE_NUMBER, 'Number' ] ], function(option) {
-//            if (option && this.sourceBlock_.getFieldValue('TYPE') !== option) {
-//                this.sourceBlock_.updateType_(option);
-//            }
-//        });
-//        this.dataType_ = 'Number';
         this.appendDummyInput('receiveData').appendField(Blockly.Msg.CONNECTION_RECEIVED_DATA);
-        this.setOutput(true, 'Number');
-        this.setTooltip(Blockly.Msg.CONNECTION_BOB3_RECEIVE_TOOLTIP);
+        if (this.workspace.device === 'bob3') {
+            this.setOutput(true, 'Number');
+        } else if (this.workspace.device === 'mbot') {
+            this.setOutput(true, 'String');
+        }
+        this.setTooltip(Blockly.Msg['CONNECTION_RECEIVE_TOOLTIP_' + this.workspace.device.toUpperCase()]);
         this.setInputsInline(false);
-    },
-//    mutationToDom : function() {
-//        if (this.dataType_ === undefined) {
-//            return false;
-//        }
-//        var container = document.createElement('mutation');
-//        container.setAttribute('datatype', this.dataType_);
-//        return container;
-//    },
-//    domToMutation : function(xmlElement) {
-//        this.dataType_ = xmlElement.getAttribute('datatype');
-//        if (this.dataType_) {
-//            this.setOutput(true, this.dataType_);
-//        }
-//    },
-//    updateType_ : function(option) {
-//        this.dataType_ = option;
-//        this.setOutput(true, this.dataType_);
-//    },
+    }
 };

@@ -228,6 +228,7 @@
 	"MODE_DEGREE": "Grad",
 	"MODE_DISTANCE": "Abstand",
 	"MODE_LIGHT": "Licht",
+	"MODE_LINE": "Linie",
 	"MODE_PRESENCE": "Anwesenheit",
 	"MODE_RATE": "Drehrate",
 	"MODE_ROTATION": "Umdrehungen",
@@ -870,8 +871,8 @@
 	"LED_OFF_TOOLTIP": "Schaltet die LED aus.",
 	"SET_LED": "Schalte LED",
 	"NAO_LED_EYE": "Auge",
-	"CONNECTION_BOB3_RECEIVE_TOOLTIP": "Wartet auf eine Nachricht. Nachrichten sind vom Typ Zahl.",
-	"CONNECTION_BOB3_SEND_TOOLTIP": "Sendet eine Zahl an einen anderen Bob3. Halte die Bob3's gegenüber, damit die Nachricht empfangen werden kann!",
+	"CONNECTION_RECEIVE_TOOLTIP_BOB3": "Wartet auf eine Nachricht. Nachrichten sind vom Typ Zahl.",
+	"CONNECTION_SEND_TOOLTIP_BOB3": "Sendet eine Zahl an einen anderen Bob3. Halte die Bob3's gegenüber, damit die Nachricht empfangen werden kann!",
 	"INTERNAL_PORT": "innere",
 	"PULSE_LOW": "Pulszeit LOW",
 	"PULSE_HIGH": "Pulszeit HIGH",
@@ -1139,5 +1140,11 @@
 	"ACTOR_MODE_DIGITALIN_TOOLTIP": "Schreibt einen digitalen Wert auf einen Pin. Die Werte HIGH »1« oder LOW »0« können eingegeben werden.",
 	"ACTION_INFRARED": "Infrarotstrahler",
 	"ORA_LIST_CREATE_WITH_ERROR": "Fehler: Dieser Block kann nur an einen Block angefügt werden, der eine Variable erzeugt.",
-    "POPUP_SCANNED_ROBOTS" : "Gefundene Roboter"
+    "POPUP_SCANNED_ROBOTS" : "Gefundene Roboter",
+	"LIST_CREATE_WITH_ERROR": "Fehler: Dieser Block kann nur an einen Block angefügt werden, der eine Variable erzeugt.",
+    "SLOT_LEFT": "links",
+	"SLOT_RIGHT": "rechts",
+	"CONNECTION_RECEIVE_TOOLTIP_MBOT": "Wartet auf eine Nachricht. Nachrichten sind vom Typ Text.",
+	"CONNECTION_SEND_TOOLTIP_MBOT": "Sendet einen Text an einen anderen mBot. Halte die mBot's gegenüber, damit die Nachricht empfangen werden kann!"
+	
 }

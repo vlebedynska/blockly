@@ -8,6 +8,7 @@
 goog.provide('Blockly.Blocks.robCommunication');
 
 goog.require('Blockly.Blocks');
+goog.require('Blockly.Blocks.bob3Communication');
 
 /**
  * @lends Block
@@ -207,3 +208,6 @@ Blockly.Blocks['robCommunication_checkConnection'] = {
         });
     }
 };
+
+Blockly.Blocks['robCommunication_ir_sendBlock'] = Blockly.Blocks['bob3Communication_sendBlock'];
+Blockly.Blocks['robCommunication_ir_receiveBlock'] = Blockly.Blocks['bob3Communication_receiveBlock'];

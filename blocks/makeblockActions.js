@@ -10,6 +10,8 @@ goog.provide('Blockly.Blocks.makeblockActions');
 
 goog.require('Blockly.Blocks');
 
+// TODO rename/remove these blocks, because they are only used in bob3!
+
 Blockly.Blocks['makeblockActions_leds_on'] = {
     /**
      * Turn brick LED on.

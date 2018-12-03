@@ -60,13 +60,13 @@ sensors.accelerometer.mbot = {
         type : 'Number',
         unit : 'g'
     }, {
-      name : 'Y',
-      type : 'Number',
-      unit : 'g'
+        name : 'Y',
+        type : 'Number',
+        unit : 'g'
     }, {
-      name : 'Z',
-      type : 'Number',
-      unit : 'g'
+        name : 'Z',
+        type : 'Number',
+        unit : 'g'
     } ],
     ports : [ [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ]
 };
@@ -433,9 +433,9 @@ sensors.gyro.mbot = {
         type : 'Number',
         unit : 'DEGREE'
     }, {
-      name : 'Y',
-      type : 'Number',
-      unit : 'DEGREE'
+        name : 'Y',
+        type : 'Number',
+        unit : 'DEGREE'
     } ],
     ports : [ [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ]
 };
@@ -527,13 +527,11 @@ sensors.infrared.bob3 = {
 sensors.infrared.mbot = {
     title : 'INFRARED',
     modes : [ {
-        name : 'SENSOR1',
-        type : 'Boolean',
-    }, {
-        name : 'SENSOR2',
-        type : 'Boolean',
+        name : 'LINE',
+        type : 'Boolean'
     } ],
     ports : [ [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ],
+    slots : [ [ 'SLOT_LEFT', '1' ], [ 'SLOT_RIGHT', '2' ] ],
     standardPort : '2'
 };
 
@@ -698,9 +696,10 @@ sensors.light.mbot = {
     modes : [ {
         name : 'LIGHT',
         type : 'Number',
-        unit : 'PERCENT'
+        unit : 'PERCENT',
+        value : 50
     } ],
-    ports : [ [ 'Port internal', '0' ], [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ]
+    ports : [ [ 'Port internal', '6' ], [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ]
 };
 
 sensors.moisture = {};
@@ -938,7 +937,6 @@ sensors.temperature.mbot = {
     standardPort : '3'
 };
 
-
 sensors.temperature.arduino = {
     title : 'TEMPERATURE',
     modes : [ {
@@ -1116,8 +1114,8 @@ sensors.flame.mbot = {
     title : 'FLAME',
     ports : [ [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ],
     modes : [ {
-      name : 'VALUE',
-      type : 'Number',
+        name : 'VALUE',
+        type : 'Number',
     } ],
     standardPort : '4'
 };
@@ -1127,9 +1125,9 @@ sensors.joystick.mbot = {
     title : 'JOYSTICK',
     ports : [ [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ],
     modes : [ {
-          name : 'X',
-          type : 'Number'
-      }, {
+        name : 'X',
+        type : 'Number'
+    }, {
         name : 'Y',
         type : 'Number'
     } ],
@@ -1137,9 +1135,9 @@ sensors.joystick.mbot = {
 };
 
 var sensorsAll = [];
-sensorsAll.botnroll = [ sensors.infrared.botnroll, sensors.light.botnroll, sensors.compass.botnroll, sensors.ultrasonic.botnroll, sensors.colour.botnroll, sensors.key.botnroll ];
-sensorsAll.mbot = [ sensors.touch.mbot, sensors.ultrasonic.mbot, sensors.light.mbot, sensors.infrared.mbot, sensors.gyro.mbot, sensors.accelerometer.mbot,
-  sensors.sound.mbot, sensors.temperature.mbot, sensors.motion.mbot, sensors.key.mbot, sensors.timer.mbot, sensors.potentiometer.mbot ];
+sensorsAll.botnroll = [ sensors.infrared.botnroll, sensors.light.botnroll, sensors.compass.botnroll, sensors.ultrasonic.botnroll, sensors.colour.botnroll,
+        sensors.key.botnroll ];
+sensorsAll.mbot = [ sensors.key.mbot, sensors.ultrasonic.mbot, sensors.infrared.mbot, sensors.light.mbot, sensors.timer.mbot ];
 sensorsAll.ev3 = [ sensors.touch.ev3, sensors.ultrasonic.ev3, sensors.colour.ev3, sensors.infrared.ev3, sensors.encoder.ev3, sensors.key.ev3, sensors.gyro.ev3,
         sensors.timer.ev3, sensors.compass.ev3, sensors.irseeker.ev3 ];
 sensorsAll.nxt = [ sensors.touch.nxt, sensors.sound.nxt, sensors.light.nxt, sensors.ultrasonic.nxt, sensors.encoder.nxt, sensors.key.nxt, sensors.colour.nxt,
