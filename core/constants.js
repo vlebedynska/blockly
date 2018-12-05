@@ -420,16 +420,31 @@ Blockly.LIST_TYPE_DROPDOWN = function(device) {
             this.sourceBlock_.updateType_(option);
         });
     case 'botnroll':
-    case 'bob3':
+    case 'arduino':
     case 'mbot':
     case 'microbit':
     case 'nao':
-    case 'vorwerk':
         return new Blockly.FieldDropdown([
             [ Blockly.Msg.VARIABLES_TYPE_NUMBER, 'Number' ],
             [ Blockly.Msg.VARIABLES_TYPE_BOOLEAN, 'Boolean' ],
             [ Blockly.Msg.VARIABLES_TYPE_STRING, 'String' ],
             [ Blockly.Msg.VARIABLES_TYPE_COLOUR, 'Colour' ]
+        ], function(option) {
+            this.sourceBlock_.updateType_(option);
+        });
+    case 'vorwerk':
+        return new Blockly.FieldDropdown([
+        [ Blockly.Msg.VARIABLES_TYPE_NUMBER, 'Number' ],
+        [ Blockly.Msg.VARIABLES_TYPE_BOOLEAN, 'Boolean' ],
+        [ Blockly.Msg.VARIABLES_TYPE_STRING, 'String' ]
+        ], function(option) {
+            this.sourceBlock_.updateType_(option);
+        });
+    case 'bob3':
+        return new Blockly.FieldDropdown([
+        [ Blockly.Msg.VARIABLES_TYPE_NUMBER, 'Number' ],
+        [ Blockly.Msg.VARIABLES_TYPE_BOOLEAN, 'Boolean' ],
+        [ Blockly.Msg.VARIABLES_TYPE_COLOUR, 'Colour' ]
         ], function(option) {
             this.sourceBlock_.updateType_(option);
         });
