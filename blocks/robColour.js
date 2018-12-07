@@ -63,23 +63,20 @@ Blockly.Blocks['robColour_picker'] = {
     }
 };
 
-// for later use
-//
-//Blockly.Blocks['robColour_rgb'] = {
-//    /**
-//     * Block for composing a colour from RGB components.
-//     * @this Blockly.Block
-//     */
-//    init : function() {
-//        this.setColour(Blockly.CAT_COLOUR_RGB);
-//        this.appendValueInput('RED').setCheck('Number').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.COLOUR_RGB_TITLE).appendField(Blockly.Msg.COLOUR_RGB_RED);
-//        this.appendValueInput('GREEN').setCheck('Number').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.COLOUR_RGB_GREEN);
-//        this.appendValueInput('BLUE').setCheck('Number').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.COLOUR_RGB_BLUE);
-//        this.appendValueInput('WHITE').setCheck('Number').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.COLOUR_RGB_WHITE);
-//        this.setOutput(true, 'Colour');
-//        this.setTooltip(Blockly.Msg.COLOUR_RGB_TOOLTIP);
-//    }
-//};
+Blockly.Blocks['robColour_rgb'] = {
+    /**
+     * Block for composing a colour from RGB components.
+     * @this Blockly.Block
+     */
+    init : function() {
+        this.setColour(Blockly.CAT_COLOUR_RGB);
+        this.appendValueInput('RED').setCheck('Number').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.COLOUR_RGB_TITLE).appendField(Blockly.Msg.COLOUR_RGB_RED);
+        this.appendValueInput('GREEN').setCheck('Number').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.COLOUR_RGB_GREEN);
+        this.appendValueInput('BLUE').setCheck('Number').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.COLOUR_RGB_BLUE);
+        this.setOutput(true, 'Colour');
+        this.setTooltip(Blockly.Msg.COLOUR_RGB_TOOLTIP);
+    }
+};
 //
 //// mapping for old block names not used anymore
 //Blockly.Blocks['mbedColour_picker'] = Blockly.Blocks['robColour_picker'];
