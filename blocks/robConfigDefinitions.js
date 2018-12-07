@@ -383,7 +383,7 @@ confBlocks.motor.wedo = {
 confBlocks.digitalout = {};
 confBlocks.digitalout.arduino = {
     title: 'DIGITALOUT',
-    ports: [['output', 'OUTPUT']],
+    ports: [['SENSOR_PIN', 'OUTPUT']],
     pins: function( a ) {
         return Blockly.Blocks.robConfigDefinitions['pinsDigital'][a];
     },
@@ -393,7 +393,7 @@ confBlocks.digitalout.arduino = {
 confBlocks.analogout = {};
 confBlocks.analogout.arduino = {
     title: 'ANALOGOUT',
-    ports: [['output', 'OUTPUT']],
+    ports: [['SENSOR_PIN', 'OUTPUT']],
     pins: function( a ) {
         return Blockly.Blocks.robConfigDefinitions['pinsAnalog'][a];
     },
@@ -403,7 +403,7 @@ confBlocks.analogout.arduino = {
 confBlocks.digitalin = {};
 confBlocks.digitalin.arduino = {
     title: 'DIGITALIN',
-    ports: [['input', 'INPUT']],
+    ports: [['SENSOR_PIN', 'INPUT']],
     pins: function( a ) {
         return Blockly.Blocks.robConfigDefinitions['pinsDigital'][a];
     },
@@ -413,7 +413,7 @@ confBlocks.digitalin.arduino = {
 confBlocks.analogin = {};
 confBlocks.analogin.arduino = {
     title: 'ANALOGIN',
-    ports: [['input', 'INPUT']],
+    ports: [['SENSOR_PIN', 'INPUT']],
     pins: function( a ) {
         return Blockly.Blocks.robConfigDefinitions['pinsAnalogWrite'][a];
     },
