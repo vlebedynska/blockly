@@ -1054,13 +1054,13 @@ Blockly.Blocks['robLists_getIndex'] = {
      */
     init : function() {
         var MODE;
-        if (this.workspace.device === 'nxt' || this.workspace.device === 'microbit') {
+        if (this.workspace.device === 'nxt') {
             MODE = [ [ Blockly.Msg.LISTS_GET_INDEX_GET, 'GET' ] ];
         } else {
             MODE = [ [ Blockly.Msg.LISTS_GET_INDEX_GET, 'GET' ], [ Blockly.Msg.LISTS_GET_INDEX_GET_REMOVE, 'GET_REMOVE' ],
                     [ Blockly.Msg.LISTS_GET_INDEX_REMOVE, 'REMOVE' ] ];
         }
-        if (this.workspace.device === 'nxt' || this.workspace.device === 'microbit') {
+        if (this.workspace.device === 'nxt') {
             this.WHERE_OPTIONS = [ [ Blockly.Msg.LISTS_GET_INDEX_FROM_START, 'FROM_START' ] ];
         } else {
             this.WHERE_OPTIONS = [ [ Blockly.Msg.LISTS_GET_INDEX_FROM_START, 'FROM_START' ], [ Blockly.Msg.LISTS_GET_INDEX_FROM_END, 'FROM_END' ],
@@ -1208,7 +1208,7 @@ Blockly.Blocks['robLists_setIndex'] = {
      */
     init : function() {
         var MODE
-        if (this.workspace.device === 'nxt' || this.workspace.device === 'microbit') {
+        if (this.workspace.device === 'nxt') {
             MODE = [ [ Blockly.Msg.LISTS_SET_INDEX_SET, 'SET' ] ];
             this.WHERE_OPTIONS = [ [ Blockly.Msg.LISTS_GET_INDEX_FROM_START, 'FROM_START' ] ];
         } else {
