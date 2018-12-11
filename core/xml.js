@@ -43,8 +43,6 @@ Blockly.Xml.LEVEL = 'LEVEL';
 Blockly.Xml.GESTURE = 'MODE';
 Blockly.Xml.ARM = 'SENSORPORT';
 Blockly.Xml.ARMPAIR = 'SLOT';
-Blockly.Xml.PIN_PULSEHIGH = 'PIN_PULSE_HIGH';
-Blockly.Xml.PIN_PULSELOW = 'PIN_PULSE_LOW';
 
 /**
  * Encode a block tree as XML.
@@ -104,7 +102,7 @@ Blockly.Xml.blockToDom = function(block, statement_list) {
     statement_list.push(element);
     element.setAttribute('type', block.type);
     element.setAttribute('id', block.id);
-    if(block.getErrorText() != '') {
+    if (block.getErrorText() != '') {
         element.setAttribute('error_attribute', true);
     }
     if (block.mutationToDom) {
@@ -664,10 +662,14 @@ Blockly.Xml.childToBlock = function(workspace, block, xmlChild) {
                 xmlChild.setAttribute('input', 'GESTURE_UP');
             } else if (xmlChild.getAttribute('mode') == 'RED') {
                 xmlChild.setAttribute('mode', 'LIGHT');
-            } else if (xmlChild.getAttribute('input') == 'PIN_PULSEHIGH') {
-                xmlChild.setAttribute('input', 'PIN_PULSE_HIGH');
-            } else if (xmlChild.getAttribute('input') == 'PIN_PULSELOW') {
-                xmlChild.setAttribute('input', 'PIN_PULSE_LOW');
+            } else if (xmlChild.getAttribute('input') == 'PIN_PULSE_HIGH') {
+                xmlChild.setAttribute('input', 'PIN_PULSEHIGH');
+            } else if (xmlChild.getAttribute('input') == 'PIN_PULSE_LOW') {
+                xmlChild.setAttribute('input', 'PIN_PULSELOW');
+            } else if (xmlChild.getAttribute('mode') == 'PULSE_HIGH') {
+                xmlChild.setAttribute('mode', 'PULSEHIGH');
+            } else if (xmlChild.getAttribute('mode') == 'PULSE_LOW') {
+                xmlChild.setAttribute('mode', 'PULSELOW');
             } else if (xmlChild.getAttribute('input') == 'PIN_TOUCHED') {
                 xmlChild.setAttribute('input', 'PINTOUCH_PRESSED');
             }
@@ -776,10 +778,10 @@ Blockly.Xml.childToBlock = function(workspace, block, xmlChild) {
                 xmlChild.textContent = 'GYRO_ANGLE';
             } else if (xmlChild.textContent == 'ACCELERATION') {
                 xmlChild.textContent = 'ACCELEROMETER_VALUE';
-            } else if (xmlChild.textContent == 'PIN_PULSEHIGH') {
-                xmlChild.textContent = 'PIN_PULSE_HIGH';
-            } else if (xmlChild.textContent == 'PIN_PULSELOW') {
-                xmlChild.textContent = 'PIN_PULSE_LOW';
+            } else if (xmlChild.textContent == 'PIN_PULSE_HIGH') {
+                xmlChild.textContent = 'PIN_PULSEHIGH';
+            } else if (xmlChild.textContent == 'PIN_PULSE_LOW') {
+                xmlChild.textContent = 'PIN_PULSELOW';
             } else if (xmlChild.textContent == 'PIN_TOUCHED') {
                 xmlChild.textContent = 'PINTOUCH_PRESSED';
             }
@@ -787,10 +789,10 @@ Blockly.Xml.childToBlock = function(workspace, block, xmlChild) {
             if (xmlChild.textContent == 'TRUE') {
                 xmlChild.textContent = '';
             }
-        } else if (xmlChild.textContent == 'PULSEHIGH') {
-            xmlChild.textContent = 'PULSE_HIGH';
-        } else if (xmlChild.textContent == 'PULSELOW') {
-            xmlChild.textContent = 'PULSE_LOW';
+        } else if (xmlChild.textContent == 'PULSE_HIGH') {
+            xmlChild.textContent = 'PULSEHIGH';
+        } else if (xmlChild.textContent == 'PULSE_LOW') {
+            xmlChild.textContent = 'PULSELOW';
         }
         if (name == 'MOTORPORT' && block.type != 'robSensors_getSample' && block.type != 'robSensors_encoder_getSample'
                 && block.type != 'robSensors_encoder_reset') {

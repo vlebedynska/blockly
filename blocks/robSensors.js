@@ -161,29 +161,29 @@ Blockly.Blocks['robSensors_generic'] = {
         var ports;
         this.sensorPort_ = 'NO';
         if (typeof sensor.ports === 'object') {
-            var portList = [];
+            var portsList = [];
             if (!sensor.ports[0].port) {
                 for (var i = 0; i < sensor.ports.length; i++) {
-                    portList.push([ Blockly.Msg[sensor.ports[i][0]] || sensor.ports[i][0], sensor.ports[i][1] ]);
+                    portsList.push([ Blockly.Msg[sensor.ports[i][0]] || sensor.ports[i][0], sensor.ports[i][1] ]);
                 }
-                ports = new Blockly.FieldDropdown(portList);
+                ports = new Blockly.FieldDropdown(portsList);
             } else {
                 for (var i = 0; i < sensor.ports.length; i++) {
-                    portList.push([ Blockly.Msg[sensor.ports[i].port[0]] || sensor.ports[i].port[0], sensor.ports[i].port[1] ]);
+                    portsList.push([ Blockly.Msg[sensor.ports[i].port[0]] || sensor.ports[i].port[0], sensor.ports[i].port[1] ]);
                 }
-                ports = new Blockly.FieldDropdown(portList, function(option) {
+                ports = new Blockly.FieldDropdown(portsList, function(option) {
                     if (option && this.sourceBlock_.getFieldValue('SENSORPORT') !== option) {
                         this.sourceBlock_.updatePort_(option);
                     }
                 });
-                this.sensorPort_ = portList[0][1];
+                this.sensorPort_ = portsList[0][1];
             }
         } else if (sensor.modes && sensor.modes[0].ports) {
-            var portList = [];
+            var portsList = [];
             for (var i = 0; i < sensor.modes[0].ports.length; i++) {
-                portList.push([ Blockly.Msg[sensor.modes[0].ports[i][0]] || sensor.modes[0].ports[i][0], sensor.modes[0].ports[i][1] ]);
+                portsList.push([ Blockly.Msg[sensor.modes[0].ports[i][0]] || sensor.modes[0].ports[i][0], sensor.modes[0].ports[i][1] ]);
             }
-            ports = new Blockly.FieldDropdown(portList);
+            ports = new Blockly.FieldDropdown(portsList);
         } else if (sensor.ports === 'CONFIGURATION') {
             var sensorTitle = sensor.title;
             if (sensorTitle === 'OUT') {
@@ -281,11 +281,11 @@ Blockly.Blocks['robSensors_generic'] = {
                                 input.removeField(toRemove[j]);
                             }
                             // add new ports
-                            var portList = [];
+                            var portsList = [];
                             for (var j = 0; j < sensor.modes[i].ports.length; j++) {
-                                portList.push([ Blockly.Msg[sensor.modes[i].ports[j][0]] || sensor.modes[i].ports[j][0], sensor.modes[i].ports[j][1] ]);
+                                portsList.push([ Blockly.Msg[sensor.modes[i].ports[j][0]] || sensor.modes[i].ports[j][0], sensor.modes[i].ports[j][1] ]);
                             }
-                            input.appendField(new Blockly.FieldDropdown(portList), 'SENSORPORT').appendField(new Blockly.FieldHidden(), 'SLOT');
+                            input.appendField(new Blockly.FieldDropdown(portsList), 'SENSORPORT').appendField(new Blockly.FieldHidden(), 'SLOT');
                         }
                         // this is a special case for arduino 
                         if (sensor.title === 'OUT') {
@@ -420,9 +420,9 @@ Blockly.Blocks['robSensors_generic_all'] = {
                         this.mutPorts.push(portsList[0][1]);
                     }
                 } else if (sensors[i].modes && sensors[i].modes[j].ports) {
-                    var portList = [];
+                    var portsList = [];
                     for (var l = 0; l < sensors[i].modes[j].ports.length; l++) {
-                        portList.push([ Blockly.Msg[sensors[i].modes[j].ports[l][0]] || sensors[i].modes[j].ports[l][0], sensors[i].modes[j].ports[l][1] ]);
+                        portsList.push([ Blockly.Msg[sensors[i].modes[j].ports[l][0]] || sensors[i].modes[j].ports[l][0], sensors[i].modes[j].ports[l][1] ]);
                     }
                     this.ports.push(portsList);
                     this.mutPorts.push('NO');

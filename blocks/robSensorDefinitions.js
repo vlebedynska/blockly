@@ -789,14 +789,14 @@ sensors.pin.calliope = {
                         [ 'C16', 'C16' ], [ 'C17', 'C17' ], [ 'C18', 'C18' ], [ 'C19', 'C19' ] ]
             },
             {
-                name : 'PULSE_HIGH',
+                name : 'PULSEHIGH',
                 type : 'Number',
                 ports : [ [ 'P0', '0' ], [ 'P1', '1' ], [ 'P2', '2' ], [ 'P3', '3' ], [ 'A0', '4' ], [ 'A1', '5' ], [ 'C04', 'C04' ], [ 'C05', 'C05' ],
                         [ 'C06', 'C06' ], [ 'C07', 'C07' ], [ 'C08', 'C08' ], [ 'C09', 'C09' ], [ 'C10', 'C10' ], [ 'C11', 'C11' ], [ 'C12', 'C12' ],
                         [ 'C16', 'C16' ], [ 'C17', 'C17' ], [ 'C18', 'C18' ], [ 'C19', 'C19' ] ]
             },
             {
-                name : 'PULSE_LOW',
+                name : 'PULSELOW',
                 type : 'Number',
                 ports : [ [ 'P0', '0' ], [ 'P1', '1' ], [ 'P2', '2' ], [ 'P3', '3' ], [ 'A0', '4' ], [ 'A1', '5' ], [ 'C04', 'C04' ], [ 'C05', 'C05' ],
                         [ 'C06', 'C06' ], [ 'C07', 'C07' ], [ 'C08', 'C08' ], [ 'C09', 'C09' ], [ 'C10', 'C10' ], [ 'C11', 'C11' ], [ 'C12', 'C12' ],
@@ -813,10 +813,10 @@ sensors.pin.microbit = {
         name : 'DIGITAL',
         type : 'Number'
     }, {
-        name : 'PULSE_HIGH',
+        name : 'PULSEHIGH',
         type : 'Number'
     }, {
-        name : 'PULSE_LOW',
+        name : 'PULSELOW',
         type : 'Number'
     } ]
 };
