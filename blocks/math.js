@@ -82,6 +82,7 @@ Blockly.Blocks['math_number'] = {
         var numDegreeShoulder = [ [ '45', '45' ], [ '60', '30' ], [ '90', '0' ] ];
         var numWait = [ [ '1', '1' ], [ '2', '2' ], [ '3', '3' ], [ '4', '4' ], [ '5', '5' ] ];
         var numSchoulder = [ [ '5', '5' ], [ '6', '6' ] ];
+        var numCondition = [ [ '0', '0' ], [ '108', '108' ], [ '170', '170' ] ];
         var input = this.getInput('MATH');
         input.removeField('NUM');
         switch (this.parentType_) {
@@ -93,6 +94,9 @@ Blockly.Blocks['math_number'] = {
             break;
         case 'naoActions_turn':
             input.appendField(new Blockly.FieldDropdown(numTurn), 'NUM');
+            break;
+        case 'logic_compare':
+            input.appendField(new Blockly.FieldDropdown(numCondition), 'NUM');
             break;
         case 'naoActions_moveJoint':
             if (this.getParent() && this.getParent().getField('joint').getValue().indexOf('SHOULDER') < 0) {
