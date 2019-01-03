@@ -151,7 +151,7 @@
 	"MENU_LOGGING": "Logging",
 	"MENU_LOG_IN": "anmelden ...",
 	"MENU_LOG_OUT": "abmelden",
-	"MENU_NEW": "neu ...",
+	"MENU_NEW": "neu",
 	"MENU_PROGRAMMING": "Programmieren mit NEPO",
 	"MENU_PROPERTIES": "Eigenschaften",
 	"MENU_ROBOT": "Roboter",
@@ -192,7 +192,7 @@
 	"MENU_RIGHT_SIM_VIEW_TOOLTIP": "Öffne/schließe die Simulation.",
 	"MENU_START_SIM": "öffne/schließe die Simulation",
 	"MENU_EXPORT_PROG": "exportiere Programm",
-	"MENU_IMPORT_PROG": "importiere Programm",
+	"MENU_IMPORT_PROG": "importiere Programm ...",
 	"MENU_MESSAGE_DOWNLOAD": "Dein Programm wurde gerade heruntergeladen",
 	"MENU_ZOOM": "zoomen",
 	"MENU_ZOOM_IN": "vergrößern",
@@ -1149,6 +1149,9 @@
     "SLOT_LEFT": "links",
 	"SLOT_RIGHT": "rechts",
 	"CONNECTION_RECEIVE_TOOLTIP_MBOT": "Wartet auf eine Nachricht. Nachrichten sind vom Typ Text.",
-	"CONNECTION_SEND_TOOLTIP_MBOT": "Sendet einen Text an einen anderen mBot. Halte die mBot's gegenüber, damit die Nachricht empfangen werden kann!"
-	
+	"CONNECTION_SEND_TOOLTIP_MBOT": "Sendet einen Text an einen anderen mBot. Halte die mBot's gegenüber, damit die Nachricht empfangen werden kann!",
+    "POPUP_MULTIPLE_ROBOTS" : "Wähle mehrerere Programme für die Simulation aus",
+    "POPUP_MULTROBOTS_NOPROGRAMS" : "Bitte erstelle und speichere mindestens zwei Programme damit sie in der Simulation von jeweils einem Roboter ausgeführt werden können!",
+    "MENU_RUN_MULT_SIM" : "mehrere Roboter simulieren ..."
+
 }
