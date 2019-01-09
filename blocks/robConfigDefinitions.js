@@ -57,6 +57,9 @@ Blockly.Blocks.robConfigDefinitions['pinsDigital'].nano = function() {
 Blockly.Blocks.robConfigDefinitions['pinsDigital'].mega = function() {
     return createPins( 0, 53 );
 };
+Blockly.Blocks.robConfigDefinitions['pinsDigital'].sensebox = function() {
+    return createPins( 0, 5 );
+};
 
 Blockly.Blocks.robConfigDefinitions['pinsAnalog'] = {};
 Blockly.Blocks.robConfigDefinitions['pinsAnalog'].uno = function() {
@@ -68,6 +71,10 @@ Blockly.Blocks.robConfigDefinitions['pinsAnalog'].nano = function() {
 Blockly.Blocks.robConfigDefinitions['pinsAnalog'].mega = function() {
     return createPins( 0, 15, "A", "A" );
 };
+Blockly.Blocks.robConfigDefinitions['pinsAnalog'].sensebox = function() {
+    return createPins( 0, 5, "A", "A" );
+};
+
 Blockly.Blocks.robConfigDefinitions['pinsAnalogWrite'] = {};
 Blockly.Blocks.robConfigDefinitions['pinsAnalogWrite'].uno = function() {
     var part1 = createPins( 3, 3 );
@@ -85,6 +92,9 @@ Blockly.Blocks.robConfigDefinitions['pinsAnalogWrite'].mega = function() {
     var part1 = createPins( 2, 13 );
     var part2 = createPins( 44, 46 );
     return part1.concat( part2 );
+};
+Blockly.Blocks.robConfigDefinitions['pinsAnalogWrite'].sensebox = function() {
+    return createPins( 0, 5 );
 };
 
 Blockly.Blocks.robConfigDefinitions['pins_wedo'] = function() {
@@ -105,6 +115,17 @@ confBlocks.ultrasonic.arduino = {
     fixedPorts: [['GND', 'GND'], ['VCC', '5V']]
 };
 
+confBlocks.ultrasonic.sensebox = {
+    title: 'ULTRASONIC',
+    ports: [['trig', 'TRIG'], ['echo', 'ECHO']],
+    pins: function( a ) {
+        return Blockly.Blocks.robConfigDefinitions['pinsDigital'][a];
+    },
+    sensor: true,
+    standardPins: ['1', '2'],
+    fixedPorts: [['GND', 'GND'], ['VCC', '5V']]
+};
+
 confBlocks.light = {};
 confBlocks.light.arduino = {
     title: 'LIGHT',
@@ -115,6 +136,28 @@ confBlocks.light.arduino = {
     sensor: true,
     standardPins: ['A0'],
     fixedPorts: [['input', '5V']]
+};
+
+confBlocks.light.sensebox = {
+    title: 'LIGHT',
+    ports: [['output', 'OUTPUT']],
+    pins: function( a ) {
+        return Blockly.Blocks.robConfigDefinitions['pinsAnalog'][a];
+    },
+    sensor: true,
+    standardPins: ['1'],
+    fixedPorts: [['input', '5V']]
+};
+
+confBlocks.lightveml = {};
+confBlocks.lightveml.sensebox = {
+    title: 'LIGHTVEML',
+    ports: [['I2C', 'I2C']],
+    pins: function( a ) {
+        return [['I2C', 'I2C']];
+    },
+    inputs: [['ID', 'openSenseMap Sensor ID']],
+    sensor: true
 };
 
 confBlocks.moisture = {};
@@ -138,6 +181,17 @@ confBlocks.potentiometer.arduino = {
     },
     sensor: true,
     standardPins: ['A0'],
+    fixedPorts: [['GND', 'GND'], ['VCC', '5V']]
+};
+
+confBlocks.potentiometer.sensebox = {
+    title: 'POTENTIOMETER',
+    ports: [['output', 'OUTPUT']],
+    pins: function( a ) {
+        return Blockly.Blocks.robConfigDefinitions['pinsAnalog'][a];
+    },
+    sensor: true,
+    standardPins: ['1'],
     fixedPorts: [['GND', 'GND'], ['VCC', '5V']]
 };
 
@@ -173,6 +227,16 @@ confBlocks.temperature.arduino = {
     fixedPorts: [['GND', 'GND'], ['VCC', '5V']]
 };
 
+confBlocks.temperature.sensebox= {
+    title: 'TEMPERATURE',
+    ports: [['I2C', 'I2C']],
+    pins: function( a ) {
+        return [['I2C', 'I2C']];
+    },
+    inputs: [['ID', 'openSenseMap Sensor ID']],
+    sensor: true
+};
+
 confBlocks.humidity = {};
 confBlocks.humidity.arduino = {
     title: 'HUMIDITY',
@@ -183,6 +247,16 @@ confBlocks.humidity.arduino = {
     sensor: true,
     standardPins: ['2'],
     fixedPorts: [['GND', 'GND'], ['VCC', '5V']]
+};
+
+confBlocks.humidity.sensebox = {
+    title: 'HUMIDITY',
+    ports: [['I2C', 'I2C']],
+    pins: function() {
+        return [['I2C', 'I2C']];
+    },
+    inputs: [['ID', 'openSenseMap Sensor ID']],
+    sensor: true
 };
 
 confBlocks.encoder = {};
@@ -219,6 +293,9 @@ confBlocks.key.arduino = {
     standardPins: ['2'],
     fixedPorts: [['pin2', '5V']]
 };
+
+confBlocks.key.sensebox = confBlocks.key.arduino;
+
 confBlocks.key.wedo = {
     title: 'KEY',
     bricks: true,
@@ -291,6 +368,18 @@ confBlocks.led.arduino = {
     standardPins: ['13'],
     fixedPorts: [['GND', 'GND']]
 };
+
+confBlocks.led.sensebox = {
+    title: 'LED',
+    ports: [['input', 'INPUT']],
+    pins: function( a ) {
+        return Blockly.Blocks.robConfigDefinitions['pinsDigital'][a];
+    },
+    sensor: false,
+    standardPins: ['1'],
+    fixedPorts: [['GND', 'GND']]
+};
+
 confBlocks.led.wedo = {
     title: 'LED',
     bricks: true,
@@ -308,10 +397,34 @@ confBlocks.buzzer.arduino = {
     standardPins: ['5'],
     fixedPorts: [['GND', 'GND']]
 };
+
+confBlocks.buzzer.sensebox = {
+    title: 'BUZZER',
+    ports: [['+', '+']],
+    pins: function( a ) {
+        return Blockly.Blocks.robConfigDefinitions['pinsDigital'][a];
+    },
+    sensor: false,
+    standardPins: ['1'],
+    fixedPorts: [['GND', 'GND']]
+};
+
 confBlocks.buzzer.wedo = {
     title: 'BUZZER',
     bricks: true,
     action: true
+};
+
+confBlocks.sound = {};
+confBlocks.sound.sensebox = {
+    title: 'SOUND',
+    ports: [['out', 'OUT']],
+    pins: function( a ) {
+        return Blockly.Blocks.robConfigDefinitions['pinsDigital'][a];
+    },
+    sensor: true,
+    standardPins: ['1'],
+    fixedPorts: [['GND', 'GND'], ['VCC', '5V']]
 };
 
 confBlocks.relay = {};
@@ -335,6 +448,17 @@ confBlocks.rgbled.arduino = {
     },
     sensor: false,
     standardPins: ['5', '6', '3'],
+    fixedPorts: [['GND', 'GND']]
+};
+
+confBlocks.rgbled.sensebox = {
+    title: 'RGBLED',
+    ports: [['red', 'RED'], ['green', 'GREEN'], ['blue', 'BLUE']],
+    pins: function( a ) {
+        return Blockly.Blocks.robConfigDefinitions['pinsDigital'][a];
+    },
+    sensor: false,
+    standardPins: ['1', '2', '3'],
     fixedPorts: [['GND', 'GND']]
 };
 
@@ -419,6 +543,18 @@ confBlocks.analogin.arduino = {
     },
     sensor: false,
 };
+
+confBlocks.wireless = {}
+confBlocks.wireless.sensebox = {
+    title: 'WIRELESS',
+    inputs: [['SSID', 'SSID'], ['PASSWORD', 'Password'], ['BOX_ID', 'BoxID']],
+    dropdowns: [['CONNECTOR', [
+            ['XBEE1', 'XBEE1'],
+            ['XBEE2', 'XBEE2']
+        ]
+    ]],
+    sensor: false
+}
 
 function initConfBlocks() {
     for ( var confBlock in confBlocks ) {

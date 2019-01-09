@@ -311,6 +311,7 @@ Blockly.TYPE_DROPDOWN = function(device, opt_handler) {
             }
         });
     case 'botnroll':
+    case 'sensebox':
     case 'arduino':
     case 'mbot':
     case 'nao':
@@ -420,6 +421,7 @@ Blockly.LIST_TYPE_DROPDOWN = function(device) {
             this.sourceBlock_.updateType_(option);
         });
     case 'botnroll':
+    case 'sensebox':
     case 'arduino':
     case 'mbot':
     case 'microbit':

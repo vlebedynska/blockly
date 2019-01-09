@@ -228,6 +228,7 @@
 	"MODE_DEGREE": "Grad",
 	"MODE_DISTANCE": "Abstand",
 	"MODE_LIGHT": "Licht",
+	"MODE_UVLIGHT": "UV Licht",
 	"MODE_LINE": "Linie",
 	"MODE_PRESENCE": "Anwesenheit",
 	"MODE_RATE": "Drehrate",
@@ -542,7 +543,9 @@
 	"MOTOR_STEER": "Steure",
 	"MODE_OBSTACLE": "Hindernis",
 	"SENSOR_LIGHT": "Lichtsensor",
+	"SENSOR_LIGHTVEML": "Licht und UV Licht Sensor",
 	"LIGHT_GETSAMPLE_TOOLTIP": "Gibt den aktuellen Wert des Lichtsensors in Prozent zurück.",
+	"LIGHTVEML_GETSAMPLE_TOOLTIP": "Gibt entweder den aktuellen Wert des Lichtsensors oder den aktuellen Wert des UV Lichtsensors in Prozent zurück.",
 	"SENSOR_SOUND": "Geräuschsensor",
 	"SOUND_GETSAMPLE_TOOLTIP": "Gibt den aktuellen Wert des Geräuschsensors im Intervall 0 bis 100 zurück. 0 ist leise und 100 laut.",
 	"MENU_LIST_PROG": "meine Programme ...",
@@ -1152,6 +1155,15 @@
 	"CONNECTION_SEND_TOOLTIP_MBOT": "Sendet einen Text an einen anderen mBot. Halte die mBot's gegenüber, damit die Nachricht empfangen werden kann!",
     "POPUP_MULTIPLE_ROBOTS" : "Wähle mehrerere Programme für die Simulation aus",
     "POPUP_MULTROBOTS_NOPROGRAMS" : "Bitte erstelle und speichere mindestens zwei Programme damit sie in der Simulation von jeweils einem Roboter ausgeführt werden können!",
-    "MENU_RUN_MULT_SIM" : "mehrere Roboter simulieren ..."
+    "MENU_RUN_MULT_SIM" : "mehrere Roboter simulieren ...",
+    "ACTION_WIRELESS" : "WiFi connection",
+    "ID" : "ID",
+    "WIRELESS_TOOLTIP" : "Block für die drahtlose Verbindung",
+    "BUZZER_TOOLTIP" : "Block für den Summer",
+    "LIGHTVEML_TOOLTIP" : "Block für den kombinierten VEML/TSL UV und sichtbares licht Sensor",
+    "SSID" : "SSID",
+    "BOX_ID" : "Gerät ID",
+    "PASSWORD" : "Kennwort",
+    "CONNECTOR" : "Konnektor"
 
 }

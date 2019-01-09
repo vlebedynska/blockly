@@ -612,7 +612,7 @@ Blockly.Xml.childToBlock = function(workspace, block, xmlChild) {
     var childShadowNode = null;
     var blockChild = null;
     var shadowActive = false;
-
+    
     var RealGrandchildList = [];
     for (var y = 0, grandchildNode; grandchildNode = xmlChild.childNodes[y]; y++) {
         if (grandchildNode.nodeType == 1) {

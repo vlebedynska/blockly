@@ -486,6 +486,20 @@ sensors.humidity.arduino = {
     ports : 'CONFIGURATION'
 }
 
+sensors.humidity.sensebox = {
+    title : 'HUMIDITY',
+    modes : [ {
+        name : 'HUMIDITY',
+        type : 'Number',
+        unit : 'PERCENT'
+    }, {
+        name : 'TEMPERATURE',
+        type : 'Number',
+        unit : 'DEGREE'
+    } ],
+    ports : 'CONFIGURATION'
+}
+
 sensors.infrared = {};
 sensors.infrared.botnroll = {
     title : 'INFRARED',
@@ -634,6 +648,8 @@ sensors.key.nxt = {
     ports : [ [ 'SENSOR_KEY_ENTER', 'ENTER' ], [ 'SENSOR_KEY_LEFT', 'LEFT' ], [ 'SENSOR_KEY_RIGHT', 'RIGHT' ] ]
 };
 sensors.key.microbit = sensors.key.calliope;
+sensors.key.sensebox = sensors.key.arduino;
+
 sensors.key.wedo = {
     title : 'KEY',
     modes : [ {
@@ -664,6 +680,8 @@ sensors.light.arduino = {
     } ],
     ports : 'CONFIGURATION'
 };
+
+sensors.light.sensebox = sensors.light.arduino;
 
 sensors.light.calliope = {
     title : 'LIGHT',
@@ -701,6 +719,24 @@ sensors.light.mbot = {
     } ],
     ports : [ [ 'Port internal', '6' ], [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ]
 };
+
+sensors.lightveml = {};
+sensors.lightveml.sensebox = {
+    title : 'LIGHTVEML',
+    modes : [ {
+        name : 'LIGHT',
+        type : 'Number',
+        unit : 'PERCENT',
+        value : 50
+    },{
+        name : 'UVLIGHT',
+        type : 'Number',
+        unit : 'PERCENT',
+        value : 50
+    } ],
+    ports : 'CONFIGURATION'
+};
+            
 
 sensors.moisture = {};
 sensors.moisture.arduino = {
@@ -760,6 +796,8 @@ sensors.potentiometer.arduino = {
     } ],
     ports : 'CONFIGURATION'
 };
+
+sensors.potentiometer.sensebox = sensors.potentiometer.arduino;
 
 sensors.potentiometer.mbot = {
     title : 'POTENTIOMETER',
@@ -911,6 +949,18 @@ sensors.sound.ev3 = {
     standardPort : '2'
 };
 
+sensors.sound.sensebox = {
+    title : 'SOUND',
+    modes : [ {
+        name : 'SOUND',
+        type : 'Number',
+        unit : 'PERCENT',
+        op : 'NUM_REV',
+        value : 50
+    } ],
+    ports : 'CONFIGURATION'
+};
+
 sensors.sound.nxt = sensors.sound.ev3;
 sensors.sound.mbot = sensors.sound.ev3;
 
@@ -948,8 +998,24 @@ sensors.temperature.arduino = {
     ports : 'CONFIGURATION'
 };
 
-sensors.temperature.calliope = sensors.temperature.bob3
-sensors.temperature.microbit = sensors.temperature.bob3
+sensors.temperature.sensebox = {
+    title : 'TEMPERATURE',
+    modes : [ {
+        name : 'TEMPERATURE',
+        type : 'Number',
+        unit : 'DEGREE',
+        value : 20
+    },  {
+        name : 'PRESSURE',
+        type : 'Number',
+        unit : 'PASCAL',
+        value : 101325
+    }],
+    ports : 'CONFIGURATION'
+};
+
+sensors.temperature.calliope = sensors.temperature.bob3;
+sensors.temperature.microbit = sensors.temperature.bob3;
 
 sensors.timer = {};
 sensors.timer.botnroll = {
@@ -970,6 +1036,8 @@ sensors.timer.microbit = sensors.timer.botnroll;
 sensors.timer.arduino = sensors.timer.botnroll;
 sensors.timer.mbot = sensors.timer.arduino;
 sensors.timer.wedo = sensors.timer.botnroll;
+sensors.timer.sensebox = sensors.timer.botnroll;
+
 sensors.timer.ev3 = {
     title : 'TIMER',
     modes : [ {
@@ -1044,6 +1112,9 @@ sensors.ultrasonic.arduino = {
     } ],
     ports : 'CONFIGURATION'
 };
+
+sensors.ultrasonic.sensebox = sensors.ultrasonic.arduino;
+
 sensors.ultrasonic.ev3 = {
     title : 'ULTRASONIC',
     ports : [ [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ],

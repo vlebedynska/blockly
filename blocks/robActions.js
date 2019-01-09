@@ -739,7 +739,7 @@ Blockly.Blocks['robActions_play_tone'] = {
     init : function() {
         // this.setHelpUrl(Blockly.Msg.PLAY_TONE_HELPURL);
         this.setColour(Blockly.CAT_ACTION_RGB);
-        if (this.workspace.device == 'arduino') {
+        if (this.workspace.device === 'arduino' || this.workspace.device === 'sensebox') {
             var dropDownPorts = getConfigPorts('buzzer');
             this.dependConfig = {
                 'type' : 'buzzer',
@@ -871,14 +871,14 @@ Blockly.Blocks['robActions_brickLight_on'] = {
         var dropdownColor = new Blockly.FieldDropdown([ [ Blockly.Msg.BRICKLIGHT_GREEN, 'GREEN' ], [ Blockly.Msg.BRICKLIGHT_ORANGE, 'ORANGE' ],
                 [ Blockly.Msg.BRICKLIGHT_RED, 'RED' ] ]);
         var dropdownLightState;
-        if (this.workspace.device === 'botnroll' || this.workspace.device === 'arduino') {
+        if (this.workspace.device === 'botnroll' || this.workspace.device === 'arduino' || this.workspace.device === 'sensebox') {
             dropdownLightState = new Blockly.FieldDropdown([ [ Blockly.Msg.BRICKLIGHT_ON, 'ON' ], [ Blockly.Msg.OFF, 'OFF' ] ]);
         } else {
             dropdownLightState = new Blockly.FieldDropdown([ [ Blockly.Msg.BRICKLIGHT_ON, 'ON' ], [ Blockly.Msg.BRICKLIGHT_FLASH, 'FLASH' ],
                     [ Blockly.Msg.BRICKLIGHT_DOUBLE_FLASH, 'DOUBLE_FLASH' ] ]);
             this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.BRICKLIGHT_COLOR).appendField(dropdownColor, 'SWITCH_COLOR');
         }
-        if (this.workspace.device === 'arduino') {
+        if (this.workspace.device === 'arduino' || this.workspace.device === 'sensebox') {
             var dropDownPorts = getConfigPorts('led');
             this.dependConfig = {
                 'type' : 'led',
@@ -926,7 +926,7 @@ Blockly.Blocks['robActions_led_on'] = {
             portList.push([ Blockly.Msg.CONFIGURATION_NO_PORT || Blockly.checkMsgKey('CONFIGURATION_NO_PORT'),
                     (Blockly.Msg.CONFIGURATION_NO_PORT || Blockly.checkMsgKey('CONFIGURATION_NO_PORT')).toUpperCase() ]);
         }
-        if (this.workspace.device === 'arduino') {
+        if (this.workspace.device === 'arduino' || this.workspace.device === 'sensebox') {
             var ports = getConfigPorts('rgbled');
             this.dependConfig = {
                 'type' : 'rgbled',
@@ -1202,3 +1202,85 @@ Blockly.Blocks['robActions_pin_set_pull'] = {
         this.setTooltip(Blockly.Msg.ACTION_PIN_SET_PULL_TOOLTIP);
     }
 };
+
+Blockly.Blocks['robActions_send_data_to_opensensemap'] = {
+    /**
+     * Sets the chosen pin to the specified pull.
+     * 
+     * @constructs robActions_pin_set_pull
+     * @this.Blockly.Block
+     * @param {String/dropdown}
+     *            available pins
+     * @returns immediately
+     * @memberof Block
+     */
+    
+    init : function() {
+        this.setColour(Blockly.CAT_ACTION_RGB);
+        this.INCREMENT = 1;
+        this.DECREMENT = -1;
+        this.appendDummyInput().appendField('Send data to openSenseMap');
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setMutatorPlus(new Blockly.MutatorPlus(this));
+        this.setTooltip('Sends data to openSenseMap');
+        this.connectedSensorsCount = 1;
+        this.generateSensorInputs(this.connectedSensorsCount);
+    },
+    
+    mutationToDom: function() {
+        var container = document.createElement('mutation');
+        container.setAttribute('items', this.connectedSensorsCount);
+        return container;
+    },
+    
+    domToMutation: function(xmlElement) {
+        var connectedSensorsCount = parseInt(xmlElement.getAttribute('items'), 10);
+        this.connectedSensorsCount = connectedSensorsCount;
+        this.generateSensorInputs(this.connectedSensorsCount);
+    },
+    
+    generateSensorInputs: function(numberOfSensorInputs) {
+        for(var i = 0; i < numberOfSensorInputs; i++) {
+            this.removeInput('ADD' + i);
+        }        
+        for(var i = 0; i < numberOfSensorInputs; i++) {
+            this.appendSensorInput(i);
+        }
+    },
+    
+    appendSensorInput: function(inputNumber) {
+        this.appendValueInput('ADD' + inputNumber).setAlign(Blockly.ALIGN_RIGHT).setCheck('Number').appendField('Sensor');
+    },
+    
+    updateShape_ : function(adjustment) {
+        Blockly.dragMode_ = Blockly.DRAG_NONE;
+        switch (adjustment) {
+            case this.INCREMENT:
+                if (this.connectedSensorsCount == 1) {
+                    this.setMutatorMinus(new Blockly.MutatorMinus(this));
+                    this.render();
+                }
+                this.appendSensorInput(this.connectedSensorsCount);
+                this.connectedSensorsCount++;
+                break;
+            case this.DECREMENT:
+                this.connectedSensorsCount--;
+                var target = this.getInputTargetBlock('ADD' + this.connectedSensorsCount);
+                if (target) {
+                    target.unplug();
+                    target.bumpNeighbours_();
+                } 
+                this.removeInput('ADD' + this.connectedSensorsCount);
+                break;
+            default:
+                throw 'updateShape accepts only mutator plus/minus command for this block'; 
+        }
+        if (this.connectedSensorsCount == 1) {
+            this.mutatorMinus.dispose();
+            this.mutatorMinus = null;
+            this.render();
+        }
+    }
+};
+

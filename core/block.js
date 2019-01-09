@@ -1282,6 +1282,39 @@ Blockly.Block.prototype.removeInput = function(name, opt_quiet) {
 };
 
 /**
+ * Remove an input from this block.
+ * @param {string} name The name of the input.
+ * @param {boolean=} opt_quiet True to prevent error if input is not present.
+ * @throws {goog.asserts.AssertionError} if the input is not present and
+ *     opt_quiet is not true.
+ */
+Blockly.Block.prototype.removeLastInput = function(opt_quiet) {
+    console.log("before removing last input")
+    console.log(this.inputList.length)
+    var input = this.inputList[this.inputList.length - 1]
+    if (input.connection && input.connection.isConnected()) {
+        input.connection.setShadowDom(null);
+        var block = input.connection.targetBlock();
+        if (block.isShadow()) {
+            // Destroy any attached shadow block.
+            block.dispose();
+        } else {
+            // Disconnect any attached normal block.
+            block.unplug();
+        }
+    }
+    input.connection.dispose();
+    input.dispose();
+    this.inputList.splice(this.inputList.length - 1, 1);
+    if (!opt_quiet) {
+        goog.asserts.fail('Input "%s" not found.', name);
+    }
+    console.log("after removing last input")
+    console.log(this.inputList.length)
+    
+};
+
+/**
  * Fetches the named input object.
  * @param {string} name The name of the input.
  * @return {Blockly.Input} The input object, or null if input does not exist.
