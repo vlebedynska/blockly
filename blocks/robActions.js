@@ -1172,7 +1172,7 @@ Blockly.Blocks['robActions_write_pin'] = {
         this.dropDownPorts.menuGenerator_ = dropDownPorts.menuGenerator_;
         this.dropDownPorts.arrow_ && this.dropDownPorts.arrow_.replaceChild(document.createTextNode(' '), this.dropDownPorts.arrow_.childNodes[0]);
         if (this.dropDownPorts.arrow_ && this.dropDownPorts.menuGenerator_.length > 1) {
-            this.dropDownPorts.arrow_.replaceChild(document.createTextNode(' ' + Blockly.FieldDropdown.ARROW_CHAR), that.dropDownPorts.arrow_.childNodes[0]);
+            this.dropDownPorts.arrow_.replaceChild(document.createTextNode(' ' + Blockly.FieldDropdown.ARROW_CHAR), this.dropDownPorts.arrow_.childNodes[0]);
         }
         this.dropDownPorts.setValue(this.dropDownPorts.menuGenerator_[0][0]);
     }
