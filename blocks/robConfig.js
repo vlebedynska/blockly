@@ -88,6 +88,24 @@ Blockly.Blocks['robConf_generic'] = {
             this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg['ID']).appendField(idInputField);
         }
         
+        /**
+         * Checking for generic block parts like text inputs or dropdowns 
+         */
+        if (confBlock.inputs) {
+            for (var i = 0; i < confBlock.inputs.length; i++) {
+                var textFieldName = confBlock.inputs[i][0];
+                var textField = new Blockly.FieldTextInput('');
+                this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg[confBlock.inputs[i][0]]).appendField(textField, textFieldName);
+            }
+        }
+        if (confBlock.dropdowns) {
+            for (var i = 0; i < confBlock.dropdowns.length; i++) {
+                var dropDownName = Blockly.Msg[confBlock.dropdowns[i][0]];
+                var fieldDropDown = new Blockly.FieldDropdown(confBlock.dropdowns[i][1]);
+                this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(dropDownName).appendField(fieldDropDown, dropDownName);
+            }
+        }
+        
         var ports, pins;
         var portList = [];
         if (confBlock.ports) {
@@ -113,24 +131,6 @@ Blockly.Blocks['robConf_generic'] = {
             for (var i = 0; i < confBlock.fixedPorts.length; i++) {
                 var dropDown = new Blockly.FieldDropdown([ [ confBlock.fixedPorts[i][1], confBlock.fixedPorts[i][1] ] ]);
                 this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(confBlock.fixedPorts[i][0]).appendField(dropDown);
-            }
-        }
-
-        /**
-         * Checking for generic block parts like text inputs or dropdowns 
-         */
-        if (confBlock.inputs) {
-            for (var i = 0; i < confBlock.inputs.length; i++) {
-                var textFieldName = confBlock.inputs[i][0];
-                var textField = new Blockly.FieldTextInput(Blockly.Msg[confBlock.inputs[i][0]]);
-                this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg[confBlock.inputs[i][0]]).appendField(textField, textFieldName);
-            }
-        }
-        if (confBlock.dropdowns) {
-            for (var i = 0; i < confBlock.dropdowns.length; i++) {
-                var dropDownName = Blockly.Msg[confBlock.dropdowns[i][0]];
-                var fieldDropDown = new Blockly.FieldDropdown(confBlock.dropdowns[i][1]);
-                this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(dropDownName).appendField(fieldDropDown, dropDownName);
             }
         }
         

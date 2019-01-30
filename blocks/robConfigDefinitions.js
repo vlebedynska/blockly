@@ -135,7 +135,7 @@ confBlocks.light.arduino = {
     },
     sensor: true,
     standardPins: ['A0'],
-    fixedPorts: [['input', '5V']]
+    fixedPorts: [['VCC', '5V']]
 };
 
 confBlocks.light.sensebox = {
@@ -146,7 +146,7 @@ confBlocks.light.sensebox = {
     },
     sensor: true,
     standardPins: ['1'],
-    fixedPorts: [['input', '5V']]
+    fixedPorts: [['VCC', '5V']]
 };
 
 confBlocks.lightveml = {};
@@ -285,13 +285,13 @@ confBlocks.motion.arduino = {
 confBlocks.key = {};
 confBlocks.key.arduino = {
     title: 'KEY',
-    ports: [['pin1', 'PIN1']],
+    ports: [['pin', 'PIN1']],
     pins: function( a ) {
         return Blockly.Blocks.robConfigDefinitions['pinsDigital'][a];
     },
     sensor: true,
     standardPins: ['2'],
-    fixedPorts: [['pin2', '5V']]
+    fixedPorts: [['VCC', '5V']]
 };
 
 confBlocks.key.sensebox = confBlocks.key.arduino;

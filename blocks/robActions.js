@@ -979,7 +979,7 @@ Blockly.Blocks['robActions_led_off'] = {
             portList.push([ Blockly.Msg.CONFIGURATION_NO_PORT || Blockly.checkMsgKey('CONFIGURATION_NO_PORT'),
                     (Blockly.Msg.CONFIGURATION_NO_PORT || Blockly.checkMsgKey('CONFIGURATION_NO_PORT')).toUpperCase() ]);
         }
-        if (this.workspace.device === 'arduino') {
+        if (this.workspace.device === 'arduino' || this.workspace.device === 'sensebox') {
             var ports = getConfigPorts('rgbled');
             this.dependConfig = {
                 'type' : 'rgbled',
@@ -1219,11 +1219,11 @@ Blockly.Blocks['robActions_send_data_to_opensensemap'] = {
         this.setColour(Blockly.CAT_ACTION_RGB);
         this.INCREMENT = 1;
         this.DECREMENT = -1;
-        this.appendDummyInput().appendField('Send data to openSenseMap');
+        this.appendDummyInput().appendField(Blockly.Msg.SEND_DATA_TO_OSEM);
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setMutatorPlus(new Blockly.MutatorPlus(this));
-        this.setTooltip('Sends data to openSenseMap');
+        this.setTooltip(Blockly.Msg.SEND_DATA_TO_OSEM_TOOLTIP);
         this.connectedSensorsCount = 1;
         this.generateSensorInputs(this.connectedSensorsCount);
     },
@@ -1250,7 +1250,7 @@ Blockly.Blocks['robActions_send_data_to_opensensemap'] = {
     },
     
     appendSensorInput: function(inputNumber) {
-        this.appendValueInput('ADD' + inputNumber).setAlign(Blockly.ALIGN_RIGHT).setCheck('Number').appendField('Sensor');
+        this.appendValueInput('ADD' + inputNumber).setAlign(Blockly.ALIGN_RIGHT).setCheck('Number').appendField(Blockly.Msg.SEND_DATA_TO_OSEM_MUTATION_ITEM);
     },
     
     updateShape_ : function(adjustment) {

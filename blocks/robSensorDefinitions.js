@@ -1226,6 +1226,7 @@ sensorsAll.nao = [ sensors.touch.nao, sensors.accelerometer.nao, sensors.gyro.na
         sensors.detectface.nao, sensors.detectmark.nao ];
 sensorsAll.vorwerk = [ sensors.touch.vorwerk, sensors.accelerometer.vorwerk, sensors.ultrasonic.vorwerk, sensors.wall.vorwerk, sensors.drop_off.vorwerk ];
 sensorsAll.wedo = [ sensors.key.wedo, sensors.gyro.wedo, sensors.infrared.wedo, sensors.timer.wedo ];
+sensorsAll.sensebox = [ sensors.key.sensebox, sensors.light.sensebox, sensors.potentiometer.sensebox, sensors.sound.sensebox, sensors.ultrasonic.sensebox, sensors.humidity.sensebox, sensors.temperature.sensebox, sensors.lightveml.sensebox, sensors.timer.sensebox ];
 
 function initSensors() {
     for ( var sensor in sensors) {

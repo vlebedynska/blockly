@@ -1164,6 +1164,15 @@
     "SSID" : "SSID",
     "BOX_ID" : "Gerät ID",
     "PASSWORD" : "Kennwort",
-    "CONNECTOR" : "Konnektor"
+    "CONNECTOR" : "Konnektor",
+    "SEND_DATA_TO_OSEM" : "sende Messwert an die openSenseMap",
+    "SEND_DATA_TO_OSEM_TOOLTIP" : "Dieser Block sendet Messwert(e) an die openSenseMap",
+    "SEND_DATA_TO_OSEM_MUTATION_ITEM" : "Sensor Wert",
+    "SENSOR_HUMIDITY_SENSEBOX" : "Luftfeuchtigkeit/Temperatur Sensor HDC1080",
+    "SENSOR_TEMPERATURE_SENSEBOX": "Temperatur/Luftdruck Sensor BMP280",
+    "MODE_PRESSURE" : "Luftdruck",
+    "ACTION_WIRELESS" : "WLAN Verbinding",
+    "SENSOR_LIGHTVEML" : "sichtbares/UV Licht Sensor",
+    "SENSOR_LIGHTVEML_GETSAMPLE_TOOLTIP" : "sichtbares/UV Licht Sensor"
 
 }
