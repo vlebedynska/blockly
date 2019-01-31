@@ -1173,6 +1173,8 @@
     "MODE_PRESSURE" : "Luftdruck",
     "ACTION_WIRELESS" : "WLAN Verbinding",
     "SENSOR_LIGHTVEML" : "sichtbares/UV Licht Sensor",
-    "SENSOR_LIGHTVEML_GETSAMPLE_TOOLTIP" : "sichtbares/UV Licht Sensor"
+    "SENSOR_LIGHTVEML_GETSAMPLE_TOOLTIP" : "sichtbares/UV Licht Sensor",
+    "POPUP_DOWNLOAD_STEP_A_SENSEBOX" : "Überprüfe, dass dein Gerät in Programmierungsmodus (LED dimmt sich) ist, wenn nein, drucke die Rote Taste zweimal. Klicke mit der rechten Maustaste auf den untenstehenden Link und",
+    "POPUP_DOWNLOAD_STEP_D_SENSEBOX" : "jetzt klicke auf »Speichern« in der rechten unteren Ecke."
 
 }

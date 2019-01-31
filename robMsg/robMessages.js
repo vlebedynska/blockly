@@ -717,6 +717,9 @@ Blockly.Msg.POPUP_DOWNLOAD_CHECK = 'Okay, I"ve changed the download folder of my
 Blockly.Msg.POPUP_DOWNLOAD_SAVE_AS = 'Save link as ...';
 Blockly.Msg.POPUP_DOWNLOAD_SAVE = 'Save';
 
+Blockly.Msg.POPUP_DOWNLOAD_STEP_A_SENSEBOX = 'Check that your device is in programming mode (LED dimming in a pattern), if not, double press the red button. Right click on you program link below and';
+Blockly.Msg.POPUP_DOWNLOAD_STEP_D_SENSEBOX = 'now click on the »Save« button on the bottom right.';
+
 // Names for the nao blocks
 /// NAO names
 Blockly.Msg.NAO_TAI_CHI = 'tai chi';
