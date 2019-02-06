@@ -1175,6 +1175,7 @@
     "SENSOR_LIGHTVEML" : "sichtbares/UV Licht Sensor",
     "SENSOR_LIGHTVEML_GETSAMPLE_TOOLTIP" : "sichtbares/UV Licht Sensor",
     "POPUP_DOWNLOAD_STEP_A_SENSEBOX" : "Überprüfe, dass dein Gerät in Programmierungsmodus (LED dimmt sich) ist, wenn nein, drucke die Rote Taste zweimal. Klicke mit der rechten Maustaste auf den untenstehenden Link und",
-    "POPUP_DOWNLOAD_STEP_D_SENSEBOX" : "jetzt klicke auf »Speichern« in der rechten unteren Ecke."
+    "POPUP_DOWNLOAD_STEP_D_SENSEBOX" : "jetzt klicke auf »Speichern« in der rechten unteren Ecke.",
+    "CONFIGURATION_ERROR_DEPENDENCY_MISSING" : "One or more blocks that are required to use this block are missing, consult the documentation to find which block is needed."
 
 }

@@ -1274,3 +1274,4 @@ Blockly.Msg.SEND_DATA_TO_OSEM_TOOLTIP = 'This block is used to send data from se
 Blockly.Msg.SEND_DATA_TO_OSEM_MUTATION_ITEM = 'sensor value';
 Blockly.Msg.SENSOR_LIGHTVEML = 'visible/UV light sensor';
 Blockly.Msg.SENSOR_LIGHTVEML_GETSAMPLE_TOOLTIP = 'visible/UV light sensor';
+Blockly.Msg.CONFIGURATION_ERROR_DEPENDENCY_MISSING = 'One or more blocks that are required to use this block are missing, consult the documentation to find which block is needed.'; //not translated
