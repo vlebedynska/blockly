@@ -1203,7 +1203,7 @@ Blockly.Blocks['robActions_pin_set_pull'] = {
     }
 };
 
-Blockly.Blocks['robActions_send_data_to_opensensemap'] = {
+Blockly.Blocks['robActions_sendData'] = {
     /**
      * Sets the chosen pin to the specified pull.
      * 
@@ -1214,67 +1214,135 @@ Blockly.Blocks['robActions_send_data_to_opensensemap'] = {
      * @returns immediately
      * @memberof Block
      */
-    
+
     init : function() {
+        var phenomenaDropdown = new Blockly.FieldDropdown(this.getNames_());
         this.setColour(Blockly.CAT_ACTION_RGB);
         this.INCREMENT = 1;
         this.DECREMENT = -1;
-        this.appendDummyInput().appendField(Blockly.Msg.SEND_DATA_TO_OSEM);
+        this.appendDummyInput().appendField(Blockly.Msg.SEND_DATA_TO).appendField(new Blockly.FieldDropdown([ [ Blockly.Msg.SEND_DATA_SENSEMAP, 'SENSEMAP' ] ]));
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setMutatorPlus(new Blockly.MutatorPlus(this));
-        this.setTooltip(Blockly.Msg.SEND_DATA_TO_OSEM_TOOLTIP);
+        this.setTooltip(Blockly.Msg.SEND_DATA_TO_OSM_TOOLTIP);
         this.connectedSensorsCount = 1;
-        this.generateSensorInputs(this.connectedSensorsCount);
+        this.generateSensorInputs_(this.connectedSensorsCount, phenomenaDropdown);
     },
-    
-    mutationToDom: function() {
+    getNames_ : function() {
+        var names = [];
+        var container = Blockly.Workspace.getByContainer("bricklyDiv");
+        if (container) {
+            var blocks = Blockly.Workspace.getByContainer("bricklyDiv").getAllBlocks();
+            for (var x = 0; x < blocks.length; x++) {
+                var func = blocks[x].getPhenomena;
+                if (func) {
+                    var phenomena = func.call(blocks[x]);
+                    for (var i = 0; i < phenomena.length; i++) {
+                        if (phenomena[i] !== "") {
+                            names.push([ phenomena[i], phenomena[i] ])
+                        }
+                    }
+                }
+            }
+        }
+        if (names.length === 0) {
+            names.push([ Blockly.Msg.CONFIGURATION_NO_PHENOMENON || Blockly.checkMsgKey('CONFIGURATION_NO_PHENOMENON'), 'NO_PHENOMENON' ]);
+        }
+        return names;
+    },
+    setPhenomena : function(num, phenomena) {
+        var names = [];
+        for (var i = 0; i < phenomena.length; i++) {
+            if (phenomena[i] !== "") {
+                names.push([ phenomena[i], phenomena[i] ])
+            }
+        }
+        if (names.length === 0) {
+            names.push([ Blockly.Msg.CONFIGURATION_NO_PHENOMENON || Blockly.checkMsgKey('CONFIGURATION_NO_PHENOMENON'), 'NO_PHENOMENON' ]);
+        }
+        for (var i = 0; i < this.connectedSensorsCount; i++) {
+            var dropDown = this.getField('PHEN' + i);
+            var value = dropDown.getValue();
+            var x = 0;
+            for (x = 0; x < dropDown.menuGenerator_.length; x++) {
+                if (!names[x]) {
+                    if (dropDown.menuGenerator_[x][0] === value) {
+                        dropDown.menuGenerator_.splice(x, 1);
+                        dropDown.setValue(dropDown.menuGenerator_[0][0]);
+                    } else {
+                        dropDown.menuGenerator_.splice(x, 1);
+                    }
+                    break;
+                }
+                if (dropDown.menuGenerator_[x][0] !== names[x][0]) {
+                    if (dropDown.menuGenerator_[x][0] === value) {
+                        dropDown.menuGenerator_[x] = names[x];
+                        dropDown.setValue(dropDown.menuGenerator_[x][0]);
+                    } else {
+                        dropDown.menuGenerator_[x] = names[x];
+                    }
+                    break;
+                }
+            }
+            if (names[dropDown.menuGenerator_.length]) {
+                dropDown.menuGenerator_.push(names[dropDown.menuGenerator_.length]);
+            }
+        }
+        if (names.length > 1) {
+            dropDown.arrow_.replaceChild(document.createTextNode(dropDown.sourceBlock_.RTL ? Blockly.FieldDropdown.ARROW_CHAR + ' ' : ' '
+                    + Blockly.FieldDropdown.ARROW_CHAR), dropDown.arrow_.childNodes[0]);
+
+        } else {
+            dropDown.arrow_.replaceChild(document.createTextNode(""), dropDown.arrow_.childNodes[0]);
+        }
+        this.render();
+    },
+    mutationToDom : function() {
         var container = document.createElement('mutation');
         container.setAttribute('items', this.connectedSensorsCount);
         return container;
     },
-    
-    domToMutation: function(xmlElement) {
+    domToMutation : function(xmlElement) {
         var connectedSensorsCount = parseInt(xmlElement.getAttribute('items'), 10);
+        var phenomenaDropdown = new Blockly.FieldDropdown(this.getNames_());
         this.connectedSensorsCount = connectedSensorsCount;
-        this.generateSensorInputs(this.connectedSensorsCount);
+        this.generateSensorInputs_(this.connectedSensorsCount, phenomenaDropdown);
     },
-    
-    generateSensorInputs: function(numberOfSensorInputs) {
-        for(var i = 0; i < numberOfSensorInputs; i++) {
+    generateSensorInputs_ : function(numberOfSensorInputs, phenomenaDropdown) {
+        for (var i = 0; i < numberOfSensorInputs; i++) {
             this.removeInput('ADD' + i);
-        }        
-        for(var i = 0; i < numberOfSensorInputs; i++) {
-            this.appendSensorInput(i);
+        }
+        for (var i = 0; i < numberOfSensorInputs; i++) {
+            this.appendSensorInput_(i, phenomenaDropdown);
         }
     },
-    
-    appendSensorInput: function(inputNumber) {
-        this.appendValueInput('ADD' + inputNumber).setAlign(Blockly.ALIGN_RIGHT).setCheck('Number').appendField(Blockly.Msg.SEND_DATA_TO_OSEM_MUTATION_ITEM);
+    appendSensorInput_ : function(inputNumber, phenomenaDropdown) {
+        this.appendValueInput('ADD' + inputNumber).setAlign(Blockly.ALIGN_RIGHT).setCheck('Number').appendField(Blockly.Msg.BRICK_PHENOMENON).appendField(phenomenaDropdown, 'PHEN'
+                + inputNumber);
     },
-    
     updateShape_ : function(adjustment) {
         Blockly.dragMode_ = Blockly.DRAG_NONE;
         switch (adjustment) {
-            case this.INCREMENT:
-                if (this.connectedSensorsCount == 1) {
-                    this.setMutatorMinus(new Blockly.MutatorMinus(this));
-                    this.render();
-                }
-                this.appendSensorInput(this.connectedSensorsCount);
-                this.connectedSensorsCount++;
-                break;
-            case this.DECREMENT:
-                this.connectedSensorsCount--;
-                var target = this.getInputTargetBlock('ADD' + this.connectedSensorsCount);
-                if (target) {
-                    target.unplug();
-                    target.bumpNeighbours_();
-                } 
-                this.removeInput('ADD' + this.connectedSensorsCount);
-                break;
-            default:
-                throw 'updateShape accepts only mutator plus/minus command for this block'; 
+        case this.INCREMENT:
+            if (this.connectedSensorsCount == 1) {
+                this.setMutatorMinus(new Blockly.MutatorMinus(this));
+                this.render();
+            }
+            var phenomenaDropdown = new Blockly.FieldDropdown(this.getNames_())
+            this.appendSensorInput_(this.connectedSensorsCount, phenomenaDropdown);
+            this.connectedSensorsCount++;
+            break;
+        case this.DECREMENT:
+            this.connectedSensorsCount--;
+            var target = this.getInputTargetBlock('ADD' + this.connectedSensorsCount);
+            if (target) {
+                target.unplug();
+                target.bumpNeighbours_();
+            }
+            this.removeInput('ADD' + this.connectedSensorsCount);
+            break;
+        default:
+            throw 'updateShape accepts only mutator plus/minus command for this block';
         }
         if (this.connectedSensorsCount == 1) {
             this.mutatorMinus.dispose();
@@ -1283,4 +1351,3 @@ Blockly.Blocks['robActions_send_data_to_opensensemap'] = {
         }
     }
 };
-
