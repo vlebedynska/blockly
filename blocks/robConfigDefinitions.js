@@ -154,7 +154,6 @@ confBlocks.lightveml.sensebox = {
     pins : function(a) {
         return [ [ 'I2C', 'I2C' ] ];
     },
-    inputs : [ [ 'ID', 'openSenseMap Sensor ID' ] ],
     sensor : true
 };
 
@@ -231,7 +230,6 @@ confBlocks.temperature.sensebox = {
     pins : function(a) {
         return [ [ 'I2C', 'I2C' ] ];
     },
-    inputs : [ [ 'ID', 'openSenseMap Sensor ID' ] ],
     sensor : true
 };
 
@@ -253,7 +251,6 @@ confBlocks.humidity.sensebox = {
     pins : function() {
         return [ [ 'I2C', 'I2C' ] ];
     },
-    inputs : [ [ 'ID', 'openSenseMap Sensor ID' ] ],
     sensor : true
 };
 
