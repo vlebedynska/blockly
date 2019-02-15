@@ -1216,7 +1216,6 @@ Blockly.Blocks['robActions_sendData'] = {
      */
 
     init : function() {
-        var phenomenaDropdown = new Blockly.FieldDropdown(this.getNames_());
         this.setColour(Blockly.CAT_ACTION_RGB);
         this.INCREMENT = 1;
         this.DECREMENT = -1;
@@ -1226,7 +1225,7 @@ Blockly.Blocks['robActions_sendData'] = {
         this.setMutatorPlus(new Blockly.MutatorPlus(this));
         this.setTooltip(Blockly.Msg.SEND_DATA_TO_OSM_TOOLTIP);
         this.connectedSensorsCount = 1;
-        this.generateSensorInputs_(this.connectedSensorsCount, phenomenaDropdown);
+        this.generateSensorInputs_(this.connectedSensorsCount);
     },
     getNames_ : function() {
         var names = [];
@@ -1306,14 +1305,14 @@ Blockly.Blocks['robActions_sendData'] = {
         var connectedSensorsCount = parseInt(xmlElement.getAttribute('items'), 10);
         var phenomenaDropdown = new Blockly.FieldDropdown(this.getNames_());
         this.connectedSensorsCount = connectedSensorsCount;
-        this.generateSensorInputs_(this.connectedSensorsCount, phenomenaDropdown);
+        this.generateSensorInputs_(this.connectedSensorsCount);
     },
-    generateSensorInputs_ : function(numberOfSensorInputs, phenomenaDropdown) {
+    generateSensorInputs_ : function(numberOfSensorInputs) {
         for (var i = 0; i < numberOfSensorInputs; i++) {
             this.removeInput('ADD' + i);
         }
         for (var i = 0; i < numberOfSensorInputs; i++) {
-            this.appendSensorInput_(i, phenomenaDropdown);
+            this.appendSensorInput_(i, new Blockly.FieldDropdown(this.getNames_()));
         }
     },
     appendSensorInput_ : function(inputNumber, phenomenaDropdown) {
