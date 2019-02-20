@@ -82,14 +82,14 @@ Blockly.Blocks['robConf_generic'] = {
                 }
             };
         }
-        
-        if(confBlock.id) {
+
+        if (confBlock.id) {
             var idInputField = new Blockly.FieldTextInput('openSenseMap Sensor ID');
             this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg['ID']).appendField(idInputField);
         }
-        
+
         /**
-         * Checking for generic block parts like text inputs or dropdowns 
+         * Checking for generic block parts like text inputs or dropdowns
          */
         if (confBlock.inputs) {
             for (var i = 0; i < confBlock.inputs.length; i++) {
@@ -105,7 +105,7 @@ Blockly.Blocks['robConf_generic'] = {
                 this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(dropDownName).appendField(fieldDropDown, dropDownName);
             }
         }
-        
+
         var ports, pins;
         var portList = [];
         if (confBlock.ports) {
@@ -126,14 +126,14 @@ Blockly.Blocks['robConf_generic'] = {
                 this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(portList[i][0]).appendField(pins, portList[i][1]);
             }
         }
-        
+
         if (confBlock.fixedPorts) {
             for (var i = 0; i < confBlock.fixedPorts.length; i++) {
                 var dropDown = new Blockly.FieldDropdown([ [ confBlock.fixedPorts[i][1], confBlock.fixedPorts[i][1] ] ]);
                 this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(confBlock.fixedPorts[i][0]).appendField(dropDown);
             }
         }
-        
+
         this.setTooltip(function() {
             return Blockly.Msg[confBlock.title + '_TOOLTIP'] || confBlock.title + '_TOOLTIP';
         });

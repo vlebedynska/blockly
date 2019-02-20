@@ -1274,7 +1274,6 @@ Blockly.Msg.SEND_DATA_TO = 'send data to';
 Blockly.Msg.SEND_DATA_TO_OSM_TOOLTIP = 'This block is used to send data from sensors to the openSenseMap. Please configure the IDs in the configuration prior to the usage of this block.';
 Blockly.Msg.SENSOR_LIGHTVEML = 'visible/UV light sensor';
 Blockly.Msg.SENSOR_LIGHTVEML_GETSAMPLE_TOOLTIP = 'the current reading visible/UV light sensor';
-Blockly.Msg.CONFIGURATION_ERROR_DEPENDENCY_MISSING = 'One or more blocks that are required to use this block are missing, consult the documentation to find which block is needed.'; //not translated
 Blockly.Msg.BRICK_PHENOMENON = 'Phenomenon';
 Blockly.Msg.SEND_DATA_SENSEMAP = 'openSenseMap';
 Blockly.Msg.CONFIGURATION_NO_PHENOMENON = 'no phenomenon';
