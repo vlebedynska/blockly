@@ -543,7 +543,7 @@ confBlocks.wireless = {}
 confBlocks.wireless.sensebox = {
     title : 'WIRELESS',
     inputs : [ [ 'SSID', 'SSID' ], [ 'PASSWORD', 'Password' ] ],
-    dropdowns : [ [ 'CONNECTOR', [ [ 'XBEE1', 'XBEE1' ], [ 'XBEE2', 'XBEE2' ] ] ] ],
+    dropdowns : [ [ 'CONNECTOR', [ [ 'XBEE1', 'XBEE1' ] ] ] ],
     sensor : false
 }
 
