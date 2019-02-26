@@ -83,6 +83,23 @@ sensors.accelerometer.nao = {
     ports : [ [ 'x', 'X' ], [ 'y', 'Y' ], [ 'z', 'Z' ] ]
 };
 
+sensors.accelerometer.sensebox = {
+    title : 'ACCELEROMETER',
+    modes : [ {
+        name : 'X',
+        type : 'Number',
+        unit : 'g'
+    }, {
+        name : 'Y',
+        type : 'Number',
+        unit : 'g'
+    }, {
+        name : 'Z',
+        type : 'Number',
+        unit : 'g'
+    } ],
+    ports : 'CONFIGURATION'
+};
 sensors.accelerometer.vorwerk = sensors.accelerometer.calliope;
 
 sensors.battery = {};
@@ -190,6 +207,24 @@ sensors.compass.ev3 = {
     } ],
     ports : [ [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ],
     standardPort : '1'
+};
+
+sensors.compass.sensebox = {
+    title : 'COMPASS',
+    modes : [ {
+        name : 'X',
+        type : 'Number',
+        unit : 'DEGREE'
+    }, {
+        name : 'Y',
+        type : 'Number',
+        unit : 'DEGREE'
+    }, {
+        name : 'Z',
+        type : 'Number',
+        unit : 'DEGREE'
+    } ],
+    ports : 'CONFIGURATION'
 };
 
 sensors.detectface = {};
@@ -468,6 +503,24 @@ sensors.gyro.wedo = {
     } ],
     slots : [ [ 'SLOT_TILTED_UP', 'UP' ], [ 'SLOT_TILTED_DOWN', 'DOWN' ], [ 'SLOT_TILTED_BACK', 'BACK' ], [ 'SLOT_TILTED_FRONT', 'FRONT' ],
             [ 'SLOT_TILTED_NO', 'NO' ], [ 'SLOT_TILTED_ANY', 'ANY' ] ],
+    ports : 'CONFIGURATION'
+};
+
+sensors.gyro.sensebox = {
+    title : 'GYRO',
+    modes : [ {
+        name : 'X',
+        type : 'Number',
+        unit : 'DEGREE'
+    }, {
+        name : 'Y',
+        type : 'Number',
+        unit : 'DEGREE'
+    }, {
+        name : 'Z',
+        type : 'Number',
+        unit : 'DEGREE'
+    } ],
     ports : 'CONFIGURATION'
 };
 

@@ -157,6 +157,18 @@ confBlocks.lightveml.sensebox = {
     sensor : true
 };
 
+confBlocks.accelerometer = {};
+confBlocks.accelerometer.sensebox = {
+    title : 'ACCELEROMETER',
+    sensor : true
+};
+
+confBlocks.compass = {};
+confBlocks.compass.sensebox = {
+    title : 'COMPASS',
+    sensor : true
+};
+
 confBlocks.moisture = {};
 confBlocks.moisture.arduino = {
     title : 'MOISTURE',
@@ -487,6 +499,11 @@ confBlocks.gyro.wedo = {
     bricks : true,
     ports : [ [ 'CONNECTOR', 'CONNECTOR' ] ],
     pins : Blockly.Blocks.robConfigDefinitions['pins_wedo'],
+    sensor : true
+};
+
+confBlocks.gyro.sensebox = {
+    title : 'GYRO',
     sensor : true
 };
 
