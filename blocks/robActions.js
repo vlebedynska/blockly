@@ -1219,7 +1219,7 @@ Blockly.Blocks['robActions_sendData'] = {
         this.setColour(Blockly.CAT_ACTION_RGB);
         this.INCREMENT = 1;
         this.DECREMENT = -1;
-        this.appendDummyInput().appendField(Blockly.Msg.SEND_DATA_TO).appendField(new Blockly.FieldDropdown([ [ Blockly.Msg.SEND_DATA_SENSEMAP, 'SENSEMAP' ] ]));
+        this.appendDummyInput().appendField(Blockly.Msg.SEND_DATA_TO).appendField(new Blockly.FieldDropdown([ [ Blockly.Msg.SEND_DATA_SENSEMAP, 'SENSEMAP' ], [ Blockly.Msg.ACTION_SDCARD, 'SDCARD' ] ]), 'DESTINATION');
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setMutatorPlus(new Blockly.MutatorPlus(this));

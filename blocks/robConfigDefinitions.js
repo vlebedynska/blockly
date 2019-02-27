@@ -562,7 +562,15 @@ confBlocks.wireless.sensebox = {
     inputs : [ [ 'SSID', 'SSID' ], [ 'PASSWORD', 'Password' ] ],
     dropdowns : [ [ 'CONNECTOR', [ [ 'XBEE1', 'XBEE1' ] ] ] ],
     sensor : false
-}
+};
+
+confBlocks.sdcard = {}
+confBlocks.sdcard.sensebox = {
+    title : 'SDCARD',
+    inputs : [ [ 'NAO_FILENAME', 'FILENAME' ] ],
+    dropdowns : [ [ 'CONNECTOR', [ [ 'XBEE2', 'XBEE2' ] ] ] ],
+    sensor : false
+};
 
 function initConfBlocks() {
     for ( var confBlock in confBlocks) {
