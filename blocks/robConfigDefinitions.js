@@ -364,6 +364,16 @@ confBlocks.lcdi2c.arduino = {
     fixedPorts : [ [ 'GND', 'GND' ], [ 'VCC', '5V' ], [ 'SDA', 'A4' ], [ 'SCL', 'A5' ] ]
 };
 
+confBlocks.lcdi2c.sensebox = {
+    title : 'LCDI2C',
+    ports : [ [ 'I2C', 'I2C' ] ],
+    pins : function(a) {
+        return [ [ 'I2C', 'I2C' ] ];
+    },
+    sensor : false
+};
+
+
 confBlocks.led = {};
 confBlocks.led.arduino = {
     title : 'LED',

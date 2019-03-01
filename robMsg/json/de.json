@@ -1172,5 +1172,5 @@
 	"POPUP_DOWNLOAD_STEP_A_SENSEBOX": "Überprüfe, dass dein Gerät in Programmierungsmodus (LED dimmt sich) ist, wenn nein, drucke die Rote Taste zweimal. Klicke mit der rechten Maustaste auf den untenstehenden Link und",
 	"POPUP_DOWNLOAD_STEP_D_SENSEBOX": "jetzt klicke auf »Speichern« in der rechten unteren Ecke.",
 	"BRICK_PHENOMENON": "Phänomen",
-	"SEND_DATA_SD_CARD": "SD Karte"
+	"ACTION_SDCARD": "SD Karte"
 }
