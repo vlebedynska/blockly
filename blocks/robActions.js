@@ -676,7 +676,7 @@ Blockly.Blocks['robActions_display_clear_i2c'] = {
     init : function() {
         // this.setHelpUrl(Blockly.Msg.DISPLAY_CLEAR_HELPURL);
         this.setColour(Blockly.CAT_ACTION_RGB);
-        if (this.workspace.device == 'arduino') {
+        if (this.workspace.device === 'arduino' || this.workspace.device === 'sensebox') {
             var dropDownPorts = getConfigPorts('lcdi2c');
             this.dependConfig = {
                 'type' : 'lcdi2c',
