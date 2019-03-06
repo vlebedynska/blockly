@@ -1278,4 +1278,4 @@ Blockly.Msg.BRICK_PHENOMENON = 'Phenomenon';
 Blockly.Msg.SEND_DATA_SENSEMAP = 'openSenseMap';
 Blockly.Msg.CONFIGURATION_NO_PHENOMENON = 'no phenomenon';
 Blockly.Msg.ACTION_SDCARD = 'SD card';
-Blockly.Msg.ACTION_LCDI2C_SENSEBOX = 'OLED I²C';
+Blockly.Msg.ACTION_LCDI2C_SENSEBOX = 'OLED Display I²C';
