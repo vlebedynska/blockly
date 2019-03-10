@@ -189,6 +189,7 @@
 	"MENU_UPDATE_FIRMWARE": "Firmware aktualisieren",
 	"MENU_USER": "Anmelden",
 	"MENU_START_BRICK": "starte auf »$«",
+	"MENU_STOP_BRICK": "stoppe Program auf »$«",
 	"MENU_RIGHT_SIM_VIEW_TOOLTIP": "Öffne/schließe die Simulation.",
 	"MENU_START_SIM": "öffne/schließe die Simulation",
 	"MENU_EXPORT_PROG": "exportiere Programm",

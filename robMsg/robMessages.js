@@ -321,6 +321,7 @@ Blockly.Msg.MENU_ROBOT = 'robot';
 Blockly.Msg.MENU_HELP = 'help';
 Blockly.Msg.MENU_USER = 'login';
 Blockly.Msg.MENU_START_BRICK = 'run on »$«';
+Blockly.Msg.MENU_STOP_BRICK = 'stop program on »$«';
 Blockly.Msg.MENU_EXPORT_PROG = 'export program';
 Blockly.Msg.MENU_IMPORT_PROG = 'import program ...';
 Blockly.Msg.MENU_CHECK = 'check';

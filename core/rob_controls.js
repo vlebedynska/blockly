@@ -83,7 +83,7 @@ Blockly.RobControls.prototype.PATH_RUNONBRICK_ = 'M15.396 23.433c2.641-2.574 6.6
 Blockly.RobControls.prototype.PATH_RUNINSIM_ = 'M13.998 12.002l.085.078 5.051 4.92-5.096 4.964-.038.036-.002-9.998m.002 '
         + '-2.002c-1.104 0-2 .896-2 2v10c0 1.104.896 2 2 2 .543 0 1.033-.218 1.393 '
         + '-.568 2.644-2.573 6.607-6.432 6.607-6.432s-3.963-3.859-6.604-6.433c-.363 ' + '-.349-.853-.567-1.396-.567z';
-Blockly.RobControls.prototype.PATH_SIMSTOP_ = 'M20 10h-8c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2v-8c0-1.1-.9-2-2 ' + '-2z';
+Blockly.RobControls.prototype.PATH_STOP_ = 'M20 10h-8c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2v-8c0-1.1-.9-2-2 ' + '-2z';
 Blockly.RobControls.prototype.PATH_SIMFORWARD_ = 'M14.396 22.433c2.641-2.574 6.604-6.433 6.604-6.433s-3.963-3.859-6.604-6.433 '
         + 'c-.363-.349-.853-.567-1.396-.567-1.104 0-2 .896-2 2v10c0 1.104.896 2 2 2 ' + '.543 0 1.033-.218 1.396-.567z';
 Blockly.RobControls.prototype.PATH_SIMPAUSE_ = 'M12 10c-1.104 0-2 .896-2 2v8c0 1.104.896 2 2 2s2-.896 2-2v-8c0-1.104-.896-2 '
@@ -168,6 +168,9 @@ Blockly.RobControls.prototype.createDom = function() {
     }, null);
     this.runOnBrick = this.createButton_(this.PATH_RUNONBRICK_, 0, 0, 'MENU_START_BRICK');
     this.runOnBrick.setAttribute("id", "runOnBrick");
+    this.stopBrick = this.createButton_(this.PATH_STOP_, 0, 0, 'MENU_STOP_BRICK');
+    this.stopBrick.setAttribute("id", "stopBrick");
+    this.stopBrick.setAttribute('class', 'robButtonHidden');
 //  this.runInSim = this.createButton_(this.PATH_RUNINSIM_, 1, 0, Blockly.Msg.MENU_START_SIM);
 //  this.simStop = this.createButton_(this.PATH_SIMSTOP_, 1, 0, Blockly.Msg.MENU_SIM_STOP);
 //  this.simStep = this.createButton_(this.PATH_SIMSTEP_, 1, 1);
@@ -306,6 +309,16 @@ Blockly.RobControls.prototype.disable = function(button) {
 
 Blockly.RobControls.prototype.enable = function(button) {
     this[button].setAttribute('class', 'robButton');
+};
+
+Blockly.RobControls.prototype.switchToStart = function() {
+    this.runOnBrick.setAttribute('class', 'robButton');
+    this.stopBrick.setAttribute('class', 'robButtonHidden');
+};
+
+Blockly.RobControls.prototype.switchToStop = function() {
+    this.stopBrick.setAttribute('class', 'robButton');
+    this.runOnBrick.setAttribute('class', 'robButtonHidden');
 };
 
 Blockly.RobControls.prototype.refreshTooltips = function(robotRealName) {

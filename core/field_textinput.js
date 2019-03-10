@@ -116,7 +116,10 @@ Blockly.FieldTextInput.prototype.showEditor_ = function() {
   htmlInput.setAttribute('spellcheck', this.spellcheck_);
   if (this.inputType === 'number') {
     // chose tel as an input type to force touch devices to display a numeric keypad (if supported)
-    htmlInput.setAttribute('type', 'tel');
+    // unfortunately IOS has no numeric input type with a "-", so that we cannot use it for math blocks.
+    if (!(goog.userAgent.IOS && this.sourceBlock_.type === 'math_number')) {
+        htmlInput.setAttribute('type', 'tel');
+    }
   }
   var fontSize =
       (Blockly.FieldTextInput.FONTSIZE * this.workspace_.scale) + 'pt';
