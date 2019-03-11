@@ -81,7 +81,7 @@ Blockly.Trashcan.prototype.MARGIN_SIDE_ = 12;
  * @type {number}
  * @private
  */
-Blockly.Trashcan.prototype.MARGIN_HOTSPOT_ = 10;
+Blockly.Trashcan.prototype.MARGIN_HOTSPOT_ = 25;
 
 /**
  * Location of trashcan in sprite image.
@@ -95,7 +95,7 @@ Blockly.Trashcan.prototype.SPRITE_LEFT_ = 0;
  * @type {number}
  * @private
  */
-Blockly.Trashcan.prototype.SPRITE_TOP_ = 32;
+Blockly.Trashcan.prototype.SPRITE_TOP_ = 48;
 
 /**
  * Current open/close state of the lid.
@@ -256,8 +256,8 @@ Blockly.Trashcan.prototype.position = function() {
  */
 Blockly.Trashcan.prototype.getClientRect = function() {
   var trashRect = this.svgGroup_.getBoundingClientRect();
-  var left = trashRect.left + this.SPRITE_LEFT_ - this.MARGIN_HOTSPOT_;
-  var top = trashRect.top + this.SPRITE_TOP_ - this.MARGIN_HOTSPOT_;
+  var left = trashRect.left - 4;
+  var top = trashRect.top + this.LID_HEIGHT_/2 - this.MARGIN_HOTSPOT_;
   var width = this.WIDTH_ + 2 * this.MARGIN_HOTSPOT_;
   var height = this.LID_HEIGHT_ + this.BODY_HEIGHT_ + 2 * this.MARGIN_HOTSPOT_;
   return new goog.math.Rect(left, top, width, height);
