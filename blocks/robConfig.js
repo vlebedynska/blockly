@@ -63,7 +63,7 @@ Blockly.Blocks['robConf_generic'] = {
                     var block = topBlocks[i];
                     if (block.type.indexOf('robBrick_') !== -1) {
                         if (block.getVarDecl) {
-                            variableList.push([ block.getVarDecl()[0], block.getVarDecl()[0].toUpperCase() ]);
+                            variableList.push([ block.getVarDecl()[0], block.getVarDecl()[0] ]);
                         }
                     }
                 }

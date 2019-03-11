@@ -142,7 +142,7 @@ Blockly.Blocks['robActions_motor_on'] = {
                     if (func) {
                         var config = func.call(blocks[x]);
                         if (config.type === 'motor') {
-                            ports.push([ config.name, config.name.toUpperCase() ]);
+                            ports.push([ config.name, config.name ]);
                         }
                     }
                 }
@@ -210,7 +210,7 @@ Blockly.Blocks['robActions_motor_on_for'] = {
                     if (func) {
                         var config = func.call(blocks[x]);
                         if (config.type === 'motor') {
-                            portList.push([ config.name, config.name.toUpperCase() ]);
+                            portList.push([ config.name, config.name ]);
                         }
                     }
                 }
@@ -383,7 +383,7 @@ Blockly.Blocks['robActions_motor_stop'] = {
                     if (func) {
                         var config = func.call(blocks[x]);
                         if (config.type === 'motor') {
-                            portList.push([ config.name, config.name.toUpperCase() ]);
+                            portList.push([ config.name, config.name ]);
                         }
                     }
                 }
@@ -761,7 +761,7 @@ Blockly.Blocks['robActions_play_tone'] = {
                     if (func) {
                         var config = func.call(blocks[x]);
                         if (config.type === 'buzzer') {
-                            portList.push([ config.name, config.name.toUpperCase() ]);
+                            portList.push([ config.name, config.name ]);
                         }
                     }
                 }
@@ -921,7 +921,7 @@ Blockly.Blocks['robActions_led_on'] = {
                 if (func) {
                     var config = func.call(blocks[x]);
                     if (config.type === 'led') {
-                        portList.push([ config.name, config.name.toUpperCase() ]);
+                        portList.push([ config.name, config.name ]);
                     }
                 }
             }
@@ -974,7 +974,7 @@ Blockly.Blocks['robActions_led_off'] = {
                 if (func) {
                     var config = func.call(blocks[x]);
                     if (config.type === 'led') {
-                        portList.push([ config.name, config.name.toUpperCase() ]);
+                        portList.push([ config.name, config.name ]);
                     }
                 }
             }
@@ -1113,7 +1113,7 @@ function getConfigPorts(actorName) {
             if (func) {
                 var config = func.call(blocks[x]);
                 if (config.type === actorName) {
-                    ports.push([ config.name, config.name.toUpperCase() ]);
+                    ports.push([ config.name, config.name ]);
                 }
             }
         }
