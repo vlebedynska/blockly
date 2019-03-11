@@ -40,26 +40,26 @@ Blockly.RobConfig.renameConfig = function(thatBlock, oldName, newName, workspace
         var dropDown = dependConfig.dropDown;
         var index = -1;
         for (var i = 0; i < dropDown.menuGenerator_.length; i++) {
-            if (dropDown.menuGenerator_[i][1] === thatBlock.getFieldValue('NAME')) {
+            if (dropDown.menuGenerator_[i][1] === thatBlock.getFieldValue('NAME').toUpperCase()) {
                 index = i;
                 break;
             }
         }
         if (dropDown.menuGenerator_[0][0] == Blockly.Msg.CONFIGURATION_NO_PORT) {
             dropDown.menuGenerator_[0][0] = newName;
-            dropDown.menuGenerator_[0][1] = newName;
-            dropDown.setValue(newName);
+            dropDown.menuGenerator_[0][1] = newName.toUpperCase();
+            dropDown.setValue(newName.toUpperCase());
         } else if (index >= 0) {
             dropDown.menuGenerator_[index][0] = newName;
-            dropDown.menuGenerator_[index][1] = newName;
-            if (dropDown.value_ === oldName) {
-                dropDown.setValue(newName);
+            dropDown.menuGenerator_[index][1] = newName.toUpperCase();
+            if (dropDown.value_ === oldName.toUpperCase()) {
+                dropDown.setValue(newName.toUpperCase());
             }
         } else {
-            dropDown.menuGenerator_.push([ newName, newName ]);
+            dropDown.menuGenerator_.push([ newName, newName.toUpperCase() ]);
             dropDown.arrow_.replaceChild(document.createTextNode(dropDown.sourceBlock_.RTL ? Blockly.FieldDropdown.ARROW_CHAR + ' ' : ' '
                     + Blockly.FieldDropdown.ARROW_CHAR), dropDown.arrow_.childNodes[0]);
-            dropDown.setValue(newName);
+            dropDown.setValue(newName.toUpperCase());
         }
         block.render();
     }
@@ -87,7 +87,7 @@ Blockly.RobConfig.disposeConfig = function(thisBlock) {
         var dropDown = dependConfig.dropDown;
         var index = -1;
         for (var i = 0; i < dropDown.menuGenerator_.length; i++) {
-            if (dropDown.menuGenerator_[i][1] === thisBlock.getFieldValue('NAME')) {
+            if (dropDown.menuGenerator_[i][1] === thisBlock.getFieldValue('NAME').toUpperCase()) {
                 index = i;
                 break;
             }
@@ -105,7 +105,7 @@ Blockly.RobConfig.disposeConfig = function(thisBlock) {
                 dropDown.setText(temp + "'");
                 dropDown.setText(temp);
             }
-            if (dropDown.getValue() === thisBlock.getFieldValue('NAME')) {
+            if (dropDown.getValue() === thisBlock.getFieldValue('NAME').toUpperCase()) {
                 dropDown.setValue(dropDown.menuGenerator_[0][1]);
             }
         }
