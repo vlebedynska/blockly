@@ -1280,3 +1280,18 @@ Blockly.Msg.SEND_DATA_SENSEMAP = 'openSenseMap';
 Blockly.Msg.CONFIGURATION_NO_PHENOMENON = 'no phenomenon';
 Blockly.Msg.ACTION_SDCARD = 'SD card';
 Blockly.Msg.ACTION_LCDI2C_SENSEBOX = 'OLED Display I²C';
+
+//untranslated:
+Blockly.Msg.ACTION_PLOTTING = 'plot';
+Blockly.Msg.ACTION_PLOT_POINT = 'plot a point';
+Blockly.Msg.ACTION_PLOT_CLEAR = 'clear the plot';
+Blockly.Msg.TITLE = 'title';
+Blockly.Msg.XLABEL = 'X axis label';
+Blockly.Msg.YLABEL = 'Y axis label';
+Blockly.Msg.XSTART = 'start of X axis';
+Blockly.Msg.XEND = 'end of X axis';
+Blockly.Msg.YSTART = 'start of Y axis';
+Blockly.Msg.YEND = 'end of Y axis';
+Blockly.Msg.XTICK = 'distance between X ticks';
+Blockly.Msg.YTICK = 'distance between Y ticks';
+Blockly.Msg.ACTION_PLOT_TICKMARK = 'at tickmark';

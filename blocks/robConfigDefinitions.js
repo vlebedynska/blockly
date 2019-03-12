@@ -582,6 +582,17 @@ confBlocks.sdcard.sensebox = {
     sensor : false
 };
 
+confBlocks.plotting = {}
+confBlocks.plotting.sensebox = {
+    title : 'PLOTTING',
+    inputs : [['TITLE', 'TITLE'], ['XLABEL', 'XLABEL'], 
+              ['YLABEL', 'YLABEL'], ['XSTART', 'XSTART'], 
+              ['XEND', 'XEND'], ['YSTART', 'YSTART'], 
+              ['YEND', 'YEND'], ['XTICK', 'XTICK'], 
+              ['YTICK', 'YTICK'] ],
+    sensor : false
+};
+
 function initConfBlocks() {
     for ( var confBlock in confBlocks) {
         if (confBlocks.hasOwnProperty(confBlock)) {

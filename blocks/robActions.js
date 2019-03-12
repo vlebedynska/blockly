@@ -1354,3 +1354,35 @@ Blockly.Blocks['robActions_sendData'] = {
         }
     }
 };
+
+Blockly.Blocks['robActions_plot_point'] = {
+    init : function() {
+        this.setColour(Blockly.CAT_ACTION_RGB);
+        this.dropDownPorts = getConfigPorts('plotting');
+        this.dependConfig = {
+            'type' : 'digitalin',
+            'dropDown' : this.dropDownPorts
+        };
+        this.appendValueInput('VALUE').appendField(Blockly.Msg.ACTION_PLOT_POINT).appendField("on").appendField(this.dropDownPorts, 'ACTORPORT').appendField(Blockly.Msg.SENSOR_VALUE).setCheck('Number');
+        this.appendValueInput('TICKMARK').appendField(Blockly.Msg.ACTION_PLOT_TICKMARK).setCheck('Number');
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+
+    }
+};
+
+
+Blockly.Blocks['robActions_plot_clear'] = {
+    init : function() {
+        this.setColour(Blockly.CAT_ACTION_RGB);
+        var ports = getConfigPorts('plotting');
+        this.dependConfig = {
+            'type' : 'rgbled',
+            'dropDown' : ports
+        };
+        this.appendDummyInput().appendField(Blockly.Msg.ACTION_PLOT_CLEAR).appendField(ports, 'ACTORPORT');
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setTooltip(Blockly.Msg.LED_OFF_TOOLTIP);
+    }
+};
