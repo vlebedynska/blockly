@@ -96,7 +96,7 @@
 				variableDeclaration: true,
 				robControls: true
 			});
-			workspace.setDevice(device);
+			workspace.setDevice({group: device, robot: device});
 			// Restore previously displayed text.
 			if (sessionStorage) {
 				var text = sessionStorage.getItem('textarea');

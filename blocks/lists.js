@@ -1060,9 +1060,9 @@ Blockly.Blocks['robLists_getIndex'] = {
             MODE = [ [ Blockly.Msg.LISTS_GET_INDEX_GET, 'GET' ], [ Blockly.Msg.LISTS_GET_INDEX_GET_REMOVE, 'GET_REMOVE' ],
                     [ Blockly.Msg.LISTS_GET_INDEX_REMOVE, 'REMOVE' ] ];
         }
-        
+
         this.WHERE_OPTIONS = [ [ Blockly.Msg.LISTS_GET_INDEX_FROM_START, 'FROM_START' ], [ Blockly.Msg.LISTS_GET_INDEX_FROM_END, 'FROM_END' ],
-            [ Blockly.Msg.LISTS_GET_INDEX_FIRST, 'FIRST' ], [ Blockly.Msg.LISTS_GET_INDEX_LAST, 'LAST' ] ];
+                [ Blockly.Msg.LISTS_GET_INDEX_FIRST, 'FIRST' ], [ Blockly.Msg.LISTS_GET_INDEX_LAST, 'LAST' ] ];
         this.setHelpUrl(Blockly.Msg.LISTS_GET_INDEX_HELPURL);
         this.setColour(Blockly.CAT_LIST_RGB);
         var modeMenu = new Blockly.FieldDropdown(MODE, function(value) {
@@ -1076,7 +1076,8 @@ Blockly.Blocks['robLists_getIndex'] = {
             this.appendDummyInput('TAIL').appendField(Blockly.Msg.LISTS_GET_INDEX_TAIL);
         }
         this.setInputsInline(true);
-        this.setOutput(true, [ 'Number', 'String', 'Boolean', 'Colour', 'Connection', 'Image' ]);
+        this.dataType_ = 'Number';
+        this.setOutput(true, this.dataType_);
         this.updateAt_(true);
         // Assign 'this' to a variable for use in the tooltip closure below.
         var thisBlock = this;
@@ -1098,6 +1099,7 @@ Blockly.Blocks['robLists_getIndex'] = {
         container.setAttribute('statement', isStatement);
         var isAt = this.getInput('AT').type == Blockly.INPUT_VALUE;
         container.setAttribute('at', isAt);
+        container.setAttribute('datatype', this.dataType_);
         return container;
     },
     /**
@@ -1114,6 +1116,10 @@ Blockly.Blocks['robLists_getIndex'] = {
         this.updateStatement_(isStatement);
         var isAt = (xmlElement.getAttribute('at') != 'false');
         this.updateAt_(isAt);
+        this.dataType_ = xmlElement.getAttribute('datatype');
+        if (this.dataType_) {
+            this.setOutput(true, this.dataType_);
+        }
     },
     /**
      * Switch between a value block and a statement block.
@@ -1188,8 +1194,10 @@ Blockly.Blocks['robLists_getIndex'] = {
             var blockA = this.getInputTargetBlock('VALUE');
             if (blockA) {
                 this.setOutput(true, blockA.outputConnection.check_[0].replace('Array_', ''));
+                this.dataType_ = blockA.outputConnection.check_[0].replace('Array_', '');
             } else {
-                this.setOutput(true, [ 'Number', 'String', 'Boolean', 'Colour', 'Connection', 'String', 'Image' ]);
+                this.setOutput(true, 'Number');
+                this.dataType_ = 'Number';
             }
             this.render();
         }
@@ -1210,7 +1218,7 @@ Blockly.Blocks['robLists_setIndex'] = {
             MODE = [ [ Blockly.Msg.LISTS_SET_INDEX_SET, 'SET' ], [ Blockly.Msg.LISTS_SET_INDEX_INSERT, 'INSERT' ] ];
         }
         this.WHERE_OPTIONS = [ [ Blockly.Msg.LISTS_GET_INDEX_FROM_START, 'FROM_START' ], [ Blockly.Msg.LISTS_GET_INDEX_FROM_END, 'FROM_END' ],
-            [ Blockly.Msg.LISTS_GET_INDEX_FIRST, 'FIRST' ], [ Blockly.Msg.LISTS_GET_INDEX_LAST, 'LAST' ] ];
+                [ Blockly.Msg.LISTS_GET_INDEX_FIRST, 'FIRST' ], [ Blockly.Msg.LISTS_GET_INDEX_LAST, 'LAST' ] ];
         this.setHelpUrl(Blockly.Msg.LISTS_SET_INDEX_HELPURL);
         this.setColour(Blockly.CAT_LIST_RGB);
         this.appendValueInput('LIST').setCheck([ 'Array_Number', 'Array_String', 'Array_Boolean', 'Array_Colour', 'Array_Connection', 'String', 'Array_Image' ]).appendField(Blockly.Msg.LISTS_SET_INDEX_INPUT_IN_LIST);
