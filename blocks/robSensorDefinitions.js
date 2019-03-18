@@ -553,6 +553,20 @@ sensors.humidity.sensebox = {
     ports : 'CONFIGURATION'
 }
 
+sensors.humidity.calliope = {
+    title : 'HUMIDITY',
+    modes : [ {
+        name : 'HUMIDITY',
+        type : 'Number',
+        unit : 'PERCENT'
+    }, {
+        name : 'TEMPERATURE',
+        type : 'Number',
+        unit : 'DEGREE'
+    } ],
+    ports : [ [ 'A1', '5' ] ]
+}
+
 sensors.infrared = {};
 sensors.infrared.botnroll = {
     title : 'INFRARED',
@@ -1269,7 +1283,7 @@ sensorsAll.nxt = [ sensors.touch.nxt, sensors.sound.nxt, sensors.light.nxt, sens
 sensorsAll.bob3 = [ sensors.pintouch.bob3, sensors.infrared.bob3, sensors.temperature.bob3, sensors.timer.bob3 ];
 sensorsAll.calliope = [ sensors.key.calliope, sensors.pintouch.calliope, sensors.gesture.calliope, sensors.compass.calliope, sensors.sound.calliope,
         sensors.timer.calliope, sensors.temperature.calliope, sensors.light.calliope, sensors.pin.calliope, sensors.gyro.calliope,
-        sensors.accelerometer.calliope ];
+        sensors.accelerometer.calliope, sensors.humidity.calliope ];
 sensorsAll.microbit = [ sensors.key.microbit, sensors.pintouch.microbit, sensors.gesture.microbit, sensors.compass.microbit, sensors.timer.microbit,
         sensors.temperature.microbit, sensors.pin.microbit, sensors.accelerometer.microbit ];
 sensorsAll.arduino = [ sensors.out.arduino, sensors.key.arduino, sensors.timer.arduino, sensors.temperature.arduino, sensors.ultrasonic.arduino,
