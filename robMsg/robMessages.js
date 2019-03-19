@@ -719,8 +719,26 @@ Blockly.Msg.POPUP_DOWNLOAD_CHECK = 'Okay, I"ve changed the download folder of my
 Blockly.Msg.POPUP_DOWNLOAD_SAVE_AS = 'Save link as ...';
 Blockly.Msg.POPUP_DOWNLOAD_SAVE = 'Save';
 
+// Custom messages for download popup can be written here, instead of simple renaming
 Blockly.Msg.POPUP_DOWNLOAD_STEP_A_SENSEBOX = 'Check that your device is in programming mode (LED dimming in a pattern), if not, double press the red button. Right click on you program link below and';
+Blockly.Msg.POPUP_DOWNLOAD_STEP_B_SENSEBOX = Blockly.Msg.POPUP_DOWNLOAD_STEP_B;
+Blockly.Msg.POPUP_DOWNLOAD_STEP_C_SENSEBOX = Blockly.Msg.POPUP_DOWNLOAD_STEP_C;
 Blockly.Msg.POPUP_DOWNLOAD_STEP_D_SENSEBOX = 'now click on the »Save« button on the bottom right.';
+
+Blockly.Msg.POPUP_DOWNLOAD_STEP_A_CALLIOPE2016 = Blockly.Msg.POPUP_DOWNLOAD_STEP_A;
+Blockly.Msg.POPUP_DOWNLOAD_STEP_B_CALLIOPE2016 = Blockly.Msg.POPUP_DOWNLOAD_STEP_B;
+Blockly.Msg.POPUP_DOWNLOAD_STEP_C_CALLIOPE2016 = Blockly.Msg.POPUP_DOWNLOAD_STEP_C;
+Blockly.Msg.POPUP_DOWNLOAD_STEP_D_CALLIOPE2016 = Blockly.Msg.POPUP_DOWNLOAD_STEP_D;
+
+Blockly.Msg.POPUP_DOWNLOAD_STEP_A_CALLIOPE2017 = Blockly.Msg.POPUP_DOWNLOAD_STEP_A;
+Blockly.Msg.POPUP_DOWNLOAD_STEP_B_CALLIOPE2017 = Blockly.Msg.POPUP_DOWNLOAD_STEP_B;
+Blockly.Msg.POPUP_DOWNLOAD_STEP_C_CALLIOPE2017 = Blockly.Msg.POPUP_DOWNLOAD_STEP_C;
+Blockly.Msg.POPUP_DOWNLOAD_STEP_D_CALLIOPE2017 = Blockly.Msg.POPUP_DOWNLOAD_STEP_D;
+
+Blockly.Msg.POPUP_DOWNLOAD_STEP_A_MICROBIT = Blockly.Msg.POPUP_DOWNLOAD_STEP_A;
+Blockly.Msg.POPUP_DOWNLOAD_STEP_B_MICROBIT = Blockly.Msg.POPUP_DOWNLOAD_STEP_B;
+Blockly.Msg.POPUP_DOWNLOAD_STEP_C_MICROBIT = Blockly.Msg.POPUP_DOWNLOAD_STEP_C;
+Blockly.Msg.POPUP_DOWNLOAD_STEP_D_MICROBIT = Blockly.Msg.POPUP_DOWNLOAD_STEP_D;
 
 // Names for the nao blocks
 /// NAO names
