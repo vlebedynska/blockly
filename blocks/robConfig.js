@@ -94,7 +94,7 @@ Blockly.Blocks['robConf_generic'] = {
         if (confBlock.inputs) {
             for (var i = 0; i < confBlock.inputs.length; i++) {
                 var textFieldName = confBlock.inputs[i][0];
-                var textField = new Blockly.FieldTextInput('');
+                var textField = new Blockly.FieldTextInput(confBlock.inputs[i][1]);
                 this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg[confBlock.inputs[i][0]]).appendField(textField, textFieldName);
             }
         }

@@ -569,7 +569,7 @@ confBlocks.analogin.arduino = {
 confBlocks.wireless = {}
 confBlocks.wireless.sensebox = {
     title : 'WIRELESS',
-    inputs : [ [ 'SSID', 'SSID' ], [ 'PASSWORD', 'Password' ] ],
+    inputs : [ [ 'SSID', '' ], [ 'PASSWORD', '' ] ],
     dropdowns : [ [ 'CONNECTOR', [ [ 'XBEE1', 'XBEE1' ] ] ] ],
     sensor : false
 };
@@ -577,7 +577,7 @@ confBlocks.wireless.sensebox = {
 confBlocks.sdcard = {}
 confBlocks.sdcard.sensebox = {
     title : 'SDCARD',
-    inputs : [ [ 'NAO_FILENAME', 'FILENAME' ] ],
+    inputs : [ [ 'NAO_FILENAME', 'FILE.TXT' ] ],
     dropdowns : [ [ 'CONNECTOR', [ [ 'XBEE2', 'XBEE2' ] ] ] ],
     sensor : false
 };
@@ -585,11 +585,11 @@ confBlocks.sdcard.sensebox = {
 confBlocks.plotting = {}
 confBlocks.plotting.sensebox = {
     title : 'PLOTTING',
-    inputs : [['TITLE', 'TITLE'], ['XLABEL', 'XLABEL'], 
-              ['YLABEL', 'YLABEL'], ['XSTART', 'XSTART'], 
-              ['XEND', 'XEND'], ['YSTART', 'YSTART'], 
-              ['YEND', 'YEND'], ['XTICK', 'XTICK'], 
-              ['YTICK', 'YTICK'] ],
+    inputs : [['TITLE', 'P'], ['XLABEL', 'X'], 
+              ['YLABEL', 'Y'], ['XSTART', '0'], 
+              ['XEND', '100'], ['YSTART', '0'], 
+              ['YEND', '50'], ['XTICK', '10'], 
+              ['YTICK', '10'] ],
     sensor : false
 };
 
