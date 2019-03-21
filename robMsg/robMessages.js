@@ -711,34 +711,15 @@ Blockly.Msg.ACCELERATION_TOOLTIP = 'Get the acceleration value in milli-gravitie
 Blockly.Msg.ACCELEROMETER_ROTATION_TOOLTIP = 'Get the tilt or rotations in degrees.';
 
 Blockly.Msg.POPUP_DOWNLOAD = 'Download your program to »$«';
-Blockly.Msg.POPUP_DOWNLOAD_STEP_A = 'Right click on your program link below and';
-Blockly.Msg.POPUP_DOWNLOAD_STEP_B = 'choose »Save link as ...«, then';
-Blockly.Msg.POPUP_DOWNLOAD_STEP_C = 'click on your connected »$« in the left column,';
-Blockly.Msg.POPUP_DOWNLOAD_STEP_D = 'now click on the »Save« button on the bottom right.<br><span style="font-size: 14px;">If your program doesn"t start automatically press the reset button after a while.</span>';
+Blockly.Msg.POPUP_DOWNLOAD_STEP_1 = 'Right click on your program link below and';
+Blockly.Msg.POPUP_DOWNLOAD_STEP_2 = 'choose »Save link as ...«, then';
+Blockly.Msg.POPUP_DOWNLOAD_STEP_3 = 'click on your connected »$« in the left column,';
+Blockly.Msg.POPUP_DOWNLOAD_STEP_4 = 'now click on the »Save« button on the bottom right.<br><span style="font-size: 14px;">If your program doesn"t start automatically press the reset button after a while.</span>';
 Blockly.Msg.POPUP_DOWNLOAD_CHECK = 'Okay, I"ve changed the download folder of my browser permanently. Don"t show this popup again and download my programs directly.';
-Blockly.Msg.POPUP_DOWNLOAD_SAVE_AS = 'Save link as ...';
-Blockly.Msg.POPUP_DOWNLOAD_SAVE = 'Save';
 
 // Custom messages for download popup can be written here, instead of simple renaming
-Blockly.Msg.POPUP_DOWNLOAD_STEP_A_SENSEBOX = 'Check that your device is in programming mode (LED dimming in a pattern), if not, double press the red button. Right click on you program link below and';
-Blockly.Msg.POPUP_DOWNLOAD_STEP_B_SENSEBOX = Blockly.Msg.POPUP_DOWNLOAD_STEP_B;
-Blockly.Msg.POPUP_DOWNLOAD_STEP_C_SENSEBOX = Blockly.Msg.POPUP_DOWNLOAD_STEP_C;
-Blockly.Msg.POPUP_DOWNLOAD_STEP_D_SENSEBOX = 'now click on the »Save« button on the bottom right.';
-
-Blockly.Msg.POPUP_DOWNLOAD_STEP_A_CALLIOPE2016 = Blockly.Msg.POPUP_DOWNLOAD_STEP_A;
-Blockly.Msg.POPUP_DOWNLOAD_STEP_B_CALLIOPE2016 = Blockly.Msg.POPUP_DOWNLOAD_STEP_B;
-Blockly.Msg.POPUP_DOWNLOAD_STEP_C_CALLIOPE2016 = Blockly.Msg.POPUP_DOWNLOAD_STEP_C;
-Blockly.Msg.POPUP_DOWNLOAD_STEP_D_CALLIOPE2016 = Blockly.Msg.POPUP_DOWNLOAD_STEP_D;
-
-Blockly.Msg.POPUP_DOWNLOAD_STEP_A_CALLIOPE2017 = Blockly.Msg.POPUP_DOWNLOAD_STEP_A;
-Blockly.Msg.POPUP_DOWNLOAD_STEP_B_CALLIOPE2017 = Blockly.Msg.POPUP_DOWNLOAD_STEP_B;
-Blockly.Msg.POPUP_DOWNLOAD_STEP_C_CALLIOPE2017 = Blockly.Msg.POPUP_DOWNLOAD_STEP_C;
-Blockly.Msg.POPUP_DOWNLOAD_STEP_D_CALLIOPE2017 = Blockly.Msg.POPUP_DOWNLOAD_STEP_D;
-
-Blockly.Msg.POPUP_DOWNLOAD_STEP_A_MICROBIT = Blockly.Msg.POPUP_DOWNLOAD_STEP_A;
-Blockly.Msg.POPUP_DOWNLOAD_STEP_B_MICROBIT = Blockly.Msg.POPUP_DOWNLOAD_STEP_B;
-Blockly.Msg.POPUP_DOWNLOAD_STEP_C_MICROBIT = Blockly.Msg.POPUP_DOWNLOAD_STEP_C;
-Blockly.Msg.POPUP_DOWNLOAD_STEP_D_MICROBIT = Blockly.Msg.POPUP_DOWNLOAD_STEP_D;
+Blockly.Msg.POPUP_DOWNLOAD_STEP_1_SENSEBOX = 'Check that your device is in programming mode (LED dimming in a pattern), if not, double press the red button. Right click on you program link below and';
+Blockly.Msg.POPUP_DOWNLOAD_STEP_4_SENSEBOX = 'now click on the »Save« button on the bottom right.';
 
 // Names for the nao blocks
 /// NAO names
