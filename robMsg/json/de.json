@@ -1173,7 +1173,9 @@
 	"BRICK_PHENOMENON": "Phänomen",
 	"ACTION_SDCARD": "SD Karte",
 	"ACTION_LCDI2C_SENSEBOX": "OLED Bildschirm I²C",
-	
+	"SWITCH": "Schalte",
+	"SWITCH_LED_MATRIX_TOOLTIP": "Aktiviert/Deaktiviert die LED Matrix um die doppelt belegten Pins zu nutzen.",
+
 	"ACTION_PLOTTING" : "plot",
     "ACTION_PLOT_POINT" : "plot a point",
     "ACTION_PLOT_CLEAR" : "clear the plot",

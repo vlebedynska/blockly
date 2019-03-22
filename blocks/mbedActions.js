@@ -609,3 +609,24 @@ Blockly.Blocks['mbedActions_pin_set_pull'] = {
         this.setTooltip(Blockly.Msg.PIN_SET_PULL_TOOLTIP);
     }
 };
+
+Blockly.Blocks['mbedActions_switch_led_matrix'] = {
+    /**
+     * Enables/Disables the leds to use the pins.
+     * 
+     * @constructs mbedActions_switch_led_matrix
+     * @this.Blockly.Block
+     * @param {String/dropdown} STATE - on, off
+     * @returns immediately
+     * @memberof Block
+     */
+
+    init : function() {
+        this.setColour(Blockly.CAT_ACTION_RGB);
+        var state = new Blockly.FieldDropdown([ [ Blockly.Msg.ON, 'ON' ], [ Blockly.Msg.OFF, 'OFF' ] ]);
+        this.appendDummyInput().appendField(Blockly.Msg.SWITCH + ' ' + Blockly.Msg.LED_MATRIX).appendField(state, 'STATE');
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setTooltip(Blockly.Msg.SWITCH_LED_MATRIX_TOOLTIP);
+    }
+};
