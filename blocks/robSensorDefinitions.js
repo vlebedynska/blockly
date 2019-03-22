@@ -692,7 +692,7 @@ sensors.key.calliope = {
         type : 'Boolean',
         question : true
     } ],
-    ports : [ [ 'A', 'button_a' ], [ 'B', 'button_b' ] ]
+    ports : [ [ 'A', 'A' ], [ 'B', 'B' ] ]
 };
 
 sensors.key.ev3 = {

@@ -612,7 +612,7 @@ Blockly.Xml.childToBlock = function(workspace, block, xmlChild) {
     var childShadowNode = null;
     var blockChild = null;
     var shadowActive = false;
-    
+
     var RealGrandchildList = [];
     for (var y = 0, grandchildNode; grandchildNode = xmlChild.childNodes[y]; y++) {
         if (grandchildNode.nodeType == 1) {
@@ -812,6 +812,12 @@ Blockly.Xml.childToBlock = function(workspace, block, xmlChild) {
             field = block.getField('MODE');
         } else {
             field = block.getField(Blockly.Xml[name] || name);
+            if (name === 'SENSORPORT') {
+                if (xmlChild.textContent === 'button_a')
+                    xmlChild.textContent = "A";
+                if (xmlChild.textContent === 'button_b')
+                    xmlChild.textContent = "B";
+            }
         }
         if (!field) {
             console.warn('Ignoring non-existent field ' + name + ' in block ' + block.type);
