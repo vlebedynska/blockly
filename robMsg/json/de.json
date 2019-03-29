@@ -1178,6 +1178,7 @@
 
 	"ACTION_PLOTTING" : "plot",
     "ACTION_PLOT_POINT" : "plot a point",
+    "ACTION_PLOT_POINT_TOOLTIP": "plot a point with specified value (Y axis) at the specified tickmark (X axis)",
     "ACTION_PLOT_CLEAR" : "clear the plot",
     "TITLE" : "title",
     "XLABEL" : "X axis label",

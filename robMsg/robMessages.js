@@ -1285,6 +1285,7 @@ Blockly.Msg.SWITCH_LED_MATRIX_TOOLTIP = 'Enables/Disables the LED matrix to use 
 //untranslated:
 Blockly.Msg.ACTION_PLOTTING = 'plot';
 Blockly.Msg.ACTION_PLOT_POINT = 'plot a point';
+Blockly.Msg.ACTION_PLOT_POINT_TOOLTIP = 'plot a point with specified value (Y axis) at the specified tickmark (X axis)';
 Blockly.Msg.ACTION_PLOT_CLEAR = 'clear the plot';
 Blockly.Msg.TITLE = 'title';
 Blockly.Msg.XLABEL = 'X axis label';
