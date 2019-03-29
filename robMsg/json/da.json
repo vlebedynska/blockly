@@ -16,7 +16,7 @@
 	"BRICK_WHEEL_DIAMETER": "hjuldiameter",
 	"BUTTON_DO_SHARE": "Del",
 	"BUTTON_EMPTY_LIST": "Tom liste",
-	"COLOUR_RGB_TOOLTIP": "Lav en farve med den angivne mængde af rød, grøn og blå. Alle værdier skal være mellem 0 og 100.",
+	"COLOUR_RGB_TOOLTIP": "Lav en farve med den angivne mængde af rød, grøn og blå. Alle værdier skal være mellem 0 og 255.",
 	"COLOUR_TOOLTIP": "Repræsenterer EV3 farvesensoren.",
 	"CONFIGURATION_ERROR_MOTOR_LEFT_MISSING": "Venstre motor mangler i konfigurationen!",
 	"CONFIGURATION_ERROR_MOTOR_LEFT_UNREGULATED": "Left motor is not regulated!",

@@ -20,7 +20,7 @@
 	"BUTTON_DO_SHARE": "Partilhar",
 	"BUTTON_EMPTY_LIST": "Esvaziar lista",
 	"CENTER": "centro",
-	"COLOUR_RGB_TOOLTIP": "Cria uma cor de acordo com a quantidade especificada de vermelho, verde e azul. Todos os valores devem estar entre 0 e 100.",
+	"COLOUR_RGB_TOOLTIP": "Cria uma cor de acordo com a quantidade especificada de vermelho, verde e azul. Todos os valores devem estar entre 0 e 255.",
 	"COLOUR_TOOLTIP": "Representa um sensor de cor.",
 	"COMPASS_TOOLTIP": "Representa uma bússola.",
 	"CONFIGURATION_ERROR_MOTORS_ROTATION_DIRECTION": "O sentido de rotação dos motores é diferente!",

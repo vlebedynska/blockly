@@ -17,7 +17,7 @@
 	"BRICK_WHEEL_DIAMETER": "gurpilaren diametroa",
 	"BUTTON_DO_SHARE": "Partekatu",
 	"BUTTON_EMPTY_LIST": "Zerrenda hustu",
-	"COLOUR_RGB_TOOLTIP": "Kırmızı, yeşil ve mavinin belirtilen miktarıyla bir renk oluşturun.  Tüm değerler 0 ile 100 arasında olmalıdır.",
+	"COLOUR_RGB_TOOLTIP": "Kırmızı, yeşil ve mavinin belirtilen miktarıyla bir renk oluşturun.  Tüm değerler 0 ile 255 arasında olmalıdır.",
 	"COLOUR_TOOLTIP": "EV3-aren kolore sentsorea irudikatzen du",
 	"CONFIGURATION_ERROR_MOTOR_LEFT_MISSING": "Ezkerreko motorea falta da konfigurazioan!",
 	"CONFIGURATION_ERROR_MOTOR_LEFT_UNREGULATED": "Ezkerreko motorea ez dago erregulatuta!",

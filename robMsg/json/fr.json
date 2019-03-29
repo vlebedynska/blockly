@@ -53,7 +53,7 @@
 	"CALLIOPEBRICK_TOOLTIP": "Bloc pour Calliopé, un mini-ordinateur. Il y a d'autres acteurs et capteurs comme p. ex. les buttons, le display...",
 	"CENTER": "milieu",
 	"COLON": "deux-points",
-	"COLOUR_RGB_TOOLTIP": "Créer une couleur avec la quantité spécifiée de rouge, vert et bleu. Les valeurs doivent être comprises entre 0 et 100.",
+	"COLOUR_RGB_TOOLTIP": "Créer une couleur avec la quantité spécifiée de rouge, vert et bleu. Les valeurs doivent être comprises entre 0 et 255.",
 	"COLOUR_RGB_WHITE": "blanc",
 	"COLOUR_TOOLTIP": "représente un capteur de couleur",
 	"COMPASS_CALIBRATE_TOOLTIP": "Calibre la boussole. Tourne la boussole très lentement deux fois (pendant environ 40 secondes).",

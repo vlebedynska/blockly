@@ -20,7 +20,7 @@
 	"BUTTON_DO_SHARE": "Paylaş",
 	"BUTTON_EMPTY_LIST": "Boş Liste",
 	"CENTER": "Merkez",
-	"COLOUR_RGB_TOOLTIP": "Kırmızı, yeşil ve mavinin belirtilen miktarıyla bir renk oluşturun.  Tüm değerler 0 ile 100 arasında olmalıdır.",
+	"COLOUR_RGB_TOOLTIP": "Kırmızı, yeşil ve mavinin belirtilen miktarıyla bir renk oluşturun.  Tüm değerler 0 ile 255 arasında olmalıdır.",
 	"COLOUR_TOOLTIP": "Bir renk sensörünü belirtir.",
 	"COMPASS_TOOLTIP": "Yön (Pusula) sensörünü belirtir.",
 	"CONFIGURATION_ERROR_MOTORS_ROTATION_DIRECTION": "Sağ ve sol motorların dönüş yönleri farklı!",

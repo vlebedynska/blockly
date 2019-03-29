@@ -16,7 +16,7 @@
 	"BRICK_WHEEL_DIAMETER": "diámetro de la rueda",
 	"BUTTON_DO_SHARE": "Compartir",
 	"BUTTON_EMPTY_LIST": "Vaciar lista",
-	"COLOUR_RGB_TOOLTIP": "Kırmızı, yeşil ve mavinin belirtilen miktarıyla bir renk oluşturun.  Tüm değerler 0 ile 100 arasında olmalıdır.",
+	"COLOUR_RGB_TOOLTIP": "Kırmızı, yeşil ve mavinin belirtilen miktarıyla bir renk oluşturun.  Tüm değerler 0 ile 255 arasında olmalıdır.",
 	"COLOUR_TOOLTIP": "Representa el sensor de color del EV3",
 	"CONFIGURATION_ERROR_MOTOR_LEFT_MISSING": "¡El motor izquierdo falta en la configuración!",
 	"CONFIGURATION_ERROR_MOTOR_LEFT_UNREGULATED": "¡El motor izquierdo no está regulado!",

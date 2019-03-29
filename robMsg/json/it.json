@@ -19,7 +19,7 @@
 	"BUTTON_DO_SHARE": "Condividi",
 	"BUTTON_EMPTY_LIST": "Lista vuota",
 	"CENTER": "centra",
-	"COLOUR_RGB_TOOLTIP": "Crea un colore con la quantità specificata di rosso, verde e blu. Tutti i valori devono essere compresi tra 0 e 100.",
+	"COLOUR_RGB_TOOLTIP": "Crea un colore con la quantità specificata di rosso, verde e blu. Tutti i valori devono essere compresi tra 0 e 255.",
 	"COLOUR_TOOLTIP": "Rappresenta il sensore di colore del EV3.",
 	"CONFIGURATION_ERROR_MOTOR_LEFT_MISSING": "Motore sinistro manca nella configurazione!",
 	"CONFIGURATION_ERROR_MOTOR_LEFT_UNREGULATED": "Motore sinistro non è regolato!",

@@ -86,7 +86,7 @@ def main():
       blockly_defs = read_json_file(os.path.join(os.curdir, arg_file))
       if os.path.exists(os.path.join(os.curdir, 'robMsg', 'json', filename)):
         roberta_defs = read_json_file(os.path.join(os.curdir, 'robMsg', 'json', filename))
-        target_defs = {key: value for (key, value) in (roberta_defs.items() + blockly_defs.items())}
+        target_defs = {key: value for (key, value) in (blockly_defs.items() + roberta_defs.items())}
         print('Merged Open Roberta keys:  ' + filename);
       else:
         target_defs = blockly_defs

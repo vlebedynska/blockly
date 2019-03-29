@@ -20,7 +20,7 @@
 	"BUTTON_DO_SHARE": "Jaa",
 	"BUTTON_EMPTY_LIST": "Tyhjä",
 	"CENTER": "keski",
-	"COLOUR_RGB_TOOLTIP": "Luo väri, jossa on tietty määrä punaista, vihreää ja sinistä. Kaikkien arvojen tulee olla välillä 0 - 100.",
+	"COLOUR_RGB_TOOLTIP": "Luo väri, jossa on tietty määrä punaista, vihreää ja sinistä. Kaikkien arvojen tulee olla välillä 0 - 255.",
 	"COLOUR_RGB_WHITE": "valkoinen",
 	"COLOUR_TOOLTIP": "Värisensori",
 	"COMPASS_TOOLTIP": "Kompassisensori",

@@ -23,7 +23,7 @@
 	"BUTTON_EMPTY_LIST": "Buida la llista",
 	"CALLIOPEBRICK_TOOLTIP": "Representa Calliope, un ordinador programable de butxaca. També té actuadors i sensors inclosos, per exemple botos, pantalla...",
 	"CENTER": "centrar",
-	"COLOUR_RGB_TOOLTIP": "Crea un color amb quantitats específiques de vermell, verd i blau. Tots els valors han d'estar entre 0 i 100.",
+	"COLOUR_RGB_TOOLTIP": "Crea un color amb quantitats específiques de vermell, verd i blau. Tots els valors han d'estar entre 0 i 255.",
 	"COLOUR_RGB_WHITE": "blanc",
 	"COLOUR_TOOLTIP": "Representa el sensor de color de l'EV3.",
 	"COMPASS_TOOLTIP": "Representa el sensor de brúixola.",
