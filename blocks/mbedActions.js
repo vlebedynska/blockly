@@ -387,7 +387,7 @@ Blockly.Blocks['mbedActions_play_note'] = {
                     if (func) {
                         var config = func.call(blocks[x]);
                         if (config.type === 'buzzer') {
-                            portList.push([ config.name, config.name.toUpperCase() ]);
+                            portList.push([ config.name, config.name ]);
                         }
                     }
                 }
