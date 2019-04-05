@@ -1358,9 +1358,9 @@ Blockly.Blocks['robActions_sendData'] = {
 Blockly.Blocks['robActions_plot_point'] = {
     init : function() {
         this.setColour(Blockly.CAT_ACTION_RGB);
-        var dropDownPorts = getConfigPorts('plotting');
+        var dropDownPorts = getConfigPorts('lcdi2c');
         this.dependConfig = {
-            'type' : 'plotting',
+            'type' : 'lcdi2c',
             'dropDown' : dropDownPorts
         };
         this.appendValueInput('VALUE').appendField(Blockly.Msg.ACTION_PLOT_POINT).appendField("on").appendField(dropDownPorts, 'ACTORPORT').appendField(Blockly.Msg.SENSOR_VALUE).setCheck('Number');
@@ -1375,9 +1375,9 @@ Blockly.Blocks['robActions_plot_point'] = {
 Blockly.Blocks['robActions_plot_clear'] = {
     init : function() {
         this.setColour(Blockly.CAT_ACTION_RGB);
-        var ports = getConfigPorts('plotting');
+        var ports = getConfigPorts('lcdi2c');
         this.dependConfig = {
-            'type' : 'plotting',
+            'type' : 'lcdi2c',
             'dropDown' : ports
         };
         this.appendDummyInput().appendField(Blockly.Msg.ACTION_PLOT_CLEAR).appendField(ports, 'ACTORPORT');

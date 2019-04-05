@@ -370,6 +370,11 @@ confBlocks.lcdi2c.sensebox = {
     pins : function(a) {
         return [ [ 'I2C', 'I2C' ] ];
     },
+    inputs : [['TITLE', 'P'], ['XLABEL', 'X'], 
+        ['YLABEL', 'Y'], ['XSTART', '0'], 
+        ['XEND', '100'], ['YSTART', '0'], 
+        ['YEND', '50'], ['XTICK', '10'], 
+        ['YTICK', '10'] ],
     sensor : false
 };
 
