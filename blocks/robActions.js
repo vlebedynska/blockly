@@ -10,6 +10,29 @@ goog.provide('Blockly.Blocks.robActions');
 goog.require('Blockly.Blocks');
 goog.require('Blockly.Blocks.robConfigDefinitions');
 
+function getConfigPorts(actorName) {
+    var ports = [];
+    var container = Blockly.Workspace.getByContainer("bricklyDiv");
+    if (container) {
+        var blocks = Blockly.Workspace.getByContainer("bricklyDiv").getAllBlocks();
+        for (var x = 0; x < blocks.length; x++) {
+            var func = blocks[x].getConfigDecl;
+            if (func) {
+                var config = func.call(blocks[x]);
+                if (config.type === actorName) {
+                    ports.push([ config.name, config.name ]);
+                }
+            }
+        }
+    }
+
+    if (ports.length === 0) {
+        ports.push([ Blockly.Msg.CONFIGURATION_NO_PORT || Blockly.checkMsgKey('CONFIGURATION_NO_PORT'),
+                (Blockly.Msg.CONFIGURATION_NO_PORT || Blockly.checkMsgKey('CONFIGURATION_NO_PORT')).toUpperCase() ]);
+    }
+    return new Blockly.FieldDropdown(ports);
+};
+
 /**
  * @lends Block
  */
@@ -628,7 +651,7 @@ Blockly.Blocks['robActions_display_text_i2c'] = {
         if (this.workspace.device === 'sensebox') {
             this.appendDummyInput().appendField(Blockly.Msg.ACTION_LCDI2C_SENSEBOX, 'ACTORTITEL').appendField(dropDownPorts, 'ACTORPORT');
         } else {
-            this.appendDummyInput().appendField(Blockly.Msg.ACTION_LCDI2C, 'ACTORTITEL').appendField(dropDownPorts, 'ACTORPORT');            
+            this.appendDummyInput().appendField(Blockly.Msg.ACTION_LCDI2C, 'ACTORTITEL').appendField(dropDownPorts, 'ACTORPORT');
         }
         this.appendValueInput('OUT').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.DISPLAY_SHOW + ' ' + Blockly.Msg.DISPLAY_TEXT);
         this.appendValueInput('COL').setCheck('Number').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.DISPLAY_COL);
@@ -1103,29 +1126,6 @@ Blockly.Blocks['robActions_set_relay'] = {
     }
 };
 
-function getConfigPorts(actorName) {
-    var ports = [];
-    var container = Blockly.Workspace.getByContainer("bricklyDiv");
-    if (container) {
-        var blocks = Blockly.Workspace.getByContainer("bricklyDiv").getAllBlocks();
-        for (var x = 0; x < blocks.length; x++) {
-            var func = blocks[x].getConfigDecl;
-            if (func) {
-                var config = func.call(blocks[x]);
-                if (config.type === actorName) {
-                    ports.push([ config.name, config.name ]);
-                }
-            }
-        }
-    }
-
-    if (ports.length === 0) {
-        ports.push([ Blockly.Msg.CONFIGURATION_NO_PORT || Blockly.checkMsgKey('CONFIGURATION_NO_PORT'),
-                (Blockly.Msg.CONFIGURATION_NO_PORT || Blockly.checkMsgKey('CONFIGURATION_NO_PORT')).toUpperCase() ]);
-    }
-    return new Blockly.FieldDropdown(ports);
-};
-
 Blockly.Blocks['robActions_serial_print'] = {
     /**
      * Prints data to the serial port as human-readable ASCII text. We do not
@@ -1223,7 +1223,8 @@ Blockly.Blocks['robActions_sendData'] = {
         this.setColour(Blockly.CAT_ACTION_RGB);
         this.INCREMENT = 1;
         this.DECREMENT = -1;
-        this.appendDummyInput().appendField(Blockly.Msg.SEND_DATA_TO).appendField(new Blockly.FieldDropdown([ [ Blockly.Msg.SEND_DATA_SENSEMAP, 'SENSEMAP' ], [ Blockly.Msg.ACTION_SDCARD, 'SDCARD' ] ]), 'DESTINATION');
+        this.appendDummyInput().appendField(Blockly.Msg.SEND_DATA_TO).appendField(new Blockly.FieldDropdown([ [ Blockly.Msg.SEND_DATA_SENSEMAP, 'SENSEMAP' ],
+                [ Blockly.Msg.ACTION_SDCARD, 'SDCARD' ] ]), 'DESTINATION');
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setMutatorPlus(new Blockly.MutatorPlus(this));
@@ -1371,7 +1372,6 @@ Blockly.Blocks['robActions_plot_point'] = {
     }
 };
 
-
 Blockly.Blocks['robActions_plot_clear'] = {
     init : function() {
         this.setColour(Blockly.CAT_ACTION_RGB);
@@ -1384,5 +1384,56 @@ Blockly.Blocks['robActions_plot_clear'] = {
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setTooltip(Blockly.Msg.LED_OFF_TOOLTIP);
+    }
+};
+
+Blockly.Blocks['robActions_debug'] = {
+    /**
+     * Debugs data to a system dependent output
+     * 
+     * @constructs robActions_debug
+     * @this.Blockly.Block
+     * @param {String}
+     *            OUT Text to debug
+     * @returns immediately
+     * @memberOf Block
+     */
+    init : function() {
+        this.setColour("#646464");
+        this.appendValueInput('OUT').appendField("debug");
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setTooltip("Debug any value or expression. The output is dependent on the system: simulation -> console; real systems -> write to serial or print");
+    }
+};
+
+Blockly.Blocks['robActions_assert'] = {
+    /**
+     * Asserts data
+     * 
+     * @constructs robActions_assert
+     * @this.Blockly.Block
+     * @param {String}
+     *            OUT Text to debug
+     * @returns immediately
+     * @memberOf Block
+     */
+    init : function() {
+        this.setColour("#646464");
+        this.appendValueInput("OUT").appendField("assert").appendField(new Blockly.FieldTextInput(""), "TEXT").setCheck("Boolean");
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setTooltip("Assert an expression and optional supply a custom label for the assertion.");
+    },
+    onchange : function(e) {
+        if (!this.workspace || Blockly.Block.dragMode_ == 2) {
+            // Block has been deleted or is in move
+            return;
+        }
+        var inputBlock = this.getInputTargetBlock("OUT");
+        if (inputBlock && inputBlock.type !== "logic_compare") {
+            inputBlock.unplug();
+            inputBlock.bumpNeighbours_();
+        }
     }
 };
