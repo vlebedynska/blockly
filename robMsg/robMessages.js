@@ -1281,6 +1281,10 @@ Blockly.Msg.ACTION_SDCARD = 'SD card';
 Blockly.Msg.ACTION_LCDI2C_SENSEBOX = 'OLED Display I²C';
 Blockly.Msg.SWITCH = 'switch';
 Blockly.Msg.SWITCH_LED_MATRIX_TOOLTIP = 'Enables/Disables the LED matrix to use the dual purpose pins.'
+Blockly.Msg.ACTION_EVAL = 'eval';
+Blockly.Msg.ACTION_EVAL_AS = 'as';
+
+
 
 //untranslated:
 Blockly.Msg.ACTION_PLOTTING = 'plot';

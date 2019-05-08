@@ -1175,6 +1175,8 @@
 	"ACTION_LCDI2C_SENSEBOX": "OLED Bildschirm I²C",
 	"SWITCH": "Schalte",
 	"SWITCH_LED_MATRIX_TOOLTIP": "Aktiviert/Deaktiviert die LED Matrix um die doppelt belegten Pins zu nutzen.",
+	"ACTION_EVAL": "werte",
+	"ACTION_EVAL_AS": "als",
 
 	"ACTION_PLOTTING" : "plot",
     "ACTION_PLOT_POINT" : "plot a point",
