@@ -1283,8 +1283,10 @@ Blockly.Msg.SWITCH = 'switch';
 Blockly.Msg.SWITCH_LED_MATRIX_TOOLTIP = 'Enables/Disables the LED matrix to use the dual purpose pins.'
 Blockly.Msg.ACTION_EVAL = 'eval';
 Blockly.Msg.ACTION_EVAL_AS = 'as';
-
-
+Blockly.Msg.CB_LEFT = 'Calli:bot left';
+Blockly.Msg.CB_RIGHT = 'Calli:bot right';
+Blockly.Msg.CB_ALL = 'Calli:bot all';
+Blockly.Msg.PORT_INTERNAL = 'Port internal';
 
 //untranslated:
 Blockly.Msg.ACTION_PLOTTING = 'plot';

@@ -1177,6 +1177,10 @@
 	"SWITCH_LED_MATRIX_TOOLTIP": "Aktiviert/Deaktiviert die LED Matrix um die doppelt belegten Pins zu nutzen.",
 	"ACTION_EVAL": "werte",
 	"ACTION_EVAL_AS": "als",
+	"CB_LEFT": "Calli:bot links",
+    "CB_RIGHT": "Calli:bot rechts",
+    "CB_ALL": "Calli:bot alle",
+    "PORT_INTERNAL": "Port intern",
 
 	"ACTION_PLOTTING" : "plot",
     "ACTION_PLOT_POINT" : "plot a point",

@@ -1130,6 +1130,7 @@ Blockly.Blocks['robActions_brickLight_on'] = {
 		var dropdownLightState;
 		if (this.workspace.device === 'botnroll'
 				|| this.workspace.device === 'arduino'
+				|| this.workspace.device === 'calliope'
 				|| this.workspace.device === 'sensebox') {
 			dropdownLightState = new Blockly.FieldDropdown([
 					[ Blockly.Msg.BRICKLIGHT_ON, 'ON' ],
@@ -1144,12 +1145,21 @@ Blockly.Blocks['robActions_brickLight_on'] = {
 					'SWITCH_COLOR');
 		}
 		if (this.workspace.device === 'arduino'
+				|| this.workspace.device === 'calliope'
 				|| this.workspace.device === 'sensebox') {
-			var dropDownPorts = getConfigPorts('led');
-			this.dependConfig = {
-				'type' : 'led',
-				'dropDown' : dropDownPorts
-			};
+			var dropDownPorts;
+			if (this.workspace.device === 'calliope') {
+				dropDownPorts = new Blockly.FieldDropdown([
+						[ Blockly.Msg.CB_LEFT, '1' ],
+						[ Blockly.Msg.CB_RIGHT, '2' ] ]);
+				// maybe both together? [ Blockly.Msg.CB_BOTH, '3' ]
+			} else {
+				dropDownPorts = getConfigPorts('led');
+				this.dependConfig = {
+					'type' : 'led',
+					'dropDown' : dropDownPorts
+				};
+			}
 			this.appendDummyInput().appendField(Blockly.Msg.LED).setAlign(
 					Blockly.ALIGN_RIGHT)
 					.appendField(dropDownPorts, 'ACTORPORT').appendField(
@@ -1796,9 +1806,11 @@ Blockly.Blocks['robActions_eval_expr'] = {
 	init : function() {
 		this.setColour("#646464");
 		this.type_ = Blockly.TYPE_DROPDOWN(this.workspace.device);
-		this.appendDummyInput().appendField(Blockly.Msg.ACTION_EVAL).appendField(
-				new Blockly.FieldTextInput('eg a + b', this.validate), 'EXPRESSION')
-				.appendField(Blockly.Msg.ACTION_EVAL_AS).appendField(this.type_, 'TYPE');
+		this.appendDummyInput().appendField(Blockly.Msg.ACTION_EVAL)
+				.appendField(
+						new Blockly.FieldTextInput('eg a + b', this.validate),
+						'EXPRESSION').appendField(Blockly.Msg.ACTION_EVAL_AS)
+				.appendField(this.type_, 'TYPE');
 		this.setOutput(true, "Number");
 		this.setTooltip("Evals any expression and return the result.");
 	},
