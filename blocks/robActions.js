@@ -1151,8 +1151,8 @@ Blockly.Blocks['robActions_brickLight_on'] = {
 			if (this.workspace.device === 'calliope') {
 				dropDownPorts = new Blockly.FieldDropdown([
 						[ Blockly.Msg.CB_LEFT, '1' ],
-						[ Blockly.Msg.CB_RIGHT, '2' ] ]);
-				// maybe both together? [ Blockly.Msg.CB_BOTH, '3' ]
+						[ Blockly.Msg.CB_RIGHT, '2' ],
+						[ Blockly.Msg.CB_BOTH, '3' ] ]);
 			} else {
 				dropDownPorts = getConfigPorts('led');
 				this.dependConfig = {
@@ -1160,7 +1160,7 @@ Blockly.Blocks['robActions_brickLight_on'] = {
 					'dropDown' : dropDownPorts
 				};
 			}
-			this.appendDummyInput().appendField(Blockly.Msg.LED).setAlign(
+			this.appendDummyInput().appendField(Blockly.Msg.LED_ON).setAlign(
 					Blockly.ALIGN_RIGHT)
 					.appendField(dropDownPorts, 'ACTORPORT').appendField(
 							dropdownLightState, 'SWITCH_BLINK');

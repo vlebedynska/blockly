@@ -29,8 +29,8 @@ Blockly.Blocks['mbedActions_motor_on'] = {
 
 	init : function() {
 		var ports = [ [ 'Port A', 'A' ], [ 'Port B', 'B' ],
-				[ 'Port A + B', 'AB' ], [ Blockly.Msg.CB_LEFT, 'LEFT' ],
-				[ Blockly.Msg.CB_RIGHT, 'RIGHT' ] ];
+				[ 'Port A + B', 'AB' ], [ Blockly.Msg.CB_LEFT, '0' ],
+				[ Blockly.Msg.CB_RIGHT, '2' ], [ Blockly.Msg.CB_BOTH, '3' ]];
 		this.setColour(Blockly.CAT_ACTION_RGB);
 		var motorPort = new Blockly.FieldDropdown(ports);
 		this.appendValueInput('POWER').appendField(Blockly.Msg.MOTOR)
@@ -156,8 +156,8 @@ Blockly.Blocks['mbedActions_motor_stop'] = {
 	init : function() {
 		this.setColour(Blockly.CAT_ACTION_RGB);
 		var ports = [ [ 'Port A', 'A' ], [ 'Port B', 'B' ],
-				[ 'Port A + B', 'AB' ], [ Blockly.Msg.CB_LEFT, 'LEFT' ],
-				[ Blockly.Msg.CB_RIGHT, 'RIGHT' ] ];
+				[ 'Port A + B', 'AB' ], [ Blockly.Msg.CB_LEFT, '0' ],
+				[ Blockly.Msg.CB_RIGHT, '2' ], [ Blockly.Msg.CB_BOTH, '3' ] ];
 		var motorPort = new Blockly.FieldDropdown(ports);
 		this.appendDummyInput().appendField(Blockly.Msg.MOTOR_STOP)
 				.appendField(Blockly.Msg.MOTOR).appendField(motorPort,
@@ -563,12 +563,12 @@ Blockly.Blocks['mbedActions_leds_on'] = {
 		var ports = new Blockly.FieldDropdown([
 				[ Blockly.Msg.PORT_INTERNAL, '0' ],
 				[ Blockly.Msg.CB_LEFT + " " + Blockly.Msg.SLOT_FRONT, '1' ],
-				[ Blockly.Msg.CB_RIGHT + " " + Blockly.Msg.SLOT_FRONT, '2' ],
-				[ Blockly.Msg.CB_LEFT + " " + Blockly.Msg.SLOT_REAR, '3' ],
-				[ Blockly.Msg.CB_RIGHT + " " + Blockly.Msg.SLOT_REAR, '4' ],
+				[ Blockly.Msg.CB_RIGHT + " " + Blockly.Msg.SLOT_FRONT, '4' ],
+				[ Blockly.Msg.CB_LEFT + " " + Blockly.Msg.SLOT_REAR, '2' ],
+				[ Blockly.Msg.CB_RIGHT + " " + Blockly.Msg.SLOT_REAR, '3' ],
 				[ Blockly.Msg.CB_ALL, '5' ] ]);
 		this.appendValueInput('COLOR').appendField(Blockly.Msg.LED_ON)
-				.appendField(ports, 'PORTS').appendField(
+				.appendField(ports, 'ACTORPORT').appendField(
 						Blockly.Msg.BRICKLIGHT_COLOR).setCheck('Colour');
 		this.setPreviousStatement(true);
 		this.setNextStatement(true);
@@ -586,13 +586,19 @@ Blockly.Blocks['mbedActions_leds_off'] = {
 	 * @memberof Block
 	 */
 	init : function() {
-		// this.setHelpUrl(Blockly.Msg.BRICKLIGHT_OFF_HELP);
 		this.setColour(Blockly.CAT_ACTION_RGB);
-		this.appendDummyInput().appendField(Blockly.Msg.LED_OFF);
+		var ports = new Blockly.FieldDropdown([
+				[ Blockly.Msg.PORT_INTERNAL, '0' ],
+				[ Blockly.Msg.CB_LEFT + " " + Blockly.Msg.SLOT_FRONT, '1' ],
+				[ Blockly.Msg.CB_RIGHT + " " + Blockly.Msg.SLOT_FRONT, '4' ],
+				[ Blockly.Msg.CB_LEFT + " " + Blockly.Msg.SLOT_REAR, '2' ],
+				[ Blockly.Msg.CB_RIGHT + " " + Blockly.Msg.SLOT_REAR, '3' ],
+				[ Blockly.Msg.CB_ALL, '5' ] ]);
+		this.appendDummyInput().appendField(Blockly.Msg.LED_OFF).appendField(
+				ports, 'ACTORPORT');
 		this.setPreviousStatement(true);
 		this.setNextStatement(true);
 		this.setTooltip(Blockly.Msg.LED_OFF_TOOLTIP);
-		// this.setHelp(new Blockly.Help(Blockly.Msg.BRICKLIGHT_OFF_HELP));
 	}
 };
 

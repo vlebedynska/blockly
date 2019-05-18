@@ -85,6 +85,7 @@ Blockly.Msg.BUTTON_EMPTY_LIST = "Empty list";  // untranslated
 Blockly.Msg.BUZZER_TOOLTIP = "Represents a buzzer";  // untranslated
 Blockly.Msg.CALLIOPEBRICK_TOOLTIP = "Represents Calliope, a pocket-sized codeable computer. There are also inbuilt actors and sensors available, e.g. buttons, display ...";  // untranslated
 Blockly.Msg.CB_ALL = "Calli:bot all";  // untranslated
+Blockly.Msg.CB_BOTH = "Calli:bot both";  // untranslated
 Blockly.Msg.CB_LEFT = "Calli:bot left";  // untranslated
 Blockly.Msg.CB_RIGHT = "Calli:bot right";  // untranslated
 Blockly.Msg.CENTER = "center";  // untranslated

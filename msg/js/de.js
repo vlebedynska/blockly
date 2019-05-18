@@ -85,6 +85,7 @@ Blockly.Msg.BUTTON_EMPTY_LIST = "Liste leeren";
 Blockly.Msg.BUZZER_TOOLTIP = "Block für den Summer";
 Blockly.Msg.CALLIOPEBRICK_TOOLTIP = "Block für Calliope, einen Mini-Computer. Es gibt auch weitere eingebaute Aktoren und Sensoren, wie z. B. das Display, die Tasten ...";
 Blockly.Msg.CB_ALL = "Calli:bot alle";
+Blockly.Msg.CB_BOTH = "Calli:bot beide";
 Blockly.Msg.CB_LEFT = "Calli:bot links";
 Blockly.Msg.CB_RIGHT = "Calli:bot rechts";
 Blockly.Msg.CENTER = "mitte";

@@ -1372,7 +1372,7 @@ sensorsAll.calliope = [ sensors.key.calliope, sensors.pintouch.calliope,
 		sensors.sound.calliope, sensors.timer.calliope,
 		sensors.temperature.calliope, sensors.light.calliope,
 		sensors.pin.calliope, sensors.gyro.calliope,
-		sensors.accelerometer.calliope, sensors.humidity.calliope ];
+		sensors.accelerometer.calliope, sensors.humidity.calliope, sensors.ultrasonic.calliope, sensors.infrared.calliope ];
 sensorsAll.microbit = [ sensors.key.microbit, sensors.pintouch.microbit,
 		sensors.gesture.microbit, sensors.compass.microbit,
 		sensors.timer.microbit, sensors.temperature.microbit,

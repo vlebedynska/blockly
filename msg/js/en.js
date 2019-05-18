@@ -85,6 +85,7 @@ Blockly.Msg.BUTTON_EMPTY_LIST = "Empty list";
 Blockly.Msg.BUZZER_TOOLTIP = "Represents a buzzer";
 Blockly.Msg.CALLIOPEBRICK_TOOLTIP = "Represents Calliope, a pocket-sized codeable computer. There are also inbuilt actors and sensors available, e.g. buttons, display ...";
 Blockly.Msg.CB_ALL = "Calli:bot all";
+Blockly.Msg.CB_BOTH = "Calli:bot both";
 Blockly.Msg.CB_LEFT = "Calli:bot left";
 Blockly.Msg.CB_RIGHT = "Calli:bot right";
 Blockly.Msg.CENTER = "center";

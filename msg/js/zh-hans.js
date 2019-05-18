@@ -85,6 +85,7 @@ Blockly.Msg.BUTTON_EMPTY_LIST = "空列表";
 Blockly.Msg.BUZZER_TOOLTIP = "Represents a buzzer";  // untranslated
 Blockly.Msg.CALLIOPEBRICK_TOOLTIP = "表示Calliope, 一个口袋大小的可编码计算机。还有内置的执行器和传感器可用, 如按钮, 显示 ...";
 Blockly.Msg.CB_ALL = "Calli:bot all";  // untranslated
+Blockly.Msg.CB_BOTH = "Calli:bot both";  // untranslated
 Blockly.Msg.CB_LEFT = "Calli:bot left";  // untranslated
 Blockly.Msg.CB_RIGHT = "Calli:bot right";  // untranslated
 Blockly.Msg.CENTER = "中心";

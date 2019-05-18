@@ -85,6 +85,7 @@ Blockly.Msg.BUTTON_EMPTY_LIST = "Vaciar lista";
 Blockly.Msg.BUZZER_TOOLTIP = "Represents a buzzer";  // untranslated
 Blockly.Msg.CALLIOPEBRICK_TOOLTIP = "Representa Caliope, un ordenador de bolsilloprogramable. También tiene actuadores y sensores incluidos, por ejemplo botones, pantalla ...";
 Blockly.Msg.CB_ALL = "Calli:bot all";  // untranslated
+Blockly.Msg.CB_BOTH = "Calli:bot both";  // untranslated
 Blockly.Msg.CB_LEFT = "Calli:bot left";  // untranslated
 Blockly.Msg.CB_RIGHT = "Calli:bot right";  // untranslated
 Blockly.Msg.CENTER = "centrar";

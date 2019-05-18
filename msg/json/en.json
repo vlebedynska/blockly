@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2019-05-12 07:50:31.296347",
+		"lastupdated": "2019-05-16 20:14:27.320029",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -1512,6 +1512,7 @@
 	"ACTION_EVAL_AS": "as",
 	"CB_LEFT": "Calli:bot left",
 	"CB_RIGHT": "Calli:bot right",
+	"CB_BOTH": "Calli:bot both",
 	"CB_ALL": "Calli:bot all",
 	"PORT_INTERNAL": "Port internal",
 	"ACTION_PLOTTING": "plot",

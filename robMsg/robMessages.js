@@ -1285,6 +1285,7 @@ Blockly.Msg.ACTION_EVAL = 'eval';
 Blockly.Msg.ACTION_EVAL_AS = 'as';
 Blockly.Msg.CB_LEFT = 'Calli:bot left';
 Blockly.Msg.CB_RIGHT = 'Calli:bot right';
+Blockly.Msg.CB_BOTH = 'Calli:bot both';
 Blockly.Msg.CB_ALL = 'Calli:bot all';
 Blockly.Msg.PORT_INTERNAL = 'Port internal';
 
