@@ -30,7 +30,7 @@ Blockly.Blocks['mbedActions_motor_on'] = {
 	init : function() {
 		var ports = [ [ 'Port A', 'A' ], [ 'Port B', 'B' ],
 				[ 'Port A + B', 'AB' ], [ Blockly.Msg.CB_LEFT, '0' ],
-				[ Blockly.Msg.CB_RIGHT, '2' ], [ Blockly.Msg.CB_BOTH, '3' ]];
+				[ Blockly.Msg.CB_RIGHT, '2' ], [ Blockly.Msg.CB_BOTH, '3' ] ];
 		this.setColour(Blockly.CAT_ACTION_RGB);
 		var motorPort = new Blockly.FieldDropdown(ports);
 		this.appendValueInput('POWER').appendField(Blockly.Msg.MOTOR)
@@ -39,9 +39,18 @@ Blockly.Blocks['mbedActions_motor_on'] = {
 						Blockly.Msg.MOTOR_SPEED).setCheck('Number');
 		this.setPreviousStatement(true);
 		this.setNextStatement(true);
-		this.setTooltip(Blockly.Msg['MOTOR_ON_TOOLTIP_'
-				+ this.workspace.device.toUpperCase()]
-				|| Blockly.Msg.MOTOR_ON_TOOLTIP);
+		var thisBlock = this;
+		this.setTooltip(function() {
+			if (isNaN(parseInt(thisBlock.getFieldValue('MOTORPORT')))) {
+				return Blockly.Msg['MOTOR_ON_TOOLTIP_'
+						+ thisBlock.workspace.device.toUpperCase()]
+						|| Blockly.Msg.MOTOR_ON_TOOLTIP;
+			} else {
+				return Blockly.Msg['MOTOR_ON_TOOLTIP_'
+						+ thisBlock.workspace.device.toUpperCase() + "_CB"]
+						|| Blockly.Msg.MOTOR_ON_TOOLTIP;
+			}
+		});
 	}
 };
 
@@ -71,9 +80,18 @@ Blockly.Blocks['mbedActions_motors_on'] = {
 				.appendField(Blockly.Msg.MOTOR_SPEED).setCheck('Number');
 		this.setPreviousStatement(true);
 		this.setNextStatement(true);
-		this.setTooltip(Blockly.Msg['MOTORS_ON_TOOLTIP_'
-				+ this.workspace.device.toUpperCase()]
-				|| Blockly.Msg.MOTOR_ON_TOOLTIP);
+		var thisBlock = this;
+		this.setTooltip(function() {
+			if (thisBlock.getFieldValue('A') == "A") {
+				return Blockly.Msg['MOTORS_ON_TOOLTIP_'
+						+ thisBlock.workspace.device.toUpperCase()]
+						|| Blockly.Msg.MOTOR_ON_TOOLTIP;
+			} else {
+				return Blockly.Msg['MOTORS_ON_TOOLTIP_'
+						+ thisBlock.workspace.device.toUpperCase() + "_CB"]
+						|| Blockly.Msg.MOTOR_ON_TOOLTIP;
+			}
+		});
 	},
 	onchange : function() {
 		if (!this.workspace || Blockly.Block.dragMode_ == 2) {
@@ -573,6 +591,14 @@ Blockly.Blocks['mbedActions_leds_on'] = {
 		this.setPreviousStatement(true);
 		this.setNextStatement(true);
 		this.setTooltip(Blockly.Msg.LED_ON_TOOLTIP);
+		var thisBlock = this;
+		this.setTooltip(function() {
+			if (parseInt(thisBlock.getFieldValue('ACTORPORT')) > 0) {
+				return Blockly.Msg.LED_ON_TOOLTIP_CB;
+			} else {
+				return Blockly.Msg.LED_ON_TOOLTIP;
+			}
+		});
 	}
 };
 

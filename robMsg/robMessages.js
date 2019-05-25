@@ -53,6 +53,8 @@ goog.require('Blockly.Msg');
 Blockly.Msg.MOTOR_ON_TOOLTIP = 'Turns motor on with specific power.';
 Blockly.Msg.MOTOR_ON_TOOLTIP_CALLIOPE = 'Turns motor A, B or A+B on with a specific power.';
 Blockly.Msg.MOTORS_ON_TOOLTIP_CALLIOPE = 'Turns motor A and B on with a specific power.';
+Blockly.Msg.MOTOR_ON_TOOLTIP_CALLIOPE_CB = 'Turns left or right motor on with a specific power. Power can be positiv or negativ for reverse direction.';
+Blockly.Msg.MOTORS_ON_TOOLTIP_CALLIOPE_CB = 'Turns both motors on with a specific power. Power can be positiv or negativ for reverse direction.';
 Blockly.Msg.SINGLE_MOTOR_ON_TOOLTIP_CALLIOPE = 'Turns the single motor on with a specific power. Power can be positiv or negativ for reverse direction.';
 Blockly.Msg.MOTOR_ON_FOR_TOOLTIP = 'Turns motor on and stops motor after execution of rotations/degrees.';
 Blockly.Msg.MOTOR_ON_FOR_TOOLTIP_MS = 'Turns motor on and stops motor after execution after time has passed.';
@@ -655,6 +657,7 @@ Blockly.Msg.CALLIOPEBRICK_TOOLTIP = 'Represents Calliope, a pocket-sized codeabl
 Blockly.Msg.MICROBITBRICK_TOOLTIP = 'Represents micro:bit, a pocket-sized codeable computer. There are also inbuilt actors and sensors available, e.g. buttons, display ...';
 Blockly.Msg.PLAY_NOTE_TOOLTIP = 'Plays a music note';
 Blockly.Msg.LED_ON_TOOLTIP = 'Turns the LED on and changes the color.';
+Blockly.Msg.LED_ON_TOOLTIP_CB = 'Turns the LED on and changes the color. Attention: calli:Bot only supports 7 different colors, the nearest will be chosen.';
 Blockly.Msg.RGB_LED_TOOLTIP = 'Turns the LED on or off and changes the color.';
 Blockly.Msg.LED_ON_WHITE_TOOLTIP = 'Turns the LED on. Watch out, it"s very bright!';
 Blockly.Msg.SET_RELAY_TOOLTIP = 'Turns the relay on or off';
