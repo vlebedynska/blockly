@@ -1186,6 +1186,12 @@
     "CB_BOTH": "Calli:bot beide",
     "PORT_INTERNAL": "Port intern",
 
+    "CONFIGURATION_ERROR_WLAN_CREDENTIALS_MISSING" : "WLAN Zugangsdaten fehlen, bitte unter dem »Robot -> WLAN Zugangsdaten« ... Menupunkt eingeben!",
+	"MENU_WLAN_CREDENTIALS" : "WLAN Zugangsdaten",
+	"POPUP_WLAN_SSID" : "SSID",
+	"MENU_ROBOT_WLAN" : "WLAN Zugangsdaten ...",
+	"POPUP_WLAN_SECURITY_INFORMATION" : "In diesem Formular kannst du die Zugangsdaten für die WLAN-Verbindung deines Systems eingeben. Die Daten werden nicht im Open Roberta Lab oder im Browser gespeichert; beim nächsten Besuch dieser Seite musst du sie neu eingeben. Bitte gehe äußerst vorsichtig mit diesen Daten um, damit dein WLAN sicher bleibt.",
+   
 	"ACTION_PLOTTING" : "plot",
     "ACTION_PLOT_POINT" : "plot a point",
     "ACTION_PLOT_POINT_TOOLTIP": "plot a point with specified value (Y axis) at the specified tickmark (X axis)",
