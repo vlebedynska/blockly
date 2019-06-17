@@ -574,7 +574,6 @@ confBlocks.analogin.arduino = {
 confBlocks.wireless = {}
 confBlocks.wireless.sensebox = {
     title : 'WIRELESS',
-    inputs : [ [ 'SSID', '' ], [ 'PASSWORD', '' ] ],
     dropdowns : [ [ 'CONNECTOR', [ [ 'XBEE1', 'XBEE1' ] ] ] ],
     sensor : false
 };
