@@ -1292,6 +1292,12 @@ Blockly.Msg.CB_BOTH = 'Calli:bot both';
 Blockly.Msg.CB_ALL = 'Calli:bot all';
 Blockly.Msg.PORT_INTERNAL = 'Port internal';
 
+Blockly.Msg.CONFIGURATION_ERROR_WLAN_CREDENTIALS_MISSING = 'Missing WLAN credentials, please enter them in robot -> WLAN credentials ...';
+Blockly.Msg.MENU_WLAN_CREDENTIALS = 'WLAN credentials';
+Blockly.Msg.POPUP_WLAN_SSID = 'SSID';
+Blockly.Msg.MENU_ROBOT_WLAN = 'WLAN credentials ...';
+Blockly.Msg.POPUP_WLAN_SECURITY_INFORMATION = 'Please note that the data provided in this dialog window is private and will not be stored in the OpenRoberta lab; it will only be used for program creation and during the compilation process. Make sure that for each new session you enter these credentials again. Please keep in mind that exposing this information to public may pose security risks.';
+
 //untranslated:
 Blockly.Msg.ACTION_PLOTTING = 'plot';
 Blockly.Msg.ACTION_PLOT_POINT = 'plot a point';
@@ -1307,3 +1313,5 @@ Blockly.Msg.YEND = 'end of Y axis';
 Blockly.Msg.XTICK = 'distance between X ticks';
 Blockly.Msg.YTICK = 'distance between Y ticks';
 Blockly.Msg.ACTION_PLOT_TICKMARK = 'at tickmark';
+
+
