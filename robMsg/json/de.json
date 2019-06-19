@@ -1186,7 +1186,7 @@
     "CB_BOTH": "Calli:bot beide",
     "PORT_INTERNAL": "Port intern",
 
-    "CONFIGURATION_ERROR_WLAN_CREDENTIALS_MISSING" : "WLAN Zugangsdaten fehlen, bitte unter dem robot -> WLAN credentials ... Menupunkt eingeben",
+    "CONFIGURATION_ERROR_WLAN_CREDENTIALS_MISSING" : "WLAN Zugangsdaten fehlen, bitte unter dem »Robot -> WLAN Zugangsdaten« ... Menupunkt eingeben!",
 	"MENU_WLAN_CREDENTIALS" : "WLAN Zugangsdaten",
 	"POPUP_WLAN_SSID" : "SSID",
 	"MENU_ROBOT_WLAN" : "WLAN Zugangsdaten ...",

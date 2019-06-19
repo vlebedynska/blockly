@@ -1292,7 +1292,7 @@ Blockly.Msg.CB_BOTH = 'Calli:bot both';
 Blockly.Msg.CB_ALL = 'Calli:bot all';
 Blockly.Msg.PORT_INTERNAL = 'Port internal';
 
-Blockly.Msg.CONFIGURATION_ERROR_WLAN_CREDENTIALS_MISSING = 'Missing WLAN credentials, please enter them in robot -> WLAN credentials ...';
+Blockly.Msg.CONFIGURATION_ERROR_WLAN_CREDENTIALS_MISSING = 'Missing WLAN credentials, please enter them in robot -> WLAN credentials ... !';
 Blockly.Msg.MENU_WLAN_CREDENTIALS = 'WLAN credentials';
 Blockly.Msg.POPUP_WLAN_SSID = 'SSID';
 Blockly.Msg.MENU_ROBOT_WLAN = 'WLAN credentials ...';
