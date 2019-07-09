@@ -349,7 +349,7 @@ Blockly.Blocks['robControls_wait'] = {
             if (x == 1) {
                 this.appendStatementInput('DO0').appendField(Blockly.Msg.CONTROLS_REPEAT_INPUT_DO);
             }
-            this.appendValueInput('WAIT' + x).appendField(Blockly.Msg.CONTROLS_WAIT_OR).setCheck('Boolean');
+            this.appendValueInput('WAIT' + x).appendField(Blockly.Msg.WAIT_OR).setCheck('Boolean');
             this.appendStatementInput('DO' + x).appendField(Blockly.Msg.CONTROLS_REPEAT_INPUT_DO);
         }
         if (this.waitCount_ >= 1) {
