@@ -487,7 +487,7 @@ Blockly.Msg.ORA_COMPILERWORKFLOW_ERROR_CONFIGURATION_NOT_FOUND = 'The robot conf
 Blockly.Msg.ORA_COMPILERWORKFLOW_ERROR_PROGRAM_TRANSFORM_FAILED = 'The program could not be transformed into the robots programming language.';
 Blockly.Msg.ORA_COMPILERWORKFLOW_ERROR_CONFIGURATION_TRANSFORM_FAILED = 'The robot configuration could not be transformed into the robots programming language.';
 Blockly.Msg.ORA_COMPILERWORKFLOW_ERROR_PROGRAM_STORE_FAILED = 'The program could not be saved because of an internal error.';
-Blockly.Msg.ORA_COMPILERWORKFLOW_ERROR_PROGRAM_COMPILE_FAILED = 'Please check the error messages in your progamming blocks and the configuration! Your program has errors so it cannot be compiled.';
+Blockly.Msg.ORA_COMPILERWORKFLOW_ERROR_PROGRAM_COMPILE_FAILED = 'Your program has errors so it cannot be compiled. The compiler messages are: {MESSAGE}';
 Blockly.Msg.ORA_COMPILERWORKFLOW_ERROR_PROGRAM_GENERATION_FAILED = 'The program could not be generated. Pin {PIN} is incorrect in block {BLOCK}';
 Blockly.Msg.ORA_ROBOT_NOT_WAITING = 'The robot does not wait for a run command.';
 Blockly.Msg.ORA_ROBOT_PUSH_RUN = 'Robot waited and now the jar is pushed to the robot';
@@ -1314,4 +1314,5 @@ Blockly.Msg.XTICK = 'distance between X ticks';
 Blockly.Msg.YTICK = 'distance between Y ticks';
 Blockly.Msg.ACTION_PLOT_TICKMARK = 'at tickmark';
 
-
+Blockly.Msg.INIT_FAIL_MULTIPLE_FRONTENDS_ONE_HTTPSESSION = 'You are trying to connect to the openroberta-lab multiple times, e.g. by opening multiple tabs. This is not supported at the moment. Please close this view.';
+Blockly.Msg.INIT_FAIL_HTTPSESSION_EXPECTED_BUT_NOT_FOUND = 'The connection to the openroberta-lab was closed unexpectedly. This case is rare and may happen, if the openroberta-lab-server is restarted. Please start a new connection to the openroberta-lab, e.g. by closing and starting the browser or by hitting the »reload«-button.';
