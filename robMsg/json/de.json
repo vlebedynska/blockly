@@ -104,12 +104,13 @@
 	"GET": "gib",
 	"RETURN": "gib zurück",
 	"GETSAMPLE_TOOLTIP": "Gibt den aktuellen Wert des ausgewählten Sensors zurück.",
-	"GYRO_GETMODE_TOOLTIP": "Gibt den Modus des Kreiselensors zurück.",
+	"GYRO_GETMODE_TOOLTIP": "Gibt den Modus des Kreiselsensors zurück.",
 	"GYRO_GETSAMPLE_TOOLTIP": "Gibt den aktuellen Wert des Kreiselensors zurück.",
-	"SENSOR_GYRO_GETSAMPLE_TOOLTIP_WEDO": "Ist der Kreiselsensor in der angegebenen Weise geneigt?",
+	"SENSOR_GYRO_TILTED_GETSAMPLE_TOOLTIP_WEDO": "Ist der Neigungssensor in der angegebenen Weise geneigt?",
 	"GYRO_RESET_TOOLTIP": "Setzt den Kreiselensor zurück.",
 	"GYRO_SETMODE_TOOLTIP": "Setzt den Modus des Kreiselensors.",
 	"GYRO_TOOLTIP": "Block für den Kreiselsensor.",
+	"GYRO_TOOLTIP_WEDO": "Block für den Neigungssensor.",
 	"FLAME_TOOLTIP": "Block für den Flammensensor.",
 	"IFELSE_TOOLTIP": "Prüft die Bedingung in wenn. Falls die Bedingung wahr ist, führt die dann-Aktion aus, andernfalls führt die sonst-Aktion aus.",
 	"IF_TOOLTIP": "Prüft die Bedingung in wenn. Falls die Bedingung wahr ist, führt die dann-Aktion aus.",
@@ -420,6 +421,7 @@
 	"SENSOR_GET_MODE": "gib Modus",
 	"SENSOR_GET_SAMPLE": "gib Wert",
 	"SENSOR_GYRO": "Kreiselsensor",
+	"SENSOR_GYRO_WEDO": "Neigungssensor",
 	"SENSOR_FLAME": "Flammensensor",
 	"SENSOR_INFRARED": "Infrarotsensor",
 	"SENSOR_IS_PRESSED": "gedrückt?",
@@ -1208,5 +1210,8 @@
     "YTICK" : "Y-Linienabstand",
     "ACTION_PLOT_TICKMARK" : "at tickmark",
     "INIT_FAIL_MULTIPLE_FRONTENDS_ONE_HTTPSESSION" : "Du versuchst dich mehrfach mit dem openroberta-lab zu verbinden, z.B. über mehrere Tabs. Das unterstützen wir zur Zeit nicht. Bitte schließe diese Ansicht.",
-    "INIT_FAIL_HTTPSESSION_EXPECTED_BUT_NOT_FOUND" : "Die Verbindung zum openroberta-lab wurde unerwartet beendet. Dies ist sehr selten und kann passieren, wenn der openroberta-lab-Server neu gestartet wird. Bitte verbinde dich komplett neu mit dem openroberta-lab, z.B. durch Beenden und Neustarten des Browser oder über den »reload«-Button."
+    "INIT_FAIL_HTTPSESSION_EXPECTED_BUT_NOT_FOUND" : "Die Verbindung zum openroberta-lab wurde unerwartet beendet. Dies ist sehr selten und kann passieren, wenn der openroberta-lab-Server neu gestartet wird. Bitte verbinde dich komplett neu mit dem openroberta-lab, z.B. durch Beenden und Neustarten des Browser oder über den »reload«-Button.",
+    "PROGRAM_ERROR_EXPRBLOCK_TYPECHECK" : "Dieser Ausdruck ist nicht gültig. Fehler beim Typecheck.",
+    "PROGRAM_ERROR_EXPRBLOCK_PARSE" : "Dieser Ausdruck ist falsch aufgebaut. Syntaxfehler."
+
 }
