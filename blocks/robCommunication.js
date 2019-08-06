@@ -174,6 +174,7 @@ Blockly.Blocks['robCommunication_waitForConnection'] = {
         this.setColour(Blockly.CAT_COMMUNICATION_RGB);
         this.appendDummyInput('').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.CONNECTION_WAIT_FOR_CONNECTION);
         this.setOutput(true, 'Connection');
+        this.setBlocking(true);
         this.setTooltip(Blockly.Msg.CONNECTION_WAIT_TOOLTIP);
     }
 };

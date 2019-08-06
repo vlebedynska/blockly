@@ -1322,3 +1322,4 @@ Blockly.Msg.INIT_FAIL_HTTPSESSION_EXPECTED_BUT_NOT_FOUND = 'The connection to th
 
 Blockly.Msg.PROGRAM_ERROR_EXPRBLOCK_TYPECHECK = 'This expression is invalid. The type check failed.';
 Blockly.Msg.PROGRAM_ERROR_EXPRBLOCK_PARSE = 'This expression is syntactically incorrect.';
+Blockly.Msg.ICON_BLOCKING_TOOLTIP = 'Blocking block! This blocks needs some time to be executed, so other"s have to wait until it gives back the control to the caller function.'

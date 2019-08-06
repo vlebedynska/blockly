@@ -317,6 +317,7 @@ Blockly.Blocks['robControls_wait'] = {
         this.setNextStatement(true);
         this.waitCount_ = 0;
         this.setMutatorPlus(new Blockly.MutatorPlus(this));
+        this.setBlocking(true);
         this.setTooltip(Blockly.Msg.WAIT_TOOLTIP);
     },
     /**
@@ -421,6 +422,7 @@ Blockly.Blocks['robControls_wait_time'] = {
         this.appendValueInput('WAIT').appendField(Blockly.Msg.WAIT).setCheck('Number');
         this.setPreviousStatement(true);
         this.setNextStatement(true);
+        this.setBlocking(true);
         this.setTooltip(Blockly.Msg.WAIT_TIME_TOOLTIP);
     }
 };
@@ -445,6 +447,7 @@ Blockly.Blocks['robControls_wait_for'] = {
         this.waitCount_ = 0;
         //this.setHelp(new Blockly.Help(Blockly.Msg.WAIT_FOR_HELP));
         this.setMutatorPlus(new Blockly.MutatorPlus(this));
+        this.setBlocking(true);
         this.setTooltip(Blockly.Msg.WAIT_FOR_TOOLTIP);
     },
     /**

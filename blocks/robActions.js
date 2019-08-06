@@ -277,6 +277,7 @@ Blockly.Blocks['robActions_motor_on_for'] = {
 
         }
         this.setPreviousStatement(true);
+        this.setBlocking(true);
         this.setNextStatement(true);
     }
 };
@@ -456,6 +457,7 @@ Blockly.Blocks['robActions_motorDiff_on_for'] = {
         }
         this.setPreviousStatement(true);
         this.setNextStatement(true);
+        this.setBlocking(true);
         this.setTooltip(Blockly.Msg.MOTORDIFF_ON_FOR_TOOLTIP);
     }
 };
@@ -494,6 +496,7 @@ Blockly.Blocks['robActions_motorDiff_turn_for'] = {
         }
         this.setPreviousStatement(true);
         this.setNextStatement(true);
+        this.setBlocking(true);
         this.setTooltip(Blockly.Msg.MOTORDIFF_TURN_FOR_TOOLTIP);
     }
 };
@@ -523,6 +526,7 @@ Blockly.Blocks['robActions_motorDiff_curve_for'] = {
         }
         this.setPreviousStatement(true);
         this.setNextStatement(true);
+        this.setBlocking(true);
         this.setTooltip(Blockly.Msg.MOTORDIFF_ON_FOR_TOOLTIP);
     }
 };
@@ -805,6 +809,7 @@ Blockly.Blocks['robActions_play_tone'] = {
         this.appendValueInput('DURATION').setCheck('Number').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.PLAY_DURATION);
         this.setPreviousStatement(true);
         this.setNextStatement(true);
+        this.setBlocking(true);
         this.setTooltip(Blockly.Msg.PLAY_TONE_TOOLTIP);
         // this.setHelp(new Blockly.Help(Blockly.Msg.PLAY_TONE_HELP));
     }
@@ -830,6 +835,7 @@ Blockly.Blocks['robActions_play_file'] = {
         this.appendDummyInput().appendField(Blockly.Msg.PLAY + ' ' + Blockly.Msg.PLAY_FILE).appendField(file, 'FILE');
         this.setPreviousStatement(true);
         this.setNextStatement(true);
+        this.setBlocking(true);
         this.setTooltip(Blockly.Msg.PLAY_FILE_TOOLTIP);
         // this.setHelp(new Blockly.Help(Blockly.Msg.PLAY_FILE_HELP));
     }

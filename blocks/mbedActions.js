@@ -192,6 +192,7 @@ Blockly.Blocks['mbedActions_display_text'] = {
         this.appendValueInput('OUT').appendField(Blockly.Msg.DISPLAY_SHOW).appendField(what, 'TYPE').setCheck([ 'Number', 'Boolean', 'String' ]);
         this.setPreviousStatement(true);
         this.setNextStatement(true);
+        this.setBlocking(true);
         this.setTooltip(Blockly.Msg.DISPLAY_TEXT_TOOLTIP);
     }
 };
@@ -380,6 +381,7 @@ Blockly.Blocks['mbedActions_play_tone'] = {
         this.appendValueInput('DURATION').setCheck('Number').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.PLAY_DURATION);
         this.setPreviousStatement(true);
         this.setNextStatement(true);
+        this.setBlocking(true);
         this.setTooltip(Blockly.Msg.PLAY_TONE_TOOLTIP);
         // this.setHelp(new Blockly.Help(Blockly.Msg.PLAY_TONE_HELP));
     }
@@ -436,6 +438,7 @@ Blockly.Blocks['mbedActions_play_note'] = {
         }
         this.setPreviousStatement(true);
         this.setNextStatement(true);
+        this.setBlocking(true);
         this.setTooltip(Blockly.Msg.PLAY_NOTE_TOOLTIP);
         // this.setHelp(new Blockly.Help(Blockly.Msg.PLAY_TONE_HELP));
     }

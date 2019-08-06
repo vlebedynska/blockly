@@ -66,6 +66,7 @@ goog.addDependency("../../../" + dir + "/core/field_date.js", ['Blockly.FieldDat
 goog.addDependency("../../../" + dir + "/core/msg.js", ['Blockly.Msg'], []);
 goog.addDependency("../../../" + dir + "/core/field_pixelbox.js", ['Blockly.FieldPixelbox'], ['Blockly.FieldTextInput']);
 goog.addDependency("../../../" + dir + "/core/field_image.js", ['Blockly.FieldImage'], ['Blockly.Field', 'goog.dom', 'goog.math.Size', 'goog.userAgent']);
+goog.addDependency("../../../" + dir + "/core/blocking.js", ['Blockly.Blocking'], ['Blockly.Icon', 'Blockly.Tooltip']);
 goog.addDependency("../../../" + dir + "/core/blocks.js", ['Blockly.Blocks'], []);
 goog.addDependency("../../../" + dir + "/core/connection_db.js", ['Blockly.ConnectionDB'], ['Blockly.Connection']);
 goog.addDependency("../../../" + dir + "/core/field_colour.js", ['Blockly.FieldColour'], ['Blockly.Field', 'goog.dom', 'goog.events', 'goog.style', 'goog.ui.ColorPicker']);
@@ -1696,6 +1697,7 @@ goog.require('Blockly');
 goog.require('Blockly.Block');
 goog.require('Blockly.BlockSvg');
 goog.require('Blockly.BlockSvg.render');
+goog.require('Blockly.Blocking');
 goog.require('Blockly.Blocks');
 goog.require('Blockly.Bubble');
 goog.require('Blockly.Comment');
