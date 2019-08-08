@@ -50,6 +50,7 @@ Blockly.Msg.ARDUBRICK_TOOLTIP = "表示Bot'n Roll板具有连线的执行器和�
 Blockly.Msg.AUTH = "请授权这个应用程序以保存您的作品并共享。";
 Blockly.Msg.BATTERY_GETSAMPLE_TOOLTIP = "Gets the current voltage from the battery.";  // untranslated
 Blockly.Msg.BLOCK_NOT_EXECUTED = "此方块的执行没有效果";
+Blockly.Msg.BLOCK_NOT_SUPPORTED = "This robot does not support this block!";  // untranslated
 Blockly.Msg.BOB3_READNUMBER_TOOLTIP = "返回先前存储的数字";
 Blockly.Msg.BOB3_RECALL_NUMBER = "调回数字";
 Blockly.Msg.BOB3_REMEMBER_NUMBER = "记住数字";

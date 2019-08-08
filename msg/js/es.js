@@ -50,6 +50,7 @@ Blockly.Msg.ARDUBRICK_TOOLTIP = "Representa un tablero de Bot 'n Roll con actuad
 Blockly.Msg.AUTH = "Autoriza a esta aplicación para guardar tu trabajo y permitir que lo compartas.";
 Blockly.Msg.BATTERY_GETSAMPLE_TOOLTIP = "Gets the current voltage from the battery.";  // untranslated
 Blockly.Msg.BLOCK_NOT_EXECUTED = "The exection of this block will have no effect!";  // untranslated
+Blockly.Msg.BLOCK_NOT_SUPPORTED = "This robot does not support this block!";  // untranslated
 Blockly.Msg.BOB3_READNUMBER_TOOLTIP = "Devuelve el número previamente almacenado.";
 Blockly.Msg.BOB3_RECALL_NUMBER = "recall number";  // untranslated
 Blockly.Msg.BOB3_REMEMBER_NUMBER = "recordar número";

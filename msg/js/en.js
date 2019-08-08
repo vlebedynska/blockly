@@ -50,6 +50,7 @@ Blockly.Msg.ARDUBRICK_TOOLTIP = "Represents the Bot'n Roll board with connected 
 Blockly.Msg.AUTH = "Please authorize this app to enable your work to be saved and to allow it to be shared by you.";
 Blockly.Msg.BATTERY_GETSAMPLE_TOOLTIP = "Gets the current voltage from the battery.";
 Blockly.Msg.BLOCK_NOT_EXECUTED = "The exection of this block will have no effect!";
+Blockly.Msg.BLOCK_NOT_SUPPORTED = "This robot does not support this block!";
 Blockly.Msg.BOB3_READNUMBER_TOOLTIP = "Returns the previously stored number.";
 Blockly.Msg.BOB3_RECALL_NUMBER = "recall number";
 Blockly.Msg.BOB3_REMEMBER_NUMBER = "remember number";

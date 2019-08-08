@@ -50,6 +50,7 @@ Blockly.Msg.ARDUBRICK_TOOLTIP = "Представляет плату Bot'n Roll 
 Blockly.Msg.AUTH = "Пожалуйста, авторизуйте это приложение, чтоб можно было сохранять вашу работу и чтобы дать возможность вам делиться ей.";
 Blockly.Msg.BATTERY_GETSAMPLE_TOOLTIP = "Gets the current voltage from the battery.";  // untranslated
 Blockly.Msg.BLOCK_NOT_EXECUTED = "Выполнение этого блока не принесет никакого результата!";
+Blockly.Msg.BLOCK_NOT_SUPPORTED = "This robot does not support this block!";  // untranslated
 Blockly.Msg.BOB3_READNUMBER_TOOLTIP = "Возвращает сохраненное ранее число.";
 Blockly.Msg.BOB3_RECALL_NUMBER = "вспомнить число";
 Blockly.Msg.BOB3_REMEMBER_NUMBER = "запомнить число";

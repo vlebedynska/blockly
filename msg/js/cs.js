@@ -50,6 +50,7 @@ Blockly.Msg.ARDUBRICK_TOOLTIP = "Představuje desku Bot'n Roll s připojenými p
 Blockly.Msg.AUTH = "Prosím udělte oprávnění této aplikaci aby jste mohli uložit a sdílet svou práci.";
 Blockly.Msg.BATTERY_GETSAMPLE_TOOLTIP = "Gets the current voltage from the battery.";  // untranslated
 Blockly.Msg.BLOCK_NOT_EXECUTED = "Provedení tohoto bloku nebude mít žádný efekt!";
+Blockly.Msg.BLOCK_NOT_SUPPORTED = "This robot does not support this block!";  // untranslated
 Blockly.Msg.BOB3_READNUMBER_TOOLTIP = "Vrátí dříve uložené číslo.";
 Blockly.Msg.BOB3_RECALL_NUMBER = "vrátí číslo";
 Blockly.Msg.BOB3_REMEMBER_NUMBER = "zapamatuje si číslo";

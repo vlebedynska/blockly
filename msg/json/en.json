@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2019-08-19 15:01:10.645778",
+		"lastupdated": "2019-08-19 16:07:10.188946",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -1280,6 +1280,7 @@
 	"CONNECTION_RECEIVE_TOOLTIP_BOB3": "Reads a message via the IR receiver. Only numbers can be received.",
 	"CONNECTION_SEND_TOOLTIP_BOB3": "Sends a message of type number to another Bob3. Hold the Bob3's face to face!",
 	"BLOCK_NOT_EXECUTED": "The exection of this block will have no effect!",
+	"BLOCK_NOT_SUPPORTED": "This robot does not support this block!",
 	"BOB3_RECALL_NUMBER": "recall number",
 	"BOB3_REMEMBER_NUMBER": "remember number",
 	"BOB3_SAVENUMBER_TOOLTIP": "The number to store should be an integer in the range of 0 to 255",

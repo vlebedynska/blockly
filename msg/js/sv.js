@@ -50,6 +50,7 @@ Blockly.Msg.ARDUBRICK_TOOLTIP = "Block finns för the Bot'n Roll board med anslu
 Blockly.Msg.AUTH = "Var god godkänn denna app för att du ska kunna spara och dela den.";
 Blockly.Msg.BATTERY_GETSAMPLE_TOOLTIP = "Gets the current voltage from the battery.";  // untranslated
 Blockly.Msg.BLOCK_NOT_EXECUTED = "Körningen av detta block har ingen effekt!";
+Blockly.Msg.BLOCK_NOT_SUPPORTED = "This robot does not support this block!";  // untranslated
 Blockly.Msg.BOB3_READNUMBER_TOOLTIP = "Returnerar föregående lagrat värde";
 Blockly.Msg.BOB3_RECALL_NUMBER = "återställ värde";
 Blockly.Msg.BOB3_REMEMBER_NUMBER = "kom ihåg nummer";
