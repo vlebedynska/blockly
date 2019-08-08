@@ -44,10 +44,6 @@ Blockly.Blocking = function(block) {
 };
 goog.inherits(Blockly.Blocking, Blockly.Icon);
 
-Blockly.Field.prototype.setTooltip = function(newTip) {
-    // Non-abstract sub-classes may wish to implement this.  See FieldLabel.
-};
-
 /**
  * Create the icon on the block.
  */
