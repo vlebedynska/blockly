@@ -99,6 +99,7 @@ Blockly.Blocks['robActions_sayText'] = {
         this.appendValueInput('OUT').appendField(Blockly.Msg.SAY);
         this.setPreviousStatement(true);
         this.setNextStatement(true);
+        this.setBlocking(true);
         this.setTooltip(Blockly.Msg.SAY_TOOLTIP);
     }
 };
@@ -121,6 +122,7 @@ Blockly.Blocks['robActions_sayText_parameters'] = {
         this.appendValueInput('VOICEPITCH').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.VOICE_PITCH).setCheck('Number');
         this.setPreviousStatement(true);
         this.setNextStatement(true);
+        this.setBlocking(true);
         this.setTooltip(Blockly.Msg.SAY_PARAMETERS_TOOLTIP);
     }
 };
