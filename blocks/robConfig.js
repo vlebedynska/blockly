@@ -84,11 +84,6 @@ Blockly.Blocks['robConf_generic'] = {
             };
         }
 
-        if (confBlock.id) {
-            var idInputField = new Blockly.FieldTextInput('openSenseMap Sensor ID');
-            this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg['ID']).appendField(idInputField);
-        }
-
         /**
          * Checking for generic block parts like text inputs or dropdowns
          */
