@@ -1213,5 +1213,11 @@
     "INIT_FAIL_HTTPSESSION_EXPECTED_BUT_NOT_FOUND" : "Die Verbindung zum openroberta-lab wurde unerwartet beendet. Dies ist sehr selten und kann passieren, wenn der openroberta-lab-Server neu gestartet wird. Bitte verbinde dich komplett neu mit dem openroberta-lab, z.B. durch Beenden und Neustarten des Browser oder über den »reload«-Button.",
     "PROGRAM_ERROR_EXPRBLOCK_TYPECHECK" : "Dieser Ausdruck ist nicht gültig. Fehler beim Typecheck.",
     "PROGRAM_ERROR_EXPRBLOCK_PARSE" : "Dieser Ausdruck ist falsch aufgebaut. Syntaxfehler.",
-    "ICON_BLOCKING_TOOLTIP" : "Blockierender Block! Dieser Block benötigt einige Zeit um ausgeführt zu werden. Andere Blöcke müssen warten, bis dieser Block die Kontrolle an die aufrufende Funktion zurückgibt."
+	"ICON_BLOCKING_TOOLTIP" : "Blockierender Block! Dieser Block benötigt einige Zeit um ausgeführt zu werden. Andere Blöcke müssen warten, bis dieser Block die Kontrolle an die aufrufende Funktion zurückgibt.",
+	"SENSOR_HTCOLOUR": "HT Farbsensor",
+	"HTCOLOUR_TOOLTIP": "Block für den HiTechnic NXT Farbsensor V2.",
+	"COLOUR_COLOUR_GETSAMPLE_TOOLTIP": "Gibt den aktuellen Farbwert des Sensors zurück.",
+	"COLOUR_LIGHT_GETSAMPLE_TOOLTIP": "Gibt den aktuellen Helligkeitswert des Sensors zurück.",
+	"COLOUR_AMBIENTLIGHT_GETSAMPLE_TOOLTIP": "Gibt den Umgebungslichtwert des Sensors zurück.",
+	"COLOUR_RGB_GETSAMPLE_TOOLTIP": "Gibt den aktuellen Farbwert des Sensors zurück. Werte liegen im Bereich 0 bis 255."
 }

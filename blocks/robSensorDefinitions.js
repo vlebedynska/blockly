@@ -524,6 +524,31 @@ sensors.gyro.sensebox = {
     ports : 'CONFIGURATION'
 };
 
+sensors.htcolour = {}
+sensors.htcolour.ev3 = {
+    title : 'HTCOLOUR',
+    ports : [ [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ],
+    modes : [ {
+        name : 'COLOUR',
+        type : 'Colour',
+        value : '#b30006'
+    }, {
+        name : 'LIGHT',
+        type : 'Number',
+        unit : 'PERCENT',
+        value : 50
+    }, {
+        name : 'AMBIENTLIGHT',
+        type : 'Number',
+        unit : 'PERCENT',
+        value : 50
+    }, {
+        name : 'RGB',
+        type : 'Array_Number'
+    } ],
+    standardPort : '3'
+};
+
 sensors.humidity = {};
 sensors.humidity.arduino = {
     title : 'HUMIDITY',
@@ -1297,7 +1322,7 @@ sensorsAll.botnroll = [ sensors.infrared.botnroll, sensors.light.botnroll, senso
         sensors.key.botnroll ];
 sensorsAll.mbot = [ sensors.key.mbot, sensors.ultrasonic.mbot, sensors.infrared.mbot, sensors.light.mbot, sensors.timer.mbot ];
 sensorsAll.ev3 = [ sensors.touch.ev3, sensors.ultrasonic.ev3, sensors.colour.ev3, sensors.infrared.ev3, sensors.encoder.ev3, sensors.key.ev3, sensors.gyro.ev3,
-        sensors.timer.ev3, sensors.compass.ev3, sensors.irseeker.ev3 ];
+        sensors.timer.ev3, sensors.compass.ev3, sensors.irseeker.ev3, sensors.htcolour.ev3 ];
 sensorsAll.nxt = [ sensors.touch.nxt, sensors.sound.nxt, sensors.light.nxt, sensors.ultrasonic.nxt, sensors.encoder.nxt, sensors.key.nxt, sensors.colour.nxt,
         sensors.timer.nxt ];
 sensorsAll.bob3 = [ sensors.pintouch.bob3, sensors.infrared.bob3, sensors.temperature.bob3, sensors.timer.bob3 ];
