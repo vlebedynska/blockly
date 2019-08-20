@@ -599,27 +599,34 @@ Blockly.Blocks['mbedActions_write_to_pin'] = {
     updatePins_ : function(protocol) {
         this.protocol_ = protocol;
         if (this.workspace.device === 'microbit') {
-            var pins = [ [ '0', '0' ], [ '1', '1' ], [ '2', '2' ] ];
-            var pinField = this.getField("PIN");
-            pinField.menuGenerator_ = pins;
+            if (protocol === 'ANALOG') {
+                var pins = [ [ '0', '0' ], [ '1', '1' ], [ '2', '2' ], [ '3', '3' ], [ '4', '4' ], [ '10', '10' ] ];
+                var pinField = this.getField("PIN");
+                pinField.menuGenerator_ = pins;
+            } else if (protocol === 'DIGITAL') {
+                var pins = [ [ '0', '0' ], [ '1', '1' ], [ '2', '2' ], [ '3', '3' ], [ '4', '4' ], [ '5', '5' ], [ '6', '6' ], [ '7', '7' ], [ '8', '8' ],
+                [ '9', '9' ], [ '10', '10' ], [ '11', '11' ], [ '12', '12' ], [ '13', '13' ], [ '14', '14' ], [ '15', '15' ], [ '16', '16' ], [ '19', '19' ], [ '20', '20' ] ];
+                var pinField = this.getField("PIN");
+                pinField.menuGenerator_ = pins;
+            }
             pinField.setValue("0");
             pinField.setText('0');
-            return;
-        }
-        if (protocol === 'ANALOG') {
-            var pins = [ [ 'P1', '1' ], [ 'P2', '2' ], [ 'A1', '5' ], [ 'C04', 'C04' ], [ 'C05', 'C05' ], [ 'C06', 'C06' ], [ 'C16', 'C16' ], [ 'C17', 'C17' ] ];
-            var pinField = this.getField("PIN");
-            pinField.menuGenerator_ = pins;
-            pinField.setValue("1");
-            pinField.setText('P1');
-        } else if (protocol === 'DIGITAL') {
-            var pins = [ [ 'P0', '0' ], [ 'P1', '1' ], [ 'P2', '2' ], [ 'P3', '3' ], [ 'A0', '4' ], [ 'A1', '5' ], [ 'C04', 'C04' ], [ 'C05', 'C05' ],
-                    [ 'C06', 'C06' ], [ 'C07', 'C07' ], [ 'C08', 'C08' ], [ 'C09', 'C09' ], [ 'C10', 'C10' ], [ 'C11', 'C11' ], [ 'C12', 'C12' ],
-                    [ 'C16', 'C16' ], [ 'C17', 'C17' ], [ 'C18', 'C18' ], [ 'C19', 'C19' ] ];
-            var pinField = this.getField("PIN");
-            pinField.menuGenerator_ = pins;
-            pinField.setValue("0");
-            pinField.setText('P0');
+        } else {
+            if (protocol === 'ANALOG') {
+                var pins = [ [ 'P1', '1' ], [ 'P2', '2' ], [ 'A1', '5' ], [ 'C04', 'C04' ], [ 'C05', 'C05' ], [ 'C06', 'C06' ], [ 'C16', 'C16' ], [ 'C17', 'C17' ] ];
+                var pinField = this.getField("PIN");
+                pinField.menuGenerator_ = pins;
+                pinField.setValue("1");
+                pinField.setText('P1');
+            } else if (protocol === 'DIGITAL') {
+                var pins = [ [ 'P0', '0' ], [ 'P1', '1' ], [ 'P2', '2' ], [ 'P3', '3' ], [ 'A0', '4' ], [ 'A1', '5' ], [ 'C04', 'C04' ], [ 'C05', 'C05' ],
+                        [ 'C06', 'C06' ], [ 'C07', 'C07' ], [ 'C08', 'C08' ], [ 'C09', 'C09' ], [ 'C10', 'C10' ], [ 'C11', 'C11' ], [ 'C12', 'C12' ],
+                        [ 'C16', 'C16' ], [ 'C17', 'C17' ], [ 'C18', 'C18' ], [ 'C19', 'C19' ] ];
+                var pinField = this.getField("PIN");
+                pinField.menuGenerator_ = pins;
+                pinField.setValue("0");
+                pinField.setText('P0');
+            }
         }
     }
 };
