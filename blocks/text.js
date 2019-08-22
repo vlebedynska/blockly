@@ -806,5 +806,16 @@ Blockly.Blocks['robText_append'] = {
         this.setTooltip(function() {
             return Blockly.Msg.TEXT_APPEND_TOOLTIP.replace('%1', thisBlock.getFieldValue('VAR'));
         });
+    },
+    onchange : function() {
+      if (!this.workspace || Blockly.Block.dragMode_ == 2) {
+        // Block has been deleted or is in move
+        return;
+      }
+      var blockVar = this.getInputTargetBlock('VAR');
+      if (blockVar && blockVar.type !== 'variables_get') {
+        blockVar.unplug();
+        blockVar.bumpNeighbours_();
+      }
     }
 };
