@@ -1301,7 +1301,25 @@ Blockly.Blocks['robProcedures_callnoreturn'] = {
       def && def.select();
     };
     options.push(option);
-  }
+  },
+  onchange: function(event) {
+    if (!this.workspace || this.workspace.isFlyout) {
+      // Block is deleted or is in a flyout.
+      return;
+    }
+    if (event.type == Blockly.Events.DELETE) {
+      // Look for the case where a procedure definition has been deleted,
+      // leaving this block (a procedure call) orphaned.  In this case, delete
+      // the orphan.
+      var name = this.getProcedureCall();
+      var def = Blockly.Procedures.getDefinition(name, this.workspace);
+      if (!def) {
+        Blockly.Events.setGroup(event.group);
+        this.dispose(true, false);
+        Blockly.Events.setGroup(false);
+      }
+    }
+  }  
 };
 
 
@@ -1528,7 +1546,8 @@ Blockly.Blocks['robProcedures_callreturn'] = {
       def && def.select();
     };
     options.push(option);
-  }
+  },
+  onchange: Blockly.Blocks['robProcedures_callnoreturn'].onchange
 };
 
 Blockly.Blocks['robProcedures_ifreturn'] = {
