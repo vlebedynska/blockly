@@ -923,6 +923,7 @@ Blockly.Msg.MENU_RIGHT_HELP_TOOLTIP = 'Open/close the help view.';
 Blockly.Msg.MENU_RIGHT_INFO_TOOLTIP = 'Open/close the program documentation view.';
 Blockly.Msg.MENU_RIGHT_SIM_TOOLTIP = 'Open/close the simulation view.';
 Blockly.Msg.MENU_RIGHT_CODE_TOOLTIP = 'Open/close the source code view.';
+Blockly.Msg.MENU_RIGHT_LEGAL_TOOLTIP = 'Open/close the legal information view.';
 Blockly.Msg.MENU_START_SIM = 'open/close simulation view';
 Blockly.Msg.MENU_SHOW_CODE = 'open/close source code view';
 Blockly.Msg.DISPLAY_PIXEL_TITLE = 'LED';

@@ -828,6 +828,8 @@
 	"MENU_SIM_IMPORT_TOOLTIP": "Lade dein eigenes Hintergrundbild hoch, es wird am Ende der Liste der Roboterumgebungen gespeichert.",
 	"MENU_RIGHT_HELP_TOOLTIP": "Öffne/schließe die Hilfeansicht.",
 	"MENU_RIGHT_INFO_TOOLTIP": "Öffne/schließe die Beschreibungsansicht deines Programmes.",
+    "MENU_RIGHT_SIM_TOOLTIP": "Öffne/schließe die Simulationssansicht deines Programmes.",
+	"MENU_RIGHT_LEGAL_TOOLTIP": "Öffne/schließe die Ansicht der rechtlichen Informationen.",
 	"POPUP_STARTUP_TOUR_TEXT": "Möchtest du gleich loslegen, weißt aber nicht genau wie? Wir zeigen dir die ersten Schritte in einer interaktiven Anleitung.",
 	"POPUP_STARTUP_HELP_TEXT": "In unserer ausführlichen Hilfe erklären wir dir alles ganz genau, von der Bauanleitung bis zu häufig gestellten Fragen.",
 	"ACCELERATION": "Beschleunigung mg",
