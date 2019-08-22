@@ -111,7 +111,7 @@ Blockly.Xml.blockToDom = function(block, statement_list) {
         if (mutation && (mutation.hasChildNodes() || mutation.hasAttributes())) {
             element.appendChild(mutation);
             if (mutation !== undefined && mutation != null) {
-                if ((block.type.indexOf('Controls_if') !== -1 || block.type.indexOf('Controls_wait') !== -1 || block.type.indexOf('Procedures_defreturn') !== -1)) {
+                if ((block.type.indexOf('Controls_if') !== -1 || block.type.indexOf('Controls_wait') !== -1 || block.type.indexOf('Procedures_defreturn') !== -1 || block.type.indexOf('Dialog_intent') !== -1)) {
                     element.appendChild(repetitions);
                     repe = true;
                 }

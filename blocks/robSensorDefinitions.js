@@ -748,6 +748,16 @@ sensors.key.arduino = {
     ports : 'CONFIGURATION'
 };
 
+sensors.key.raspberrypi = {
+    title : 'KEY',
+    modes : [ {
+        name : 'PRESSED',
+        type : 'Boolean',
+        question : true
+    } ],
+    ports : 'CONFIGURATION'
+};
+
 sensors.key.mbot = {
     title : 'KEY',
     modes : [ {
@@ -1220,6 +1230,7 @@ sensors.timer.mbot = sensors.timer.arduino;
 sensors.timer.wedo = sensors.timer.botnroll;
 sensors.timer.sensebox = sensors.timer.botnroll;
 sensors.timer.festobionic = sensors.timer.botnroll;
+sensors.timer.raspberrypi = sensors.timer.botnroll;
 
 sensors.timer.ev3 = {
     title : 'TIMER',

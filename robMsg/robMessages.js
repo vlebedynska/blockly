@@ -353,6 +353,7 @@ Blockly.Msg.TOOLBOX_MOVE = 'Move';
 Blockly.Msg.TOOLBOX_ANIMATION = 'Animation';
 Blockly.Msg.TOOLBOX_VISION = 'Vision';
 Blockly.Msg.TOOLBOX_CLEANING = 'Cleaning';
+Blockly.Msg.TOOLBOX_DIALOG = 'Dialog';
 //
 /// These texts are used outside of Blockly, but are placed in the Blockly namespace
 Blockly.Msg.MENU_EDIT = 'edit';

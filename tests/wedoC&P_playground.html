@@ -94,7 +94,7 @@
 
 	var toolbox = {};
 	var defaultProgramXML = "<block_set xmlns='http://www.w3.org/1999/xhtml'><instance x='100' y='50'><block type='robControls_start'><field name='DEBUG'>FALSE</field></block></instance></block_set>";
-	var defaultConfXML = "<block_set xmlns='http://de.fhg.iais.roberta.blockly' robottype='wedo' xmlversion='' description='' tags=''><instance x='300' y='50'><block type='robBrick_WeDo-Brick'></block></instance><instance x='100' y='50'><block type='robConf_motor'></block></instance><instance x='100' y='150'><block type='robConf_infrared'></block></instance> </block_set>";
+	var defaultConfXML = "<block_set xmlns='http://de.fhg.iais.roberta.blockly' robottype='wedo' xmlversion='' description='' tags=''><instance x='300' y='50'><block type='robBrick_WeDo-Brick'></block></instance><instance x='300' y='50'><block type='robBrick_WeDo-Brick'></block></instance><instance x='100' y='50'><block type='robConf_motor'></block></instance><instance x='100' y='150'><block type='robConf_infrared'></block></instance> </block_set>";
 	
 	function start() {
 		toolbox.Program = document.getElementById('toolboxBeginner');
@@ -136,10 +136,10 @@
 		  onresize();
 		  Blockly.svgResize(workspace.bricklyDiv);
 		  Blockly.svgResize(workspace.blocklyDiv);	
-		  var dom = Blockly.Xml.textToDom(defaultProgramXML, workspace.blocklyDiv);
+/* 		  var dom = Blockly.Xml.textToDom(defaultProgramXML, workspace.blocklyDiv);
 	        Blockly.Xml.domToWorkspace(dom, workspace.blocklyDiv);
 	        dom = Blockly.Xml.textToDom(defaultConfXML, workspace.bricklyDiv);
-	        Blockly.Xml.domToWorkspace(dom, workspace.bricklyDiv);
+	        Blockly.Xml.domToWorkspace(dom, workspace.bricklyDiv); */
 	        
 	        document.getElementsByClassName('blocklySvg')[0].addEventListener("click", markFocusForUser);
 	        document.getElementsByClassName('blocklySvg')[1].addEventListener("click", markFocusForUser);

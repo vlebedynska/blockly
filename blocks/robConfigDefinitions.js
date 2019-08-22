@@ -326,6 +326,12 @@ confBlocks.key.arduino = {
     fixedPorts : [ [ 'VCC', '5V' ] ]
 };
 
+confBlocks.key.raspberrypi = {
+    title : 'KEY',
+    ports : [ [ 'intern', 'INTERNAL' ] ],
+    sensor : true
+};
+
 confBlocks.key.sensebox = confBlocks.key.arduino;
 
 confBlocks.key.wedo = {
@@ -442,7 +448,11 @@ confBlocks.led.wedo = {
     bricks : true,
     action : true
 };
-
+confBlocks.led.raspberrypi = {
+    title : 'LED',
+    sensor: false,
+    action : true
+};
 confBlocks.buzzer = {};
 confBlocks.buzzer.arduino = {
     title : 'BUZZER',

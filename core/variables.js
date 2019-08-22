@@ -282,7 +282,7 @@ Blockly.Variables.isLegalName = function(name, block) {
  */
 
 Blockly.Variables.isReservedName = function(name, block) {
-    if (Blockly[block.workspace.device]) {
+    if (block && Blockly[block.workspace.device]) {
         return Blockly[block.workspace.device].indexOf(name) >= 0;
     } else {
         return false;
