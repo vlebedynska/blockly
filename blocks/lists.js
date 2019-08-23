@@ -1110,16 +1110,14 @@ Blockly.Blocks['robLists_getIndex'] = {
      * @this Blockly.Block
      */
     domToMutation : function(xmlElement) {
-        // Note: Until January 2013 this block did not have mutations,
-        // so 'statement' defaults to false and 'at' defaults to true.
-        var isStatement = (xmlElement.getAttribute('statement') == 'true');
-        this.updateStatement_(isStatement);
-        var isAt = (xmlElement.getAttribute('at') != 'false');
-        this.updateAt_(isAt);
         this.dataType_ = xmlElement.getAttribute('datatype');
         if (this.dataType_) {
             this.setOutput(true, this.dataType_);
         }
+        var isStatement = (xmlElement.getAttribute('statement') == 'true');
+        this.updateStatement_(isStatement);
+        var isAt = (xmlElement.getAttribute('at') != 'false');
+        this.updateAt_(isAt);
     },
     /**
      * Switch between a value block and a statement block.
