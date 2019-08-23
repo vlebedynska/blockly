@@ -335,3 +335,16 @@ Blockly.FieldTextInput.nonnegativeIntegerValidator = function(text) {
   }
   return n;
 };
+
+/**
+ * Ensure that only an integer may be entered.
+ * @param {string} text The user's text.
+ * @return {?string} A string representing a valid int, or null if invalid.
+ */
+Blockly.FieldTextInput.integerValidator = function(text) {
+  var n = Blockly.FieldTextInput.numberValidator(text);
+  if (n) {
+    n = String(Math.floor(n));
+  }
+  return n;
+};

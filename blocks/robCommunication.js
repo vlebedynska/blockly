@@ -60,6 +60,11 @@ Blockly.Blocks['robCommunication_sendBlock'] = {
                     [ '7', '7' ], [ '8', '8' ], [ '9', '9' ] ]);
             this.dataType_ = 'Number';
             this.data = 'nxt';
+        } else if (this.workspace.device === 'edison') {
+            dataType = new Blockly.FieldDropdown([ [ Blockly.Msg.VARIABLES_TYPE_NUMBER, 'Number' ] ]);
+            this.dataType_ = 'Number';
+            this.data = 'edison';
+            channel = 0;
         } else {
             dataType = new Blockly.FieldDropdown([ [ Blockly.Msg.VARIABLES_TYPE_STRING, 'String' ] ]);
             this.dataType_ = 'String';
@@ -67,11 +72,15 @@ Blockly.Blocks['robCommunication_sendBlock'] = {
         }
 
         this.appendValueInput('sendData').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.CONNECTION_SEND_DATA).appendField(dataType, 'TYPE').setCheck(this.dataType_);
-        this.appendDummyInput().appendField("via").setAlign(Blockly.ALIGN_RIGHT).appendField(protocol, 'PROTOCOL');
-        if (channel) {
-            this.appendValueInput('CONNECTION').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.CONNECTION_OVER_CHANNEL).appendField(channel, 'CHANNEL').appendField(Blockly.Msg.CONNECTION_TO_ROBOT).setCheck('Connection');
+        if (this.workspace.device === 'edison') {
+            //pass
         } else {
-            this.appendValueInput('CONNECTION').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.CONNECTION_TO_CONNECTION).setCheck('Connection');
+            this.appendDummyInput().appendField("via").setAlign(Blockly.ALIGN_RIGHT).appendField(protocol, 'PROTOCOL');
+            if (channel) {
+                this.appendValueInput('CONNECTION').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.CONNECTION_OVER_CHANNEL).appendField(channel, 'CHANNEL').appendField(Blockly.Msg.CONNECTION_TO_ROBOT).setCheck('Connection');
+            } else {
+                this.appendValueInput('CONNECTION').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.CONNECTION_TO_CONNECTION).setCheck('Connection');
+            }
         }
         this.setTooltip(Blockly.Msg.CONNECTION_SEND_TOOLTIP);
         this.setPreviousStatement(true);
@@ -132,6 +141,11 @@ Blockly.Blocks['robCommunication_receiveBlock'] = {
                     [ '7', '7' ], [ '8', '8' ], [ '9', '9' ] ]);
             this.dataType_ = 'Number';
             this.data = 'nxt';
+        } else if (this.workspace.device === 'edison') {
+            dataType = new Blockly.FieldDropdown([ [ Blockly.Msg.VARIABLES_TYPE_NUMBER, 'Number' ] ]);
+            this.dataType_ = 'Number';
+            this.data = 'edison';
+            channel = 0;
         } else {
             dataType = new Blockly.FieldDropdown([ [ Blockly.Msg.VARIABLES_TYPE_STRING, 'String' ] ]);
             this.dataType_ = 'String';
@@ -139,11 +153,15 @@ Blockly.Blocks['robCommunication_receiveBlock'] = {
         }
 
         this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.CONNECTION_RECEIVED_DATA).appendField(dataType, 'TYPE');
-        this.appendDummyInput().appendField("via").setAlign(Blockly.ALIGN_RIGHT).appendField(protocol, 'PROTOCOL');
-        if (channel) {
-            this.appendValueInput('CONNECTION').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.CONNECTION_OVER_CHANNEL).appendField(channel, 'CHANNEL').appendField(Blockly.Msg.CONNECTION_FROM_ROBOT).setCheck('Connection');
+        if (this.workspace.device === 'edison') {
+            //pass
         } else {
-            this.appendValueInput('CONNECTION').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.CONNECTION_FROM_CONNECTION).setCheck('Connection');
+            this.appendDummyInput().appendField("via").setAlign(Blockly.ALIGN_RIGHT).appendField(protocol, 'PROTOCOL');
+            if (channel) {
+                this.appendValueInput('CONNECTION').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.CONNECTION_OVER_CHANNEL).appendField(channel, 'CHANNEL').appendField(Blockly.Msg.CONNECTION_FROM_ROBOT).setCheck('Connection');
+            } else {
+                this.appendValueInput('CONNECTION').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.CONNECTION_FROM_CONNECTION).setCheck('Connection');
+            }
         }
         this.setOutput(true, this.dataType_);
         this.setBlocking(true);
@@ -213,3 +231,6 @@ Blockly.Blocks['robCommunication_checkConnection'] = {
 
 Blockly.Blocks['robCommunication_ir_sendBlock'] = Blockly.Blocks['bob3Communication_sendBlock'];
 Blockly.Blocks['robCommunication_ir_receiveBlock'] = Blockly.Blocks['bob3Communication_receiveBlock'];
+
+Blockly.Blocks['edisonCommunication_ir_sendBlock'] = Blockly.Blocks['bob3Communication_sendBlock'];
+Blockly.Blocks['edisonCommunication_ir_receiveBlock'] = Blockly.Blocks['bob3Communication_receiveBlock'];

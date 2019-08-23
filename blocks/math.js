@@ -57,6 +57,29 @@ Blockly.Blocks['math_number'] = {
   }
 };
 
+Blockly.Blocks['math_integer'] = {
+  /**
+   * Block for an Integer (a whole number)
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl(Blockly.Msg.MATH_NUMBER_HELPURL);
+    this.setColour(Blockly.CAT_MATH_RGB);
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldNumber('0',
+            Blockly.FieldTextInput.integerValidator), 'NUM');
+    this.setOutput(true, 'Number');
+    // Assign 'this' to a variable for use in the tooltip closure below.
+    var thisBlock = this;
+    // Number block is trivial.  Use tooltip of parent block if it exists.
+    this.setTooltip(function() {
+      var parent = thisBlock.getParent();
+      return (parent && parent.getInputsInline() && parent.tooltip) ||
+          Blockly.Msg.MATH_NUMBER_TOOLTIP;
+    });
+  }
+};
+
 Blockly.Blocks['rob_math_number'] = {
         /**
          * Block for numeric value.
@@ -135,32 +158,57 @@ Blockly.Blocks['math_single'] = {
    * @this Blockly.Block
    */
   init: function() {
-    this.jsonInit({
-      "message0": "%1 %2",
-      "args0": [
-        {
-          "type": "field_dropdown",
-          "name": "OP",
-          "options": [
-            [Blockly.Msg.MATH_SINGLE_OP_ROOT, 'ROOT'],
-            [Blockly.Msg.MATH_SINGLE_OP_ABSOLUTE, 'ABS'],
-            ['-', 'NEG'],
-            ['ln', 'LN'],
-            ['log10', 'LOG10'],
-            ['e^', 'EXP'],
-            ['10^', 'POW10']
-          ]
-        },
-        {
-          "type": "input_value",
-          "name": "NUM",
-          "check": "Number"
-        }
-      ],
-      "output": "Number",
-      "colour": Blockly.CAT_MATH_RGB,
-      "helpUrl": Blockly.Msg.MATH_SINGLE_HELPURL
-    });
+    if (this.workspace.device === 'edison') {
+      this.jsonInit({
+        "message0": "%1 %2",
+        "args0": [
+          {
+            "type": "field_dropdown",
+            "name": "OP",
+            "options": [
+              [Blockly.Msg.MATH_SINGLE_OP_ABSOLUTE, 'ABS'],
+              ['-', 'NEG'],
+              ['10^', 'POW10']
+            ]
+          },
+          {
+            "type": "input_value",
+            "name": "NUM",
+            "check": "Number"
+          }
+        ],
+        "output": "Number",
+        "colour": Blockly.CAT_MATH_RGB,
+        "helpUrl": Blockly.Msg.MATH_SINGLE_HELPURL
+      });
+    } else {
+      this.jsonInit({
+        "message0": "%1 %2",
+        "args0": [
+          {
+            "type": "field_dropdown",
+            "name": "OP",
+            "options": [
+              [Blockly.Msg.MATH_SINGLE_OP_ROOT, 'ROOT'],
+              [Blockly.Msg.MATH_SINGLE_OP_ABSOLUTE, 'ABS'],
+              ['-', 'NEG'],
+              ['ln', 'LN'],
+              ['log10', 'LOG10'],
+              ['e^', 'EXP'],
+              ['10^', 'POW10']
+            ]
+          },
+          {
+            "type": "input_value",
+            "name": "NUM",
+            "check": "Number"
+          }
+        ],
+        "output": "Number",
+        "colour": Blockly.CAT_MATH_RGB,
+        "helpUrl": Blockly.Msg.MATH_SINGLE_HELPURL
+      });
+    }
     // Assign 'this' to a variable for use in the tooltip closure below.
     var thisBlock = this;
     this.setTooltip(function() {
@@ -287,14 +335,24 @@ Blockly.Blocks['math_number_property'] = {
    * @this Blockly.Block
    */
   init: function() {
-    var PROPERTIES =
-        [[Blockly.Msg.MATH_IS_EVEN, 'EVEN'],
-         [Blockly.Msg.MATH_IS_ODD, 'ODD'],
-         [Blockly.Msg.MATH_IS_PRIME, 'PRIME'],
-         [Blockly.Msg.MATH_IS_WHOLE, 'WHOLE'],
-         [Blockly.Msg.MATH_IS_POSITIVE, 'POSITIVE'],
-         [Blockly.Msg.MATH_IS_NEGATIVE, 'NEGATIVE'],
-         [Blockly.Msg.MATH_IS_DIVISIBLE_BY, 'DIVISIBLE_BY']];
+    if (this.workspace.device === 'edison') {
+      var PROPERTIES =
+          [[Blockly.Msg.MATH_IS_EVEN, 'EVEN'],
+            [Blockly.Msg.MATH_IS_ODD, 'ODD'],
+            [Blockly.Msg.MATH_IS_PRIME, 'PRIME'],
+            [Blockly.Msg.MATH_IS_POSITIVE, 'POSITIVE'],
+            [Blockly.Msg.MATH_IS_NEGATIVE, 'NEGATIVE'],
+            [Blockly.Msg.MATH_IS_DIVISIBLE_BY, 'DIVISIBLE_BY']];
+    } else {
+      var PROPERTIES =
+          [[Blockly.Msg.MATH_IS_EVEN, 'EVEN'],
+            [Blockly.Msg.MATH_IS_ODD, 'ODD'],
+            [Blockly.Msg.MATH_IS_PRIME, 'PRIME'],
+            [Blockly.Msg.MATH_IS_WHOLE, 'WHOLE'],
+            [Blockly.Msg.MATH_IS_POSITIVE, 'POSITIVE'],
+            [Blockly.Msg.MATH_IS_NEGATIVE, 'NEGATIVE'],
+            [Blockly.Msg.MATH_IS_DIVISIBLE_BY, 'DIVISIBLE_BY']];
+    }
     this.setColour(Blockly.CAT_MATH_RGB);
     this.appendValueInput('NUMBER_TO_CHECK')
         .setCheck('Number');
@@ -421,15 +479,23 @@ Blockly.Blocks['math_on_list'] = {
    * @this Blockly.Block
    */
   init: function() {
-    var OPERATORS =
-        [[Blockly.Msg.MATH_ONLIST_OPERATOR_SUM, 'SUM'],
-         [Blockly.Msg.MATH_ONLIST_OPERATOR_MIN, 'MIN'],
-         [Blockly.Msg.MATH_ONLIST_OPERATOR_MAX, 'MAX'],
-         [Blockly.Msg.MATH_ONLIST_OPERATOR_AVERAGE, 'AVERAGE'],
-         [Blockly.Msg.MATH_ONLIST_OPERATOR_MEDIAN, 'MEDIAN'],
-     //    [Blockly.Msg.MATH_ONLIST_OPERATOR_MODE, 'MODE'],
-         [Blockly.Msg.MATH_ONLIST_OPERATOR_STD_DEV, 'STD_DEV'],
-         [Blockly.Msg.MATH_ONLIST_OPERATOR_RANDOM, 'RANDOM']];
+    if (this.workspace.device === 'edison') {
+      var OPERATORS =
+          [[Blockly.Msg.MATH_ONLIST_OPERATOR_SUM, 'SUM'],
+            [Blockly.Msg.MATH_ONLIST_OPERATOR_MIN, 'MIN'],
+            [Blockly.Msg.MATH_ONLIST_OPERATOR_MAX, 'MAX'],
+            [Blockly.Msg.MATH_ONLIST_OPERATOR_AVERAGE, 'AVERAGE']];
+    } else {
+      var OPERATORS =
+          [[Blockly.Msg.MATH_ONLIST_OPERATOR_SUM, 'SUM'],
+            [Blockly.Msg.MATH_ONLIST_OPERATOR_MIN, 'MIN'],
+            [Blockly.Msg.MATH_ONLIST_OPERATOR_MAX, 'MAX'],
+            [Blockly.Msg.MATH_ONLIST_OPERATOR_AVERAGE, 'AVERAGE'],
+            [Blockly.Msg.MATH_ONLIST_OPERATOR_MEDIAN, 'MEDIAN'],
+            //    [Blockly.Msg.MATH_ONLIST_OPERATOR_MODE, 'MODE'],
+            [Blockly.Msg.MATH_ONLIST_OPERATOR_STD_DEV, 'STD_DEV'],
+            [Blockly.Msg.MATH_ONLIST_OPERATOR_RANDOM, 'RANDOM']];
+    }
     // Assign 'this' to a variable for use in the closures below.
     var thisBlock = this;
     this.setHelpUrl(Blockly.Msg.MATH_ONLIST_HELPURL);

@@ -121,6 +121,34 @@ Blockly.Blocks['mbedSensors_timer_reset'] = {
     }
 };
 
+Blockly.Blocks['edisonSensors_sensor_reset'] = {
+    /**
+     * Resets various sensors for the Edison robot by calling their read() methods:
+     *   - clap detector
+     *   - keypad
+     *   - obstacle detector ("infrared sensor")
+     *   - r/c code receiver & ir message receiver ("ir seeker")
+     *
+     * @constructs edisonSensors_sensor_reset
+     * @this.Blockly.Block
+     * @returns immediately
+     * @memberof Block
+     */
+    init : function() {
+        this.setColour(Blockly.CAT_SENSOR_RGB);
+        var sensorType;
+        sensorType = new Blockly.FieldDropdown([
+            [ Blockly.Msg.SENSOR_INFRARED, 'OBSTACLEDETECTOR' ],
+            [ Blockly.Msg.SENSOR_KEYPAD, 'KEYPAD' ],
+            [ Blockly.Msg.SENSOR_SOUND, 'SOUND' ],
+            [ Blockly.Msg.SENSOR_IRSEEKER_EDISON, 'RCCODE' ] ]);
+        this.appendDummyInput().appendField(Blockly.Msg.SENSOR_RESET).appendField(sensorType, 'SENSOR').appendField(Blockly.Msg.SENSOR_RESET_II);
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setTooltip(Blockly.Msg.SENSOR_RESET_TOOLTIP_EDISON);
+    }
+};
+
 Blockly.Blocks['robSensors_generic'] = {
     /*- Generic sensor definition. Will create e.g. the following xml:
      *

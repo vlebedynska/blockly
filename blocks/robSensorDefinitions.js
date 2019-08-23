@@ -524,7 +524,7 @@ sensors.gyro.sensebox = {
     ports : 'CONFIGURATION'
 };
 
-sensors.htcolour = {}
+sensors.htcolour = {};
 sensors.htcolour.ev3 = {
     title : 'HTCOLOUR',
     ports : [ [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ],
@@ -562,7 +562,7 @@ sensors.humidity.arduino = {
         unit : 'DEGREE'
     } ],
     ports : 'CONFIGURATION'
-}
+};
 
 sensors.humidity.sensebox = {
     title : 'HUMIDITY',
@@ -576,7 +576,7 @@ sensors.humidity.sensebox = {
         unit : 'DEGREE'
     } ],
     ports : 'CONFIGURATION'
-}
+};
 
 sensors.humidity.calliope = {
     title : 'HUMIDITY',
@@ -590,7 +590,7 @@ sensors.humidity.calliope = {
         unit : 'DEGREE'
     } ],
     ports : [ [ 'A1', '5' ] ]
-}
+};
 
 sensors.infrared = {};
 sensors.infrared.botnroll = {
@@ -674,6 +674,15 @@ sensors.infrared.wedo = {
     } ]
 };
 
+sensors.infrared.edison = {
+	title : 'INFRARED',
+    ports : [ [ 'LEFT', 'LEFT' ], [ 'RIGHT', 'RIGHT' ], [ 'SLOT_FRONT', 'FRONT' ] ],
+	modes : [ {
+		name : 'OBSTACLE',
+		type : 'Boolean'
+	} ]
+};
+
 sensors.irseeker = {};
 sensors.irseeker.ev3 = {
     title : 'IRSEEKER',
@@ -687,7 +696,15 @@ sensors.irseeker.ev3 = {
         type : 'Number',
         unit : 'DEGREE'
     } ]
-}
+};
+
+sensors.irseeker.edison = {
+	title : 'IRSEEKER',
+	modes : [ {
+		name : 'RCCODE',
+		type : 'Number'
+	} ]
+};
 
 sensors.key = {};
 sensors.key.botnroll = {
@@ -761,6 +778,16 @@ sensors.key.wedo = {
     ports : 'CONFIGURATION'
 };
 
+sensors.key.edison = {
+	title : 'KEY',
+	modes : [ {
+		name : 'PRESSED',
+		type : 'Boolean',
+		question : true
+	} ],
+	ports : [['SENSOR_KEY_PLAY', 'PLAY'], ['SENSOR_KEY_REC', 'REC'] ]
+};
+
 sensors.light = {};
 sensors.light.botnroll = {
     title : 'LIGHT',
@@ -821,6 +848,20 @@ sensors.light.mbot = {
     ports : [ [ 'PORT_INTERNAL', '6' ], [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ]
 };
 
+sensors.light.edison = {
+	title : 'LIGHT',
+	modes : [ {
+		name : 'LIGHT',
+		type : 'Number',
+        unit : 'PERCENT',
+        ports : [ ['LEFT', 'LLIGHT'], ['RIGHT', 'RLIGHT'], ['BELOW', 'LINETRACKER'] ]
+	}, {
+        name : 'LINE',
+        type : 'Boolean',
+        ports : [ ['BELOW', 'LINETRACKER'] ]
+    } ]
+};
+
 sensors.lightveml = {};
 sensors.lightveml.sensebox = {
     title : 'LIGHTVEML',
@@ -867,7 +908,7 @@ sensors.motion.mbot = {
     } ],
     ports : [ [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ],
     standardPort : '3'
-}
+};
 
 sensors.out = {};
 sensors.out.arduino = {
@@ -1044,7 +1085,7 @@ sensors.sound.calliope = {
         op : 'NUM_REV',
         value : 50
     } ]
-}
+};
 sensors.sound.ev3 = {
     title : 'SOUND',
     modes : [ {
@@ -1072,6 +1113,13 @@ sensors.sound.sensebox = {
 
 sensors.sound.nxt = sensors.sound.ev3;
 sensors.sound.mbot = sensors.sound.ev3;
+sensors.sound.edison = {
+	title : 'SOUND',
+	modes : [ {
+		name : 'SOUND',
+		type : 'Boolean'
+	} ]
+};
 
 sensors.temperature = {};
 sensors.temperature.bob3 = {
@@ -1349,6 +1397,7 @@ sensorsAll.vorwerk = [ sensors.touch.vorwerk, sensors.accelerometer.vorwerk, sen
 sensorsAll.wedo = [ sensors.key.wedo, sensors.gyro.wedo, sensors.infrared.wedo, sensors.timer.wedo ];
 sensorsAll.sensebox = [ sensors.key.sensebox, sensors.light.sensebox, sensors.potentiometer.sensebox, sensors.sound.sensebox, sensors.ultrasonic.sensebox,
         sensors.humidity.sensebox, sensors.temperature.sensebox, sensors.lightveml.sensebox, sensors.timer.sensebox ];
+sensorsAll.edison = [ sensors.key.edison, sensors.infrared.edison, sensors.irseeker.edison, sensors.light.edison, sensors.sound.edison ];        
 
 function initSensors() {
     for ( var sensor in sensors) {

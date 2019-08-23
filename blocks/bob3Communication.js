@@ -26,7 +26,7 @@ Blockly.Blocks['bob3Communication_sendBlock'] = {
 
     init : function() {
         this.setColour(Blockly.CAT_COMMUNICATION_RGB);
-        if (this.workspace.device === 'bob3') {
+        if (this.workspace.device === 'bob3' || this.workspace.device === 'edison') {
             this.appendValueInput('sendData').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.CONNECTION_SEND_DATA).setCheck('Number');
         } else if (this.workspace.device === 'mbot') {
             this.appendValueInput('sendData').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.CONNECTION_SEND_DATA).setCheck('String');
@@ -53,7 +53,7 @@ Blockly.Blocks['bob3Communication_receiveBlock'] = {
     init : function() {
         this.setColour(Blockly.CAT_COMMUNICATION_RGB);
         this.appendDummyInput('receiveData').appendField(Blockly.Msg.CONNECTION_RECEIVED_DATA);
-        if (this.workspace.device === 'bob3') {
+        if (this.workspace.device === 'bob3' || this.workspace.device === 'edison') {
             this.setOutput(true, 'Number');
         } else if (this.workspace.device === 'mbot') {
             this.setOutput(true, 'String');

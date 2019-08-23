@@ -123,7 +123,14 @@ Blockly.Blocks['robControls_start'] = {
             vd.initSvg();
             vd.render();
             var value = vd.getInput('VALUE');
-            var block = this.workspace.newBlock('math_number');
+            switch (this.workspace.device) {
+                case 'edison':
+                    var block = this.workspace.newBlock('math_integer');
+                    break;
+                default:
+                    var block = this.workspace.newBlock('math_number');
+                    break;
+            }
             block.initSvg();
             block.render();
             value.connection.connect(block.outputConnection);

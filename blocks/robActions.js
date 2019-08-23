@@ -177,6 +177,10 @@ Blockly.Blocks['robActions_motor_on'] = {
                         (Blockly.Msg.CONFIGURATION_NO_PORT || Blockly.checkMsgKey('CONFIGURATION_NO_PORT')).toUpperCase() ]);
             }
             break;
+        case 'edison':
+            ports = [ [Blockly.Msg.MOTOR + ' ' + Blockly.Msg.MOTOR_LEFT, 'LMOTOR'],
+                [ Blockly.Msg.MOTOR + ' ' + Blockly.Msg.MOTOR_RIGHT, 'RMOTOR' ] ];
+            break;    
         default:
             ports = [ 'INVALID DEVICE TYPE', 'UNDEFINED' ];
         }
@@ -397,6 +401,10 @@ Blockly.Blocks['robActions_motor_stop'] = {
         if (this.workspace.device === 'mbot') {
             ports = [ [ Blockly.Msg.MOTOR_PORT + ' M1', '1' ], [ Blockly.Msg.MOTOR_PORT + ' M2', '2' ] ];
         }
+        if (this.workspace.device === 'edison') {
+            ports = [[Blockly.Msg.MOTOR + ' ' + Blockly.Msg.MOTOR_LEFT, 'LMOTOR'],
+                [Blockly.Msg.MOTOR + ' ' + Blockly.Msg.MOTOR_RIGHT, 'RMOTOR']];
+        }
         var motorPort = new Blockly.FieldDropdown(ports);
         if (this.workspace.device === 'wedo') {
             this.action = 'MOTOR';
@@ -424,11 +432,11 @@ Blockly.Blocks['robActions_motor_stop'] = {
                 'dropDown' : ports
             };
             this.appendDummyInput().appendField(Blockly.Msg.MOTOR_STOP).appendField(Blockly.Msg.ACTION_MOTOR).appendField(ports, 'MOTORPORT');
-        } else if (this.workspace.device != 'mbot') {
+        } else if (this.workspace.device === 'mbot' || this.workspace.device === 'edison') {
+            this.appendDummyInput().appendField(Blockly.Msg.MOTOR_STOP).appendField(motorPort, 'MOTORPORT');
+        } else {
             var mode = new Blockly.FieldDropdown([ [ Blockly.Msg.MOTOR_FLOAT, 'FLOAT' ], [ Blockly.Msg.MOTOR_BRAKE, 'NONFLOAT' ] ]);
             this.appendDummyInput().appendField(Blockly.Msg.MOTOR_STOP).appendField(motorPort, 'MOTORPORT').appendField(mode, 'MODE');
-        } else {
-            this.appendDummyInput().appendField(Blockly.Msg.MOTOR_STOP).appendField(motorPort, 'MOTORPORT');
         }
         this.setPreviousStatement(true);
         this.setNextStatement(true);
@@ -982,8 +990,14 @@ Blockly.Blocks['robActions_led_on'] = {
         }
         if (this.workspace.device === 'mbot') {
             ports = new Blockly.FieldDropdown([ [ Blockly.Msg.LEFT, '2' ], [ Blockly.Msg.RIGHT, '1' ] ]);
+        } else if (this.workspace.device === 'edison') {
+            ports = new Blockly.FieldDropdown([ [Blockly.Msg.LEFT, 'LLED'], [Blockly.Msg.RIGHT, 'RLED'] ]);
         }
-        this.appendValueInput('COLOR').appendField(Blockly.Msg.LED_ON).appendField(ports, 'ACTORPORT').appendField(Blockly.Msg.BRICKLIGHT_COLOR).setCheck('Colour');
+        if (this.workspace.device === 'edison') {
+            this.appendDummyInput('COLOR').appendField(Blockly.Msg.LED_ON).appendField(ports, 'ACTORPORT');
+        } else {
+            this.appendValueInput('COLOR').appendField(Blockly.Msg.LED_ON).appendField(ports, 'ACTORPORT').appendField(Blockly.Msg.BRICKLIGHT_COLOR).setCheck('Colour');
+        }
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setTooltip(Blockly.Msg.LED_ON_TOOLTIP);
@@ -1035,6 +1049,9 @@ Blockly.Blocks['robActions_led_off'] = {
         }
         if (this.workspace.device === 'mbot') {
             ports = new Blockly.FieldDropdown([ [ Blockly.Msg.LEFT, '2' ], [ Blockly.Msg.RIGHT, '1' ] ]);
+        } else if (this.workspace.device === 'edison') {
+            ports = new Blockly.FieldDropdown([ [ Blockly.Msg.LEFT, 'LLED' ],
+                [ Blockly.Msg.RIGHT, 'RLED' ] ]);
         }
         this.appendDummyInput().appendField(Blockly.Msg.LED_OFF).appendField(ports, 'ACTORPORT');
         this.setPreviousStatement(true);
