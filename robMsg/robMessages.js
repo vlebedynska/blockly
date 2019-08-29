@@ -762,7 +762,7 @@ Blockly.Msg.POPUP_DOWNLOAD_STEP_4_SENSEBOX = 'now click on the »Save« button o
 Blockly.Msg.POPUP_DOWNLOAD_STEP_1_EDISON = 'Connect your Edison via the EdComm cable and press the round button';
 Blockly.Msg.POPUP_DOWNLOAD_STEP_2_EDISON = 'click on »Play« to play your program to Edison and';
 Blockly.Msg.POPUP_DOWNLOAD_STEP_3_EDISON = 'wait until Edison beeps, then unplug.';
-Blockly.Msg.POPUP_DOWNLOAD_STEP_4_EDISON = 'Press the triangle button to start your program on your Edison';
+Blockly.Msg.POPUP_DOWNLOAD_STEP_4_EDISON = 'Press the triangle button to start your program on your Edison<br><span style="font-size: 14px;">Having trouble? Turn up the volume and check that all sound enhancements are turned off</span>';
 
 // Names for the nao blocks
 /// NAO names
