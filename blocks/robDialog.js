@@ -117,7 +117,7 @@ Blockly.Blocks['robDialog_conf_slot'] = {
         var that = this;
         this.getConfigDecl = function() {
             return {
-                'type' : "intent",
+                'type' : "slot",
                 'name' : that.getFieldValue('NAME')
             }
         };
