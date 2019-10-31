@@ -570,7 +570,7 @@ confBlocks.analogin.arduino = {
 confBlocks.wireless = {}
 confBlocks.wireless.sensebox = {
     title : 'WIRELESS',
-    dropdowns : [ [ 'CONNECTOR', [ [ 'XBEE1', 'XBEE1' ] ] ] ],
+    dropdowns : [ [ 'SOCKET', [ [ 'XBEE1', 'XBEE1' ] ] ] ],
     sensor : false
 };
 
@@ -578,7 +578,7 @@ confBlocks.sdcard = {}
 confBlocks.sdcard.sensebox = {
     title : 'SDCARD',
     inputs : [ [ 'NAO_FILENAME', 'FILE.TXT' ] ],
-    dropdowns : [ [ 'CONNECTOR', [ [ 'XBEE2', 'XBEE2' ] ] ] ],
+    dropdowns : [ [ 'SOCKET', [ [ 'XBEE2', 'XBEE2' ] ] ] ],
     sensor : false
 };
 

@@ -1262,5 +1262,9 @@
 	"COLOUR_COLOUR_GETSAMPLE_TOOLTIP": "Gibt den aktuellen Farbwert des Sensors zurück.",
 	"COLOUR_LIGHT_GETSAMPLE_TOOLTIP": "Gibt den aktuellen Helligkeitswert des Sensors zurück.",
 	"COLOUR_AMBIENTLIGHT_GETSAMPLE_TOOLTIP": "Gibt den Umgebungslichtwert des Sensors zurück.",
-	"COLOUR_RGB_GETSAMPLE_TOOLTIP": "Gibt den aktuellen Farbwert des Sensors zurück. Werte liegen im Bereich 0 bis 255."
+	"COLOUR_RGB_GETSAMPLE_TOOLTIP": "Gibt den aktuellen Farbwert des Sensors zurück. Werte liegen im Bereich 0 bis 255.",
+    "ORA_FIRMWARE_RESET_ERROR": "Das original Programm konnte nicht gefunden werden!",
+    "ORA_FIRMWARE_RESET_SUCCESS": "Dein original Programm startet gleich auf deinem System!",
+    "MENU_RESET_FIRMWARE": "zurück auf Werkszustand",
+    "SOCKET": "Socket"
 }
