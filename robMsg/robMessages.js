@@ -521,6 +521,7 @@ Blockly.Msg.ORA_COMPILERWORKFLOW_ERROR_PROGRAM_STORE_FAILED = 'The program could
 Blockly.Msg.ORA_COMPILERWORKFLOW_ERROR_PROGRAM_COMPILE_FAILED = 'Your program has errors so it cannot be compiled. The compiler messages are: <span style="background-color:#ddd;font-family:courier;">{MESSAGE}</span>';
 Blockly.Msg.ORA_COMPILERWORKFLOW_ERROR_PROGRAM_GENERATION_FAILED = 'The program could not be generated.';
 Blockly.Msg.ORA_COMPILERWORKFLOW_ERROR_PROGRAM_GENERATION_FAILED_WITH_PARAMETERS = 'The program could not be generated. Pin {PIN} is incorrect in block {BLOCK}';
+Blockly.Msg.ORA_COMPILERWORKFLOW_SUCCESS = 'The program build succeeded';
 Blockly.Msg.ORA_ROBOT_NOT_WAITING = 'The robot does not wait for a run command.';
 Blockly.Msg.ORA_ROBOT_PUSH_RUN = 'Robot waited and now the jar is pushed to the robot';
 Blockly.Msg.ORA_ROBOT_FIRMWAREUPDATE_POSSIBLE = 'The firmware was updated';
@@ -1368,3 +1369,10 @@ Blockly.Msg.ICON_BLOCKING_TOOLTIP = 'Blocking block! This blocks needs some time
 Blockly.Msg.ORA_FIRMWARE_RESET_ERROR = 'Loading the original program failed!';
 Blockly.Msg.ORA_FIRMWARE_RESET_SUCCESS = 'Your original program will run in a moment!';
 Blockly.Msg.MENU_RESET_FIRMWARE = 'reset to factory defaults';
+
+Blockly.Msg.MENU_SOURCE_CODE_EDITOR = 'open source code editor';
+Blockly.Msg.SOURCE_CODE_EDITOR_RUN_TOOLTIP = 'Run on the robot';
+Blockly.Msg.SOURCE_CODE_EDITOR_BUILD_TOOLTIP = 'Build the source code';
+Blockly.Msg.SOURCE_CODE_EDITOR_UPLOAD_TOOLTIP = 'Upload the source code';
+Blockly.Msg.SOURCE_CODE_EDITOR_IMPORT_TOOLTIP = 'Import current NEPO program';
+Blockly.Msg.SOURCE_CODE_EDITOR_PLACEHOLDER = 'Import current NEPO program or just start typing';

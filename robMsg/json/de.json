@@ -302,6 +302,7 @@
 	"ORA_COMPILERWORKFLOW_ERROR_PROGRAM_NOT_FOUND": "Das Programm konnte in der Datenbank nicht gefunden werden.",
 	"ORA_COMPILERWORKFLOW_ERROR_PROGRAM_STORE_FAILED": "Ein Fehler ist beim internen Speichern des Programmes aufgetreten.",
 	"ORA_COMPILERWORKFLOW_ERROR_PROGRAM_TRANSFORM_FAILED": "Das Programm konnte nicht in die entsprechende Programmiersprache übertragen werden.",
+	"ORA_COMPILERWORKFLOW_SUCCESS": "Das Bauen des Programms war erfolgreich",
 	"ORA_CONFIGURATION_DELETE_ERROR": "Ein Fehler ist beim Löschen der Roboterkonfiguration aufgetreten, versuche es noch einmal!",
 	"ORA_CONFIGURATION_DELETE_SUCCESS": "Du hast die Roboterkonfiguration »$« gelöscht.",
 	"ORA_CONFIGURATION_ERROR_ID_INVALID": "Konfigurationsname ist kein valider Identifikator.",
@@ -1266,5 +1267,11 @@
     "ORA_FIRMWARE_RESET_ERROR": "Das original Programm konnte nicht gefunden werden!",
     "ORA_FIRMWARE_RESET_SUCCESS": "Dein original Programm startet gleich auf deinem System!",
     "MENU_RESET_FIRMWARE": "zurück auf Werkszustand",
-    "SOCKET": "Socket"
+    "SOCKET": "Socket",
+    "MENU_SOURCE_CODE_EDITOR": "zeige Quellcodeeditor",
+    "SOURCE_CODE_EDITOR_UPLOAD_TOOLTIP": "Lade den Quellcode hoch",
+    "SOURCE_CODE_EDITOR_IMPORT_TOOLTIP": "Importiere aktuelles NEPO Programm",
+    "SOURCE_CODE_EDITOR_BUILD_TOOLTIP": "Baue den Quellcode",
+    "SOURCE_CODE_EDITOR_RUN_TOOLTIP": "Starte auf dem Roboter",
+    "SOURCE_CODE_EDITOR_PLACEHOLDER": "Importiere das aktuelle NEPO Programm oder fange einfach an zu tippen"
 }
