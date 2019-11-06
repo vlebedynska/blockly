@@ -1268,7 +1268,7 @@
     "ORA_FIRMWARE_RESET_SUCCESS": "Dein original Programm startet gleich auf deinem System!",
     "MENU_RESET_FIRMWARE": "zurück auf Werkszustand",
     "SOCKET": "Socket",
-    "MENU_SOURCE_CODE_EDITOR": "zeige Quellcodeeditor",
+    "MENU_SOURCE_CODE_EDITOR": "öffne Quellcodeeditor",
     "SOURCE_CODE_EDITOR_UPLOAD_TOOLTIP": "Lade den Quellcode hoch",
     "SOURCE_CODE_EDITOR_IMPORT_TOOLTIP": "Importiere aktuelles NEPO Programm",
     "SOURCE_CODE_EDITOR_BUILD_TOOLTIP": "Baue den Quellcode",
