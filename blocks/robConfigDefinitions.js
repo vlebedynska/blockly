@@ -537,6 +537,8 @@ confBlocks.digitalout.arduino = {
     sensor : true,
 };
 
+confBlocks.digitalout.sensebox = confBlocks.digitalout.arduino;
+
 confBlocks.analogout = {};
 confBlocks.analogout.arduino = {
     title : 'ANALOGOUT',
@@ -546,6 +548,8 @@ confBlocks.analogout.arduino = {
     },
     sensor : true,
 };
+
+confBlocks.analogout.sensebox = confBlocks.analogout.arduino;
 
 confBlocks.digitalin = {};
 confBlocks.digitalin.arduino = {
@@ -557,6 +561,8 @@ confBlocks.digitalin.arduino = {
     sensor : false,
 };
 
+confBlocks.digitalin.sensebox = confBlocks.digitalin.arduino;
+
 confBlocks.analogin = {};
 confBlocks.analogin.arduino = {
     title : 'ANALOGIN',
@@ -566,6 +572,8 @@ confBlocks.analogin.arduino = {
     },
     sensor : false,
 };
+
+confBlocks.analogin.sensebox = confBlocks.analogin.arduino;
 
 confBlocks.wireless = {}
 confBlocks.wireless.sensebox = {

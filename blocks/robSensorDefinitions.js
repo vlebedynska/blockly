@@ -929,6 +929,8 @@ sensors.out.arduino = {
     ports : 'CONFIGURATION'
 };
 
+sensors.out.sensebox = sensors.out.arduino;
+
 sensors.potentiometer = {};
 sensors.potentiometer.arduino = {
     title : 'POTENTIOMETER',
