@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2019-11-06 13:25:06.333437",
+		"lastupdated": "2019-11-14 15:07:13.119876",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -1324,6 +1324,8 @@
 	"SENSOR_UNIT_ACCEL": "m/s²",
 	"SENSOR_UNIT_NEWTON": "N",
 	"SENSOR_UNIT_AMPERE": "A",
+	"SENSOR_UNIT_LUX": "lx",
+	"SENSOR_UNIT_IRRADIANCE": "μW/cm²",
 	"SENSOR_PINTOUCH_BOB3": "arm",
 	"SENSOR_SOUND_CALLIOPE": "microphone",
 	"MODE_VALUE": "value",
@@ -1533,7 +1535,8 @@
 	"SEND_DATA_TO": "send data to",
 	"SEND_DATA_TO_OSM_TOOLTIP": "This block is used to send data from sensors to the openSenseMap. Please configure the IDs in the configuration prior to the usage of this block.",
 	"SENSOR_LIGHTVEML": "visible/UV light sensor",
-	"SENSOR_LIGHTVEML_GETSAMPLE_TOOLTIP": "the current reading visible/UV light sensor",
+	"SENSOR_LIGHTVEML_LIGHT_GETSAMPLE_TOOLTIP": "Reads the current value of the visible light sensor in lux. The value is between 0 to 220000 lux.",
+	"SENSOR_LIGHTVEML_UVLIGHT_GETSAMPLE_TOOLTIP": "Reads the current value of the UV light sensor in μW/cm². The value is between 0 and > 1000.",
 	"BRICK_PHENOMENON": "Phenomenon",
 	"SEND_DATA_SENSEMAP": "openSenseMap",
 	"CONFIGURATION_NO_PHENOMENON": "no phenomenon",

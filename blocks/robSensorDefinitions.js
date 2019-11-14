@@ -868,12 +868,14 @@ sensors.lightveml.sensebox = {
     modes : [ {
         name : 'LIGHT',
         type : 'Number',
-        unit : 'PERCENT',
-        value : 50
+        unit : 'LUX',
+        op : 'NUM_REV',
+        value : 500
     }, {
         name : 'UVLIGHT',
         type : 'Number',
-        unit : 'PERCENT',
+        unit : 'IRRADIANCE',
+        op : 'NUM_REV',
         value : 50
     } ],
     ports : 'CONFIGURATION'

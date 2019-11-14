@@ -278,6 +278,7 @@ h1 {
         <block type="robConf_wireless"></block> 
         <block type="robConf_sdcard"></block> 
         <block type="robSensors_timer_reset"></block>
+        <block type="robSensors_lightveml_getSample"></block>
         <block type="robActions_display_text_i2c">
             <value name="OUT">
                 <block type="text">
@@ -295,6 +296,20 @@ h1 {
                 </block>
             </value>
         </block>
+        <block type="robControls_wait_for">
+        <value name="WAIT0">
+          <block type="logic_compare">
+            <value name="A">
+              <block type="robSensors_getSample"/>
+            </value>
+            <value name="B">
+              <block type="logic_boolean">
+                <field name="BOOL">TRUE</field>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
         <block type="robActions_plot_point"><block/>    
      </category>
 </toolbox_set>
