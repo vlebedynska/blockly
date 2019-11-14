@@ -1398,7 +1398,7 @@ sensorsAll.nao = [ sensors.touch.nao, sensors.accelerometer.nao, sensors.gyro.na
 sensorsAll.vorwerk = [ sensors.touch.vorwerk, sensors.accelerometer.vorwerk, sensors.ultrasonic.vorwerk, sensors.wall.vorwerk, sensors.drop_off.vorwerk ];
 sensorsAll.wedo = [ sensors.key.wedo, sensors.gyro.wedo, sensors.infrared.wedo, sensors.timer.wedo ];
 sensorsAll.sensebox = [ sensors.key.sensebox, sensors.light.sensebox, sensors.potentiometer.sensebox, sensors.sound.sensebox, sensors.ultrasonic.sensebox,
-        sensors.humidity.sensebox, sensors.temperature.sensebox, sensors.lightveml.sensebox, sensors.timer.sensebox ];
+sensors.humidity.sensebox, sensors.temperature.sensebox, sensors.lightveml.sensebox, sensors.accelerometer.sensebox, sensors.compass.sensebox, sensors.gyro.sensebox, sensors.timer.sensebox ];
 sensorsAll.edison = [ sensors.key.edison, sensors.infrared.edison, sensors.irseeker.edison, sensors.light.edison, sensors.sound.edison ];        
 
 function initSensors() {

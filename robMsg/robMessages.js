@@ -1138,6 +1138,7 @@ Blockly.Msg.SENSOR_RSSI = 'signal strength';
 Blockly.Msg.SENSOR_RSSI_VALUE_GETSAMPLE_TOOLTIP = 'Gets the signal strength from the last received message.';
 Blockly.Msg.SENSOR_PINTOUCH_PRESSED_GETSAMPLE_TOOLTIP = Blockly.Msg.PIN_ISTOUCHED_TOOLTIP;
 Blockly.Msg.SENSOR_ACCELEROMETER_VALUE_GETSAMPLE_TOOLTIP = Blockly.Msg.ACCELEROMETER_ROTATION_TOOLTIP;
+Blockly.Msg.SENSOR_ACCELEROMETER_GETSAMPLE_TOOLTIP = Blockly.Msg.SENSOR_ACCELEROMETER_VALUE_GETSAMPLE_TOOLTIP;
 Blockly.Msg.SENSOR_GESTURE_UP_GETSAMPLE_TOOLTIP = 'Returns »true« if the posture is upright.';
 Blockly.Msg.SENSOR_GESTURE_DOWN_GETSAMPLE_TOOLTIP = 'Returns »true« if the posture is down.';
 Blockly.Msg.SENSOR_GESTURE_FACE_UP_GETSAMPLE_TOOLTIP = 'Returns »true« if the posture is face up.';
