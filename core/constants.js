@@ -328,6 +328,7 @@ Blockly.TYPE_DROPDOWN = function(device, opt_handler) {
                     this.sourceBlock_[handler](0, option);
             }
         });
+    case 'festobionic':
     case 'vorwerk':
         return new Blockly.FieldDropdown([ [ Blockly.Msg.VARIABLES_TYPE_NUMBER, 'Number' ], [ Blockly.Msg.VARIABLES_TYPE_BOOLEAN, 'Boolean' ],
                 [ Blockly.Msg.VARIABLES_TYPE_STRING, 'String' ], [ Blockly.Msg.VARIABLES_TYPE_ARRAY_NUMBER, 'Array_Number' ],

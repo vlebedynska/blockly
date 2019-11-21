@@ -60,6 +60,9 @@ Blockly.Blocks.robConfigDefinitions['pinsDigital'].mega = function() {
 Blockly.Blocks.robConfigDefinitions['pinsDigital'].sensebox = function() {
     return createPins(1, 6);
 };
+Blockly.Blocks.robConfigDefinitions['pinsDigital'].festobionic = function() {
+    return createPins(1, 4);
+};
 
 Blockly.Blocks.robConfigDefinitions['pinsAnalog'] = {};
 Blockly.Blocks.robConfigDefinitions['pinsAnalog'].uno = function() {
@@ -386,6 +389,16 @@ confBlocks.led.arduino = {
     standardPins : [ '13' ],
     fixedPorts : [ [ 'GND', 'GND' ] ]
 };
+confBlocks.led.festobionic = {
+    title : 'LED',
+    ports : [ [ 'input', 'INPUT' ] ],
+    pins : function(a) {
+        return [ '13' ]; // only inbuilt LED
+    },
+    sensor : false,
+    standardPins : [ '13' ],
+    fixedPorts : [ [ 'GND', 'GND' ] ]
+};
 
 confBlocks.led.sensebox = {
     title : 'LED',
@@ -503,6 +516,8 @@ confBlocks.servo.arduino = {
     standardPins : [ '8' ],
     fixedPorts : [ [ 'GND', 'GND' ], [ 'VCC', '5V' ] ]
 };
+confBlocks.servo.festobionic = confBlocks.servo.arduino;
+confBlocks.servo.festobionic.standardPins = [ '1' ];
 
 confBlocks.gyro = {};
 confBlocks.gyro.wedo = {

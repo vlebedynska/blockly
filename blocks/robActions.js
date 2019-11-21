@@ -307,7 +307,7 @@ Blockly.Blocks['robActions_motor_on_for_ardu'] = {
      */
     init : function() {
         this.setColour(Blockly.CAT_ACTION_RGB);
-        if (this.workspace.device == 'arduino') {
+        if (this.workspace.device == 'arduino' || this.workspace.device == 'festobionic') {
             var dropDownPorts = getConfigPorts('servo');
             this.dependConfig = {
                 'type' : 'servo',
@@ -915,14 +915,14 @@ Blockly.Blocks['robActions_brickLight_on'] = {
                 [ Blockly.Msg.BRICKLIGHT_RED, 'RED' ] ]);
         var dropdownLightState;
         if (this.workspace.device === 'botnroll' || this.workspace.device === 'arduino' || this.workspace.device === 'calliope'
-                || this.workspace.device === 'sensebox') {
+                || this.workspace.device === 'sensebox' || this.workspace.device === 'festobionic') {
             dropdownLightState = new Blockly.FieldDropdown([ [ Blockly.Msg.BRICKLIGHT_ON, 'ON' ], [ Blockly.Msg.OFF, 'OFF' ] ]);
         } else {
             dropdownLightState = new Blockly.FieldDropdown([ [ Blockly.Msg.BRICKLIGHT_ON, 'ON' ], [ Blockly.Msg.BRICKLIGHT_FLASH, 'FLASH' ],
                     [ Blockly.Msg.BRICKLIGHT_DOUBLE_FLASH, 'DOUBLE_FLASH' ] ]);
             this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.BRICKLIGHT_COLOR).appendField(dropdownColor, 'SWITCH_COLOR');
         }
-        if (this.workspace.device === 'arduino' || this.workspace.device === 'calliope' || this.workspace.device === 'sensebox') {
+        if (this.workspace.device === 'arduino' || this.workspace.device === 'calliope' || this.workspace.device === 'sensebox' || this.workspace.device === 'festobionic') {
             var dropDownPorts;
             if (this.workspace.device === 'calliope') {
                 dropDownPorts = new Blockly.FieldDropdown([ [ Blockly.Msg.CB_LEFT, '1' ], [ Blockly.Msg.CB_RIGHT, '2' ], [ Blockly.Msg.CB_BOTH, '3' ] ]);
