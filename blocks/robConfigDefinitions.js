@@ -51,6 +51,9 @@ Blockly.Blocks.robConfigDefinitions['pinsDigital'] = {};
 Blockly.Blocks.robConfigDefinitions['pinsDigital'].uno = function() {
     return createPins(0, 13);
 };
+Blockly.Blocks.robConfigDefinitions['pinsDigital'].unowifirev2 = function() {
+    return createPins(0, 13);
+};
 Blockly.Blocks.robConfigDefinitions['pinsDigital'].nano = function() {
     return createPins(0, 13, "D");
 };
@@ -71,6 +74,9 @@ Blockly.Blocks.robConfigDefinitions['pinsAnalog'] = {};
 Blockly.Blocks.robConfigDefinitions['pinsAnalog'].uno = function() {
     return createPins(0, 5, "A", "A");
 };
+Blockly.Blocks.robConfigDefinitions['pinsAnalog'].unowifirev2 = function() {
+    return createPins(0, 5, "A", "A");
+};
 Blockly.Blocks.robConfigDefinitions['pinsAnalog'].nano = function() {
     return createPins(0, 7, "A", "A");
 };
@@ -89,6 +95,12 @@ Blockly.Blocks.robConfigDefinitions['pinsAnalogWrite'].uno = function() {
     var part1 = createPins(3, 3);
     var part2 = createPins(5, 6);
     var part3 = createPins(9, 11);
+    return part1.concat(part2).concat(part3);
+};
+Blockly.Blocks.robConfigDefinitions['pinsAnalogWrite'].unowifirev2 = function() {
+    var part1 = createPins(3, 3);
+    var part2 = createPins(5, 6);
+    var part3 = createPins(9, 10);
     return part1.concat(part2).concat(part3);
 };
 Blockly.Blocks.robConfigDefinitions['pinsAnalogWrite'].nano = function() {
@@ -174,6 +186,7 @@ confBlocks.accelerometer.sensebox = {
     title : 'ACCELEROMETER',
     sensor : true
 };
+confBlocks.accelerometer.arduino = confBlocks.accelerometer.sensebox;
 
 confBlocks.compass = {};
 confBlocks.compass.sensebox = {
@@ -392,20 +405,20 @@ confBlocks.led.arduino = {
     title : 'LED',
     ports : [ [ 'input', 'INPUT' ] ],
     pins : function(a) {
-        return Blockly.Blocks.robConfigDefinitions['pinsDigital'][a];
+        return Blockly.Blocks.robConfigDefinitions['pinsDigital'][a]().concat([[Blockly.Msg.PORT_INTERNAL, 'LED_BUILTIN']]); // add internal LED to available LEDs
     },
     sensor : false,
-    standardPins : [ '13' ],
+    standardPins : [ 'LED_BUILTIN' ],
     fixedPorts : [ [ 'GND', 'GND' ] ]
 };
 confBlocks.led.festobionic = {
     title : 'LED',
     ports : [ [ 'input', 'INPUT' ] ],
     pins : function(a) {
-        return [ '13' ]; // only inbuilt LED
+        return [[Blockly.Msg.PORT_INTERNAL, 'LED_BUILTIN']]; // only inbuilt LED
     },
     sensor : false,
-    standardPins : [ '13' ],
+    standardPins : [ 'LED_BUILTIN' ],
     fixedPorts : [ [ 'GND', 'GND' ] ]
 };
 
@@ -545,6 +558,8 @@ confBlocks.gyro.sensebox = {
     title : 'GYRO',
     sensor : true
 };
+
+confBlocks.gyro.arduino = confBlocks.gyro.sensebox;
 
 confBlocks.motor = {};
 confBlocks.motor.wedo = {

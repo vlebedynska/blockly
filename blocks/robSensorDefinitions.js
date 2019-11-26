@@ -100,6 +100,9 @@ sensors.accelerometer.sensebox = {
     } ],
     ports : 'CONFIGURATION'
 };
+
+sensors.accelerometer.arduino = sensors.accelerometer.sensebox;
+
 sensors.accelerometer.vorwerk = sensors.accelerometer.calliope;
 
 sensors.battery = {};
@@ -520,6 +523,24 @@ sensors.gyro.sensebox = {
         name : 'Z',
         type : 'Number',
         unit : 'DEGREE'
+    } ],
+    ports : 'CONFIGURATION'
+};
+
+sensors.gyro.arduino = {
+    title : 'GYRO',
+    modes : [ {
+        name : 'X',
+        type : 'Number',
+        unit : 'DEGREE_PER_SECOND'
+    }, {
+        name : 'Y',
+        type : 'Number',
+        unit : 'DEGREE_PER_SECOND'
+    }, {
+        name : 'Z',
+        type : 'Number',
+        unit : 'DEGREE_PER_SECOND'
     } ],
     ports : 'CONFIGURATION'
 };
@@ -1411,7 +1432,8 @@ sensorsAll.microbit = [ sensors.key.microbit, sensors.pintouch.microbit, sensors
         sensors.temperature.microbit, sensors.pin.microbit, sensors.accelerometer.microbit ];
 sensorsAll.arduino = [ sensors.out.arduino, sensors.key.arduino, sensors.timer.arduino, sensors.temperature.arduino, sensors.ultrasonic.arduino,
         sensors.light.arduino, sensors.moisture.arduino, sensors.potentiometer.arduino, sensors.infrared.arduino, sensors.humidity.arduino,
-        sensors.encoder.arduino, sensors.motion.arduino, sensors.pulse.arduino, sensors.drop.arduino, sensors.rfid.arduino ];
+        sensors.encoder.arduino, sensors.motion.arduino, sensors.pulse.arduino, sensors.drop.arduino, sensors.rfid.arduino, sensors.gyro.arduino,
+        sensors.accelerometer.arduino ];
 sensorsAll.festobionic = [ sensors.timer.arduino ];
 sensorsAll.nao = [ sensors.touch.nao, sensors.accelerometer.nao, sensors.gyro.nao, sensors.ultrasonic.nao, sensors.fsr.nao, sensors.electriccurrent.nao,
         sensors.detectface.nao, sensors.detectmark.nao ];
