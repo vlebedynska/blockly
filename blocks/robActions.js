@@ -723,7 +723,11 @@ Blockly.Blocks['robActions_display_clear_i2c'] = {
                 'type' : 'lcdi2c',
                 'dropDown' : dropDownPorts
             };
-            this.appendDummyInput().appendField(Blockly.Msg.DISPLAY_CLEAR).appendField(Blockly.Msg.ACTION_LCDI2C, 'ACTORTITEL').setAlign(Blockly.ALIGN_RIGHT).appendField(dropDownPorts, 'ACTORPORT');
+            if (this.workspace.device === 'sensebox') {
+                this.appendDummyInput().appendField(Blockly.Msg.DISPLAY_CLEAR).appendField(Blockly.Msg.ACTION_LCDI2C_SENSEBOX, 'ACTORTITEL').setAlign(Blockly.ALIGN_RIGHT).appendField(dropDownPorts, 'ACTORPORT');
+            } else {
+                this.appendDummyInput().appendField(Blockly.Msg.DISPLAY_CLEAR).appendField(Blockly.Msg.ACTION_LCDI2C, 'ACTORTITEL').setAlign(Blockly.ALIGN_RIGHT).appendField(dropDownPorts, 'ACTORPORT');
+            }
         } else {
             this.appendDummyInput().appendField(Blockly.Msg.DISPLAY_CLEAR);
         }
