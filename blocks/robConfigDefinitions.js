@@ -58,7 +58,10 @@ Blockly.Blocks.robConfigDefinitions['pinsDigital'].mega = function() {
     return createPins(0, 53);
 };
 Blockly.Blocks.robConfigDefinitions['pinsDigital'].sensebox = function() {
-    return createPins(1, 6);
+    var array = createPins(1, 2, "A");
+    array = array.concat(createPins(3, 4, "B"));
+    array = array.concat(createPins(5, 6, "C"));
+    return array;
 };
 Blockly.Blocks.robConfigDefinitions['pinsDigital'].festobionic = function() {
     return createPins(1, 4);
@@ -75,7 +78,10 @@ Blockly.Blocks.robConfigDefinitions['pinsAnalog'].mega = function() {
     return createPins(0, 15, "A", "A");
 };
 Blockly.Blocks.robConfigDefinitions['pinsAnalog'].sensebox = function() {
-    return createPins(1, 6);
+    var array = createPins(1, 2, "A");
+    array = array.concat(createPins(3, 4, "B"));
+    array = array.concat(createPins(5, 6, "C"));
+    return array;
 };
 
 Blockly.Blocks.robConfigDefinitions['pinsAnalogWrite'] = {};
@@ -97,7 +103,10 @@ Blockly.Blocks.robConfigDefinitions['pinsAnalogWrite'].mega = function() {
     return part1.concat(part2);
 };
 Blockly.Blocks.robConfigDefinitions['pinsAnalogWrite'].sensebox = function() {
-    return createPins(1, 6);
+    var array = createPins(1, 2, "A");
+    array = array.concat(createPins(3, 4, "B"));
+    array = array.concat(createPins(5, 6, "C"));
+    return array;
 };
 
 Blockly.Blocks.robConfigDefinitions['pins_wedo'] = function() {
@@ -404,10 +413,14 @@ confBlocks.led.sensebox = {
     title : 'LED',
     ports : [ [ 'input', 'INPUT' ] ],
     pins : function(a) {
-        return createPins(1, 8);
+        var array = createPins(1, 2, "A");
+        array = array.concat(createPins(3, 4, "B"));
+        array = array.concat(createPins(5, 6, "C"));
+        array = array.concat(createPins(7, 8));
+        return array;
     },
     sensor : false,
-    standardPins : [ '1' ],
+    standardPins : [ 'A1' ],
     fixedPorts : [ [ 'GND', 'GND' ] ]
 };
 
