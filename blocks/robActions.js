@@ -313,12 +313,18 @@ Blockly.Blocks['robActions_motor_on_for_ardu'] = {
                 'type' : 'servo',
                 'dropDown' : dropDownPorts
             };
-            this.appendValueInput('POWER').appendField(Blockly.Msg.ACTION_SERVO_ARDUINO + " " + Blockly.Msg.SET).appendField(dropDownPorts, 'MOTORPORT').appendField(Blockly.Msg.TO
+            if (this.workspace.device == 'arduino') {
+                this.appendValueInput('POWER').appendField(Blockly.Msg.SET + " " + Blockly.Msg.ACTION_SERVO_ARDUINO).appendField(dropDownPorts, 'MOTORPORT').appendField(Blockly.Msg.TO
                     + ' °').setCheck('Number');
+            } else {
+                this.appendValueInput('POWER').appendField(Blockly.Msg.SET + " " + Blockly.Msg.ACTION_SERVO).appendField(dropDownPorts, 'MOTORPORT').appendField(Blockly.Msg.TO
+                    + ' °').setCheck('Number');
+            }
         } else {
             var ports = [ [ Blockly.Msg.MOTOR_PAN, 'A' ], [ Blockly.Msg.MOTOR_TILT, 'D' ] ];
             var motorPort = new Blockly.FieldDropdown(ports);
-            this.appendValueInput('POWER').appendField(Blockly.Msg.MOTOR).appendField(motorPort, 'MOTORPORT').appendField(Blockly.Msg.SET + ' °').setCheck('Number');
+            this.appendValueInput('POWER').appendField(Blockly.Msg.SET + " " + Blockly.Msg.MOTOR).appendField(motorPort, 'MOTORPORT').appendField(Blockly.Msg.TO 
+                + ' °').setCheck('Number');
         }
         this.setPreviousStatement(true);
         this.setNextStatement(true);
@@ -694,7 +700,7 @@ Blockly.Blocks['robActions_display_clear'] = {
                 'type' : 'lcd',
                 'dropDown' : dropDownPorts
             };
-            this.appendDummyInput().appendField(Blockly.Msg.DISPLAY_CLEAR).appendField(Blockly.Msg.ACTION_LCD, 'ACTORTITEL').setAlign(Blockly.ALIGN_RIGHT).appendField(dropDownPorts, 'ACTORPORT');
+            this.appendDummyInput().appendField(Blockly.Msg.CLEAR).appendField(Blockly.Msg.ACTION_LCD, 'ACTORTITEL').setAlign(Blockly.ALIGN_RIGHT).appendField(dropDownPorts, 'ACTORPORT');
         } else {
             this.appendDummyInput().appendField(Blockly.Msg.DISPLAY_CLEAR);
         }
@@ -724,9 +730,9 @@ Blockly.Blocks['robActions_display_clear_i2c'] = {
                 'dropDown' : dropDownPorts
             };
             if (this.workspace.device === 'sensebox') {
-                this.appendDummyInput().appendField(Blockly.Msg.DISPLAY_CLEAR).appendField(Blockly.Msg.ACTION_LCDI2C_SENSEBOX, 'ACTORTITEL').setAlign(Blockly.ALIGN_RIGHT).appendField(dropDownPorts, 'ACTORPORT');
+                this.appendDummyInput().appendField(Blockly.Msg.CLEAR).appendField(Blockly.Msg.ACTION_LCDI2C_SENSEBOX, 'ACTORTITEL').setAlign(Blockly.ALIGN_RIGHT).appendField(dropDownPorts, 'ACTORPORT');
             } else {
-                this.appendDummyInput().appendField(Blockly.Msg.DISPLAY_CLEAR).appendField(Blockly.Msg.ACTION_LCDI2C, 'ACTORTITEL').setAlign(Blockly.ALIGN_RIGHT).appendField(dropDownPorts, 'ACTORPORT');
+                this.appendDummyInput().appendField(Blockly.Msg.CLEAR).appendField(Blockly.Msg.ACTION_LCDI2C, 'ACTORTITEL').setAlign(Blockly.ALIGN_RIGHT).appendField(dropDownPorts, 'ACTORPORT');
             }
         } else {
             this.appendDummyInput().appendField(Blockly.Msg.DISPLAY_CLEAR);

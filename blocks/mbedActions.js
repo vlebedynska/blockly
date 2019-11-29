@@ -353,7 +353,7 @@ Blockly.Blocks['mbedActions_fourDigitDisplay_show'] = {
 Blockly.Blocks['mbedActions_fourDigitDisplay_clear'] = {
     init : function() {
         this.setColour(Blockly.CAT_ACTION_RGB);
-        this.appendDummyInput().appendField(Blockly.Msg.DISPLAY_CLEAR).appendField(Blockly.Msg.FOURDIGITDISPLAY);
+        this.appendDummyInput().appendField(Blockly.Msg.CLEAR).appendField(Blockly.Msg.FOURDIGITDISPLAY);
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setTooltip(Blockly.Msg.FOURDIGITDISPLAY_CLEAR_TOOLTIP);

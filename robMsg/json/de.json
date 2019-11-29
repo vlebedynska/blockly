@@ -1171,7 +1171,7 @@
 	"ROTATIONS_PER_MINUTE": "rpm",
 	"SET_RELAY": "Schalte Relais",
 	"SET_RELAY_ARDUINO": "Schalte Relais SRD-05VDC-SL-C",
-	"TO": "an",
+	"TO": "auf",
 	"SENSOR_ULTRASONIC_DISTANCE_GETSAMPLE_TOOLTIP_ARDUINO": "Gibt den aktuellen Wert des Ultraschallsensors in cm zurück. Die weiteste Entfernung ist 400 cm.",
 	"SENSOR_ULTRASONIC_DISTANCE_GETSAMPLE_TOOLTIP_MBOT": "Gibt den aktuellen Wert des Ultraschallsensors in cm zurück. Die weiteste Entfernung ist 400 cm. Die näheste Entfernung ist 3 cm.",
 	"MODE_X": "X-Wert",
@@ -1275,5 +1275,6 @@
     "SOURCE_CODE_EDITOR_BUILD_TOOLTIP": "Baue den Quellcode",
     "SOURCE_CODE_EDITOR_RUN_TOOLTIP": "Starte auf dem Roboter",
     "SOURCE_CODE_EDITOR_PLACEHOLDER": "Importiere das aktuelle NEPO Programm oder fange einfach an zu tippen",
-    "SOURCE_CODE_EDITOR_CLOSE_CONFIRMATION": "All deine Änderungen gehen verloren!"
+    "SOURCE_CODE_EDITOR_CLOSE_CONFIRMATION": "All deine Änderungen gehen verloren!",
+    "CLEAR": "Lösche"
 }
