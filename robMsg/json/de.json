@@ -1280,5 +1280,6 @@
     "SOURCE_CODE_EDITOR_RUN_TOOLTIP": "Starte auf dem Roboter",
     "SOURCE_CODE_EDITOR_PLACEHOLDER": "Importiere das aktuelle NEPO Programm oder fange einfach an zu tippen",
     "SOURCE_CODE_EDITOR_CLOSE_CONFIRMATION": "All deine Änderungen gehen verloren!",
-    "CLEAR": "Lösche"
+    "CLEAR": "Lösche",
+    "SENSOR_TEMPERATURE_PRESSURE_GETSAMPLE_TOOLTIP": "Gibt den aktuellen Wert des Luftdrucksensors zurück."    
 }
