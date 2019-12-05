@@ -1302,8 +1302,8 @@ Blockly.Msg.ANALOGIN_TOOLTIP = 'Represents any actuator connected to an analog p
 Blockly.Msg.ANALOGOUT_TOOLTIP = 'Represents any sensor connected to an analog pin';
 Blockly.Msg.SENSOR_OUT_ANALOG_GETSAMPLE_TOOLTIP = 'Returns the value from the specified analog pin. The value is between 0 and 1024.';
 Blockly.Msg.SENSOR_OUT_DIGITAL_GETSAMPLE_TOOLTIP = 'Returns the value from the specified digital pin. The value is either HIGH »1« or LOW »0«.';
-Blockly.Msg.ACTOR_MODE_ANALOGIN_TOOLTIP = 'Writes an analog value (PWM wave) to a pin. Only values between 0 and 255 should be used';
-Blockly.Msg.ACTOR_MODE_DIGITALIN_TOOLTIP = 'Writes a HIGH or a LOW value to a digital pin. Only the values HIGH »1« and LOW »0« should be used.';
+Blockly.Msg.ACTOR_ANALOGIN_TOOLTIP = 'Writes an analog value (PWM wave) to a pin. Only values between 0 and 255 should be used';
+Blockly.Msg.ACTOR_DIGITALIN_TOOLTIP = 'Writes a HIGH or a LOW value to a digital pin. Only the values HIGH »1« and LOW »0« should be used.';
 Blockly.Msg.ACTION_INFRARED = 'infrared emitter';
 Blockly.Msg.ORA_LIST_CREATE_WITH_ERROR = 'Error: This block may be used only within a variable declaration.';
 Blockly.Msg.POPUP_SCANNED_ROBOTS = 'found robots';
@@ -1351,9 +1351,10 @@ Blockly.Msg.POPUP_WLAN_SECURITY_INFORMATION = 'Please note that the data provide
 
 //untranslated:
 Blockly.Msg.ACTION_PLOTTING = 'plot';
-Blockly.Msg.ACTION_PLOT_POINT = 'plot a point';
+Blockly.Msg.ACTION_PLOT_POINT = 'plot a point on';
 Blockly.Msg.ACTION_PLOT_POINT_TOOLTIP = 'plot a point with specified value (Y axis) at the specified tickmark (X axis)';
 Blockly.Msg.ACTION_PLOT_CLEAR = 'clear the plot';
+Blockly.Msg.ACTION_PLOT_CLEAR_TOOLTIP = 'removes all the data from the plot';
 Blockly.Msg.TITLE = 'title';
 Blockly.Msg.XLABEL = 'X axis label';
 Blockly.Msg.YLABEL = 'Y axis label';

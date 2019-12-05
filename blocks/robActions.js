@@ -1407,7 +1407,7 @@ Blockly.Blocks['robActions_plot_point'] = {
             'type' : 'lcdi2c',
             'dropDown' : dropDownPorts
         };
-        this.appendValueInput('VALUE').appendField(Blockly.Msg.ACTION_PLOT_POINT).appendField("on").appendField(dropDownPorts, 'ACTORPORT').appendField(Blockly.Msg.SENSOR_VALUE).setCheck('Number');
+        this.appendValueInput('VALUE').appendField(Blockly.Msg.ACTION_PLOT_POINT).appendField(dropDownPorts, 'ACTORPORT').appendField(Blockly.Msg.SENSOR_VALUE).setCheck('Number');
         this.appendValueInput('TICKMARK').appendField(Blockly.Msg.ACTION_PLOT_TICKMARK).setAlign(Blockly.ALIGN_RIGHT).setCheck('Number');
         this.setPreviousStatement(true);
         this.setNextStatement(true);
@@ -1426,7 +1426,7 @@ Blockly.Blocks['robActions_plot_clear'] = {
         this.appendDummyInput().appendField(Blockly.Msg.ACTION_PLOT_CLEAR).appendField(ports, 'ACTORPORT');
         this.setPreviousStatement(true);
         this.setNextStatement(true);
-        this.setTooltip(Blockly.Msg.LED_OFF_TOOLTIP);
+        this.setTooltip(Blockly.Msg.ACTION_PLOT_CLEAR_TOOLTIP);
     }
 };
 
