@@ -626,6 +626,16 @@ confBlocks.plotting.sensebox = {
     sensor : false
 };
 
+confBlocks.particle = {}
+confBlocks.particle.sensebox = {
+    title : 'PARTICLE',
+    ports : [ [ 'Serial', 'SERIAL' ] ],
+    pins : function(a) {
+        return [ [ 'Serial1', 'Serial1' ], [ 'Serial2', 'Serial2' ] ];
+    },
+    sensor : true  
+};
+
 function initConfBlocks() {
     for ( var confBlock in confBlocks) {
         if (confBlocks.hasOwnProperty(confBlock)) {

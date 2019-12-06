@@ -1281,5 +1281,11 @@
     "SOURCE_CODE_EDITOR_PLACEHOLDER": "Importiere das aktuelle NEPO Programm oder fange einfach an zu tippen",
     "SOURCE_CODE_EDITOR_CLOSE_CONFIRMATION": "All deine Änderungen gehen verloren!",
     "CLEAR": "Lösche",
-    "SENSOR_TEMPERATURE_PRESSURE_GETSAMPLE_TOOLTIP": "Gibt den aktuellen Wert des Luftdrucksensors zurück."    
+    "SENSOR_TEMPERATURE_PRESSURE_GETSAMPLE_TOOLTIP": "Gibt den aktuellen Wert des Luftdrucksensors zurück.",
+    
+    "SENSOR_PARTICLE" : "SDS011 Feinstaubsensor",
+    "PARTICLE_TOOLTIP" : "Block für den SDS011 Feinstaubsensor",
+    "SENSOR_PARTICLE_PM25_GETSAMPLE_TOOLTIP" : "Gibt den aktuellen PM2.5 Wert des Feinstaubsensors zurück",
+    "SENSOR_PARTICLE_PM10_GETSAMPLE_TOOLTIP" : "Gibt den aktuellen PM10 Wert des Feinstaubsensors zurück",
+    "ACCELEROMETER_TOOLTIP" : "Block für den Beschleunigungsensor"
 }
