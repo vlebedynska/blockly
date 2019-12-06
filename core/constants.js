@@ -290,6 +290,7 @@ Blockly.DATA_TYPE['Array_Image'] = "#39378B";
 Blockly.TYPE_DROPDOWN = function(device, opt_handler) {
     var handler = opt_handler || 'updateShape_';
     switch (device) {
+    case 'mbot':
     case 'calliope':
         return new Blockly.FieldDropdown([ [ Blockly.Msg.VARIABLES_TYPE_NUMBER, 'Number' ], [ Blockly.Msg.VARIABLES_TYPE_BOOLEAN, 'Boolean' ],
                 [ Blockly.Msg.VARIABLES_TYPE_STRING, 'String' ], [ Blockly.Msg.VARIABLES_TYPE_COLOUR, 'Colour' ],
@@ -314,7 +315,6 @@ Blockly.TYPE_DROPDOWN = function(device, opt_handler) {
     case 'botnroll':
     case 'sensebox':
     case 'arduino':
-    case 'mbot':
     case 'nao':
         return new Blockly.FieldDropdown([ [ Blockly.Msg.VARIABLES_TYPE_NUMBER, 'Number' ], [ Blockly.Msg.VARIABLES_TYPE_BOOLEAN, 'Boolean' ],
                 [ Blockly.Msg.VARIABLES_TYPE_STRING, 'String' ], [ Blockly.Msg.VARIABLES_TYPE_COLOUR, 'Colour' ],
@@ -397,6 +397,7 @@ Blockly.TYPE_DROPDOWN = function(device, opt_handler) {
 
 Blockly.LIST_TYPE_DROPDOWN = function(device) {
     switch (device) {
+    case 'mbot':
     case 'calliope':
         return new Blockly.FieldDropdown(
                 [ [ Blockly.Msg.VARIABLES_TYPE_NUMBER, 'Number' ], [ Blockly.Msg.VARIABLES_TYPE_BOOLEAN, 'Boolean' ],
@@ -412,7 +413,6 @@ Blockly.LIST_TYPE_DROPDOWN = function(device) {
     case 'botnroll':
     case 'sensebox':
     case 'arduino':
-    case 'mbot':
     case 'nao':
         return new Blockly.FieldDropdown([ [ Blockly.Msg.VARIABLES_TYPE_NUMBER, 'Number' ], [ Blockly.Msg.VARIABLES_TYPE_BOOLEAN, 'Boolean' ],
                 [ Blockly.Msg.VARIABLES_TYPE_STRING, 'String' ], [ Blockly.Msg.VARIABLES_TYPE_COLOUR, 'Colour' ] ], function(option) {

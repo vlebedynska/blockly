@@ -24,22 +24,23 @@ Blockly.Blocks['mbedImage_image'] = {
      */
     init : function() {
         this.setColour(Blockly.CAT_IMAGE_RGB);
-        this.appendDummyInput().appendField("    0       1       2       3       4");
-        this.appendDummyInput().appendField("0").appendField(new Blockly.FieldPixelbox(' ', this.validate_), "P00").appendField(new Blockly.FieldPixelbox(' ',
-                this.validate_), "P10").appendField(new Blockly.FieldPixelbox(' ', this.validate_), "P20").appendField(new Blockly.FieldPixelbox(' ',
-                this.validate_), "P30").appendField(new Blockly.FieldPixelbox(' ', this.validate_), "P40");
-        this.appendDummyInput().appendField("1").appendField(new Blockly.FieldPixelbox(' ', this.validate_), "P01").appendField(new Blockly.FieldPixelbox(' ',
-                this.validate_), "P11").appendField(new Blockly.FieldPixelbox(' ', this.validate_), "P21").appendField(new Blockly.FieldPixelbox(' ',
-                this.validate_), "P31").appendField(new Blockly.FieldPixelbox(' ', this.validate_), "P41");
-        this.appendDummyInput().appendField("2").appendField(new Blockly.FieldPixelbox(' ', this.validate_), "P02").appendField(new Blockly.FieldPixelbox(' ',
-                this.validate_), "P12").appendField(new Blockly.FieldPixelbox(' ', this.validate_), "P22").appendField(new Blockly.FieldPixelbox(' ',
-                this.validate_), "P32").appendField(new Blockly.FieldPixelbox(' ', this.validate_), "P42");
-        this.appendDummyInput().appendField("3").appendField(new Blockly.FieldPixelbox(' ', this.validate_), "P03").appendField(new Blockly.FieldPixelbox(' ',
-                this.validate_), "P13").appendField(new Blockly.FieldPixelbox(' ', this.validate_), "P23").appendField(new Blockly.FieldPixelbox(' ',
-                this.validate_), "P33").appendField(new Blockly.FieldPixelbox(' ', this.validate_), "P43");
-        this.appendDummyInput().appendField("4").appendField(new Blockly.FieldPixelbox(' ', this.validate_), "P04").appendField(new Blockly.FieldPixelbox(' ',
-                this.validate_), "P14").appendField(new Blockly.FieldPixelbox(' ', this.validate_), "P24").appendField(new Blockly.FieldPixelbox(' ',
-                this.validate_), "P34").appendField(new Blockly.FieldPixelbox(' ', this.validate_), "P44");
+        var tmpInputLabel = this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT);
+        var rowLength = this.workspace.device === 'mbot' ? 16 : 5;
+        var colLength = this.workspace.device === 'mbot' ? 8 : 5;
+        tmpInputLabel.appendField(new Blockly.FieldLabel("0", "monospace"));
+        for (var i = 1; i < rowLength; i++) {
+            if (i >= 10)
+                tmpInputLabel.appendField(new Blockly.FieldLabel(" " + i, "monospace"));
+            else
+                tmpInputLabel.appendField(new Blockly.FieldLabel("  " + i, "monospace"));
+        }
+        for (var i = 0; i < colLength; i++) {
+            var tmpInputRow = this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT);
+            tmpInputRow.appendField(new Blockly.FieldLabel("" + i, "monospace"));
+            for (var j = 0; j < rowLength; j++) {
+                tmpInputRow.appendField(new Blockly.FieldPixelbox(' ', this.validate_), "P" + j + i);
+            }
+        }
         this.setOutput(true, 'Image');
         this.setTooltip(Blockly.Msg.IMAGE_TOOLTIP);
     },
@@ -57,9 +58,9 @@ Blockly.Blocks['mbedImage_image'] = {
             return '';
         } else if (p.substring(0, 1) == '9') {
             return '#';
-        } else if (p.match(/^[1-8#]$/)) {
+        } else if (p.match(/^[1-8#]$/) && this.workspace.device === 'calliope') {
             return p;
-        } else if (p.substring(0, 1).match(/^[1-8#]/)) {
+        } else if (p.substring(0, 1).match(/^[1-8#]/) && this.workspace.device === 'calliope') {
             return p.substring(0, 1);
         } else {
             return null;

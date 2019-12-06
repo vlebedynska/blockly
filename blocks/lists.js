@@ -862,12 +862,12 @@ Blockly.Blocks['robLists_create_with'] = {
         switch (this.listType_) {
         case 'Number':
             switch (this.workspace.device) {
-                case 'edison':
-                    block = this.workspace.newBlock('math_integer');
-                    return block;
-                default:
-                    block = this.workspace.newBlock('math_number');
-                    return block;
+            case 'edison':
+                block = this.workspace.newBlock('math_integer');
+                return block;
+            default:
+                block = this.workspace.newBlock('math_number');
+                return block;
             }
         case 'String':
             block = this.workspace.newBlock('text');
@@ -889,7 +889,14 @@ Blockly.Blocks['robLists_create_with'] = {
             }
             return block;
         case 'Image':
-            block = this.workspace.newBlock('mbedImage_get_image');
+            switch (this.workspace.device) {
+            case 'microbit':
+            case 'calliope':
+                block = this.workspace.newBlock('mbedImage_get_image');
+            case 'mbot':
+                block = this.workspace.newBlock('mBotImage_image');
+            default:
+            }
             return block;
         case 'Connection':
             block = this.workspace.newBlock('logic_null');
@@ -1071,7 +1078,7 @@ Blockly.Blocks['robLists_getIndex'] = {
             this.WHERE_OPTIONS = [ [ Blockly.Msg.LISTS_GET_INDEX_FROM_START, 'FROM_START' ] ];
         } else {
             this.WHERE_OPTIONS = [ [ Blockly.Msg.LISTS_GET_INDEX_FROM_START, 'FROM_START' ], [ Blockly.Msg.LISTS_GET_INDEX_FROM_END, 'FROM_END' ],
-                [ Blockly.Msg.LISTS_GET_INDEX_FIRST, 'FIRST' ], [ Blockly.Msg.LISTS_GET_INDEX_LAST, 'LAST' ] ];
+                    [ Blockly.Msg.LISTS_GET_INDEX_FIRST, 'FIRST' ], [ Blockly.Msg.LISTS_GET_INDEX_LAST, 'LAST' ] ];
         }
         this.setHelpUrl(Blockly.Msg.LISTS_GET_INDEX_HELPURL);
         this.setColour(Blockly.CAT_LIST_RGB);
@@ -1229,7 +1236,7 @@ Blockly.Blocks['robLists_setIndex'] = {
             this.WHERE_OPTIONS = [ [ Blockly.Msg.LISTS_GET_INDEX_FROM_START, 'FROM_START' ] ];
         } else {
             this.WHERE_OPTIONS = [ [ Blockly.Msg.LISTS_GET_INDEX_FROM_START, 'FROM_START' ], [ Blockly.Msg.LISTS_GET_INDEX_FROM_END, 'FROM_END' ],
-                [ Blockly.Msg.LISTS_GET_INDEX_FIRST, 'FIRST' ], [ Blockly.Msg.LISTS_GET_INDEX_LAST, 'LAST' ] ];
+                    [ Blockly.Msg.LISTS_GET_INDEX_FIRST, 'FIRST' ], [ Blockly.Msg.LISTS_GET_INDEX_LAST, 'LAST' ] ];
         }
         this.setHelpUrl(Blockly.Msg.LISTS_SET_INDEX_HELPURL);
         this.setColour(Blockly.CAT_LIST_RGB);

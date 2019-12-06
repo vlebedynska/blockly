@@ -407,7 +407,16 @@ Blockly.Blocks['robGlobalVariables_declare'] = {
           block = this.workspace.newBlock('robColour_picker');
         }  
       } else if (option === 'Image') {
-        block = this.workspace.newBlock('mbedImage_get_image');
+        switch (this.workspace.device){
+        case 'microbit':
+        case 'calliope':
+          block = this.workspace.newBlock('mbedImage_get_image');
+          break;
+        case 'mbot':
+          block = this.workspace.newBlock('mBotImage_image');
+          break;
+        default:
+        }         
       } else if (option === 'Connection') {
         block = this.workspace.newBlock('logic_null');
       }

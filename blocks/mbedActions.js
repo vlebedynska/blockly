@@ -188,14 +188,23 @@ Blockly.Blocks['mbedActions_display_text'] = {
      */
     init : function() {
         this.setColour(Blockly.CAT_ACTION_RGB);
-        var what = new Blockly.FieldDropdown([ [ Blockly.Msg.DISPLAY_TEXT, 'TEXT' ], [ Blockly.Msg.DISPLAY_CHARACTER, 'CHARACTER' ] ]);
-        this.appendValueInput('OUT').appendField(Blockly.Msg.DISPLAY_SHOW).appendField(what, 'TYPE').setCheck([ 'Number', 'Boolean', 'String' ]);
+        if (this.workspace.device !== 'mbot') {
+            var what = new Blockly.FieldDropdown([ [ Blockly.Msg.DISPLAY_TEXT, 'TEXT' ], [ Blockly.Msg.DISPLAY_CHARACTER, 'CHARACTER' ] ]);
+            this.appendValueInput('OUT').appendField(Blockly.Msg.DISPLAY_SHOW).appendField(what, 'TYPE').setCheck([ 'Number', 'Boolean', 'String' ]);
+        } else {
+            var what = new Blockly.FieldDropdown([ [ Blockly.Msg.DISPLAY_TEXT, 'TEXT' ] ]);
+            var port = new Blockly.FieldDropdown([ [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ]);
+            this.appendValueInput('OUT').appendField(Blockly.Msg.DISPLAY_SHOW).appendField(what, 'TYPE').appendField(Blockly.Msg.LED_MATRIX).appendField(port, 'ACTORPORT').setCheck([
+                    'Number', 'Boolean', 'String' ]);
+        }
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setBlocking(true);
         this.setTooltip(Blockly.Msg.DISPLAY_TEXT_TOOLTIP);
     }
 };
+
+Blockly.Blocks['mBotActions_display_text'] = Blockly.Blocks.mbedActions_display_text;
 
 Blockly.Blocks['mbedActions_display_image'] = {
     /**
@@ -220,7 +229,12 @@ Blockly.Blocks['mbedActions_display_image'] = {
                 this.sourceBlock_.updateShape_(option);
             }
         });
-        this.appendValueInput('VALUE').appendField(Blockly.Msg.DISPLAY_SHOW).appendField(what, 'TYPE').setCheck('Image');
+        if (this.workspace.device !== 'mbot') {
+            this.appendValueInput('VALUE').appendField(Blockly.Msg.DISPLAY_SHOW).appendField(what, 'TYPE').setCheck('Image');
+        } else {
+            var port = new Blockly.FieldDropdown([ [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ]);
+            this.appendValueInput('VALUE').appendField(Blockly.Msg.DISPLAY_SHOW).appendField(what, 'TYPE').appendField(Blockly.Msg.LED_MATRIX).appendField(port, 'ACTORPORT').setCheck('Image');
+        }
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setTooltip(Blockly.Msg.DISPLAY_PICTURE_TOOLTIP);
@@ -264,6 +278,7 @@ Blockly.Blocks['mbedActions_display_image'] = {
         }
     }
 };
+Blockly.Blocks['mBotActions_display_image'] = Blockly.Blocks.mbedActions_display_image;
 
 Blockly.Blocks['mbedActions_display_clear'] = {
     /**
@@ -275,15 +290,20 @@ Blockly.Blocks['mbedActions_display_clear'] = {
      * @memberof Block
      */
     init : function() {
-        // this.setHelpUrl(Blockly.Msg.DISPLAY_CLEAR_HELPURL);
         this.setColour(Blockly.CAT_ACTION_RGB);
-        this.appendDummyInput().appendField(Blockly.Msg.DISPLAY_CLEAR);
+        if (this.workspace.device !== 'mbot') {
+            this.appendDummyInput().appendField(Blockly.Msg.DISPLAY_CLEAR);
+        } else {
+            var port = new Blockly.FieldDropdown([ [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ]);
+            this.appendDummyInput().appendField(Blockly.Msg.CLEAR).appendField(Blockly.Msg.LED_MATRIX).appendField(port, 'ACTORPORT');
+        }
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setTooltip(Blockly.Msg.DISPLAY_CLEAR_TOOLTIP);
-        // this.setHelp(new Blockly.Help(Blockly.Msg.DISPLAY_CLEAR_HELP));
     }
 };
+
+Blockly.Blocks['mBotActions_display_clear'] = Blockly.Blocks.mbedActions_display_clear;
 
 Blockly.Blocks['mbedActions_display_getPixel'] = {
     init : function() {
@@ -330,13 +350,21 @@ Blockly.Blocks['mbedActions_display_getBrightness'] = {
 Blockly.Blocks['mbedActions_display_setBrightness'] = {
     init : function() {
         this.setColour(Blockly.CAT_ACTION_RGB);
-        this.appendValueInput('BRIGHTNESS').setCheck('Number').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.SET + ' '
-                + Blockly.Msg.DISPLAY_PIXEL_BRIGHTNESS);
+        if (this.workspace.device !== 'mbot') {
+            this.appendValueInput('BRIGHTNESS').setCheck('Number').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.SET + ' '
+                    + Blockly.Msg.DISPLAY_PIXEL_BRIGHTNESS);
+        } else {
+            var port = new Blockly.FieldDropdown([ [ 'Port 1', '1' ], [ 'Port 2', '2' ], [ 'Port 3', '3' ], [ 'Port 4', '4' ] ]);
+            this.appendValueInput('BRIGHTNESS').setCheck('Number').setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.SET + ' '
+                    + Blockly.Msg.DISPLAY_PIXEL_BRIGHTNESS).appendField(Blockly.Msg.LED_MATRIX).appendField(port, 'ACTORPORT');
+        }
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setTooltip(Blockly.Msg.DISPLAY_SET_BRIGHTNESS_TOOLTIP);
     }
 };
+
+Blockly.Blocks['mBotActions_display_setBrightness'] = Blockly.Blocks.mbedActions_display_setBrightness;
 
 Blockly.Blocks['mbedActions_fourDigitDisplay_show'] = {
     init : function() {
@@ -605,7 +633,8 @@ Blockly.Blocks['mbedActions_write_to_pin'] = {
                 pinField.menuGenerator_ = pins;
             } else if (protocol === 'DIGITAL') {
                 var pins = [ [ '0', '0' ], [ '1', '1' ], [ '2', '2' ], [ '3', '3' ], [ '4', '4' ], [ '5', '5' ], [ '6', '6' ], [ '7', '7' ], [ '8', '8' ],
-                [ '9', '9' ], [ '10', '10' ], [ '11', '11' ], [ '12', '12' ], [ '13', '13' ], [ '14', '14' ], [ '15', '15' ], [ '16', '16' ], [ '19', '19' ], [ '20', '20' ] ];
+                        [ '9', '9' ], [ '10', '10' ], [ '11', '11' ], [ '12', '12' ], [ '13', '13' ], [ '14', '14' ], [ '15', '15' ], [ '16', '16' ],
+                        [ '19', '19' ], [ '20', '20' ] ];
                 var pinField = this.getField("PIN");
                 pinField.menuGenerator_ = pins;
             }
@@ -613,7 +642,8 @@ Blockly.Blocks['mbedActions_write_to_pin'] = {
             pinField.setText('0');
         } else {
             if (protocol === 'ANALOG') {
-                var pins = [ [ 'P1', '1' ], [ 'P2', '2' ], [ 'A1', '5' ], [ 'C04', 'C04' ], [ 'C05', 'C05' ], [ 'C06', 'C06' ], [ 'C16', 'C16' ], [ 'C17', 'C17' ] ];
+                var pins = [ [ 'P1', '1' ], [ 'P2', '2' ], [ 'A1', '5' ], [ 'C04', 'C04' ], [ 'C05', 'C05' ], [ 'C06', 'C06' ], [ 'C16', 'C16' ],
+                        [ 'C17', 'C17' ] ];
                 var pinField = this.getField("PIN");
                 pinField.menuGenerator_ = pins;
                 pinField.setValue("1");

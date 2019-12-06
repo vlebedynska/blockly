@@ -705,6 +705,22 @@ Blockly.Blocks['robBrick_motor_geared'] = {
     }
 };
 
+Blockly.Blocks['robBrick_led_matrix'] = {
+    /**
+     * Represent an led matrix.
+     * 
+     * @constructs robBrick_led_matrix
+     * @memberof Block
+     */
+
+    init : function() {
+        this.setColour(Blockly.CAT_ACTION_RGB);
+        this.appendDummyInput().appendField(Blockly.Msg.LED_MATRIX || "LED_MATRIX");
+        this.setOutput(true, 'Actor');
+        this.setTooltip(Blockly.Msg.LED_MATRIX_TOOLTIP || "LED_MATRIX_TOOLTIP");
+    }
+};
+
 Blockly.Blocks['robBrick_motor_middle'] = {
     /**
      * Represents a middle motor.

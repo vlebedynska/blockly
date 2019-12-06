@@ -744,35 +744,6 @@ Blockly.Blocks['robActions_display_clear_i2c'] = {
     }
 };
 
-Blockly.Blocks['robActions_display_matrix'] = {
-    /**
-     * Display points on the matrix.
-     * 
-     * @constructs robActions_display_matrix
-     * @this.Blockly.Block
-     * @returns immediately
-     * @memberof Block
-     */
-
-    init : function() {
-        this.setColour(Blockly.CAT_ACTION_RGB);
-        var checkBoxes = [];
-        this.appendDummyInput().appendField(Blockly.Msg.DISPLAY_SHOW + ' ' + Blockly.Msg.DISPLAY_PICTURE);
-        for (var i = 0; i < 8; i++) {
-            for (var j = 0; j < 8; j++) {
-                checkBoxes.push(new Blockly.FieldCheckbox());
-
-            }
-            this.appendDummyInput().appendField(checkBoxes[(i * 8) + 0], 'POINT' + (i * 8 + 0)).appendField(checkBoxes[(i * 8) + 1], 'POINT' + (i * 8 + 1)).appendField(checkBoxes[(i * 8) + 2], 'POINT'
-                    + (i * 8 + 2)).appendField(checkBoxes[(i * 8) + 3], 'POINT' + (i * 8 + 3)).appendField(checkBoxes[(i * 8) + 4], 'POINT' + (i * 8 + 4)).appendField(checkBoxes[(i * 8) + 5], 'POINT'
-                    + (i * 8 + 5)).appendField(checkBoxes[(i * 8) + 6], 'POINT' + (i * 8 + 6)).appendField(checkBoxes[(i * 8) + 7], 'POINT' + (i * 8 + 7));
-        }
-        this.setPreviousStatement(true);
-        this.setNextStatement(true);
-        // this.setTooltip(Blockly.Msg.DISPLAY_PICTURE_TOOLTIP);
-    }
-};
-
 Blockly.Blocks['robActions_play_tone'] = {
     /**
      * Play a tone.
