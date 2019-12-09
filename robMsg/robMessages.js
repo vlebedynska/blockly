@@ -453,7 +453,6 @@ Blockly.Msg.POPUP_REPEAT_PASSWORD = 'Repeat password';
 Blockly.Msg.POPUP_CHANGE_PASSWORD = 'change password ...';
 Blockly.Msg.POPUP_CONTINUE = 'continue anyway';
 Blockly.Msg.POPUP_ROBOT_SYSTEM = 'System';
-Blockly.Msg.POPUP_DISPLAY_HEADER = 'Output from your program';
 Blockly.Msg.BUTTON_DO_SHARE = 'Share';
 Blockly.Msg.BUTTON_DO_UPLOAD_GALLERY = 'Upload »$« to the gallery';
 Blockly.Msg.BUTTON_EMPTY_LIST = 'Empty list';
