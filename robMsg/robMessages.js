@@ -1369,7 +1369,6 @@ Blockly.Msg.POPUP_WLAN_SSID = 'SSID';
 Blockly.Msg.MENU_ROBOT_WLAN = 'WLAN credentials ...';
 Blockly.Msg.POPUP_WLAN_SECURITY_INFORMATION = 'Please note that the data provided in this dialog window is private and will not be stored in the OpenRoberta lab; it will only be used for program creation and during the compilation process. Make sure that for each new session you enter these credentials again. Please keep in mind that exposing this information to public may pose security risks.';
 
-//untranslated:
 Blockly.Msg.ACTION_PLOTTING = 'plot';
 Blockly.Msg.ACTION_PLOT_POINT = 'plot a point on';
 Blockly.Msg.ACTION_PLOT_POINT_TOOLTIP = 'plot a point with specified value (Y axis) at the specified tickmark (X axis)';
@@ -1405,3 +1404,21 @@ Blockly.Msg.SOURCE_CODE_EDITOR_PLACEHOLDER = 'Import current NEPO program or jus
 Blockly.Msg.SOURCE_CODE_EDITOR_CLOSE_CONFIRMATION = 'All your changes will be lost!';
 Blockly.Msg.CLEAR = 'clear';
 Blockly.Msg.ACCELEROMETER_TOOLTIP = 'Represents an accelerometer.';
+
+//not translated
+Blockly.Msg.GPS_TOOLTIP = 'Represents a GPS receiver.';
+Blockly.Msg.SENSOR_GPS_SENSEBOX = 'GPS receiver';
+Blockly.Msg.SENSOR_GPS_LATITUDE_GETSAMPLE_TOOLTIP_SENSEBOX = 'Returns the latitude in degree.';
+Blockly.Msg.SENSOR_GPS_LONGITUDE_GETSAMPLE_TOOLTIP_SENSEBOX = 'Returns the longitude in degree.';
+Blockly.Msg.SENSOR_GPS_ALTITUDE_GETSAMPLE_TOOLTIP_SENSEBOX = 'Returns the altitude in meters.';
+Blockly.Msg.SENSOR_GPS_SPEED_GETSAMPLE_TOOLTIP_SENSEBOX = 'Returns the speed in m/s.';
+Blockly.Msg.SENSOR_GPS_DATE_GETSAMPLE_TOOLTIP_SENSEBOX = 'Returns the current date.';
+Blockly.Msg.SENSOR_GPS_TIME_GETSAMPLE_TOOLTIP_SENSEBOX = 'Returns the current time.';
+Blockly.Msg.MODE_LATITUDE = 'latitude';
+Blockly.Msg.MODE_LONGITUDE = 'longitude';
+Blockly.Msg.MODE_ALTITUDE = 'altitude';
+Blockly.Msg.MODE_SPEED = 'speed';
+Blockly.Msg.MODE_DATE = 'date';
+Blockly.Msg.MODE_TIME = 'time';
+Blockly.Msg.SENSOR_UNIT_METER = 'm';
+Blockly.Msg.SENSOR_UNIT_SPEED = 'm/s';

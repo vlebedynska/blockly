@@ -651,6 +651,16 @@ confBlocks.particle.sensebox = {
     sensor : true  
 };
 
+confBlocks.gps = {}
+confBlocks.gps.sensebox = {
+    title : 'GPS',
+    ports : [ [ 'I2C', 'I2C' ] ],
+    pins : function() {
+        return [ [ 'I2C', 'I2C' ] ];
+    },
+    sensor : true
+};
+
 function initConfBlocks() {
     for ( var confBlock in confBlocks) {
         if (confBlocks.hasOwnProperty(confBlock)) {
