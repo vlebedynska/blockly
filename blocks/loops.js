@@ -269,8 +269,12 @@ Blockly.Blocks['controls_flow_statements'] = {
     } while (block);
     if (legal) {
       this.setWarningText(null);
+      this.setDisabled(false);
     } else {
       this.setWarningText(Blockly.Msg.CONTROLS_FLOW_STATEMENTS_WARNING);
+      if (!this.isInFlyout && !this.getInheritedDisabled()) {
+        this.setDisabled(true);
+      }
     }
   },
   /**
