@@ -48,7 +48,7 @@ Blockly.RobConfig.renameConfig = function(thatBlock, oldName, newName, workspace
         if (dropDown.menuGenerator_[0][0] == Blockly.Msg.CONFIGURATION_NO_PORT) {
             dropDown.menuGenerator_[0][0] = newName;
             dropDown.menuGenerator_[0][1] = newName;
-            dropDown.setValue(newName);
+            dropDown.setValue(newName);            
         } else if (index >= 0) {
             dropDown.menuGenerator_[index][0] = newName;
             dropDown.menuGenerator_[index][1] = newName;
@@ -59,7 +59,7 @@ Blockly.RobConfig.renameConfig = function(thatBlock, oldName, newName, workspace
             dropDown.menuGenerator_.push([ newName, newName ]);
             dropDown.arrow_.replaceChild(document.createTextNode(dropDown.sourceBlock_.RTL ? Blockly.FieldDropdown.ARROW_CHAR + ' ' : ' '
                     + Blockly.FieldDropdown.ARROW_CHAR), dropDown.arrow_.childNodes[0]);
-            dropDown.setValue(newName);
+            dropDown.render_();
         }
         block.render();
     }
@@ -100,10 +100,7 @@ Blockly.RobConfig.disposeConfig = function(thisBlock) {
                 dropDown.setValue((Blockly.Msg.CONFIGURATION_NO_PORT || Blockly.checkMsgKey('CONFIGURATION_NO_PORT')).toUpperCase());
             } else if (dropDown.menuGenerator_.length == 1) {
                 dropDown.arrow_.replaceChild(document.createTextNode(''), dropDown.arrow_.childNodes[0]);
-                // force render
-                var temp = dropDown.getText();
-                dropDown.setText(temp + "'");
-                dropDown.setText(temp);
+                dropDown.render_();
             }
             if (dropDown.getValue() === thisBlock.getFieldValue('NAME')) {
                 dropDown.setValue(dropDown.menuGenerator_[0][1]);
