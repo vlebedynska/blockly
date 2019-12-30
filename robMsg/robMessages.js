@@ -427,7 +427,7 @@ Blockly.Msg.POPUP_EMAIL = 'E-Mail';
 Blockly.Msg.POPUP_ATTENTION = 'Attention';
 Blockly.Msg.POPUP_VALUE = 'Value';
 Blockly.Msg.POPUP_STARTUP_HELP = 'Do you need help?';
-Blockly.Msg.POPUP_STARTUP_HIDE = 'Okay, don"t show this window again and remember my choice.';
+Blockly.Msg.POPUP_STARTUP_HIDE = 'Okay, don"t show this window again and remember my choice with a bookmark.';
 Blockly.Msg.POPUP_STARTUP_COOKIES = 'We use cookies to personalise content and to analyse our traffic.';
 Blockly.Msg.POPUP_CANCEL = 'Cancel';
 Blockly.Msg.POPUP_ROBOT_NAME = 'Name';
@@ -1406,6 +1406,7 @@ Blockly.Msg.SOURCE_CODE_EDITOR_PLACEHOLDER = 'Import current NEPO program or jus
 Blockly.Msg.SOURCE_CODE_EDITOR_CLOSE_CONFIRMATION = 'All your changes will be lost!';
 Blockly.Msg.CLEAR = 'clear';
 Blockly.Msg.ACCELEROMETER_TOOLTIP = 'Represents an accelerometer.';
+Blockly.Msg.POPUP_CREATE_BOOKMARK = 'Create a bookmark now to save your robot selection!';
 
 //not translated
 Blockly.Msg.GPS_TOOLTIP = 'Represents a GPS receiver.';

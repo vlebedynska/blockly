@@ -417,7 +417,7 @@
 	"POPUP_STARTUP_NEW": "Was ist neu?",
 	"POPUP_STARTUP_HELP": "Brauchst du Hilfe?",
 	"POPUP_STARTUP_TITLE": "Willkommen",
-	"POPUP_STARTUP_HIDE": "Okay, dieses Fenster beim nächsten Start nicht mehr anzeigen und meine Auswahl merken.",
+	"POPUP_STARTUP_HIDE": "Okay, dieses Fenster beim nächsten Start nicht mehr anzeigen und meine Auswahl mit einem Lesezeichen merken.",
 	"POPUP_STARTUP_COOKIES": "Wir verwenden Cookies, um Inhalte und Anzeigen zu personalisieren und die Zugriffe auf unsere Website zu analysieren.",
 	"POPUP_ROBOT_BUSY": "Your robot is busy. Please wait until the current program has finished.",
 	"POPUP_CONTINUE": "Trotzdem weiter",
@@ -1309,5 +1309,6 @@
     "MODE_DATE": "Datum",
     "MODE_TIME": "Zeit",
     "SENSOR_UNIT_METER": "m",
-    "SENSOR_UNIT_SPEED": "km/h"
+    "SENSOR_UNIT_SPEED": "km/h",
+    "POPUP_CREATE_BOOKMARK": "Erstelle dir jetzt ein Lesezeichen um deine Roboterauswahl zu merken!"
 }
