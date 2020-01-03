@@ -660,7 +660,7 @@ Blockly.Msg.ANALOG = 'analog';
 Blockly.Msg.DIGITAL = 'digital';
 Blockly.Msg.SENSOR_IS_PIN = 'is';
 
-Blockly.Msg.ORA_PROGRAM_IMPORT_ERROR_WRONG_ROBOT_TYPE = 'You are trying to import a program for a robot of a different type as selected in the menu. <br> Please switch the robot type in the robot"s menu and try to import again!';
+Blockly.Msg.ORA_PROGRAM_IMPORT_ERROR_WRONG_ROBOT_TYPE = 'You tried to import a program suitable for &, which is different from your menu selection.<br> Please switch the robot type in the robot"s menu and try to import again!';
 Blockly.Msg.DISPLAY_IMAGE = 'image';
 Blockly.Msg.DISPLAY_ANIMATION = 'animation';
 Blockly.Msg.PLAY_NOTE = 'note';

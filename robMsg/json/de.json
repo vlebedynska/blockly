@@ -613,7 +613,7 @@
 	"SENSEBOXBRICK_TOOLTIP": "Block für senseBox. Trage hier die ID's der openSenseMap ein, wenn du sie verwenden möchtest.",
 	"BOTH": "beide",
 	"PROCEDURES_DEFRETURN_RETURN": "gib zurück",
-	"ORA_PROGRAM_IMPORT_ERROR_WRONG_ROBOT_TYPE": "Der Robotertyp, den du im Menü ausgewählt hast, passt nicht zu dem Programm, dass du importieren möchtest.<br>Wähle den richtigen Robotertyp im Robotermenü aus und versuche es noch einmal!",
+	"ORA_PROGRAM_IMPORT_ERROR_WRONG_ROBOT_TYPE": "Du hast versucht ein Programm passend für $ zu importieren, welches nicht deiner Menüauswahl entpricht.<br>Wähle den richtigen Robotertyp im Robotermenü aus und versuche es noch einmal!",
 	"ORA_PROGRAM_INVALID_STATEMETNS": "Das Programm enthält Fehler. Überprüfe die Meldungen.",
 	"DISPLAY_IMAGE": "Bild",
 	"DISPLAY_ANIMATION": "Animation",
