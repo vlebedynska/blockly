@@ -423,11 +423,6 @@ Blockly.LIST_TYPE_DROPDOWN = function(device) {
                 [ Blockly.Msg.VARIABLES_TYPE_STRING, 'String' ] ], function(option) {
             this.sourceBlock_.updateType_(option);
         });
-    case 'bob3':
-        return new Blockly.FieldDropdown([ [ Blockly.Msg.VARIABLES_TYPE_NUMBER, 'Number' ], [ Blockly.Msg.VARIABLES_TYPE_BOOLEAN, 'Boolean' ],
-                [ Blockly.Msg.VARIABLES_TYPE_COLOUR, 'Colour' ] ], function(option) {
-            this.sourceBlock_.updateType_(option);
-        });
     case 'ev3':
     case 'nxt':
         return new Blockly.FieldDropdown([ [ Blockly.Msg.VARIABLES_TYPE_NUMBER, 'Number' ], [ Blockly.Msg.VARIABLES_TYPE_BOOLEAN, 'Boolean' ],
