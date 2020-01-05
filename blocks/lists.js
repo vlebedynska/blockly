@@ -893,8 +893,10 @@ Blockly.Blocks['robLists_create_with'] = {
             case 'microbit':
             case 'calliope':
                 block = this.workspace.newBlock('mbedImage_get_image');
+                break;
             case 'mbot':
                 block = this.workspace.newBlock('mBotImage_image');
+                break;
             default:
             }
             return block;
