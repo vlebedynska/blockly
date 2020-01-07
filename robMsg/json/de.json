@@ -37,6 +37,8 @@
 	"CONFIGURATION_ERROR_MOTOR_RIGHT_UNREGULATED": "Beim rechten Motor ist die Regulierung ausgestellt!",
 	"CONFIGURATION_ERROR_SENSOR_MISSING": "In der Roboterkonfiguration ist dieser Sensor nicht mit einem Sensorport verbunden!",
 	"CONFIGURATION_ERROR_ACTOR_MISSING": "In der Roboterkonfiguration ist dieser Aktuator nicht mit einem Actorport verbunden!",
+    "CONFIGURATION_ERROR_WLAN_MISSING":"WLAN ist nicht konfiguriert. Bitte füge den entsprechenden Block im Konfigurationstab hinzu!",
+	"CONFIGURATION_ERROR_SDCARD_MISSING":"SD Karte ist nicht konfiguriert. Bitte füge den entsprechenden Block im Konfigurationstab hinzu!",
 	"CONFIGURATION_ERROR_SENSOR_WRONG": "In der Roboterkonfiguration ist ein anderer Sensor mit diesem Sensorport verbunden!",
 	"CONFIGURATION_ERROR_OTHER_NOT_SUPPORTED": "Anderer Stromverbraucher unterstützt diese Art von Block nicht!",
 	"CONNECTION_TO_ROBOT": "zu Roboter",
