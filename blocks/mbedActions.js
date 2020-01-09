@@ -75,17 +75,24 @@ Blockly.Blocks['mbedActions_motors_on'] = {
             }
         });
     },
-    onchange : function() {
+    onchange : function(event) {
         if (!this.workspace || Blockly.Block.dragMode_ == 2) {
             // Block has been deleted or is in move
             return;
         }
-        var motorFirst = this.getField('A');
-        var motorSecond = this.getField('B');
-        if (motorFirst.value_ === 'A') {
-            motorSecond.setValue('B');
-        } else {
-            motorSecond.setValue('RIGHT');
+        if (event.name == "A") {
+            if (event.newValue == "A") {
+                this.getField('B').setValue("B");
+            } else {
+                this.getField('B').setValue("RIGHT");
+            }
+        }
+        if (event.name == "B") {
+            if (event.newValue == "B") {
+                this.getField('A').setValue("A");
+            } else {
+                this.getField('A').setValue("LEFT");
+            }
         }
     }
 };
