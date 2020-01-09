@@ -316,7 +316,7 @@ Blockly.Toolbox.prototype.populate_ = function(newTree) {
             syncTrees(childIn, childOut, pathToMedia);
           }
           var colour = childIn.getAttribute('colour');
-          if (goog.isString(colour)) {
+          if ((typeof colour == "string")) {
             if (colour.match(/^#[0-9a-fA-F]{6}$/)) {
               childOut.hexColour = colour;
             } else {

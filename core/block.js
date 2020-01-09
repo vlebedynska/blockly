@@ -641,7 +641,7 @@ Blockly.Block.prototype.setColour = function(colour) {
   var hue = parseFloat(colour);
   if (!isNaN(hue)) {
     this.colour_ = Blockly.hueToRgb(hue);
-  } else if (goog.isString(colour) && colour.match(/^#[0-9a-fA-F]{6}$/)) {
+  } else if ((typeof colour == "string") && colour.match(/^#[0-9a-fA-F]{6}$/)) {
     this.colour_ = colour;
   } else {
     throw 'Invalid colour: ' + colour;

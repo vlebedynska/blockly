@@ -110,7 +110,7 @@ Blockly.FieldDropdownImage.prototype.init = function() {
         'height' : this.height_ + 'px',
         'width' : this.width_ + 'px'
     }, this.fieldGroup_);
-    this.imageElement_.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', goog.isString(this.src_) ? this.src_ : '');
+    this.imageElement_.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', (typeof this.src_ == "string") ? this.src_ : '');
     // to make the combination of image and arrow clickable
     this.rectElement_ = Blockly.createSvgElement('rect', {
         'height' : this.height_ + 'px',
@@ -359,7 +359,7 @@ Blockly.FieldDropdownImage.prototype.setValue = function(newValue) {
 //          this.sourceBlock_, 'field', this.name, this.value_, newValue));
 //  }
     if (this.imageElement_) {
-        this.imageElement_.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', goog.isString(this.src_) ? this.src_ : '');
+        this.imageElement_.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', (typeof this.src_ == "string") ? this.src_ : '');
     }
 };
 

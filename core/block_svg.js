@@ -1346,7 +1346,7 @@ Blockly.BlockSvg.prototype.getCommentText = function() {
  */
 Blockly.BlockSvg.prototype.setCommentText = function(text) {
   var changedState = false;
-  if (goog.isString(text)) {
+  if (typeof text == 'string') {
     if (!this.comment) {
       this.comment = new Blockly.Comment(this);
       changedState = true;
@@ -1419,7 +1419,7 @@ Blockly.BlockSvg.prototype.setWarningText = function(text, opt_id) {
   }
 
   var changedState = false;
-  if (goog.isString(text)) {
+  if (typeof text == 'string') {
     if (!this.warning) {
       this.warning = new Blockly.Warning(this);
       changedState = true;
@@ -1512,7 +1512,7 @@ Blockly.BlockSvg.prototype.setErrorText = function(text, opt_id) {
   }
 
   var changedState = false;
-  if (goog.isString(text)) {
+  if (typeof text == 'string') {
     if (!this.error) {
       this.error = new Blockly.Error(this);
       changedState = true;
