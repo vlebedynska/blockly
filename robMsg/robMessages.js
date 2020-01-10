@@ -548,7 +548,6 @@ Blockly.Msg.ORA_ROBOT_DOES_NOT_EXIST = 'It seems that we do not support the desi
 Blockly.Msg.CONFIGURATION_ERROR_SENSOR_MISSING = 'This sensor is not configured. Please add the corresponding block in the configuration tab!';
 Blockly.Msg.CONFIGURATION_ERROR_ACTOR_MISSING = 'This actuator is not configured. Please add the corresponding block in the configuration tab!';
 Blockly.Msg.CONFIGURATION_ERROR_WLAN_MISSING = 'WiFi is not configured. Please add the corresponding block in the configuration tab!';
-Blockly.Msg.CONFIGURATION_ERROR_SDCARD_MISSING = 'SD card is not configured. Please add the corresponding block in the configuration tab!';
 Blockly.Msg.CONFIGURATION_ERROR_SENSOR_WRONG = 'Connected wrong sensor to the given port!';
 Blockly.Msg.CONFIGURATION_ERROR_MOTOR_LEFT_MISSING = 'Left motor missing in the configuration!';
 Blockly.Msg.CONFIGURATION_ERROR_MOTOR_RIGHT_MISSING = 'Right motor missing in the configuration!';
