@@ -1483,6 +1483,8 @@ sensorsAll.wedo = [ sensors.key.wedo, sensors.gyro.wedo, sensors.infrared.wedo, 
 sensorsAll.sensebox = [ sensors.key.sensebox, sensors.light.sensebox, sensors.potentiometer.sensebox, sensors.sound.sensebox, sensors.ultrasonic.sensebox,
 sensors.humidity.sensebox, sensors.temperature.sensebox, sensors.lightveml.sensebox, sensors.accelerometer.sensebox, sensors.particle.sensebox, sensors.gps.sensebox, sensors.timer.sensebox ];
 sensorsAll.edison = [ sensors.key.edison, sensors.infrared.edison, sensors.irseeker.edison, sensors.light.edison, sensors.sound.edison ];        
+sensorsAll.raspberrypi = [ sensors.key.raspberrypi, sensors.timer.raspberrypiblocks_compressed.js];        
+
 
 function initSensors() {
     for ( var sensor in sensors) {
