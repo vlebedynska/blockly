@@ -349,8 +349,6 @@ Blockly.Msg.INFRARED_GETSAMPLE_TOOLTIP = "Gets the current reading from the infr
 Blockly.Msg.INFRARED_GETSAMPLE_TOOLTIP_MBOT = "Gets the current reading from the light sensor -- if a black line is detected (true/false).";  // untranslated
 Blockly.Msg.INFRARED_PRESENCE_GETSAMPLE_TOOLTIP = "Returns an array of measurements for the presence of a beacon.";  // untranslated
 Blockly.Msg.INFRARED_TOOLTIP = "Прадстаўляе інфрачырвоны датчык.";
-Blockly.Msg.INIT_FAIL_HTTPSESSION_EXPECTED_BUT_NOT_FOUND = "The connection to the openroberta-lab was closed unexpectedly. This case is rare and may happen, if the openroberta-lab-server is restarted. Please start a new connection to the openroberta-lab, e.g. by closing and starting the browser or by hitting the »reload«-button.";  // untranslated
-Blockly.Msg.INIT_FAIL_MULTIPLE_FRONTENDS_ONE_HTTPSESSION = "You are trying to connect to the openroberta-lab multiple times, e.g. by opening multiple tabs. This is not supported at the moment. Please close this view.";  // untranslated
 Blockly.Msg.INLINE_INPUTS = "Убудаваныя ўваходы";
 Blockly.Msg.INPUT = "увод";
 Blockly.Msg.INTERNAL_PORT = "унутраны";
@@ -942,7 +940,6 @@ Blockly.Msg.ON = "уключыць";
 Blockly.Msg.ORA_ACCESS_RIGHT_CHANGED = "Права на публікацыю зменена!";
 Blockly.Msg.ORA_ACCESS_RIGHT_DELETED = "Права на публікацыю выдалена!";
 Blockly.Msg.ORA_ACCOUNT_NOT_ACTIVATED_TO_SHARE = "Недастаткова правоў для апублікавання праграм, калі ласка, актывуйце Ваш уліковы запіс. <br><a href=\"https://www.roberta-home.de/index.php?id=138&L=1\" target=\"_blank\">Далейшая інфармацыя...</a>";
-Blockly.Msg.ORA_COMMAND_INVALID = "Імя Вашай канфігурацыі зарэзервавана сістэмай. Калі ласка, абярыце іншае імя і паспрабуйце ізноў!";
 Blockly.Msg.ORA_COMPILERWORKFLOW_ERROR_CONFIGURATION_NOT_FOUND = "На серверы нельга знайсці канфігурацыю робата.";
 Blockly.Msg.ORA_COMPILERWORKFLOW_ERROR_CONFIGURATION_TRANSFORM_FAILED = "Канфігурацыя робата не можа быць ператворана і запісана на мове праграмавання, якая выкарыстоўваецца для гэтага робата.";
 Blockly.Msg.ORA_COMPILERWORKFLOW_ERROR_PROGRAM_COMPILE_FAILED = "Праграма не можа быць ператворана ў машынны код.";

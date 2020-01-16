@@ -349,8 +349,6 @@ Blockly.Msg.INFRARED_GETSAMPLE_TOOLTIP = "Gets the current reading from the infr
 Blockly.Msg.INFRARED_GETSAMPLE_TOOLTIP_MBOT = "Gets the current reading from the light sensor -- if a black line is detected (true/false).";
 Blockly.Msg.INFRARED_PRESENCE_GETSAMPLE_TOOLTIP = "Returns an array of measurements for the presence of a beacon.";
 Blockly.Msg.INFRARED_TOOLTIP = "Represents an infrared sensor.";
-Blockly.Msg.INIT_FAIL_HTTPSESSION_EXPECTED_BUT_NOT_FOUND = "The connection to the openroberta-lab was closed unexpectedly. This case is rare and may happen, if the openroberta-lab-server is restarted. Please start a new connection to the openroberta-lab, e.g. by closing and starting the browser or by hitting the »reload«-button.";
-Blockly.Msg.INIT_FAIL_MULTIPLE_FRONTENDS_ONE_HTTPSESSION = "You are trying to connect to the openroberta-lab multiple times, e.g. by opening multiple tabs. This is not supported at the moment. Please close this view.";
 Blockly.Msg.INLINE_INPUTS = "Inline Inputs";
 Blockly.Msg.INPUT = "input";
 Blockly.Msg.INTERNAL_PORT = "internal";
@@ -939,10 +937,9 @@ Blockly.Msg.NXTBRICK_TOOLTIP = "Represents the NXT brick with connected actors a
 Blockly.Msg.OFF = "off";
 Blockly.Msg.OLDER_THEN_14 = "I am 16 or older than 16!";
 Blockly.Msg.ON = "on";
-Blockly.Msg.ORA_ACCESS_RIGHT_CHANGED = "The shared right is updated!";
-Blockly.Msg.ORA_ACCESS_RIGHT_DELETED = "The shared right is deleted!";
+Blockly.Msg.ORA_ACCESS_RIGHT_CHANGED = "The shared right for user »$« is updated!";
+Blockly.Msg.ORA_ACCESS_RIGHT_DELETED = "The shared right for user »$« is deleted!";
 Blockly.Msg.ORA_ACCOUNT_NOT_ACTIVATED_TO_SHARE = "Your are not allowed to share. Please activate your account! <br><a href='https://www.roberta-home.de/index.php?id=138&L=1' target='_blank'>Further information ...</a>";
-Blockly.Msg.ORA_COMMAND_INVALID = "Invalid Javascript-command";
 Blockly.Msg.ORA_COMPILERWORKFLOW_ERROR_CONFIGURATION_NOT_FOUND = "The robot configuration could not be found on the server.";
 Blockly.Msg.ORA_COMPILERWORKFLOW_ERROR_CONFIGURATION_TRANSFORM_FAILED = "The robot configuration could not be transformed into the robots programming language.";
 Blockly.Msg.ORA_COMPILERWORKFLOW_ERROR_PROGRAM_COMPILE_FAILED = "Your program has errors so it cannot be compiled. The compiler messages are: <span style='background-color:#ddd;font-family:courier;'>{MESSAGE}</span>";

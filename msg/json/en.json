@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2020-01-10 10:28:53.295626",
+		"lastupdated": "2020-01-16 16:00:54.213844",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -770,8 +770,8 @@
 	"MESSAGE_RESTART_ROBOT": "Please reconnect the robot to the Open Roberta Lab.",
 	"MESSAGE_FIRMWARE_ERROR": "The firmware of your robot is newer than that of the Open Roberta Lab. Please tell your server admin, that the server needs to be updated.",
 	"ORA_TOKEN_SET_SUCCESS": "Token set",
-	"ORA_ACCESS_RIGHT_CHANGED": "The shared right is updated!",
-	"ORA_ACCESS_RIGHT_DELETED": "The shared right is deleted!",
+	"ORA_ACCESS_RIGHT_CHANGED": "The shared right for user »$« is updated!",
+	"ORA_ACCESS_RIGHT_DELETED": "The shared right for user »$« is deleted!",
 	"ORA_TOKEN_SET_ERROR_NO_ROBOT_WAITING": "Check if your robot is switched on and connected to the server. <br />If you have problems to do this, please have a look at our help pages.",
 	"ORA_TOOLBOX_ERROR_ID_INVALID": "Toolbox name is not a valid identifier.",
 	"ORA_TOOLBOX_GET_ONE_ERROR_NOT_FOUND": "The toolbox could not be found in the database.",
@@ -783,7 +783,6 @@
 	"ORA_TOOLBOX_DELETE_ERROR": "An error has occurred while deleting the toolbox, please try it again!",
 	"ORA_TOOLBOX_TRANSFORM_ERROR": "Transformation error?",
 	"ORA_TOOLBOX_SAVE_ERROR_NOT_SAVED_TO_DB": "An error error has occurred while saving the configuration in the database.",
-	"ORA_COMMAND_INVALID": "Invalid Javascript-command",
 	"ORA_CONFIGURATION_ERROR_ID_INVALID": "Configuration name is not a valid identifier.",
 	"ORA_CONFIGURATION_GET_ONE_ERROR_NOT_FOUND": "The robot configuration could not be found in the database.",
 	"ORA_CONFIGURATION_GET_ONE_SUCCESS": "Configuration loaded",
@@ -1593,8 +1592,6 @@
 	"XTICK": "distance between X ticks",
 	"YTICK": "distance between Y ticks",
 	"ACTION_PLOT_TICKMARK": "at tickmark",
-	"INIT_FAIL_MULTIPLE_FRONTENDS_ONE_HTTPSESSION": "You are trying to connect to the openroberta-lab multiple times, e.g. by opening multiple tabs. This is not supported at the moment. Please close this view.",
-	"INIT_FAIL_HTTPSESSION_EXPECTED_BUT_NOT_FOUND": "The connection to the openroberta-lab was closed unexpectedly. This case is rare and may happen, if the openroberta-lab-server is restarted. Please start a new connection to the openroberta-lab, e.g. by closing and starting the browser or by hitting the »reload«-button.",
 	"PROGRAM_ERROR_EXPRBLOCK_TYPECHECK": "This expression is invalid. The type check failed.",
 	"PROGRAM_ERROR_EXPRBLOCK_PARSE": "This expression is syntactically incorrect.",
 	"ICON_BLOCKING_TOOLTIP": "Blocking block! This blocks needs some time to be executed, so other's have to wait until it gives back the control to the caller function.",

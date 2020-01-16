@@ -349,8 +349,6 @@ Blockly.Msg.INFRARED_GETSAMPLE_TOOLTIP = "Gibt den aktuellen Wert des Infrarotse
 Blockly.Msg.INFRARED_GETSAMPLE_TOOLTIP_MBOT = "Gibt den aktuellen Wert des Lichtsensors zurück, ob es eine schwarze Linie gibt (wahr/falsch).";
 Blockly.Msg.INFRARED_PRESENCE_GETSAMPLE_TOOLTIP = "Gibt eine Liste von Werten des Infrarotsensors zurück, wenn ein Beacon anwesend ist.";
 Blockly.Msg.INFRARED_TOOLTIP = "Block für den Infrarotsensor.";
-Blockly.Msg.INIT_FAIL_HTTPSESSION_EXPECTED_BUT_NOT_FOUND = "Die Verbindung zum openroberta-lab wurde unerwartet beendet. Dies ist sehr selten und kann passieren, wenn der openroberta-lab-Server neu gestartet wird. Bitte verbinde dich komplett neu mit dem openroberta-lab, z.B. durch Beenden und Neustarten des Browser oder über den »reload«-Button.";
-Blockly.Msg.INIT_FAIL_MULTIPLE_FRONTENDS_ONE_HTTPSESSION = "Du versuchst dich mehrfach mit dem openroberta-lab zu verbinden, z.B. über mehrere Tabs. Das unterstützen wir zur Zeit nicht. Bitte schließe diese Ansicht.";
 Blockly.Msg.INLINE_INPUTS = "interne Eingänge";
 Blockly.Msg.INPUT = "Eingang";
 Blockly.Msg.INTERNAL_PORT = "innere";
@@ -939,10 +937,9 @@ Blockly.Msg.NXTBRICK_TOOLTIP = "Block für den NXT Stein mit den angeschlossenen
 Blockly.Msg.OFF = "aus";
 Blockly.Msg.OLDER_THEN_14 = "Ich bin 16 oder älter!";
 Blockly.Msg.ON = "an";
-Blockly.Msg.ORA_ACCESS_RIGHT_CHANGED = "Das Programm wurde geteilt.";
-Blockly.Msg.ORA_ACCESS_RIGHT_DELETED = "Das Programm wird nicht mehr geteilt!";
+Blockly.Msg.ORA_ACCESS_RIGHT_CHANGED = "Das Programm wurde mit »$« geteilt.";
+Blockly.Msg.ORA_ACCESS_RIGHT_DELETED = "Das Programm wird nun nicht mehr mit »$« geteilt!";
 Blockly.Msg.ORA_ACCOUNT_NOT_ACTIVATED_TO_SHARE = "Du kannst Programme nur teilen oder in die Gallerie hochladen, wenn dein Benutzerkonto verifiziert wurde.<br><a href='https://www.roberta-home.de/index.php?id=138' target='_blank'>Mehr Infos ...</a>";
-Blockly.Msg.ORA_COMMAND_INVALID = "Dein Konfigurationsname ist vom System reserviert. Wähle bitte einen anderen Namen und versuche es noch einmal!";
 Blockly.Msg.ORA_COMPILERWORKFLOW_ERROR_CONFIGURATION_NOT_FOUND = "Der Server konnte die Roboterkonfiguration nicht finden.";
 Blockly.Msg.ORA_COMPILERWORKFLOW_ERROR_CONFIGURATION_TRANSFORM_FAILED = "Die Roboterkonfiguration konnte nicht in die entsprechende Programmiersprache übertragen werden.";
 Blockly.Msg.ORA_COMPILERWORKFLOW_ERROR_PROGRAM_COMPILE_FAILED = "Das Programm kann nicht auf dem Roboter oder in der Simulation ausgeführt werden. Das Program kann nicht übersetzt werden. Die Fehlermeldung ist: <span style='background-color:#ddd;font-family:courier;'>{MESSAGE}</span>";

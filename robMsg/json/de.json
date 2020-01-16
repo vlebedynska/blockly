@@ -294,7 +294,6 @@
 	"NO": "nein",
 	"OFF": "aus",
 	"ON": "an",
-	"ORA_COMMAND_INVALID": "Dein Konfigurationsname ist vom System reserviert. Wähle bitte einen anderen Namen und versuche es noch einmal!",
 	"ORA_COMPILERWORKFLOW_ERROR_CONFIGURATION_NOT_FOUND": "Der Server konnte die Roboterkonfiguration nicht finden.",
 	"ORA_COMPILERWORKFLOW_ERROR_CONFIGURATION_TRANSFORM_FAILED": "Die Roboterkonfiguration konnte nicht in die entsprechende Programmiersprache übertragen werden.",
 	"ORA_COMPILERWORKFLOW_ERROR_PROGRAM_COMPILE_FAILED": "Das Programm kann nicht auf dem Roboter oder in der Simulation ausgeführt werden. Das Program kann nicht übersetzt werden. Die Fehlermeldung ist: <span style='background-color:#ddd;font-family:courier;'>{MESSAGE}</span>",
@@ -471,8 +470,8 @@
 	"SENSOR_MIC": "Mikrofon",
 	"SET": "Setze",
 	"SERVER_NOT_AVAILABLE": "Das Open Roberta Lab ist zur Zeit nicht erreichbar. </br>Die Internetverbindung wurde unterbrochen. Solltest du gerade einen EV3 mit dem USB-Kabel verbunden haben, genügt ein Klick auf die Programmieroberfläche.<br> Falls das Problem weiterhin besteht, überprüfe deine Internetverbindung und lade diese Webseite neu. Sollte das Problem erneut auftreten, schreibe bitte eine Mail an folgende Adresse:</br>support-o-r@iais.fraunhofer.de",
-	"ORA_ACCESS_RIGHT_CHANGED": "Das Programm wurde geteilt.",
-	"ORA_ACCESS_RIGHT_DELETED": "Das Programm wird nicht mehr geteilt!",
+	"ORA_ACCESS_RIGHT_CHANGED": "Das Programm wurde mit »$« geteilt.",
+	"ORA_ACCESS_RIGHT_DELETED": "Das Programm wird nun nicht mehr mit »$« geteilt!",
 	"SIM_BLOCK_NOT_SUPPORTED": "Diesen Block kann man leider nicht in der Simulation verwenden!",
 	"SIM_CONFIGURATION_WARNING_SENSOR_MISSING": "Dieser Sensor ist nicht in der Roboterkonfiguration. Das Verhalten des Programmes auf dem realen Roboter wird anders als erwartet sein, bitte überprüfe die Roboterkonfiguration",
 	"SIM_CONFIGURATION_WARNING_WRONG_SENSOR_PORT": "In diesem Block hast du einen falschen Sensorport angegeben! Das Verhalten des Programmes auf dem realen Roboter wird anders als erwartet sein, bitte überprüfe die Roboterkonfiguration",
@@ -1266,8 +1265,6 @@
     "XTICK" : "X-Linienabstand",
     "YTICK" : "Y-Linienabstand",
     "ACTION_PLOT_TICKMARK" : "an dem Teilstrich",
-    "INIT_FAIL_MULTIPLE_FRONTENDS_ONE_HTTPSESSION" : "Du versuchst dich mehrfach mit dem openroberta-lab zu verbinden, z.B. über mehrere Tabs. Das unterstützen wir zur Zeit nicht. Bitte schließe diese Ansicht.",
-    "INIT_FAIL_HTTPSESSION_EXPECTED_BUT_NOT_FOUND" : "Die Verbindung zum openroberta-lab wurde unerwartet beendet. Dies ist sehr selten und kann passieren, wenn der openroberta-lab-Server neu gestartet wird. Bitte verbinde dich komplett neu mit dem openroberta-lab, z.B. durch Beenden und Neustarten des Browser oder über den »reload«-Button.",
     "PROGRAM_ERROR_EXPRBLOCK_TYPECHECK" : "Dieser Ausdruck ist nicht gültig. Fehler beim Typecheck.",
     "PROGRAM_ERROR_EXPRBLOCK_PARSE" : "Dieser Ausdruck ist falsch aufgebaut. Syntaxfehler.",
 	"ICON_BLOCKING_TOOLTIP" : "Blockierender Block! Dieser Block benötigt einige Zeit um ausgeführt zu werden. Andere Blöcke müssen warten, bis dieser Block die Kontrolle an die aufrufende Funktion zurückgibt.",
@@ -1311,5 +1308,5 @@
     "MODE_TIME": "Zeit",
     "SENSOR_UNIT_METER": "m",
     "SENSOR_UNIT_SPEED": "km/h",
-    "POPUP_CREATE_BOOKMARK": "Erstelle dir jetzt ein Lesezeichen um deine Roboterauswahl zu merken!"
+    "POPUP_CREATE_BOOKMARK": "Erstelle dir jetzt ein Lesezeichen um deine Roboterauswahl zu merken!"    
 }
