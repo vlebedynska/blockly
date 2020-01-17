@@ -1309,5 +1309,5 @@
     "SENSOR_UNIT_METER": "m",
     "SENSOR_UNIT_SPEED": "km/h",
     "POPUP_CREATE_BOOKMARK": "Erstelle dir jetzt ein Lesezeichen um deine Roboterauswahl zu merken!",
-    "POPUP_BACKGROUND_STORAGE": "Wenn du möchtest, laden wir dein Hintergrundbild für die Simulation automatisch bei den nächsten Aufrufen des Open Roberta Labs. Dazu speichern wir Daten im Local Storage auf deinem Computer. <a href=“ https://www.roberta-home.de/datenschutz-open-roberta-lab/“ target=“_blank“>Mehr dazu in unseren Datenschutzinformationen.</a>"
+    "POPUP_BACKGROUND_STORAGE": "Wenn du möchtest, laden wir dein Hintergrundbild für die Simulation automatisch bei den nächsten Aufrufen des Open Roberta Labs. Dazu speichern wir Daten im Local Storage auf deinem Computer. <a href='https://www.roberta-home.de/datenschutz-open-roberta-lab/' target='_blank'>Mehr dazu in unseren Datenschutzinformationen.</a>"
 }
