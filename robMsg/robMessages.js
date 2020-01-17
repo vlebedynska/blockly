@@ -1404,6 +1404,7 @@ Blockly.Msg.SOURCE_CODE_EDITOR_CLOSE_CONFIRMATION = 'All your changes will be lo
 Blockly.Msg.CLEAR = 'clear';
 Blockly.Msg.ACCELEROMETER_TOOLTIP = 'Represents an accelerometer.';
 Blockly.Msg.POPUP_CREATE_BOOKMARK = 'Create a bookmark now to save your robot selection!';
+Blockly.Msg.POPUP_BACKGROUND_STORAGE = 'The Open Roberta Lab can automatically load your simulation background on your next visits. For this purpose, we will save data in the Local Storage on your computer. <a href=“https://www.roberta-home.de/en/privacy-policy-open-roberta-lab/” target=“_blank“>More information in our privacy policy.</a>';
 
 //not translated
 Blockly.Msg.GPS_TOOLTIP = 'Represents a GPS receiver.';
