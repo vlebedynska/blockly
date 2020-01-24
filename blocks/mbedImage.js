@@ -34,6 +34,7 @@ Blockly.Blocks['mbedImage_image'] = {
             else
                 tmpInputLabel.appendField(new Blockly.FieldLabel("  " + i, "monospace"));
         }
+        var that = this;
         for (var i = 0; i < colLength; i++) {
             var tmpInputRow = this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT);
             tmpInputRow.appendField(new Blockly.FieldLabel("" + i, "monospace"));
@@ -58,9 +59,9 @@ Blockly.Blocks['mbedImage_image'] = {
             return '';
         } else if (p.substring(0, 1) == '9') {
             return '#';
-        } else if (p.match(/^[1-8#]$/) && this.workspace.device === 'calliope') {
+        } else if (p.match(/^[1-8#]$/) && this.sourceBlock_.workspace.device === 'calliope') {
             return p;
-        } else if (p.substring(0, 1).match(/^[1-8#]/) && this.workspace.device === 'calliope') {
+        } else if (p.substring(0, 1).match(/^[1-8#]/) && this.sourceBlock_.workspace.device === 'calliope') {
             return p.substring(0, 1);
         } else {
             return null;
