@@ -1363,6 +1363,9 @@ Blockly.Msg.CB_LEFT = 'Calli:bot left';
 Blockly.Msg.CB_RIGHT = 'Calli:bot right';
 Blockly.Msg.CB_BOTH = 'Calli:bot both';
 Blockly.Msg.CB_ALL = 'Calli:bot all';
+Blockly.Msg.MK_LEFT = 'MotionKit left';
+Blockly.Msg.MK_RIGHT = 'MotionKit right';
+Blockly.Msg.MK_BOTH = 'MotionKit both';
 Blockly.Msg.PORT_INTERNAL = 'Port internal';
 
 Blockly.Msg.CONFIGURATION_ERROR_WLAN_CREDENTIALS_MISSING = 'Missing WLAN credentials, please enter them in robot -> WLAN credentials ... !';

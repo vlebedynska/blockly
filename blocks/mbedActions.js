@@ -29,7 +29,7 @@ Blockly.Blocks['mbedActions_motor_on'] = {
 
     init : function() {
         var ports = [ [ 'Port A', 'A' ], [ 'Port B', 'B' ], [ 'Port A + B', 'AB' ], [ Blockly.Msg.CB_LEFT, '0' ], [ Blockly.Msg.CB_RIGHT, '2' ],
-                [ Blockly.Msg.CB_BOTH, '3' ] ];
+                [ Blockly.Msg.CB_BOTH, '3' ], [ Blockly.Msg.MK_LEFT, '4' ], [ Blockly.Msg.MK_RIGHT, '5' ], [ Blockly.Msg.MK_BOTH, '6' ] ];
         this.setColour(Blockly.CAT_ACTION_RGB);
         var motorPort = new Blockly.FieldDropdown(ports);
         this.appendValueInput('POWER').appendField(Blockly.Msg.MOTOR).appendField(motorPort, 'MOTORPORT').appendField(Blockly.Msg.ON).appendField(Blockly.Msg.MOTOR_SPEED).setCheck('Number');
@@ -37,10 +37,11 @@ Blockly.Blocks['mbedActions_motor_on'] = {
         this.setNextStatement(true);
         var thisBlock = this;
         this.setTooltip(function() {
-            if (isNaN(parseInt(thisBlock.getFieldValue('MOTORPORT')))) {
-                return Blockly.Msg['MOTOR_ON_TOOLTIP_' + thisBlock.workspace.device.toUpperCase()] || Blockly.Msg.MOTOR_ON_TOOLTIP;
-            } else {
+            var motorPort = parseInt(thisBlock.getFieldValue('MOTORPORT'));
+            if (motorPort === 0 || motorPort === 2 || motorPort === 3) {
                 return Blockly.Msg['MOTOR_ON_TOOLTIP_' + thisBlock.workspace.device.toUpperCase() + "_CB"] || Blockly.Msg.MOTOR_ON_TOOLTIP;
+            } else {
+                return Blockly.Msg['MOTOR_ON_TOOLTIP_' + thisBlock.workspace.device.toUpperCase()] || Blockly.Msg.MOTOR_ON_TOOLTIP;
             }
         });
     }
@@ -59,8 +60,8 @@ Blockly.Blocks['mbedActions_motors_on'] = {
      */
 
     init : function() {
-        var motorFirst = new Blockly.FieldDropdown([ [ 'Port A', 'A' ], [ Blockly.Msg.CB_LEFT, 'LEFT' ] ]);
-        var motorSecond = new Blockly.FieldDropdown([ [ 'Port B', 'B' ], [ Blockly.Msg.CB_RIGHT, 'RIGHT' ] ]);
+        var motorFirst = new Blockly.FieldDropdown([ [ 'Port A', 'A' ], [ Blockly.Msg.CB_LEFT, 'LEFT' ], [ Blockly.Msg.MK_LEFT, 'MK_LEFT' ] ]);
+        var motorSecond = new Blockly.FieldDropdown([ [ 'Port B', 'B' ], [ Blockly.Msg.CB_RIGHT, 'RIGHT' ], [ Blockly.Msg.MK_RIGHT, 'MK_RIGHT' ] ]);
         this.setColour(Blockly.CAT_ACTION_RGB);
         this.appendValueInput('POWER_A').appendField(Blockly.Msg.MOTOR).appendField(motorFirst, 'A').appendField(Blockly.Msg.ON).appendField(Blockly.Msg.MOTOR_SPEED).setCheck('Number');
         this.appendValueInput('POWER_B').setAlign(Blockly.ALIGN_RIGHT).appendField(motorSecond, 'B').appendField(Blockly.Msg.ON).appendField(Blockly.Msg.MOTOR_SPEED).setCheck('Number');
@@ -68,10 +69,10 @@ Blockly.Blocks['mbedActions_motors_on'] = {
         this.setNextStatement(true);
         var thisBlock = this;
         this.setTooltip(function() {
-            if (thisBlock.getFieldValue('A') == "A") {
-                return Blockly.Msg['MOTORS_ON_TOOLTIP_' + thisBlock.workspace.device.toUpperCase()] || Blockly.Msg.MOTOR_ON_TOOLTIP;
-            } else {
+            if (thisBlock.getFieldValue('A') === "LEFT") {
                 return Blockly.Msg['MOTORS_ON_TOOLTIP_' + thisBlock.workspace.device.toUpperCase() + "_CB"] || Blockly.Msg.MOTOR_ON_TOOLTIP;
+            } else {
+                return Blockly.Msg['MOTORS_ON_TOOLTIP_' + thisBlock.workspace.device.toUpperCase()] || Blockly.Msg.MOTOR_ON_TOOLTIP;
             }
         });
     },
@@ -80,18 +81,22 @@ Blockly.Blocks['mbedActions_motors_on'] = {
             // Block has been deleted or is in move
             return;
         }
-        if (event.name == "A") {
-            if (event.newValue == "A") {
+        if (event.name === "A") {
+            if (event.newValue === "A") {
                 this.getField('B').setValue("B");
-            } else {
+            } else if (event.newValue === "LEFT") {
                 this.getField('B').setValue("RIGHT");
+            } else {
+                this.getField('B').setValue("MK_RIGHT");
             }
         }
-        if (event.name == "B") {
-            if (event.newValue == "B") {
+        if (event.name === "B") {
+            if (event.newValue === "B") {
                 this.getField('A').setValue("A");
-            } else {
+            } else if (event.newValue === "RIGHT") {
                 this.getField('A').setValue("LEFT");
+            } else {
+                this.getField('A').setValue("MK_LEFT");
             }
         }
     }
@@ -155,7 +160,7 @@ Blockly.Blocks['mbedActions_motor_stop'] = {
     init : function() {
         this.setColour(Blockly.CAT_ACTION_RGB);
         var ports = [ [ 'Port A', 'A' ], [ 'Port B', 'B' ], [ 'Port A + B', 'AB' ], [ Blockly.Msg.CB_LEFT, '0' ], [ Blockly.Msg.CB_RIGHT, '2' ],
-                [ Blockly.Msg.CB_BOTH, '3' ] ];
+                [ Blockly.Msg.CB_BOTH, '3' ], [ Blockly.Msg.MK_LEFT, '4' ], [ Blockly.Msg.MK_RIGHT, '5' ], [ Blockly.Msg.MK_BOTH, '6' ] ];
         var motorPort = new Blockly.FieldDropdown(ports);
         this.appendDummyInput().appendField(Blockly.Msg.MOTOR_STOP).appendField(Blockly.Msg.MOTOR).appendField(motorPort, 'MOTORPORT');
         this.setPreviousStatement(true);

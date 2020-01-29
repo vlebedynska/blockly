@@ -1241,7 +1241,10 @@
 	"CB_LEFT": "Calli:bot links",
     "CB_RIGHT": "Calli:bot rechts",
     "CB_ALL": "Calli:bot alle",
-    "CB_BOTH": "Calli:bot beide",
+	"CB_BOTH": "Calli:bot beide",
+	"MK_LEFT": "MotionKit links",
+    "MK_RIGHT": "MotionKit rechts",
+    "MK_BOTH": "MotionKit beide",
     "PORT_INTERNAL": "Port intern",
 
     "CONFIGURATION_ERROR_WLAN_CREDENTIALS_MISSING" : "WLAN Zugangsdaten fehlen, bitte unter dem »Robot -> WLAN Zugangsdaten« ... Menupunkt eingeben!",
