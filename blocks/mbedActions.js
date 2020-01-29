@@ -720,3 +720,16 @@ Blockly.Blocks['mbedActions_switch_led_matrix'] = {
         this.setTooltip(Blockly.Msg.SWITCH_LED_MATRIX_TOOLTIP);
     }
 };
+
+Blockly.Blocks['mbedActions_servo_set'] = {
+    init : function() {
+        this.setColour(Blockly.CAT_ACTION_RGB);
+        var pins = new Blockly.FieldDropdown([ [ 'P1', '1' ], [ 'P2', '2' ], [ 'A1', '5' ], [ 'C04', 'C04' ], [ 'C05', 'C05' ], [ 'C06', 'C06' ], [ 'C16', 'C16' ],
+                [ 'C17', 'C17' ] ]);
+        this.appendValueInput('VALUE').appendField(Blockly.Msg.SET + " " + Blockly.Msg.ACTION_SERVO).appendField(pins, 'PIN_PORT').appendField(Blockly.Msg.TO + ' °').setCheck('Number');
+        this.protocol_ = 'ANALOG';
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setTooltip(Blockly.Msg.MOTOR_ON_FOR_TOOLTIP_SERVO);
+    }
+};
