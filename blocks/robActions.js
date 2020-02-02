@@ -1162,15 +1162,16 @@ Blockly.Blocks['robActions_serial_print'] = {
 Blockly.Blocks['robActions_write_pin'] = {
     init : function() {
         this.setColour(Blockly.CAT_ACTION_RGB);
-        this.dropDownPorts = getConfigPorts('analogin');
+        this.dropDownPorts = getConfigPorts('digitalin');
         var that = this;
         var valueType = new Blockly.FieldDropdown([ [ Blockly.Msg.MODE_DIGITAL, 'DIGITAL' ], [ Blockly.Msg.MODE_ANALOG, 'ANALOG' ] ], function(option) {
             if (option && this.sourceBlock_.getFieldValue('MODE') !== option) {
-                that.updatePorts(option);
+                that.updatePins_(option);
             }
         });
+        this.protocol_ = 'DIGITAL';        
         this.dependConfig = {
-            'type' : 'digitalin',
+            'type' : this.protocol_,
             'dropDown' : this.dropDownPorts
         };
         this.appendValueInput('VALUE').appendField(Blockly.Msg.PIN_WRITE).appendField(valueType, 'MODE').appendField(Blockly.Msg.ACTION_IN).appendField(this.dropDownPorts, 'ACTORPORT').setCheck('Number');
@@ -1179,9 +1180,20 @@ Blockly.Blocks['robActions_write_pin'] = {
         this.setTooltip(function() {
             return Blockly.Msg['ACTOR_' + that.getFieldValue('MODE') + 'IN_TOOLTIP'] || 'ACTOR_' + that.getFieldValue('MODE') + 'IN_TOOLTIP';
         });
-        this.updatePorts('DIGITAL');
+        this.updatePins_('DIGITAL');
     },
-    updatePorts : function(option) {
+    mutationToDom : function() {
+        var container = document.createElement('mutation');
+        container.setAttribute('protocol', this.protocol_);
+        return container;
+    },
+    domToMutation : function(xmlElement) {
+        var input = xmlElement.getAttribute('protocol');
+        this.protocol_ = input;
+        this.updatePins_(this.protocol_);
+    },
+    updatePins_ : function(option) {
+    	this.protocol_ = option;
         var configBlockName = option.toLowerCase() + 'in';
         var dropDownPorts = getConfigPorts(configBlockName);
         this.dependConfig.type = configBlockName;
