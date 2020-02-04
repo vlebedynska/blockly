@@ -592,7 +592,7 @@
 	"ORA_USER_PASSWORD_RECOVERY_EXPIRED_URL": "Dieser Link ist nicht mehr gültig. Bitte setze dein Passwort erneut zurück, falls dir das Passwort nicht mehr einfällt!",
 	"ORA_USER_PASSWORD_RECOVERY_SENT_MAIL_FAIL": "Leider konnten wir an die angegebene E-Mail-Adresse keine Mail verschicken. Bitte melde dich hier »support-o-r@iais.fraunhofer.de«",
 	"ORA_USER_PASSWORD_RECOVERY_SENT_MAIL_SUCCESS": "Die Mail wurde versendet. Bitte schaue in dein Mailpostfach!",
-	"ORA_USER_UPDATE_SUCCESS": "Dein Passwort wurde erfolgreich geändert!",
+	"ORA_USER_UPDATE_SUCCESS": "Deine Änderungen wurden erfolgreich gespeichert!",
 	"ORA_ROBOT_SET_SUCCESS": "Das System »$« ist ausgewählt!",
 	"ORA_ROBOT_DOES_NOT_EXIST": "Das ausgewählte Robotersystem wird nicht vom Open Roberta Lab unterstützt!<br>Bitte wähle ein anderes.",
 	"LIGHT_TOOLTIP": "Block für den Lichtsensor.",
