@@ -29,7 +29,7 @@ Blockly.Blocks['mbedActions_motor_on'] = {
 
     init : function() {
         var ports = [ [ 'Port A', 'A' ], [ 'Port B', 'B' ], [ 'Port A + B', 'AB' ], [ Blockly.Msg.CB_LEFT, '0' ], [ Blockly.Msg.CB_RIGHT, '2' ],
-                [ Blockly.Msg.CB_BOTH, '3' ], [ Blockly.Msg.MK_LEFT, '4' ], [ Blockly.Msg.MK_RIGHT, '5' ], [ Blockly.Msg.MK_BOTH, '6' ] ];
+                [ Blockly.Msg.CB_BOTH, '3' ] ];
         this.setColour(Blockly.CAT_ACTION_RGB);
         var motorPort = new Blockly.FieldDropdown(ports);
         this.appendValueInput('POWER').appendField(Blockly.Msg.MOTOR).appendField(motorPort, 'MOTORPORT').appendField(Blockly.Msg.ON).appendField(Blockly.Msg.MOTOR_SPEED).setCheck('Number');
@@ -60,8 +60,8 @@ Blockly.Blocks['mbedActions_motors_on'] = {
      */
 
     init : function() {
-        var motorFirst = new Blockly.FieldDropdown([ [ 'Port A', 'A' ], [ Blockly.Msg.CB_LEFT, 'LEFT' ], [ Blockly.Msg.MK_LEFT, 'MK_LEFT' ] ]);
-        var motorSecond = new Blockly.FieldDropdown([ [ 'Port B', 'B' ], [ Blockly.Msg.CB_RIGHT, 'RIGHT' ], [ Blockly.Msg.MK_RIGHT, 'MK_RIGHT' ] ]);
+        var motorFirst = new Blockly.FieldDropdown([ [ 'Port A', 'A' ], [ Blockly.Msg.CB_LEFT, 'LEFT' ] ]);
+        var motorSecond = new Blockly.FieldDropdown([ [ 'Port B', 'B' ], [ Blockly.Msg.CB_RIGHT, 'RIGHT' ] ]);
         this.setColour(Blockly.CAT_ACTION_RGB);
         this.appendValueInput('POWER_A').appendField(Blockly.Msg.MOTOR).appendField(motorFirst, 'A').appendField(Blockly.Msg.ON).appendField(Blockly.Msg.MOTOR_SPEED).setCheck('Number');
         this.appendValueInput('POWER_B').setAlign(Blockly.ALIGN_RIGHT).appendField(motorSecond, 'B').appendField(Blockly.Msg.ON).appendField(Blockly.Msg.MOTOR_SPEED).setCheck('Number');
@@ -84,23 +84,20 @@ Blockly.Blocks['mbedActions_motors_on'] = {
         if (event.name === "A") {
             if (event.newValue === "A") {
                 this.getField('B').setValue("B");
-            } else if (event.newValue === "LEFT") {
-                this.getField('B').setValue("RIGHT");
             } else {
-                this.getField('B').setValue("MK_RIGHT");
+                this.getField('B').setValue("RIGHT");
             }
         }
         if (event.name === "B") {
             if (event.newValue === "B") {
                 this.getField('A').setValue("A");
-            } else if (event.newValue === "RIGHT") {
-                this.getField('A').setValue("LEFT");
             } else {
-                this.getField('A').setValue("MK_LEFT");
+                this.getField('A').setValue("LEFT");
             }
         }
     }
 };
+
 
 Blockly.Blocks['mbedActions_single_motor_on'] = {
     /**
@@ -160,7 +157,7 @@ Blockly.Blocks['mbedActions_motor_stop'] = {
     init : function() {
         this.setColour(Blockly.CAT_ACTION_RGB);
         var ports = [ [ 'Port A', 'A' ], [ 'Port B', 'B' ], [ 'Port A + B', 'AB' ], [ Blockly.Msg.CB_LEFT, '0' ], [ Blockly.Msg.CB_RIGHT, '2' ],
-                [ Blockly.Msg.CB_BOTH, '3' ], [ Blockly.Msg.MK_LEFT, '4' ], [ Blockly.Msg.MK_RIGHT, '5' ], [ Blockly.Msg.MK_BOTH, '6' ] ];
+                [ Blockly.Msg.CB_BOTH, '3' ] ];
         var motorPort = new Blockly.FieldDropdown(ports);
         this.appendDummyInput().appendField(Blockly.Msg.MOTOR_STOP).appendField(Blockly.Msg.MOTOR).appendField(motorPort, 'MOTORPORT');
         this.setPreviousStatement(true);
@@ -736,5 +733,58 @@ Blockly.Blocks['mbedActions_servo_set'] = {
         this.setPreviousStatement(true);
         this.setNextStatement(true);
         this.setTooltip(Blockly.Msg.MOTOR_ON_FOR_TOOLTIP_SERVO);
+    }
+};
+
+Blockly.Blocks['mbedActions_motionkit_single_set'] = {
+    /**
+     * Turn MotionKit motor(s) on with specific direction.
+     * 
+     * @constructs mbedActions_motor_on
+     * @this.Blockly.Block
+     * @param {String/dropdown}
+     *            MOTORPORT - left, right, both
+     * @param {String/dropdown}
+     *            DIRECTION - forwards, backwards, off
+     * @returns immediately
+     * @memberof Block
+     */
+
+    init : function() {
+        this.setColour(Blockly.CAT_ACTION_RGB);
+        // according to the implementation (https://github.com/tinysuperlab/motionkit/blob/master/MotionKit.ts)
+        // C16 seems to be the right motor and C17 the left motor
+        var motorPort = new Blockly.FieldDropdown([ [ Blockly.Msg.LEFT, 'C17' ], [ Blockly.Msg.RIGHT, 'C16' ], [ Blockly.Msg.BOTH, 'BOTH' ] ]);
+        var direction = new Blockly.FieldDropdown([ [ Blockly.Msg.MOTOR_FOREWARD, 'FOREWARD' ], [ Blockly.Msg.OFF, 'OFF' ], [ Blockly.Msg.MOTOR_BACKWARD, 'BACKWARD' ] ]);
+        this.appendDummyInput().appendField(Blockly.Msg.MOTIONKIT).appendField(motorPort, 'MOTORPORT').appendField(direction, 'DIRECTION');
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setTooltip(Blockly.Msg.MOTIONKIT_SINGLE_TOOLTIP);
+    }
+};
+
+Blockly.Blocks['mbedActions_motionkit_dual_set'] = {
+    /**
+     * Turn MotionKit motors on with specific directions each.
+     * 
+     * @constructs mbedActions_motionkit_dual_set
+     * @this.Blockly.Block
+     * @param {String/dropdown}
+     *            DIRECTION_L - forwards, backwards, off
+     *            DIRECTION_R - forwards, backwards, off
+     * @returns immediately
+     * @memberof Block
+     */
+
+    init : function() {
+        this.setColour(Blockly.CAT_ACTION_RGB);
+        var dir = [ [ Blockly.Msg.MOTOR_FOREWARD, 'FOREWARD' ], [ Blockly.Msg.OFF, 'OFF' ], [ Blockly.Msg.MOTOR_BACKWARD, 'BACKWARD' ] ];
+        var directionL = new Blockly.FieldDropdown(dir);
+        var directionR = new Blockly.FieldDropdown(dir);
+        this.appendDummyInput().appendField(Blockly.Msg.MOTIONKIT).appendField(Blockly.Msg.LEFT).appendField(directionL, 'DIRECTION_LEFT');
+        this.appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField(Blockly.Msg.RIGHT).appendField(directionR, 'DIRECTION_RIGHT');
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setTooltip(Blockly.Msg.MOTIONKIT_DUAL_TOOLTIP);
     }
 };

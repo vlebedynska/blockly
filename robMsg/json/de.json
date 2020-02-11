@@ -1242,9 +1242,6 @@
     "CB_RIGHT": "Calli:bot rechts",
     "CB_ALL": "Calli:bot alle",
 	"CB_BOTH": "Calli:bot beide",
-	"MK_LEFT": "MotionKit links",
-    "MK_RIGHT": "MotionKit rechts",
-    "MK_BOTH": "MotionKit beide",
     "PORT_INTERNAL": "Port intern",
 
     "CONFIGURATION_ERROR_WLAN_CREDENTIALS_MISSING" : "WLAN Zugangsdaten fehlen, bitte unter dem »Robot -> WLAN Zugangsdaten« ... Menupunkt eingeben!",
@@ -1312,5 +1309,7 @@
     "SENSOR_UNIT_METER": "m",
     "SENSOR_UNIT_SPEED": "km/h",
     "POPUP_CREATE_BOOKMARK": "Erstelle dir jetzt ein Lesezeichen um deine Roboterauswahl zu merken!",
-    "POPUP_BACKGROUND_STORAGE": "Wenn du möchtest, laden wir dein Hintergrundbild für die Simulation automatisch bei den nächsten Aufrufen des Open Roberta Labs. Dazu speichern wir Daten im Local Storage auf deinem Computer. <a href='https://www.roberta-home.de/datenschutz-open-roberta-lab/' target='_blank'>Mehr dazu in unseren Datenschutzinformationen.</a>"
+	"POPUP_BACKGROUND_STORAGE": "Wenn du möchtest, laden wir dein Hintergrundbild für die Simulation automatisch bei den nächsten Aufrufen des Open Roberta Labs. Dazu speichern wir Daten im Local Storage auf deinem Computer. <a href='https://www.roberta-home.de/datenschutz-open-roberta-lab/' target='_blank'>Mehr dazu in unseren Datenschutzinformationen.</a>",
+	"MOTIONKIT_SINGLE_TOOLTIP": "Setzt den/die ausgewählten MotionKit Motor/Motoren auf die entsprechende Richtung.",
+	"MOTIONKIT_DUAL_TOOLTIP": "Setzt den jeweiligen MotionKit Motor auf die entsprechende Richtung."
 }

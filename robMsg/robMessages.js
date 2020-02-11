@@ -1363,9 +1363,6 @@ Blockly.Msg.CB_LEFT = 'Calli:bot left';
 Blockly.Msg.CB_RIGHT = 'Calli:bot right';
 Blockly.Msg.CB_BOTH = 'Calli:bot both';
 Blockly.Msg.CB_ALL = 'Calli:bot all';
-Blockly.Msg.MK_LEFT = 'MotionKit left';
-Blockly.Msg.MK_RIGHT = 'MotionKit right';
-Blockly.Msg.MK_BOTH = 'MotionKit both';
 Blockly.Msg.PORT_INTERNAL = 'Port internal';
 
 Blockly.Msg.CONFIGURATION_ERROR_WLAN_CREDENTIALS_MISSING = 'Missing WLAN credentials, please enter them in robot -> WLAN credentials ... !';
@@ -1408,6 +1405,10 @@ Blockly.Msg.CLEAR = 'clear';
 Blockly.Msg.ACCELEROMETER_TOOLTIP = 'Represents an accelerometer.';
 Blockly.Msg.POPUP_CREATE_BOOKMARK = 'Create a bookmark now to save your robot selection!';
 Blockly.Msg.POPUP_BACKGROUND_STORAGE = 'The Open Roberta Lab can automatically load your simulation background on your next visits. For this purpose, we will save data in the Local Storage on your computer. <a href="https://www.roberta-home.de/en/privacy-policy-open-roberta-lab/" target="_blank">More information in our privacy policy.</a>';
+
+Blockly.Msg.MOTIONKIT = 'MotionKit';
+Blockly.Msg.MOTIONKIT_SINGLE_TOOLTIP = 'Sets the selected MotionKit motor/motors to the specified direction.';
+Blockly.Msg.MOTIONKIT_DUAL_TOOLTIP = 'Sets each MotionKit motor to the specified direction.';
 
 //not translated
 Blockly.Msg.GPS_TOOLTIP = 'Represents a GPS receiver.';
