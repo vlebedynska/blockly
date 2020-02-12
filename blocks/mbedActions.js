@@ -755,7 +755,7 @@ Blockly.Blocks['mbedActions_motionkit_single_set'] = {
         // according to the implementation (https://github.com/tinysuperlab/motionkit/blob/master/MotionKit.ts)
         // C16 seems to be the right motor and C17 the left motor
         var motorPort = new Blockly.FieldDropdown([ [ Blockly.Msg.LEFT, 'C17' ], [ Blockly.Msg.RIGHT, 'C16' ], [ Blockly.Msg.BOTH, 'BOTH' ] ]);
-        var direction = new Blockly.FieldDropdown([ [ Blockly.Msg.MOTOR_FOREWARD, 'FOREWARD' ], [ Blockly.Msg.OFF, 'OFF' ], [ Blockly.Msg.MOTOR_BACKWARD, 'BACKWARD' ] ]);
+        var direction = new Blockly.FieldDropdown([ [ Blockly.Msg.MOTOR_FOREWARD, 'FOREWARD' ], [ Blockly.Msg.MOTOR_BACKWARD, 'BACKWARD' ], [ Blockly.Msg.OFF, 'OFF' ] ]);
         this.appendDummyInput().appendField(Blockly.Msg.MOTIONKIT).appendField(motorPort, 'MOTORPORT').appendField(direction, 'DIRECTION');
         this.setPreviousStatement(true);
         this.setNextStatement(true);
@@ -778,7 +778,7 @@ Blockly.Blocks['mbedActions_motionkit_dual_set'] = {
 
     init : function() {
         this.setColour(Blockly.CAT_ACTION_RGB);
-        var dir = [ [ Blockly.Msg.MOTOR_FOREWARD, 'FOREWARD' ], [ Blockly.Msg.OFF, 'OFF' ], [ Blockly.Msg.MOTOR_BACKWARD, 'BACKWARD' ] ];
+        var dir = [ [ Blockly.Msg.MOTOR_FOREWARD, 'FOREWARD' ], [ Blockly.Msg.MOTOR_BACKWARD, 'BACKWARD' ], [ Blockly.Msg.OFF, 'OFF' ] ];
         var directionL = new Blockly.FieldDropdown(dir);
         var directionR = new Blockly.FieldDropdown(dir);
         this.appendDummyInput().appendField(Blockly.Msg.MOTIONKIT).appendField(Blockly.Msg.LEFT).appendField(directionL, 'DIRECTION_LEFT');
