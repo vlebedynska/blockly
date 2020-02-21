@@ -1410,6 +1410,9 @@ Blockly.Msg.MOTIONKIT = 'MotionKit';
 Blockly.Msg.MOTIONKIT_SINGLE_TOOLTIP = 'Sets the selected MotionKit motor/motors to the specified direction.';
 Blockly.Msg.MOTIONKIT_DUAL_TOOLTIP = 'Sets each MotionKit motor to the specified direction.';
 
+Blockly.Msg.MATH_SINGLE_OP_SQUARE = 'square';
+Blockly.Msg.MATH_SINGLE_TOOLTIP_SQUARE = 'Return the number multiplied by itself.';
+
 //not translated
 Blockly.Msg.GPS_TOOLTIP = 'Represents a GPS receiver.';
 Blockly.Msg.SENSOR_GPS_SENSEBOX = 'GPS receiver';

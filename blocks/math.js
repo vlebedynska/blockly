@@ -190,6 +190,7 @@ Blockly.Blocks['math_single'] = {
             "name": "OP",
             "options": [
               [Blockly.Msg.MATH_SINGLE_OP_ROOT, 'ROOT'],
+              [Blockly.Msg.MATH_SINGLE_OP_SQUARE, 'SQUARE'],
               [Blockly.Msg.MATH_SINGLE_OP_ABSOLUTE, 'ABS'],
               ['-', 'NEG'],
               ['ln', 'LN'],
