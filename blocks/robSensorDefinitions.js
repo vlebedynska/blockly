@@ -841,6 +841,8 @@ sensors.light.calliope = {
     } ]
 };
 
+sensors.light.microbit = sensors.light.calliope;
+
 sensors.light.nxt = {
     title : 'LIGHT',
     modes : [ {
@@ -1459,7 +1461,7 @@ sensorsAll.calliope = [ sensors.key.calliope, sensors.pintouch.calliope, sensors
         sensors.timer.calliope, sensors.temperature.calliope, sensors.light.calliope, sensors.pin.calliope, sensors.gyro.calliope,
         sensors.accelerometer.calliope, sensors.humidity.calliope, sensors.ultrasonic.calliope, sensors.infrared.calliope ];
 sensorsAll.microbit = [ sensors.key.microbit, sensors.pintouch.microbit, sensors.gesture.microbit, sensors.compass.microbit, sensors.timer.microbit,
-        sensors.temperature.microbit, sensors.pin.microbit, sensors.accelerometer.microbit ];
+        sensors.temperature.microbit, sensors.pin.microbit, sensors.accelerometer.microbit, sensors.light.microbit ];
 sensorsAll.arduino = [ sensors.out.arduino, sensors.key.arduino, sensors.timer.arduino, sensors.temperature.arduino, sensors.ultrasonic.arduino,
         sensors.light.arduino, sensors.moisture.arduino, sensors.potentiometer.arduino, sensors.infrared.arduino, sensors.humidity.arduino,
         sensors.encoder.arduino, sensors.motion.arduino, sensors.pulse.arduino, sensors.drop.arduino, sensors.rfid.arduino, sensors.gyro.arduino,
