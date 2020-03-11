@@ -1054,6 +1054,7 @@ Blockly.Msg.CONNECTION_SEND_TOOLTIP_BOB3 = 'Sends a message of type number to an
 
 Blockly.Msg.BLOCK_NOT_EXECUTED = 'The exection of this block will have no effect!';
 Blockly.Msg.BLOCK_NOT_SUPPORTED = 'This robot does not support this block!';
+Blockly.Msg.BLOCK_USED_INCORRECTLY = 'Unfortunately, this block cannot be used in this way.';
 
 Blockly.Msg.BOB3_RECALL_NUMBER = 'recall number';
 Blockly.Msg.BOB3_REMEMBER_NUMBER = 'remember number';

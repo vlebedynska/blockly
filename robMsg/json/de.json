@@ -960,6 +960,7 @@
 	"HINT_USER_AGE": "Bist du jünger als 16 Jahre? Dann bitte deine Eltern, dir zu helfen. Sie können oben ihre E-Mail-Adresse zur Bestätigung deines Kontos angeben.",
 	"BLOCK_NOT_EXECUTED": "Überprüfe die Einstellungen bei diesem Block. Er wird so nichts ausführen können.",
 	"BLOCK_NOT_SUPPORTED": "Dieser Block wird von diesem Roboter nicht unterstützt!",
+	"BLOCK_USED_INCORRECTLY": "Dieser Block kann leider nicht auf diese Weise verwendet werden!",
 	"RESEND_ACTIVATION": "Bestätigungsmail erneut senden",
 	"ORA_USER_ACTIVATION_INVALID_URL": "Dieser Link ist nicht mehr gültig. Bitte lasse dir die Verifizierungsmail nocheinmal zusenden.",
 	"FLYOUT_VARIABLE_TEXT": "Du möchtest mit Variablen arbeiten? Erzeuge sie zuerst mit einem Klick auf das + Zeichen im »Startblock«.",
