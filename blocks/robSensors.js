@@ -595,7 +595,7 @@ Blockly.Blocks['robSensors_generic_all'] = {
                 input.removeField(toRemove[j]);
             }
             // define in which sensor / mode we are => index
-            var sensor_mode = this.sensorType_.split("_");
+            var sensor_mode = this.sensorType_.split(/_(.+)/);
             var sensor = sensor_mode[0];
             var mode = sensor_mode[1];
 
@@ -610,10 +610,10 @@ Blockly.Blocks['robSensors_generic_all'] = {
             if (this.mutPorts[index] == 'NO') {
                 if (this.ports[index].ports === 'CONFIGURATION' || (sensors[index] && sensors[index].ports === 'CONFIGURATION')) {
                     var portsList = [];
-                    var sensorTitle = this.sensorType_.split("_")[0];
+                    var sensorTitle = this.sensorType_.split(/_(.+)/)[0];
                     // special case for get sample analog/digital out
                     if (sensorTitle === 'OUT') {
-                        sensorTitle = this.sensorType_.split("_")[1] + sensorTitle;
+                        sensorTitle = this.sensorType_.split(/_(.+)/)[1] + sensorTitle;
                     }
                     var container = Blockly.Workspace.getByContainer("bricklyDiv");
                     if (container) {
