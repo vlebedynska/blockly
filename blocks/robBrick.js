@@ -395,6 +395,7 @@ Blockly.Blocks['robBrick_colour'] = {
 
 Blockly.Blocks['robBrick_HiTechnic_colour'] = {
     /**
+     * @deprecated
      * Represent HiTechnic NXT Color Sensor V2.
      * This is legacy code only needed for NXT.
      * 
