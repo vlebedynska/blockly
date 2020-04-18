@@ -6,6 +6,17 @@ goog.provide('Blockly.Msg.de');
 
 goog.require('Blockly.Msg');
 
+
+
+
+Blockly.Msg.TOOLBOX_AI = "KI";
+Blockly.Msg.TOOLBOX_NEURAL_NETWORKS = "Neuronale Netze";
+Blockly.Msg.TOOLBOX_REINFORCEMENT_LEARNING = "Bestärkendes Lernen";
+Blockly.Msg.TOOLBOX_CLUSTERING = "Clustern";
+Blockly.Msg.ARRAY_ACTOR = "Aktuatoren";
+
+
+
 Blockly.Msg.ABOUT = "über";
 Blockly.Msg.ACCELERATION_TOOLTIP = "Gibt die aktuelle Beschleunigung zurück.";
 Blockly.Msg.ACCELEROMETER_ROTATION_TOOLTIP = "Gibt den Wert für Neigung und Drehung zurück.";
