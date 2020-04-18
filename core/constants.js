@@ -117,6 +117,11 @@ Blockly.CAT_COMMUNICATION_RGB = "#FF69B4";
 Blockly.CAT_IMAGE_RGB = "#DF01D7";
 
 /**
+ * The rgb value for block colours in ai category.
+ */
+Blockly.CAT_AI_RGB = "#000000";
+
+/**
  * Opacity used to calculate flyout background color.
  */
 Blockly.FLYOUT_OPACITY = .35;
@@ -152,6 +157,7 @@ Blockly.CAT_ICON['TOOLBOX_VARIABLE'] = 'variable';
 Blockly.CAT_ICON['TOOLBOX_PROCEDURE'] = 'plus-outline';
 Blockly.CAT_ICON['TOOLBOX_COMMUNICATION'] = 'messages';
 Blockly.CAT_ICON['TOOLBOX_IMAGE'] = 'image';
+Blockly.CAT_ICON['TOOLBOX_AI'] = 'ai';
 
 /**
  * Sprited icons and images.
@@ -284,8 +290,11 @@ Blockly.DATA_TYPE['Array_Number'] = "#39378B";
 Blockly.DATA_TYPE['Array_String'] = "#39378B";
 Blockly.DATA_TYPE['Array_Boolean'] = "#39378B";
 Blockly.DATA_TYPE['Array_Colour'] = "#39378B";
-Blockly.DATA_TYPE['Array_Connection'] = "#39378B";
+Blockly.DATA_TYPE['Array_Actor'] = "#078b12";
 Blockly.DATA_TYPE['Array_Image'] = "#39378B";
+Blockly.DATA_TYPE['Array_Connection'] = "#39378B";
+
+
 
 Blockly.TYPE_DROPDOWN = function(device, opt_handler) {
     var handler = opt_handler || 'updateShape_';

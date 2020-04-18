@@ -210,7 +210,7 @@ Blockly.Blocks['lists_create_with_item'] = {
         this.appendDummyInput().appendField(Blockly.Msg.LISTS_CREATE_WITH_ITEM_TITLE);
         this.setPreviousStatement(true);
         this.setNextStatement(true);
-        this.setTooltip(Blockly.Msg.LISTS_CREATE_WITH_ITEM_TOOLTIP);
+            this.setTooltip(Blockly.Msg.LISTS_CREATE_WITH_ITEM_TOOLTIP);
         this.contextMenu = false;
     }
 };
@@ -902,6 +902,9 @@ Blockly.Blocks['robLists_create_with'] = {
             return block;
         case 'Connection':
             block = this.workspace.newBlock('logic_null');
+            return block;
+        case 'Actor' :
+            block = this.workspace.newBlock('ai_actor');
             return block;
         }
     },
