@@ -906,6 +906,9 @@ Blockly.Blocks['robLists_create_with'] = {
         case 'Actor' :
             block = this.workspace.newBlock('ai_actor');
             return block;
+        case 'Sensor':
+            block = this.workspace.newBlock('ai_sensor');
+            return block;
         }
     },
     onchange : function(e) {

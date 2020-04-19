@@ -290,9 +290,10 @@ Blockly.DATA_TYPE['Array_Number'] = "#39378B";
 Blockly.DATA_TYPE['Array_String'] = "#39378B";
 Blockly.DATA_TYPE['Array_Boolean'] = "#39378B";
 Blockly.DATA_TYPE['Array_Colour'] = "#39378B";
-Blockly.DATA_TYPE['Array_Actor'] = "#078b12";
 Blockly.DATA_TYPE['Array_Image'] = "#39378B";
 Blockly.DATA_TYPE['Array_Connection'] = "#39378B";
+Blockly.DATA_TYPE['Array_Actor'] = Blockly.DATA_TYPE['Actor'] ;
+Blockly.DATA_TYPE['Array_Sensor'] = Blockly.DATA_TYPE['Sensor'];
 
 
 

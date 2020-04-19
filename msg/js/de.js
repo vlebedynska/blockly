@@ -14,6 +14,7 @@ Blockly.Msg.TOOLBOX_NEURAL_NETWORKS = "Neuronale Netze";
 Blockly.Msg.TOOLBOX_REINFORCEMENT_LEARNING = "Bestärkendes Lernen";
 Blockly.Msg.TOOLBOX_CLUSTERING = "Clustern";
 Blockly.Msg.ARRAY_ACTOR = "Aktuatoren";
+Blockly.Msg.ARRAY_SENSOR = "Sensoren";
 
 
 

@@ -12,33 +12,6 @@ goog.require('Blockly.Blocks');
 
 Blockly.Blocks.lists.HUE = 260;
 
-Blockly.Blocks['first_test_block'] = {
-    /**
-     * Turn bricklight on.
-     *
-     * @constructs bob3Actions_leds_on
-     * @this.Blockly.Block
-     * @param {String/dropdown}
-     *            LEDSIDE - left / right
-     * @param {String/dropdown}
-     *            LEDSTATE - on / off
-     * @returns immediately
-     * @memberof Block
-     */
-    init : function() {
-
-        var input = new Blockly.FieldDropdown([ [ Blockly.Msg.SENSOR_ULTRASONIC, 'SENSOR_ULTRASONIC' ], [ Blockly.Msg.OFF, 'OFF' ] ]);
-        var output = new Blockly.FieldDropdown([ [ Blockly.Msg.MOTOR_PORT, 'LED_4' ], [ Blockly.Msg.MOTOR_RIGHT, 'LED_3' ]  ]);
-        this.appendStatementInput('STACK');
-        this.setColour(Blockly.CAT_ACTION_RGB);
-        //this.appendDummyInput().appendField(Blockly.Msg.SET_LED).appendField(Blockly.Msg.NAO_PART_BODY).appendField(input, 'LEDSIDE').appendField(output, 'LEDSTATE');
-        this.setPreviousStatement(true);
-        this.setNextStatement(true);
-        this.setTooltip(Blockly.Msg.LED_ON_WHITE_TOOLTIP);
-    }
-};
-
-
 
 Blockly.Blocks['ai_neural_network'] = {
     /**
@@ -48,7 +21,7 @@ Blockly.Blocks['ai_neural_network'] = {
     init : function () {
 
         this.appendDummyInput().appendField( 'Input Layer');
-        this.appendValueInput("INPUT_LAYER").setCheck("Array_Number");
+        this.appendValueInput("INPUT_LAYER").setCheck("Array_Sensor");
         this.appendDummyInput().appendField( '--------');
         this.appendDummyInput().appendField( 'Output Layer');
         this.appendValueInput("OUTPUT_LAYER").setCheck("Array_Actor");
@@ -64,12 +37,38 @@ Blockly.Blocks['ai_neural_network'] = {
 Blockly.Blocks['ai_actor'] = {
     /**
      * TODO Write a block description
+     * TODO SwitchCase for DropDowns or dynamically access device.
      */
     
     init: function () {
-        var aiActor = new Blockly.FieldDropdown([ [ Blockly.Msg.MOTOR_LEFT, 'MOTOR_A' ], [ Blockly.Msg.MOTOR_RIGHT, 'MOTOR_B' ] ]); //TODO Fill with correct values
-        this.setOutput(true, null);
-        this.appendDummyInput().appendField(aiActor, 'ACTOR');
+/*        var ports = [];
+        switch (this.workspace.device) {
+                    case 'ev3':
+                        ports = [ [ Blockly.Msg.MOTOR_PORT + ' A', 'A' ], [ Blockly.Msg.MOTOR_PORT + ' B', 'B' ], [ Blockly.Msg.MOTOR_PORT + ' C', 'C' ],
+                            [ Blockly.Msg.MOTOR_PORT + ' D', 'D' ] ];
+                        break;*/
+
+        var aiActor = new Blockly.FieldDropdown([ [ Blockly.Msg.MOTOR_LEFT, 'MOTOR_A' ], [ Blockly.Msg.MOTOR_RIGHT, 'MOTOR_B' ] ])//TODO Fill with correct values
+        this.setOutput(true, 'Actor');
+        this.appendDummyInput()
+            .appendField(aiActor, 'ACTOR')
+        this.setTooltip(Blockly.Msg.LED_ON_WHITE_TOOLTIP);
+    }
+
+}
+
+Blockly.Blocks['ai_sensor'] = {
+    /**
+     * TODO Write a block description
+     * TODO SwitchCase for DropDowns or dynamically access device.
+     */
+
+    init:function () {
+        var aiSensor = new Blockly.FieldDropdown([[Blockly.Msg.SENSOR_ACCELEROMETER, 'SENSOR1'], [Blockly.Msg.SENSOR_COLOUR, 'SENSOR2'], [Blockly.Msg.SENSOR_ULTRASONIC, 'SENSOR3'] ])
+        this.setOutput(true, 'Sensor');
+        this.appendDummyInput().appendField(aiSensor, "SENSOR")
+            .appendField("Schwellenwert") //TODO Replace this dummy text with a Blockly.MSG.Block
+            .appendField(new Blockly.FieldNumber(0), "NUMBER");
         this.setTooltip(Blockly.Msg.LED_ON_WHITE_TOOLTIP);
     }
 
