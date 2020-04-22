@@ -15,6 +15,11 @@ Blockly.Msg.TOOLBOX_REINFORCEMENT_LEARNING = "Bestärkendes Lernen";
 Blockly.Msg.TOOLBOX_CLUSTERING = "Clustern";
 Blockly.Msg.ARRAY_ACTOR = "Aktuatoren";
 Blockly.Msg.ARRAY_SENSOR = "Sensoren";
+Blockly.Msg.PORT = "Port";
+Blockly.Msg.THRESHOLD = "Schwellenwert";
+Blockly.Msg.ARRAY_ACTOR_TOOLTIP = "Das Output-Layer des Netzwerks";
+Blockly.Msg.ARRAY_SENSOR_TOOLTIP = "Das Input-Layer des Netzwerks";
+Blockly.Msg.NEURAL_NETWORK_TOOLTIP = "Das ist das neuronale Netz";
 
 
 
