@@ -64,17 +64,21 @@ Blockly.Blocks['ai_actor'] = {
      */
     
     init: function () {
-/*        var ports = [];
+/*      var ports = [];
         switch (this.workspace.device) {
                     case 'ev3':
                         ports = [ [ Blockly.Msg.MOTOR_PORT + ' A', 'A' ], [ Blockly.Msg.MOTOR_PORT + ' B', 'B' ], [ Blockly.Msg.MOTOR_PORT + ' C', 'C' ],
                             [ Blockly.Msg.MOTOR_PORT + ' D', 'D' ] ];
                         break;*/
-
-        var aiActor = new Blockly.FieldDropdown([
-            [ Blockly.Msg.ACTION_MOTOR + ' ' + Blockly.Msg.MOTOR_LEFT,  'MOTOR_LEFT' ],
-            [ Blockly.Msg.ACTION_MOTOR + ' ' + Blockly.Msg.MOTOR_RIGHT, 'MOTOR_RIGHT' ]
-        ]);
+        //TODO it's now done only for EV3 - add other robot systems in the future
+        var ports = [];
+        ports = [
+            [ Blockly.Msg.MOTOR_PORT + ' A', 'MOTORPORT_A' ],
+            [ Blockly.Msg.MOTOR_PORT + ' B', 'MOTORPORT_B' ],
+            [ Blockly.Msg.MOTOR_PORT + ' C', 'MOTORPORT_C' ],
+            [ Blockly.Msg.MOTOR_PORT + ' D', 'MOTORPORT_D' ]
+        ];
+        var aiActor = new Blockly.FieldDropdown(ports);
         this.setOutput(true, 'Actor');
         this.appendDummyInput()
             .appendField(aiActor, 'ACTOR')
