@@ -433,11 +433,12 @@ Blockly.LIST_TYPE_DROPDOWN = function(device) {
                 [ Blockly.Msg.VARIABLES_TYPE_STRING, 'String' ] ], function(option) {
             this.sourceBlock_.updateType_(option);
         });
-    case 'ev3':
     case 'nxt':
+    case 'ev3':
         return new Blockly.FieldDropdown([ [ Blockly.Msg.VARIABLES_TYPE_NUMBER, 'Number' ], [ Blockly.Msg.VARIABLES_TYPE_BOOLEAN, 'Boolean' ],
                 [ Blockly.Msg.VARIABLES_TYPE_STRING, 'String' ], [ Blockly.Msg.VARIABLES_TYPE_COLOUR, 'Colour' ],
-                [ Blockly.Msg.VARIABLES_TYPE_CONNECTION, 'Connection' ] ], function(option) {
+                [ Blockly.Msg.VARIABLES_TYPE_CONNECTION, 'Connection' ], [ Blockly.Msg.VARIABLES_TYPE_ARRAY_ACTOR, 'Actor' ],
+                [ Blockly.Msg.VARIABLES_TYPE_ARRAY_SENSOR, 'Sensor' ]], function(option) {
             this.sourceBlock_.updateType_(option);
         });
     case 'wedo':
@@ -452,7 +453,7 @@ Blockly.LIST_TYPE_DROPDOWN = function(device) {
 
 /**
  * ENUM for toolbox and flyout at top of screen.
- * 
+ *
  * @const
  */
 Blockly.TOOLBOX_AT_TOP = 0;

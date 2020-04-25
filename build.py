@@ -256,6 +256,7 @@ class Gen_compressed(threading.Thread):
     self.do_compile(params, target_filename, filenames, remove)
 
   def do_compile(self, params, target_filename, filenames, remove):
+    print ("###Start compiling ", target_filename)
     # Send the request to Google.
     headers = {"Content-type": "application/x-www-form-urlencoded"}
     conn = httplib.HTTPSConnection("closure-compiler.appspot.com")
@@ -452,6 +453,7 @@ https://developers.google.com/blockly/hacking/closure""")
 
   search_paths = calcdeps.ExpandDirectories(
       ["core", os.path.join(os.path.pardir, "closure-library")])
+  print ("###", search_paths)
 
   # Run both tasks in parallel threads.
   # Uncompressed is limited by processor speed.

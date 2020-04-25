@@ -50,6 +50,22 @@ goog.require('Blockly.Msg');
 
 // Tooltips for the robot blocks
 /// Rob Actions tooltips
+
+
+//TODO Msgs einfügen.
+//AI Blocks
+Blockly.Msg.TOOLBOX_AI = 'AI';
+Blockly.Msg.TOOLBOX_NEURAL_NETWORKS = 'Neural Networks';
+Blockly.Msg.TOOLBOX_REINFORCEMENT_LEARNING = 'Reinforcement Learning';
+Blockly.Msg.TOOLBOX_CLUSTERING = 'Clustering';
+Blockly.Msg.VARIABLES_TYPE_ARRAY_ACTOR = 'Actor';
+Blockly.Msg.VARIABLES_TYPE_ARRAY_SENSOR = 'Sensor';
+Blockly.Msg.PORT = 'Port';
+Blockly.Msg.THRESHOLD = 'Threshold';
+Blockly.Msg.ARRAY_ACTOR_TOOLTIP = 'The Output-Layer of the network';
+Blockly.Msg.ARRAY_SENSOR_TOOLTIP = 'The Input-Layer of the network';
+Blockly.Msg.NEURAL_NETWORK_TOOLTIP = 'This is the neural network';
+//alt
 Blockly.Msg.MOTOR_ON_TOOLTIP = 'Turns motor on with specific power.';
 Blockly.Msg.MOTOR_ON_TOOLTIP_CALLIOPE = 'Turns motor A, B or A+B on with a specific power.';
 Blockly.Msg.MOTORS_ON_TOOLTIP_CALLIOPE = 'Turns motor A and B on with a specific power.';

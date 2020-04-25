@@ -6,23 +6,6 @@ goog.provide('Blockly.Msg.de');
 
 goog.require('Blockly.Msg');
 
-
-
-
-Blockly.Msg.TOOLBOX_AI = "KI";
-Blockly.Msg.TOOLBOX_NEURAL_NETWORKS = "Neuronale Netze";
-Blockly.Msg.TOOLBOX_REINFORCEMENT_LEARNING = "Bestärkendes Lernen";
-Blockly.Msg.TOOLBOX_CLUSTERING = "Clustern";
-Blockly.Msg.ARRAY_ACTOR = "Aktuatoren";
-Blockly.Msg.ARRAY_SENSOR = "Sensoren";
-Blockly.Msg.PORT = "Port";
-Blockly.Msg.THRESHOLD = "Schwellenwert";
-Blockly.Msg.ARRAY_ACTOR_TOOLTIP = "Das Output-Layer des Netzwerks";
-Blockly.Msg.ARRAY_SENSOR_TOOLTIP = "Das Input-Layer des Netzwerks";
-Blockly.Msg.NEURAL_NETWORK_TOOLTIP = "Das ist das neuronale Netz";
-
-
-
 Blockly.Msg.ABOUT = "über";
 Blockly.Msg.ACCELERATION_TOOLTIP = "Gibt die aktuelle Beschleunigung zurück.";
 Blockly.Msg.ACCELEROMETER_ROTATION_TOOLTIP = "Gibt den Wert für Neigung und Drehung zurück.";
@@ -66,6 +49,8 @@ Blockly.Msg.ANALOGIN_TOOLTIP = "Block für einen beliebigen Aktor, der mit einem
 Blockly.Msg.ANALOGOUT_TOOLTIP = "Block für einen beliebigen Sensor, der ein analoges Signal zurückgibt.";
 Blockly.Msg.AND = "und";
 Blockly.Msg.ARDUBRICK_TOOLTIP = "Block für das Bot'n Roll board mit den angeschlossenen Aktoren und Sensoren. Es gibt auch weitere eingebaute Aktoren und Sensoren, wie z. B. das Display, die Tasten ...";
+Blockly.Msg.ARRAY_ACTOR_TOOLTIP = "Das Output-Layer des Netzwerks";
+Blockly.Msg.ARRAY_SENSOR_TOOLTIP = "Das Input-Layer des Netzwerks";
 Blockly.Msg.AUTH = "Bitte autorisiere diese App zum Aktivieren der Speicherung deiner Arbeit und zum Teilen.";
 Blockly.Msg.BATTERY_GETSAMPLE_TOOLTIP = "Liest die aktuelle Spannung der Batterie.";
 Blockly.Msg.BELOW = "unten";
@@ -953,6 +938,7 @@ Blockly.Msg.NAO_WALK_ASYNC_TOOLTIP = "Der Roboter geht unendlich.";
 Blockly.Msg.NAO_WALK_TOOLTIP = "Der Roboter geht die eingebene Distanz. Die Distanz wird in Zentimeter eingegeben.";
 Blockly.Msg.NAO_WAVE = "winken";
 Blockly.Msg.NAO_WIPE_FOREHEAD = "Stirn wischen";
+Blockly.Msg.NEURAL_NETWORK_TOOLTIP = "Das ist das neuronale Netz";
 Blockly.Msg.NEW_VARIABLE = "Neue Variable...";
 Blockly.Msg.NEW_VARIABLE_TITLE = "Name der neuen Variable:";
 Blockly.Msg.NO = "nein";
@@ -1155,6 +1141,7 @@ Blockly.Msg.POPUP_USERNAME_LOGOFF = "Du bist nicht angemeldet.";
 Blockly.Msg.POPUP_VALUE = "Wert";
 Blockly.Msg.POPUP_WLAN_SECURITY_INFORMATION = "In diesem Formular kannst du die Zugangsdaten für die WLAN-Verbindung deines Systems eingeben. Die Daten werden nicht im Open Roberta Lab oder im Browser gespeichert; beim nächsten Besuch dieser Seite musst du sie neu eingeben. Bitte gehe äußerst vorsichtig mit diesen Daten um, damit dein WLAN sicher bleibt.";
 Blockly.Msg.POPUP_WLAN_SSID = "SSID";
+Blockly.Msg.PORT = "Port";
 Blockly.Msg.PORT_ANKLE = "Fußgelenk";
 Blockly.Msg.PORT_BUMPER = "Fuß";
 Blockly.Msg.PORT_ELBOW = "Ellbogen";
@@ -1536,6 +1523,7 @@ Blockly.Msg.TEXT_TRIM_OPERATOR_LEFT = "entferne Leerzeichen vom Anfang (links)";
 Blockly.Msg.TEXT_TRIM_OPERATOR_RIGHT = "entferne Leerzeichen vom Ende (rechts)";
 Blockly.Msg.TEXT_TRIM_TOOLTIP = "Entfernt Leerzeichen vom Anfang und / oder Ende eines Textes.";
 Blockly.Msg.THETA = "Theta";
+Blockly.Msg.THRESHOLD = "Schwellenwert";
 Blockly.Msg.TIMEOUT = "Auszeit";
 Blockly.Msg.TIMER_GETSAMPLE_TOOLTIP = "Gibt den aktuellen Wert des Zeitgebers zurück.";
 Blockly.Msg.TIMER_RESET_TOOLTIP = "Setzt den Zeitgeber zurück.";
@@ -1543,8 +1531,10 @@ Blockly.Msg.TITLE = "Titel";
 Blockly.Msg.TO = "auf";
 Blockly.Msg.TODAY = "Heute";
 Blockly.Msg.TOOLBOX_ACTION = "Aktion";
+Blockly.Msg.TOOLBOX_AI = "KI";
 Blockly.Msg.TOOLBOX_ANIMATION = "Animation";
 Blockly.Msg.TOOLBOX_CLEANING = "Reinigung";
+Blockly.Msg.TOOLBOX_CLUSTERING = "Clustern";
 Blockly.Msg.TOOLBOX_COLOUR = "Farben";
 Blockly.Msg.TOOLBOX_COMMUNICATION = "Nachrichten";
 Blockly.Msg.TOOLBOX_CONTROL = "Kontrolle";
@@ -1558,8 +1548,10 @@ Blockly.Msg.TOOLBOX_LOGIC = "Logik";
 Blockly.Msg.TOOLBOX_LOOP = "Schleifen";
 Blockly.Msg.TOOLBOX_MATH = "Mathematik";
 Blockly.Msg.TOOLBOX_MOVE = "Bewegen";
+Blockly.Msg.TOOLBOX_NEURAL_NETWORKS = "Neuronale Netze";
 Blockly.Msg.TOOLBOX_PIN = "Pin";  // untranslated
 Blockly.Msg.TOOLBOX_PROCEDURE = "Funktionen";
+Blockly.Msg.TOOLBOX_REINFORCEMENT_LEARNING = "Bestärkendes Lernen";
 Blockly.Msg.TOOLBOX_SENSOR = "Sensoren";
 Blockly.Msg.TOOLBOX_SOUND = "Klang";
 Blockly.Msg.TOOLBOX_TEXT = "Text";
@@ -1612,11 +1604,13 @@ Blockly.Msg.VARIABLES_SET_CREATE_GET = "Erzeuge \"Lese %1\"";
 Blockly.Msg.VARIABLES_SET_HELPURL = "https://de.wikipedia.org/wiki/Variable_%28Programmierung%29";
 Blockly.Msg.VARIABLES_SET_TOOLTIP = "Setzt den Wert einer Variable.";
 Blockly.Msg.VARIABLES_TITLE = "Variable";
+Blockly.Msg.VARIABLES_TYPE_ARRAY_ACTOR = "Aktuatoren";
 Blockly.Msg.VARIABLES_TYPE_ARRAY_BOOLEAN = "Liste logischer Wert";
 Blockly.Msg.VARIABLES_TYPE_ARRAY_COLOUR = "Liste Farbe";
 Blockly.Msg.VARIABLES_TYPE_ARRAY_CONNECTION = "Liste Verbindung";
 Blockly.Msg.VARIABLES_TYPE_ARRAY_IMAGE = "Liste Bild";
 Blockly.Msg.VARIABLES_TYPE_ARRAY_NUMBER = "Liste Zahl";
+Blockly.Msg.VARIABLES_TYPE_ARRAY_SENSOR = "Sensoren";
 Blockly.Msg.VARIABLES_TYPE_ARRAY_STRING = "Liste Zeichenkette";
 Blockly.Msg.VARIABLES_TYPE_BOOLEAN = "logischer Wert";
 Blockly.Msg.VARIABLES_TYPE_COLOUR = "Farbe";
