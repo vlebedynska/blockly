@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2020-04-25 17:54:34.567894",
+		"lastupdated": "2020-04-26 14:38:32.143586",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -373,12 +373,14 @@
 	"TOOLBOX_NEURAL_NETWORKS": "Neural Networks",
 	"TOOLBOX_REINFORCEMENT_LEARNING": "Reinforcement Learning",
 	"TOOLBOX_CLUSTERING": "Clustering",
-	"VARIABLES_TYPE_ARRAY_ACTOR": "Actor",
-	"VARIABLES_TYPE_ARRAY_SENSOR": "Sensor",
+	"VARIABLE_TYPE_NN_INPUT": "Input",
+	"VARIABLE_TYPE_NN_OUTPUT": "Output",
+	"VARIABLES_TYPE_NN_ARRAY_INPUT": "List Input",
+	"VARIABLES_TYPE_NN_ARRAY_OUTPUT": "List Output",
 	"PORT": "Port",
 	"THRESHOLD": "Threshold",
-	"ARRAY_ACTOR_TOOLTIP": "The Output-Layer of the network",
-	"ARRAY_SENSOR_TOOLTIP": "The Input-Layer of the network",
+	"VARIABLE_TYPE_NN_INPUT_TOOLTIP": "The input node of the network",
+	"VARIABLE_TYPE_NN_OUTPUT_TOOLTIP": "The output node of the network",
 	"NEURAL_NETWORK_TOOLTIP": "This is the neural network",
 	"MOTOR_ON_TOOLTIP": "Turns motor on with specific power.",
 	"MOTOR_ON_TOOLTIP_CALLIOPE": "Turns motor A, B or A+B on with a specific power.",

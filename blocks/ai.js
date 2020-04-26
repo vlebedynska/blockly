@@ -10,7 +10,7 @@ goog.provide('Blockly.Blocks.ai');
 
 goog.require('Blockly.Blocks');
 
-Blockly.Blocks.lists.HUE = 260;
+//Blockly.Blocks.lists.HUE = 260;
 
 
 Blockly.Blocks['ai_neural_network'] = {
@@ -21,10 +21,10 @@ Blockly.Blocks['ai_neural_network'] = {
     init : function () {
 
         this.appendDummyInput().appendField( 'Input Layer');
-        this.appendValueInput("INPUT_LAYER").setCheck("Array_Sensor");
+        this.appendValueInput("INPUT_LAYER").setCheck("Array_InputNode");
         this.appendDummyInput().appendField( '--------');
         this.appendDummyInput().appendField( 'Output Layer');
-        this.appendValueInput("OUTPUT_LAYER").setCheck("Array_Actor");
+        this.appendValueInput("OUTPUT_LAYER").setCheck("Array_OutputNode");
         this.setInputsInline(true);
         this.setPreviousStatement(true);
         this.setNextStatement(true);
@@ -33,7 +33,7 @@ Blockly.Blocks['ai_neural_network'] = {
 
 }
 
-Blockly.Blocks['ai_sensor'] = {
+Blockly.Blocks['ai_nn_input_node'] = {
     /**
      * TODO Write a block description
      * TODO SwitchCase for DropDowns or dynamically access device.
@@ -41,22 +41,22 @@ Blockly.Blocks['ai_sensor'] = {
      */
 
     init:function () {
-        var aiSensor = new Blockly.FieldDropdown([
+        var aiInput = new Blockly.FieldDropdown([
             [Blockly.Msg.SENSOR_ULTRASONIC + " " + Blockly.Msg.PORT + " 1", 'ULTRASONIC_PORT_1'],
             [Blockly.Msg.SENSOR_ULTRASONIC + " " + Blockly.Msg.PORT + " 2", 'ULTRASONIC_PORT_2'],
             [Blockly.Msg.SENSOR_ULTRASONIC + " " + Blockly.Msg.PORT + " 3", 'ULTRASONIC_PORT_3'],
             [Blockly.Msg.SENSOR_ULTRASONIC + " " + Blockly.Msg.PORT + " 4", 'ULTRASONIC_PORT_4']
         ]);
-        this.setOutput(true, 'Sensor');
-        this.appendDummyInput().appendField(aiSensor, "SENSOR")
+        this.setOutput(true, 'InputNode');
+        this.appendDummyInput().appendField(aiInput, "INPUTNODE")
             .appendField(Blockly.Msg.THRESHOLD)
             .appendField(new Blockly.FieldNumber(0), "THRESHOLD");
-        this.setTooltip(Blockly.Msg.ARRAY_SENSOR_TOOLTIP);
+        this.setTooltip(Blockly.Msg.VARIABLE_TYPE_NN_INPUT_TOOLTIP);
     }
 
 }
 
-Blockly.Blocks['ai_actor'] = {
+Blockly.Blocks['ai_nn_output_node'] = {
     /**
      * TODO Write a block description
      * TODO SwitchCase for DropDowns or dynamically access device.
@@ -78,11 +78,11 @@ Blockly.Blocks['ai_actor'] = {
             [ Blockly.Msg.MOTOR_PORT + ' C', 'MOTORPORT_C' ],
             [ Blockly.Msg.MOTOR_PORT + ' D', 'MOTORPORT_D' ]
         ];
-        var aiActor = new Blockly.FieldDropdown(ports);
-        this.setOutput(true, 'Actor');
+        var aiOutput = new Blockly.FieldDropdown(ports);
+        this.setOutput(true, 'OutputNode');
         this.appendDummyInput()
-            .appendField(aiActor, 'ACTOR')
-        this.setTooltip(Blockly.Msg.ARRAY_ACTOR_TOOLTIP);
+            .appendField(aiOutput, 'OUTPUTNODE')
+        this.setTooltip(Blockly.Msg.VARIABLE_TYPE_NN_OUTPUT_TOOLTIP);
     }
 
 }

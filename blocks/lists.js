@@ -903,11 +903,11 @@ Blockly.Blocks['robLists_create_with'] = {
         case 'Connection':
             block = this.workspace.newBlock('logic_null');
             return block;
-        case 'Actor' :
-            block = this.workspace.newBlock('ai_actor');
+        case 'InputNode' :
+            block = this.workspace.newBlock('ai_nn_input_node');
             return block;
-        case 'Sensor':
-            block = this.workspace.newBlock('ai_sensor');
+        case 'OutputNode':
+            block = this.workspace.newBlock('ai_nn_output_node');
             return block;
         }
     },

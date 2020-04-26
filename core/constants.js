@@ -286,15 +286,16 @@ Blockly.DATA_TYPE['Connection'] = "#FF69B4";
 Blockly.DATA_TYPE['Sensor'] = "#8FA402";
 Blockly.DATA_TYPE['Image'] = "#DF01D7";
 Blockly.DATA_TYPE['Actor'] = "#F29400";
+Blockly.DATA_TYPE['InputNode'] = "#f23d23";
+Blockly.DATA_TYPE['OutputNode'] = "#c2f2b2";
 Blockly.DATA_TYPE['Array_Number'] = "#39378B";
 Blockly.DATA_TYPE['Array_String'] = "#39378B";
 Blockly.DATA_TYPE['Array_Boolean'] = "#39378B";
 Blockly.DATA_TYPE['Array_Colour'] = "#39378B";
 Blockly.DATA_TYPE['Array_Image'] = "#39378B";
 Blockly.DATA_TYPE['Array_Connection'] = "#39378B";
-Blockly.DATA_TYPE['Array_Actor'] = Blockly.DATA_TYPE['Actor'] ;
-Blockly.DATA_TYPE['Array_Sensor'] = Blockly.DATA_TYPE['Sensor'];
-
+Blockly.DATA_TYPE['Array_InputNode'] = "#f23d23";
+Blockly.DATA_TYPE['Array_OutputNode'] = "#c2f2b2";
 
 
 Blockly.TYPE_DROPDOWN = function(device, opt_handler) {
@@ -364,7 +365,11 @@ Blockly.TYPE_DROPDOWN = function(device, opt_handler) {
                 [ Blockly.Msg.VARIABLES_TYPE_STRING, 'String' ], [ Blockly.Msg.VARIABLES_TYPE_COLOUR, 'Colour' ],
                 [ Blockly.Msg.VARIABLES_TYPE_CONNECTION, 'Connection' ], [ Blockly.Msg.VARIABLES_TYPE_ARRAY_NUMBER, 'Array_Number' ],
                 [ Blockly.Msg.VARIABLES_TYPE_ARRAY_BOOLEAN, 'Array_Boolean' ], [ Blockly.Msg.VARIABLES_TYPE_ARRAY_STRING, 'Array_String' ],
-                [ Blockly.Msg.VARIABLES_TYPE_ARRAY_COLOUR, 'Array_Colour' ], [ Blockly.Msg.VARIABLES_TYPE_ARRAY_CONNECTION, 'Array_Connection' ] ], function(
+                [ Blockly.Msg.VARIABLES_TYPE_ARRAY_COLOUR, 'Array_Colour' ], [ Blockly.Msg.VARIABLES_TYPE_ARRAY_CONNECTION, 'Array_Connection' ],
+                [ Blockly.Msg.VARIABLE_TYPE_NN_INPUT, 'InputNode' ],
+                [ Blockly.Msg.VARIABLE_TYPE_NN_OUTPUT, 'OutputNode' ],
+                [ Blockly.Msg.VARIABLES_TYPE_NN_ARRAY_INPUT, 'Array_InputNode' ],
+                [ Blockly.Msg.VARIABLES_TYPE_NN_ARRAY_OUTPUT, 'Array_OutputNode' ] ], function(
                 option) {
             if (option && this.sourceBlock_.getFieldValue('TYPE') !== option) {
                 this.sourceBlock_.updateType_(option);
@@ -433,12 +438,15 @@ Blockly.LIST_TYPE_DROPDOWN = function(device) {
                 [ Blockly.Msg.VARIABLES_TYPE_STRING, 'String' ] ], function(option) {
             this.sourceBlock_.updateType_(option);
         });
-    case 'nxt':
     case 'ev3':
+    case 'nxt':
         return new Blockly.FieldDropdown([ [ Blockly.Msg.VARIABLES_TYPE_NUMBER, 'Number' ], [ Blockly.Msg.VARIABLES_TYPE_BOOLEAN, 'Boolean' ],
                 [ Blockly.Msg.VARIABLES_TYPE_STRING, 'String' ], [ Blockly.Msg.VARIABLES_TYPE_COLOUR, 'Colour' ],
-                [ Blockly.Msg.VARIABLES_TYPE_CONNECTION, 'Connection' ], [ Blockly.Msg.VARIABLES_TYPE_ARRAY_ACTOR, 'Actor' ],
-                [ Blockly.Msg.VARIABLES_TYPE_ARRAY_SENSOR, 'Sensor' ]], function(option) {
+                [ Blockly.Msg.VARIABLES_TYPE_CONNECTION, 'Connection' ],
+                [ Blockly.Msg.VARIABLE_TYPE_NN_INPUT, 'InputNode' ],
+                [ Blockly.Msg.VARIABLE_TYPE_NN_OUTPUT, 'OutputNode' ]
+
+        ], function(option) {
             this.sourceBlock_.updateType_(option);
         });
     case 'wedo':

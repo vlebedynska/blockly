@@ -391,6 +391,10 @@ Blockly.Blocks['robGlobalVariables_declare'] = {
         block = this.workspace.newBlock('text');
       } else if (option === 'Boolean') {
         block = this.workspace.newBlock('logic_boolean');
+      } else if (option === 'InputNode') {
+        block = this.workspace.newBlock('ai_nn_input_node');
+      } else if (option === 'OutputNode') {
+        block = this.workspace.newBlock('ai_nn_output_node');
       } else if (option.substr(0, 5) === 'Array') {
         block = this.workspace.newBlock('robLists_create_with');
         block.createIt(3, option.substr(6));
