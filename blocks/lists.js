@@ -904,7 +904,7 @@ Blockly.Blocks['robLists_create_with'] = {
             block = this.workspace.newBlock('logic_null');
             return block;
         case 'InputNode' :
-            block = this.workspace.newBlock('ai_nn_input_node');
+            block = this.workspace.newBlock('ai_nn_input_node_ultrasonic');
             return block;
         case 'OutputNode':
             block = this.workspace.newBlock('ai_nn_output_node');

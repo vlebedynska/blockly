@@ -33,7 +33,7 @@ Blockly.Blocks['ai_neural_network'] = {
 
 }
 
-Blockly.Blocks['ai_nn_input_node'] = {
+Blockly.Blocks['ai_nn_input_node_ultrasonic'] = {
     /**
      * TODO Write a block description
      * TODO SwitchCase for DropDowns or dynamically access device.
@@ -54,6 +54,37 @@ Blockly.Blocks['ai_nn_input_node'] = {
         this.setTooltip(Blockly.Msg.VARIABLE_TYPE_NN_INPUT_TOOLTIP);
     }
 
+}
+
+Blockly.Blocks['ai_nn_input_node_coloursensor_rgb_channel'] = {
+    /**
+     * Block for composing a colour from RGB components.
+     *
+     * @this Blockly.Block
+     */
+    init : function() {
+        this.setColour(Blockly.CAT_AI_RGB);
+        var colorField = new Blockly.FieldColour('#DC143C');
+        colorField
+            .setColours([ '#DC143C', '#0057A6', '#00FF00'])
+            .setColumns(3);
+
+        var port = new Blockly.FieldDropdown([
+               [Blockly.Msg.PORT + " 1", '1'],
+               [Blockly.Msg.PORT + " 2", '2'],
+               [Blockly.Msg.PORT + " 3", '3'],
+               [Blockly.Msg.PORT + " 4", '4']
+            ]);
+
+        this.setOutput(true, 'InputNode');
+        this.appendDummyInput()
+            .appendField(Blockly.Msg.SENSOR_COLOUR)
+            .appendField(colorField, "COLOUR")
+            .appendField(Blockly.Msg.SENSOR_COLOUR_PERSENTAGE)
+            .appendField(port, "SENSORPORT");
+
+        this.setTooltip(Blockly.Msg.COLOUR_RGB_TOOLTIP);
+    }
 }
 
 Blockly.Blocks['ai_nn_output_node'] = {

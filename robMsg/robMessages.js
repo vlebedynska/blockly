@@ -67,6 +67,7 @@ Blockly.Msg.THRESHOLD = 'Threshold';
 Blockly.Msg.VARIABLE_TYPE_NN_INPUT_TOOLTIP = 'The input node of the network';
 Blockly.Msg.VARIABLE_TYPE_NN_OUTPUT_TOOLTIP ='The output node of the network';
 Blockly.Msg.NEURAL_NETWORK_TOOLTIP = 'This is the neural network';
+Blockly.Msg.SENSOR_COLOUR_PERSENTAGE = '-Percentage';
 //alt
 Blockly.Msg.MOTOR_ON_TOOLTIP = 'Turns motor on with specific power.';
 Blockly.Msg.MOTOR_ON_TOOLTIP_CALLIOPE = 'Turns motor A, B or A+B on with a specific power.';

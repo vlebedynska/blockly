@@ -392,7 +392,7 @@ Blockly.Blocks['robGlobalVariables_declare'] = {
       } else if (option === 'Boolean') {
         block = this.workspace.newBlock('logic_boolean');
       } else if (option === 'InputNode') {
-        block = this.workspace.newBlock('ai_nn_input_node');
+        block = this.workspace.newBlock('ai_nn_input_node_ultrasonic');
       } else if (option === 'OutputNode') {
         block = this.workspace.newBlock('ai_nn_output_node');
       } else if (option.substr(0, 5) === 'Array') {
