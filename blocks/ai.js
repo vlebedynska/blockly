@@ -125,12 +125,12 @@ Blockly.Blocks['ai_hidden'] = {
 
 
 
-Blockly.Blocks['ai_q_learning_states_and_actions_matrix'] = {
+Blockly.Blocks['ai_q_learning_states_and_actions_matrix_3_x_3'] = {
     init : function () {
         this.setInputsInline(false);
 
         this.setColour(Blockly.CAT_AI_RGB);
-        this.appendDummyInput().appendField( 'Gestalte die Karte 3x3')
+        this.appendDummyInput().appendField(Blockly.Msg.MAP).appendField('3x3');
 
         var start = new Blockly.FieldDropdown([
             ["A", 'A'],
@@ -145,7 +145,7 @@ Blockly.Blocks['ai_q_learning_states_and_actions_matrix'] = {
 
         ]);
 
-        var goal = new Blockly.FieldDropdown([
+        var finish = new Blockly.FieldDropdown([
             ["I", 'I'],
             ["A", 'A'],
             ["B", 'B'],
@@ -159,18 +159,18 @@ Blockly.Blocks['ai_q_learning_states_and_actions_matrix'] = {
 
 
         this.appendDummyInput()
-            .appendField("Start")
+            .appendField(Blockly.Msg.RL_STARTING_POSITION)
             .appendField(start, 'Start')
-            .appendField("Ziel")
-            .appendField( goal,'Ziel');
+            .appendField(Blockly.Msg.RL_FINISH_POSITION)
+            .appendField( finish,'Finish');
 
-        this.appendValueInput("OUTPUT_LAYER").appendField('Setze Hindernisse').setCheck("Array_OutputNode");
+        this.appendValueInput("OBSTACLE").appendField(Blockly.Msg.RL_PLACE_OBSTACLE).setCheck("Array_Obstacle");
         // this.appendDummyInput()
         //     .appendField(new Blockly.FieldImage("./map(2).svg ", 100, 100, { alt: "*", flipRtl: "FALSE" }));
 
         this.setPreviousStatement(true);
         this.setNextStatement(true);
-        this.setTooltip(Blockly.Msg.NEURAL_NETWORK_TOOLTIP);
+        this.setTooltip(Blockly.Msg.RL_STATES_AND_ACTIONS_MATRIX_TOOLTIP);
     }
 }
 
@@ -190,7 +190,7 @@ Blockly.Blocks['ai_q_barrier_mountain'] = {
 
         ]);
 
-        var goal = new Blockly.FieldDropdown([
+        var finish = new Blockly.FieldDropdown([
             ["I", 'I'],
             ["A", 'A'],
             ["B", 'B'],
@@ -202,15 +202,14 @@ Blockly.Blocks['ai_q_barrier_mountain'] = {
             ["H", 'H'],
         ]);
 
-
         this.appendDummyInput()
-            .appendField("Berg zwischen ")
+            .appendField(Blockly.Msg.RL_BARRIER_MOUNTAIN)
             .appendField(start, 'Start')
-            .appendField("und")
-            .appendField( goal,'Ziel');
+            .appendField(Blockly.Msg.AND)
+            .appendField( finish,'Finish');
 
-        this.setOutput(true, 'OutputNode');
-
+        this.setOutput(true, 'Obstacle');
+        this.setTooltip(Blockly.Msg.RL_BARRIER_MOUNTAIN_TOOLTIP);
 
     }
 }
@@ -219,21 +218,21 @@ Blockly.Blocks['ai_q_barrier_mountain'] = {
 Blockly.Blocks['ai_q_drive_the_best_way'] = {
     init : function () {
 
-        this.appendValueInput("OUTPUT_LAYER").appendField('Fahre den optimalen Weg mit der Geschwindigkeit ').setCheck('Number');
+        this.appendValueInput("POWER").appendField(Blockly.Msg.RL_DRIVE_OPTIMA_PATH).appendField(Blockly.Msg.MOTOR_SPEED).setCheck('Number');
 
         this.setPreviousStatement(true);
         this.setNextStatement(true);
-        this.setTooltip(Blockly.Msg.NEURAL_NETWORK_TOOLTIP);
+        this.setTooltip(Blockly.Msg.RL_DRIVE_OPTIMA_PATH_TOOLTIP);
     }
     }
 
 Blockly.Blocks['ai_q_apply_learning_rule'] = {
     init : function () {
 
-        this.appendDummyInput().appendField("Führe einen Lernschritt aus");
+        this.appendDummyInput().appendField(Blockly.Msg.RL_GAIN_EXPERIENCE);
         this.setPreviousStatement(true);
         this.setNextStatement(true);
-        this.setTooltip(Blockly.Msg.NEURAL_NETWORK_TOOLTIP);
+        this.setTooltip(Blockly.Msg.RL_GAIN_EXPERIENCE_TOOLTIP);
     }
 }
 
@@ -243,54 +242,49 @@ Blockly.Blocks['ai_q_learner_config'] = {
         this.setInputsInline(false);
 
         this.appendDummyInput()
-            .appendField("Set up the learning behaviour")
+            .appendField(Blockly.Msg.RL_Q_LEARNER_CONFIG_SET_UP_LEARNING_BEHAVIOUR)
 
         var alpha = new Blockly.FieldDropdown([
-            ["langsam", '0.1'],
-            ["mittel", '0.5'],
-            ["schnell", '0.9'],
+            [Blockly.Msg.RL_SLOW, '0.1'],
+            [Blockly.Msg.RL_MEDIUM, '0.5'],
+            [Blockly.Msg.RL_FAST, '0.9'],
 
         ]);
 
         var gamma = new Blockly.FieldDropdown([
-            ["sofort", '0.2'],
-            ["später", '0.8'],
+            [Blockly.Msg.RL_REWARD_IMMEDIATE, '0.2'],
+            [Blockly.Msg.RL_REWARD_LATER, '0.8'],
         ]);
 
         var nu = new Blockly.FieldDropdown([
-            ["Bleib auf dem Pfad", 'zufällig'],
-            ["Suche den Startpunkt zufällig", 'nicht zufallig'],
+            [Blockly.Msg.RL_STARTING_POSITION_ACHIEVED_IN_PREVIOUS_STATE, '0.1'],
+            [Blockly.Msg.RL_STARTING_POSITION_RANDOM, '0.9'],
         ]);
 
         var rho = new Blockly.FieldDropdown([
-            ["Keine: auf zu den neuen Ufern! ", '0.1'],
-            ["Teils/Teils", '0.5'],
-            ["Viel: Nutze dein bestehendes Wissen aus", '0.9'],
+            [Blockly.Msg.RL_EXPERIENCE_NONE, '0.1'],
+            [Blockly.Msg.RL_EXPERIENCE_SOME, '0.5'],
+            [Blockly.Msg.RL_EXPERIENCE_MUCH, '0.9'],
         ]);
 
 
 
-
         this.appendDummyInput()
-            .appendField("Lerntempo")
+            .appendField(Blockly.Msg.RL_LEARNING_SPEED)
             .appendField(alpha, 'alpha')
         this.appendDummyInput()
-            .appendField("Belohnung")
+            .appendField(Blockly.Msg.RL_REWARD)
             .appendField(gamma, 'gamma')
         this.appendDummyInput()
-            .appendField("Startposition")
+            .appendField(Blockly.Msg.RL_START_POSITION)
             .appendField(nu, 'nu')
         this.appendDummyInput()
-            .appendField("Erfahrung")
+            .appendField(Blockly.Msg.RL_EXPERIENCE)
             .appendField(rho, 'rho')
-
-
-
-        //this.appendValueInput("OUTPUT_LAYER").appendField('Fahre den optimalen Weg mit der Geschwindigkeit ').setCheck('Number');
 
 
         this.setPreviousStatement(true);
         this.setNextStatement(true);
-        this.setTooltip(Blockly.Msg.NEURAL_NETWORK_TOOLTIP);
+        this.setTooltip(Blockly.Msg.RL_Q_LEARNER_CONFIG_TOOLTIP);
     }
 }

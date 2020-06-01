@@ -54,6 +54,36 @@ goog.require('Blockly.Msg');
 
 //TODO Msgs einfügen.
 //AI Blocks
+
+Blockly.Msg.MAP = 'map';
+Blockly.Msg.RL_STARTING_POSITION = 'start';
+Blockly.Msg.RL_FINISH_POSITION = 'finish';
+Blockly.Msg.RL_PLACE_OBSTACLE = 'place obstacles';
+Blockly.Msg.RL_STATES_AND_ACTIONS_MATRIX_TOOLTIP = 'Configures the map that the robot should explore.';
+Blockly.Msg.VARIABLE_TYPE_RL_OBSTACLE = 'Obstacle';
+Blockly.Msg.RL_BARRIER_MOUNTAIN = 'rock between';
+Blockly.Msg.RL_BARRIER_MOUNTAIN_TOOLTIP = 'Places a rock between two fields.';
+Blockly.Msg.RL_DRIVE_OPTIMA_PATH = 'drive the optimal path';
+Blockly.Msg.RL_DRIVE_OPTIMA_PATH_TOOLTIP = 'Using the experience gained lets the robot drive the optimal path.';
+Blockly.Msg.RL_GAIN_EXPERIENCE = 'gain experience';
+Blockly.Msg.RL_GAIN_EXPERIENCE_TOOLTIP = 'Lets the robot gain experience in the current field and thus learn.';
+Blockly.Msg.RL_Q_LEARNER_CONFIG_SET_UP_LEARNING_BEHAVIOUR = 'set up the learning behaviour';
+Blockly.Msg.RL_LEARNING_SPEED = 'learning speed';
+Blockly.Msg.RL_SLOW = 'slow';
+Blockly.Msg.RL_MEDIUM = 'medium';
+Blockly.Msg.RL_FAST = 'fast';
+Blockly.Msg.RL_REWARD = 'reward';
+Blockly.Msg.RL_REWARD_IMMEDIATE = 'immediately';
+Blockly.Msg.RL_REWARD_LATER = 'later';
+Blockly.Msg.RL_STARTING_POSITION_ACHIEVED_IN_PREVIOUS_STATE = 'stay on path';
+Blockly.Msg.RL_START_POSITION = 'startposition';
+Blockly.Msg.RL_STARTING_POSITION_RANDOM = 'search the start point randomly';
+Blockly.Msg.RL_EXPERIENCE = 'expirience';
+Blockly.Msg.RL_EXPERIENCE_NONE = 'none: off to new shores';
+Blockly.Msg.RL_EXPERIENCE_SOME = 'some: use existing knowledge and explore new things';
+Blockly.Msg.RL_EXPERIENCE_MUCH = 'much: use your existing knowledge';
+Blockly.Msg.RL_Q_LEARNER_CONFIG_TOOLTIP = 'Sets guidelines for the learning behavior of the robot.';
+Blockly.Msg.VARIABLES_TYPE_RL_ARRAY_OBSTACLE = 'List Obstacle';
 Blockly.Msg.TOOLBOX_AI = 'AI';
 Blockly.Msg.TOOLBOX_NEURAL_NETWORKS = 'Neural Networks';
 Blockly.Msg.TOOLBOX_REINFORCEMENT_LEARNING = 'Reinforcement Learning';

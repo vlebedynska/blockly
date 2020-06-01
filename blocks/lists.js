@@ -909,6 +909,9 @@ Blockly.Blocks['robLists_create_with'] = {
         case 'OutputNode':
             block = this.workspace.newBlock('ai_nn_output_node');
             return block;
+        case 'Obstacle':
+            block = this.workspace.newBlock('ai_q_barrier_mountain');
+            return block;
         }
     },
     onchange : function(e) {

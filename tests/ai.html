@@ -253,9 +253,15 @@
             <block type="ai_nn_input_node_coloursensor_rgb_channel"></block>
         </category>
         <category name="TOOLBOX_REINFORCEMENT_LEARNING" svg="true">
-            <block type="ai_q_learning_states_and_actions_matrix"></block>
+            <block type="ai_q_learning_states_and_actions_matrix_3_x_3"></block>
             <block type="ai_q_barrier_mountain"></block>
-            <block type="ai_q_drive_the_best_way"></block>
+            <block type="ai_q_drive_the_best_way">
+                <value name="POWER">
+                    <block type="math_number">
+                        <field name="NUM">30</field>
+                    </block>
+                </value>
+            </block>
             <block type="ai_q_apply_learning_rule"></block>
             <block type="ai_q_learner_config"></block>
         </category>
