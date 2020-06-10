@@ -125,12 +125,12 @@ Blockly.Blocks['ai_hidden'] = {
 
 
 
-Blockly.Blocks['ai_q_learning_states_and_actions_matrix_3_x_3'] = {
+Blockly.Blocks['ai_q_learning_states_and_actions_map'] = {
     init : function () {
         this.setInputsInline(false);
 
         this.setColour(Blockly.CAT_AI_RGB);
-        this.appendDummyInput().appendField(Blockly.Msg.MAP).appendField('3x3');
+        this.appendDummyInput().appendField(Blockly.Msg.MAP);
 
         var start = new Blockly.FieldDropdown([
             ["A", 'A'],
@@ -160,9 +160,9 @@ Blockly.Blocks['ai_q_learning_states_and_actions_matrix_3_x_3'] = {
 
         this.appendDummyInput()
             .appendField(Blockly.Msg.RL_STARTING_POSITION)
-            .appendField(start, 'Start')
+            .appendField(start, 'START')
             .appendField(Blockly.Msg.RL_FINISH_POSITION)
-            .appendField( finish,'Finish');
+            .appendField( finish,'FINISH');
 
         this.appendValueInput("OBSTACLE").appendField(Blockly.Msg.RL_PLACE_OBSTACLE).setCheck("Array_Obstacle");
         // this.appendDummyInput()
@@ -204,9 +204,9 @@ Blockly.Blocks['ai_q_barrier_mountain'] = {
 
         this.appendDummyInput()
             .appendField(Blockly.Msg.RL_BARRIER_MOUNTAIN)
-            .appendField(start, 'Start')
+            .appendField(start, 'START')
             .appendField(Blockly.Msg.AND)
-            .appendField( finish,'Finish');
+            .appendField( finish,'FINISH');
 
         this.setOutput(true, 'Obstacle');
         this.setTooltip(Blockly.Msg.RL_BARRIER_MOUNTAIN_TOOLTIP);
@@ -225,6 +225,18 @@ Blockly.Blocks['ai_q_drive_the_best_way'] = {
         this.setTooltip(Blockly.Msg.RL_DRIVE_OPTIMA_PATH_TOOLTIP);
     }
     }
+
+
+Blockly.Blocks['ai_q_draw_the_best_way'] = {
+    init : function () {
+
+        this.appendDummyInput().appendField(Blockly.Msg.RL_DRAW_OPTIMAL_PATH);
+
+        this.setPreviousStatement(true);
+        this.setNextStatement(true);
+        this.setTooltip(Blockly.Msg.RL_DRAW_OPTIMA_PATH_TOOLTIP);
+    }
+}
 
 Blockly.Blocks['ai_q_apply_learning_rule'] = {
     init : function () {
@@ -271,16 +283,16 @@ Blockly.Blocks['ai_q_learner_config'] = {
 
         this.appendDummyInput()
             .appendField(Blockly.Msg.RL_LEARNING_SPEED)
-            .appendField(alpha, 'alpha')
+            .appendField(alpha, 'ALPHA')
         this.appendDummyInput()
             .appendField(Blockly.Msg.RL_REWARD)
-            .appendField(gamma, 'gamma')
+            .appendField(gamma, 'GAMMA')
         this.appendDummyInput()
             .appendField(Blockly.Msg.RL_START_POSITION)
-            .appendField(nu, 'nu')
+            .appendField(nu, 'NU')
         this.appendDummyInput()
             .appendField(Blockly.Msg.RL_EXPERIENCE)
-            .appendField(rho, 'rho')
+            .appendField(rho, 'RHO')
 
 
         this.setPreviousStatement(true);

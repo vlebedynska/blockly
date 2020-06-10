@@ -55,6 +55,8 @@ goog.require('Blockly.Msg');
 //TODO Msgs einfügen.
 //AI Blocks
 
+Blockly.Msg.RL_DRAW_OPTIMAL_PATH =  'draw the optimal path'
+Blockly.Msg.RL_DRAW_OPTIMA_PATH_TOOLTIP =  'Using the experience gained draws the optimal path.'
 Blockly.Msg.MAP = 'map';
 Blockly.Msg.RL_STARTING_POSITION = 'start';
 Blockly.Msg.RL_FINISH_POSITION = 'finish';
