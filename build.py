@@ -128,7 +128,7 @@ window.BLOCKLY_BOOT = function() {
     # used on another, even if the directory name differs.
     m = re.search('[\\/]([^\\/]+)[\\/]core[\\/]blockly.js', add_dependency)
     add_dependency = re.sub('([\\/])' + re.escape(m.group(1)) +
-        '([\\/]core[\\/])', '\\1" + dir + "\\2', add_dependency)
+                            '([\\/]core[\\/])', '\\1" + dir + "\\2', add_dependency)
     f.write(add_dependency + '\n')
 
     provides = []
@@ -180,18 +180,18 @@ class Gen_compressed(threading.Thread):
     target_filename = "blockly_compressed.js"
     # Define the parameters for the POST request.
     params = [
-        ("compilation_level", "SIMPLE_OPTIMIZATIONS"),
-        ("use_closure_library", "true"),
-        ("output_format", "json"),
-        ("output_info", "compiled_code"),
-        ("output_info", "warnings"),
-        ("output_info", "errors"),
-        ("output_info", "statistics"),
-      ]
+      ("compilation_level", "SIMPLE_OPTIMIZATIONS"),
+      ("use_closure_library", "true"),
+      ("output_format", "json"),
+      ("output_info", "compiled_code"),
+      ("output_info", "warnings"),
+      ("output_info", "errors"),
+      ("output_info", "statistics"),
+    ]
 
     # Read in all the source files.
     filenames = calcdeps.CalculateDependencies(self.search_paths,
-        [os.path.join("core", "blockly.js")])
+                                               [os.path.join("core", "blockly.js")])
     for filename in filenames:
       # Filter out the Closure files (the compiler will add them).
       if filename.startswith(os.pardir + os.sep):  # '../'
@@ -206,13 +206,13 @@ class Gen_compressed(threading.Thread):
     target_filename = "blocks_compressed.js"
     # Define the parameters for the POST request.
     params = [
-        ("compilation_level", "SIMPLE_OPTIMIZATIONS"),
-        ("output_format", "json"),
-        ("output_info", "compiled_code"),
-        ("output_info", "warnings"),
-        ("output_info", "errors"),
-        ("output_info", "statistics"),
-      ]
+      ("compilation_level", "SIMPLE_OPTIMIZATIONS"),
+      ("output_format", "json"),
+      ("output_info", "compiled_code"),
+      ("output_info", "warnings"),
+      ("output_info", "errors"),
+      ("output_info", "statistics"),
+    ]
 
     # Read in all the source files.
     # Add Blockly.Blocks to be compatible with the compiler.
@@ -231,19 +231,19 @@ class Gen_compressed(threading.Thread):
     target_filename = language + "_compressed.js"
     # Define the parameters for the POST request.
     params = [
-        ("compilation_level", "SIMPLE_OPTIMIZATIONS"),
-        ("output_format", "json"),
-        ("output_info", "compiled_code"),
-        ("output_info", "warnings"),
-        ("output_info", "errors"),
-        ("output_info", "statistics"),
-      ]
+      ("compilation_level", "SIMPLE_OPTIMIZATIONS"),
+      ("output_format", "json"),
+      ("output_info", "compiled_code"),
+      ("output_info", "warnings"),
+      ("output_info", "errors"),
+      ("output_info", "statistics"),
+    ]
 
     # Read in all the source files.
     # Add Blockly.Generator to be compatible with the compiler.
     params.append(("js_code", "goog.provide('Blockly.Generator');"))
     filenames = glob.glob(
-        os.path.join("generators", language, "*.js"))
+      os.path.join("generators", language, "*.js"))
     filenames.insert(0, os.path.join("generators", language + ".js"))
     for filename in filenames:
       f = open(filename)
@@ -256,7 +256,6 @@ class Gen_compressed(threading.Thread):
     self.do_compile(params, target_filename, filenames, remove)
 
   def do_compile(self, params, target_filename, filenames, remove):
-    print ("###Start compiling ", target_filename)
     # Send the request to Google.
     headers = {"Content-type": "application/x-www-form-urlencoded"}
     conn = httplib.HTTPSConnection("closure-compiler.appspot.com")
@@ -286,7 +285,7 @@ class Gen_compressed(threading.Thread):
         print(error["error"])
         if error["file"]:
           print("%s at line %d:" % (
-              file_lookup(error["file"]), error["lineno"]))
+            file_lookup(error["file"]), error["lineno"]))
           print(error["line"])
           print((" " * error["charno"]) + "^")
         sys.exit(1)
@@ -298,7 +297,7 @@ class Gen_compressed(threading.Thread):
           print(warning["warning"])
           if warning["file"]:
             print("%s at line %d:" % (
-                file_lookup(warning["file"]), warning["lineno"]))
+              file_lookup(warning["file"]), warning["lineno"]))
             print(warning["line"])
             print((" " * warning["charno"]) + "^")
         print()
@@ -347,7 +346,7 @@ class Gen_compressed(threading.Thread):
         ratio = int(float(compressed_b) / float(original_b) * 100 + 0.5)
         print("SUCCESS: " + target_filename)
         print("Size changed from %d KB to %d KB (%d%%)." % (
-            original_kb, compressed_kb, ratio))
+          original_kb, compressed_kb, ratio))
       else:
         print("UNKNOWN ERROR")
 
@@ -385,12 +384,12 @@ class Gen_langfiles(threading.Thread):
                       ["en.json", "qqq.json", "synonyms.json"]]):
       try:
         subprocess.check_call([
-            "python",
-            os.path.join("i18n", "js_to_json.py"),
-            "--input_file", "msg/messages.js",
-            "--robInput_file", "robMsg/robMessages.js",
-            "--output_dir", "msg/json/",
-            "--quiet"])
+          "python",
+          os.path.join("i18n", "js_to_json.py"),
+          "--input_file", "msg/messages.js",
+          "--robInput_file", "robMsg/robMessages.js",
+          "--output_dir", "msg/json/",
+          "--quiet"])
       except (subprocess.CalledProcessError, OSError) as e:
         # Documentation for subprocess.check_call says that CalledProcessError
         # will be raised on failure, but I found that OSError is also possible.
@@ -403,16 +402,16 @@ class Gen_langfiles(threading.Thread):
     try:
       # Use create_messages.py to create .js files from .json files.
       cmd = [
-          "python",
-          os.path.join("i18n", "create_messages.py"),
-          "--source_lang_file", os.path.join("msg", "json", "en.json"),
-          "--source_synonym_file", os.path.join("msg", "json", "synonyms.json"),
-          "--key_file", os.path.join("msg", "json", "keys.json"),
-          "--output_dir", os.path.join("msg", "js"),
-          "--quiet"]
+        "python",
+        os.path.join("i18n", "create_messages.py"),
+        "--source_lang_file", os.path.join("msg", "json", "en.json"),
+        "--source_synonym_file", os.path.join("msg", "json", "synonyms.json"),
+        "--key_file", os.path.join("msg", "json", "keys.json"),
+        "--output_dir", os.path.join("msg", "js"),
+        "--quiet"]
       json_files = glob.glob(os.path.join("msg", "json", "*.json"))
       json_files = [file for file in json_files if not
-                    (file.endswith(("keys.json", "synonyms.json", "qqq.json")))]
+      (file.endswith(("keys.json", "synonyms.json", "qqq.json")))]
       cmd.extend(json_files)
       subprocess.check_call(cmd)
     except (subprocess.CalledProcessError, OSError) as e:
@@ -432,7 +431,7 @@ class Gen_langfiles(threading.Thread):
 if __name__ == "__main__":
   try:
     calcdeps = import_path(os.path.join(
-        os.path.pardir, "closure-library", "closure", "bin", "calcdeps.py"))
+      os.path.pardir, "closure-library", "closure", "bin", "calcdeps.py"))
   except ImportError:
     if os.path.isdir(os.path.join(os.path.pardir, "closure-library-read-only")):
       # Dir got renamed when Closure moved from Google Code to GitHub in 2014.
@@ -444,16 +443,15 @@ if __name__ == "__main__":
       #calcdeps = import_path(os.path.join(
       # os.path.pardir, "google-closure-library", "closure", "bin", "calcdeps.py"))
       print("Error: Closure directory needs to be renamed from"
-           "'google-closure-library' to 'closure-library'.\n"
-           "Please rename this directory.")
+            "'google-closure-library' to 'closure-library'.\n"
+            "Please rename this directory.")
     else:
       print("""Error: Closure not found.  Read this:
 https://developers.google.com/blockly/hacking/closure""")
     sys.exit(1)
 
   search_paths = calcdeps.ExpandDirectories(
-      ["core", os.path.join(os.path.pardir, "closure-library")])
-  print ("###", search_paths)
+    ["core", os.path.join(os.path.pardir, "closure-library")])
 
   # Run both tasks in parallel threads.
   # Uncompressed is limited by processor speed.

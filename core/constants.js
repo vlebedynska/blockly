@@ -119,12 +119,14 @@ Blockly.CAT_IMAGE_RGB = "#DF01D7";
 /**
  * The rgb value for block colours in ai category.
  */
-Blockly.CAT_AI_RGB = "#000000";
+Blockly.CAT_AI_RGB = "#248EA6";
 
+Blockly.CAT_AI_NEURONEN = "#BFB004";
 /**
  * Opacity used to calculate flyout background color.
  */
 Blockly.FLYOUT_OPACITY = .35;
+
 
 /**
  * Lookup table for icon - categories.
